@@ -1,0 +1,62 @@
+<ul class="breadcrumb">
+  <li><%= link_to 'Events', events_path %> <span class="divider">/</span></li>
+  <li><%= @event.name %></li>
+</ul>
+
+<p id="notice"><%= notice %></p>
+<% if User.where(:id => @event.user_id).exists? %>
+  <div id="event-show">
+    <h1><%= @event.name %></h1>
+    <% if @event.user_id == current_user.id %>
+      <div class="button-container">
+        <div class="float">
+          <%= link_to edit_event_path(@event) do %>
+            <div class="button">Edit</div>
+          <% end %>
+        </div>
+        <div class="float">
+          <%= link_to [@event], :confirm => 'Are you sure you want to remove this event? This cannot be undone.', :action => "destroy", :method => :delete do %>
+            <div class="button">Delete</div>
+          <% end %>
+        </div>
+      </div>
+      <% else %>
+    <% end %>
+    <table id="event-table">
+      <tr>
+        <td class="icon"><i class="fa fa-bookmark"></i></td>
+        <td>
+          <% if @event.user_id %>
+            Created by 
+            <%= link_to(student_profile_path(User.find_by_id(@event.user_id))) do %>
+              <%= User.find_by_id(@event.user_id).full_name %>
+            <% end %>
+          <% else %>
+          <% end %>
+        </td>
+      </tr>
+       <tr>
+        <td class="icon"><i class="fa fa-calendar-o"></i></td>
+        <td><%= @event.start_time.strftime("%A, %B %e") %> at <%= @event.start_time.strftime("%I:%M %p") %></td>
+      </tr>
+      <tr>
+        <td class="icon"><i class="fa fa-location-arrow"></i></td>
+        <td><%= @event.location %></td>
+      </tr>
+      <tr>
+        <td class="icon"><i class="fa fa-align-justify"></i></td>
+        <td><% if @event.description != nil %><%= @event.description.html_safe %><% end %></td>
+      </tr>
+    </table>
+
+    <div>
+      <div id="comments-bar">discussion</div>
+      <div id="comments_container">
+        <div id="<%= @event.id %>">
+          <%= render "user_comments/comments" %>
+        </div>
+      </div>
+      <%= render "user_comments/addcomment" %>
+    </div>
+  </div>
+<% end %>

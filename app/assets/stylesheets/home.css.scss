@@ -1,0 +1,360 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*********************/
+/***** NAV LINKS *****/
+/*********************/
+
+#home_link a {
+  font-size: 13px;
+  color: $gray;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+
+  &:hover { color: $blue; }
+}
+
+.video-responsive-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 600px;
+    max-height: 337px;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+/*********************/
+/****** STYLES *******/ 
+/*********************/
+
+.no-bottom-padding {
+  padding-bottom: 0;
+  margin-bottom: 0;
+} 
+.uppercase-blue {
+  color: $blue-soft;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.padding-top-40 {
+  padding-top: 40px;
+}
+.padding-top-20 {
+  padding-top: 20px;
+}
+.padding-top-5 {
+  padding-top: 5px;
+}
+.padding-bottom-10 {
+  padding-bottom: 10px;
+}
+.padding-bottom-40 {
+  padding-bottom: 40px;
+}
+.padding-bottom-80 {
+  padding-bottom: 80px;
+}
+.sans-serif-body {
+  color: $gray-med;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+.sans-serif-small {
+  color: $gray;
+  font-size: 15px;
+  font-weight: normal;
+}
+.sans-serif-small-blue {
+  color: $blue-soft;
+  font-size: 15px;
+  font-weight: normal;
+}
+.serif-large {
+  font-family: 'Vollkorn';
+  color: $gray-dark;
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: 0.8;
+}
+.serif-small {
+  font-family: 'Vollkorn';
+  color: $gray-dark;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.8;
+}
+.home-button {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  @include button-blue;
+  background: $blue-soft;
+  padding: 14px 28px;
+  font-size: 16px;
+  &:hover {
+    color: #FFF;
+  }
+}
+
+/*********************/
+/******** TOP ********/
+/*********************/
+#home-top-container {
+  width: 100%;
+  background: white;
+}
+#home-top {
+  width: 85%;
+  margin: 0 auto;
+  overflow: hidden;
+  .left {
+    display: block;
+    float: left;
+    padding-top: 10px;
+    width: 40%;
+  }
+  .large {
+    width: 70%;
+    display: block;
+    font-size: 30px;
+    color: $gray-dark;
+    font-weight: normal;
+  }
+  .right {
+    display: block;
+    width: 55%;
+    float:right;
+    padding-top: 45px;
+  }
+}
+#line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: $gray-x-lt;
+}
+
+/*********************/
+/**** APPLY BAR ******/
+/*********************/
+.home-grey-section {
+  width: 100%;
+  border-top: 1px solid $gray-x-lt;
+  border-bottom: 1px solid $gray-x-lt;
+  display: block;
+  height: 125px;
+  background: $gray-x-x-lt;
+
+  .wrapper {
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 38px;
+
+    .float-left {
+      display: block;
+      float: left;
+    }
+  }
+}
+
+#home-student-testimonials {
+  height: auto;
+  overflow: hidden;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  .testimonial-row {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 40px;
+    .student-pic {
+      display: block;
+      float: left;
+      width: 12%;
+      min-width: 80px;
+      img {
+        display: block;
+        border-radius: 50px;
+        width: 60px;
+        height: 60px;
+        padding-bottom: 10px;
+      }
+    }
+    .student-info {
+      display: block;
+      float: left;
+      width: 86%;
+      .quote {
+        display: block;
+        color: $gray-med;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.5;
+      }
+      .name {
+        color: $blue-soft;
+        font-size: 15px;
+        font-weight: bold;
+        padding-top: 20px;
+      }
+    }
+  }
+}
+
+/*********************/
+/***** SECTIONS ******/
+/*********************/
+
+.home-wrapper {
+  display: block;
+  width: 85%;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  padding-bottom: 60px;
+  .split-left {
+    display: block;
+    float: left;
+    width: 100%;
+  }
+  .split-right {
+    display: none;
+    float: right;
+    width: 33%;
+    margin-left: 5%;
+    .lecturer-row {
+      display: block;
+      float:left;
+      width: 100%;
+      padding: 22px 0;
+      .speaker-pic {
+        display: block;
+        float: left;
+        width: 20%;
+        img {
+          display: block;
+          border-radius: 50px;
+          width: 60px;
+          height: 60px;
+        }
+      }
+      .speaker-info {
+        display: block;
+        float: right;
+        width: 75%;
+          .name {
+            font-weight: bold;
+            font-size: 14px;
+            color: $gray-dark;
+          }
+          .about {
+            font-weight: normal;
+            font-size: 14px;
+            color: $gray;
+          }
+        }
+    }
+    ul { 
+      li { padding-bottom: 10px;} 
+    }
+  }
+}
+
+
+/*********************/
+/****** SIGN IN ******/
+/*********************/
+.sign-in-container {
+  width: 250px;
+  display: block;
+  margin: 0 auto;
+}
+.sign-in {
+  padding-left: 2px;
+  .simple_form {
+    label {
+      font-size: 12px;
+      color: $gray;
+      letter-spacing: 1px;
+    }
+    .float {
+      display: block;
+      float: left;
+      width: 40px;
+      clear: none;
+      margin-bottom: 0;
+      padding: 0;
+    }
+    input { width: 90%; }
+  }
+  a {
+    font-size: 12px;
+    color: $gray;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover { color: $blue; }
+  }
+}
+
+/************************/
+/****** RESPONSIVE ******/
+/************************/
+
+@media (min-width: 320px) { 
+  #home-apply-button-top { display: none; }
+  #home-apply-button-bottom { display: none; }
+  #home-top-left-bottom-padding { display: none; }
+  #home-application-deadline { display: none; }
+  #home-video { display: none; }
+  #video-container-two { display: none; }
+  #home-video-small-media { display: block; margin-top: 10px; }
+  #home-top .left { width: 100%; }
+}
+@media (min-width: 768px) { 
+  #home-apply-button-top { display: none; }
+  #home-apply-button-bottom { display: none; }
+  #home-video { display: none; }
+  #home-application-deadline { display: block; }
+  #home-video-small-media { display: block; }
+  #home-top .left { width: 100%; }
+  .home-wrapper .split-left { width: 60% }
+  .home-wrapper .split-right { display: block; }
+  .sign-in-container { width: 400px; }
+}
+@media (min-width: 992px) { 
+  #home-top .left { padding-top: 60px; }
+  #home-apply-button-top { display: block; }
+  #home-apply-button-bottom { display: inline; }
+  #home-video { display: block; }
+  #home-top-left-bottom-padding { display: block; }
+
+  #video-container-two { display: block; }
+  #home-video-small-media { display: none; }
+  #video-container-one { display: none; }
+  #home-top .left { width: 40%; }
+
+}
+@media (min-width: 1200px) {
+  #home-apply-button-top { display: block; }
+  #home-apply-button-bottom { display: inline; }
+  #home-video-small-media { display: none; height: 0; }
+  #home-video { display: block; }
+  #home-top .left { width: 40%; }
+}
+

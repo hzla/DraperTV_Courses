@@ -1,0 +1,97 @@
+<ul class="breadcrumb">
+  <li><%= link_to 'Students', users_path %> <span class="divider">/</span></li>
+  <li><%= @user.full_name %></li>
+</ul>
+
+<div id="profile_top_container">
+  <div id="avatar"><%= image_tag @user.avatar.url(:medium) %></div>
+  <div class="right">
+    <div class="name"><%= @user.first_name %> <%= @user.last_name %></div>
+    <% if @user.employment == "Freelancing" %>
+      <div class ="type">Freelancing</div>
+    <% elsif @user.employment == "Job Hunting" %>
+      <div class ="type teal">Job Hunting</div>
+     <% elsif @user.employment == "Employed" %>
+      <div class ="type blue">Employed</div>
+    <% elsif @user.employment == "Student" %>
+      <div class ="type blue">Student</div>
+    <% else %>
+    <% end %>
+    <div id="profile-info">
+      <% if (@user.facebook != '') && (@user.facebook != nil) %>
+        <%= link_to "#{@user.facebook}", :target => "blank" do %><img id="facebook"/><% end %>
+      <% end %>
+     <% if (@user.instagram != '') && (@user.instagram != nil) %>
+         <%= link_to "http://instagram.com/#{@user.instagram}", :target => "blank" do %><img id="instagram"/><% end %>
+      <% end %>
+       <% if (@user.twitter != '') && (@user.twitter != nil) %>
+        <%= link_to "http://twitter.com/#{@user.twitter}", :target => "blank" do %><img id="twitter"/><% end %>
+      <% end %>
+       <% if (@user.linkedin!= '') && (@user.linkedin != nil) %>
+         <%= link_to "#{@user.linkedin}", :target => "blank" do %><img id="linkedin"/><% end %>
+      <% end %>
+      <% if (@user.dribbble != '') && (@user.dribbble != nil) %>
+        <%= link_to "http://dribbble.com/#{@user.dribbble}", :target => "blank" do %><img id="dribbble"/><% end %>
+      <% end %>
+       <% if (@user.github != '') && (@user.github != nil) %>
+        <%= link_to "http://github.com/#{@user.github}", :target => "blank" do %><img id="github"/><% end %>
+      <% end %>
+       <% if (@user.angellist != '') && (@user.angellist != nil) %>
+        <%= link_to "http://angel.co/#{@user.angellist}", :target => "blank" do %><img id="angellist"/><% end %>
+      <% end %>
+    </div>
+    <br>
+  </div>
+  
+  <div class ="line"></div>
+</div>
+
+<div class="profile-bottom">
+  
+  <div class="section-right">
+    <div class="section-bar">Bio</div>
+    <p><%= @user.bio %></p>
+    <table id="profile-about-table">
+        <tr>
+          <% if @user.online == "boarding" %>
+            <td class="icon"><i class="fa fa-building-o icon-muted" style="font-size: 12px;"></i></td>
+            <td><span> <%= @user.program %></span></td>
+          <% elsif @user.online == "online" %>
+            <td class="icon"><i class="fa fa-globe icon-muted" style="font-size: 12px;"></i></td>
+            <td><span> <%= @user.program %></span></td>
+          <% else %>
+            <td class="icon"><i class="fa fa-flash icon-muted" style="font-size: 14px;"></i></td>
+            <td><span> <%= @user.program %></span></td>
+          <% end %>
+        </tr>
+         <tr>
+          <td class="icon"><i class="fa fa-trophy"></i></td>
+          <td><%= @user.team %></td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-location-arrow"></i></td>
+          <td><%= @user.country %></td>
+        </tr>
+        <tr>
+          <td class="icon"><i class="fa fa-envelope-o"></i></td>
+          <td><%= link_to "mailto:#{@user.email}", :target => "blank" do %><%= @user.email %><% end %></td>
+        </tr>
+      </table>
+    <div class="section-bar">Superhero Skills</div>
+    <% @user.skills.each do |skill| %>
+      <%= link_to skill_path(skill) do %>
+        <div class="skill-tag"><%= skill.name %></div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="section-activity">
+    <div class="section-bar">Activity</div>
+    <div class="profile-posts">
+      <%= render "posts/posts" %>
+    </div>
+  </div>
+  
+</div>
+
+

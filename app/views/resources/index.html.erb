@@ -1,0 +1,116 @@
+<ul class="breadcrumb">
+  <li>Resources</li>
+</ul>
+<h1>Resources</h1>
+<div id="resources">
+  <div class="section-header">Draper University Resources</div>
+    <div class="resources-container">
+      <% @resources.each do |resource| %>
+        <% if resource.category == "draper" %>
+          <% if resource.url != nil %>
+            <%= link_to "#{resource.url}", target: "_blank" do %>
+            <div class="section">
+              <div class="icon-section">
+                <div class="image"><%= image_tag(resource.image(:large)) %></div>
+              </div>   
+              <div class="text-section"> 
+                <div class="title"><%= resource.title %></div>
+                <div class="description"><%= resource.description %></div>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  <br />
+
+  <div class="section-header">Recommended Reading</div>
+  <div class="resources-container">
+      <% @resources.each do |resource| %>
+        <% if resource.category == "reading" %>
+         <% if resource.url != nil %>
+            <%= link_to "#{resource.url}", target: "_blank" do %>
+            <div class="section">
+              <div class="icon-section">
+                <div class="image"><%= image_tag(resource.image(:large)) %></div>
+              </div>   
+              <div class="text-section"> 
+                <div class="title"><%= resource.title %></div>
+                <div class="description"><%= resource.description %></div>
+              </div>
+            </div>
+          <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+  <div class="section-header">Recommended Videos</div>
+    <div class="resources-container">
+      <% @resources.each do |resource| %>
+        <% if resource.category == "video" %>
+          <% if resource.url != nil %>
+            <%= link_to "#{resource.url}", target: "_blank" do %>
+              <div class="section">
+                <div class="icon-section">
+                  <div class="image"><%= image_tag(resource.image(:large)) %></div>
+                </div>   
+                <div class="text-section"> 
+                  <div class="title"><%= resource.title %></div>
+                  <div class="description"><%= resource.description %></div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+  <br />
+
+  <div class="section-header">Recommended Movies</div>
+    <div class="resources-container">
+      <% @resources.each do |resource| %>
+        <% if resource.category == "movie" %>
+         <% if resource.url != nil %>
+          <%= link_to "#{resource.url}", target: "_blank" do %>
+            <div class="section">
+              <div class="icon-section">
+                <div class="image"><%= image_tag(resource.image(:large)) %></div>
+              </div>   
+              <div class="text-section"> 
+                <div class="title"><%= resource.title %></div>
+                <div class="description"><%= resource.description %></div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <br />
+  <div class="section-header">Other Resources</div>
+    <div class="resources-container">
+      <% @resources.each do |resource| %>
+        <% if resource.category == "other" %>
+          <% if resource.url != nil %>
+            <%= link_to "#{resource.url}", target: "_blank" do %>
+              <div class="section">
+                <div class="icon-section">
+                  <div class="image"><%= image_tag(resource.image(:large)) %></div>
+                </div>   
+                <div class="text-section"> 
+                  <div class="title"><%= resource.title %></div>
+                  <div class="description"><%= resource.description %></div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  <br />
+
+</div>

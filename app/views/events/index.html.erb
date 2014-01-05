@@ -1,0 +1,44 @@
+<ul class="breadcrumb">
+  <li>Events</li>
+</ul>
+
+<!-- <table>
+  <tr>
+    <th>Name</th>
+    <th>Start time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+    <td><%= event.name %></td>
+    <td><%= event.start_time %></td>
+    <td><%= link_to 'Show', event %></td>
+    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table> -->
+
+
+<div class="event-calendar">
+  <div class="top-right">
+    <a href="#newEventModal" data-toggle="modal" id="intro-video" >
+      <div class="button">Create Event</div>
+    </a>
+  </div>
+  <%= calendar @events, :start_day => :sunday do |event| %>
+    <%= link_to event.name, event %>
+  <% end %>
+</div>
+
+<br />
+
+<!-- ******  VIDEO MODAL ******* -->
+<div id="newEventModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <%= render 'new' %>
+</div>
+
+

@@ -1,0 +1,738 @@
+// Place all the styles related to the profile controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*********************/
+/***** PROFILE *******/
+/*********************/
+
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+  .s { font-size: 0.8em; color: brown;}
+  .m { font-size: 1.2em; color: orange;}
+  .l { font-size: 1.8em; color: red;}
+}
+
+.description {
+	font-size: 16px;
+	font-weight: normal;
+	color: $gray;
+	margin-bottom: 20px;
+}
+.bio {
+	font-weight: 300;
+	font-style: italic;
+	color: $gray;
+	font-size: 14px;
+
+	width: 85%;
+}
+#profile_links {
+	width: 100%;
+	display: block;
+
+	i, span {
+		display: block;
+		float: left;
+	}
+	i {
+		padding-left: 10px;
+		margin-left: 5px;
+	}
+	span, a {
+		color: $gray-lt;
+		font-weight: 700;
+		font-size: 13px;
+		padding-left: 2px;
+	}	
+	a:hover {
+		color: $blue;
+	}
+}
+
+#profile_top_container {
+	 display: block;
+	 margin-top: 20px;
+	 position: relative;
+	 width: 96%;
+
+	 #avatar {
+		display: block;
+		float: left;
+		margin-right: 30px;
+		border: 2px solid $gray-x-lt;
+		border-radius: 70px;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		img {
+			max-width: 120px;
+			max-height: 120px;
+		}
+	}
+
+	.right {
+		display: block;
+		margin-left: 160px;
+		padding-top: 28px;
+		min-height: 110px;
+		height: auto;
+
+		.name {
+			font-size: 26px;
+			font-weight: normal;
+			color: $gray-dark;
+			display: block;
+			float: left;
+		}
+		.type {
+			display: block;
+			float: left;
+			margin-top: -2px;
+			margin-left: 12px;
+			@include tag;	
+		}
+		.blue { background: $blue; }
+		.red { background: $red; }
+		.teal { background: $teal; }
+		#profile-info {
+			display: block;
+			clear: both;
+			padding-top: 25px;
+			padding-bottom: 10px;
+			width: 60%;
+
+			img {
+				display: block;
+				width: 26px;
+				height: 26px;
+				border: none;
+				outline: 0;
+				float: left; 
+				margin-right: 10px;
+				background-color: white;
+			}
+
+			#instagram {
+				background: image-url('icons/instagram.png') no-repeat 0 0;
+				background-color: white;
+				opacity: 0.6;
+				&:hover {
+					background: image-url('icons/instagram.png') no-repeat 0 -26px;
+					opacity: 1;
+				}
+			}
+			#facebook {
+				background: image-url('icons/facebook.png') no-repeat 0 0;
+				background-color: white;
+				opacity: 0.6;
+				&:hover {
+					opacity: 1;
+					background: image-url('icons/facebook.png') no-repeat 0 -26px;
+				}
+			}
+			#twitter {
+				background: image-url('icons/twitter.png') no-repeat 0 0;
+				opacity: 0.6;
+				&:hover {
+					opacity: 1;
+					background: image-url('icons/twitter.png') no-repeat 0 -26px;
+				}
+			}
+			#linkedin {
+				background: image-url('icons/linkedin.png') no-repeat 0 0;
+				opacity: 0.6;
+				&:hover {
+					opacity: 1;
+					background: image-url('icons/linkedin.png') no-repeat 0 -26px;
+				}
+			}
+			#dribbble {
+				background: image-url('icons/dribbble.png') no-repeat 0 0;
+				opacity: 0.6;
+				&:hover {
+					opacity: 1;
+					background: image-url('icons/dribbble.png') no-repeat 0 -26px;
+				}
+			}
+			#email-icon {
+				background: image-url('icons/email.png') no-repeat 0 0;
+				opacity: 0.6;
+				&:hover {
+					opacity: 1;
+					background: image-url('icons/email.png') no-repeat 0 -26px;
+				}
+			}
+			#github {
+				background: image-url('icons/github.png') no-repeat 0 0;
+				opacity: 0.6;
+				&:hover {
+					opacity: 1;
+					background: image-url('icons/github.png') no-repeat 0 -26px;
+				}
+			}
+			#angellist {
+				background: image-url('icons/angel.png') no-repeat 0 0;
+				opacity: 0.6;
+				&:hover {
+					opacity: 1;
+					background: image-url('icons/angel.png') no-repeat 0 -26px;
+				}
+			}
+
+			table {
+				width: 100%;
+				.field {
+					width: 20%;
+					color: $gray-lt;
+					font-size: 12px;
+					font-weight: bold;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					padding: 3px 0 3px 0;
+					vertical-align: text-top;
+				}
+				.var {
+					width: 80%;
+					color: $gray;
+					font-weight: normal;
+					font-size: 13px;
+					padding: 3px 0 3px 0;
+				}
+			}
+		}
+
+	}
+	
+	.line {
+		display: block;
+		position: absolute;
+		height: 2px;
+		background: $gray-x-lt;
+		width: 100%;
+		top: 60px;
+		left: 0;
+	}
+}
+
+/******************************/
+/****** PROFILE - BOTTOM ******/
+/******************************/
+
+.profile-bottom {
+	display: block;
+	width: 96%;
+	.section-activity {
+		display: block;
+		width: 60%;
+		float: left;
+		.profile-posts {
+			padding-left: 15px;
+			#post { width: 90%;}
+		} 
+	}
+	.section-right {
+		display: block;
+		width: 35%;
+		float: right;
+		p {
+			color: $gray-med;
+			padding: 2px 10px;
+		}
+	}
+}
+
+.section-bar {
+	display: block;
+	width: 96%;
+	border-bottom: 2px solid $gray-x-lt;
+	padding-bottom: 5px;
+	margin-bottom: 25px;
+	margin-top: 30px;
+
+	font-size: 12px;
+	font-weight: bold;
+	color: $gray-lt;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+
+/***** sections ******/
+
+.profile-section {
+	display: block;
+	clear: both;
+	width: 100%;
+	margin-top: 0px;	
+
+	.header {
+		color: $gray-lt;
+		font-size: 12px;
+
+		width: 100%;
+		display: block;
+		padding-bottom: 3px;
+		border-bottom: 2px solid $gray_x_lt;
+		text-transform: uppercase;
+	}
+}
+
+.network-section {
+	display: block;
+	clear: both;
+	width: 100%;
+	.header{
+		display: block;
+		width: 95%;
+		border-bottom: 2px solid $gray-x-lt;
+		padding-bottom: 5px;
+		margin-bottom: 25px;
+
+		font-size: 12px;
+		letter-spacing: 1px;
+		font-weight: bold;
+		color: $gray-lt;
+		text-transform: uppercase;
+	}
+}
+
+/*********************/
+/****** NETWORK ******/
+/*********************/
+
+#network-user-container {
+	display: block;
+	width: 90%;
+	margin-right: 2%;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-top: 1px solid $gray-x-x-lt;
+	min-height: 80px;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+
+	&:hover { 
+		#name { color: $blue; }
+	}
+
+	#avatar {
+		display: block;
+		float: left; 
+		margin-right: 30px;
+		//border: 1px solid $gray-lt;
+		//border-radius: 60px;
+		width: 60px;
+		height: 60px;
+		overflow: hidden;
+		position: absolute;
+		top: 20px;
+		left: 15px;
+	}
+	.skills {
+		display: block;
+		width: 50%;
+		float: right;
+		margin-top: 5px;
+		margin-right: 5px;
+		.skill-tag {
+			display: block;
+			float: right;
+			margin-bottom: 6px;
+			margin-left: 12px;
+			@include tag;
+			background: $gray-lt;
+			font-size: 9px;
+			font-weight: normal;
+			&:hover { background: $gray; }
+		}
+	}
+	.info {
+		color: $gray;
+		font-size: 15px;
+
+		display: block;
+		position: absolute;
+		top: 10px;
+		left: 110px;
+		width: 50%;
+		min-width: 300px;
+
+		#name {
+			display: block;
+			float: left;
+			font-weight: normal;
+			margin-bottom: 0px;
+
+			&:hover { color: $blue; }
+		}
+		.type {
+			display: block;
+			float: left;
+			margin-top: 15px;
+			margin-left: 10px;
+			@include tag;	
+			font-size: 10px;
+		}
+		.blue {
+				background: $blue;
+			}
+		.red {
+			background: $red;
+		}
+		.teal { background: $teal; }
+		.orange { background: $orange; }
+		.bio{
+			display: block;
+			margin: 0;
+			margin-left: 2px;
+			clear: both;
+
+			font-style: italic;
+		}
+		#profile_links {
+			margin-top: 6px;
+			margin-left: -8px;
+			width: 100%;
+			min-width: 300px;
+			display: block;
+			float: left;
+			clear: both;
+			overflow: hidden;
+			.icon-muted { 
+				color: $gray-lt; 
+				padding-top: 1px;
+			}
+			span {
+				margin-left: 2px;
+			}
+		}
+	}
+}
+
+#alumni-container {
+	display: block;
+	position: relative;
+	width: 100%;
+	#alumni-search {
+		display: block;
+		position: absolute;
+		top: 0px;
+		right: 10%;
+		input[type="submit"] {
+			margin-top: -10px;
+			background: $blue;
+			&:hover { background: $blue-4; }
+		}
+	}
+}
+
+
+/*********************/
+/****** QUIZZES ******/
+/*********************/
+.quiz-section {
+	display: block;
+	position: relative;
+	width: 96%;
+	border-bottom: 1px solid $gray-x-lt;
+	padding: 10px 0 20px 0;
+	overflow: hidden;
+
+	.book_image {
+		width: 60px;
+		height: 60px;
+		display: block;
+		position: absolute;
+		top: 15px;
+		left: 0;
+		border-radius: 0px;
+		overflow: hidden;
+		margin-bottom: 15px;
+	}
+	.score-tile {
+		width: 50px;
+		height: 50px;
+		background: $blue;
+		position: absolute;
+		top: 15px;
+		left: 0;
+		border-radius: 2px;
+		overflow:hidden;
+		margin-bottom: 15px;
+
+		.score {
+			font-size: 17px;
+			font-weight: normal;
+			text-align: center;
+			vertical-align: middle;
+			color: white;
+			padding-top: 15px;
+		}
+	}
+	.title {
+		display: block;
+		margin-left: 80px;
+		margin-bottom: 8px;
+
+		font-size: 20px;
+		font-weight: normal;
+		color: $gray-dark;
+		padding-top: 7px;
+	}
+	.description {
+		display: block;
+		margin-left: 80px;
+		margin-bottom: 8px;
+
+		font-size: 15px;
+		color: $gray;
+	}
+}
+
+
+
+/*********************/
+/****** BADGES *******/
+/*********************/
+
+#badges, #current {
+	overflow: hidden;
+	height: auto;
+	padding-bottom: 30px;
+
+	.container {
+		display:block;
+		float: left;
+		margin-right: 30px;
+		cursor: pointer;
+
+
+		.box {
+			border: 1px solid $gray_x_lt;
+			background: $gray-x-lt;
+			padding: 20px 30px;
+			border-radius: 2px;	
+			position: relative;
+
+
+			img {
+				width: 130px;
+				height: 130px;
+			}
+		}
+		.title {
+			color: $gray-dark;
+			font-weight: normal;
+			padding-top: 7px;
+			padding-left: 3px;
+			font-size: 16px;
+		}
+		.date {
+			color: $gray-lt;
+			font-weight: normal;
+			padding-left: 3px;
+			font-size: 13px;
+		}
+
+		.play-button {
+			display: none;
+			opacity: 0.8;
+			width: 0;
+			height: 0;
+			border-top: 13px solid transparent;
+			border-bottom: 13px solid transparent;
+			border-left: 20px solid $gray-lt;
+
+			position: absolute;
+			top: 12px;
+			left: 15px;
+			z-index: 100;
+		}
+
+		&:hover {
+			.play-button {
+				display: block;
+			}
+			.box {
+				border: 1px solid $gray-lt;
+			}
+
+		}
+		
+	}
+}
+
+/*********************/
+/**** ASSIGNMENTS *****/
+/*********************/
+
+#assignments {
+	.section {
+		display: block;
+		position: relative;
+		width: 96%;
+		border-bottom: 1px solid $gray-x-lt;
+		padding: 15px 5px 15px 5px;
+		overflow: hidden;
+		min-height: 35px;
+
+		.icon-section {
+			display: block;
+			float:left; 
+			width: 78px;
+			.icon {
+				background-image: url("icons/assignment.png");
+				width: 53px;
+				height: 41px;
+			}
+
+		}
+		.text-section {
+			display: block;
+			float:left;
+			width: 50%;
+
+			.title {
+				font-size: 20px;
+				font-weight: normal;
+				color: $gray-dark;
+				padding-bottom: 4px;
+				padding-top: 7px;
+			}
+			.description {
+				font-size: 15px;
+				font-weight: normal;
+				color: $gray;
+				width: 100%;
+			}
+			.response {
+				display: block;
+				margin-left: 80px;
+
+				font-size: 14px;
+				color: $gray-dark;
+				font-weight: normal;
+			}
+		}
+
+
+		.button-section {
+				display: block;
+				float: left;
+				width: 30%;
+				min-width: 100px;
+
+			.download-button-blue {
+				display: block;
+				float: right;
+				text-transform: uppercase;
+				margin-top: 0px;
+				@include button-green;
+				font-size: 12px;
+				font-weight: 700;
+				margin-right: 20px;
+
+				&:hover { 
+					color: white; 
+					background: $green-hover;
+				}
+			}
+
+			.link-button-yellow {
+				display: block;
+				float: right;
+				text-transform: uppercase;
+				margin-top: 0px;
+				margin-bottom: 5px;
+				@include button-yellow;
+				font-size: 12px;
+				font-weight: 700;
+				margin-right: 20px;
+
+				&:hover { 
+					color: white; 
+					background: $yellow-hover;
+				}
+			}
+		}	
+	}
+}
+
+/*********************/
+/**** MILESTONES *****/
+/*********************/
+
+#milestones {
+	.section {
+		display: block;
+		position: relative;
+		width: 96%;
+		border-bottom: 1px solid $gray-x-lt;
+		padding: 20px 0 20px 0;
+		overflow: hidden;
+		min-height: 65px;
+
+		.icon {
+			display: block;
+			width: 60px;
+			height: 60px;
+			position: absolute;
+			top: 15px;
+			left: 0;
+		}
+		.description {
+			display: block;
+			margin-left: 80px;
+			margin-bottom: 8px;
+			width: 80%;
+
+			font-size: 20px;
+			font-weight: normal;
+			color: $gray-dark;
+		}
+		.response {
+			display: block;
+			margin-left: 80px;
+			width: 85%;
+
+			font-size: 15px;
+			color: $gray;
+			font-weight: normal;
+		}
+	}
+}
+
+.skill-tag {
+	display: block;
+	float: left;
+	margin-left: 12px;
+	margin-bottom: 6px;
+	@include tag;
+	background: $light-blue-2;
+	font-size: 11px;
+	font-weight: normal;
+	&:hover { background: $light-blue-3; }
+}
+
+
+#profile-about-table {
+ 	color: $gray;
+ 	margin-left: 15px;
+ 	max-width: 95%;
+ 	a { 
+ 		color: $gray; 
+ 		&:hover { color: $blue; }
+ 	}
+ 	td { padding: 3px; }
+ 	.icon {
+ 		width: 25px;
+ 		padding-left: 0px;
+ 		vertical-align: top;
+ 		i { color: $gray-lt; }
+ 	}
+ }

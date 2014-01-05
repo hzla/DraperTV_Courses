@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Draper University Online School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- install fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,400italic' rel='stylesheet' type='text/css'>
+  <!-- install icons -->
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <%= javascript_include_tag 'jquery', 'application' %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+  <%= yield :head %>
+  <style>
+  	body { font-family: 'proxima_nova';}
+  </style>
+</head>
+<body>
+  <!-- ***************** -->
+  <!-- **** Navbar ***** -->
+  <!-- ***************** -->
+  <% if user_signed_in? %>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+            <%= link_to '/posts' do %>
+              <div id="logo"></div>
+            <% end %>
+          <ul class="nav pull-right">
+            <!-- <div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div> -->
+            <li class="dropdown">
+              <a class="dropdown" data-toggle="dropdown" href="#">
+                <%= current_user.full_name %> <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li role="menu"><%= link_to 'View Profile', student_profile_path(current_user)  %></li>
+                <li role="menu"><%= link_to 'Edit Settings', edit_user_registration_path %></li>
+                <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container"> 
+        <div id="logo"></div>
+          <ul class="nav pull-right">
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+	<% flash.each do |type, message| %>
+		<div class="alert <%= flash_class type %>">
+			<button class="close" data-dismiss="alert">x</button>
+			<%= message %>
+		</div>
+	<% end %>
+
+  <!-- ***************** -->
+  <!-- ***** Body ****** -->
+  <!-- ***************** -->
+	
+	<% if user_signed_in? %>
+    <div style="display: block; width: 100%;">
+      <div id="loadingbar-frame"></div>
+  		<%= render 'layouts/sidenav' %>
+      <div id="main-body">
+        <%= yield %>
+      </div>
+    </div>
+	<% else %>
+    <div id="logged-out-main">
+			<%= yield %>
+    </div>
+	<% end %>
+</body>
+
+<footer>
+  <div class="container">
+    <div class="wrapper">
+      <div class="left">
+        <span>44 E 3rd Avenue</span><br>
+        <span>San Mateo, CA 94401</span><br>
+        <a href="mailto:questions@draperuniversity.com" target="_blank"><span>questions@draperuniversity.com</span></a>
+      </div>
+      <div class="right">
+        <span>© Draper University of Heroes.  All Rights Reserved.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</html>

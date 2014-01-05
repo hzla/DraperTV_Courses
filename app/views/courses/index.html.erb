@@ -1,0 +1,69 @@
+<div class="network-section">
+  <div class="header" style="margin-bottom:0px;">Current Courses</div>
+</div>
+<% if current_user.online == "admin" %>
+   <% @courses.each do |course| %>
+    <%= link_to(course_path(course)) do %>
+    <div class="course-container">
+      <div id="course-icon"><%= image_tag(course.course_icon(:badge)) %></div>
+      <div id="course-information">
+        <h1><%= course.title %></h1>
+        <div class="details">
+          <% if course.start_date %>
+            <div class="dates"><%= course.start_date.strftime("%b %e") %> - <%= course.end_date.strftime("%b %e") %></div>
+          <% end %>
+          <% if course.length %>
+            <div class="length"><%= course.length %> Hours</div>
+          <% end %>
+        </div>
+        <div id="course-description"><%= course.description %></div>
+      </div>
+      <div id="course-button">
+        <% if course.course_complete_for_user?(current_user) == true %>
+          <div class="blue">Review</div>
+        <% elsif course.progress(current_user) > 0 %>
+          <div class="yellow">Continue</div>
+        <% else %>
+          <div class="green">Start</div>
+        <% end %>
+      </div>
+      <!-- <p style="clear:both; display;block; "><%= course.progress(current_user) %>% Complete</p> -->
+    </div>
+    <% end %> 
+  <% end %>
+
+<% else %>
+
+  <% @current_courses.each do |course| %>
+  	<%= link_to(course_path(course)) do %>
+  	<div class="course-container">
+  		<div id="course-icon"><%= image_tag(course.course_icon(:badge)) %></div>
+  		<div id="course-information">
+  			<h2><%= course.title %></h2>
+        <div class="details">
+          <% if course.start_date %>
+            <div class="dates"><%= course.start_date.strftime("%b %e") %> - <%= course.end_date.strftime("%b %e") %></div>
+          <% end %>
+          <% if course.length %>
+            <div class="length"><%= course.length %> Hours</div>
+          <% end %>
+        </div>
+  			<div id="course-description"><%= course.description %></div>
+  		</div>
+      <div id="course-button">
+        <% if course.course_complete_for_user?(current_user) == true %>
+          <div class="blue">Review</div>
+        <% elsif course.progress(current_user) > 0 %>
+          <div class="yellow">Continue</div>
+        <% else %>
+          <div class="green">Start</div>
+        <% end %>
+      </div>
+      <!-- <p style="clear:both; display;block; "><%= course.progress(current_user) %>% Complete</p> -->
+  	</div>
+  	<% end %> 
+  <% end %>
+
+<% end %>
+
+

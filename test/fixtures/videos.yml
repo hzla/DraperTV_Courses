@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  vimeo_url: MyString
+  preview_url: MyString
+  order_id: 1
+  speaker_name: MyString
+  speaker_bio: MyText
+  speaker_linkedin: MyString
+  speaker_twitter: MyString
+  speaker_angel: MyString
+  category: MyString
+  slug: MyString
+
+two:
+  title: MyString
+  description: MyText
+  vimeo_url: MyString
+  preview_url: MyString
+  order_id: 1
+  speaker_name: MyString
+  speaker_bio: MyText
+  speaker_linkedin: MyString
+  speaker_twitter: MyString
+  speaker_angel: MyString
+  category: MyString
+  slug: MyString

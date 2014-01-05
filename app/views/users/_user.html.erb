@@ -1,0 +1,35 @@
+<div id="network-user-container">
+	<div id="avatar"><%= image_tag user.avatar.url(:medium) %></div>
+	<div class="info">
+		<%= link_to(student_profile_path(user)) do %>
+			<h3 id="name"><%= user.first_name %> <%= user.last_name %></h3>
+			<% if user.employment == "Freelancing" %>
+	      <div class ="type">Freelancing</div>
+	    <% elsif user.employment == "Job Hunting" %>
+	      <div class ="type teal">Job Hunting</div>
+	    <% else %>
+	    <% end %>
+			<% end %>
+		
+		<div class="bio"></div>
+
+		<div id ="profile_links">
+			<i class="fa fa-location-arrow icon-muted" style="padding-left: 0; font-size: 13px;"></i><span> <%= user.country %></span>
+		<!-- 	<i class="fa fa-leaf icon-muted" style="font-size: 12px;"></i><span> <%= user.program %></span> -->
+			<% if user.online == "boarding" %>
+				<i class="fa fa-building-o icon-muted" style="font-size: 12px;"></i><span> <%= user.program %></span>
+			<% elsif user.online == "online" %>
+				<i class="fa fa-globe icon-muted" style="font-size: 12px;"></i><span> <%= user.program %></span>
+			<% else %>
+			<i class="fa fa-flash icon-muted" style="font-size: 14px;"></i><span> <%= user.program %></span>
+			<% end %>
+		</div>
+	</div>
+	<div class="skills">
+		<% user.skills.each do |skill| %>
+		  <%= link_to skill_path(skill) do %>
+    		<div class="skill-tag"><%= skill.name %></div>
+    	<% end %>
+  	<% end %>
+	</div>
+</div>

@@ -1,0 +1,121 @@
+<ul class="breadcrumb">
+  <li><%= link_to 'Courses', courses_path %> <span class="divider">/</span></li>
+  <li><%= link_to @assignment.course.title, :back %> <span class="divider">/</span></li>
+  <li><%= @assignment.title %></li>
+</ul>
+
+<!-- split panel if speaker info available -->
+<div class="span9" id="assignment_container">
+  
+  <h1 id="assignment-show-title"><%= @assignment.title %></h1>
+
+  <% if @assignment.category == "reading" or @assignment.category == "video" or @assignment.category == "founder" %>
+  	<br/>
+  	<%= raw @video_embed %>
+  	<br /><br />
+  	<p class="video_description"><%= @assignment.description.html_safe %></p>
+    <div id="comments-bar">class discussion</div>
+    <div id="comments_container">
+      <div id="<%= @assignment.id %>">
+        <%= render "user_comments/comments" %>
+      </div>
+    </div>
+    <%= render "user_comments/addcomment" %>
+  <% elsif @assignment.category == "quiz" %>
+    <div class="quiz_description"></div>
+    <% if @assignment.survey.avaliable_for_participant?(current_user) %>
+      <%= render 'quiz' %>
+    <% else %>
+      <div class="quiz-score">
+        You scored <%= @quiz_high_score %> out of <%= @quiz_total_questions %>
+        <br />
+        <br />
+        <%= @quiz_ratio %>%
+        <br />
+        <br />
+        <!-- show quiz answers -->
+        <div class="quiz-answers">
+          <ul>
+            <% @assignment.survey.questions.each_with_index do |question, index| %>
+            <li>
+              <p><%= question.text %></p>
+              <% question.options.correct.each do |option| %>
+                  <p class="correct"><%= option.text %></p>
+              <% end %>
+              <% question.options.incorrect.each do |option| %>
+                  <p class="incorrect"><%= option.text %></p>
+              <% end %>
+           </li>
+           <% end %>
+          </ul>
+        </div> 
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if @assignment.require_upload == true %>
+    <% if @assignment.user_assignments.where(:user_id => current_user[:id]).count > 0 %>
+      <% if @user_assignment.first.text != nil %>
+        <div class="upload_show">
+          <div class="upload_complete">
+            <div class="complete"></div>
+            <div class="date">Completed: <%= @user_assignment.first.updated_at.strftime("%b %e") %></div>
+          </div>
+          <div class ="section-bar" style="margin-bottom: 10px; margin-top: 0;">Assignment Description</div>
+          <p><%= @assignment.description.html_safe %></p>
+          <div class ="section-bar" style="margin-bottom: 10px;">Response</div>
+          <p><%= @user_assignment.first.text %></p>
+          <br />
+          <% if @assignment.category == "upload" %>
+            <div class ="section-bar" style="margin-bottom: 10px; margin-top: 0;">Uploads</div>
+          <% end %>
+          <% if @user_assignment.first.link != nil %>
+            <p><%= link_to "File Link", "#{@user_assignment.first.link}", target: "_blank", :class => "link-button-yellow" %></p><br/>
+          <% end %>
+          <br />
+          <% if @user_assignment.first.upload_file_name != nil %>
+            <% if @user_assignment.first.upload_content_type == 'image/jpeg' or @user_assignment.first.upload_content_type == 'image/png' or @user_assignment.first.upload_content_type == 'image/gif' %>
+              <%= image_tag(@user_assignment.first.upload) %>
+            <% else %>
+            <%= link_to "Download File", "#{@user_assignment.first.upload}", :class => "download-button-blue" %>
+            <% end %>
+          <% end %>
+        </div>
+      <% else %>
+        <%= render 'upload' %>
+      <% end %>
+    <% end %>
+  <% end %> 
+
+</div> <!-- end span10 -->
+
+<% if @assignment.category == "video" or @assignment.category == "quiz" or @assignment.category == "reading" or @assignment.category == "founder" %>
+  <div class="span3" id="speaker_container">
+    <% if @assignment.speaker_pic and @assignment.speaker_name %>
+      <% if @assignment.category == "reading" or @assignment.category == "quiz" %>
+        <div class="header">Info</div>
+        <%= image_tag(@assignment.speaker_pic(:large), :class => "book_image") %>
+      <% else %>
+        <div class="header">Speaker Bio</div>
+        <%= image_tag(@assignment.speaker_pic(:large), :class => "image") %>
+      <% end %>
+      <div class="name"><%= @assignment.speaker_name %></div>
+      <div class="description"><%= @assignment.speaker_bio %></div>
+    <% end %>
+    <!-- speaker links -->
+    <!-- <div class="links">
+      <% if @assignment.speaker_angel %>
+        <%= link_to() do %>
+          <div class="angellist"></div>
+        <% end %>
+      <% end %>
+      <% if @assignment.speaker_twitter %>
+        <%= link_to @assignment.speaker_twitter do %>
+          <div class="twitter"></div>
+        <% end %>
+      <% end %>
+    </div> -->
+  </div>
+<% else %>
+<% end %>
+

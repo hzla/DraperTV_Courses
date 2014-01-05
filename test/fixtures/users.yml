@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+kelsey:
+  first_name: 'Kelsey'
+  last_name: 'Whelan'
+  email: 'kelsey@kelseywhelan.com'

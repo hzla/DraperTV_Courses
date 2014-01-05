@@ -1,0 +1,20 @@
+<body style="font-family: Lucida Grande, Arial; color: #666;">
+
+  <!-- ************************** -->
+  <!-- start basic info questions -->
+  <!-- ************************** -->
+
+  <div style="font-size: 14px; color: #858999; text-transform: uppercase; padding-bottom: 5px; border-bottom: 1px solid #DDD; font-weight: 700;">Feedback</div>
+
+  <p><b style="font-size: 14px; color: #333;">From:</b> <%= @user.first_name %> <%= @user.last_name %></p>
+  <p><b style="font-size: 14px; color: #333;">Email:</b> <%= @user.email %></p>
+  <p><b style="font-size: 14px; color: #333;">Class:</b> <%= @user.program %></p>
+
+  <p style="font-size: 14px; color: #333;"><b>Feedback Type: </b><br />
+  <p style="font-weight: normal;"><%= @feedback.type %></p>
+
+  <p style="font-size: 14px; color: #333;"><b>Content: </b><br /> 
+  <p style="font-weight: normal;"><%= @feedback.content %></p>
+  
+  <br />
+</body>

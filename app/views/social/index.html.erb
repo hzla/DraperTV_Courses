@@ -1,0 +1,52 @@
+<div class="network-section">
+  <div class="header">Social Media</div>
+</div>
+
+<ul class="nav nav-tabs">
+  <li><a href="#draperu" data-toggle="tab">#draperu</a></li>
+  <li><a href="#draperuonline" data-toggle="tab">#draperuonline</a></li>
+  <li><a href="#dufall" data-toggle="tab">#DUFall2013</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="draperu">
+    <% @instagram_draperu.each do |instagram| %>
+      <div id="social-container">
+        <div class="instagram-img">
+          <%= link_to instagram.link, target: "_blank" do %>
+            <%= image_tag instagram.images.low_resolution.url %>
+            <div class="username"><%= instagram.user.username %></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="tab-pane" id="draperuonline">
+    <% @instagram_draperuonline.each do |instagram| %>
+      <div id="social-container">
+        <div class="instagram-img">
+          <%= link_to instagram.link, target: "_blank" do %>
+            <%= image_tag instagram.images.low_resolution.url %>
+            <div class="username"><%= instagram.user.username %></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="tab-pane" id="dufall">
+    <% @instagram_draperfall.each do |instagram| %>
+      <div id="social-container">
+        <div class="instagram-img">
+          <%= link_to instagram.link, target: "_blank" do %>
+            <%= image_tag instagram.images.low_resolution.url %>
+            <div class="username"><%= instagram.user.username %></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+</div>

@@ -1,0 +1,27 @@
+<ul class="breadcrumb">
+  <li>Home</li>
+</ul>
+
+<div id="posts-column">
+  <h1>What's Happening?</h1><br />
+  <%= render 'form' %>
+
+
+  <div id="postsDiv">
+    <%= render @posts %>
+  </div>
+  <%= paginate @posts %>
+
+</div>
+<div id="home-right">
+   <div class="section-bar" style="margin-top: 20px;">Job Hunting</div>
+   <% @users.each do |user| %>
+    <% if user.employment == "Job Hunting" %>
+      <div class="box">
+        <div class="picture"><%= image_tag user.avatar.url(:medium) %></div>
+        <%= link_to student_profile_path(user) do %><div class="name"><%= user.full_name %></div><% end %>
+      </div>
+    <% end %>   
+  <% end %>
+</div>
+

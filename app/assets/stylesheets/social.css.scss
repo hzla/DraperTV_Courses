@@ -1,0 +1,40 @@
+// Place all the styles related to the social controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.network-section {
+  .header { margin-bottom: 10px; }
+}
+#social-container {
+  width: 96%;
+  display: block;
+  height: auto;
+  .instagram-img {
+    display: block;
+    float: left;
+    width: 23%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    position: relative;
+    .username {
+      display: block;
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+      color: white;
+      font-size: 15px;
+      font-weight: normal;
+    }
+  }
+}
+.nav-tabs {
+  width: 95%;
+  border-bottom: 2px solid #eee;
+  li {
+    font-size: 11px;
+    a {
+      padding: 8px;
+      letter-spacing: 0.8px;
+      &:hover {}
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<%= simple_form_for(@feedback) do |f| %>
+  <% if @feedback.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
+
+      <ul>
+      <% @feedback.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :type, label: "Type of Feedback", collection: ["General Feedback", "Feature Suggestion", "Bug Report"] %>
+  <%= f.input :content, label: "Your Comments", :input_html => { :rows => 5, :maxlength =>580, :style => "width: 95%;"} %><br/>
+
+  <div class="actions">
+    <%= f.submit "Send Feedback" %>
+  </div>
+<% end %>

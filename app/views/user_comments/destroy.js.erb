@@ -1,0 +1,4 @@
+$("#<%= @commentable.id %>").empty();
+$("#<%= @commentable.id  %>").append("<%=
+escape_javascript(render(:partial => 'comments')) %>");
+$("textarea#user_comment_content").val(null);

@@ -1,0 +1,8 @@
+class UserAssignment < ActiveRecord::Base
+  attr_accessible :id, :assignment_id, :text, :user_id, :upload, :link
+  has_attached_file :upload, 
+    :bucket => 'duhonline'
+  validates_attachment_size :upload, :less_than => 20.megabytes
+  belongs_to :user
+  belongs_to :assignment
+end

@@ -1,0 +1,20 @@
+<%= form_for [:assignments, @attempt] do |f| %>
+
+    <ul>
+      <% @assignment.survey.questions.each_with_index do |question, index| %>
+        <li>
+          <p><%= question.text %></p>
+         
+            <input type="hidden" name="survey_attempt[answers_attributes][<%= index %>][question_id]" value="<%= question.id %>" />
+            <% question.options.each do |option| %>
+              <div class="options">
+                <input type="radio" value="<%= option.id %>" name="survey_attempt[answers_attributes][<%= index %>][option_id]" />
+                <%= option.text %> <br />
+              </div>
+            <% end -%>
+        </li>
+      <% end -%>
+    </ul>
+
+  <%= f.submit "Submit" %>
+<% end -%>

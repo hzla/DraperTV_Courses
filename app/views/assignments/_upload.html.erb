@@ -1,0 +1,19 @@
+<p class="video_description"><%= @assignment.description %></p>
+
+<div class="edit-form" style="width: 90%;">  
+  <%= simple_form_for [@user_assignment.first], :html => { :method => :put, :multipart => true } do |f| %>
+      <%= f.input :text, label: "Response (required)", :input_html => { :rows => 8, :maxlength =>500, :style => 'width: 100%;' }, :required => true %>
+      
+      <!-- show upload only if category is upload -->
+      <% if @assignment.category == "upload" %>
+        <%= f.input :link, label: "Url Link (optional)" %>
+        <div class="field">
+            <%= f.label :upload %><br />
+            <%= f.file_field :upload %>
+        </div>
+      <% end %>
+
+      <br />
+      <%= f.submit "Submit" %>
+  <% end %>
+</div>
