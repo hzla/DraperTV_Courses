@@ -1,0 +1,15 @@
+development:
+  host: "localhost:3000"
+  access_key_id: 'AKIAJL3D4TQE6JZ6ULBQ'
+  secret_access_key: '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'
+test:
+  access_key_id: 'AKIAJL3D4TQE6JZ6ULBQ'
+  secret_access_key: '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'
+
+production:
+  access_key_id: 'AKIAJL3D4TQE6JZ6ULBQ'
+  secret_access_key: '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'
+
+staging:
+  access_key_id: 'AKIAJL3D4TQE6JZ6ULBQ'
+  secret_access_key: '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'
