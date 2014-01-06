@@ -10,7 +10,7 @@ def create
 
   customer = Stripe::Customer.create(
     # :email => @user.email,
-    :email => 'RailsUser@gmail.com',
+    :email => params[:stripeEmail],
     :card  => params[:stripeToken]
   )
 

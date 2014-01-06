@@ -10,6 +10,7 @@
 
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-image="/assets/stripe-logo.png"
             data-description="Winter Tuition 2014"
             data-amount="85000"></script>
   <% end %>
