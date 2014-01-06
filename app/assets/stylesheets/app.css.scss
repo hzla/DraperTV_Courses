@@ -2,6 +2,7 @@
 #app-title {
   font-weight: normal;
   font-size: 27px;
+  margin-bottom: 10px;
   color: $gray-dark;
 }
 #app-info {
@@ -158,6 +159,100 @@
     margin: 0 auto;
   }
 }
+
+/*********************/
+/****** LIST ******/
+/*********************/
+
+#app-list-container {
+  display: block;
+  width: 100%;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  border-bottom: 1px solid $gray-x-lt;
+  clear: both;
+  min-height: 100px;
+  height: auto;
+  overflow: auto;
+  position: relative;
+
+  .button {
+    display: block;
+    float: right;
+    margin-right: 30px;
+  }
+
+  #avatar {
+    display: block;
+    float: left; 
+    margin-right: 30px;
+    border: 1px solid $gray-lt;
+    border-radius: 60px;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    position: absolute;
+    top: 25px;
+    left: 10px;
+  }
+
+  .info {
+    color: $gray;
+    font-size: 15px;
+
+    display: block;
+    margin-left: 95px;
+    margin-top: 15px;
+    width: 80%;
+
+    #name {
+      display: block;
+      float: left;
+      font-size: 18px;
+      font-weight: normal;
+      margin-bottom: 5px;
+
+      color: $gray-dark;
+
+      &:hover { color: $blue; }
+    }
+    .timestamp {
+      display: block;
+      float: left;
+      margin-left: 10px;
+
+      color:$gray-lt;
+      font-size: 12px;
+    }
+    .type {
+      display: block;
+      float: left;
+      margin-top: 20px;
+      margin-left: 10px;
+      @include tag; 
+      font-size: 11px;
+    }
+    .link a {
+      display: block;
+      margin: 0;
+      margin-left: 2px;
+      clear: both;
+      color: $gray;
+      &:hover { color: $blue; }
+    }
+    .status {
+      display: block;
+      clear: both;
+      font-size: 13px;
+      span { margin-right: 5px; }
+    }
+    #profile_links {
+      margin-top: 3px;
+      margin-left: 0px;
+    }
+  }
+}
+
 
 /************************/
 /****** RESPONSIVE ******/

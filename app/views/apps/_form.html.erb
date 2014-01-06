@@ -1,0 +1,13 @@
+<%= simple_form_for(@app) do |f| %>
+  <label class="string optional control-label">Status</label>
+  <%= f.select :status, [nil, "Awaiting Review","Reviewing", "Accepted", "Waitlist", "Rejected"] %><br/>
+  <label class="string optional control-label">Student Response</label>
+  <%= f.select :response, [nil, "Accepted Offer","Declined Offer", "Needs Financial Help"] %><br/>
+  <%= f.input :notes, label: "Notes", :input_html => { :rows => 5, :maxlength =>580, :style => "width: 95%;"} %><br/>
+  <%= f.input :payment, label: "Payment" %>
+  <br/>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
