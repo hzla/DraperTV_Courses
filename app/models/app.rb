@@ -1,5 +1,5 @@
 class App < ActiveRecord::Base
-  attr_accessible :first, :last, :email, :phone, :exist, :business, :dob, :college, :media, :gender, :street_address, :postal_code, :state, :country, :martketing, :technical, :city, :marketing, :photo
+  attr_accessible :first, :last, :email, :phone, :exist, :business, :dob, :college, :media, :gender, :street_address, :postal_code, :state, :country, :martketing, :technical, :city, :marketing, :photo, :response, :status, :payment, :notes
   validates_presence_of :first
   has_attached_file :photo, 
     :styles => { :large => "300x300#" }, 
