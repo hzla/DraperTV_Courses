@@ -13,7 +13,7 @@
       <div class="tab-content">
         <% @apps.each do |app| %>
         <div class="tab-pane active" id="todo">
-          <% if app.status == nil || "Reviewing" %>
+          <% if app.status == nil || app.status == "Reviewing" %>
             <div id="app-list-container">
               <%= link_to edit_app_path(app.id) do %>
                 <div class="button">Edit</div>
@@ -142,11 +142,11 @@
             </div>
           <% end %>
         </div>
+
+        <% end %>
       </div>
         
-    <% end %>
-    
-  <% else%>
+  <% else %>
     Access Denied.
   <% end %>
 <% else %>
