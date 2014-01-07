@@ -58,9 +58,9 @@ end
   def create 
       @posts = Post.all(:order => 'created_at desc') 
       @post = Post.new(params[:post])
-      @post.user_id = current_user.id  
-    
-        if @post.save  
+      @post.user_id = current_user.id
+        if @post.save
+         track_activity @post  
          respond_to do |format|
             format.js { redirect_to :back }
             #format.html # new.html.erb
@@ -79,6 +79,7 @@ end
     @post = Post.find(params[:id])
 
     respond_to do |format|
+      track_activity @post  
       if @post.update_attributes(params[:post])
         format.html #{ redirect_to @post, notice: 'Post was successfully updated.' }
         format.js #{ head :no_content }
@@ -94,7 +95,6 @@ end
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-
     respond_to do |format|
       format.html { redirect_to posts_url }
       #format.js { head :no_content }

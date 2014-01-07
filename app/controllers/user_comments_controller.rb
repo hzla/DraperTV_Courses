@@ -28,6 +28,7 @@ class UserCommentsController < ApplicationController
     #@commentable.user_comments.create(:user_id => current_user[:id])
 
     if @comment.save
+      track_activity @comment  
       #refresh_dom_with_partial('div#comments_container', 'comments')
       respond_to do |format|
         format.js { @comments = @commentable.user_comments.order(:created_at) }

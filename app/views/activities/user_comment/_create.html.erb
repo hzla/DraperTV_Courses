@@ -1,0 +1,42 @@
+<% if user_comment %>
+<%  post = Post.find_by_id(user_comment.commentable_id)  %>
+<% if User.where(:id => user_comment.user_id).exists? %>
+  <div id="post">
+    <% @user = User.find_by_id(user_comment.user_id) %>
+    <% if @user.avatar != nil %>
+      <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
+    <% end %>
+    <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
+    <div class="timestamp"><%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+
+    <% if post.file_file_name == nil %>
+      <div class="content">
+      	 commented on 
+      	<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %>
+      	</div>
+    <% else %>
+      <div class="content">
+      	commented on
+		<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %></div>
+      <div class="image"><%= image_tag post.file.url(:preview) %></div>
+    <% end %>
+
+    <% if current_user.id == post.user_id %>
+      <%= link_to [post], :confirm => 'Are you sure you want to remove this post? This cannot be undone.', :action => "destroy", :method => :delete do %>
+        <div class="delete-post"></div>
+      <% end %>
+    <% else %>
+    <% end %>
+
+  </div>
+  <% end %>
+  		
+<% else %>
+  added a comment which has since been removed
+<% end %>
+
+
+
+<%-# What's happening here ?
+#a) user_comment is used Because the activity presenter find comment through User 
+#b) since we want the Post not the comment, we use user_comment id to find the Post. -%>
