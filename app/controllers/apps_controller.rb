@@ -1,6 +1,7 @@
 class AppsController < ApplicationController
   def index
     @apps = App.all 
+    @apps.sort! { |a, b| a.created_at <=> b.created_at }
   end
   
   def new

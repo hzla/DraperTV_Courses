@@ -7,7 +7,7 @@
     <div class="course-container">
       <div id="course-icon"><%= image_tag(course.course_icon(:badge)) %></div>
       <div id="course-information">
-        <h1><%= course.title %></h1>
+        <h2><%= course.title %></h2>
         <div class="details">
           <% if course.start_date %>
             <div class="dates"><%= course.start_date.strftime("%b %e") %> - <%= course.end_date.strftime("%b %e") %></div>
@@ -32,7 +32,7 @@
     <% end %> 
   <% end %>
 
-<% else %>
+<% elsif current_user.online == "Winter 2014" %>
 
   <% @current_courses.each do |course| %>
   	<%= link_to(course_path(course)) do %>
@@ -63,6 +63,9 @@
   	</div>
   	<% end %> 
   <% end %>
+
+  <% else %>
+  Sorry, you don't have access to this page.
 
 <% end %>
 

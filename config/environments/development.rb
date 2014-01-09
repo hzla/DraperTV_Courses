@@ -42,7 +42,7 @@ OnlineSchool::Application.configure do
     :user_name => "kelsey@draperuniversity.com",
     :password  => "Obkt24llZPmqmo6sZqO5ag", # SMTP password is any valid API key
     :authentication => 'login', # Mandrill supports 'plain' or 'login'
-    :domain => 'draperuniversity.com', # your domain to identify your server when connecting
+    :domain => 'localhost:3000', # your domain to identify your server when connecting
   }
   # config.action_mailer.delivery_method = :smtp
   #     ActionMailer::Base.smtp_settings = {
