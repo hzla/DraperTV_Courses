@@ -28,13 +28,14 @@
 }
 .nav-tabs {
   width: 95%;
-  border-bottom: 2px solid #eee;
+  border-bottom: 1px solid #eee;
   li {
     font-size: 11px;
+    &:hover { color: $gray-med; }
     a {
-      padding: 8px;
-      letter-spacing: 0.8px;
-      &:hover {}
+      padding: 8px 12px;
+      letter-spacing: 1px;
+      &:hover { color: $gray-med; }
     }
   }
 }

@@ -68,7 +68,7 @@
         <td><%= link_to "mailto:#{@user.email}", :target => "blank" do %><%= @user.email %><% end %></td>
       </tr>
     </table>
-    
+
     <div class="section-bar">Badges</div>
     <div id="badges">
       <% @user.badges.each do |badge| %>
@@ -262,7 +262,7 @@
 
         <% @assignments.each do |assignment| %>
           <% if assignment.category == "milestone" %>
-            <% if assignment.complete_for_user?(current_user) == true %>
+            <% if assignment.complete_for_user?(@user) == true %>
               <% @commentable = assignment
                  @comments = @commentable.user_comments.order(:created_at)
                  @comment = UserComment.new %>

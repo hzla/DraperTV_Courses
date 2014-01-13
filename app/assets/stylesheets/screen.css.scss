@@ -847,7 +847,7 @@ select:focus {
 /*********************/
 
 .nav-tabs {
-	border-bottom: 1px solid $gray-x-lt;
+	border-bottom: none;
 	text-transform: uppercase;
 	color: $gray-x-lt;
 	font-size: 13px;	
@@ -861,7 +861,7 @@ select:focus {
 			&:hover {
 				background: none;
 				border: none;
-				border-bottom: 2px solid $blue;
+				color: $gray-med;
 			}
 		}
 	}
@@ -869,16 +869,19 @@ select:focus {
 	.active {
 		background: none;
 		border: none;
-		border-bottom: 2px solid $blue;
+		border-bottom: 2px solid white;
+		border-left: 1px solid $gray-x-lt;
+	  border-top: 1px solid $gray-x-lt;
+	  border-right: 1px solid $gray-x-lt;
 		font-weight: 700;
 
 		a { 
-			color: $gray; 
+			color: $gray-med;
 
 			&:hover { 
-				color: $gray; 
 				border: none;
 				background: none;
+				color: $gray-med;
 			}
 			&:focus { 
 				background: none; 
@@ -887,7 +890,7 @@ select:focus {
 	}
 
 	.nav-tabs {
-		border-bottom: 2px solid $gray-x-lt;
+		border-bottom: 1px solid $gray-x-lt;
 		color: $gray-lt;
 		&:hover {
 			border-radius: 0;
