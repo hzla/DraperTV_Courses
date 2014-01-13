@@ -39,34 +39,70 @@
 <div class="profile-bottom">
   
   <div class="section-right">
+
     <div class="section-bar">Bio</div>
     <p><%= @user.bio %></p>
     <table id="profile-about-table">
-        <tr>
-          <% if @user.online == "boarding" %>
-            <td class="icon"><i class="fa fa-building-o icon-muted" style="font-size: 12px;"></i></td>
-            <td><span> <%= @user.program %></span></td>
-          <% elsif @user.online == "online" %>
-            <td class="icon"><i class="fa fa-globe icon-muted" style="font-size: 12px;"></i></td>
-            <td><span> <%= @user.program %></span></td>
-          <% else %>
-            <td class="icon"><i class="fa fa-flash icon-muted" style="font-size: 14px;"></i></td>
-            <td><span> <%= @user.program %></span></td>
-          <% end %>
-        </tr>
-         <tr>
-          <td class="icon"><i class="fa fa-trophy"></i></td>
-          <td><%= @user.team %></td>
-        </tr>
-        <tr>
-          <td class="icon"><i class="fa fa-location-arrow"></i></td>
-          <td><%= @user.country %></td>
-        </tr>
-        <tr>
-          <td class="icon"><i class="fa fa-envelope-o"></i></td>
-          <td><%= link_to "mailto:#{@user.email}", :target => "blank" do %><%= @user.email %><% end %></td>
-        </tr>
-      </table>
+      <tr>
+        <% if @user.online == "boarding" %>
+          <td class="icon"><i class="fa fa-building-o icon-muted" style="font-size: 12px;"></i></td>
+          <td><span> <%= @user.program %></span></td>
+        <% elsif @user.online == "online" %>
+          <td class="icon"><i class="fa fa-globe icon-muted" style="font-size: 12px;"></i></td>
+          <td><span> <%= @user.program %></span></td>
+        <% else %>
+          <td class="icon"><i class="fa fa-flash icon-muted" style="font-size: 14px;"></i></td>
+          <td><span> <%= @user.program %></span></td>
+        <% end %>
+      </tr>
+       <tr>
+        <td class="icon"><i class="fa fa-trophy"></i></td>
+        <td><%= @user.team %></td>
+      </tr>
+      <tr>
+        <td class="icon"><i class="fa fa-location-arrow"></i></td>
+        <td><%= @user.country %></td>
+      </tr>
+      <tr>
+        <td class="icon"><i class="fa fa-envelope-o"></i></td>
+        <td><%= link_to "mailto:#{@user.email}", :target => "blank" do %><%= @user.email %><% end %></td>
+      </tr>
+    </table>
+    
+    <div class="section-bar">Badges</div>
+    <div id="badges">
+      <% @user.badges.each do |badge| %>
+        <% if badge.course_id %>
+          <% @course = Course.find_by_id(badge.course_id) %>
+            <%= link_to(course_path(@course)) do %>
+              <div class="container">
+                <div class="box">
+                 <%= image_tag(@course.course_icon(:large)) %>
+                </div>
+                <!-- <div class="title">
+                  <%= @course.title %>
+                </div>
+                <div class="date">
+                  <%= badge.created_at.to_date.to_formatted_s( :long_ordinal ) %>
+                </div> -->
+              </div>
+            <% end %>
+        <% else %>
+         <div class="container">
+            <div class="box">
+             <%= image_tag(badge.icon) %>
+            </div>
+            <div class="title">
+              <%= badge.name %>
+            </div>
+            <div class="date">
+              <%= badge.created_at.to_date.to_formatted_s( :long_ordinal ) %>
+            </div>
+         </div>
+        <% end %>
+      <% end %>
+    </div>
+    
     <div class="section-bar">Superhero Skills</div>
     <% @user.skills.each do |skill| %>
       <%= link_to skill_path(skill) do %>
@@ -85,7 +121,7 @@
       <li><a href="#tab-assignments" data-toggle="tab">Assignments</a></li>
       <li><a href="#tab-milestones" data-toggle="tab">Milestones</a></li>
       <li><a href="#tab-quizzes" data-toggle="tab">Quizzes</a></li>
-      <li><a href="#tab-badges" data-toggle="tab">Badges</a></li>
+      <!-- <li><a href="#tab-badges" data-toggle="tab">Badges</a></li> -->
       <!-- <li><a href="#tab-ip" data-toggle="tab">In Progress</a></li> -->
     </ul>
 
@@ -189,6 +225,7 @@
                  @comment = UserComment.new %>
                 <div id="assignments">
                   <div class="section">
+                    <div class="icon"><%= image_tag(assignment.course.course_icon) %></div>
                     <!-- <div class="icon-section"><div class="icon"></div></div> -->
                   <div class="text-section">
                     <div class="title"><%= assignment.title %></div>

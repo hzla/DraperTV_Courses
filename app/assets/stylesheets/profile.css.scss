@@ -503,27 +503,27 @@
 #badges, #current {
 	overflow: hidden;
 	height: auto;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
 
 	.container {
 		display:block;
 		float: left;
-		margin-right: 30px;
-		margin-bottom: 30px;
+		margin-right:8px;
+		margin-bottom: 12px;
 		cursor: pointer;
 
 
 		.box {
 			border: 1px solid $gray_x_lt;
-			background: $gray-x-lt;
-			padding: 10px 20px;
+			background: $gray-x-x-lt;
+			padding: 5px 7px;
 			border-radius: 2px;	
 			position: relative;
 
 
 			img {
-				width: 120px;
-				height: 120px;
+				width: 70px;
+				height: 70px;
 			}
 		}
 		.title {
@@ -577,7 +577,7 @@
 	position: relative;
 	width: 96%;
 	border-bottom: 1px solid $gray-x-lt;
-	padding: 0px 5px 25px 5px;
+	padding: 0px 5px 25px 0px;
 	margin-bottom: 15px;
 	overflow: hidden;
 	.section {
@@ -585,30 +585,40 @@
 		position: relative;
 		overflow: hidden;
 		min-height: 35px;
-		padding-left: 15px;
+		padding-left: 5px;
 
-		.icon-section {
-			display: none;
-			float:left; 
-			width: 78px;
-			.icon {
-				background-image: url("icons/assignment.png");
-				width: 53px;
-				height: 41px;
-			}
-
+		.icon {
+			display: block;
+			width: 60px;
+			height: 60px;
+			position: absolute;
+			top: 5px;
+			left: 0;
 		}
+
+		// .icon-section {
+		// 	display: none;
+		// 	float:left; 
+		// 	width: 78px;
+		// 	.icon {
+		// 		background-image: url("icons/assignment.png");
+		// 		width: 53px;
+		// 		height: 41px;
+		// 	}
+
+		// }
 		.text-section {
 			display: block;
 			float: left;
-			width: 100%;
-			padding-top: 0px;
+			width: calc(100% - 80px);
+			margin-left: 75px;
+			padding-top: 5px;
 
 			.title {
 				font-size: 18px;
 				font-weight: normal;
 				color: $gray-dark;
-				padding-bottom: 4px;
+				padding-bottom: 6px;
 				padding-top: 7px;
 			}
 			.description {
@@ -630,7 +640,8 @@
 
 		.button-section {
 				display: block;
-				width: 100%;
+				width: calc(100% - 80px);
+				margin-left: 80px;
 				min-width: 100px;
 
 			.download-button-blue {
@@ -676,7 +687,7 @@
 	  position: relative;
 	  padding: 10px 0;
 	  margin-top: 20px;
-	  margin-left: 10px;
+	  margin-left: 80px;
 	  .picture {
 	    width: 30px;
 	    height: 30px;
@@ -743,7 +754,8 @@
 		position: relative;
 		width: 96%;
 		border-bottom: 1px solid $gray-x-lt;
-		padding: 20px 0 20px 0;
+		padding: 10px 0 20px 0;
+		margin-bottom: 20px;
 		overflow: hidden;
 		min-height: 65px;
 
@@ -752,7 +764,7 @@
 			width: 60px;
 			height: 60px;
 			position: absolute;
-			top: 15px;
+			top: 5px;
 			left: 0;
 		}
 		.description {
