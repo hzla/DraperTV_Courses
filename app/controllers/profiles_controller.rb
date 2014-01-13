@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_filter :authenticate_user!
-  #load_and_authorize_resource
+  #load_and_authorize_resource :find_by => :slug
 
   def show
   	@user = current_user
@@ -21,8 +21,10 @@ class ProfilesController < ApplicationController
     @user = User.find(params[:id])
     @courses = Course.all
     @assignments = Assignment.all
+    #@assignment = Assignment.find(params[:id])
     @user_assignments = UserAssignment.all
     @posts = Post.where(:user_id => @user.id).order('created_at desc')
+    
   
     if @user
       render action: :profile

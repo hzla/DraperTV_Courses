@@ -76,6 +76,7 @@
           <% if @user_assignment.first.upload_file_name != nil %>
             <% if @user_assignment.first.upload_content_type == 'image/jpeg' or @user_assignment.first.upload_content_type == 'image/png' or @user_assignment.first.upload_content_type == 'image/gif' %>
               <%= image_tag(@user_assignment.first.upload) %>
+            <% elsif @user_assignment.first.upload_content_type == '' %>
             <% else %>
             <%= link_to "Download File", "#{@user_assignment.first.upload}", :class => "download-button-blue" %>
             <% end %>

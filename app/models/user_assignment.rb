@@ -5,4 +5,5 @@ class UserAssignment < ActiveRecord::Base
   validates_attachment_size :upload, :less_than => 20.megabytes
   belongs_to :user
   belongs_to :assignment
+  has_many :user_comments, as: :commentable
 end

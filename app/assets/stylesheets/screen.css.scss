@@ -849,8 +849,8 @@ select:focus {
 .nav-tabs {
 	border-bottom: 1px solid $gray-x-lt;
 	text-transform: uppercase;
-	color: $gray-lt;
-	font-size: 12px;	
+	color: $gray-x-lt;
+	font-size: 13px;	
 	font-weight: 700;
 
 	li {
@@ -888,6 +888,7 @@ select:focus {
 
 	.nav-tabs {
 		border-bottom: 2px solid $gray-x-lt;
+		color: $gray-lt;
 		&:hover {
 			border-radius: 0;
 			background: none;
