@@ -5,7 +5,7 @@ OnlineSchool::Application.routes.draw do
 
   #root :to => 'profiles#show'
   root :to => 'home#index'
-
+  resources :messages
   resources :apps
   get 'apply', to: 'apps#new'
 

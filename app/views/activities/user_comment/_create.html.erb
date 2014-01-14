@@ -1,40 +1,53 @@
-<% if user_comment %>
-<%  post = Post.find_by_id(user_comment.commentable_id)  %>
-<% if User.where(:id => user_comment.user_id).exists? %>
-  <div id="post">
-    <% @user = User.find_by_id(user_comment.user_id) %>
-    <% if @user.avatar != nil %>
-      <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
-    <% end %>
-    <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
-    <div class="timestamp"><%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
 
-    <% if post.file_file_name == nil %>
-      <div class="content">
-      	 commented on 
-      	<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %>
-      	</div>
-    <% else %>
-      <div class="content">
-      	commented on
-		<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %></div>
-      <div class="image"><%= image_tag post.file.url(:preview) %></div>
-    <% end %>
 
-    <% if current_user.id == post.user_id %>
-      <%= link_to [post], :confirm => 'Are you sure you want to remove this post? This cannot be undone.', :action => "destroy", :method => :delete do %>
-        <div class="delete-post"></div>
+  <%  commentableIDs = []  
+    @comments = UserComment.all
+  %>
+
+  <% @comments.each do |com| %>
+    <% if com.user_id ==  current_user.id %>
+    <%    commentableIDs << com.commentable_id %>
+  <%  end %>
+<%  end %>
+
+
+
+  <% if commentableIDs.include? user_comment.commentable_id %>
+  <%  post = Post.find_by_id(user_comment.commentable_id)  %>
+  <% if User.where(:id => user_comment.user_id).exists? %>
+      
+      <script type="text/javascript">
+      // $("#Notification").removeClass("btn btn-primary");
+      // $("#Notification").addClass("btn btn-success");      
+      </script>  
+    <div id="post">
+      <% @user = User.find_by_id(user_comment.user_id) %>
+      <% if @user.avatar != nil %>
+        <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
       <% end %>
-    <% else %>
+      <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
+      <div class="timestamp"><%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+
+      <% if post.file_file_name == nil %>
+        <div class="content">
+        	 commented on 
+        	<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %>
+        	</div>
+      <% else %>
+        <div class="content">
+        	commented on
+  		<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %></div>
+        <div class="image"><%= image_tag post.file.url(:preview) %></div>
+      <% end %>
+
+      
+
+    </div>
     <% end %>
 
-  </div>
+    		
+  <% else %>
   <% end %>
-  		
-<% else %>
-  added a comment which has since been removed
-<% end %>
-
 
 
 <%-# What's happening here ?

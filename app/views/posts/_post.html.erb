@@ -25,10 +25,10 @@
       <% end %>
     <% else %>
     <% end %>
-
     <div id="comments_container">
       <div id="<%= post.id %>">
         <%= render "user_comments/comments" %>
+        
       </div>
       <div id="submit-<%= post.id %>">
         <%= render "user_comments/addcomment" %>

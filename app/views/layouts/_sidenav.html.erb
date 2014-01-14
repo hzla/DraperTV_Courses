@@ -45,7 +45,45 @@
 			</div>
 		<% end %>
 	</div>
+  		
+	<button id="Notification" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">
+    Notification
+    </button>
+     
+    <div id="demo" class="collapse in"> 
+	    <div id="notify" class="section-link">  
+
+	    </div>
+  		        	
+    </div>
+
+		<script type="text/javascript">
+
+	   		$('#demo').collapse({
+	        toggle: true
+		    })
+		    
+		    $("#Notification").click( function()
+		    {
+		        $("#Notification").removeClass("btn btn-success");
+		        $('#Notification').addClass("btn btn-primary");
+		    } );
+
+	
+
+			
+		</script>
+
+
+
+		<div class="section-link">
+		      <%= subscribe_to "/layouts/#{current_user.id}" %>
+		      <%= subscribe_to "/layouts/comments" %>
+
+		</div>  
+
 
 </div>
+
 
 

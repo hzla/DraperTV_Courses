@@ -19,12 +19,8 @@
       <div class="image"><%= image_tag post.file.url(:preview) %></div>
     <% end %>
 
-    <% if current_user.id == post.user_id %>
-      <%= link_to [post], :confirm => 'Are you sure you want to remove this post? This cannot be undone.', :action => "destroy", :method => :delete do %>
-        <div class="delete-post"></div>
-      <% end %>
-    <% else %>
-    <% end %>
+    
+    
 
   </div>
   <% end %>

@@ -20,9 +20,19 @@
 //= require chosen
 //= require home
 //= require_tree .
+//= require private_pub
 //= require nprogress-turbolinks
 
 NProgress.configure
   showSpinner: false
   ease: 'ease'
   speed: 500
+
+
+function contains(arr, value) {
+    var i = arr.length;
+    while (i--) {
+        if (arr[i] === value) return true;
+    }
+    return false;
+}

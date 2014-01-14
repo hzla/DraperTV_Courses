@@ -5,6 +5,9 @@ class PostsController < ApplicationController
 def load
   @posts = Post.all(:order => 'created_at desc')
   @post = Post.new
+  @messages = Message.all
+  @message = Message.new
+  @activities =  Activity.all
 
 end
 
