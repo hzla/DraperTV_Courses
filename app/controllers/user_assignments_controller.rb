@@ -1,8 +1,12 @@
 class UserAssignmentsController < ApplicationController
   before_filter :authenticate_user!
+  load_and_authorize_resource
   
   def show
     @user_assignment = UserAssignment.find(params[:id])
+    @commentable = @user_assignment
+    @comments = @commentable.user_comments.order(:created_at)
+    @comment = UserComment.new
 
      respond_to do |format|
       format.html # show.html.erb

@@ -33,6 +33,7 @@ gem 'analytics-ruby', '<1.0'
 gem 'newrelic_rpm'
 gem 'customerio', :git => 'https://github.com/customerio/customerio-ruby'
 gem 'mandrill-api'
+#gem 'mandrill-rails'
 gem "mailchimp-api", "~> 2.0.4"
 
 # Gems used only for assets and not required

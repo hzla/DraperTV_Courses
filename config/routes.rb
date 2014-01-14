@@ -56,7 +56,7 @@ OnlineSchool::Application.routes.draw do
   resources :contests
   resources :courses
   resources :feedbacks
-  get 'feedback', to: 'feedbacks#index'
+  get 'feedback', to: 'feedbacks#index', as: :feedbacks
 
 
   resources :user_assignments do

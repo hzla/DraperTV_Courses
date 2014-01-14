@@ -1,12 +1,17 @@
-<%= form_tag charges_path do %>
-  <article>
-    <label class="amount">
-      <span>Amount: $850.00</span>
-    </label>
-  </article>
+<div style="width: 90%; display: block; margin: 0 auto; margin-top: 60px; text-align: center; color: #919191;">
+  <h1 style="color: #414141;">Hello, future Hero!</h1>
+  <p style="padding-top: 20px; padding-bottom: 20px; font-size: 14px; max-width: 450px; margin: 0 auto;">You're one step closer to becoming a Draper University superhero!  Tuition for the seven-week Winter session is $850, which will include all of your required reading for the program.  If you have any questions about the payment process, please contact Charles at Charles@draperuniversity.com</p>
+  <%= form_tag charges_path do %>
+    <article>
+      <label class="amount">
+        <span style="margin-bottom: 20px; font-style: italic; display: block;">Amount: $850.00</span>
+      </label>
+    </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="85000"></script>
-<% end %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-image="/assets/stripe-logo.png"
+            data-description="Winter Tuition 2014"
+            data-amount="85000"></script>
+  <% end %>
+</div>

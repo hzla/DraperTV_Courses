@@ -7,6 +7,11 @@ class UserRegistered < ActionMailer::Base
   mail( :to => user.email, :subject => "Registered")
   end
 
+  def test_mandrill()
+    mail( :to => "kelsey@draperuniversity.com", :subject => "Registered")
+  end
+
+
   # def application_confirmation(app, file = nil)
   #   @app = app
 

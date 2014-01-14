@@ -16,6 +16,21 @@
   <style>
   	body { font-family: 'proxima_nova';}
   </style>
+  <!-- google tracking -->
+  <script type="text/javascript">
+    var fb_param = {};
+    fb_param.pixel_id = '6009982432893';
+    fb_param.value = '0.00';
+    fb_param.currency = 'USD';
+    (function(){
+      var fpw = document.createElement('script');
+      fpw.async = true;
+      fpw.src = '//connect.facebook.net/en_US/fp.js';
+      var ref = document.getElementsByTagName('script')[0];
+      ref.parentNode.insertBefore(fpw, ref);
+    })();
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6009982432893&amp;value=0&amp;currency=USD" /></noscript>
 </head>
 <body>
   <!-- ***************** -->
@@ -48,8 +63,12 @@
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container"> 
-        <div id="logo"></div>
+          <%= link_to '/' do %>
+            <div id="logo"></div>
+          <% end %>
           <ul class="nav pull-right">
+            <li id="home_link"><%= link_to "Apply", '/apply' %></li>
+            <li id="home_link"><%= link_to "Log In", login_path %></li>
           </ul>
         </div>
       </div>
