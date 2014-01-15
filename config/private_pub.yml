@@ -5,11 +5,11 @@ test:
   server: "http://localhost:9292/faye"
   secret_token: "secret"
 production:
-  server: "http://staging-duh-online.herokuapp.com/faye"
+  server: "http://ancient-fjord-6459.herokuapp.com/faye"
   secret_token: "8df9b7e98e7027b76b1a6af992c6032a9ef982a2cf164a68dd9fddc7d17d8cfd"
   signature_expiration: 86400 # one day
 
 staging:
-  server: "http://staging-duh-online.herokuapp.com/faye"
+  server: "http://ancient-fjord-6459.herokuapp.com/faye"
   secret_token: "8df9b7e98e7027b76b1a6af992c6032a9ef982a2cf164a68dd9fddc7d17d8cfd"
   signature_expiration: 86400 # one day
