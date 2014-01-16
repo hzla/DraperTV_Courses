@@ -45,17 +45,19 @@
 			</div>
 		<% end %>
 	</div>
-  		
+  	<br>
+	<br>
 	<button id="Notification" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">
     Notification
     </button>
-     
     <div id="demo" class="collapse in"> 
 	    <div id="notify" class="section-link">  
 
 	    </div>
   		        	
     </div>
+    <%= link_to "", activities_path, :data => { :'class' => 'displayLink' }, :remote => true %>
+
 
 		<script type="text/javascript">
 
@@ -67,9 +69,15 @@
 		    {
 		        $("#Notification").removeClass("btn btn-success");
 		        $('#Notification').addClass("btn btn-primary");
+		        $('a[data\-class="displayLink"]').click();
 		    } );
 
-	
+			
+
+			
+			$( document ).ready(function() {
+				$('a[data\-class="displayLink"]').click();
+			});
 
 			
 		</script>

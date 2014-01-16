@@ -1,0 +1,2 @@
+$('#notify').empty();
+$('#notify').append('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');

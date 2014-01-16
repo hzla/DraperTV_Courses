@@ -1,6 +1,5 @@
 OnlineSchool::Application.routes.draw do
   
-  resources :activities
 
 
   #root :to => 'profiles#show'
@@ -78,6 +77,7 @@ OnlineSchool::Application.routes.draw do
     resources :user_assignments
   end
 
+  resources :activities
 
   post '/assignments/:id/quiz_save_attempt', to: 'assignments#quiz_save_attempt', as: :assignments_survey_attempts
 
