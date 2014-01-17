@@ -10,19 +10,22 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require jquery.infinitescroll
-//= require jquery.autosize
-//= require underscore
-//= require gmaps/google
-//= require chosen
-//= require home
-//= require_tree .
-//= require nprogress-turbolinks
+// = require jquery
+// = require jquery.turbolinks
+// = require jquery-ui
+// = require nprogress-turbolinks
+// = require jquery_ujs
+// = require jquery.infinitescroll
+// = require jquery.autosize
+// = require underscore
+// = require gmaps/google
+// = require chosen
+// = require home
+// = require_tree .
+// = require jquery.sidr.min.js
+// = require turbolinks
 
-NProgress.configure
-  showSpinner: false
-  ease: 'ease'
-  speed: 500
+window.onLoad = function(callback) {
+  $(document).ready(callback);
+  $(document).on('page:load', callback);
+};

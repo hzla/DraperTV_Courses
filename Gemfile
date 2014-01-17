@@ -9,6 +9,7 @@ gem 'rails', '3.2.12'
 # gem 'sqlite3'
 gem 'pg'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'nprogress-rails'
 
 gem 'devise'
@@ -52,6 +53,7 @@ group :assets do
 end
 
 gem 'jquery-rails', "2.3.0"
+gem 'jquery-ui-rails'
 
 # Amazon S3 Storage for media files
 gem 'aws-sdk', '~> 1.5.7'

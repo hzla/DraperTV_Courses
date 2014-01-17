@@ -64,14 +64,19 @@ input[type="submit"] {
 /*********************/
 
 #logo { 
-  background-image: image-url('logo.png'); 
+  background-image: image-url('logo-white.png'); 
   background-repeat: no-repeat;
   display: block;
-  width: 46px;
-  height:49px;
+  width: 30px;
+  height:30px;
   overflow: none;
-  float: left;
-  margin-left:15px;
+  // margin-left:15px;
+  // margin-top: 4px;
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+  top: 12px;
+
 }
 #logged-out-logo { 
   background-image: image-url('logo-with-text.png'); 
@@ -89,10 +94,10 @@ input[type="submit"] {
 	width: 30px;
 	height:30px;
 	overflow: hidden;
-	border: 1px solid $gray-lt;
+	//border: 1px solid $gray-lt;
 	display: block;
 	float: left;
-	margin-top: 3px;
+	margin-top: 6px;
 	@include navbar-radius;
 }
 .navbar .nav > li >a {
@@ -129,6 +134,53 @@ input[type="submit"] {
 /*********************/
 /****** COURSES ******/
 /*********************/
+
+.course-tile {
+	display: block;
+	float: left;
+	//margin-right: 30px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	//width: 240px;
+	//height: 300px;
+	width: 22%;
+	height: 280px;
+	margin-right:3%;
+	overflow: hidden;
+	position: relative;
+	border-bottom-right-radius: 8px;
+	border-top-right-radius: 8px;
+	background-size: cover;
+	.information {
+		display: block;
+		background: white;
+		background-color:rgba(255,255,255,0.95);
+		width: 80%;
+		margin: 0 auto;
+		margin-top: 25px;
+		padding: 20px 10px 10px 10px; 
+		.title {
+			font-weight: 300;
+			font-size: 26px;
+			line-height: 1.3;
+		}
+		.description {
+			font-weight: 300;
+			font-size: 14px;
+			color: $gray-med;
+			line-height: 1.3;
+			padding-top: 10px;
+			max-height: 75px;
+			overflow: hidden;
+		}
+	}
+	.progress {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		.bar { background-color: $teal; }
+	}
+}
 
 .course-container {
 	padding: 30px;
@@ -253,46 +305,7 @@ input[type="submit"] {
 		margin-bottom: 30px;
 	}
 
-	#intro-video {
-		display: block;
-		width: 50%;
-		min-width: 350px;
-		height: auto;
-		float: left;
-		margin-right: 4%;
-		margin-bottom: 20px;
-		position: relative;
-		overflow: hidden;
-		opacity: 0.9;
-
-		.play-intro {
-			opacity: 0.8;
-			width: 0;
-			height: 0;
-			border-top: 25px solid transparent;
-			border-bottom: 25px solid transparent;
-			border-left: 45px solid white;
-
-			position: absolute;
-			bottom: 20px;
-			left: 28px;
-			z-index: 100;
-		}
-
-		&:hover {
-			opacity: 1;
-
-			.play-intro {
-				opacity: 1;
-				-webkit-transform:scale(1.3, 1.3);
-				-moz-transform:scale(1.3, 1.3);
-				-o-transform:scale(1.3, 1.3);
-				-ms-transform:scale(1.3, 1.3);
-				transform:scale(1.3, 1.3);
-				}
-			}
-
-	}
+	
 
 	.inner {
 		display: block;
@@ -329,14 +342,7 @@ input[type="submit"] {
 		padding-left: 2px;
 	}
 
-	.title {
-		padding-top: 10px;
-		padding-bottom: 5px;
-		border-bottom: 2px solid $gray-x-lt;
-		margin-bottom: 8px;
-		font-weight: 500;
-		font-size: 32px;
-	}
+	
 }
 
 .progress-span {
@@ -904,9 +910,10 @@ select:focus {
 /**********************/
 
 .event-calendar {
-	width: 90%;
+	width: 95%;
 	position: relative;
-	h2 { font-size: 2em; }
+	margin: 0 auto;
+	h2 { font-size: 2em; font-weight: 300; }
 	.top-right {
 		position: absolute;
 		top: -10px;
@@ -916,6 +923,7 @@ select:focus {
 	a.previous-month { margin-right: 10px; }
 	.table-bordered  {
 		margin-top: 20px;
+		border-radius: 0;
 		tr { width: 100%; }
 		th {
 			text-transform: uppercase;

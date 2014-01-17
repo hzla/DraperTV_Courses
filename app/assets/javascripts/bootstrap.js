@@ -23,6 +23,8 @@ $(document).on("click", "#badgeVideoModal", function () {
      //alert(course);
 });
 
+//$('#menu-toggle').sidr();
+
 
 
 

@@ -1,10 +1,13 @@
+<ul class="breadcrumb">
+    <li>Courses</li>
+  </ul>
 <div class="network-section">
-  <div class="header" style="margin-bottom:0px;">Current Courses</div>
+  <h1 style="font-size: 34px; font-weight: 300;">Courses</h1><br />
 </div>
 <% if current_user.online == "admin" %>
    <% @courses.each do |course| %>
     <%= link_to(course_path(course)) do %>
-    <div class="course-container">
+    <!-- <div class="course-container">
       <div id="course-icon"><%= image_tag(course.course_icon(:badge)) %></div>
       <div id="course-information">
         <h2><%= course.title %></h2>
@@ -27,7 +30,18 @@
           <div class="green">Start</div>
         <% end %>
       </div>
-      <!-- <p style="clear:both; display;block; "><%= course.progress(current_user) %>% Complete</p> -->
+      <p style="clear:both; display;block; "><%= course.progress(current_user) %>% Complete</p>
+    </div> -->
+    <div class="course-wrapper">
+      <div class="course-tile" style="background-image: url(<%= course.tile_image %>);">
+        <div class="information">
+          <div class="title"><%= course.title %></div>
+          <div class="description"><%= course.description %></div>
+        </div>
+        <div class="progress" style="display;block; width: 100%;">
+          <div class="bar" style="width: <%= number_to_percentage(course.progress(current_user)) %>;"></div>
+        </div>
+      </div>
     </div>
     <% end %> 
   <% end %>

@@ -229,14 +229,14 @@
                     <!-- <div class="icon-section"><div class="icon"></div></div> -->
                   <div class="text-section">
                     <div class="title"><%= assignment.title %></div>
-                    <div class="description"><%= assignment.user_assignments.where(:user_id => current_user[:id]).first.text %></div>
+                    <div class="description"><%= assignment.user_assignments.where(:user_id => @user[:id]).first.text %></div>
                   </div>
                   <div class="button-section">
-                      <% if assignment.user_assignments.where(:user_id => current_user[:id]).first.link != nil %>
-                        <%= link_to "#{assignment.user_assignments.where(:user_id => current_user[:id]).first.link}", target: "_blank", :class => "link-button-yellow" do %><i class="fa fa-chain"></i><% end %>
+                      <% if assignment.user_assignments.where(:user_id => @user[:id]).first.link != nil %>
+                        <%= link_to "#{assignment.user_assignments.where(:user_id => @user[:id]).first.link}", target: "_blank", :class => "link-button-yellow" do %><i class="fa fa-chain"></i><% end %>
                       <% end %>
-                      <% if assignment.user_assignments.where(:user_id => current_user[:id]).first.upload_file_name != nil %>
-                        <%= link_to "#{assignment.user_assignments.where(:user_id => current_user[:id]).first.upload}", :class => "download-button-blue" do %><i class="fa fa-arrow-down"></i><% end %>
+                      <% if assignment.user_assignments.where(:user_id => @user[:id]).first.upload_file_name != nil %>
+                        <%= link_to "#{assignment.user_assignments.where(:user_id => @user[:id]).first.upload}", :class => "download-button-blue" do %><i class="fa fa-arrow-down"></i><% end %>
                         <br/>
                       <% end %>
                     </div>
@@ -270,7 +270,7 @@
                 <div class="section">
                   <div class="icon"><%= image_tag(assignment.course.course_icon) %></div>
                   <div class="description"><%= assignment.description %></div>
-                  <div class="response"><%= assignment.user_assignments.where(:user_id => current_user[:id]).first.text %></div>
+                  <div class="response"><%= assignment.user_assignments.where(:user_id => @user[:id]).first.text %></div>
                   <div id="comments_container">
                     <div id="<%= assignment.id %>">
                       <%= render "user_comments/comments" %>

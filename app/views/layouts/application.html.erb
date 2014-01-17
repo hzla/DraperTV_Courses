@@ -16,6 +16,8 @@
   <style>
   	body { font-family: 'proxima_nova';}
   </style>
+
+
   <!-- google tracking -->
   <script type="text/javascript">
     var fb_param = {};
@@ -29,79 +31,109 @@
       var ref = document.getElementsByTagName('script')[0];
       ref.parentNode.insertBefore(fpw, ref);
     })();
-    </script>
+    </script>  
+ 
     <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6009982432893&amp;value=0&amp;currency=USD" /></noscript>
 </head>
 <body>
-  <!-- ***************** -->
-  <!-- **** Navbar ***** -->
-  <!-- ***************** -->
-  <% if user_signed_in? %>
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-            <%= link_to '/posts' do %>
-              <div id="logo"></div>
-            <% end %>
-          <ul class="nav pull-right">
-            <!-- <div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div> -->
-            <li class="dropdown">
-              <a class="dropdown" data-toggle="dropdown" href="#">
-                <%= current_user.full_name %> <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li role="menu"><%= link_to 'View Profile', student_profile_path(current_user)  %></li>
-                <li role="menu"><%= link_to 'Edit Settings', edit_user_registration_path %></li>
-                <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
+
+
+      <!-- ***************** -->
+      <!-- **** Navbar ***** -->
+      <!-- ***************** -->
+      <% if user_signed_in? %>
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+                  <a id="left-menu" href="#left-menu" class="sidr-click">
+                    <div id="menu-icon"></div>
+                    <div class="title">menu</div>
+                  </a>
+                  
+                <div id="logo"></div>
+              <ul class="nav pull-right">
+                <!-- <div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
+                <li class="dropdown">
+                  <a class="dropdown" data-toggle="dropdown" href="#">
+                    <%= current_user.full_name %> <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li role="menu"><%= link_to 'View Profile', student_profile_path(current_user)  %></li>
+                    <li role="menu"><%= link_to 'Edit Settings', edit_user_registration_path %></li>
+                    <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
+                  </ul>
+                </li> -->
+                <a id="right-menu" href="#right-menu" class="sidr-click">
+                  <i class="fa fa-inbox fa-2x" style="color: #f2f2f2;  padding-top: 10px; padding-right: 4px;"></i>
+                </a>
               </ul>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  <% else %>
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container"> 
-          <%= link_to '/' do %>
-            <div id="logo"></div>
-          <% end %>
-          <ul class="nav pull-right">
-            <li id="home_link"><%= link_to "Apply", '/apply' %></li>
-            <li id="home_link"><%= link_to "Log In", login_path %></li>
-          </ul>
+      <% else %>
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container"> 
+              <%= link_to '/' do %>
+                <div id="logo"></div>
+              <% end %>
+              <ul class="nav pull-right">
+                <li id="home_link"><%= link_to "Apply", '/apply' %></li>
+                <li id="home_link"><%= link_to "Log In", login_path %></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  <% end %>
+      <% end %>
 
-	<% flash.each do |type, message| %>
-		<div class="alert <%= flash_class type %>">
-			<button class="close" data-dismiss="alert">x</button>
-			<%= message %>
-		</div>
-	<% end %>
+    	<% flash.each do |type, message| %>
+    		<div class="alert <%= flash_class type %>">
+    			<button class="close" data-dismiss="alert">x</button>
+    			<%= message %>
+    		</div>
+    	<% end %>
 
-  <!-- ***************** -->
-  <!-- ***** Body ****** -->
-  <!-- ***************** -->
-	
-	<% if user_signed_in? %>
-    <div style="display: block; width: 100%;">
-      <div id="loadingbar-frame"></div>
-  		<%= render 'layouts/sidenav' %>
-      <div id="main-body">
-        <%= yield %>
+      <!-- ***************** -->
+      <!-- ***** Body ****** -->
+      <!-- ***************** -->
+    	
+    	<% if user_signed_in? %>
+        <div style="display: block; width: 100%;">
+          <div id="loadingbar-frame"></div>
+          <div id="main-body">
+            <%= yield %>
+          </div>
+        </div>
+    	<% else %>
+        <div id="logged-out-main">
+    			<%= yield %>
+        </div>
+    	<% end %>
+
+      <div id="sidr-left">
+        <%= render 'layouts/sidenav' %>
       </div>
-    </div>
-	<% else %>
-    <div id="logged-out-main">
-			<%= yield %>
-    </div>
-	<% end %>
+      <div id="sidr-right">
+        <div class="top-bar"></div>
+      </div>
+
 </body>
 
-<footer>
+  <script type="text/javascript">
+    $(document).on("page:change", function() {
+     $("#left-menu").sidr({
+        name: 'sidr-left',
+        side: 'left'
+      });
+     $("#right-menu").sidr({
+        name: 'sidr-right',
+        side: 'right'
+      });
+     $('a.sidr-click').click();
+    });
+  </script>
+
+<!-- <footer>
   <div class="container">
     <div class="wrapper">
       <div class="left">
@@ -115,4 +147,6 @@
     </div>
   </div>
 </footer>
+ -->
+
 </html>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140103010839) do
+ActiveRecord::Schema.define(:version => 20140113233927) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -70,6 +70,10 @@ ActiveRecord::Schema.define(:version => 20140103010839) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "response"
+    t.string   "status"
+    t.boolean  "payment"
+    t.text     "notes"
   end
 
   create_table "assignments", :force => true do |t|
@@ -145,6 +149,15 @@ ActiveRecord::Schema.define(:version => 20140103010839) do
     t.integer  "user_id"
   end
 
+  create_table "calendars", :force => true do |t|
+    t.string   "name"
+    t.datetime "start_time"
+    t.text     "description"
+    t.string   "location"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "courses", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -163,6 +176,10 @@ ActiveRecord::Schema.define(:version => 20140103010839) do
     t.integer  "length"
     t.string   "intro_vimeo"
     t.string   "badge_vimeo"
+    t.string   "tile_image_file_name"
+    t.string   "tile_image_content_type"
+    t.integer  "tile_image_file_size"
+    t.datetime "tile_image_updated_at"
   end
 
   create_table "events", :force => true do |t|
@@ -194,14 +211,6 @@ ActiveRecord::Schema.define(:version => 20140103010839) do
     t.text     "brilliance"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-  end
-
-  create_table "payments", :force => true do |t|
-    t.string   "name"
-    t.text     "email"
-    t.float    "fee"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "posts", :force => true do |t|
