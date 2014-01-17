@@ -1,8 +1,10 @@
 OnlineSchool::Application.routes.draw do
   
+
+
   #root :to => 'profiles#show'
   root :to => 'home#index'
-
+  resources :messages
   resources :apps
   get 'apply', to: 'apps#new'
 
@@ -74,6 +76,8 @@ OnlineSchool::Application.routes.draw do
     resources :user_comments
     resources :user_assignments
   end
+
+  resources :activities
 
   post '/assignments/:id/quiz_save_attempt', to: 'assignments#quiz_save_attempt', as: :assignments_survey_attempts
 

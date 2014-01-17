@@ -1,3 +1,5 @@
+
+
 <div id="comments_list">
   <% @comments.each do |comment| %>
     <% if User.where(:id => comment.user_id).exists? %>
@@ -19,3 +21,5 @@
     <% end %>
   <% end %>
 </div>
+
+

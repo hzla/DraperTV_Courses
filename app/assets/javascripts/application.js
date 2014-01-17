@@ -10,11 +10,13 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+
 // = require jquery
 // = require jquery.turbolinks
 // = require jquery-ui
 // = require nprogress-turbolinks
 // = require jquery_ujs
+// = require turbolinks
 // = require jquery.infinitescroll
 // = require jquery.autosize
 // = require underscore
@@ -22,10 +24,22 @@
 // = require chosen
 // = require home
 // = require_tree .
+// = require private_pub
 // = require jquery.sidr.min.js
 // = require turbolinks
 
-window.onLoad = function(callback) {
-  $(document).ready(callback);
-  $(document).on('page:load', callback);
-};
+
+NProgress.configure
+  showSpinner: false
+  ease: 'ease'
+  speed: 500
+
+
+function contains(arr, value) {
+    var i = arr.length;
+    while (i--) {
+        if (arr[i] === value) return true;
+    }
+    return false;
+}
+

@@ -13,6 +13,7 @@
   <%= paginate @posts %>
 
 </div>
+
 <div id="home-right">
    <div class="section-bar" style="margin-top: 20px;">Job Hunting</div>
    <% @users.each do |user| %>
@@ -24,3 +25,7 @@
     <% end %>   
   <% end %>
 </div>
+
+
+<%= subscribe_to "/posts/new" %>
+

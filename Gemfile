@@ -78,6 +78,8 @@ gem 'acts-as-taggable-on'
 
 gem 'stripe'
 
+gem 'private_pub'
+
 # gem "nifty-generators", :group => :development
 
 # To use ActiveModel has_secure_password

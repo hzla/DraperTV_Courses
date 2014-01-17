@@ -4,7 +4,7 @@
 <% @comment = UserComment.new %>
 
 <% if User.where(:id => post.user_id).exists? %>
-  <div id="post">
+  <div id="post" >
     <% @user = User.find_by_id(post.user_id) %>
     <% if @user.avatar != nil %>
       <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
@@ -25,10 +25,10 @@
       <% end %>
     <% else %>
     <% end %>
-
     <div id="comments_container">
       <div id="<%= post.id %>">
         <%= render "user_comments/comments" %>
+        
       </div>
       <div id="submit-<%= post.id %>">
         <%= render "user_comments/addcomment" %>

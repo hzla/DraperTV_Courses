@@ -11,4 +11,7 @@ class Post < ActiveRecord::Base
   validates_attachment_size :file, :less_than => 10.megabytes
   belongs_to :user
   has_many :user_comments, as: :commentable
+
+
+  
 end
