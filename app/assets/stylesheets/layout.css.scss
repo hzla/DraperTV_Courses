@@ -61,14 +61,12 @@ body {
       position: absolute;
       right: 8px;
       top: 0;
-      display: block;
       overflow: hidden;
     }
     #left-menu {
       position: absolute;
       left: 14px;
       top: 18px;
-      display: block;
       overflow: hidden;
       &:hover { opacity: 0.7; }
       #menu-icon { 
