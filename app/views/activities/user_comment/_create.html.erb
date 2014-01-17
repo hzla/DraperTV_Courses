@@ -11,57 +11,146 @@
 <%  end %>
 
 
-<%  currentUserPosts = []  
-    @posts = Post.all
-  %>
-
- <% @posts.each do |userPost| %>
-  <% if userPost.user_id ==  current_user.id %>
-      <% currentUserPosts << userPost.id %>
-  <% end %>
-<%  end %>
-<% listOfPosts = currentUserPosts + commentableIDs
-    listOfPosts = listOfPosts.uniq  %> 
-
-    
-
-  <% if  listOfPosts.include? user_comment.commentable_id  %>
-  <%  post = Post.find_by_id(user_comment.commentable_id)  %>
-  <% if User.where(:id => user_comment.user_id).exists? %>
-      
-      <script type="text/javascript">
-      // $("#Notification").removeClass("btn btn-primary");
-      // $("#Notification").addClass("btn btn-success");      
-      </script>  
-    <div id="post">
-      <% @user = User.find_by_id(user_comment.user_id) %>
-      <% if @user.avatar != nil %>
-        <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
-      <% end %>
-      <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
-      <div class="timestamp"><%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
-
-      <% if post.file_file_name == nil %>
-        <div class="content">
-        	 commented on 
-        	<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %>
-        	</div>
-      <% else %>
-        <div class="content">
-        	commented on
-  		<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %></div>
-        <div class="image"><%= image_tag post.file.url(:preview) %></div>
-      <% end %>
 
       
+  <% if user_comment.commentable_type == "Post"  %>
 
-    </div>
+
+    <%  currentUserPosts = []  
+        @posts = Post.all
+      %>
+
+     <% @posts.each do |userPost| %>
+      <% if userPost.user_id ==  current_user.id %>
+          <% currentUserPosts << userPost.id %>
+      <% end %>
+    <%  end %>
+    <% listOfPosts = currentUserPosts + commentableIDs
+        listOfPosts = listOfPosts.uniq  %> 
+
+    <% if  listOfPosts.include? user_comment.commentable_id  %>
+    <%  post = Post.find_by_id(user_comment.commentable_id)  %>
+    <% if User.where(:id => user_comment.user_id).exists? %>
+      <div id="post">
+        <% @user = User.find_by_id(user_comment.user_id) %>
+        <% if @user.avatar != nil %>
+          <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
+        <% end %>
+        <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
+        <div class="timestamp"><%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+
+        <% if post.file_file_name == nil %>
+          <div class="content">
+          	 commented on 
+          	<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %>
+          	</div>
+        <% else %>
+          <div class="content">
+          	commented on
+    		<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %></div>
+          <div class="image"><%= image_tag post.file.url(:preview) %></div>
+        <% end %>
+
+        
+
+      </div>
+      <% end %>
+
+      		
+    <% else %>
     <% end %>
 
-    		
-  <% else %>
-  <% end %>
+  <% elsif user_comment.commentable_type == "Assignment"  %>
 
+
+    <%  currentAssignments = []  
+        @assignments = UserAssignment.all
+      %>
+
+     <% @assignments.each do |userAssignment| %>
+      <% if userAssignment.user_id ==  current_user.id %>
+          <% currentAssignments << userAssignment.id %>
+      <% end %>
+    <%  end %>
+ 
+    <% listOfPosts = currentAssignments + commentableIDs
+    listOfPosts = listOfPosts.uniq  %> 
+    <% if  listOfPosts.include? user_comment.commentable_id  %>
+    <%  assignment = UserAssignment.find_by_assignment_id(user_comment.commentable_id)  %>
+    <%  curAssignment = Assignment.find_by_id(assignment.assignment_id)  %>
+
+
+
+
+    <% if User.where(:id => user_comment.user_id).exists? %>
+    
+     <div id="post">
+        <% @user = User.find_by_id(user_comment.user_id) %>
+        <% if @user.avatar != nil %>
+        <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
+        <% end %>
+        <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div>
+        <% end %>
+        <div class="timestamp"><%= assignment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+          <div class="content">
+              commented on 
+                <ul class="breadcrumb">
+                  <li><%= link_to 'Courses', courses_path %> <span class="divider">/</span></li>
+                  <li><%= link_to curAssignment.course.title %> <span class="divider">/</span></li>
+                  <li><%= curAssignment.title %></li>
+                </ul> 
+
+          </div>
+      </div>      
+
+
+
+
+
+    <% else %>
+    <% end %>    
+  <% else %>
+  <% end %>  
+
+  <% elsif user_comment.commentable_type == "Event"  %>
+
+<%  currentEvents = []  
+        @events = Event.all
+      %>
+
+     <% @events.each do |event| %>
+      <% if event.user_id ==  current_user.id %>
+          <% currentEvents << event.id %>
+      <% end %>
+    <%  end %>
+    <% listOfPosts = currentEvents + commentableIDs
+    listOfPosts = listOfPosts.uniq  %> 
+    <% if  listOfPosts.include? user_comment.commentable_id  %>
+    <%  event = Event.find_by_id(user_comment.commentable_id)  %>
+    <% if User.where(:id => user_comment.user_id).exists? %>
+
+      <div id="post">
+        <% @user = User.find_by_id(user_comment.user_id) %>
+        <% if @user.avatar != nil %>
+        <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
+        <% end %>
+        <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div>
+        <% end %>
+        <div class="timestamp"><%= event.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+          <div class="content">
+              commented on 
+              <%= link_to event.name, event %>
+          </div>
+      </div>    
+     
+    <% else %>
+    <% end %>    
+  <% else %>
+  <% end %>    
+
+  <% else %>
+  <% end %>    
+  
 
 <%-# What's happening here ?
 #a) user_comment is used Because the activity presenter find comment through User 

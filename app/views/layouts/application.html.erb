@@ -90,23 +90,6 @@
     <div style="display: block; width: 100%;">
       <div id="loadingbar-frame"></div>
   		<%= render 'layouts/sidenav' %>
-
-
-      <a id="simple-menu" href= "#sidr" >Toggle menu</a> 
-<div id="sidr">
-  <ul>
-    <li><a href="#">List 1</a></li>
-    <li class="active"><a href="#">List 2</a></li>
-    <li><a href="#">List 3</a></li>
-  </ul>
-</div> 
-  <script>
-  $(document).ready(function() {
-    $( &#039;#simple-menu&#039; ).sidr();
-  });
-  </script>
-
-
       <div id="main-body" >
         <%= yield %>
       </div>
