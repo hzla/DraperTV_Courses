@@ -66,8 +66,8 @@ class UserCommentsController < ApplicationController
           listUsers = listUsers.uniq
           listUsers.delete(current_user.id)
           listUsers.each do |usr|
-            PrivatePub.publish_to("/layouts/#{usr}", "$('#notify').append('#{@commenter.first_name} commented on #{@topic.content}'); $('#Notification').removeClass('btn btn-primary');
-              $('#Notification').addClass('btn btn-success');")
+            PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty');
+              $('#notifications').addClass('notifications');")
           end              
 
 

@@ -32,6 +32,11 @@ body {
   overflow: hidden;
 }
 
+#notify {
+  margin-top: 70px;
+  padding-left: 10px;
+}
+
 .navbar { 
   background: #246db4; /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -57,6 +62,10 @@ body {
     width: 100%;
     background: none;
     padding-top: 5px;
+    .notifications {
+      color: white;
+    }
+    .empty { color: $blue-4; }
     #right-menu {
       position: absolute;
       right: 8px;
