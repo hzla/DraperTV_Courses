@@ -64,7 +64,6 @@
 
 <% if user_signed_in? %>
   <div class="navbar">
-      <%= subscribe_to "/layouts/comments" %>
     <div class="navbar-inner">
       <div class="container">
             <a id="left-menu" href="#left-menu" class="sidr-click">
@@ -137,10 +136,8 @@
     <%= render 'layouts/sidenav' %>
   </div>
   <div id="sidr-right">
-    <div class="top-bar">
-    </div>
-    <div id="notify" class="section-link">  
-    </div>
+    <div class="top-bar"></div>
+    <div id="notify" class="section-link"></div>
      <!--  </div> -->
     <%= link_to "", activities_path, :data => { :'class' => 'displayLink' }, :remote => true %>
 
