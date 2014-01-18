@@ -106,8 +106,8 @@ class UserCommentsController < ApplicationController
           listUsers = listUsers.uniq
           listUsers.delete(current_user.id)
           listUsers.each do |usr|
-            PrivatePub.publish_to("/layouts/#{usr}", "$('#notify').append('#{@commenter.first_name} commented on #{@topic}'); $('#notifications').removeClass('empty');
-              $('#notificatiosn').addClass('notifications');")
+            PrivatePub.publish_to("/layouts/#{usr}", "$('#notify').append('#{@commenter.first_name} commented on #{@topic}'); $('#Notification').removeClass('btn btn-primary');
+              $('#Notification').addClass('btn btn-success');")
           end 
 
     elsif @comment.commentable_type == "Event"
@@ -145,8 +145,8 @@ class UserCommentsController < ApplicationController
           listUsers = listUsers.uniq
           listUsers.delete(current_user.id)
           listUsers.each do |usr|
-            PrivatePub.publish_to("/layouts/#{usr}", "$('#notify').append('#{@commenter.first_name} commented on #{@topic.name}'); $('#notifications').removeClass('empty');
-              $('#notifications').addClass('notifcations');")
+            PrivatePub.publish_to("/layouts/#{usr}", "$('#notify').append('#{@commenter.first_name} commented on #{@topic.name}'); $('#Notification').removeClass('btn btn-primary');
+              $('#Notification').addClass('btn btn-success');")
           end 
 
 

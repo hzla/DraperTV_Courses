@@ -134,34 +134,9 @@ input[type="submit"] {
 /*********************/
 /****** COURSES ******/
 /*********************/
-.course-tile-overlay {
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 10;
-	background-color:rgba(155,155,155,0.7);
-	width: 100%;
-	height: 280px;
-	i { 
-		color: white; 
-		margin: 0 auto;
-		margin-top: 40%;
-		margin-left: calc(50% - 22px);
-	}
-	.lock {
-		margin-top: calc(50% - 30px);
-		margin-left: calc(50% - 30px);
-		width: 60px;
-		height: 60px;
-		opacity: 1;
-		background-image: url("icons/lock.png");
-	}
-}
 
 .course-tile {
 	display: block;
-	z-index: 1;
 	float: left;
 	//margin-right: 30px;
 	margin-top: 20px;
@@ -301,18 +276,6 @@ input[type="submit"] {
 	height: 10px;
 	margin-left: 0px;
 	margin-bottom: 0px;
-	/* IE10 Consumer Preview */ 
-	background-image: -ms-linear-gradient(top right, #E8E8E8 0%, #CCCCCC 100%);
-	/* Mozilla Firefox */ 
-	background-image: -moz-linear-gradient(top right, #E8E8E8 0%, #CCCCCC 100%);
-	/* Opera */ 
-	background-image: -o-linear-gradient(top right, #E8E8E8 0%, #CCCCCC 100%);
-	/* Webkit (Safari/Chrome 10) */ 
-	background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #E8E8E8), color-stop(1, #CCCCCC));
-	/* Webkit (Chrome 11+) */ 
-	background-image: -webkit-linear-gradient(top right, #E8E8E8 0%, #CCCCCC 100%);
-	/* W3C Markup, IE10 Release Preview */ 
-	background-image: linear-gradient(to bottom left, #E8E8E8 0%, #CCCCCC 100%);
 
 	.bar {
 		border-radius: 00px;

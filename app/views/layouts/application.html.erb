@@ -64,7 +64,7 @@
 
 <% if user_signed_in? %>
   <div class="navbar">
-      <%= subscribe_to "/layouts/comments" %>
+    <%= subscribe_to "/layouts/comments" %>
     <div class="navbar-inner">
       <div class="container">
             <a id="left-menu" href="#left-menu" class="sidr-click">
@@ -86,7 +86,6 @@
           </li> -->
           <a id="right-menu" href="#right-menu" class="sidr-click">
             <i class="fa fa-inbox fa-2x" style="padding-top: 10px; padding-right: 4px;" id="notifications"></i>
-            <div class="red-circle"></div>
           </a>
         </ul>
       </div>
@@ -137,8 +136,7 @@
     <%= render 'layouts/sidenav' %>
   </div>
   <div id="sidr-right">
-    <div class="top-bar">
-    </div>
+    <div class="top-bar"></div>
     <div id="notify" class="section-link">  
     </div>
      <!--  </div> -->

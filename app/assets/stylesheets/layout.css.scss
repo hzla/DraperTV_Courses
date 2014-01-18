@@ -34,56 +34,7 @@ body {
 
 #notify {
   margin-top: 70px;
-  #post {
-    width: 90%;
-    padding-left: 5%;
-    padding-right: 5%;
-    position: relative;
-    border-bottom: 1px solid #333;
-    margin-top: 20px;
-    padding-bottom: 20px;
-    .content {
-      margin-left: calc(6% + 30px);
-      font-size: 13px;
-      color: $gray;
-      a {
-        color: $gray-lt;
-        &:hover { color: $blue; }
-      }
-      .name { 
-        float: left;
-        margin-left: 0; 
-        font-size: 13px;
-        color: $gray-lt;
-        margin-right: 4px;
-        &:hover { color: $blue; }
-      }
-      .item {
-        float: left;
-        display: block;
-        color: $gray-lt;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      .timestamp {
-        margin-left: 0;
-        font-size: 10px;
-      }
-    }
-    .picture {
-      border-radius: 2px;
-      overflow: hidden;
-      width: 25px;
-      height: 25px;
-      position: absolute;
-      left: 7%;
-    }
-    img {
-      width: 25px;
-      height: 25px;
-    }
-  }
+  padding-left: 10px;
 }
 
 .navbar { 
@@ -111,32 +62,15 @@ body {
     width: 100%;
     background: none;
     padding-top: 5px;
-    
+    .notifications {
+      color: white;
+    }
+    .empty { color: $blue-4; }
     #right-menu {
-      position: relative;
+      position: absolute;
       right: 8px;
       top: 0;
       overflow: hidden;
-      #notifications {
-        &:hover { opacity: 0.8; }
-      }
-      .notifications {
-        color: $blue-4;
-      }
-      .empty { color: white; }
-      .red-circle {
-        display: none;
-        position: absolute;
-        top: -12px;
-        right: 0;
-        background: $red;
-        width: 12px;
-        height: 12px;
-        border-radius: 12px;
-      }
-      .display-block {
-        display: block;
-      }
     }
     #left-menu {
       position: absolute;

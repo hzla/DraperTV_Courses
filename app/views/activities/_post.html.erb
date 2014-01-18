@@ -21,18 +21,15 @@
 
     <% if post.file_file_name == nil %>
       <div class="content">
-               Created 
-              <%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %>
-              </div>
+      	 Created 
+      	<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %>
+      	</div>
     <% else %>
       <div class="content">
-              Created
-                <%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %></div>
+      	Created
+		<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %></div>
       <div class="image"><%= image_tag post.file.url(:preview) %></div>
-    <% end %>
-
-    
-    
+    <% end %> 
 
   </div>
   <% end %>
