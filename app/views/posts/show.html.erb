@@ -1,16 +1,37 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-                
-	<div id="comments-bar">discussion</div>
-	<div id="comments_container">
-	  <%= render "user_comments/comments" %>
-	</div>
-	<%= render "user_comments/addcomment" %>
-</p>
 
+<% if User.where(:id => @post.user_id).exists? %>
+  <div id="post" >
+    <% @user = User.find_by_id(@post.user_id) %>
+    <% if @user.avatar != nil %>
+      <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
+    <% end %>
+    <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
+    <div class="timestamp"><%= @post.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+
+    <% if @post.file_file_name == nil %>
+      <div class="content"><%= raw Rinku.auto_link(@post.content, :all, 'target="_blank"') %></div>
+    <% else %>
+      <div class="content"><%= raw Rinku.auto_link(@post.content, :all, 'target="_blank"') %></div>
+      <div class="image"><%= image_tag @post.file.url(:preview) %></div>
+    <% end %>
+
+    <% if current_user.id == @post.user_id %>
+      <%= link_to [@post], :confirm => 'Are you sure you want to remove this post? This cannot be undone.', :action => "destroy", :method => :delete do %>
+        <div class="delete-post"></div>
+      <% end %>
+    <% else %>
+    <% end %>
+    <div id="comments_container">
+      <div id="<%= @post.id %>">
+        <%= render "user_comments/comments" %>
+        
+      </div>
+      <div id="submit-<%= @post.id %>">
+        <%= render "user_comments/addcomment" %>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
 

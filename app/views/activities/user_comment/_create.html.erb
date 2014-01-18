@@ -3,19 +3,13 @@
   <%  commentableIDs = []  
     @comments = UserComment.all
   %>
-
   <% @comments.each do |com| %>
   <%  if com.user_id ==  current_user.id %>
     <%    commentableIDs << com.commentable_id %>
   <%  end %>
-<%  end %>
-
-
-
+<%  end %> 
       
   <% if user_comment.commentable_type == "Post"  %>
-
-
     <%  currentUserPosts = []  
         @posts = Post.all
       %>
@@ -36,40 +30,39 @@
         <% if @user.avatar != nil %>
           <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
         <% end %>
-        <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
-        <div class="timestamp"><%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
-
-        <% if post.file_file_name == nil %>
-          <div class="content">
-          	 commented on 
-          	<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %>
-          	</div>
-        <% else %>
-          <div class="content">
-          	commented on
-    		<%= raw Rinku.auto_link(post.content, :all, 'target="_blank"') %></div>
+        <div class="content">
+          <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
+          <% if post.file_file_name == nil %>
+            commented on post 
+            <%= link_to post_path(post) do %>
+              <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
+            <% end %>
+            <div class="timestamp"><%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+        </div>
+      <% else %>
+        <div class="content">
+          <%= link_to student_profile_path(@user) do %>
+            <div class="name"><%= @user.full_name %></div>
+          <% end %>
+            commented on post 
+          <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
           <div class="image"><%= image_tag post.file.url(:preview) %></div>
-        <% end %>
-
+          <div class="timestamp"><%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+        </div>    
+      <% end %>  
         
-
       </div>
-      <% end %>
-
-      		
+      <% end %>	
     <% else %>
     <% end %>
 
   <% elsif user_comment.commentable_type == "Assignment"  %>
-
-
     <%  currentAssignments = []  
         @assignments = UserAssignment.all
-      %>
-
-     <% @assignments.each do |userAssignment| %>
+    %>
+    <% @assignments.each do |userAssignment| %>
       <% if userAssignment.user_id ==  current_user.id %>
-          <% currentAssignments << userAssignment.id %>
+        <% currentAssignments << userAssignment.id %>
       <% end %>
     <%  end %>
  
@@ -80,8 +73,6 @@
     <%  curAssignment = Assignment.find_by_id(assignment.assignment_id)  %>
 
 
-
-
     <% if User.where(:id => user_comment.user_id).exists? %>
     
      <div id="post">
@@ -89,24 +80,19 @@
         <% if @user.avatar != nil %>
         <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
         <% end %>
-        <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div>
-        <% end %>
-        <div class="timestamp"><%= assignment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
-          <div class="content">
-              commented on 
-                <ul class="breadcrumb">
-                  <li><%= link_to 'Courses', courses_path %> <span class="divider">/</span></li>
-                  <li><%= link_to curAssignment.course.title %> <span class="divider">/</span></li>
-                  <li><%= curAssignment.title %></li>
-                </ul> 
 
-          </div>
+        <div class="content">
+          <%= link_to student_profile_path(@user) do %>
+            <div class="name"><%= @user.full_name %></div>
+          <% end %>
+            commented on assignment 
+            <%= link_to assignment_path(curAssignment) do %>
+              <%= truncate(curAssignment.title, length: 30) %>
+            <% end %>
+            
+          <div class="timestamp"><%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+        </div>
       </div>      
-
-
-
-
-
     <% else %>
     <% end %>    
   <% else %>
@@ -114,7 +100,7 @@
 
   <% elsif user_comment.commentable_type == "Event"  %>
 
-<%  currentEvents = []  
+    <%  currentEvents = []  
         @events = Event.all
       %>
 
@@ -134,13 +120,14 @@
         <% if @user.avatar != nil %>
         <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
         <% end %>
-        <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div>
-        <% end %>
-        <div class="timestamp"><%= event.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
-          <div class="content">
-              commented on 
-              <%= link_to event.name, event %>
-          </div>
+        <div class="content">
+          <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div>
+          <% end %>
+            commented on event 
+            <%= link_to truncate(event.name, length: 30), event %>
+            <div class="timestamp"><%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+        </div>
+         
       </div>    
      
     <% else %>
