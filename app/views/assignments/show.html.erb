@@ -5,15 +5,16 @@
 </ul>
 
 <!-- split panel if speaker info available -->
-<div class="span9" id="assignment_container">
+<div class="span10" id="assignment_container">
   
   <h1 id="assignment-show-title"><%= @assignment.title %></h1>
 
   <% if @assignment.category == "reading" or @assignment.category == "video" or @assignment.category == "founder" %>
   	<br/>
-  	<%= raw @video_embed %>
+    
+  	   <%= raw @video_embed %>
   	<br /><br />
-  	<p class="video_description"><%= @assignment.description.html_safe %></p>
+  	
     <div id="comments-bar">class discussion</div>
     <div id="comments_container">
       <div id="<%= @assignment.id %>">
@@ -22,7 +23,7 @@
     </div>
     <%= render "user_comments/addcomment" %>
   <% elsif @assignment.category == "quiz" %>
-    <div class="quiz_description"></div>
+    <div class="quiz_description" style="min-height: 20px;"></div>
     <% if @assignment.survey.avaliable_for_participant?(current_user) %>
       <%= render 'quiz' %>
     <% else %>
@@ -35,7 +36,7 @@
         <br />
         <!-- show quiz answers -->
         <div class="quiz-answers">
-          <ul>
+          <!-- <ul>
             <% @assignment.survey.questions.each_with_index do |question, index| %>
             <li>
               <p><%= question.text %></p>
@@ -47,7 +48,7 @@
               <% end %>
            </li>
            <% end %>
-          </ul>
+          </ul> -->
         </div> 
       </div>
     <% end %>

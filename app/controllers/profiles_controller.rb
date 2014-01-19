@@ -24,7 +24,8 @@ class ProfilesController < ApplicationController
     #@assignment = Assignment.find(params[:id])
     @user_assignments = UserAssignment.all
     @posts = Post.where(:user_id => @user.id).order('created_at desc')
-    
+    @activities =  Activity.all
+    @activities = Activity.order("created_at desc")
   
     if @user
       render action: :profile
