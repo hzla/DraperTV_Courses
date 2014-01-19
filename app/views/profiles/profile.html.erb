@@ -241,14 +241,14 @@
                       <% end %>
                     </div>
                   </div>
-                 <!--  <div id="comments_container">
+                  <div id="comments_container">
                     <div id="<%= assignment.id %>">
                       <%= render "user_comments/comments" %>
                     </div>
                     <div id="submit-<%= assignment.id %>">
                       <%= render "user_comments/addcomment" %>
                     </div>
-                  </div> -->
+                  </div>
                 </div>
               <% end %>
             <% end %>
@@ -271,14 +271,14 @@
                   <div class="icon"><%= image_tag(assignment.course.course_icon) %></div>
                   <div class="description"><%= assignment.description %></div>
                   <div class="response"><%= assignment.user_assignments.where(:user_id => @user[:id]).first.text %></div>
-                  <!-- <div id="comments_container">
+                  <div id="comments_container">
                     <div id="<%= assignment.id %>">
                       <%= render "user_comments/comments" %>
                     </div>
                     <div id="submit-<%= assignment.id %>">
                       <%= render "user_comments/addcomment" %>
                     </div>
-                  </div> -->
+                  </div>
                 </div>
               </div>
             <% end %>

@@ -18,6 +18,8 @@ def index
   @post = Post.new
   @users = User.all
   @user = User.find_by_id(@post.user_id)
+   @instagram_draperu = Instagram.tag_recent_media('draperu', options = {count: 20})
+    @instagram_draperuonline = Instagram.tag_recent_media('draperuonline', options = {count: 20})
   respond_to do |format|
     format.html # show.html.erb
     format.js #{ render js: @post }

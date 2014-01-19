@@ -1,9 +1,9 @@
 <ul class="breadcrumb">
-  <li>Home</li>
+  <li>Discussion</li>
 </ul>
 
 <div id="posts-column">
-  <h1>What's Happening?</h1><br />
+  <h1 style="font-size: 34px; font-weight: 300;">Class Discussion</h1><br />
   <%= render 'form' %>
 
 
@@ -15,15 +15,17 @@
 </div>
 
 <div id="home-right">
-   <div class="section-bar" style="margin-top: 20px;">Job Hunting</div>
-   <% @users.each do |user| %>
-    <% if user.employment == "Job Hunting" %>
-      <div class="box">
-        <div class="picture"><%= image_tag user.avatar.url(:medium) %></div>
-        <%= link_to student_profile_path(user) do %><div class="name"><%= user.full_name %></div><% end %>
+   <div class="section-bar" style="margin-top: 20px;">#DraperU</div>
+  <% @instagram_draperu.each do |instagram| %>
+      <div id="social-container">
+        <div class="instagram-img">
+          <%= link_to instagram.link, target: "_blank" do %>
+            <%= image_tag instagram.images.low_resolution.url %>
+            <!-- <div class="username"><%= instagram.user.username %></div> -->
+          <% end %>
+        </div>
       </div>
-    <% end %>   
-  <% end %>
+    <% end %>
 </div>
 
 

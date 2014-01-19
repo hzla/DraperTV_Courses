@@ -66,8 +66,8 @@ class UserCommentsController < ApplicationController
           listUsers = listUsers.uniq
           listUsers.delete(current_user.id)
           listUsers.each do |usr|
-            PrivatePub.publish_to("/layouts/#{usr}", "$('#notify').append('#{@commenter.first_name} commented on #{@topic.content}'); $('#Notification').removeClass('btn btn-primary');
-              $('#Notification').addClass('btn btn-success');")
+            PrivatePub.publish_to("/layouts/#{usr}", "$('#notify').append('#{@commenter.first_name} commented on #{@topic.content}'); $('#notification').removeClass('empty');
+              $('#notifications').addClass('notifications');")
           end              
 
 
@@ -107,7 +107,7 @@ class UserCommentsController < ApplicationController
           listUsers.delete(current_user.id)
           listUsers.each do |usr|
             PrivatePub.publish_to("/layouts/#{usr}", "$('#notify').append('#{@commenter.first_name} commented on #{@topic}'); $('#notifications').removeClass('empty');
-              $('#notificatiosn').addClass('notifications');")
+              $('#notification').addClass('notifications');")
           end 
 
     elsif @comment.commentable_type == "Event"
@@ -146,7 +146,7 @@ class UserCommentsController < ApplicationController
           listUsers.delete(current_user.id)
           listUsers.each do |usr|
             PrivatePub.publish_to("/layouts/#{usr}", "$('#notify').append('#{@commenter.first_name} commented on #{@topic.name}'); $('#notifications').removeClass('empty');
-              $('#notifications').addClass('notifcations');")
+              $('#notifications').addClass('notifications');")
           end 
 
 

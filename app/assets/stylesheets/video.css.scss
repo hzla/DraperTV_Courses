@@ -83,9 +83,12 @@
   position: relative;
   display: block;
   /* @include rounded-corners; */
+  h2 { line-height: 1.3; }
 
   &:hover { 
-    h2 { color: $blue; }
+    h2 { 
+      color: $blue;
+    }
   }
 }
 .pic {

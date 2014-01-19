@@ -1,4 +1,4 @@
-
+<% if user_comment %>
 
   <%  commentableIDs = []  
     @comments = UserComment.all
@@ -137,6 +137,8 @@
 
   <% else %>
   <% end %>    
+
+<% end %>    
   
 
 <%-# What's happening here ?

@@ -10,16 +10,16 @@
 			<!-- ****** LEARN ******* -->
 			<div class="section-title">Learn</div>
 			<div class="section-link">
-				<%= link_to courses_path do %>
+				<%= link_to posts_path do %>
 					<div class="link">
-						<div class="title">Courses</div>
+						<div class="title">Home</div>
 					</div>
 				<% end %>
 			</div>
 			<div class="section-link">
-				<%= link_to posts_path do %>
+				<%= link_to courses_path do %>
 					<div class="link">
-						<div class="title">Forum</div>
+						<div class="title">Courses</div>
 					</div>
 				<% end %>
 			</div>
@@ -46,10 +46,27 @@
 					</div>
 				<% end %>
 			</div>
+			
+			<!-- ****** ACCOUNT ******* -->
+			<div class="section-title">Account</div>
+			<div class="section-link">
+				<%= link_to edit_user_registration_path do %>
+					<div class="link">
+						<div class="title">Edit Profile</div>
+					</div>
+				<% end %>
+			</div>
 			<div class="section-link">
 				<%= link_to feedbacks_path do %>
 					<div class="link">
 						<div class="title">Feedback</div>
+					</div>
+				<% end %>
+			</div>
+			<div class="section-link">
+				<%= link_to logout_path do %>
+					<div class="link">
+						<div class="title">Log Out</div>
 					</div>
 				<% end %>
 			</div>
