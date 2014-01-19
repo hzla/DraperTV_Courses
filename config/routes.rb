@@ -70,7 +70,7 @@ OnlineSchool::Application.routes.draw do
     resources :user_comments
   end
   
-  get 'home', to: 'posts#index', as: :posts
+  get 'discussion', to: 'posts#index', as: :posts
 
   get 'videos', to: 'videos#index', as: :videos
 

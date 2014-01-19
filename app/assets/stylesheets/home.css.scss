@@ -8,12 +8,13 @@
 
 #home_link a {
   font-size: 13px;
-  color: $gray;
+  color: white;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   font-weight: bold;
+  text-shadow: none;
 
-  &:hover { color: $blue; }
+  &:hover { opacity: 0.8; }
 }
 
 .video-responsive-container {
