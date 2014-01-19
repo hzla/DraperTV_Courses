@@ -10,7 +10,7 @@
 
   <div id="alumni-search">
     <%= form_tag users_path, :method => 'get' do %>
-      <%= text_field_tag :query, params[:query], :placeholder => "Search by name or country" %>
+      <%= text_field_tag :query, params[:query], :placeholder => "Search by name, team, or country" %>
         <%= submit_tag "Search", :name => nil %>
     <% end %>
   </div>

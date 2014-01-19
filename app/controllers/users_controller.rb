@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   def index
    
     if params[:tag]
-      @users = User.where(:program => "Winter 2014").text_search(params[:query]).tagged_with(params[:tag]).page(params[:page]).per(10)
+      @users = User.where(:online == "online").text_search(params[:query]).tagged_with(params[:tag]).page(params[:page]).per(10)
+      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag]).page(params[:page]).per(10)
       @hash = Gmaps4rails.build_markers(@users) do |user, marker|
         marker.lat user.latitude
         marker.lng user.longitude
@@ -20,7 +21,8 @@ class UsersController < ApplicationController
       #format.json { render json: @users }
     end
     elsif params[:tag].to_s ==~ /^\s*$/
-      @users = User.where(:program => "Winter 2014").text_search(params[:query]).page(params[:page]).per(10)
+      @users = User.where(:online == "online").text_search(params[:query]).page(params[:page]).per(10)
+      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag]).page(params[:page]).per(10)
       @hash = Gmaps4rails.build_markers(@users) do |user, marker|
         marker.lat user.latitude
         marker.lng user.longitude
@@ -31,7 +33,8 @@ class UsersController < ApplicationController
       #format.json { render json: @users }
     end
     else
-      @users = User.where(:program => "Winter 2014").text_search(params[:query]).page(params[:page]).per(10)
+      @users = User.where(:online == "online").text_search(params[:query]).page(params[:page]).per(10)
+      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag]).page(params[:page]).per(10)
       @hash = Gmaps4rails.build_markers(@users) do |user, marker|
         marker.lat user.latitude
         marker.lng user.longitude

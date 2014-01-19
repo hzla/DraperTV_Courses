@@ -428,6 +428,26 @@
 			background: $blue;
 			&:hover { background: $blue-4; }
 		}
+		::-webkit-input-placeholder {
+   		color: $gray-lt;
+   		font-size: 12px;
+   		font-style: italic;
+		}
+		:-moz-placeholder { /* Firefox 18- */
+		  color: $gray-lt;
+   		font-size: 12px;
+   		font-style: italic;
+		}
+		::-moz-placeholder {  /* Firefox 19+ */
+		  color: $gray-lt;
+   		font-size: 12px;
+   		font-style: italic;
+		}
+		:-ms-input-placeholder {  
+		  color: $gray-lt;
+   		font-size: 12px;
+   		font-style: italic; 
+		}
 	}
 }
 
