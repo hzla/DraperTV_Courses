@@ -1,12 +1,14 @@
-  <%  myPostIDs = []  
+<% if post %>
+    <%  myPostIDs = []  
     @posts = Post.all
   %>
 
+
   <% @posts.each do |post| %>
-  <%  if post.user_id ==  current_user.id %>
-    <%    myPostIDs << post.user_id %>
+    <% if post.user_id ==  current_user.id %>
+    <% myPostIDs << post.user_id %>
+    <%  end %>
   <%  end %>
-<%  end %>
 
 
 <% if  myPostIDs.include? post.user_id  %>
@@ -38,11 +40,9 @@
         <% end %>
         <div class="timestamp"><%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
       </div>
+    <% end %>   
+
+    </div>
     <% end %>
-
-    
-    
-
-  </div>
   <% end %>
 <% end %>

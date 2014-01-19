@@ -69,8 +69,6 @@ OnlineSchool::Application.routes.draw do
   resources :posts do
     resources :user_comments
   end
-  
-  get 'discussion', to: 'posts#index', as: :posts
 
   get 'videos', to: 'videos#index', as: :videos
 
