@@ -25,14 +25,16 @@
   <div id="users">
     <ul class="nav nav-tabs" style="margin-top: 22px; margin-bottom: 20px;">
       <li class="active"><a href="#tab-online-students" data-toggle="tab">Online</a></li>
-      <li><a href="#tab-boarding-students" data-toggle="tab">Boarding</a></li>
+      <li><a id="boarding" href="#tab-boarding-students" data-toggle="tab">Boarding</a></li>
     </ul>
     <div class="tab-content">
       <div class="tab-pane active" id="tab-online-students">
-          <%= render @users %>
+          <%= render 'users/userOnline' %>
       </div>
       <div class="tab-pane" id="tab-boarding-students">
-        <%= render @users %>
+          <%= render 'users/userBoarding' %>
+
+        
       </div>
     </div>
   </div>
@@ -46,7 +48,6 @@
     });
   </script>
 
-  <%= paginate @users %>
 
   <br />
 </div>

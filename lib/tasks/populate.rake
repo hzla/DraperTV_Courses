@@ -4,9 +4,10 @@ namespace :db do
     require 'populator'
     require 'faker'
     password = "password"
+    studentProgram = "boarding"
     #[User].each(&:delete_all)
     
-    User.populate 50 do |person|
+    User.populate 24 do |person|
       person.first_name    = Faker::Name.first_name
       person.last_name    = Faker::Name.last_name
       person.email   = Faker::Internet.email
@@ -18,6 +19,8 @@ namespace :db do
       person.longitude    = Faker::Address.longitude
       person.state   = Faker::Address.state
       person.zip     = Faker::Address.zip_code
+      person.online   = studentProgram
+
     end
   end
 end
