@@ -66,10 +66,8 @@ class UserCommentsController < ApplicationController
           listUsers = listUsers.uniq
           listUsers.delete(current_user.id)
           listUsers.each do |usr|
-            PrivatePub.publish_to("/layouts/#{usr}", "$('#notify').append('#{@commenter.first_name} commented on #{@topic.content}'); $('#notification').removeClass('empty');
-              $('#notifications').addClass('notifications');")
+            PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications');")
           end              
-
 
     elsif @comment.commentable_type == "Assignment"
 
