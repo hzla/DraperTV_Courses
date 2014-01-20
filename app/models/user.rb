@@ -55,9 +55,17 @@ class User < ActiveRecord::Base
     ['http://www.twitter.com', twitter].join('/')
   end
 
+
+  include PgSearch
+  pg_search_scope :search, against: [:first_name, :last_name],
+  using: {tsearch: {dictionary: "english"}},
+  associated_against: {skills: :name}
+
+
   def self.text_search(query)
     if query.present?
-      where("first_name @@ :q OR last_name @@ :q OR country @@ :q OR (first_name || ' ' || last_name) @@ :q OR online @@ :q OR team @@ :q OR team @@ :q", :q => query)
+      #where("first_name @@ :q OR last_name @@ :q OR country @@ :q OR (first_name || ' ' || last_name) @@ :q OR online @@ :q OR team @@ :q OR team @@ :q", :q => query)
+    search(query)
     else
       scoped
     end
