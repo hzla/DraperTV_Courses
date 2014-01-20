@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
 
   def self.text_search(query)
     if query.present?
-      where("first_name @@ :q OR last_name @@ :q OR country @@ :q OR (first_name || ' ' || last_name) @@ :q OR online @@ :q OR team @@ :q", :q => query)
+      where("first_name @@ :q OR last_name @@ :q OR country @@ :q OR (first_name || ' ' || last_name) @@ :q OR online @@ :q OR team @@ :q OR team @@ :q", :q => query)
     else
       scoped
     end
