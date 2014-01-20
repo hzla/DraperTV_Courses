@@ -11,7 +11,7 @@
       <div class="course-tile" style="background-image: url(<%= course.tile_image %>);">
         <div class="information">
           <div class="title"><%= course.title %></div>
-          <div class="description"><%= course.description %></div>
+          <div class="description"><%= course.start_date.strftime("%A, %B %e") %></div>
         </div>
         <div class="progress" style="display;block; width: 100%;">
           <div class="bar" style="width: <%= number_to_percentage(course.progress(current_user)) %>;"></div>
@@ -29,7 +29,13 @@
         <div class="course-tile" style="background-image: url(<%= course.tile_image %>);">
           <div class="information">
             <div class="title"><%= course.title %></div>
-            <div class="description"><%= course.description %></div>
+            <div class="description">Opened <%= course.start_date.strftime("%A, %B %e") %></div>
+          </div>
+          <div class="percent-complete">
+            <% if course.progress(current_user).to_i > 0 %>
+              <%= course.progress(current_user).to_i %>%
+            <% else %>
+            <% end %>
           </div>
           <div class="progress" style="display;block; width: 100%;">
             <div class="bar" style="width: <%= number_to_percentage(course.progress(current_user)) %>;"></div>
@@ -44,10 +50,11 @@
       <div class="course-tile" style="background-image: url(<%= locked_course.tile_image %>);">
         <div class="information">
           <div class="title"><%= locked_course.title %></div>
-          <div class="description"></div>
+           <div class="description"><%= locked_course.start_date.strftime("%A, %B %e") %></div>
         </div>
         <div class="course-tile-overlay">
           <div class="lock"></div>
+          <div class="dates">Opens <%= locked_course.start_date.strftime("%A, %B %e") %></div>
         </div>
       </div>
     </div>
