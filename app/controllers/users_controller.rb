@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   def index
    
     if params[:tag]
-      @users = User.where(:online == "online").text_search(params[:query]).tagged_with(params[:tag]).page(params[:page]).per(10)
-      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag]).page(params[:page]).per(10)
+      @users = User.where(:online == "online").text_search(params[:query]).tagged_with(params[:tag])
+      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag])
       @hash = Gmaps4rails.build_markers(@users) do |user, marker|
         marker.lat user.latitude
         marker.lng user.longitude
@@ -21,8 +21,8 @@ class UsersController < ApplicationController
       #format.json { render json: @users }
     end
     elsif params[:tag].to_s ==~ /^\s*$/
-      @users = User.where(:online == "online").text_search(params[:query]).page(params[:page]).per(10)
-      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag]).page(params[:page]).per(10)
+      @users = User.where(:online == "online").text_search(params[:query])
+      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag])
       @hash = Gmaps4rails.build_markers(@users) do |user, marker|
         marker.lat user.latitude
         marker.lng user.longitude
@@ -33,8 +33,8 @@ class UsersController < ApplicationController
       #format.json { render json: @users }
     end
     else
-      @users = User.where(:online == "online").text_search(params[:query]).page(params[:page]).per(10)
-      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag]).page(params[:page]).per(10)
+      @users = User.where(:online == "online").text_search(params[:query])
+      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag])
       @hash = Gmaps4rails.build_markers(@users) do |user, marker|
         marker.lat user.latitude
         marker.lng user.longitude
