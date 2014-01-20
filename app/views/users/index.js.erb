@@ -1,4 +1,7 @@
 $('#users').append('<%= j render(@users) %>');
+$('#users').html('<%= escape_javascript(paginate(@boarding, :remote => true, :param_name => 'users/userBoarding').to_s) %>');
+$('#users').append('<%= j render(@boarding) %>');
+
 <% if (@users.current_page < @users.num_pages) %>
         $('.pagination').replaceWith('<%= j paginate(@users) %>');
 <% else %>
