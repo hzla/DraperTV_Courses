@@ -170,8 +170,8 @@
       <div class="tab-pane" id="tab-ip">
         <div id="current">
           <% @courses.each do |course| %>
-            <% if course.course_complete_for_user?(current_user) == true %>
-            <% elsif course.progress(current_user) > 0 %>
+            <% if course.course_complete_for_user?(@user) == true %>
+            <% elsif course.progress(@user) > 0 %>
               <%= link_to(course_path(course)) do %>
                 <div class="container">
                   <div class="box">
@@ -181,7 +181,7 @@
                     <%= course.title %>
                   </div>
                   <div class="date">
-                  <%= course.progress(current_user).to_i %>% Complete
+                  <%= course.progress(@user).to_i %>% Complete
                 </div>
                 </div>
               <% end %>
@@ -199,11 +199,11 @@
               <% if assignment.category == "quiz" %>
                 <div class="quiz-section">
                   <div class="score-tile">
-                    <div class="score"><%= ((assignment.survey.attempts.for_participant(current_user).high_score).to_f / (assignment.survey.questions.count) * 100).to_i %>%</div>
+                    <div class="score"><%= ((assignment.survey.attempts.for_participant(@user).high_score).to_f / (assignment.survey.questions.count) * 100).to_i %>%</div>
                   </div>
                   <div class="title"><%= assignment.title %></div>
-                  <% if assignment.survey.attempts.for_participant(current_user).count > 0 %>
-                    <div class="description">You scored <%= assignment.survey.attempts.for_participant(current_user).high_score %> out of <%= assignment.survey.questions.count %></div>
+                  <% if assignment.survey.attempts.for_participant(@user).count > 0 %>
+                    <div class="description">You scored <%= assignment.survey.attempts.for_participant(@user).high_score %> out of <%= assignment.survey.questions.count %></div>
                   <% else %>
                       <div class="description">Not started</div>
                   <% end %>
