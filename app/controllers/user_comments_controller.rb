@@ -33,6 +33,8 @@ class UserCommentsController < ApplicationController
 
     #we will need to find the Post id Through Users relation to the Comments
     #And this is because Activity Track, tracks Users actions, it breaks down from there.
+
+
     
     if @comment.commentable_type == "Post"
       @posts = Post.all
@@ -65,6 +67,18 @@ class UserCommentsController < ApplicationController
 
           listUsers = listUsers.uniq
           listUsers.delete(current_user.id)
+
+          if @comment.save
+            track_activity @comment  
+            #refresh_dom_with_partial('div#comments_container', 'comments')
+            respond_to do |format|
+              format.js { @comments = @commentable.user_comments.order(:created_at) }
+              format.html #{ redirect_to @commentable }
+            end
+          else
+            render :new
+          end
+
           listUsers.each do |usr|
             PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications');")
           end              
@@ -103,6 +117,16 @@ class UserCommentsController < ApplicationController
 
           listUsers = listUsers.uniq
           listUsers.delete(current_user.id)
+          if @comment.save
+            track_activity @comment  
+            #refresh_dom_with_partial('div#comments_container', 'comments')
+            respond_to do |format|
+              format.js { @comments = @commentable.user_comments.order(:created_at) }
+              format.html #{ redirect_to @commentable }
+            end
+          else
+            render :new
+          end
           listUsers.each do |usr|
             PrivatePub.publish_to("/layouts/#{usr}", "$('#notify').append('#{@commenter.first_name} commented on #{@topic}'); $('#notifications').removeClass('empty');
               $('#notification').addClass('notifications');")
@@ -142,27 +166,22 @@ class UserCommentsController < ApplicationController
 
           listUsers = listUsers.uniq
           listUsers.delete(current_user.id)
+          if @comment.save
+            track_activity @comment  
+            #refresh_dom_with_partial('div#comments_container', 'comments')
+            respond_to do |format|
+              format.js { @comments = @commentable.user_comments.order(:created_at) }
+              format.html #{ redirect_to @commentable }
+            end
+          else
+            render :new
+          end
           listUsers.each do |usr|
             PrivatePub.publish_to("/layouts/#{usr}", "$('#notify').append('#{@commenter.first_name} commented on #{@topic.name}'); $('#notifications').removeClass('empty');
               $('#notifications').addClass('notifications');")
           end 
-
-
-
       else
       end
-
-
-    if @comment.save
-      track_activity @comment  
-      #refresh_dom_with_partial('div#comments_container', 'comments')
-      respond_to do |format|
-        format.js { @comments = @commentable.user_comments.order(:created_at) }
-        format.html #{ redirect_to @commentable }
-      end
-    else
-      render :new
-    end
       
   end
  
