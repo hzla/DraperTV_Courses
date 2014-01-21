@@ -1,7 +1,20 @@
-<% publish_to "/layouts/comments" do %>
-$("#<%= @commentable.id %>").empty();
-$("#<%= @commentable.id  %>").append("<%= escape_javascript(render(:partial => 'comments')) %>");
-$("textarea#user_comment_content").val(null);
+<% if @comment.commentable_type == "Post" %>
+  <% publish_to "/layouts/posts" do %>
+    $("#<%= @commentable.id %>").empty();
+    $("#<%= @commentable.id  %>").append("<%= escape_javascript(render(:partial => 'comments')) %>");
+    $("textarea#user_comment_content").val(null);
+  <% end %>
+<% elsif @comment.commentable_type == "Assignment" %>
+  <% publish_to "/layouts/assignments" do %>
+    $("#<%= @commentable.id %>").empty();
+    $("#<%= @commentable.id  %>").append("<%= escape_javascript(render(:partial => 'comments')) %>");
+    $("textarea#user_comment_content").val(null);
+  <% end %>
+<% elsif @comment.commentable_type == "Event" %>
+  <% publish_to "/layouts/events" do %>
+    $("#<%= @commentable.id %>").empty();
+    $("#<%= @commentable.id  %>").append("<%= escape_javascript(render(:partial => 'comments')) %>");
+    $("textarea#user_comment_content").val(null);
+  <% end %>
+<% else %>
 <% end %>
-
-
