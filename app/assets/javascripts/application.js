@@ -12,7 +12,6 @@
 //
 
 // = require jquery
-// = require jquery.turbolinks
 // = require jquery-ui
 // = require nprogress-turbolinks
 // = require jquery_ujs
