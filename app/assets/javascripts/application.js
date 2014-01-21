@@ -26,7 +26,6 @@
 // = require_tree .
 // = require private_pub
 // = require jquery.sidr.min.js
-// = require turbolinks
 
 
 NProgress.configure
