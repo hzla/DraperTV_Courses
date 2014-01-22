@@ -71,3 +71,8 @@ module OnlineSchool
   
   end
 end
+
+    headers['Access-Control-Allow-Origin'] = 'http://tranquil-castle-6757.herokuapp.com/faye'
+    headers['Access-Control-Request-Method'] = %w{GET POST OPTIONS}.join(",")
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+    headers['Access-Control-Max-Age'] = "1728000"
