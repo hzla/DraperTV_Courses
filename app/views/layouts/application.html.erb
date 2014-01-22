@@ -122,6 +122,14 @@
   <div style="display: block; width: 100%;">
     <div id="loadingbar-frame"></div>
     <div id="main-body">
+    <div class="header">
+      <div class="alert alert-info">
+        <%= link_to "Please refresh this page to receive new updates.", posts_path %>
+      </div>      
+    </div>
+
+
+  
       <%= yield %>
       
     </div>
@@ -157,6 +165,24 @@
         $('a[data\-class="displayLink"]').click();
 
       });
+
+     var header = document.querySelector('.header');
+      var origOffsetY = header.offsetTop;
+
+      function onScroll(e) {
+        window.scrollY >= origOffsetY ? header.classList.add('sticky') :
+                                        header.classList.remove('sticky');
+      }
+
+      document.addEventListener('scroll', onScroll);   
+
+      $(".header").hide();
+
+    $("#x").click( function()
+      {
+        $(".header").hide();
+      } );      
+
     </script>
 
   </div>

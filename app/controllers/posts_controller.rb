@@ -70,6 +70,8 @@ def create
           format.js { redirect_to :back }
           #format.html # new.html.erb
           format.html { redirect_to :back } #{ redirect_to :back, :remote => true }
+          PrivatePub.publish_to("/layouts/posts", "$('.header').show();")
+
         end
       else  
           render :new  
