@@ -122,16 +122,27 @@
   <div style="display: block; width: 100%;">
     <div id="loadingbar-frame"></div>
     <div id="main-body">
+
+<%
+=begin
+%>
+** Below 2 Divs are for the pop up message when there is a new post.
+- Styles are located in app.css.scss
+- Javascript script is located at the bottom of this page.
+<%
+=end
+%>
+
     <div class="header">
       <div class="alert alert-info">
         <%= link_to "Please refresh this page to receive new updates.", posts_path %>
       </div>      
     </div>
+<div class="emoticon">
+  Hi, this is a great plugin! :-) :D
+</div>
 
-
-  
-      <%= yield %>
-      
+      <%= yield %>      
     </div>
   </div>
 <% else %>
@@ -163,25 +174,21 @@
       } );
       $( document ).ready(function() {
         $('a[data\-class="displayLink"]').click();
-
       });
 
-     var header = document.querySelector('.header');
-      var origOffsetY = header.offsetTop;
 
+      
+      var header = document.querySelector('.header');
+      var origOffsetY = header.offsetTop;
       function onScroll(e) {
         window.scrollY >= origOffsetY ? header.classList.add('sticky') :
                                         header.classList.remove('sticky');
       }
-
       document.addEventListener('scroll', onScroll);   
-
       $(".header").hide();
 
-    $("#x").click( function()
-      {
-        $(".header").hide();
-      } );      
+      
+
 
     </script>
 

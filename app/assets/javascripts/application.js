@@ -25,6 +25,8 @@
 // = require_tree .
 // = require private_pub
 // = require jquery.sidr.min.js
+// = require emoticon
+
 
 
 NProgress.configure
@@ -40,4 +42,5 @@ function contains(arr, value) {
     }
     return false;
 }
+
 

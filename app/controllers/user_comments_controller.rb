@@ -31,8 +31,11 @@ class UserCommentsController < ApplicationController
     @activities =  Activity.all
     @activities = Activity.order("created_at desc")
 
-    #we will need to find the Post id Through Users relation to the Comments
-    #And this is because Activity Track, tracks Users actions, it breaks down from there.
+
+    #This is the notification If else Statement:
+    #It checks if a the comment's commentable type is a Post or Event or Assignment
+    # in order to notify the users per their ownership of the post.
+
 
     if @comment.commentable_type == "Post"
       @posts = Post.all

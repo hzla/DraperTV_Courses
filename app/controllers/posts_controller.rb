@@ -70,6 +70,9 @@ def create
           format.js { redirect_to :back }
           #format.html # new.html.erb
           format.html { redirect_to :back } #{ redirect_to :back, :remote => true }
+
+          #below line will send a notification to 
+          #everyone that there is a new post and they can refres
           PrivatePub.publish_to("/layouts/posts", "$('.header').show();")
 
         end
