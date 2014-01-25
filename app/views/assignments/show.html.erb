@@ -6,14 +6,15 @@
 </ul>
 
 <!-- split panel if speaker info available -->
-<div class="span10" id="assignment_container">
+<div id="assignment_container">
   
   <h1 id="assignment-show-title"><%= @assignment.title %></h1>
 
   <% if @assignment.category == "reading" or @assignment.category == "video" or @assignment.category == "founder" %>
   	<br/>
-    
+    <div class="video-responsive-container">
   	   <%= raw @video_embed %>
+     </div>
   	<br /><br />
   	
     <div id="comments-bar">class discussion</div>
@@ -93,7 +94,7 @@
 </div> <!-- end span10 -->
 
 <% if @assignment.category == "video" or @assignment.category == "quiz" or @assignment.category == "reading" or @assignment.category == "founder" %>
-  <div class="span3" id="speaker_container">
+  <div id="speaker_container">
     <% if @assignment.speaker_pic and @assignment.speaker_name %>
       <% if @assignment.category == "reading" or @assignment.category == "quiz" %>
         <div class="header">Info</div>

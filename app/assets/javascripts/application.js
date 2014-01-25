@@ -15,7 +15,6 @@
 // = require jquery-ui
 // = require nprogress-turbolinks
 // = require jquery_ujs
-// = require turbolinks
 // = require jquery.infinitescroll
 // = require jquery.autosize
 // = require underscore
@@ -24,7 +23,8 @@
 // = require home
 // = require_tree .
 // = require private_pub
-// = require jquery.sidr.min.js
+// = require slidebars.min
+// = require turbolinks
 
 
 NProgress.configure

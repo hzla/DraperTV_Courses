@@ -3,13 +3,14 @@
 
 <head>
   <title>Draper University Online School</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- install fonts -->
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,400italic' rel='stylesheet' type='text/css'>
   <!-- install icons -->
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <%= javascript_include_tag 'jquery', 'application'%>
+  <%= javascript_include_tag 'jquery', 'application' %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
   <%= yield :head %>
@@ -37,130 +38,123 @@
 </head>
 <body>
 
-<script type="text/javascript">
-  //$(document).on("page:change", function() {
-  $(document).ready(function() {
-    
-   $('#left-menu').sidr({
-      name: 'sidr-left',
-      side: 'left'
-    });
-   $('#right-menu').sidr({
-      name: 'sidr-right',
-      side: 'right'
-    });
+  <!-- ***************** -->
+  <!-- **** Navbar ***** -->
+  <!-- ***************** -->
 
-   $.when(
-     $('#left-menu').click()
-    ).done(function() {
-      $('#right-menu').click()
-    })
-  });
-</script>
-
-<!-- ***************** -->
-<!-- **** Navbar ***** -->
-<!-- ***************** -->
-
-<% if user_signed_in? %>
-  <div class="navbar">
-    <div class="navbar-inner">
-      <div class="container">
-            <a id="left-menu" href="#left-menu" class="sidr-click">
-              <div id="menu-icon"></div>
-              <div class="title">menu</div>
-            </a>
-          <div id="logo"></div>
-        <ul class="nav pull-right">
-          <!-- <div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
-          <li class="dropdown">
-            <a class="dropdown" data-toggle="dropdown" href="#">
-              <%= current_user.full_name %> <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li role="menu"><%= link_to 'View Profile', student_profile_path(current_user)  %></li>
-              <li role="menu"><%= link_to 'Edit Settings', edit_user_registration_path %></li>
-              <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
+    <% if user_signed_in? %>
+      <div class="navbar navbar-fixed-top sb-slide">
+        <div class="navbar-inner">
+          <div class="container">
+                <div id="left-menu" class="sb-toggle-left">
+                  <div id="menu-icon"></div>
+                  <div class="title">menu</div>
+                </div>
+              <div id="logo"></div>
+            <ul class="nav pull-right">
+              <!-- <div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
+              <li class="dropdown">
+                <a class="dropdown" data-toggle="dropdown" href="#">
+                  <%= current_user.full_name %> <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li role="menu"><%= link_to 'View Profile', student_profile_path(current_user)  %></li>
+                  <li role="menu"><%= link_to 'Edit Settings', edit_user_registration_path %></li>
+                  <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
+                </ul>
+              </li> -->
+              <!-- <a id="right-menu" href="#right-menu" class="sidr-click"> -->
+              <div class="sb-toggle-right">
+                <i class="fa fa-inbox fa-2x" style="padding-top: 10px; padding-right: 4px;" id="notifications"></i>
+                <div class="red-circle"></div>
+              </div>
             </ul>
-          </li> -->
-          <a id="right-menu" href="#right-menu" class="sidr-click">
-            <i class="fa fa-inbox fa-2x" style="padding-top: 10px; padding-right: 4px;" id="notifications"></i>
-            <div class="red-circle"></div>
-          </a>
-        </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-<% else %>
-  <div class="navbar">
-    <div class="navbar-inner">
-      <div class="container"> 
-        <%= link_to '/' do %>
-          <div id="logo"></div>
-        <% end %>
-        <ul class="nav pull-right">
-          <li id="home_link"><%= link_to "Apply", '/apply' %></li>
-          <li id="home_link"><%= link_to "Log In", login_path %></li>
-        </ul>
+    <% else %>
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container"> 
+            <%= link_to '/' do %>
+              <div id="logo"></div>
+            <% end %>
+            <ul class="nav pull-right">
+              <li id="home_link"><%= link_to "Apply", '/apply' %></li>
+              <li id="home_link"><%= link_to "Log In", login_path %></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-<% end %>
+    <% end %>
 
-<% flash.each do |type, message| %>
-	<div class="alert <%= flash_class type %>">
-		<button class="close" data-dismiss="alert">x</button>
-		<%= message %>
-	</div>
-<% end %>
+    <% flash.each do |type, message| %>
+    	<div class="alert <%= flash_class type %>">
+    		<button class="close" data-dismiss="alert">x</button>
+    		<%= message %>
+    	</div>
+    <% end %>
 
-<!-- ***************** -->
-<!-- ***** Body ****** -->
-<!-- ***************** -->
+  <div id="sb-site" style="padding-top: 55px; overflow: visible; height: 100%; background: #fff;">  
 
-<% if user_signed_in? %>
-  <div style="display: block; width: 100%;">
-    <div id="loadingbar-frame"></div>
-    <div id="main-body">
-      <%= yield %>
-      
-    </div>
-  </div>
-<% else %>
-  <div id="logged-out-main">
-		<%= yield %>
-  </div>
-<% end %>
+  <!-- ***************** -->
+  <!-- ***** Body ****** -->
+  <!-- ***************** -->
 
-<% if user_signed_in? %>
-  <div id="sidr-left">
-    <%= render 'layouts/sidenav' %>
+    <% if user_signed_in? %>
+      <div style="display: block; width: 100%; overflow: visible; background: white; height: auto;">
+        <div id="loadingbar-frame"></div>
+        <div id="main-body">
+          <%= yield %>
+        </div>
+      </div>
+    <% else %>
+      <div id="logged-out-main">
+    		<%= yield %>
+      </div>
+    <% end %>
+
+  </div><!-- end sb-site -->
+
+  <!-- ***************** -->
+  <!-- *** Sidebars **** -->
+  <!-- ***************** -->
+
+  <div class="sb-slidebar sb-left">
+    <% if user_signed_in? %>
+      <%= render 'layouts/sidenav' %>
+    <% end %>
   </div>
-  <div id="sidr-right">
+
+  <div class="sb-slidebar sb-right" id="right-menu">
     <div class="top-bar">
     </div>
     <div id="notify" class="section-link"></div>
-     <!--  </div> -->
     <%= link_to "", activities_path, :data => { :'class' => 'displayLink' }, :remote => true %>
-
     <script type="text/javascript">
       $('#demo').collapse({
         toggle: true
       })
-      $("#right-menu").click( function()
-      {
-          $("#notifications").removeClass("notifications");
-          $('#notifications').addClass("empty");
-          $('a[data\-class="displayLink"]').click();
-      } );
+      // $(".sb-toggle-right").click( function()
+      // {
+      //     $("#notifications").removeClass("notifications");
+      //     $('#notifications').addClass("empty");
+      //     $('a[data\-class="displayLink"]').click();
+      // } );
       $( document ).ready(function() {
         $('a[data\-class="displayLink"]').click();
 
       });
     </script>
-
   </div>
-<% end %>
+
+  <script>
+    (function($) {
+      $(document).ready(function() {
+        $.slidebars();
+      });
+    }) (jQuery);
+  </script>
 
 </body>
 
@@ -177,7 +171,7 @@
       </div>
     </div>
   </div>
-</footer>
- -->
+</footer> -->
+
 
 </html>

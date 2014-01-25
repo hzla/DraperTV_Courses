@@ -14,7 +14,7 @@ class AssignmentsController < ApplicationController
     @user_assignment = @assignment.user_assignments.where(:user_id => current_user[:id])
 		
 		if @assignment.category == "video" or @assignment.category == "reading" or @assignment.category == "founder"
-		oembed = "http://vimeo.com/api/oembed.json?url=http%3A//vimeo.com/" + @assignment.vimeo_url + '&maxwidth=660' + '&autoplay=1'
+		oembed = "http://vimeo.com/api/oembed.json?url=http%3A//vimeo.com/" + @assignment.vimeo_url + '&autoplay=1'
     	puts (Curl::Easy.perform(oembed).body_str)["html"]
     	@video_embed = JSON.parse(Curl::Easy.perform(oembed).body_str)["html"]
     end

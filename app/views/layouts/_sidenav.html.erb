@@ -3,6 +3,7 @@
 		<div class="top-bar">
 			<%= link_to student_profile_path(current_user) do %>
 				<div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
+				<!-- <div class="name"><%= current_user.full_name %></div> -->
 			<% end %>
 			 
 		</div>
@@ -79,7 +80,5 @@
 	<div class="section-link">
 		<%= subscribe_to "/layouts/comments" %>
 	</div>  
-
-
 
 

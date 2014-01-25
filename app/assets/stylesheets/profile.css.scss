@@ -61,8 +61,8 @@
 		display: block;
 		float: left;
 		margin-right: 30px;
-		border: 2px solid $gray-x-lt;
-		border-radius: 70px;
+		border: 1px solid $gray-x-x-lt;
+		//border-radius: 70px;
 		overflow: hidden;
 		position: absolute;
 		top: 0;
@@ -82,8 +82,8 @@
 		height: auto;
 
 		.name {
-			font-size: 26px;
-			font-weight: normal;
+			font-size: 2.2em;
+			font-weight: 300;
 			color: $gray-dark;
 			display: block;
 			float: left;
@@ -113,6 +113,7 @@
 				outline: 0;
 				float: left; 
 				margin-right: 10px;
+				margin-bottom: 10px;
 				background-color: white;
 			}
 
@@ -224,23 +225,31 @@
 
 .profile-bottom {
 	display: block;
-	width: 96%;
-	.section-activity {
+	width: 100%;
+	.section-left {
 		display: block;
-		width: 65%;
+		width: 36%;
 		float: left;
+		padding-right: 2%;
+		border-right: 1px solid $gray-x-x-lt;
 		.profile-posts {
 			padding-left: 15px;
 			#post { width: 90%;}
 		} 
+		.info-section { 
+			padding: 15px 12px 0 12px; 
+			border-top: 1px solid $gray-x-x-lt;
+			margin-top: 20px;
+		}
+		.skills-section { padding: 20px 12px 0 0; }
 	}
 	.section-right {
 		display: block;
-		width: 30%;
+		width: 58%;
 		float: right;
 		p {
 			color: $gray-med;
-			padding: 2px 10px;
+			//padding: 2px 10px;
 		}
 	}
 }
@@ -528,6 +537,7 @@
 	.container {
 		display:block;
 		float: left;
+		width: 25%; 
 		margin-right:8px;
 		margin-bottom: 12px;
 		cursor: pointer;
@@ -536,15 +546,13 @@
 		.box {
 			border: 1px solid $gray_x_lt;
 			background: $gray-x-x-lt;
-			padding: 5px 7px;
+			padding: 15px 17px;
 			border-radius: 2px;	
 			position: relative;
+			background-size: contain;
 
 
-			img {
-				width: 70px;
-				height: 70px;
-			}
+			
 		}
 		.title {
 			color: $gray-dark;
@@ -701,13 +709,13 @@
 		}	
 	}
 	#comments_container {
-	  width: 80%;
+	  width: 100%;
 	  display: block;
 	  border: 1px solid $gray-x-x-lt;
 	  position: relative;
 	  padding: 10px 0;
 	  margin-top: 20px;
-	  margin-left: 80px;
+	  margin-left: 0;
 	  .picture {
 	    width: 30px;
 	    height: 30px;
@@ -748,7 +756,7 @@
 	    textarea {
 	      resize: none;
 	      height: 20px;
-	      width: 90%;
+	      width: calc(80% - 45px);
 	      margin-left: 38px;  
 	      font-size: 12px;
 	    }
@@ -808,12 +816,12 @@
 		}
 	}
 	#comments_container {
-    width: 80%;
+    width: 100%;
     border: 1px solid $gray-x-x-lt;
     position: relative;
     padding: 10px 0;
     margin-top: 20px;
-    margin-left: 72px;
+    margin-left: 0;
     .picture {
       width: 30px;
       height: 30px;
@@ -854,7 +862,7 @@
       textarea {
         resize: none;
         height: 20px;
-        width: 90%;
+        width: calc(80% - 38px);
         margin-left: 38px;  
         font-size: 12px;
       }
@@ -876,10 +884,10 @@
 	margin-left: 12px;
 	margin-bottom: 6px;
 	@include tag;
-	background: $light-blue-2;
+	background: $gray-lt;
 	font-size: 11px;
 	font-weight: normal;
-	&:hover { background: $light-blue-3; }
+	&:hover { background: $gray; }
 }
 
 
@@ -899,3 +907,66 @@
  		i { color: $gray-lt; }
  	}
  }
+
+
+ @media all and (min-width: 1001px) { }
+ @media all and (max-width: 1000px) and (min-width: 700px) { 
+ 	.profile-bottom {
+ 		.section-left {
+ 			width: 100%;
+ 			border-right: none;
+ 			#profile-info { display: none; }
+ 		}
+ 		.section-right {
+ 			width: 100%;
+ 			float: left;
+ 		}
+ 	}
+ 	#profile_top_container {
+ 		#avatar img {
+ 			width: 100px;
+ 			height: 100px;
+ 		}
+ 		.right { 
+ 			margin-left: 120px;
+ 			padding-top: 15px;
+ 		}
+ 	}
+ }
+ @media all and (max-width: 699px) {  
+ 	.profile-bottom {
+ 		.section-left {
+ 			width: 100%;
+ 			border-right: none;
+ 			#profile-info { display: none; }
+ 		}
+ 		.section-right {
+ 			width: 100%;
+ 			float: left;
+ 			.nav-tabs li a {
+ 				padding: 8px 5px;
+ 				font-size: 10px;
+ 				letter-spacing: 0;
+ 			}
+ 		}
+ 	}
+ 	#profile_top_container {
+ 		#avatar img {
+ 			width: 60px;
+ 			height: 60px;
+ 		}
+ 		.right { 
+ 			margin-left: 80px;
+ 			padding-top: 8px;
+ 			.name { font-size: 2.0em;}
+ 		}
+ 	}
+ }
+
+
+
+
+
+
+
+
