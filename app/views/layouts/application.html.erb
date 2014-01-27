@@ -141,19 +141,17 @@
       //     $('#notifications').addClass("empty");
           $('a[data\-class="displayLink"]').click();
       // } );
-      $( document ).ready(function() {
-         document.addEventListener('scroll', onScroll);   
-        $("#refresh-alert").hide();
-      });
-
-      var header = document.querySelector('.header');
-      var origOffsetY = header.offsetTop;
-      function onScroll(e) {
+      $( document ).ready(function() { 
+        //refresh alert for new posts
+        var header = document.querySelector('.header');
+        var origOffsetY = header.offsetTop;
+        function onScroll(e) {
         window.scrollY >= origOffsetY ? header.classList.add('sticky') :
-                                        header.classList.remove('sticky');
-      }
-     
-
+          header.classList.remove('sticky');
+        }
+        document.addEventListener('scroll', onScroll);   
+        $(".header").hide();
+      });
     </script>
   </div>
 
