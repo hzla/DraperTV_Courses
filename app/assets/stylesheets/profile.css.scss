@@ -87,6 +87,7 @@
 			color: $gray-dark;
 			display: block;
 			float: left;
+			line-height: 1.0;
 		}
 		.type {
 			display: block;
@@ -103,7 +104,6 @@
 			clear: both;
 			padding-top: 25px;
 			padding-bottom: 10px;
-			width: 60%;
 
 			img {
 				display: block;
@@ -930,6 +930,7 @@
  		.right { 
  			margin-left: 120px;
  			padding-top: 15px;
+ 			.name { font-size: 2.0em; line-height: 1.2; }
  		}
  	}
  }
@@ -958,7 +959,7 @@
  		.right { 
  			margin-left: 80px;
  			padding-top: 8px;
- 			.name { font-size: 2.0em;}
+ 			.name { font-size: 2.0em; line-height: 1.2; }
  		}
  	}
  }

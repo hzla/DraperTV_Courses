@@ -51,15 +51,18 @@ OnlineSchool::Application.routes.draw do
   get 'network', to: 'users#list', as: :network
   get 'profile/:id', to: 'profiles#profile', as: :student_profile
   get 'access', to: 'users#access'
+
  
   resources :contests
   resources :courses
   resources :feedbacks
   get 'feedback', to: 'feedbacks#index', as: :feedbacks
 
-
+  #map.resources :user_assignments, :has_many => :user_comments
   resources :user_assignments do
     resources :assignments
+    resources :user_comments
+    resources :user
   end
 
   resources :videos do
@@ -70,7 +73,9 @@ OnlineSchool::Application.routes.draw do
     resources :user_comments
   end
 
+
   get 'videos', to: 'videos#index', as: :videos
+
 
   resources :assignments do
     resources :user_comments

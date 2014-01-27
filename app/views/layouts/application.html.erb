@@ -105,11 +105,6 @@
       <div style="display: block; width: 100%; overflow: visible; background: white; height: auto;">
         <div id="loadingbar-frame"></div>
         <div id="main-body">    
-          <div class="header">
-            <div class="alert alert-info">
-              <%= link_to "Please refresh this page to receive new updates.", posts_path %>
-            </div>      
-          </div>
           <%= yield %>
         </div>
       </div>
@@ -147,7 +142,7 @@
           $('a[data\-class="displayLink"]').click();
       // } );
       $( document ).ready(function() {
-        
+
       });
 
 
