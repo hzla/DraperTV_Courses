@@ -49,7 +49,6 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'chosen-rails'
 end
 
 gem 'jquery-rails', "2.3.0"

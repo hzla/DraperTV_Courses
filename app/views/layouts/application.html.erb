@@ -104,7 +104,12 @@
     <% if user_signed_in? %>
       <div style="display: block; width: 100%; overflow: visible; background: white; height: auto;">
         <div id="loadingbar-frame"></div>
-        <div id="main-body">
+        <div id="main-body">    
+          <div class="header">
+            <div class="alert alert-info">
+              <%= link_to "Please refresh this page to receive new updates.", posts_path %>
+            </div>      
+          </div>
           <%= yield %>
         </div>
       </div>
@@ -139,12 +144,26 @@
       // {
       //     $("#notifications").removeClass("notifications");
       //     $('#notifications').addClass("empty");
-      //     $('a[data\-class="displayLink"]').click();
+          $('a[data\-class="displayLink"]').click();
       // } );
       $( document ).ready(function() {
-        $('a[data\-class="displayLink"]').click();
-
+        
       });
+
+
+      
+      var header = document.querySelector('.header');
+      var origOffsetY = header.offsetTop;
+      function onScroll(e) {
+        window.scrollY >= origOffsetY ? header.classList.add('sticky') :
+                                        header.classList.remove('sticky');
+      }
+      document.addEventListener('scroll', onScroll);   
+      $(".header").hide();
+
+      
+
+
     </script>
   </div>
 

@@ -25,6 +25,7 @@
 // = require private_pub
 // = require slidebars.min
 // = require turbolinks
+// = require emoticon
 
 
 NProgress.configure
@@ -40,4 +41,5 @@ function contains(arr, value) {
     }
     return false;
 }
+
 
