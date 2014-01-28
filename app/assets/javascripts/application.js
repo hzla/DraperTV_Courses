@@ -24,7 +24,6 @@
 // = require_tree .
 // = require private_pub
 // = require slidebars.min
-// = require turbolinks
 // = require emoticon
 
 
