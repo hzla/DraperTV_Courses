@@ -132,25 +132,25 @@
     <div id="notify" class="section-link"></div>
     <%= link_to "", activities_path, :data => { :'class' => 'displayLink' }, :remote => true %>
     <script type="text/javascript">
-      $('#demo').collapse({
-        toggle: true
-      })
       // $(".sb-toggle-right").click( function()
       // {
-      //     $("#notifications").removeClass("notifications");
-      //     $('#notifications').addClass("empty");
-          $('a[data\-class="displayLink"]').click();
-      // } );
+      // //     $("#notifications").removeClass("notifications");
+      // //     $('#notifications').addClass("empty");
+      //     $('a[data\-class="displayLink"]').click();
+      // });
+
+      $('a[data\-class="displayLink"]').click();
+
       $( document ).ready(function() { 
         //refresh alert for new posts
-        var header = document.querySelector('.header');
-        var origOffsetY = header.offsetTop;
-        function onScroll(e) {
-        window.scrollY >= origOffsetY ? header.classList.add('sticky') :
-          header.classList.remove('sticky');
-        }
-        document.addEventListener('scroll', onScroll);   
-        $(".header").hide();
+        // var header = document.querySelector('.header');
+        // var origOffsetY = header.offsetTop;
+        // function onScroll(e) {
+        // window.scrollY >= origOffsetY ? header.classList.add('sticky') :
+        //   header.classList.remove('sticky');
+        // }
+        // document.addEventListener('scroll', onScroll);   
+        // $(".header").hide();
       });
     </script>
   </div>
