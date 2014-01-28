@@ -135,12 +135,33 @@
       // {
       // //     $("#notifications").removeClass("notifications");
       // //     $('#notifications').addClass("empty");
-      //     $('a[data\-class="displayLink"]').click();
+      //   //  $('a[data\-class="displayLink"]').click();
+        
       // });
 
-      $('a[data\-class="displayLink"]').click();
+  
+
+    // $('.sb-toggle-right').click(function(){
+    // $('a[data\-class="displayLink"]').click(); 
+    // $('.sb-toggle-right').toggle();
+    //  });
+
+    
+    
+  
+
+ $( ".sb-toggle-right" ).on( "click", function() {
+   if($( "html" ).hasClass( "sb-active-right" )) {
+       
+      } 
+      else {
+        $('a[data\-class="displayLink"]').click();
+      } 
+    });
+
 
       $( document ).ready(function() { 
+
         //refresh alert for new posts
         // var header = document.querySelector('.header');
         // var origOffsetY = header.offsetTop;
