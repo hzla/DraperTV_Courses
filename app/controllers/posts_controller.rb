@@ -73,7 +73,7 @@ def create
 
           #below line will send a notification to 
           #everyone that there is a new post and they can refres
-          PrivatePub.publish_to("/layouts/posts", "$('.header').show();")
+          PrivatePub.publish_to("/layouts/posts", "$('.headerAlert').show();")
 
         end
       else  
