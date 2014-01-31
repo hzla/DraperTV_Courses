@@ -18,7 +18,6 @@
 // = require jquery.infinitescroll
 // = require jquery.autosize
 // = require underscore
-// = require gmaps/google
 // = require chosen
 // = require home
 // = require_tree .

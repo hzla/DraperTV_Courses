@@ -10,11 +10,6 @@ class UsersController < ApplicationController
     if params[:tag]
       @users = User.where(:online == "online").text_search(params[:query]).tagged_with(params[:tag])
       @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag])
-      @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-        marker.lat user.latitude
-        marker.lng user.longitude
-        marker.infowindow user.first_name
-      end
     respond_to do |format|
       format.html # index.html.erb
       format.js 
@@ -23,10 +18,6 @@ class UsersController < ApplicationController
     elsif params[:tag].to_s ==~ /^\s*$/
       @users = User.where(:online == "online").text_search(params[:query])
       @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag])
-      @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-        marker.lat user.latitude
-        marker.lng user.longitude
-      end
     respond_to do |format|
       format.html # index.html.erb
       format.js 
@@ -35,10 +26,6 @@ class UsersController < ApplicationController
     else
       @users = User.where(:online == "online").text_search(params[:query])
       @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag])
-      @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-        marker.lat user.latitude
-        marker.lng user.longitude
-      end
     respond_to do |format|
       format.html # index.html.erb
       format.js 

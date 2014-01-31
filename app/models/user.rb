@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
   has_many :events
   acts_as_taggable
   has_surveys
-  geocoded_by :city
   after_validation :geocode
   validates :first_name, presence: true
   validates :last_name, presence: true

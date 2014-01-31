@@ -64,7 +64,7 @@
               </li> -->
               <!-- <a id="right-menu" href="#right-menu" class="sidr-click"> -->
               <div class="sb-toggle-right">
-                <i class="fa fa-inbox fa-2x" style="padding-top: 10px; padding-right: 4px;" id="notifications"></i>
+                <i class="fa fa-inbox fa-2x empty" style="padding-top: 10px; padding-right: 4px;" id="notifications"></i>
                 <div class="red-circle"></div>
               </div>
             </ul>
@@ -131,25 +131,31 @@
     <div id="notify" class="section-link"></div>
     <%= link_to "", activities_path, :data => { :'class' => 'displayLink' }, :remote => true %>
     <script type="text/javascript">
-      // $(".sb-toggle-right").click( function()
-      // {
-      // //     $("#notifications").removeClass("notifications");
-      // //     $('#notifications').addClass("empty");
-      //     $('a[data\-class="displayLink"]').click();
-      // });
 
-      $('a[data\-class="displayLink"]').click();
+ $( ".sb-toggle-right" ).on( "click", function() {
+   if($( "html" ).hasClass( "sb-active-right" )) {
+
+      $("#notifications").removeClass("notifications");
+      $('#notifications').addClass("empty");
+       
+      } 
+      else {
+        $('a[data\-class="displayLink"]').click();
+      } 
+    });
+
+        $(".headerAlert").hide();
 
       $( document ).ready(function() { 
-        //refresh alert for new posts
-        // var header = document.querySelector('.header');
-        // var origOffsetY = header.offsetTop;
-        // function onScroll(e) {
-        // window.scrollY >= origOffsetY ? header.classList.add('sticky') :
-        //   header.classList.remove('sticky');
-        // }
-        // document.addEventListener('scroll', onScroll);   
-        // $(".header").hide();
+
+        // refresh alert for new posts
+        var headerAlert = document.querySelector('.headerAlert');
+        var origOffsetY = headerAlert.offsetTop;
+        function onScroll(e) {
+        window.scrollY >= origOffsetY ? headerAlert.classList.add('sticky') :
+          headerAlert.classList.remove('sticky');
+        }
+        document.addEventListener('scroll', onScroll);   
       });
     </script>
   </div>

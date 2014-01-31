@@ -69,8 +69,6 @@ end
 gem 'pg_search'
 gem "simple_calendar", "~> 0.1.9"
 gem "kaminari"
-gem "geocoder"
-gem 'gmaps4rails'
 gem 'populator'
 gem 'faker'
 gem 'acts-as-taggable-on'

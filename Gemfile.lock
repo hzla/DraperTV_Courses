@@ -161,8 +161,6 @@ GEM
     friendly_id (4.0.10.1)
       activerecord (>= 3.0, < 4.0)
     fssm (0.2.10)
-    geocoder (1.1.8)
-    gmaps4rails (2.1.1)
     has_scope (0.5.1)
     hashie (2.0.5)
     hike (1.2.3)
@@ -351,8 +349,6 @@ DEPENDENCIES
   faker
   foreman
   friendly_id
-  geocoder
-  gmaps4rails
   instagram
   jquery-rails (= 2.3.0)
   jquery-turbolinks
