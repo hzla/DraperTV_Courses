@@ -11,7 +11,6 @@ gem 'pg'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'nprogress-rails'
-gem 'link_thumbnailer'
 
 gem 'devise'
 gem 'activeadmin'
