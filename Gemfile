@@ -11,6 +11,7 @@ gem 'pg'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'nprogress-rails'
+gem 'rails_12factor', group: :production
 
 gem 'devise'
 gem 'activeadmin'
