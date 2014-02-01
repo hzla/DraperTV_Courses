@@ -144,19 +144,7 @@
       } 
     });
 
-        $(".headerAlert").hide();
 
-      $( document ).ready(function() { 
-
-        // refresh alert for new posts
-        var headerAlert = document.querySelector('.headerAlert');
-        var origOffsetY = headerAlert.offsetTop;
-        function onScroll(e) {
-        window.scrollY >= origOffsetY ? headerAlert.classList.add('sticky') :
-          headerAlert.classList.remove('sticky');
-        }
-        document.addEventListener('scroll', onScroll);   
-      });
     </script>
   </div>
 
