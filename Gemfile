@@ -76,7 +76,7 @@ gem 'acts-as-taggable-on'
 gem 'stripe'
 
 gem 'private_pub'
-
+gem 'rails_12factor'
 
 # gem "nifty-generators", :group => :development
 
