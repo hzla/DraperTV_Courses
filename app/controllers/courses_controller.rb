@@ -41,7 +41,7 @@ class CoursesController < ApplicationController
     end
 
     if @course.intro_vimeo != nil
-      oembed = "http://vimeo.com/api/oembed.json?url=http%3A//vimeo.com/" + @course.intro_vimeo + '&autoplay=1'
+      oembed = "http://vimeo.com/api/oembed.json?url=http%3A//vimeo.com/" + @course.intro_vimeo  + '&maxwidth=500' + '&autoplay=0'
       puts (Curl::Easy.perform(oembed).body_str)["html"]
       @intro_embed = JSON.parse(Curl::Easy.perform(oembed).body_str)["html"]
     end
