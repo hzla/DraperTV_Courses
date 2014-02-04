@@ -21,7 +21,8 @@ class ApplicationController < ActionController::Base
       headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
       render :text => '', :content_type => 'text/plain'
     end
-
+end
+  
   #PRODUCTION FAYE: : http://fsrvrproduction.herokuapp.com
   #STAGING FAYE:  http://fayesrvr.herokuapp.com
 
@@ -30,4 +31,3 @@ class ApplicationController < ActionController::Base
        current_user.activities.create! action: action, trackable: trackable
      end  
 end
-
