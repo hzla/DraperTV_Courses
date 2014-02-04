@@ -24,8 +24,16 @@ class ApplicationController < ActionController::Base
   end
 
 
+<<<<<<< HEAD
   #PRODUCTION FAYE: : http://fsrvrproduction.herokuapp.com
   #STAGING FAYE:  http://fayesrvr.herokuapp.com
+=======
+  
+
+
+  #PRODUCTION FAYE: server: "http://fsrvrproduction.herokuapp.com/faye"
+  #STAGING FAYE: server: "http://fayesrvr.herokuapp.com/faye"
+>>>>>>> 06757d00e4e6fe1bfd960a84b510848c6fd2d3ee
 
   private
      def track_activity(trackable, action = params[:action])

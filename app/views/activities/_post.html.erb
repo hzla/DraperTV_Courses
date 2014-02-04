@@ -21,7 +21,9 @@
         <% if @user.avatar != nil %>
           <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
         <% end %>
-        <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
+        <%= link_to student_profile_path(@user) do %>
+        <div class="name"><%= @user.full_name %></div>
+        <% end %>
          created post
         <%= link_to post_path(post) do %>
           <%= raw Rinku.auto_link(truncate(post.content, length: 50), :all, 'target="_blank"') %>
@@ -33,7 +35,9 @@
         <% if @user.avatar != nil %>
           <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
         <% end %>
-        <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
+        <%= link_to student_profile_path(@user) do %>
+          <div class="name"><%= @user.full_name %></div>
+        <% end %>
          created post
         <%= link_to post_path(post) do %>
           <%= raw Rinku.auto_link(truncate(post.content, length: 50), :all, 'target="_blank"') %>
