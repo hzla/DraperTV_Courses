@@ -21,7 +21,6 @@ class ApplicationController < ActionController::Base
       headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
       render :text => '', :content_type => 'text/plain'
     end
-  endgit s
 
   #PRODUCTION FAYE: : http://fsrvrproduction.herokuapp.com
   #STAGING FAYE:  http://fayesrvr.herokuapp.com
