@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
   after_filter :cors_set_access_control_headers
   #For all responses in this controller, return the CORS access control headers.
   def cors_set_access_control_headers
-    headers['Access-Control-Allow-Origin'] = 'http://fayesrvr.herokuapp.com'
+    headers['Access-Control-Allow-Origin'] = 'http://fsrvrproduction.herokuapp.com'
     headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
-    headers['Access-Control-Request-Method'] = 'http://fayesrvr.herokuapp.com'
+    headers['Access-Control-Request-Method'] = 'http://fsrvrproduction.herokuapp.com'
     headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
   end
   # If this is a preflight OPTIONS request, then short-circuit the
@@ -15,9 +15,9 @@ class ApplicationController < ActionController::Base
   # text/plain.
   def cors_preflight_check
     if request.method == :options
-      headers['Access-Control-Allow-Origin'] = 'http://fayesrvr.herokuapp.com'
+      headers['Access-Control-Allow-Origin'] = 'http://fsrvrproduction.herokuapp.com'
       headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
-      headers['Access-Control-Request-Method'] = 'http://fayesrvr.herokuapp.com'
+      headers['Access-Control-Request-Method'] = 'http://fsrvrproduction.herokuapp.com'
       headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
       render :text => '', :content_type => 'text/plain'
     end
