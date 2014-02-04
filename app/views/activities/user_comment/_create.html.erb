@@ -33,7 +33,9 @@
         <% end %>
         <% if post.file_file_name == nil %>
         <div class="content">
-              <p>commented on post</p>
+          <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div>
+          <% end %>
+              commented on post
               <%= link_to post_path(post) do %>
                 <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
         <% end %>
@@ -43,7 +45,9 @@
         </div>
       <% else %>
         <div class="content">
-            <p>commented on post</p>
+          <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div>
+          <% end %>
+            commented on post
           <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
             <div class="image"><%= image_tag post.file.url(:preview) %></div>
 
