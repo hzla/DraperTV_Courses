@@ -3,11 +3,11 @@ namespace :db do
   task :populate => :environment do
     require 'populator'
     require 'faker'
-    password = "password"
-    studentProgram = "boarding"
+    password = "abcdefghijklmnopqrstuvwxyz1234567890"
+    studentProgram = "online"
     #[User].each(&:delete_all)
     
-    User.populate 24 do |person|
+    User.populate 5 do |person|
       person.first_name    = Faker::Name.first_name
       person.last_name    = Faker::Name.last_name
       person.email   = Faker::Internet.email
