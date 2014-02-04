@@ -25,30 +25,31 @@
     <% if  listOfPosts.include? user_comment.commentable_id  %>
     <%  post = Post.find_by_id(user_comment.commentable_id)  %>
     <% if User.where(:id => user_comment.user_id).exists? %>
-    <% if post%>
+    <% if post %>
       <div id="post">
         <% @user = User.find_by_id(user_comment.user_id) %>
         <% if @user.avatar != nil %>
           <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
         <% end %>
+        <% if post.file_file_name == nil %>
         <div class="content">
-          <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
-      <% if post.file_file_name == nil %>
-            commented on post 
-            <%= link_to post_path(post) do %>
-              <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
-            <% end %>
-            <div class="timestamp"><%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+              <p>commented on post</p>
+              <%= link_to post_path(post) do %>
+                <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
+        <% end %>
+            <div class="timestamp">
+              <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %>
+            </div>
         </div>
       <% else %>
         <div class="content">
-          <%= link_to student_profile_path(@user) do %>
-            <div class="name"><%= @user.full_name %></div>
-          <% end %>
-            commented on post 
+            <p>commented on post</p>
           <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
-          <div class="image"><%= image_tag post.file.url(:preview) %></div>
-          <div class="timestamp"><%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+            <div class="image"><%= image_tag post.file.url(:preview) %></div>
+
+            <div class="timestamp">
+              <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %>
+            </div>
         </div>    
       <% end %>  
         
