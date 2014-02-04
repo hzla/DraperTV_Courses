@@ -25,6 +25,7 @@
     <% if  listOfPosts.include? user_comment.commentable_id  %>
     <%  post = Post.find_by_id(user_comment.commentable_id)  %>
     <% if User.where(:id => user_comment.user_id).exists? %>
+    <% if post%>
       <div id="post">
         <% @user = User.find_by_id(user_comment.user_id) %>
         <% if @user.avatar != nil %>
@@ -32,7 +33,7 @@
         <% end %>
         <div class="content">
           <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
-          <% if post.file_file_name == nil %>
+      <% if post.file_file_name == nil %>
             commented on post 
             <%= link_to post_path(post) do %>
               <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
@@ -54,6 +55,7 @@
       </div>
       <% end %>	
     <% else %>
+    <% end %>
     <% end %>
 
   <% elsif user_comment.commentable_type == "Assignment"  %>
