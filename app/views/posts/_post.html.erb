@@ -1,4 +1,3 @@
-<% present @post do |post_presenter| %>
 
 <% @commentable = post %>
 <% @comments = @commentable.user_comments.order(:created_at) %>
@@ -45,7 +44,6 @@
   <% end %>
 
 
-<% end %>
 
 
 

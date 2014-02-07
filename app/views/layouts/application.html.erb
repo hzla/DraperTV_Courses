@@ -128,24 +128,31 @@
   <div class="sb-slidebar sb-right" id="right-menu">
     <div class="top-bar">
     </div>
-    <% @notified = User.find(current_user.id) %>
-     <%= simple_form_for @notified, :remote => true do |f| %>
-  <% if @notified.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@notified.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @notified.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <% if user_signed_in? %>
+    
+            <% @notified = User.find(current_user.id) %>
+             <%= simple_form_for @notified, :remote => true do |f| %>
+          <% if @notified.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@notified.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-  <div class="field">
-    <%= f.hidden_field :nCounter %>
-  </div>
-<% end %>
+              <ul>
+              <% @notified.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.hidden_field :nCounter %>
+          </div>
+        <% end %>
+
+       
+    <% end %>
+
 
     <div id="notify" class="section-link">
       
@@ -156,48 +163,50 @@
     <%= link_to "", activities_path, :data => { :'class' => 'displayLink' }, :remote => true %>
     <script type="text/javascript">
 
- $( ".sb-toggle-right" ).on( "click", function() {
-   if($( "html" ).hasClass( "sb-active-right" )) {
+  <% if user_signed_in? %>
+   $( ".sb-toggle-right" ).on( "click", function() {
+     if($( "html" ).hasClass( "sb-active-right" )) {
 
-      $("#notifications").removeClass("notifications");
-      $('#notifications').addClass("empty");
-      $('#notifications').empty();
-      $('form#edit_user_' + '<%= current_user.id %>').submit();
-      } 
-      else {
-        $('a[data\-class="displayLink"]').click();
-        $('#notifications').empty();
-
-      } 
-    });
-
-      $('#user_nCounter').val(0);
-      $('#notifications').text('<%= current_user.nCounter %>');
-
-      var n = $('#notifications').text();
-      n =  parseInt(n);
-
-    if( '<%= current_user.nCounter %>' === 0 ) {
-        $('#notifications').empty();
         $("#notifications").removeClass("notifications");
-        $('#notifications').addClass("empty");        
-      }
-      else {
+        $('#notifications').addClass("empty");
+        $('#notifications').empty();
+        $('form#edit_user_' + '<%= current_user.id %>').submit();
+        } 
+        else {
+          $('a[data\-class="displayLink"]').click();
+          $('#notifications').empty();
+
+        } 
+      });
+
+        $('#user_nCounter').val(0);
         $('#notifications').text('<%= current_user.nCounter %>');
-        $('#notifications').removeClass('empty');
-        $('#notification').addClass('notifications');
+
+        var n = $('#notifications').text();
+        n =  parseInt(n);
+
+      if( '<%= current_user.nCounter %>' === 0 ) {
+          $('#notifications').empty();
+          $("#notifications").removeClass("notifications");
+          $('#notifications').addClass("empty");        
+        }
+        else {
+          $('#notifications').text('<%= current_user.nCounter %>');
+          $('#notifications').removeClass('empty');
+          $('#notification').addClass('notifications');
+          }
+
+
+        if(n === 0 ) {
+          $('#notifications').empty();
+          $("#notifications").removeClass("notifications");
+          $('#notifications').addClass("empty");         
+        }
+        else {
+            // code to be executed if condition is false
         }
 
-
-      if(n === 0 ) {
-        $('#notifications').empty();
-        $("#notifications").removeClass("notifications");
-        $('#notifications').addClass("empty");         
-      }
-      else {
-          // code to be executed if condition is false
-      }
-
+    <% end %>
 
     </script>
   </div>
