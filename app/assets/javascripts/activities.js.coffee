@@ -2,7 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
-
         isScrolledIntoView = (elem) ->
                 docViewTop = $(window).scrollTop()
                 docViewBottom = docViewTop + $(window).height()
@@ -10,11 +9,11 @@ jQuery ->
                 elemBottom = elemTop + $(elem).height()
                 (elemTop >= docViewTop) && (elemTop <= docViewBottom)
 
-        if $('.nothing').length
+        if $('.pagination').length
                 $(window).scroll ->
-                        url = $('.nothing .next a').attr('href')
-                        if url && isScrolledIntoView('.nothing')
-                                $('.nothing').text('Fetching more...')
+                        url = $('.pagination .next a').attr('href')
+                        if url && isScrolledIntoView('.pagination')
+                                $('.pagination').text('Fetching more...')
                                 $.getScript(url)
                 
                 $(window).scroll()

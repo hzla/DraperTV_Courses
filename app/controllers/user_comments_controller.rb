@@ -2,7 +2,7 @@ class UserCommentsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :load_commentable
   load_and_authorize_resource
-  
+
   def index
     #@commentable = Assignment.find(params[:assignment_id])
     @comments = @commentable.user_comments.order('created_at')
@@ -69,7 +69,9 @@ class UserCommentsController < ApplicationController
           listUsers = listUsers.uniq
           listUsers.delete(current_user.id)
           listUsers.each do |usr|
-            PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications');")
+            @user = User.find(usr)
+            @user.increment!(:nCounter)
+            PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications'); $('#notifications').text(#{@user.nCounter});")
           end              
 
     elsif @comment.commentable_type == "Assignment"
@@ -108,7 +110,9 @@ class UserCommentsController < ApplicationController
           listUsers.delete(current_user.id)
 
           listUsers.each do |usr|
-            PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications');")
+            @user = User.find(usr)
+            @user.increment!(:nCounter)
+            PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications'); $('#notifications').text(#{@user.nCounter});")
           end 
 
     elsif @comment.commentable_type == "Event"
@@ -146,7 +150,9 @@ class UserCommentsController < ApplicationController
           listUsers = listUsers.uniq
           listUsers.delete(current_user.id)
           listUsers.each do |usr|
-            PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notifications').addClass('notifications');")
+            @user = User.find(usr)
+            @user.increment!(:nCounter)
+            PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications'); $('#notifications').text(#{@user.nCounter});")
           end 
 
 
@@ -187,6 +193,8 @@ class UserCommentsController < ApplicationController
     #   format.html { redirect_to :back, alert: 'You can\'t delete this comment.' }
     # end
   end
+
+
 
 private
   

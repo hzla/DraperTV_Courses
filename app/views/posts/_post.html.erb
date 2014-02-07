@@ -1,3 +1,4 @@
+<% present @post do |post_presenter| %>
 
 <% @commentable = post %>
 <% @comments = @commentable.user_comments.order(:created_at) %>
@@ -9,8 +10,13 @@
     <% if @user.avatar != nil %>
       <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
     <% end %>
-    <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
-    <div class="timestamp"><%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+    <%= link_to student_profile_path(@user) do %>
+    <div class="name"><%= @user.full_name %></div>
+    <% end %>
+
+    <div class="timestamp">
+      <%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %>
+    </div>
 
     <% if post.file_file_name == nil %>
       <div class="content"><%= raw Rinku.auto_link(simple_format(post.content), :all, 'target="_blank"') %></div>
@@ -39,7 +45,7 @@
   <% end %>
 
 
-
+<% end %>
 
 
 

@@ -67,8 +67,12 @@ group :development do
 	gem 'meta_request'
 	gem 'better_errors'
 	gem 'binding_of_caller'
+  gem 'hirb' #use Hirb.enable to enable it / text to Column
+  #gem 'awesome_print' 
+  gem 'wirb' # use Wirb.start to start it / Object to Colors
 end
 
+gem 'rack-mini-profiler'
 gem 'pg_search'
 gem "simple_calendar", "~> 0.1.9"
 gem "kaminari"
@@ -79,6 +83,9 @@ gem 'acts-as-taggable-on'
 gem 'stripe'
 
 gem 'private_pub'
+
+
+
 
 # gem "nifty-generators", :group => :development
 

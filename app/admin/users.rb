@@ -7,6 +7,7 @@ ActiveAdmin.register User do
     column :longitude
     column :tag_list
     column :online
+    column :nCounter
     column :last_sign_in_at
     default_actions
   end

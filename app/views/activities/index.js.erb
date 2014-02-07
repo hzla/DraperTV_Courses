@@ -1,5 +1,4 @@
 <%
- 
 @activities = Activity.order("created_at desc").page(params[:page]).per(10) %>
 $('#notify').empty();
 $('#notify').append('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
@@ -9,9 +8,9 @@ $('#notify').append('<%= escape_javascript(render :partial => 'layouts/activity'
 
 $('#Activities').append('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
 <% if (@activities.current_page < @activities.num_pages) %>
-        $('.nothing').replaceWith('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
+        $('.pagination').replaceWith('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
 <% else %>
-        $('.nothing').remove();
+        $('.pagination').remove();
 <% end %>
 <% sleep 1 %>
 

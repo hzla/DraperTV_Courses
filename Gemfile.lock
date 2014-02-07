@@ -169,6 +169,7 @@ GEM
     has_scope (0.5.1)
     hashie (2.0.5)
     hike (1.2.3)
+    hirb (0.7.1)
     http (0.5.0)
       http_parser.rb
     http_parser.rb (0.6.0)
@@ -228,6 +229,7 @@ GEM
       mini_portile (~> 0.5.0)
     nprogress-rails (0.1.2.3)
     orm_adapter (0.4.0)
+    paint (0.8.7)
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -250,6 +252,8 @@ GEM
       rack (>= 0.4)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
+    rack-mini-profiler (0.9.0)
+      rack (>= 1.1.3)
     rack-ssl (1.3.3)
       rack
     rack-test (0.6.2)
@@ -336,6 +340,8 @@ GEM
     warden (1.2.1)
       rack (>= 1.0)
     websocket-driver (0.3.2)
+    wirb (1.0.3)
+      paint (~> 0.8)
 
 PLATFORMS
   ruby
@@ -360,6 +366,7 @@ DEPENDENCIES
   faker
   foreman
   friendly_id
+  hirb
   instagram
   jquery-rails (= 2.3.0)
   jquery-turbolinks
@@ -376,6 +383,7 @@ DEPENDENCIES
   pg_search
   populator
   private_pub
+  rack-mini-profiler
   rails (= 3.2.12)
   rails_12factor
   right_aws
@@ -389,3 +397,4 @@ DEPENDENCIES
   turbolinks
   twitter
   uglifier (>= 1.0.3)
+  wirb
