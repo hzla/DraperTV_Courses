@@ -69,7 +69,7 @@ class UserCommentsController < ApplicationController
           listUsers = listUsers.uniq
           listUsers.delete(current_user.id)
           listUsers.each do |usr|
-            PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications');")
+            ##PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications');")
           end              
 
     elsif @comment.commentable_type == "Assignment"
@@ -108,7 +108,7 @@ class UserCommentsController < ApplicationController
           listUsers.delete(current_user.id)
 
           listUsers.each do |usr|
-            PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications');")
+            ##PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications');")
           end 
 
     elsif @comment.commentable_type == "Event"
@@ -146,7 +146,7 @@ class UserCommentsController < ApplicationController
           listUsers = listUsers.uniq
           listUsers.delete(current_user.id)
           listUsers.each do |usr|
-            PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notifications').addClass('notifications');")
+            ##PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notifications').addClass('notifications');")
           end 
 
 
