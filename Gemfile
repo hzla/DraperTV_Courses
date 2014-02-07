@@ -72,7 +72,7 @@ group :development do
   gem 'wirb' # use Wirb.start to start it / Object to Colors
 end
 
-gem 'rack-mini-profiler'
+#gem 'rack-mini-profiler'
 
 gem 'pg_search'
 gem "simple_calendar", "~> 0.1.9"

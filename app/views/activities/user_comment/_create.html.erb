@@ -1,153 +1,198 @@
 <% if user_comment %>
 
-  <%  commentableIDs = []  
-    @comments = UserComment.all
-  %>
+
+  <%-#+++++ Creating a list of objects that the current user have COMMENTED on ++++ %>
+  <% commentableIDs = [] %>  
+  <% @comments = UserComment.all %>
   <% @comments.each do |com| %>
-  <%  if com.user_id ==  current_user.id %>
-    <%    commentableIDs << com.commentable_id %>
-  <%  end %>
-<%  end %> 
-      
-  <% if user_comment.commentable_type == "Post"  %>
-    <%  currentUserPosts = []  
-        @posts = Post.all
-      %>
-
-     <% @posts.each do |userPost| %>
-      <% if userPost.user_id ==  current_user.id %>
-          <% currentUserPosts << userPost.id %>
-      <% end %>
-    <%  end %>
-    <% listOfPosts = currentUserPosts + commentableIDs
-        listOfPosts = listOfPosts.uniq  %> 
-
-    <% if  listOfPosts.include? user_comment.commentable_id  %>
-    <%  post = Post.find_by_id(user_comment.commentable_id)  %>
-    <% if User.where(:id => user_comment.user_id).exists? %>
-    <% if post %>
-      <div id="post">
-        <% @user = User.find_by_id(user_comment.user_id) %>
-        <% if @user.avatar != nil %>
-          <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
-        <% end %>
-        <% if post.file_file_name == nil %>
-        <div class="content">
-          <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div>
-          <% end %>
-              commented on post
-              <%= link_to post_path(post) do %>
-                <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
-        <% end %>
-            <div class="timestamp">
-              <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %>
-            </div>
-        </div>
-      <% else %>
-        <div class="content">
-          <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div>
-          <% end %>
-            commented on post
-          <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
-            <div class="image"><%= image_tag post.file.url(:preview) %></div>
-
-            <div class="timestamp">
-              <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %>
-            </div>
-        </div>    
-      <% end %>  
-        
-      </div>
-      <% end %>	
-    <% else %>
+    <% if com.user_id ==  current_user.id %>
+      <% commentableIDs << com.commentable_id %>
     <% end %>
-    <% end %>
-
-  <% elsif user_comment.commentable_type == "Assignment"  %>
-    <%  currentAssignments = []  
-        @assignments = UserAssignment.all
-    %>
-    <% @assignments.each do |userAssignment| %>
-      <% if userAssignment.user_id ==  current_user.id %>
-        <% currentAssignments << userAssignment.id %>
-      <% end %>
-    <%  end %>
- 
-    <% listOfPosts = currentAssignments + commentableIDs
-    listOfPosts = listOfPosts.uniq  %> 
-    <% if  listOfPosts.include? user_comment.commentable_id  %>
-    <%  assignment = UserAssignment.find_by_assignment_id(user_comment.commentable_id)  %>
-    <%  curAssignment = Assignment.find_by_id(assignment.assignment_id)  %>
-
-
-    <% if User.where(:id => user_comment.user_id).exists? %>
-    
-     <div id="post">
-        <% @user = User.find_by_id(user_comment.user_id) %>
-        <% if @user.avatar != nil %>
-        <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
-        <% end %>
-
-        <div class="content">
-          <%= link_to student_profile_path(@user) do %>
-            <div class="name"><%= @user.full_name %></div>
-          <% end %>
-            commented on assignment 
-            <%= link_to assignment_path(curAssignment) do %>
-              <%= truncate(curAssignment.title, length: 30) %>
-            <% end %>
-            
-          <div class="timestamp"><%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
-        </div>
-      </div>      
-    <% else %>
-    <% end %>    
-  <% else %>
   <% end %>  
 
+  <%-###### end of the list that contains Object Ids that this User commented on %>
+
+  <%-#++++++ Checking the type of the current user Comment Object  +++++++%>
+  <% if user_comment.commentable_type == "Post" %>
+
+      <%-#Creating a list of Posts that the current User Created %>
+      <% currentUserPosts = []  
+        @posts = Post.all %>
+
+        <% @posts.each do |userPost| %>
+          <% if userPost.user_id ==  current_user.id %>
+              <% currentUserPosts << userPost.id %>
+          <% end %>
+        <% end %>
+        <%-### end of the list and now we create a list of Unique Post IDs %>
+        <% listOfPosts = currentUserPosts + commentableIDs
+        listOfPosts = listOfPosts.uniq %> 
+
+
+        <%-## Now checking if there are any NEW Posts that are Commented on while the CURRENT user can relate to, so that it can show up their FEED %>
+
+        <% if listOfPosts.include? user_comment.commentable_id %>
+        
+        <%-### From here until end of this IF Else statement, it's brining back Posts, similar to loading posts.%>
+
+        <% post = Post.find_by_id(user_comment.commentable_id) %>  
+            <% if User.where(:id => user_comment.user_id).exists? %>
+              <% if post %>
+                    <div id="post">
+                      
+                      <% @user = User.find_by_id(user_comment.user_id) %>
+                        <% if @user.avatar != nil %>
+                          <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
+                        <% end %>
+
+                          <%-#++++ Checking Post with File or not!%>
+                          <% if post.file_file_name == nil %>
+
+                            <div class="content">
+                              <%= link_to student_profile_path(@user) do %>
+                                <div class="name"><%= @user.full_name %></div>
+                              <% end %>
+
+                                commented on post
+                              
+                              <%= link_to post_path(post) do %>
+                                <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
+                              <% end %>                                
+                              
+                              <div class="timestamp">
+                                <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %>
+                              </div>                              
+                            
+                            </div>
+
+                          <% else %>
+                          <%-### If Post did have post, the following will execute!%>
+
+
+                            <div class="content">
+                              <%= link_to student_profile_path(@user) do %>
+                                <div class="name"><%= @user.full_name %></div>
+                              <% end %>
+
+                                commented on post
+                                
+                                <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
+                                  <div class="image"><%= image_tag post.file.url(:preview) %></div>
+
+                                <div class="timestamp">
+                                  <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %>
+                                </div>
+                            </div>                              
+
+                          <% end %>
+                          <%-### end of Checking for Post with File.%>
+                    </div>
+              <% end %>
+              <%-### end of checking if Post Exsist%>
+
+            <% end %>
+            <%-### end of checking if the User that commented still Exist %>
+
+        <% end %>
+        <%-### end of checking for Posts that are in the Unique list or not%>
+
+  <% elsif user_comment.commentable_type == "Assignment"  %>
+
+    <%-#Creating a list of Assignments that the current User Created %>
+  
+    <% currentAssignments = []  
+      @assignments = UserAssignment.all %>
+
+        <% @assignments.each do |userAssignment| %>
+          <% if userAssignment.user_id ==  current_user.id %>
+            <% currentAssignments << userAssignment.id %>
+          <% end %>
+        <% end %>
+
+      <%-### end of the list and now we create a list of Unique Assignment IDs %>
+      <% listOfAssignments = currentAssignments + commentableIDs
+          listOfAssignments = listOfAssignments.uniq  %>     
+      
+      <%-## Now we are checking if there are any NEW Assignments that are Commented on while the CURRENT user can relate to, so that it can show up their FEED %>
+      
+      <% if listOfAssignments.include? user_comment.commentable_id %>
+          
+          <% assignment = UserAssignment.find_by_assignment_id(user_comment.commentable_id)%>
+          <% curAssignment = Assignment.find_by_id(assignment.assignment_id) %>
+
+            <% if User.where(:id => user_comment.user_id).exists? %>
+                <div id="post">
+                  <% @user = User.find_by_id(user_comment.user_id) %>
+                    <% if @user.avatar != nil %>
+                      <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
+                    <% end %>
+                  <div class="content">
+                    <%= link_to student_profile_path(@user) do %>
+                      <div class="name"><%= @user.full_name %></div>
+                    <% end %>
+
+                      commented on assignment 
+                      
+                      <%= link_to assignment_path(curAssignment) do %>
+                        <%= truncate(curAssignment.title, length: 30) %>
+                      <% end %>
+                      
+                    <div class="timestamp"><%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+
+                  </div>
+                </div>            
+            
+            <% end %>
+            <%-### end of chekcing if user commented still Exist%>
+      <% end %>  
+      <%-### end of checking for Assignments that are in the Unique list or not%>
+
   <% elsif user_comment.commentable_type == "Event"  %>
-
-    <%  currentEvents = []  
-        @events = Event.all
-      %>
-
-     <% @events.each do |event| %>
+    
+    <%-#Creating a list of Events that the current User Created %>
+    <% currentEvents = []  
+      @events = Event.all %>
+    
+    <% @events.each do |event| %>
       <% if event.user_id ==  current_user.id %>
           <% currentEvents << event.id %>
       <% end %>
-    <%  end %>
-    <% listOfPosts = currentEvents + commentableIDs
-    listOfPosts = listOfPosts.uniq  %> 
-    <% if  listOfPosts.include? user_comment.commentable_id  %>
-    <%  event = Event.find_by_id(user_comment.commentable_id)  %>
-    <% if User.where(:id => user_comment.user_id).exists? %>
+    <% end %>      
+    
+      <% listOfEvents = currentEvents + commentableIDs
+         listOfEvents = listOfEvents.uniq %>
+      <% event = Event.find_by_id(user_comment.commentable_id)  %>
 
-      <div id="post">
-        <% @user = User.find_by_id(user_comment.user_id) %>
-        <% if @user.avatar != nil %>
-        <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
-        <% end %>
-        <div class="content">
-          <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div>
-          <% end %>
-            commented on event 
-            <%= link_to truncate(event.name, length: 30), event %>
-            <div class="timestamp"><%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
-        </div>
-         
-      </div>    
-     
-    <% else %>
-    <% end %>    
-  <% else %>
-  <% end %>    
+       <% if listOfEvents.include? user_comment.commentable_id  %>
+        <div id="post">
+          <% @user = User.find_by_id(user_comment.user_id) %>
+            <% if @user.avatar != nil %>
+              <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
+            <% end %>
 
-  <% else %>
-  <% end %>    
+            <div class="content">
 
-<% end %>    
-  
+              <%= link_to student_profile_path(@user) do %>
+              <div class="name">
+                <%= @user.full_name %>
+              </div>
+            <% end %>
+                
+                commented on event 
+              
+              <%= link_to truncate(event.name, length: 30), event %>
+              <div class="timestamp">
+                <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %>
+              </div>
+          </div>
 
-<%-# What's happening here ?
-#a) user_comment is used Because the activity presenter find comment through User 
-#b) since we want the Post not the comment, we use user_comment id to find the Post. -%>
+
+        </div>    
+       <% end %>
+       <%-### end of checking for Posts that are in the Unique list or not%>
+
+  <% end %>  
+  <%-### End of the %>
+
+
+<% end %>  

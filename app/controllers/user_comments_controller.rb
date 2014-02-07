@@ -76,7 +76,7 @@ class UserCommentsController < ApplicationController
 
     elsif @comment.commentable_type == "Assignment"
 
-      @posts = UserAssignment.all
+      @assignment = UserAssignment.all
       @user_comments = UserComment.all 
 
         listUsers = []  
@@ -87,14 +87,14 @@ class UserCommentsController < ApplicationController
           end
         end
 
-        @posts = UserAssignment.all
-        @posts.each do |po|
+        @assignment = UserAssignment.all
+        @assignment.each do |po|
           if po.id ==  @comment.commentable_id 
             listUsers << po.user_id 
           end        
         end
-        @posts = UserAssignment.all
-        @posts.each do |po|
+        @assignment = UserAssignment.all
+        @assignment.each do |po|
           if po.user_id ==  @comment.user_id 
             listUsers << po.user_id 
           end        
@@ -110,9 +110,11 @@ class UserCommentsController < ApplicationController
           listUsers.delete(current_user.id)
 
           listUsers.each do |usr|
-            @user = User.find(usr)
-            @user.increment!(:nCounter)
-            PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications'); $('#notifications').text(#{@user.nCounter});")
+              if User.find_by_id(usr).present?
+                @user = User.find(usr)
+                @user.increment!(:nCounter)
+                PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications'); $('#notifications').text(#{@user.nCounter});")
+              end
           end 
 
     elsif @comment.commentable_type == "Event"
@@ -143,17 +145,19 @@ class UserCommentsController < ApplicationController
         @topic = Event.find_by_id(@comment.commentable_id)
 
 
-        @commenter = User.find_by_id(@comment.user_id)
-        listUsers << @topic.user_id
+        
+          @commenter = User.find_by_id(@comment.user_id)
+          listUsers << @topic.user_id
 
-
-          listUsers = listUsers.uniq
-          listUsers.delete(current_user.id)
-          listUsers.each do |usr|
-            @user = User.find(usr)
-            @user.increment!(:nCounter)
-            PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications'); $('#notifications').text(#{@user.nCounter});")
-          end 
+            listUsers = listUsers.uniq
+            listUsers.delete(current_user.id)
+            listUsers.each do |usr|
+              if User.find_by_id(usr).present?
+                @user = User.find(usr)
+                @user.increment!(:nCounter)
+                PrivatePub.publish_to("/layouts/#{usr}", "$('#notifications').removeClass('empty'); $('#notification').addClass('notifications'); $('#notifications').text(#{@user.nCounter});")
+              end
+            end 
 
 
 
