@@ -70,9 +70,9 @@ group :development do
   gem 'hirb' #use Hirb.enable to enable it / text to Column
   #gem 'awesome_print' 
   gem 'wirb' # use Wirb.start to start it / Object to Colors
+  gem 'rack-mini-profiler'
 end
 
-gem 'rack-mini-profiler'
 gem 'pg_search'
 gem "simple_calendar", "~> 0.1.9"
 gem "kaminari"
