@@ -1,4 +1,3 @@
-<% @activities = Activity.order("created_at desc").limit(10) %>
 $('#notify').empty();
 $('#notify').append('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
 
