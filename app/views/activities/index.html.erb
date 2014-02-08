@@ -1,18 +1,7 @@
 <h1>Activities</h1>
 
-
 <div id="Activities">
-<% @activities.each do |activity| %>
-  <%= ActivityPresenter.new(activity, self).render_activity %>
-<% end %>
+  <% @activities.each do |activity| %>
+    <%= ActivityPresenter.new(activity, self).render_activity %>
+  <% end %>
 </div>
-
-
-<%= paginate @activities %>
-<script type="text/javascript">
-	
-$('.pagination').attr('id', 'value');
-$(".pagination").removeClass("pagination");
-$('#value').addClass("nothing");
-
-</script>

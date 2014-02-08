@@ -42,9 +42,6 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :messages
 
-
-
-
   def full_name
     [first_name, last_name].join(' ')
   end

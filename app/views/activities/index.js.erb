@@ -1,17 +1,4 @@
-<%
- 
-@activities = Activity.order("created_at desc").page(params[:page]).per(10) %>
+<% @activities = Activity.order("created_at desc").page(params[:page]).per(10) %>
 $('#notify').empty();
 $('#notify').append('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
-
-
-  
-
-$('#Activities').append('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
-<% if (@activities.current_page < @activities.num_pages) %>
-        $('.nothing').replaceWith('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
-<% else %>
-        $('.nothing').remove();
-<% end %>
-<% sleep 1 %>
 

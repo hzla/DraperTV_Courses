@@ -126,34 +126,28 @@
   </div>
 
   <div class="sb-slidebar sb-right" id="right-menu">
-    <div class="top-bar">
-    </div>
-    <div id="notify" class="section-link">
-      
 
+    <div class="top-bar"></div>
 
-    </div>
+    <div id="notify" class="section-link"></div>
 
-    <div id="load-more">
-    </div>    
+    <div id="load-more"></div>   
+
     <%= link_to "", activities_path, :data => { :'class' => 'displayLink' }, :remote => true %>
+
     <script type="text/javascript">
-
- $( ".sb-toggle-right" ).on( "click", function() {
-   if($( "html" ).hasClass( "sb-active-right" )) {
-
-      $("#notifications").removeClass("notifications");
-      $('#notifications').addClass("empty");
-       
-      } 
-      else {
-        $('a[data\-class="displayLink"]').click();
-      } 
-    });
-
-
+      $( ".sb-toggle-right" ).on( "click", function() {
+          if($( "html" ).hasClass( "sb-active-right" )) {
+            $("#notifications").removeClass("notifications");
+            $('#notifications').addClass("empty");
+          } 
+          else {
+            $('a[data\-class="displayLink"]').click();
+          } 
+        });
     </script>
-  </div>
+
+  </div><!-- *** end sb-right *** -->
 
   <script>
     (function($) {
