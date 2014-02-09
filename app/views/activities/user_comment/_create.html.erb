@@ -37,12 +37,14 @@
 
         <% post = Post.find_by_id(user_comment.commentable_id) %>  
             <% if User.where(:id => user_comment.user_id).exists? %>
-              <% if post %>
+              <% if post.present? %>
                     <div id="post">
                       
                       <% @user = User.find_by_id(user_comment.user_id) %>
                         <% if @user.avatar != nil %>
-                          <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
+                          <div class="picture">
+                            <%= image_tag @user.avatar.url(:medium) %>
+                          </div>
                         <% end %>
 
                           <%-#++++ Checking Post with File or not!%>
@@ -164,6 +166,8 @@
       <% event = Event.find_by_id(user_comment.commentable_id)  %>
 
        <% if listOfEvents.include? user_comment.commentable_id  %>
+      <% if event.present? %>
+
         <div id="post">
           <% @user = User.find_by_id(user_comment.user_id) %>
             <% if @user.avatar != nil %>
@@ -187,7 +191,8 @@
           </div>
 
 
-        </div>    
+        </div>
+        <% end %>    
        <% end %>
        <%-### end of checking for Posts that are in the Unique list or not%>
 
