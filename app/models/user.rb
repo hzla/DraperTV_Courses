@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
 
   extend FriendlyId
-  friendly_id :full_name, use: :slugged
+  friendly_id :full_name, use: [:slugged, :finders]
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -42,7 +42,15 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :messages
 
-
+  after_commit :flush_cache
+  
+  def self.cached_find(id)
+    Rails.cache.fetch([first_name, id], expires_in: 5.minutes) { find(id) }
+  end
+  
+  def flush_cache
+    Rails.cache.delete([self.class.first_name, id])
+  end
 
 
   def full_name

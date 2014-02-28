@@ -7,17 +7,17 @@ def load
   @post = Post.new
   @messages = Message.all
   @message = Message.new
-  @activities =  Activity.all
+
 
 end
 
 # GET /posts
 # GET /posts.json
 def index
-  @posts = Post.order('created_at DESC').page(params[:page]).per(10)
+  @posts = Post.page(params[:page]).per(10).order('created_at DESC').includes(:user)
   @post = Post.new
-  @users = User.all
-  @user = User.find_by_id(@post.user_id)
+  # @users = User.all
+  # @user = User.find_by_id(@post.user_id)
    @instagram_draperu = Instagram.tag_recent_media('draperu', options = {count: 20})
     @instagram_draperuonline = Instagram.tag_recent_media('draperuonline', options = {count: 20})
   respond_to do |format|
@@ -105,6 +105,18 @@ end
 def destroy
   @post = Post.find(params[:id])
   @post.destroy
+
+  @comments =  UserComment.all
+  @activities = Activity.all 
+  @activities.find_by_trackable_id(@post.id).destroy
+
+  @comments.each do |com|
+    if com.commentable_id == @post.id
+        @activities.find_by_trackable_id(com.id).destroy
+        com.destroy
+    end  
+  end
+
   respond_to do |format|
     format.html { redirect_to posts_url }
     #format.js { head :no_content }

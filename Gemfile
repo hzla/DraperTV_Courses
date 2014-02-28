@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
-ruby '1.9.2'
+ruby '1.9.3'
 
-gem 'rails', '3.2.12'
-
+gem 'rails', '4.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -16,7 +15,7 @@ gem 'rails_12factor', group: :production
 
 
 gem 'devise'
-gem 'activeadmin'
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'cancan'
 
 gem 'simple_form'
@@ -43,15 +42,15 @@ gem "mailchimp-api", "~> 2.0.4"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails', '~> 4.0.0'
   gem 'compass-rails'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem "meta_search",    '>= 1.1.0.pre'
-
+  gem 'coffee-rails', '~> 4.0.0'
+  #gem "meta_search"
+  gem "ransack" 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier', '>= 1.3.0'
 end
 
 gem 'jquery-rails', "2.3.0"
@@ -68,8 +67,10 @@ group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'
   gem 'hirb' #use Hirb.enable to enable it / text to Column
-  #gem 'awesome_print' 
-  gem 'wirb' # use Wirb.start to start it / Object to Colors
+  gem 'awesome_print', :require => 'ap' 
+  gem 'wirble'
+  gem 'railroady'
+
 end
 
 #gem 'rack-mini-profiler'
@@ -84,9 +85,18 @@ gem 'acts-as-taggable-on'
 gem 'stripe'
 
 gem 'private_pub'
+gem 'httparty'
 
+gem 'jbuilder', '~> 1.2'
+gem "formtastic"
 
+gem 'rails4_upgrade', github: 'alindeman/rails4_upgrade'
 
+#rails Legacy Gems
+gem 'protected_attributes'
+gem 'rails-observers'
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
 
 # gem "nifty-generators", :group => :development
 

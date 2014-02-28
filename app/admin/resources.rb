@@ -18,6 +18,6 @@ ActiveAdmin.register Resource do
       :storage => :s3,
       :s3_credentials => "#{Rails.root}/config/s3.yml"
     end
-  f.buttons
+  f.actions
  end
 end

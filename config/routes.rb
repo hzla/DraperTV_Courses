@@ -12,7 +12,6 @@ OnlineSchool::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :users
-  ActiveAdmin.routes(self)
 
   devise_scope :user do
     #get 'register', to: 'devise/registrations#new', as: :register
@@ -26,7 +25,7 @@ OnlineSchool::Application.routes.draw do
   resources :charges
   
   resources :calendar
-  get 'calendar', to: 'calendar#index', as: :calendar
+  #get 'calendar', to: 'calendar#index', as: :calendar
   
   resources :skills
 
@@ -35,15 +34,15 @@ OnlineSchool::Application.routes.draw do
     resources :user
   end
 
-  get 'community', to: 'community#index'
+  #get 'community', to: 'community#index'
   resources :community
-  get 'community', to: 'community#index', as: :community
+  #get 'community', to: 'community#index', as: :community
 
   resources :social
-  get 'social', to: 'social#index', as: :social
+  #get 'social', to: 'social#index', as: :social
 
   resources :resources
-  get 'resources', to: 'resources#index', as: :resources
+  #get 'resources', to: 'resources#index', as: :resources
 
   resources :users
   get 'profile', to: 'profiles#show', as: :profile
@@ -56,7 +55,7 @@ OnlineSchool::Application.routes.draw do
   resources :contests
   resources :courses
   resources :feedbacks
-  get 'feedback', to: 'feedbacks#index', as: :feedbacks
+  get 'feedback', to: 'feedbacks#index'
 
   #map.resources :user_assignments, :has_many => :user_comments
   resources :user_assignments do
@@ -74,7 +73,7 @@ OnlineSchool::Application.routes.draw do
   end
 
 
-  get 'videos', to: 'videos#index', as: :videos
+  #get 'videos', to: 'videos#index', as: :videos
 
 
   resources :assignments do

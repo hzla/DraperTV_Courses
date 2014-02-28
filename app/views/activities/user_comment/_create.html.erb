@@ -1,6 +1,6 @@
+
+
 <% if user_comment %>
-
-
   <%-#+++++ Creating a list of objects that the current user have COMMENTED on ++++ %>
   <% commentableIDs = [] %>  
   <% @comments = UserComment.all %>
@@ -16,7 +16,7 @@
   <% if user_comment.commentable_type == "Post" %>
 
       <%-#Creating a list of Posts that the current User Created %>
-      <% currentUserPosts = []  
+      <% currentUserPosts = []
         @posts = Post.all %>
 
         <% @posts.each do |userPost| %>
@@ -200,4 +200,5 @@
   <%-### End of the %>
 
 
-<% end %>  
+<% end %> 
+

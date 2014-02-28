@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  after_commit :flush_cache
+
   attr_accessible :content, :user_id
   attr_accessible :file
   has_attached_file :file, 
@@ -14,4 +16,18 @@ class Post < ActiveRecord::Base
 
 
   
+
+
+  def cached_user
+    User.cached_find(author_id)
+  end
+
+  def self.cached_find(id)
+    Rails.cache.fetch([first_name, id]) { find(id) }
+  end
+  
+  def flush_cache
+    Rails.cache.delete([self.class.first_name, id])
+  end
+
 end

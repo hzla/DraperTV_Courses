@@ -42,7 +42,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
+    
+    @user = User.friendly.find(params[:id])
     @courses = Course.all
     @assignments = Assignment.all
     @user_assignments = UserAssignment.all
@@ -132,5 +133,25 @@ class UsersController < ApplicationController
       #format.json { render json: @users }
     end
   end
+  # private
+  #   # Use callbacks to share common setup or constraints between actions.
+  #   def set_user
+  #     @user = User.find(params[:id])
+  #   end
 
+  #   # Never trust parameters from the scary internet, only allow the white list through.
+  #   def user_params
+  #     params.require(:user).permit(:email, :password, :password_confirmation,
+  #      :remember_me, :superhero_power, :team, :skype,
+  #       :gmail, :instagram, :angellist, :dribbble, :github,
+  #       :bio, :city, :country, :facebook,
+  #       :first_name, :last_name,
+  #       :linkedin, :program, :state,
+  #       :street_address, :twitter, :zip, :online, :employment,
+  #       :avatar, :tag_list, :nCounter,
+  #       :latitude, :longitude,
+  #       :name, :skill_ids) 
+
+
+  #   end
 end

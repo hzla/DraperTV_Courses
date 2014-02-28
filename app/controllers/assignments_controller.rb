@@ -7,7 +7,7 @@ class AssignmentsController < ApplicationController
 	end
 
 	def show
-		@assignment = Assignment.find params[:id]
+		@assignment = Assignment.find(params[:id])
     @commentable = @assignment
     @comments = @commentable.user_comments.order(:created_at)
     @comment = UserComment.new

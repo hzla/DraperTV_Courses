@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
 	end
 
 	def show
-		@course = Course.find params[:id]
+		@course = Course.friendly.find(params[:id])
 		@course.assignments.sort! { |a, b| b.order_id <=> a.order_id }
 
     if @course.course_complete_for_user?(current_user) == true
