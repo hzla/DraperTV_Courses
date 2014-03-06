@@ -2,10 +2,7 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 gem 'rails', '4.0.0'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# gem 'sqlite3'
 gem 'pg'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
@@ -45,10 +42,7 @@ group :assets do
   gem 'sass-rails', '~> 4.0.0'
   gem 'compass-rails'
   gem 'coffee-rails', '~> 4.0.0'
-  #gem "meta_search"
   gem "ransack" 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.3.0'
 end
