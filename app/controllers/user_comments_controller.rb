@@ -1,4 +1,5 @@
 class UserCommentsController < ApplicationController
+
   before_filter :authenticate_user!
   before_filter :load_commentable
   load_and_authorize_resource
@@ -163,7 +164,7 @@ class UserCommentsController < ApplicationController
 
       else
       end
-
+      
     if @comment.save
       track_activity @comment  
       #refresh_dom_with_partial('div#comments_container', 'comments')
@@ -174,6 +175,9 @@ class UserCommentsController < ApplicationController
     else
       render :new
     end
+ 
+    PrivatePub.publish_to("/layouts/comments","$('##{@commentable.id}').empty(); $('##{@commentable.id}').append(#{render(:partial => 'user_comments/comments')});")
+
 
   end
  

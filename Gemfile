@@ -63,12 +63,15 @@ group :development do
   gem 'hirb' #use Hirb.enable to enable it / text to Column
   gem 'awesome_print', :require => 'ap' 
   gem 'wirble'
-  gem 'railroady'
-
+  gem 'railroady' #run this command: rake diagram:all
+  gem "bullet" # it always works unless you remove the initilzer
+  gem "reek" # run this : reek .
+  gem 'brakeman', :require => false # run this : brakeman [appPath] -o output_file
+  gem 'traceroute' # to check unUsed and Unreachable routes > rake traceroute
 end
 
 #gem 'rack-mini-profiler'
-
+gem 'annotate', ">=2.6.0"
 gem 'pg_search'
 gem "simple_calendar", "~> 0.1.9"
 gem "kaminari"

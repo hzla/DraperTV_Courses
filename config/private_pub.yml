@@ -8,18 +8,18 @@ test:
 #   server: "http://fsrvrproduction.herokuapp.com/faye"
 #   secret_token: "6ec326f365aaf93e3d7d331489544eca3709f1a10c11cac2f9c112ef8c1ee1e8"
 #   signature_expiration: 86400 # one day
-# staging:
-#   server: "http://fayesrvr.herokuapp.com/faye"
-#   secret_token: "4b79c3038b0a7ecb714c696c0cabc7071534eb21cfccbb444b9119a26db01bff"
-#   signature_expiration: 3600 # one hour
-
-
-production:
-  server: "http://localhost:9292/faye"
-  secret_token: "secret"
 staging:
-  server: "http://localhost:9292/faye"
-  secret_token: "secret"
+  server: "http://fayesrvr.herokuapp.com/faye"
+  secret_token: "4b79c3038b0a7ecb714c696c0cabc7071534eb21cfccbb444b9119a26db01bff"
+  signature_expiration: 3600 # one hour
+
+
+# production:
+#   server: "http://localhost:9292/faye"
+#   secret_token: "secret"
+# staging:
+#   server: "http://localhost:9292/faye"
+#   secret_token: "secret"
 
   #PRODUCTION FAYE: : http://fsrvrproduction.herokuapp.com/faye
   #STAGING FAYE:  http://fayesrvr.herokuapp.com/faye

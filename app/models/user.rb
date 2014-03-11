@@ -1,3 +1,51 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  first_name             :string(255)
+#  last_name              :string(255)
+#  bio                    :text
+#  twitter                :string(255)
+#  facebook               :string(255)
+#  program                :string(255)
+#  linkedin               :string(255)
+#  street_address         :string(255)
+#  city                   :string(255)
+#  state                  :string(255)
+#  country                :string(255)
+#  zip                    :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  email                  :string(255)      default(""), not null
+#  encrypted_password     :string(255)      default(""), not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0)
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  avatar_file_name       :string(255)
+#  avatar_content_type    :string(255)
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
+#  online                 :string(255)      default("online")
+#  team                   :string(255)
+#  skype                  :string(255)
+#  gmail                  :string(255)
+#  slug                   :string(255)
+#  latitude               :float            default(37.5638)
+#  longitude              :float            default(-122.325192)
+#  employment             :string(255)
+#  instagram              :string(255)
+#  angellist              :string(255)
+#  dribbble               :string(255)
+#  github                 :string(255)
+#  nCounter               :integer
+#
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
