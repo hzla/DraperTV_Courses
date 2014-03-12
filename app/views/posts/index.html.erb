@@ -1,0 +1,56 @@
+<%= subscribe_to "/layouts/posts" %>
+<ul class="breadcrumb">
+  <li>Home</li>
+</ul>
+
+ <div class="headerAlert">
+  <div class="alert alert-info">
+    <%= link_to "Please refresh this page to receive new updates.", posts_path %>
+  </div>      
+</div>
+ 
+<div id="posts-column">
+  <h1 style="font-size: 34px; font-weight: 300;">Class Discussion</h1><br />
+  <%= render 'form' %>
+
+
+  <div id="postsDiv">
+    <%= render @posts %>
+  </div>
+  <%= paginate @posts %>
+
+</div>
+
+<div id="home-right">
+   <div class="section-bar" style="margin-top: 20px;">#DraperU</div>
+  <% @instagram_draperu.each do |instagram| %>
+      <div id="social-container">
+        <div class="instagram-img">
+          <%= link_to instagram.link, target: "_blank" do %>
+            <%= image_tag instagram.images.low_resolution.url %>
+            <!-- <div class="username"><%= instagram.user.username %></div> -->
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+
+<%= subscribe_to "/posts/new" %>
+
+<script type="text/javascript">
+  $(".headerAlert").hide();
+
+  $( document ).ready(function() { 
+
+    // refresh alert for new posts
+    var headerAlert = document.querySelector('.headerAlert');
+    var origOffsetY = headerAlert.offsetTop;
+    function onScroll(e) {
+    window.scrollY >= origOffsetY ? headerAlert.classList.add('sticky') :
+      headerAlert.classList.remove('sticky');
+    }
+    document.addEventListener('scroll', onScroll);   
+  });
+</script>
+

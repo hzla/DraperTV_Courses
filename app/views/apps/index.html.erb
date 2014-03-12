@@ -1,0 +1,194 @@
+<% if user_signed_in? %>
+  <% if current_user.online == "admin" %>
+    <ul class="nav nav-tabs">
+      <li><a href="#todo" data-toggle="tab">To Do</a></li>
+      <li><a href="#admitted" data-toggle="tab">Admitted</a></li>
+      <li><a href="#accepted" data-toggle="tab">Accepted Offer</a></li>
+      <li><a href="#paid" data-toggle="tab">Paid</a></li>
+      <li><a href="#declined" data-toggle="tab">Declined Offer</a></li>
+      <li><a href="#rejected" data-toggle="tab">Rejected</a></li>
+      <li></li>
+    </ul>
+    
+      
+
+      <div class="tab-content">
+
+        <div class="tab-pane active" id="todo">
+          <% @apps.each do |app| %>
+            <% if app.status == "" or app.status == "Reviewing" or app.status == nil %>
+              <div id="app-list-container">
+                <%= link_to edit_app_path(app.id) do %>
+                  <div class="button">Edit</div>
+                <% end %>
+                <div id="avatar"><%= image_tag app.photo.url(:large) %></div>
+                <div class="info">
+                  <div id="name"><%= app.first %> <%= app.last %></div>
+                  <div class="timestamp">Submitted <%= app.created_at.to_date.to_formatted_s( :long_ordinal )  %></div>
+                  <div class="status">
+                    <span><b>Status:</b> <%= app.status %> </span>
+                    <span><b>Response:</b> <%= app.response %> </span><br />
+                    <span><b>Email:</b> <%= app.email %> </span><br />
+                    <span><b>Video:</b> <%= link_to 'link', "#{app.exist}", :target => "blank" %> </span><br />
+                    <span><b>Notes:</b> <%= app.notes %></span>
+                  </div>
+                  <div id ="profile_links">
+                    
+                    <span><%= app.city %>, <%= app.country %></span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="tab-pane" id="declined">
+          <% @apps.each do |app| %>
+            <% if app.response == "Declined Offer" %>
+              <div id="app-list-container">
+                <%= link_to edit_app_path(app.id) do %>
+                  <div class="button">Edit</div>
+                <% end %>
+                <div id="avatar"><%= image_tag app.photo.url(:large) %></div>
+                <div class="info">
+                  <div id="name"><%= app.first %> <%= app.last %></div>
+                  <div class="timestamp">Submitted <%= app.created_at.to_date.to_formatted_s( :long_ordinal )  %></div>
+                  <div class="status">
+                    <span><b>Status:</b> <%= app.status %> </span>
+                    <span><b>Response:</b> <%= app.response %> </span><br />
+                    <span><b>Email:</b> <%= app.email %> </span><br />
+                    <span><b>Video:</b> <%= link_to 'link', "#{app.exist}", :target => "blank" %> </span><br />
+                    <span><b>Notes:</b> <%= app.notes %></span>
+                  </div>
+                  <div id ="profile_links">
+                    
+                    <span><%= app.city %>, <%= app.country %></span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+
+        <div class="tab-pane" id="rejected">
+          <% @apps.each do |app| %>
+            <% if app.status == "Rejected" %>
+              <div id="app-list-container">
+                <%= link_to edit_app_path(app.id) do %>
+                  <div class="button">Edit</div>
+                <% end %>
+                <div id="avatar"><%= image_tag app.photo.url(:large) %></div>
+                <div class="info">
+                  <div id="name"><%= app.first %> <%= app.last %></div>
+                  <div class="timestamp">Submitted <%= app.created_at.to_date.to_formatted_s( :long_ordinal )  %></div>
+                  <div class="status">
+                    <span><b>Status:</b> <%= app.status %> </span>
+                    <span><b>Response:</b> <%= app.response %> </span><br />
+                    <span><b>Email:</b> <%= app.email %> </span><br />
+                    <span><b>Video:</b> <%= link_to 'link', "#{app.exist}", :target => "blank" %> </span><br />
+                    <span><b>Notes:</b> <%= app.notes %></span>
+                  </div>
+                  <div id ="profile_links">
+                    
+                    <span><%= app.city %>, <%= app.country %></span>
+                  </div>
+                </div>
+              </div>
+            <% else %>
+            <% end %>
+          <% end %>
+        </div>
+
+         <div class="tab-pane" id="admitted">
+          <% @apps.each do |app| %>
+            <% if app.status == "Accepted" and app.response == "" %>
+              <div id="app-list-container">
+                <%= link_to edit_app_path(app.id) do %>
+                  <div class="button">Edit</div>
+                <% end %>
+                <div id="avatar"><%= image_tag app.photo.url(:large) %></div>
+                <div class="info">
+                  <div id="name"><%= app.first %> <%= app.last %></div>
+                  <div class="timestamp">Submitted <%= app.created_at.to_date.to_formatted_s( :long_ordinal )  %></div>
+                  <div class="status">
+                    <span><b>Status:</b> <%= app.status %> </span>
+                    <span><b>Response:</b> <%= app.response %> </span><br />
+                    <span><b>Email:</b> <%= app.email %> </span><br />
+                    <span><b>Video:</b> <%= link_to 'link', "#{app.exist}", :target => "blank" %> </span><br />
+                    <span><b>Notes:</b> <%= app.notes %></span>
+                  </div>
+                  <div id ="profile_links">
+                    
+                    <span><%= app.city %>, <%= app.country %></span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="tab-pane" id="accepted">
+          <% @apps.each do |app| %>
+            <% if app.response == "Accepted Offer" and app.payment == false %>
+              <div id="app-list-container">
+                <%= link_to edit_app_path(app.id) do %>
+                  <div class="button">Edit</div>
+                <% end %>
+                <div id="avatar"><%= image_tag app.photo.url(:large) %></div>
+                <div class="info">
+                  <div id="name"><%= app.first %> <%= app.last %></div>
+                  <div class="timestamp">Submitted <%= app.created_at.to_date.to_formatted_s( :long_ordinal )  %></div>
+                  <div class="status">
+                    <span><b>Status:</b> <%= app.status %> </span>
+                    <span><b>Response:</b> <%= app.response %> </span><br />
+                    <span><b>Email:</b> <%= app.email %> </span><br />
+                    <span><b>Video:</b> <%= link_to 'link', "#{app.exist}", :target => "blank" %> </span><br />
+                    <span><b>Notes:</b> <%= app.notes %></span>
+                  </div>
+                  <div id ="profile_links">
+                    
+                    <span><%= app.city %>, <%= app.country %></span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="tab-pane" id="paid">
+          <% @apps.each do |app| %>
+            <% if app.payment == true %>
+              <div id="app-list-container">
+                <%= link_to edit_app_path(app.id) do %>
+                  <div class="button">Edit</div>
+                <% end %>
+                <div id="avatar"><%= image_tag app.photo.url(:large) %></div>
+                <div class="info">
+                  <div id="name"><%= app.first %> <%= app.last %></div>
+                  <div class="timestamp">Submitted <%= app.created_at.to_date.to_formatted_s( :long_ordinal )  %></div>
+                  <div class="status">
+                    <span><b>Status:</b> <%= app.status %> </span>
+                    <span><b>Response:</b> <%= app.response %> </span><br />
+                    <span><b>Email:</b> <%= app.email %> </span><br />
+                    <span><b>Video:</b> <%= link_to 'link', "#{app.exist}", :target => "blank" %> </span><br />
+                    <span><b>Notes:</b> <%= app.notes %></span>
+                  </div>
+                  <div id ="profile_links">
+                    
+                    <span><%= app.city %>, <%= app.country %></span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
+        
+  <% else %>
+    Access Denied.
+  <% end %>
+<% else %>
+You must be signed in to access this page.
+<% end %>

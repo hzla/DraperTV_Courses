@@ -1,0 +1,120 @@
+<!-- *********************** -->
+<!-- APPLICATION FORM - WEB -->
+<!-- *********************** -->
+
+<div id="new-app" style="padding-top: 25px;">
+  <div class="wrapper">
+    <h1 id="app-title">Draper University Online School Application</h1>
+    <div id="app-info">We're currently taking applications for our Winter Session, which will run from January 20 - March 7.  Please keep in mind that the program is immersive and will require at least 15 hours of your time per week.  See below for application and notification dates.  Winter tuition is $850.<br/></div>
+    <br />
+    <table id="deadlines" cellspacing="3">
+      <th>Winter Session, Round 1</th>
+      <th>Winter Session, Round 2</th>
+      <tr>
+        <td>
+          Application Due: November 1<br>
+          Notification Date: November 20
+        </td>
+        <td>
+          Application Due: December 2<br>
+          Notification Date: December 13
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br/><br/>
+
+<%= simple_form_for(@app) do |f| %>
+
+<!-- ************************** -->
+<!-- start basic info questions -->
+<!-- ************************** -->
+
+  <div class="section">Basic Information</div>
+  <table>
+    <tr>
+      <td><%= f.input :first, required: true %></td>
+      <td><%= f.input :last, required: true %></td>
+    </tr>
+    <tr>
+      <td><%= f.input :email, required: true %></td>
+      <td><%= f.input :phone, required: true %></td>
+    </tr>
+    <tr>
+      <td><%= f.input :dob, label: "Date of Birth" %></td>
+      <td><%= f.input :college, label: "College Attended" %>
+    </tr>
+    <tr>
+       <td><%= f.input :marketing, placeholder: "Please be specific, e.g. 'Saw Bloomberg TV interview'", label: "How did you hear about Draper U?" %></td>
+      <td style="margin:0;">
+        <label class="string optional control-label">Gender</label><br/>
+        <%= f.select :gender, ["Female","Male"] %><br/><br/>
+      </td>
+    </tr>
+    <tr>
+      <td style="margin:0;">
+        <label class="string optional control-label">Which option best describes your technical skill set?</label><br/>
+        <%= f.select :technical, ["I'm a developer","I know some HTML","Not technical, but interested in learning", "Not my cup of tea"] %><br/><br/>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+  <br />
+  <br />
+
+  <!-- **************************** -->
+  <!-- start contact info questions -->
+  <!-- **************************** -->
+
+  <div class="section">Contact Information</div>
+  <table>
+    <tr>
+      <td><%= f.input :street_address, label: "Street Address", required: true %></td>
+      <td><%= f.input :city, label: "City", required: true %></td>
+    </tr>
+    <tr>
+      <td><%= f.input :postal_code, label: "Postal Code", required: true %></td>
+      <td><%= f.input :state, label: "State", required: true %></td>
+    </tr>
+    <tr>
+      <td><%= f.input :country, label: "Country", required: true %><br /></td>
+      <td></td>
+    </tr>
+    <tr></tr>
+  </table>
+  <br />
+  <br />
+
+  <!-- *************************** -->
+  <!-- start application questions -->
+  <!-- *************************** -->
+
+  <div class="section">Application Questions</div>
+    <%= f.input :exist, label: "Create a 60 second video of yourself explaining why you were put on Earth.", required: true, :input_html => { :rows => 1 }, placeholder: "URL to file on YouTube, Vimeo, Dropbox, etc." %>
+    <%= f.input :business, label: "What is your business idea?", :input_html => { :rows => 10 } %>
+    
+    <table>
+      <tr>
+        <td>
+          <label class="string optional control-label">Upload Headshot</label>
+          <%= f.file_field :photo, required: true %>
+        </td>
+        <td></td>
+      </tr>
+    </table>
+
+    <%= f.submit "Submit Application" %>
+  <% end %>
+</div>
+
+
+
+<div id="new-app-mobile">
+  <div class="wrapper">
+    <br />
+    <h1 id="app-title">Draper University Online School Application</h1><br />
+    <div id="app-info">We're currently taking applications for our Winter Session, which will run from January 20 - March 7.  Please keep in mind that the program is immersive and will require at least 15 hours of your time per week. Winter tuition is $850.<br/><br />
+    Please visit our site on a tablet or desktop to view the full application.
+    </div>
+  </div>
+</div>

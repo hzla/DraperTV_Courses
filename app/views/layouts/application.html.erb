@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow: visible;">
+
+<head>
+  <title>Draper University Online School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- install fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,400italic' rel='stylesheet' type='text/css'>
+  <!-- install icons -->
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <%= javascript_include_tag 'jquery', 'application' %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+  <%= yield :head %>
+  <style>
+  	body { font-family: 'proxima_nova';}
+  </style>
+
+
+  <!-- google tracking -->
+  <script type="text/javascript">
+    var fb_param = {};
+    fb_param.pixel_id = '6009982432893';
+    fb_param.value = '0.00';
+    fb_param.currency = 'USD';
+    (function(){
+      var fpw = document.createElement('script');
+      fpw.async = true;
+      fpw.src = '//connect.facebook.net/en_US/fp.js';
+      var ref = document.getElementsByTagName('script')[0];
+      ref.parentNode.insertBefore(fpw, ref);
+    })();
+    </script>  
+ 
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6009982432893&amp;value=0&amp;currency=USD" /></noscript>
+</head>
+<body>
+
+  <!-- ***************** -->
+  <!-- **** Navbar ***** -->
+  <!-- ***************** -->
+
+    <% if user_signed_in? %>
+      <div class="navbar navbar-fixed-top sb-slide">
+        <div class="navbar-inner">
+          <div class="container">
+                <div id="left-menu" class="sb-toggle-left">
+                  <div id="menu-icon"></div>
+                  <div class="title">menu</div>
+                </div>
+              <div id="logo"></div>
+            <ul class="nav pull-right">
+              <!-- <div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
+              <li class="dropdown">
+                <a class="dropdown" data-toggle="dropdown" href="#">
+                  <%= current_user.full_name %> <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li role="menu"><%= link_to 'View Profile', student_profile_path(current_user)  %></li>
+                  <li role="menu"><%= link_to 'Edit Settings', edit_user_registration_path %></li>
+                  <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
+                </ul>
+              </li> -->
+              <!-- <a id="right-menu" href="#right-menu" class="sidr-click"> -->
+              <div class="sb-toggle-right">
+                <i class="fa fa-inbox fa-2x empty" style="padding-top: 10px; padding-right: 4px;" id="notifications"></i>
+                <div class="red-circle"></div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container"> 
+            <%= link_to '/' do %>
+              <div id="logo"></div>
+            <% end %>
+            <ul class="nav pull-right">
+              <li id="home_link"><%= link_to "Apply", '/apply' %></li>
+              <li id="home_link"><%= link_to "Log In", login_path %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <% flash.each do |type, message| %>
+    	<div class="alert <%= flash_class type %>">
+    		<button class="close" data-dismiss="alert">x</button>
+    		<%= message %>
+    	</div>
+    <% end %>
+
+  <div id="sb-site" style="padding-top: 55px; overflow: visible; height: 100%; background: #fff;">  
+
+  <!-- ***************** -->
+  <!-- ***** Body ****** -->
+  <!-- ***************** -->
+
+    <% if user_signed_in? %>
+      <div style="display: block; width: 100%; overflow: visible; background: white; height: auto;">
+        <div id="loadingbar-frame"></div>
+        <div id="main-body">    
+          <%= yield %>
+        </div>
+      </div>
+    <% else %>
+      <div id="logged-out-main">
+    		<%= yield %>
+      </div>
+    <% end %>
+
+  </div><!-- end sb-site -->
+
+  <!-- ***************** -->
+  <!-- *** Sidebars **** -->
+  <!-- ***************** -->
+
+  <div class="sb-slidebar sb-left">
+    <% if user_signed_in? %>
+      <%= render 'layouts/sidenav' %>
+    <% end %>
+  </div>
+
+  <div class="sb-slidebar sb-right" id="right-menu">
+    <div class="top-bar">
+    </div>
+
+    <% if user_signed_in? %>
+    
+            <% @notified = User.find(current_user.id) %>
+             <%= simple_form_for @notified, :remote => true do |f| %>
+          <% if @notified.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@notified.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+              <ul>
+              <% @notified.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.hidden_field :nCounter %>
+          </div>
+        <% end %>
+
+       
+    <% end %>
+
+
+    <div id="notify" class="section-link">
+      
+    </div>
+
+    <div id="load-more">
+    </div>    
+    <%= link_to "", activities_path, :data => { :'class' => 'displayLink' }, :remote => true %>
+    <script type="text/javascript">
+
+  <% if user_signed_in? %>
+   $( ".sb-toggle-right" ).on( "click", function() {
+     if($( "html" ).hasClass( "sb-active-right" )) {
+
+        $("#notifications").removeClass("notifications");
+        $('#notifications').addClass("empty");
+        $('#notifications').empty();
+        $('form#edit_user_' + '<%= current_user.id %>').submit();
+        } 
+        else {
+          $('a[data\-class="displayLink"]').click();
+          $('#notifications').empty();
+
+        } 
+      });
+
+        $('#user_nCounter').val(0);
+        $('#notifications').text('<%= current_user.nCounter %>');
+
+        var n = $('#notifications').text();
+        n =  parseInt(n);
+
+      if( '<%= current_user.nCounter %>' === 0 ) {
+          $('#notifications').empty();
+          $("#notifications").removeClass("notifications");
+          $('#notifications').addClass("empty");        
+        }
+        else {
+          $('#notifications').text('<%= current_user.nCounter %>');
+          $('#notifications').removeClass('empty');
+          $('#notification').addClass('notifications');
+          }
+
+
+        if(n === 0 ) {
+          $('#notifications').empty();
+          $("#notifications").removeClass("notifications");
+          $('#notifications').addClass("empty");         
+        }
+        else {
+            // code to be executed if condition is false
+        }
+
+    <% end %>
+
+    </script>
+  </div>
+
+  <script>
+    (function($) {
+      $(document).ready(function() {
+        $.slidebars();
+      });
+    }) (jQuery);
+  </script>
+
+</body>
+
+<!-- <footer>
+  <div class="container">
+    <div class="wrapper">
+      <div class="left">
+        <span>44 E 3rd Avenue</span><br>
+        <span>San Mateo, CA 94401</span><br>
+        <a href="mailto:questions@draperuniversity.com" target="_blank"><span>questions@draperuniversity.com</span></a>
+      </div>
+      <div class="right">
+        <span>© Draper University of Heroes.  All Rights Reserved.</span>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+
+</html>

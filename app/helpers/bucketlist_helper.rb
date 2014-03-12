@@ -1,0 +1,2 @@
+module BucketlistHelper
+end

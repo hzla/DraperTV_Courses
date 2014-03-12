@@ -1,0 +1,112 @@
+<% if @course.course_current? == true or current_user.online == "admin" %>
+
+	<ul class="breadcrumb">
+	  <li><%= link_to 'Courses', courses_path %> <span class="divider">/</span></li>
+	  <li><%= @course.title %></li>
+	</ul>
+
+	<div class="course-show-container">
+		<div class="course-show-left">
+			<h1 class="title"><%= @course.title %></h1>
+
+			<!-- ******  INTRO VIDEO ******* -->
+			<div style="display: block; overflow: hidden;">
+				<a href="#videoModal" data-toggle="modal" id="intro-video" data-backdrop="false">
+					<%= image_tag(@course.intro_screenshot) %>
+					<div class="play-intro" ></div>
+				</a>
+			</div>
+
+			<!-- ******  INFO TABS ******* -->
+			<div class="information">
+				<ul class="nav nav-tabs" style="margin-top: 22px; margin-bottom: 20px;">
+		      <li class="active"><a href="#tab-description" data-toggle="tab">Description</a></li>
+		      <li><a href="#tab-speakers" data-toggle="tab"> </a></li>
+		    </ul>
+		    <div class="tab-content">
+	      	<div class="tab-pane active" id="tab-description">
+	      		<div class="details">
+							<% if @course.start_date %>
+								<div class="dates"><%= @course.start_date.strftime("%b %e") %> - <%= @course.end_date.strftime("%b %e") %></div>
+							<% end %>
+						</div> 
+	      		<%= @course.description %>
+	      	</div>
+	      	<div class="tab-pane" id="tab-speakers">
+	      	</div>
+	      </div>
+			</div>
+		</div>
+
+		<!-- ******  CONTENT ******* -->
+		<div class="course-show-right">
+			<% @course.assignments.each do |assignment| %>
+				<%= link_to(assignment_path(assignment)) do %>
+					<!--changed from assignment-container -->
+					<div class="video-container">
+						<% if assignment.complete_for_user?(current_user) %>
+							<div class="complete"></div>
+						<% end %>
+						<!-- select icon depending on assignment type #changed from assignment-icon -->
+						<div class="pic">
+							<%= image_tag(assignment.speaker_pic(:large)) %>
+							<div class="icon">
+								<% if assignment.category == "quiz" %>
+									<%= image_tag("icons/quiz.png") %>
+								<% elsif assignment.category == "video" %>
+									<%= image_tag("icons/video.png") %>
+								<% elsif assignment.category == "founder" %>
+									<%= image_tag("icons/idea.png") %>
+								<% elsif assignment.category == "reading" %>
+									<%= image_tag("icons/reading.png") %>
+								<% elsif assignment.category == "upload" %>
+									<%= image_tag("icons/assignment.png") %>
+								<% elsif assignment.category == "milestone" %>
+									<%= image_tag("icons/milestone.png") %>
+								<% end %>
+							</div>
+						</div>
+						<div class="video-information">
+							<h2><%= assignment.title %></h2>
+							<div class="description"><%= assignment.description %></div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+
+			<% else %>
+				<p>This course has not started yet!</p>
+			<% end %>
+		</div>
+	</div>
+
+	<div id="course-header">
+		<div class="wrapper">
+		
+			<!-- ******  VIDEO MODAL ******* -->
+			<div id="videoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			    <h3 id="myModalLabel"><%= @course.title %> Introduction</h3>
+			  </div>
+			  <div class="modal-body">
+			  	<div class="intro">
+			    	<% if @course.intro_vimeo %>
+		          <%= raw @intro_embed %>
+		        <% else %>
+		        <% end %>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="inner">
+				
+			
+			</div>
+		</div>
+	</div>
+
+
+	
+
+

@@ -1,0 +1,14 @@
+ <ul class="breadcrumb">
+  <li><%= link_to 'Events', events_path %> <span class="divider">/</span></li>
+  <li><%= link_to @event.name, event_path(@event) %><span class="divider">/</span></li>
+  <li>Edit</li>
+</ul>
+ <% if @event.user_id == current_user.id %>
+ <div id="event-show">
+  <h1>Editing event</h1><br />
+
+  <%= render 'form' %>
+</div>
+<% else %>
+Sorry, only the owner of the event can make changes.
+<% end %>

@@ -1,0 +1,38 @@
+<ul class="breadcrumb">
+  <li>Videos</li>
+</ul>
+<div id="main-body-container">
+  <h1>Speaker Videos</h1>
+  <p class="video-section-p">As Draper University Alumni, you will always have access to a curated selection of our top speakers.  If you would like to request a specific video, please do so through our feedback form.</p>
+  <div class="padding-top-20">
+    <% @videos.each do |video| %>
+      <%= link_to(video_path(video)) do %>
+        <div class="video-container">
+          <div class="pic">
+            <%= image_tag(video.video_pic(:large)) %>
+              <div class="icon">
+              <% if video.category == "founder" %>
+                <%= image_tag("icons/idea.png") %>
+              <% else %>
+                <%= image_tag("icons/video.png") %>
+              <% end %>
+            </div>
+          </div>
+
+          
+          <div class="video-information">
+            <h2><%= raw video.title %></h2>
+            <div class="description"><%= raw video.description %></div>
+          </div>
+
+          <% if video.category == "founder" %>
+             <div class="border-bottom" style="background: #f2b81d"></div>
+          <% else %>
+             <div class="border-bottom"></div>
+          <% end %>
+
+        </div><!-- end video-container -->
+      <% end %>
+    <% end %>
+  </div>
+</div>

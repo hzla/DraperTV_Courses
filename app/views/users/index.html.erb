@@ -1,0 +1,45 @@
+
+
+<ul class="breadcrumb">
+  <li>Students</li>
+</ul>
+
+<div id="alumni-container">
+  <h1 style="font-size: 34px; font-weight: 300;">Students</h1>
+
+  <div id="alumni-search">
+    <%= form_tag users_path, :method => 'get' do %>
+      <%= text_field_tag :query, params[:query], :placeholder => "Search by name, team, or country" %>
+        <%= submit_tag "Search", :name => nil %>
+    <% end %>
+  </div>
+  <br />
+
+  <div id="tag_cloud">
+    <% tag_cloud User.tag_counts, %w{s m l} do |tag, css_class| %>
+      <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+    <% end %>
+  </div>
+
+  <div id="users">
+    <ul class="nav nav-tabs" style="margin-top: 22px; margin-bottom: 20px;">
+      <li class="active"><a href="#tab-online-students" data-toggle="tab">Online</a></li>
+      <li><a id="boarding" href="#tab-boarding-students" data-toggle="tab">Boarding</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab-online-students">
+          <%= render 'users/userOnline' %>
+      </div>
+      <div class="tab-pane" id="tab-boarding-students">
+          <%= render 'users/userBoarding' %>
+
+        
+      </div>
+    </div>
+  </div>
+
+
+  <br />
+</div>
+
+

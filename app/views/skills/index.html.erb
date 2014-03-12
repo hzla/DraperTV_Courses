@@ -1,0 +1,10 @@
+<ul class="breadcrumb">
+  <li>All Skills</li>
+</ul>
+
+<h2>Superhero Skills</h2>
+<ul>
+  <% @skills.each do |skill| %>
+    <li><%= link_to skill_path(skill) do %><%= skill.name %><% end %></li>
+  <% end %>
+</ul>
