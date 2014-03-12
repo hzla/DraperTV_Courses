@@ -85,10 +85,13 @@ ActiveRecord::Schema.define(version: 20140211224225) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+<<<<<<< HEAD
     t.string   "response"
     t.string   "status"
     t.boolean  "payment"
     t.text     "notes"
+=======
+>>>>>>> ef37099166a622ed6f30dc8d231041da079e4ea0
   end
 
   create_table "assignments", force: true do |t|
@@ -164,6 +167,7 @@ ActiveRecord::Schema.define(version: 20140211224225) do
     t.integer  "user_id"
   end
 
+<<<<<<< HEAD
   create_table "calendars", force: true do |t|
     t.string   "name"
     t.datetime "start_time"
@@ -173,6 +177,8 @@ ActiveRecord::Schema.define(version: 20140211224225) do
     t.datetime "updated_at",  null: false
   end
 
+=======
+>>>>>>> ef37099166a622ed6f30dc8d231041da079e4ea0
   create_table "courses", force: true do |t|
     t.string   "title"
     t.text     "description"
@@ -200,6 +206,25 @@ ActiveRecord::Schema.define(version: 20140211224225) do
 
   add_index "courses", ["slug"], name: "index_courses_on_slug", unique: true, using: :btree
 
+<<<<<<< HEAD
+=======
+  create_table "delayed_jobs", force: true do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+
+>>>>>>> ef37099166a622ed6f30dc8d231041da079e4ea0
   create_table "events", force: true do |t|
     t.string   "name"
     t.datetime "start_time"
@@ -238,6 +263,17 @@ ActiveRecord::Schema.define(version: 20140211224225) do
     t.datetime "updated_at",    null: false
   end
 
+<<<<<<< HEAD
+=======
+  create_table "payments", force: true do |t|
+    t.string   "name"
+    t.text     "email"
+    t.float    "fee"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+>>>>>>> ef37099166a622ed6f30dc8d231041da079e4ea0
   create_table "posts", force: true do |t|
     t.text     "content"
     t.datetime "created_at",        null: false
