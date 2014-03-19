@@ -19,7 +19,7 @@ class ProfilesController < ApplicationController
 
   def profile
     @user = User.friendly.find(params[:id])
-    @courses = Course.all
+    @courses = Course.includes(:assignments).all
     @assignments = Assignment.all
     #@assignment = Assignment.find(params[:id])
     @user_assignments = UserAssignment.all

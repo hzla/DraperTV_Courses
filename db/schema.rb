@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20140319165245) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,10 +85,6 @@ ActiveRecord::Schema.define(version: 20140319165245) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.string   "response"
-    t.string   "status"
-    t.boolean  "payment"
-    t.text     "notes"
   end
 
   create_table "assignments", force: true do |t|
@@ -166,15 +160,6 @@ ActiveRecord::Schema.define(version: 20140319165245) do
     t.integer  "user_id"
   end
 
-  create_table "calendars", force: true do |t|
-    t.string   "name"
-    t.datetime "start_time"
-    t.text     "description"
-    t.string   "location"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "courses", force: true do |t|
     t.string   "title"
     t.text     "description"
@@ -201,7 +186,6 @@ ActiveRecord::Schema.define(version: 20140319165245) do
   end
 
   add_index "courses", ["slug"], name: "index_courses_on_slug", unique: true, using: :btree
-
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -255,6 +239,14 @@ ActiveRecord::Schema.define(version: 20140319165245) do
     t.text     "brilliance"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "payments", force: true do |t|
+    t.string   "name"
+    t.text     "email"
+    t.float    "fee"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: true do |t|
