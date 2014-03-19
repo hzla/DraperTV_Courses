@@ -1,5 +1,3 @@
-
-
 $('#postsDiv').append('<%= j render(@posts) %>');
 <% if (@posts.current_page < @posts.num_pages) %>
         $('.pagination').replaceWith('<%= j paginate(@posts) %>');

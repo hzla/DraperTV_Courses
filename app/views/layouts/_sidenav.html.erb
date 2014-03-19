@@ -1,11 +1,14 @@
 <div id="side-nav" style="display: block;">
-	<div class="top-bar">
-		<%= link_to student_profile_path(current_user) do %>
-			<div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
-			<!-- <div class="name"><%= current_user.full_name %></div> -->
-		<% end %>
-		 
-	</div>
+	<%= link_to student_profile_path(current_user) do %>
+		<div class="top-bar">
+				<div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
+				<div class="info-container">
+					<div class="name"><%= current_user.full_name %></div>
+					<div class="points">3,200</div>
+				</div>
+		</div>
+	<% end %>
+
 	<div class="main">
 		<!-- ****** LEARN ******* -->
 		<div class="section-title">Learn</div>

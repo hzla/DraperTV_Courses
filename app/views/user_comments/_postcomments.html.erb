@@ -1,0 +1,44 @@
+<!-- ******************** -->
+<!-- ** POST COMMMENTS ** -->
+<!-- ******************** -->
+
+<div id="comments_list">
+  <% @comments.each do |comment| %>
+    <% if User.where(:id => comment.user_id).exists? %>
+      <div id="post-comments">
+
+        <!-- upvoteable -->
+        <% @commentvotes = comment.votes_for %>
+        <div class="upvote">
+          <% if current_user.voted_for?(comment) %>
+            <div class="unvote-button" id="unvote-button-<%= comment.id %>">
+              <%=link_to unvote_for_comment_post_user_comments_path(@post, id: comment.id), :method => :post do %><i class="fa fa-chevron-up"></i><% end %>
+            </div>
+          <% else %>
+            <div class="vote-button" id="vote-button-<%= comment.id %>">
+              <%=link_to vote_for_comment_post_user_comments_path(@post, id: comment.id),  :method => :post do %><i class="fa fa-chevron-up"></i><% end %>
+            </div>
+          <% end %>
+          <div class="vote-count" id="votes-<%= comment.id %>"><%= @commentvotes %></div>
+        </div><!-- upvote -->
+
+        <!-- start comment -->
+        <% if comment.user_id %>
+          <% @comment_user = User.find_by_id(comment.user_id) %>
+          <div class="picture"><%= image_tag @comment_user.avatar.url(:thumb) %></div>
+          <div class="name"><%= link_to student_profile_path(@comment_user) do %><%= @comment_user.full_name %><% end %></div>
+        <% end %>
+        <div class="timestamp"><%= comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+        <div class="content"><%= simple_format raw Rinku.auto_link(comment.content, :all, 'target="_blank"') %></div>
+        <% if current_user.id == comment.user_id %>
+          <%= link_to [@commentable, comment], :confirm => 'Are you sure you want to remove this comment? This cannot be undone.', :action => "destroy", :method => :delete, :remote => true do %>
+            <div class="delete"></div>
+          <% end %>
+        <% else %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+

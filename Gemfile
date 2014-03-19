@@ -25,6 +25,8 @@ gem 'thin'
 gem 'friendly_id'
 gem 'chosen-rails'
 gem 'rinku'
+gem 'turbolinks'
+gem 'thumbs_up'
 
 # analytics & email
 gem 'instagram'

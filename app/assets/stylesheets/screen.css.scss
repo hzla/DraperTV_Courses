@@ -46,8 +46,6 @@ input[type="submit"] {
 		}
 	}
 
-
-
 /*********************/
 /****** ERRORS *******/
 /*********************/
@@ -66,17 +64,17 @@ input[type="submit"] {
 /*********************/
 
 #logo { 
-  background-image: image-url('logo-white.png'); 
+  background-image: image-url('DU_Logo_Flat_White.svg'); 
   background-repeat: no-repeat;
+  background-size: contain;
   display: block;
-  width: 30px;
-  height:30px;
+  width: 23px;
+  height:23px;
   overflow: none;
   // margin-left:15px;
   // margin-top: 4px;
   position: absolute;
-  left: 50%;
-  margin-left: -15px;
+  left: 20px;
   top: 10px;
 
 }
@@ -438,7 +436,8 @@ input[type="submit"] {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	width: 70%;
+	width: calc(70% - 25px);
+	margin-left: 25px;
 	margin-top: 10px;
 }
 #speaker_container {
@@ -757,11 +756,12 @@ input[type="submit"] {
 #resources {
 	.section-header{
 		display: block;
-		width: 95%;
+		width: calc(95% - 50px);
 		border-bottom: 2px solid $gray-x-lt;
 		padding-bottom: 5px;
 		margin-bottom: 10px;
 		margin-top: 10px;
+		margin-left: 25px;
 
 		font-size: 12px;
 		letter-spacing: 1px;
@@ -990,7 +990,7 @@ select:focus {
 /**********************/
 
 .event-calendar {
-	width: 95%;
+	width: 90%;
 	position: relative;
 	margin: 0 auto;
 	h2 { font-size: 2em; font-weight: 300; }
@@ -1037,11 +1037,12 @@ select:focus {
 
 #event-show {
 	width: 70%;
+	margin-left: 25px;
 	position: relative;
 	h1 { margin-top: 20px; }
 	.button-container {
 		position: absolute;
-		top: -45px;
+		top: 0px;
 		right: 5px;
 		.float { float: left; }
 		.button { 

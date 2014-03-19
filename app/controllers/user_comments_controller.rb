@@ -20,6 +20,26 @@ class UserCommentsController < ApplicationController
       end
   end
 
+def vote_for_comment
+  begin
+    #@comment = UserComment.find(params[:id])
+    current_user.vote_for(@comment = UserComment.find(params[:id]))
+    redirect_to :back
+  rescue
+    render :nothing => true, :status => 404
+  end
+end
+
+def unvote_for_comment
+  begin
+    @comment = UserComment.find(params[:id])
+    current_user.unvote_for(@comment)
+    redirect_to :back
+  rescue
+    render :nothing => true, :status => 404
+  end
+end
+
   def new
     @comment = @commentable.user_comments.new()
   end
@@ -211,6 +231,7 @@ private
     #resource, id = @assignment.id
     @commentable = resource.singularize.classify.constantize.find(id) # photo.find(1)
   end
+
   # alternatives
 end
 
