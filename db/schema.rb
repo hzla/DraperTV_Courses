@@ -11,11 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140317190205) do
-=======
+
 ActiveRecord::Schema.define(version: 20140319165245) do
->>>>>>> ebce42dd269e8429ce52d88c54db4d5f5bccb2b1
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -204,7 +202,7 @@ ActiveRecord::Schema.define(version: 20140319165245) do
 
   add_index "courses", ["slug"], name: "index_courses_on_slug", unique: true, using: :btree
 
-<<<<<<< HEAD
+
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
@@ -221,8 +219,6 @@ ActiveRecord::Schema.define(version: 20140319165245) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
-=======
->>>>>>> ebce42dd269e8429ce52d88c54db4d5f5bccb2b1
   create_table "events", force: true do |t|
     t.string   "name"
     t.datetime "start_time"

@@ -86,7 +86,6 @@ def create
     @posts = Post.all(:order => 'created_at desc') 
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
-<<<<<<< HEAD
       begin
         if @post.save
          track_activity @post  
@@ -118,22 +117,7 @@ def create
             render :new  
         end          
       end
-=======
-      if @post.save
-       track_activity @post  
-       respond_to do |format|
-          format.html { redirect_to post_path(@post) }
-          format.html { redirect_to :back } #{ redirect_to :back, :remote => true }
 
-          #below line will send a notification to 
-          #everyone that there is a new post and they can refres
-          PrivatePub.publish_to("/layouts/posts", "$('.headerAlert').show();")
-
-        end
-      else  
-          render :new  
-      end  
->>>>>>> ebce42dd269e8429ce52d88c54db4d5f5bccb2b1
   end 
 
 # PUT /posts/1
