@@ -85,6 +85,12 @@ OnlineSchool::Application.routes.draw do
   post '/assignments/:id/quiz_save_attempt', to: 'assignments#quiz_save_attempt', as: :assignments_survey_attempts
 
 
+
+
+  match '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/ }, via: :all
+
+
+
   # get "profile/show"
   # get '/:id', to: 'profiles#show'
 
