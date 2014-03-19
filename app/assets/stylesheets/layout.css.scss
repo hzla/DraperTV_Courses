@@ -35,48 +35,50 @@ body {
 #load-more {
   display: block;
   width: 100%;
+  font-size: 10px;
   overflow: visible;
   background: none;
   height: auto;
-  padding: 10px 0;
-  color: white;
-  text-align: center;
+  padding: 5px 15px;
+  color: $blue;
   a {
-    color: $gray-x-lt;
-    &:hover { color: white; }
+    color: $blue;
+    &:hover { color: $blue-hover; }
+  }
+  .view-all {
   }
 }
 
 #notify {
-  margin-top: 70px;
+  margin-top: 0px;
   #post {
     width: 90%;
     padding-left: 5%;
     padding-right: 5%;
     position: relative;
-    border-bottom: 1px solid #333;
-    margin-top: 20px;
-    padding-bottom: 20px;
+    border-bottom: 1px solid $gray-x-lt;
+    margin-top: 10px;
+    padding-bottom: 10px;
     .content {
       margin-left: calc(6% + 30px);
       font-size: 13px;
-      color: $gray;
+      color: $gray-med;
       a {
-        color: $gray-lt;
+        color: $gray;
         &:hover { color: $blue; }
       }
       .name { 
         float: left;
         margin-left: 0; 
         font-size: 13px;
-        color: $gray-lt;
+        color: $blue;
         margin-right: 4px;
         &:hover { color: $blue; }
       }
       .item {
         float: left;
         display: block;
-        color: $gray-lt;
+        color: $gray;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -84,6 +86,7 @@ body {
       .timestamp {
         margin-left: 0;
         font-size: 10px;
+        color: $gray-lt;
       }
     }
     .picture {
@@ -92,12 +95,26 @@ body {
       width: 25px;
       height: 25px;
       position: absolute;
+      top: 4px;
       left: 7%;
     }
     img {
       width: 25px;
       height: 25px;
     }
+  }
+  &:hover {
+
+  }
+}
+
+#ajax-loading {
+  width: 30px;
+  margin: 0 auto;
+  img {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
   }
 }
 
@@ -137,8 +154,8 @@ body {
     
     .sb-toggle-right {
       position: relative;
-      right: 12px;
-      top: 0;
+      right: 22px;
+      top: 2px;
       overflow: hidden;
       #notifications {
         font-size: 15px;
@@ -229,6 +246,13 @@ body {
     }
   }
 }
+
+//**** DROPDOWN NOTIFICATIONS **** //
+#notification-dropdown {
+  min-width: 300px;
+  margin-right: 20px;
+}
+
 .sb-right {
   #navbar-avatar {
     margin-left: 30px;

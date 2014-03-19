@@ -47,25 +47,24 @@
                           </div>
                         <% end %>
 
-                          <%-#++++ Checking Post with File or not!%>
-                          <% if post.file_file_name == nil %>
+                        <%-#++++ Checking Post with File or not!%>
+                        <% if post.file_file_name == nil %>
 
-                            <div class="content">
-                              <%= link_to student_profile_path(@user) do %>
-                                <div class="name"><%= @user.full_name %></div>
-                              <% end %>
-
-                                commented on post
-                              
-                              <%= link_to post_path(post) do %>
-                                <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
-                              <% end %>                                
-                              
-                              <div class="timestamp">
-                                <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %>
-                              </div>                              
-                            
-                            </div>
+                        <div class="content">
+                          <%= link_to student_profile_path(@user) do %>
+                            <div class="name"><%= @user.full_name %></div>
+                          <% end %>
+                            commented on post
+                          
+                          <%= link_to post_path(post) do %>
+                            <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
+                          <% end %>                                
+                          
+                          <div class="timestamp">
+                            <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %>
+                          </div>                              
+                        
+                        </div>
 
                           <% else %>
                           <%-### If Post did have post, the following will execute!%>
