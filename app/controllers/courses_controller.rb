@@ -5,14 +5,14 @@ class CoursesController < ApplicationController
 	def index
 		@courses = Course.all 
     @courses.sort! { |a, b| a.start_date <=> b.start_date }
-    @current_courses = Course.find(:all, :conditions => ['start_date <= ?', DateTime.now])
+    @current_courses = Course.includes(:assignments).find(:all, :conditions => ['start_date <= ?', DateTime.now])
     @current_courses.sort! { |a, b| a.start_date <=> b.start_date }
     @locked_courses = Course.find(:all, :conditions => ['start_date >= ?', DateTime.now])
     @locked_courses.sort! { |a, b| a.start_date <=> b.start_date }
 	end
 
 	def show
-		@course = Course.friendly.find(params[:id])
+		@course = Course.includes(:assignments).friendly.find(params[:id])
 		@course.assignments.sort! { |a, b| b.order_id <=> a.order_id }
 
     if @course.course_complete_for_user?(current_user) == true

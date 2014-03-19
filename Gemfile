@@ -8,7 +8,7 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'nprogress-rails'
 gem 'rails_12factor', group: :production
-#gem 'delayed_job_active_record'
+gem 'delayed_job_active_record'
 
 
 gem 'devise'
@@ -70,6 +70,7 @@ group :development do
   gem "reek" # run this : reek .
   gem 'brakeman', :require => false # run this : brakeman [appPath] -o output_file
   gem 'traceroute' # to check unUsed and Unreachable routes > rake traceroute
+  gem 'quiet_assets' #takes away the Asset messages in the Log
 end
 
 #gem 'rack-mini-profiler'
@@ -96,6 +97,10 @@ gem 'protected_attributes'
 gem 'rails-observers'
 gem 'actionpack-page_caching'
 gem 'actionpack-action_caching'
+
+
+gem 'exception_notification'
+gem 'dalli'
 
 # gem "nifty-generators", :group => :development
 
