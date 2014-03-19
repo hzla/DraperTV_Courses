@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   # GET /users.json
 
   def index
-   
     if params[:tag]
       @users = User.where(:online == "online").text_search(params[:query]).tagged_with(params[:tag]).includes(:skills)
       @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag]).includes(:skills)
@@ -33,9 +32,6 @@ class UsersController < ApplicationController
     end
     end
   end
-
-
-
 
 
 

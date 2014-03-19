@@ -76,6 +76,7 @@ class User < ActiveRecord::Base
   has_many :badges
   has_many :events
   acts_as_taggable
+  acts_as_voter
   has_surveys
   validates :first_name, presence: true
   validates :last_name, presence: true

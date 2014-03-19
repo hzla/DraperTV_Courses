@@ -1,14 +1,38 @@
+<div class="top-section">
+  <h1 style="font-size: 34px; font-weight: 300;">Forum Post</h1>
+</div>
+
+<div class="back-button">
+    <%= link_to posts_path do %>Back to Forums<% end %>
+</div>
 
 
 <% if User.where(:id => @post.user_id).exists? %>
-  <div id="post" >
+  <div id="forum-post-show">
     <% @user = User.find_by_id(@post.user_id) %>
+    <% @postvotes = @post.votes_for %>
+
+     <!-- upvoteable -->
+      <div class="upvote">
+        <% if current_user.voted_for?(@post) %>
+          <div class="unvote-button" id="unvote-button-<%= @post.id %>">
+            <%=link_to unvote_for_post_posts_path(post_id: @post.id), :remote => true,  :method => :post do %><i class="fa fa-chevron-up"></i><% end %>
+          </div>
+        <% else %>
+          <div class="vote-button" id="vote-button-<%= @post.id %>">
+            <%=link_to vote_for_post_posts_path(post_id: @post.id), :remote => true,  :method => :post do %><i class="fa fa-chevron-up"></i><% end %>
+          </div>
+        <% end %>
+        <div class="vote-count" id="votes-<%= @post.id %>"><%= @postvotes %></div>
+      </div><!-- upvote -->
+
+    <!-- image --> 
     <% if @user.avatar != nil %>
       <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
     <% end %>
-    <%= link_to student_profile_path(@user) do %><div class="name"><%= @user.full_name %></div><% end %>
-    <div class="timestamp"><%= @post.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
 
+
+    <!-- content -->
     <% if @post.file_file_name == nil %>
       <div class="content"><%= raw Rinku.auto_link(@post.content, :all, 'target="_blank"') %></div>
     <% else %>
@@ -16,22 +40,23 @@
       <div class="image"><%= image_tag @post.file.url(:preview) %></div>
     <% end %>
 
+    <!-- delete -->
     <% if current_user.id == @post.user_id %>
       <%= link_to [@post], :confirm => 'Are you sure you want to remove this post? This cannot be undone.', :action => "destroy", :method => :delete do %>
         <div class="delete-post"></div>
       <% end %>
     <% else %>
     <% end %>
-    <div id="comments_container">
-      <div id="<%= @post.id %>">
-        <%= render "user_comments/comments" %>
-        
-      </div>
-      <div id="submit-<%= @post.id %>">
-        <%= render "user_comments/addcomment" %>
-      </div>
-    </div>
-  </div>
 
-  <% end %>
+    <!-- comments -->
+    <div id="comments_container">
+      <div id="submit-<%= @post.id %>">
+        <%= render "user_comments/addpostcomment" %>
+      </div>
+      <div id="<%= @post.id %>">
+        <%= render "user_comments/postcomments" %>
+      </div>
+    </div><!-- comments_container -->
+  </div><!-- forum-post-show -->
+<% end %>
 

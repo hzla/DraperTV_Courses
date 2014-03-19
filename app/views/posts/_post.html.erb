@@ -1,47 +1,56 @@
-
 <% @commentable = post %>
 <% @comments = @commentable.user_comments.order(:created_at) %>
 <% @comment = UserComment.new %>
 
 <% if User.where(:id => post.user_id).exists? %>
-  <div id="post" >
-    <% @user = User.find_by_id(post.user_id) %>
-    <% if @user.avatar != nil %>
-      <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
-    <% end %>
-    <%= link_to student_profile_path(@user) do %>
-    <div class="name"><%= @user.full_name %></div>
-    <% end %>
-
-    <div class="timestamp">
-      <%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %>
-    </div>
-
-    <% if post.file_file_name == nil %>
-      <div class="content"><%= raw Rinku.auto_link(simple_format(post.content), :all, 'target="_blank"') %></div>
-    <% else %>
-      <div class="content"><%= raw Rinku.auto_link(simple_format(post.content), :all, 'target="_blank"') %></div>
-      <div class="image"><%= image_tag post.file.url(:preview) %></div>
-    <% end %>
-
-    <% if current_user.id == post.user_id %>
-      <%= link_to [post], :confirm => 'Are you sure you want to remove this post? This cannot be undone.', :action => "destroy", :method => :delete do %>
-        <div class="delete-post"></div>
-      <% end %>
-    <% else %>
-    <% end %>
-    <div id="comments_container">
-      <div id="<%= post.id %>">
-        <%= render "user_comments/comments" %>
   
-      </div>
-      <div id="submit-<%= post.id %>">
-        <%= render "user_comments/addcomment" %>
-      </div>
-    </div>
-  </div>
+    <div class="forum-post" id="forum-post-<%=post.id%>">
+      <% @user = User.find_by_id(post.user_id) %>
+      <% @votes = post.votes_for %>
+     <!--  <% @voters = post.voters_who_voted %> -->
 
-  <% end %>
+      <!-- *** upvoteable *** -->
+      <div class="upvote">
+        <% if current_user.voted_for?(post) %>
+          <div class="unvote-button" id="unvote-button-<%= post.id %>">
+            <%=link_to unvote_for_post_posts_path(post_id: post.id), :remote => true,  :method => :post do %><i class="fa fa-chevron-up"></i><% end %>
+          </div>
+        <% else %>
+          <div class="vote-button" id="vote-button-<%= post.id %>">
+            <%=link_to vote_for_post_posts_path(post_id: post.id), :remote => true,  :method => :post do %><i class="fa fa-chevron-up"></i><% end %>
+          </div>
+        <% end %>
+        <div class="vote-count" id="votes-<%= post.id %>"><%= @votes %></div>
+      </div><!-- upvote -->
+
+      <!-- ** post information ** -->
+      <%= link_to post_path(post.id) do %>
+        <div class="section-info">
+          <div class="text">
+            <%= raw Rinku.auto_link(simple_format(post.title), :all, 'target="_blank"') %>
+            <!-- ** category tag ** -->
+            <% if post.category == nil or post.category == "General" %>
+              <span class="type">General</span>
+            <% elsif post.category == "Coursework" %>
+              <span class="type blue">Coursework</span>
+            <% elsif post.category == "Advice" %>
+              <span class="type orange">Advice</span>
+            <% else %>
+            <% end %>
+          </div>
+          <div class="info">
+            Posted <%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %> by  <%= link_to student_profile_path(@user) do %> <span class="name"><%= @user.full_name %></span> <% end %> on <%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %>
+          </div>
+        </div>
+      <% end %><!-- link to post#show -->
+
+    </div><!-- forum-post -->
+ 
+<% end %>
+
+
+
+
 
 
 

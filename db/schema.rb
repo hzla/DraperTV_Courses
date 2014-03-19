@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140317190205) do
+=======
+ActiveRecord::Schema.define(version: 20140319165245) do
+>>>>>>> ebce42dd269e8429ce52d88c54db4d5f5bccb2b1
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +89,10 @@ ActiveRecord::Schema.define(version: 20140317190205) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "response"
+    t.string   "status"
+    t.boolean  "payment"
+    t.text     "notes"
   end
 
   create_table "assignments", force: true do |t|
@@ -160,6 +168,15 @@ ActiveRecord::Schema.define(version: 20140317190205) do
     t.integer  "user_id"
   end
 
+  create_table "calendars", force: true do |t|
+    t.string   "name"
+    t.datetime "start_time"
+    t.text     "description"
+    t.string   "location"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "courses", force: true do |t|
     t.string   "title"
     t.text     "description"
@@ -187,6 +204,7 @@ ActiveRecord::Schema.define(version: 20140317190205) do
 
   add_index "courses", ["slug"], name: "index_courses_on_slug", unique: true, using: :btree
 
+<<<<<<< HEAD
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
@@ -203,6 +221,8 @@ ActiveRecord::Schema.define(version: 20140317190205) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
+=======
+>>>>>>> ebce42dd269e8429ce52d88c54db4d5f5bccb2b1
   create_table "events", force: true do |t|
     t.string   "name"
     t.datetime "start_time"
@@ -241,14 +261,6 @@ ActiveRecord::Schema.define(version: 20140317190205) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "payments", force: true do |t|
-    t.string   "name"
-    t.text     "email"
-    t.float    "fee"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: true do |t|
     t.text     "content"
     t.datetime "created_at",        null: false
@@ -258,6 +270,9 @@ ActiveRecord::Schema.define(version: 20140317190205) do
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
     t.integer  "user_id"
+    t.string   "category"
+    t.string   "privacy"
+    t.string   "title"
   end
 
   create_table "resources", force: true do |t|
@@ -435,5 +450,19 @@ ActiveRecord::Schema.define(version: 20140317190205) do
     t.integer  "video_pic_file_size"
     t.datetime "video_pic_updated_at"
   end
+
+  create_table "votes", force: true do |t|
+    t.boolean  "vote",          default: false, null: false
+    t.integer  "voteable_id",                   null: false
+    t.string   "voteable_type",                 null: false
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["voteable_id", "voteable_type"], name: "index_votes_on_voteable_id_and_voteable_type", using: :btree
+  add_index "votes", ["voter_id", "voter_type", "voteable_id", "voteable_type"], name: "fk_one_vote_per_user_per_entity", unique: true, using: :btree
+  add_index "votes", ["voter_id", "voter_type"], name: "index_votes_on_voter_id_and_voter_type", using: :btree
 
 end

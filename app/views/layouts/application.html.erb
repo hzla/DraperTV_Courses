@@ -45,11 +45,15 @@
       <div class="navbar navbar-fixed-top sb-slide">
         <div class="navbar-inner">
           <div class="container">
-                <div id="left-menu" class="sb-toggle-left">
-                  <div id="menu-icon"></div>
-                  <div class="title">menu</div>
-                </div>
+            
+            <div class="left-blue">
+              <div id="left-menu" class="sb-toggle-left">
+                <div id="menu-icon"></div>
+                <div class="title">menu</div>
+              </div>
               <div id="logo"></div>
+            </div>
+
             <ul class="nav pull-right">
               <!-- <div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
               <li class="dropdown">
@@ -87,14 +91,9 @@
       </div>
     <% end %>
 
-    <% flash.each do |type, message| %>
-    	<div class="alert <%= flash_class type %>">
-    		<button class="close" data-dismiss="alert">x</button>
-    		<%= message %>
-    	</div>
-    <% end %>
+    <!-- took out flash messages here -->
 
-  <div id="sb-site" style="padding-top: 55px; overflow: visible; height: 100%; background: #fff;">  
+  <div id="sb-site" style="padding-top: 42px; overflow: visible; height: 100%; background: none;">  
 
   <!-- ***************** -->
   <!-- ***** Body ****** -->
@@ -119,11 +118,11 @@
   <!-- *** Sidebars **** -->
   <!-- ***************** -->
 
-  <div class="sb-slidebar sb-left">
+  <!--<div class="sb-slidebar sb-left">-->
     <% if user_signed_in? %>
       <%= render 'layouts/sidenav' %>
     <% end %>
-  </div>
+  <!--</div>-->
 
   <div class="sb-slidebar sb-right" id="right-menu">
     <div class="top-bar">
@@ -211,13 +210,13 @@
     </script>
   </div>
 
-  <script>
-    (function($) {
-      $(document).ready(function() {
-        $.slidebars();
-      });
-    }) (jQuery);
-  </script>
+  // <script>
+  //   (function($) {
+  //     $(document).ready(function() {
+  //       $.slidebars();
+  //     });
+  //   }) (jQuery);
+  // </script>
 
 </body>
 

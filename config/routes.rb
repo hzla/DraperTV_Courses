@@ -68,12 +68,21 @@ OnlineSchool::Application.routes.draw do
   end
 
   resources :posts do
-    resources :user_comments
+    resources :user_comments do
+      collection { post :vote_for_comment }
+      collection { post :unvote_for_comment }
+    end
+
+    collection { post :vote_for_post }
+    collection { post :unvote_for_post }
   end
 
+  resources :user_comments do
+      collection { post :vote_for_comment }
+      collection { post :unvote_for_comment }
+  end
 
   #get 'videos', to: 'videos#index', as: :videos
-
 
   resources :assignments do
     resources :user_comments

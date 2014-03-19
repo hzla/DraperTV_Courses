@@ -1,13 +1,16 @@
 <% if @course.course_current? == true or current_user.online == "admin" %>
 
-	<ul class="breadcrumb">
-	  <li><%= link_to 'Courses', courses_path %> <span class="divider">/</span></li>
-	  <li><%= @course.title %></li>
-	</ul>
+<div class="top-section">
+  <h1 style="font-size: 34px; font-weight: 300;"><%= @course.title %></h1>
+</div>
+
+<div class="back-button">
+  <%= link_to "Courses", courses_path %> 
+</div>
 
 	<div class="course-show-container">
 		<div class="course-show-left">
-			<h1 class="title"><%= @course.title %></h1>
+			<h1 class="title"></h1>
 
 			<!-- ******  INTRO VIDEO ******* -->
 			<div style="display: block; overflow: hidden;">

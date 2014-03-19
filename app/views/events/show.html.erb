@@ -1,13 +1,18 @@
 <%= subscribe_to "/layouts/events" %>
-<ul class="breadcrumb">
-  <li><%= link_to 'Events', events_path %> <span class="divider">/</span></li>
-  <li><%= @event.name %></li>
-</ul>
+
+<div class="top-section">
+  <h1 style="font-size: 34px; font-weight: 300;"><%= @event.name %></h1>
+</div>
+
+<br/><br/><br/><br/>
+
+
 
 <p id="notice"><%= notice %></p>
+
 <% if User.where(:id => @event.user_id).exists? %>
   <div id="event-show">
-    <h1><%= @event.name %></h1>
+    <div class="back"><%= link_to 'Back to Events', events_path %></div>
     <% if @event.user_id == current_user.id %>
       <div class="button-container">
         <div class="float">

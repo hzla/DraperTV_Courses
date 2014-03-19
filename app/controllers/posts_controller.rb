@@ -3,29 +3,51 @@ class PostsController < ApplicationController
   before_filter :load
 
 def load
-  @posts = Post.all(:order => 'created_at desc')
+  @posts = Post.all
   @post = Post.new
   @messages = Message.all
   @message = Message.new
-
-
 end
 
 # GET /posts
 # GET /posts.json
 def index
-  @posts = Post.page(params[:page]).per(10).order('created_at DESC')
+  @posts = Post.plusminus_tally.order('plusminus_tally desc').page(params[:page]).per(10)
   @post = Post.new
   # @users = User.all
   # @user = User.find_by_id(@post.user_id)
-   @instagram_draperu = Instagram.tag_recent_media('draperu', options = {count: 20})
-    @instagram_draperuonline = Instagram.tag_recent_media('draperuonline', options = {count: 20})
+  @instagram_draperu = Instagram.tag_recent_media('draperu', options = {count: 20})
+  @instagram_draperuonline = Instagram.tag_recent_media('draperuonline', options = {count: 20})
   respond_to do |format|
-    format.html # show.html.erb
+    format.html
     format.js #{ render js: @post }
   end
-
 end
+
+def vote_for_post
+  begin
+    @post = Post.find(params[:post_id])
+    current_user.vote_for(@post)
+    respond_to do |format|
+      format.js
+    end
+  rescue
+    render :nothing => true, :status => 404
+  end
+end
+
+def unvote_for_post
+  begin
+    @post = Post.find(params[:post_id])
+    current_user.unvote_for(@post)
+    respond_to do |format|
+      format.js
+    end
+  rescue
+    render :nothing => true, :status => 404
+  end
+end
+
 
 # GET /posts/1
 # GET /posts/1.json
@@ -64,6 +86,7 @@ def create
     @posts = Post.all(:order => 'created_at desc') 
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
+<<<<<<< HEAD
       begin
         if @post.save
          track_activity @post  
@@ -95,9 +118,23 @@ def create
             render :new  
         end          
       end
+=======
+      if @post.save
+       track_activity @post  
+       respond_to do |format|
+          format.html { redirect_to post_path(@post) }
+          format.html { redirect_to :back } #{ redirect_to :back, :remote => true }
+
+          #below line will send a notification to 
+          #everyone that there is a new post and they can refres
+          PrivatePub.publish_to("/layouts/posts", "$('.headerAlert').show();")
+
+        end
+      else  
+          render :new  
+      end  
+>>>>>>> ebce42dd269e8429ce52d88c54db4d5f5bccb2b1
   end 
-
-
 
 # PUT /posts/1
 # PUT /posts/1.json
@@ -138,4 +175,5 @@ def destroy
     #format.js { head :no_content }
   end
 end
-end
+
+end 

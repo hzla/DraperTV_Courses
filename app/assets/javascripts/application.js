@@ -24,6 +24,7 @@
 // = require private_pub
 // = require slidebars.min
 // = require emoticon
+// = require turbolinks
 
 
 NProgress.configure

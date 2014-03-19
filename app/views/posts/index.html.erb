@@ -1,42 +1,41 @@
 <%= subscribe_to "/layouts/posts" %>
-<ul class="breadcrumb">
-  <li>Home</li>
-</ul>
 
- <div class="headerAlert">
+<div class="headerAlert">
   <div class="alert alert-info">
     <%= link_to "Please refresh this page to receive new updates.", posts_path %>
   </div>      
 </div>
+
+<div class="top-section">
+  <h1 style="font-size: 34px; font-weight: 300; float: left;">Forum</h1>
+  <!-- ***** CREATE POST BUTTON ***** -->
+  <div class="button-right">
+    <a href="#newPostModal" data-toggle="modal" id="intro-video" data-backdrop="false">
+      <div class="button">New Post</div>
+    </a>
+  </div>
+</div>
+
  
+<br/><br/>
+
+
+<!-- ***** SHOW POSTS ***** -->
 <div id="posts-column">
-  <h1 style="font-size: 34px; font-weight: 300;">Class Discussion</h1><br />
-  <%= render 'form' %>
-
-
   <div id="postsDiv">
     <%= render @posts %>
   </div>
   <%= paginate @posts %>
-
 </div>
-
-<div id="home-right">
-   <div class="section-bar" style="margin-top: 20px;">#DraperU</div>
-  <% @instagram_draperu.each do |instagram| %>
-      <div id="social-container">
-        <div class="instagram-img">
-          <%= link_to instagram.link, target: "_blank" do %>
-            <%= image_tag instagram.images.low_resolution.url %>
-            <!-- <div class="username"><%= instagram.user.username %></div> -->
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-</div>
-
 
 <%= subscribe_to "/posts/new" %>
+
+
+<!-- ******  NEW POST MODAL ******* -->
+<div id="newPostModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <%= render 'newpost' %>
+</div>
+
 
 <script type="text/javascript">
   $(".headerAlert").hide();

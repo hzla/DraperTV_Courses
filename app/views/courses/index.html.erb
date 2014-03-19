@@ -1,9 +1,9 @@
-<ul class="breadcrumb">
-    <li>Courses</li>
-  </ul>
-<div class="network-section">
-  <h1 style="font-size: 34px; font-weight: 300;">Courses</h1><br />
+<div class="top-section">
+  <h1 style="font-size: 34px; font-weight: 300;">Courses</h1>
 </div>
+
+<br/><br/>
+
 <% if current_user.online == "admin" %>
    <% @courses.each do |course| %>
     <%= link_to(course_path(course)) do %>

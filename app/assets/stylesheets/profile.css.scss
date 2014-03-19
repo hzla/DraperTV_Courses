@@ -379,22 +379,6 @@
 
 			&:hover { color: $blue; }
 		}
-		.type {
-			display: block;
-			float: left;
-			margin-top: 15px;
-			margin-left: 10px;
-			@include tag;	
-			font-size: 10px;
-		}
-		.blue {
-				background: $blue;
-			}
-		.red {
-			background: $red;
-		}
-		.teal { background: $teal; }
-		.orange { background: $orange; }
 		.bio{
 			display: block;
 			margin: 0;
@@ -423,10 +407,29 @@
 	}
 }
 
+// TAGS
+.type {
+		display: block;
+		float: left;
+		margin-top: 15px;
+		margin-left: 10px;
+		@include tag;	
+		font-size: 10px;
+	}
+	.blue {
+			background: $blue;
+		}
+	.red {
+		background: $red;
+	}
+	.teal { background: $teal; }
+	.orange { background: $orange; }
+
 #alumni-container {
 	display: block;
 	position: relative;
-	width: 100%;
+	width: calc(100% - 60px);
+	margin-left: 25px;
 	#alumni-search {
 		display: block;
 		position: absolute;
