@@ -29,7 +29,7 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: duh_development
+  database: duh_production
   template: template0
   pool: 5
   timeout: 5000

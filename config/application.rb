@@ -37,6 +37,7 @@ module OnlineSchool
     config.encoding = "utf-8"
 
 
+    #Mountable Self Routes for Custom Error URLS
     config.exceptions_app = self.routes
 
 

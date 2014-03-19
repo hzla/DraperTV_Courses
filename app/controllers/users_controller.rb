@@ -8,24 +8,24 @@ class UsersController < ApplicationController
   def index
    
     if params[:tag]
-      @users = User.where(:online == "online").text_search(params[:query]).tagged_with(params[:tag])
-      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag])
+      @users = User.where(:online == "online").text_search(params[:query]).tagged_with(params[:tag]).includes(:skills)
+      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag]).includes(:skills)
     respond_to do |format|
       format.html # index.html.erb
       format.js 
       #format.json { render json: @users }
     end
     elsif params[:tag].to_s ==~ /^\s*$/
-      @users = User.where(:online == "online").text_search(params[:query])
-      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag])
+      @users = User.where(:online == "online").text_search(params[:query]).includes(:skills)
+      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag]).includes(:skills)
     respond_to do |format|
       format.html # index.html.erb
       format.js 
       #format.json { render json: @users }
     end
     else
-      @users = User.where(:online == "online").text_search(params[:query])
-      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag])
+      @users = User.where(:online == "online").text_search(params[:query]).includes(:skills)
+      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag]).includes(:skills)
     respond_to do |format|
       format.html # index.html.erb
       format.js 
