@@ -55,7 +55,7 @@ end
 def show
   @post = Post.find(params[:id])
   @commentable = @post
-  @comments = @commentable.user_comments.order(:created_at)
+  @comments = @commentable.user_comments.order('created_at desc')
   @comment = UserComment.new
 
   respond_to do |format|
