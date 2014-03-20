@@ -97,7 +97,7 @@ OnlineSchool::Application.routes.draw do
 
 
   match '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/ }, via: :all
-
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
 
   # get "profile/show"
