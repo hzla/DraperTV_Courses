@@ -12,7 +12,8 @@ end
 # GET /posts
 # GET /posts.json
 def index
-  @posts = Post.plusminus_tally.order('plusminus_tally desc').page(params[:page]).per(10)
+  #@posts = Post.plusminus_tally.order('plusminus_tally desc').page(params[:page]).per(10)
+  @posts = Post.page(params[:page]).per(10).order("created_at DESC")
   @post = Post.new
   # @users = User.all
   # @user = User.find_by_id(@post.user_id)

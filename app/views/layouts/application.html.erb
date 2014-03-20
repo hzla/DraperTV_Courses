@@ -69,8 +69,8 @@
               <!-- <a id="right-menu" href="#right-menu" class="sidr-click"> -->
               <li class="dropdown">
                 <div class="sb-toggle-right dropdown" data-toggle="dropdown" href="#">
-                  <i class="fa fa-inbox fa-2x empty" style="padding-top: 10px; padding-right: 4px;" id="notifications"></i>
-                  <div class="red-circle"></div>
+                  <i class="fa fa-inbox fa-2x empty" style="padding-top: 10px; padding-right: 12px;" id="notifications"></i>
+                  <div class="red-circle"><p></p></div>
                 </div><!-- sb-toggle-right -->
                 <div class="dropdown-menu" id="notification-dropdown">
                   <% if user_signed_in? %>
@@ -112,47 +112,51 @@
 
                   <script type="text/javascript">
                     <% if user_signed_in? %>
-                     $( ".sb-toggle-right" ).on( "click", function() {
-                       if($( "html" ).hasClass( "sb-active-right" )) {
-
+                      $( ".sb-toggle-right" ).on( "click", function() {
+                         if($( "html" ).hasClass( "sb-active-right" )) {
                           $("#notifications").removeClass("notifications");
                           $('#notifications').addClass("empty");
-                          $('#notifications').empty();
+                          $('.red-circle p').empty();
+                          $('.red-circle').hide();
+                          $('form#edit_user_' + '<%= current_user.id %>').submit();  
+                        } 
+                        else {
+                          $('a[data\-class="displayLink"]').click();
+                          $('.red-circle p').empty();
+                          $('.red-circle').hide();
                           $('form#edit_user_' + '<%= current_user.id %>').submit();
-                          } 
-                          else {
-                            $('a[data\-class="displayLink"]').click();
-                            $('#notifications').empty();
-                          } 
-                        });
+                        } 
+                      });
 
-                        $('#user_nCounter').val(0);
-                        $('#notifications').text('<%= current_user.nCounter %>');
+                      $('#user_nCounter').val(0);
+                      $('.red-circle p').text('<%= current_user.nCounter %>');
 
-                        var n = $('#notifications').text();
-                        n =  parseInt(n);
+                      var n = $('.red-circle p').text();
+                      n =  parseInt(n);
 
                       if( '<%= current_user.nCounter %>' === 0 ) {
-                          $('#notifications').empty();
-                          $("#notifications").removeClass("notifications");
-                          $('#notifications').addClass("empty");        
-                        }
-                        else {
-                          $('#notifications').text('<%= current_user.nCounter %>');
-                          $('#notifications').removeClass('empty');
-                          $('#notification').addClass('notifications');
-                          }
-
-
-                        if(n === 0 ) {
-                          $('#notifications').empty();
-                          $("#notifications").removeClass("notifications");
-                          $('#notifications').addClass("empty");         
-                        }
-                        else {
-                            // code to be executed if condition is false
-                        }
-                      <% end %>
+                        $('.red-circle p').empty();
+                        $("#notifications").removeClass("notifications");
+                        $('#notifications').addClass("empty");  
+                        $('.red-circle').hide();      
+                      }
+                      else {
+                        //$('#notifications').text('<%= current_user.nCounter %>');
+                        $('#notifications').removeClass('empty');
+                        $('#notification').addClass('notifications');
+                        $('.red-circle').show();   
+                        $('.red-circle p').text('<%= current_user.nCounter %>');
+                      }
+                      if(n === 0 ) {
+                        $('.red-circle p').empty();
+                        $("#notifications").removeClass("notifications");
+                        $('#notifications').addClass("empty");    
+                        $('.red-circle').hide();       
+                      }
+                      else {
+                          // code to be executed if condition is false
+                      }
+                    <% end %>
                   </script>
                 </div><!-- dropdown menu -->
               </li><!-- dropdown -->
