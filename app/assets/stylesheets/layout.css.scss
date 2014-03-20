@@ -170,14 +170,20 @@ body {
       }
       .empty { color: white; }
       .red-circle {
-        display: none;
         position: absolute;
-        top: -12px;
+        top: 5px;
         right: 0;
         background: $red;
-        width: 12px;
-        height: 12px;
+        width: 16px;
+        height: 16px;
         border-radius: 12px;
+
+        font-size: 9px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+        p { margin-top: -1px; }
       }
       .display-block {
         display: block;
