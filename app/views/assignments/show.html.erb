@@ -67,7 +67,7 @@
           <div class ="section-bar" style="margin-bottom: 10px; margin-top: 0;">Assignment Description</div>
           <p><%= @assignment.description.html_safe %></p>
           <div class ="section-bar" style="margin-bottom: 10px;">Response</div>
-          <p><%= @user_assignment.first.text %></p>
+          <p><%= simple_format(@user_assignment.first.text) %></p>
           <br />
           <% if @assignment.category == "upload" %>
             <div class ="section-bar" style="margin-bottom: 10px; margin-top: 0;">Uploads</div>

@@ -26,6 +26,7 @@ gem 'friendly_id'
 gem 'chosen-rails'
 gem 'rinku'
 gem 'thumbs_up'
+gem 'ckeditor'
 
 # analytics & email
 gem 'instagram'

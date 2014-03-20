@@ -5,6 +5,8 @@ require 'rails/all'
 Bundler.require(:default, Rails.env)
 
 
+
+
 CONFIG = YAML.load(File.read(File.expand_path('../s3.yml', __FILE__)))
 CONFIG.merge! CONFIG.fetch(Rails.env, {})
 CONFIG.symbolize_keys!
@@ -67,10 +69,12 @@ module OnlineSchool
 
     # add app/assets/fonts to the asset path
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
-    
 
+    # ckeditor configuration
+    config.assets.enabled = true
+    config.assets.precompile += Ckeditor.assets
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
     
-  
   end
 end
 

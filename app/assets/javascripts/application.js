@@ -14,6 +14,8 @@
 // = require jquery
 // = require jquery-ui
 // = require nprogress-turbolinks
+//= require ckeditor/override
+//= require ckeditor/init
 // = require jquery_ujs
 // = require jquery.infinitescroll
 // = require jquery.autosize
