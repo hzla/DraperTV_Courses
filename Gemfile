@@ -26,6 +26,7 @@ gem 'chosen-rails'
 gem 'rinku'
 gem 'turbolinks'
 gem 'thumbs_up'
+gem 'ckeditor'
 
 # analytics & email
 gem 'instagram'
