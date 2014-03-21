@@ -5,6 +5,7 @@
 <div id="comments_list">
   <% @comments.each do |comment| %>
     <% if User.where(:id => comment.user_id).exists? %>
+    <% @post = Post.find(comment.commentable_id) %> 
       <div id="post-comments">
 
         <!-- upvoteable -->
@@ -36,7 +37,8 @@
           <% end %>
         <% else %>
         <% end %>
-      </div>
+
+      </div><!-- post-comments -->
     <% end %>
   <% end %>
 </div>

@@ -6,12 +6,12 @@ class UserCommentsController < ApplicationController
 
   def index
     #@commentable = Assignment.find(params[:assignment_id])
-    @comments = @commentable.user_comments.order('created_at')
+    @comments = @commentable.user_comments.order('created_at DESC')
     @activities =  Activity.all
   end
 
   def show
-    @comments = @commentable.user_comments.order('created_at')
+    @comments = @commentable.user_comments.order('created_at DESC')
     @comment = @commentable.user_comments.new(params[:user_comment])
 
     respond_to do |format|
@@ -194,7 +194,7 @@ end
         track_activity @comment  
         #refresh_dom_with_partial('div#comments_container', 'comments')
         respond_to do |format|
-          format.js { @comments = @commentable.user_comments.order(:created_at) }
+          format.js { @comments = @commentable.user_comments.order('created_at desc') }
           format.html #{ redirect_to @commentable }
         end
       else
@@ -213,7 +213,7 @@ end
           track_activity @comment  
           #refresh_dom_with_partial('div#comments_container', 'comments')
           respond_to do |format|
-            format.js { @comments = @commentable.user_comments.order(:created_at) }
+            format.js { @comments = @commentable.user_comments.order('created_at desc') }
             format.html #{ redirect_to @commentable }
           end
         else
@@ -225,7 +225,7 @@ end
 
 
   def destroy
-    @comments = @commentable.user_comments.order('created_at')
+    @comments = @commentable.user_comments.order('created_at desc')
     @comment = UserComment.find(params[:id])
     if current_user.id == @comment.user_id
       @comment.destroy
