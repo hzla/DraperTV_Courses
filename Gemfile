@@ -4,7 +4,6 @@ ruby '1.9.3'
 gem 'rails', '~> 4.0.0'
 
 gem 'pg'
-gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'nprogress-rails'
 gem 'rails_12factor', group: :production
@@ -25,6 +24,7 @@ gem 'thin'
 gem 'friendly_id'
 gem 'chosen-rails'
 gem 'rinku'
+gem 'turbolinks'
 gem 'thumbs_up'
 gem 'ckeditor'
 
@@ -101,7 +101,7 @@ gem 'actionpack-action_caching'
 
 gem 'exception_notification'
 gem 'dalli'
-
+gem "delayed_job_web"
 # gem "nifty-generators", :group => :development
 
 # To use ActiveModel has_secure_password

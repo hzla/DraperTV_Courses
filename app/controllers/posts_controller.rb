@@ -8,12 +8,13 @@ def load
   @messages = Message.all
   @message = Message.new
 end
-
 # GET /posts
 # GET /posts.json
 def index
   #@posts = Post.plusminus_tally.order('plusminus_tally desc').page(params[:page]).per(10)
-  @posts = Post.page(params[:page]).per(10).order("created_at DESC")
+  listPosts = []
+  @listPosts = Post.plusminus_tally.order('plusminus_tally desc')
+  @posts = @listPosts.page(params[:page]).per(10)
   @post = Post.new
   # @users = User.all
   # @user = User.find_by_id(@post.user_id)
