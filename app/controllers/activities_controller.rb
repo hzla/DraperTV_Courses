@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
   def index
   	@activities =  Activity.all
-    @activities = Activity.page(params[:page]).per(10).order("created_at desc")
+    @activities = Activity.page(params[:page]).per(10).order("created_at desc").includes(:trackable)
 
     #we will need to find the Post id Through Users relation to the Comments
     #And this is because Activity Track, tracks Users actions, it breaks down from there.

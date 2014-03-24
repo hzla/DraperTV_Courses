@@ -208,6 +208,7 @@ end
 
       rescue => exception
         ExceptionNotifier.notify_exception(exception)
+      ensure
         # logger.fatal "notifications failed"
         if @comment.save
           track_activity @comment  
