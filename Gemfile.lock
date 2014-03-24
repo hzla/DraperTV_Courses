@@ -155,6 +155,7 @@ GEM
       rails (>= 3.1)
     curb (0.8.5)
     currencies (0.4.2)
+    daemon (1.1.0)
     daemons (1.1.9)
     dalli (2.7.0)
     debug_inspector (0.0.2)
@@ -452,6 +453,7 @@ DEPENDENCIES
   css3-progress-bar-rails
   curb
   customerio!
+  daemon
   dalli
   delayed_job_active_record
   delayed_job_web
