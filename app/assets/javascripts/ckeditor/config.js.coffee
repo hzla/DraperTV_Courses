@@ -2,13 +2,12 @@ CKEDITOR.editorConfig = (config) ->
   config.language = "en"
   config.height = "200"
   config.toolbar_Pure = [
-    { name: 'document',    items: [ 'Source','-','Templates' ] },
-    { name: 'clipboard',   items: [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
-    { name: 'editing',     items: [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },
+    { name: 'document',    items: [ 'Templates' ] },
+    { name: 'clipboard',   items: [ 'Cut','Copy','Paste','-','Undo','Redo' ] },
+    { name: 'editing',     items: [ 'SelectAll','-','SpellChecker', 'Scayt' ] },
     { name: 'tools',       items: [ 'Maximize', 'ShowBlocks','-' ] }
-    '/',
     { name: 'basicstyles', items: [ 'Bold','Italic','Underline' ] },
-    { name: 'paragraph',   items: [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },
+    { name: 'paragraph',   items: [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
     { name: 'links',       items: [ 'Link','Unlink' ] },
     '/',
     { name: 'styles',      items: [ 'Styles','Format','Font','FontSize' ] },

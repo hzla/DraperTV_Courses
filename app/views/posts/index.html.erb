@@ -1,11 +1,5 @@
 <%= subscribe_to "/layouts/posts" %>
 
-<div class="headerAlert">
-  <div class="alert alert-info">
-    <%= link_to "Please refresh this page to receive new updates.", posts_path %>
-  </div>      
-</div>
-
 <div class="top-section">
   <h1 style="font-size: 34px; font-weight: 300; float: left;">Forum</h1>
   <!-- ***** CREATE POST BUTTON ***** -->
@@ -14,6 +8,12 @@
       <div class="button">New Post</div>
     </a>
   </div>
+</div>
+
+<div class="headerAlert">
+  <div class="alert alert-info">
+    <%= link_to "Please refresh this page to receive new updates.", posts_path %>
+  </div>      
 </div>
 
  

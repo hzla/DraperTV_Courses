@@ -60,14 +60,32 @@
     <% if @assignment.user_assignments.where(:user_id => current_user[:id]).count > 0 %>
       <% if @user_assignment.first.text != nil %>
         <div class="upload_show">
-          <div class="upload_complete">
-            <div class="complete"></div>
-            <div class="date">Completed: <%= @user_assignment.first.updated_at.strftime("%b %e") %></div>
+          <div class="upload_description">
+            <table id="event-table" style="margin-top: 0px;">
+                <tr>
+                  <td class="icon"><i class="fa fa-check-circle" style="color: #24b494"></i></td>
+                  <td><%= @user_assignment.first.updated_at.strftime("%B %e") %></td>
+                </tr>
+                <tr>
+                  <td class="icon"><i class="fa fa-align-justify"></i></td>
+                  <td><% if @assignment.description != nil %><%= @assignment.description.html_safe %><% end %></td>
+                </tr>
+                <tr>
+                  <td class="icon"><i class="fa fa-user"></i></td>
+                  <td>Completed by Yad Faeq, Charles Taibi, Kelsey Whelan, and 6 more</td>
+                </tr>
+                <tr>
+                  <td class="icon"><i class="fa fa-bolt"></i></td>
+                  <td>500 Points</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>
           </div>
-          <div class ="section-bar" style="margin-bottom: 10px; margin-top: 0;">Assignment Description</div>
-          <p><%= @assignment.description.html_safe %></p>
           <div class ="section-bar" style="margin-bottom: 10px;">Response</div>
-          <p><%= simple_format(@user_assignment.first.text) %></p>
+          <p><%= raw(@user_assignment.first.text) %></p>
           <br />
           <% if @assignment.category == "upload" %>
             <div class ="section-bar" style="margin-bottom: 10px; margin-top: 0;">Uploads</div>

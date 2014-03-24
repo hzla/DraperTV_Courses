@@ -526,6 +526,22 @@ input[type="submit"] {
 	padding-top: 20px;
 }
 
+.upload_description {
+	display: block;
+	width: calc(100% - 100px);
+	img {
+		display: block;
+		float: left;
+		width: 80px;
+		height: 80px;
+	}
+	p {
+		display: block;
+		font-size: 15px;
+		color: $gray-med;
+	}
+}
+
 .assignment-container {
 	padding-top: 20px;
 	border-top: 1px solid $gray-x-lt;
@@ -990,10 +1006,10 @@ select:focus {
 /**********************/
 
 .event-calendar {
-	width: 90%;
+	width: 95%;
 	position: relative;
 	margin: 0 auto;
-	h2 { font-size: 2em; font-weight: 300; }
+	h2 { font-size: 1.5em; font-weight: 300;  }
 	.top-right {
 		position: absolute;
 		top: -10px;
@@ -1052,7 +1068,7 @@ select:focus {
 	}
 }
  #event-table {
- 	color: $gray-dark;
+ 	color: $gray-blue-dark;
  	margin-top: 15px;
  	max-width: 95%;
  	a { color: $blue; }

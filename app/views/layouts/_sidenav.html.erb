@@ -3,7 +3,7 @@
 		<div class="top-bar">
 				<div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
 				<div class="info-container">
-					<div class="name"><%= current_user.full_name %></div>
+					<div class="name"><%= current_user.first_name %> <%= current_user.last_name.chars.first %></div>
 					<div class="points">3,200</div>
 				</div>
 		</div>

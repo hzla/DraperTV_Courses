@@ -1,15 +1,21 @@
 <div class="top-section">
   <h1 style="font-size: 34px; font-weight: 300;">Events</h1>
+  <!-- ***** CREATE POST BUTTON ***** -->
+  <div class="button-right">
+    <a href="#newEventModal" data-toggle="modal" id="intro-video" data-backdrop="false">
+      <div class="button">Create Event</div>
+    </a>
+  </div>
 </div>
 
 <br/><br/><br/><br/>
 
 <div class="event-calendar">
-  <div class="top-right">
+  <!-- <div class="top-right">
     <a href="#newEventModal" data-toggle="modal" id="intro-video" data-backdrop="false">
       <div class="button">Create Event</div>
     </a>
-  </div>
+  </div> -->
   <%= calendar @events, :start_day => :sunday do |event| %>
     <%= link_to event.name, event %>
   <% end %>
