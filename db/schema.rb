@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320155608) do
+ActiveRecord::Schema.define(version: 20140325185625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,10 +85,6 @@ ActiveRecord::Schema.define(version: 20140320155608) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.string   "response"
-    t.string   "status"
-    t.boolean  "payment"
-    t.text     "notes"
   end
 
   create_table "assignments", force: true do |t|
@@ -162,15 +158,6 @@ ActiveRecord::Schema.define(version: 20140320155608) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
-  end
-
-  create_table "calendars", force: true do |t|
-    t.string   "name"
-    t.datetime "start_time"
-    t.text     "description"
-    t.string   "location"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "ckeditor_assets", force: true do |t|
@@ -268,6 +255,14 @@ ActiveRecord::Schema.define(version: 20140320155608) do
     t.text     "brilliance"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "payments", force: true do |t|
+    t.string   "name"
+    t.text     "email"
+    t.float    "fee"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: true do |t|
@@ -429,6 +424,7 @@ ActiveRecord::Schema.define(version: 20140320155608) do
     t.string   "dribbble"
     t.string   "github"
     t.integer  "nCounter"
+    t.boolean  "eventReminder",          default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
