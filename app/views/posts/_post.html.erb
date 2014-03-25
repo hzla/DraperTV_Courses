@@ -26,7 +26,11 @@
       <%= link_to post_path(post.id) do %>
         <div class="section-info">
           <div class="text">
-            <%= raw Rinku.auto_link(simple_format(post.title), :all, 'target="_blank"') %>
+            <% if post.title != nil %>
+              <p><%= raw Rinku.auto_link(simple_format(post.title), :all, 'target="_blank"') %></p>
+            <% else %>
+              <p>No Title</p>
+            <% end %>
             <!-- ** category tag ** -->
             <% if post.category == nil or post.category == "General" %>
               <span class="type">General</span>
