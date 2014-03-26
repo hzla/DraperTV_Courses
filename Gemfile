@@ -71,8 +71,6 @@ group :development do
   gem 'brakeman', :require => false # run this : brakeman [appPath] -o output_file
   gem 'traceroute' # to check unUsed and Unreachable routes > rake traceroute
   gem 'quiet_assets' #takes away the Asset messages in the Log
-
-  gem 'daemons' # for the Delay Job in Development Env
 end
 
 #gem 'rack-mini-profiler'
