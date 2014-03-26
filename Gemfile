@@ -10,7 +10,6 @@ gem 'nprogress-rails'
 gem 'rails_12factor', group: :production
 gem 'delayed_job_active_record'
 
-
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'cancan'
