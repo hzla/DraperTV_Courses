@@ -45,7 +45,6 @@ group :assets do
   gem 'compass-rails'
   gem 'coffee-rails', '~> 4.0.0'
   gem "ransack" 
-
   gem 'uglifier', '>= 1.3.0'
 end
 
@@ -69,10 +68,9 @@ group :development do
   gem "bullet" # it always works unless you remove the initilzer
   gem "reek" # run this : reek .
   gem 'brakeman', :require => false # run this : brakeman [appPath] -o output_file
-  gem 'traceroute' # to check unUsed and Unreachable routes > rake traceroute
+  gem 'traceroute' # to check unUsed and Unreachable routes >  rake traceroute
   gem 'quiet_assets' #takes away the Asset messages in the Log
   gem 'annotate', ">=2.6.0"
-
 end
 
 #gem 'rack-mini-profiler'
