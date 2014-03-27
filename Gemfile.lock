@@ -482,7 +482,7 @@ DEPENDENCIES
   protected_attributes
   quiet_assets
   railroady
-  rails (~> 4.0.0)
+  rails (= 4.0.4)
   rails-observers
   rails4_upgrade!
   rails_12factor
