@@ -1,6 +1,4 @@
-<div style="padding: 30px;">
-  <button type="button" class="close" style="" data-dismiss="modal" aria-hidden="true">x</button>
-  <h1>New Post</h1><br/>
+
   <%= simple_form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -27,4 +25,3 @@
   </div>
 <% end %>
 
-</div>

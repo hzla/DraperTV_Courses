@@ -51,59 +51,12 @@
 	}
 }
 
-#profile_top_container {
-	 display: block;
-	 margin-top: 20px;
-	 position: relative;
-	 width: 96%;
-
-	 #avatar {
-		display: block;
-		float: left;
-		margin-right: 30px;
-		border: 1px solid $gray-x-x-lt;
-		//border-radius: 70px;
-		overflow: hidden;
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 100;
-		img {
-			max-width: 120px;
-			max-height: 120px;
-		}
-	}
-
-	.right {
-		display: block;
-		margin-left: 160px;
-		padding-top: 28px;
-		min-height: 110px;
-		height: auto;
-
-		.name {
-			font-size: 2.2em;
-			font-weight: 300;
-			color: $gray-dark;
-			display: block;
-			float: left;
-			line-height: 1.0;
-		}
-		.type {
-			display: block;
-			float: left;
-			margin-top: -2px;
-			margin-left: 12px;
-			@include tag;	
-		}
-		.blue { background: $blue; }
-		.red { background: $red; }
-		.teal { background: $teal; }
-		#profile-info {
+#profile-info {
 			display: block;
 			clear: both;
-			padding-top: 25px;
+			padding-top: 5px;
 			padding-bottom: 10px;
+			padding-left: 15px;
 
 			img {
 				display: block;
@@ -206,6 +159,75 @@
 			}
 		}
 
+
+.top-section #avatar {
+	display: block;
+	float: right;
+	margin-right: 30px;
+	border: 1px solid $gray-x-x-lt;
+	//border-radius: 70px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	//z-index: 100;
+	img {
+		max-width: 60px;
+		max-height: 60px;
+	}
+}
+
+#profile_top_container {
+	 display: block;
+	 margin-top: 20px;
+	 position: relative;
+	 width: 96%;
+
+
+	 #avatar {
+		display: block;
+		float: left;
+		margin-right: 30px;
+		border: 1px solid $gray-x-x-lt;
+		//border-radius: 70px;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		//z-index: 100;
+			img {
+				max-width: 60px;
+				max-height: 60px;
+			}
+		}
+
+	.right {
+		display: block;
+		margin-left: 160px;
+		padding-top: 28px;
+		min-height: 110px;
+		height: auto;
+
+		.name {
+			font-size: 2.2em;
+			font-weight: 300;
+			color: $gray-dark;
+			display: block;
+			float: left;
+			line-height: 1.0;
+		}
+		.type {
+			display: block;
+			float: left;
+			margin-top: -2px;
+			margin-left: 12px;
+			@include tag;	
+		}
+		.blue { background: $blue; }
+		.red { background: $red; }
+		.teal { background: $teal; }
+		
+
 	}
 	
 	.line {
@@ -228,7 +250,7 @@
 	width: 100%;
 	.section-left {
 		display: block;
-		width: 36%;
+		width: 30%;
 		float: left;
 		padding-right: 2%;
 		border-right: 1px solid $gray-x-x-lt;
@@ -237,15 +259,19 @@
 			#post { width: 90%;}
 		} 
 		.info-section { 
-			padding: 15px 12px 0 12px; 
-			border-top: 1px solid $gray-x-x-lt;
-			margin-top: 20px;
+			padding: 0px 12px 0 12px; 
+			//border-top: 1px solid $gray-x-x-lt;
+			margin-top: 0px;
+			color: $gray;
 		}
-		.skills-section { padding: 20px 12px 0 0; }
+		.skills-section { 
+			padding: 10px 12px 0 0;
+			margin-left: -12px; 
+		}
 	}
 	.section-right {
 		display: block;
-		width: 58%;
+		width: 64%;
 		float: right;
 		p {
 			color: $gray-med;
@@ -415,10 +441,12 @@
 		margin-left: 10px;
 		@include tag;	
 		font-size: 10px;
+		background: $bright-teal;
 	}
 	.blue {
-			background: $blue;
-		}
+			background: $bright-blue;
+	}
+	.purple { background: $bright-purple; }
 	.red {
 		background: $red;
 	}
@@ -888,15 +916,16 @@
 	margin-bottom: 6px;
 	@include tag;
 	background: $gray-lt;
-	font-size: 11px;
+	font-size: 10px;
 	font-weight: normal;
+	letter-spacing: 0.5px;
 	&:hover { background: $gray; }
 }
 
 
 #profile-about-table {
  	color: $gray;
- 	margin-left: 15px;
+ 	margin-left: 5px;
  	max-width: 95%;
  	a { 
  		color: $gray; 
@@ -904,7 +933,7 @@
  	}
  	td { padding: 3px; }
  	.icon {
- 		width: 25px;
+ 		width: 20px;
  		padding-left: 0px;
  		vertical-align: top;
  		i { color: $gray-lt; }
@@ -927,8 +956,8 @@
  	}
  	#profile_top_container {
  		#avatar img {
- 			width: 100px;
- 			height: 100px;
+ 			width: 200px;
+ 			height: 200px;
  		}
  		.right { 
  			margin-left: 120px;

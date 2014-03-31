@@ -1,4 +1,5 @@
-body {
+body, html {
+  height: 100%; 
 }
 
 .sidr-open {
@@ -279,10 +280,10 @@ body {
   }
 }
 #side-nav {
-  background: $gray-blue-dark;
-  border-right: 1px solid $gray-blue-x-dark;
+  background: $gray-x-x-lt;
+  //border-right: 1px solid $gray-blue-lt;
   display: block;
-  width: 184px;
+  width: 185px;
   z-index: 0;
   color: $gray-med;
   height: 100%;
@@ -297,32 +298,32 @@ body {
       top: 0;
       left: 0;
       background: none;
-      border-bottom: 1px solid $gray-blue-x-dark;
+      border-bottom: 1px solid $gray-blue-lt;
       width: 100%;
       height: 68px;
       color: white;
       #navbar-avatar {
         margin-left: 15px;
-        margin-top: 15px;
-        height: 40px;
-        width: 40px;
-        border-radius: 0px;
+        margin-top: 17px;
+        height: 35px;
+        width: 35px;
+        border-radius: 5px;
       }
       .info-container {
         display: block;
         float: left;
         .name {
-          padding-top: 12px;
+          padding-top: 14px;
           margin-left: 10px;
-          font-size: 14px;
+          font-size: 12px;
           font-weight: bold;
-          letter-spacing: 0.3px;
-          color: $gray-x-lt;
+          letter-spacing: 0.2px;
+          color: $gray-med;
         }
         .points {
-          padding-top: 6px;
+          padding-top: 0px;
           margin-left: 12px;
-          font-size: 20px;
+          font-size: 16px;
           font-weight: 100;
           color:  $gray-blue-lt;
           letter-spacing: 0.3px;
@@ -330,8 +331,8 @@ body {
       }
       
       &:hover {
-        background: $gray-blue-x-dark;
-        .name { color: white; }
+        background: $gray-x-lt;
+        .name { color: $blue; }
       }
     }
     
@@ -359,23 +360,23 @@ body {
       }
 
       .title {
-        font-size: 13px;
-        color: $gray-x-x-lt;
-        font-weight: 300;
+        font-size: 14px;
+        color: $gray-med;
+        font-weight: 700;
         letter-spacing: 0.3px;
 
-        padding-top: 4px;
-        padding-bottom: 4px;
+        padding-top: 5px;
+        padding-bottom: 5px;
         padding-left: 0px;
 
-        a { color: white; }
+        a { color: $blue; }
       }
 
     &:hover {
       a, i, .title { 
-        color: white;
+        color: $blue;
       }
-      background: $gray-blue-x-dark;
+      background: $gray-x-lt;
     }
   }
 
@@ -399,15 +400,35 @@ body {
   margin-bottom: 180px;
   width: calc(100% - 185px);
   background: white;
+  position: relative;
+  height: 100%; 
+  #col-left {
+    position: relative;
+    padding: 100px 0 0 0;
+  }
+  #col-right {
+    
+    min-height: 100%;
+    height: 100%;
+    padding: 0;
+    padding-top: 100px;
+  }
   .top-section {
-    height: 57px;
+    height: 67px;
     border-bottom: 1px solid $gray-blue-lt;
     border-top: 1px solid $gray-x-lt;
-    width: calc(100% - 200px);
-    padding: 5px 15px;
+    width: calc(100% - 185px);
+    //padding: 5px 25px;
     position: fixed;
     background: white;
     z-index: 100;
+    .row { 
+      height: 100%; 
+      .span9 { 
+        h1 { padding-left: 25px; }
+      }
+      .span3 { border-left: 1px solid #eee; height: 100%; }
+    }
     .button-right {
       display: block;
       float: right;
@@ -421,7 +442,7 @@ body {
       a { text-align: center; }
     }
     h1 {
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 100px;
       padding-top: 9px;
     }

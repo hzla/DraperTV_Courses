@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
   before_filter :load
+  respond_to :html, :json
 
 def load
   @posts = Post.all
@@ -12,9 +13,9 @@ end
 # GET /posts.json
 def index
   #@posts = Post.plusminus_tally.order('plusminus_tally desc').page(params[:page]).per(10)
-  listPosts = []
-  @listPosts = Post.plusminus_tally.order('plusminus_tally desc')
-  @posts = @listPosts.page(params[:page]).per(10)
+  #listPosts = []
+  #@posts = Post.plusminus_tally.order('plusminus_tally desc')
+  @posts = Post.page(params[:page]).per(10).order('created_at DESC')
   @post = Post.new
   # @users = User.all
   # @user = User.find_by_id(@post.user_id)
@@ -124,19 +125,31 @@ def create
 
 # PUT /posts/1
 # PUT /posts/1.json
+
 def update
   @post = Post.find(params[:id])
-
-  respond_to do |format|
-    track_activity @post  
-    if @post.update_attributes(params[:post])
-      format.html #{ redirect_to @post, notice: 'Post was successfully updated.' }
-      format.js #{ head :no_content }
-    else
-      format.html { render action: "edit" }
-      format.js #{ render js: @post.errors, status: :unprocessable_entity }
+  
+  if current_user.id == @post.user_id
+    respond_to do |format|
+      if @post.update_attributes(params[:post])
+        format.html { redirect_to @post }
+        format.json { respond_with_bip(@post) }
+      else
+        format.html { redirect_to :back, :notice => 'Something went wrong'}
+      end
     end
   end
+
+  # respond_to do |format|
+  #   track_activity @post  
+  #   if @post.update_attributes(params[:post])
+  #     format.html #{ redirect_to @post, notice: 'Post was successfully updated.' }
+  #     #format.js #{ head :no_content }
+  #   else
+  #     format.html { render action: "edit" }
+  #     format.js #{ render js: @post.errors, status: :unprocessable_entity }
+  #   end
+  # end
 end
 
 # DELETE /posts/1

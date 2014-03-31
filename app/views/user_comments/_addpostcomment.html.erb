@@ -1,9 +1,10 @@
-<div id="comment_form">
+<div id="comment_form" style="margin-left: 15px; padding-left: 5px;">
   <%= simple_form_for [@commentable, @comment], :remote => true do |f| %>
-    <!-- <div class="picture"><%= image_tag current_user.avatar.url(:thumb) %></div> -->
     <div class="name"><%= current_user.full_name %></div>
-    <%= f.input :content, label: false, :placeholder => "Add Comment", :input_html => { :rows => 4, :id => "comment-#{@commentable.id}" } %>
-    <!--<%= f.submit "Add Comment" %>-->
+    <%= f.input :content, label: false, :placeholder => "Add Comment", :input_html => { :rows => 3, :id => "comment-#{@commentable.id}" } %>
+   <!--  <div class="submit">
+      <%= f.submit "Comment" %>
+    </div> -->
   <% end %>
 </div>
 
@@ -29,6 +30,15 @@
           }
         }
     });
+
+    // $("textarea#comment-<%= @commentable.id %>").focus(function() {
+    //   //$(this).animate({height: '80px'});
+    //   $('.submit').css({display: 'block'});
+    // });
+    // $("textarea#comment-<%= @commentable.id %>").blur(function() {
+    //   //$(this).animate({height: '40px'});
+    //   //$('.submit').css({display: 'none'});
+    // });
   });
 
   $(document).ready(function(){

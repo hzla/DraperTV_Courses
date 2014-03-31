@@ -7,6 +7,14 @@ GIT
       terminal-table (>= 1.4.5)
 
 GIT
+  remote: git://github.com/bernat/best_in_place.git
+  revision: df178520bf9ba405baee9528d5dbb630d6ff760c
+  specs:
+    best_in_place (2.1.0)
+      jquery-rails
+      rails (>= 3.1)
+
+GIT
   remote: git://github.com/gregbell/active_admin.git
   revision: 9ca081f47ab447793afbd0cb2ba1eded68c26f10
   specs:
@@ -155,7 +163,6 @@ GEM
       rails (>= 3.1)
     curb (0.8.5)
     currencies (0.4.2)
-    daemon (1.1.0)
     daemons (1.1.9)
     dalli (2.7.0)
     debug_inspector (0.0.2)
@@ -440,6 +447,7 @@ DEPENDENCIES
   annotate (>= 2.6.0)
   awesome_print
   aws-sdk (~> 1.5.7)
+  best_in_place!
   better_errors
   binding_of_caller
   brakeman
@@ -453,11 +461,7 @@ DEPENDENCIES
   css3-progress-bar-rails
   curb
   customerio!
-<<<<<<< HEAD
-  daemon
-=======
   daemons
->>>>>>> cb4e5856714d6c1a95fd22a6501346ffe43e5814
   dalli
   delayed_job_active_record
   delayed_job_web

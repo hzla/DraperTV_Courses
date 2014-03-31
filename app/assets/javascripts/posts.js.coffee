@@ -1,4 +1,7 @@
 jQuery ->
+        $('.best_in_place').best_in_place()
+        
+        
         isScrolledIntoView = (elem) ->
                 docViewTop = $(window).scrollTop()
                 docViewBottom = docViewTop + $(window).height()
@@ -14,8 +17,6 @@ jQuery ->
                                 $.getScript(url)
                 
                 $(window).scroll()
-
-
 
 
 

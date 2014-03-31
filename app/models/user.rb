@@ -91,6 +91,9 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :messages
 
+  validates :password, presence: true, length: {minimum: 5, maximum: 120}, on: :create
+  validates :password, length: {minimum: 5, maximum: 120}, on: :update, allow_blank: true
+
   after_commit :flush_cache
   
   def self.cached_find(id)

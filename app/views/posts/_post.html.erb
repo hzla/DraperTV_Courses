@@ -37,12 +37,12 @@
             <% elsif post.category == "Coursework" %>
               <span class="type blue">Coursework</span>
             <% elsif post.category == "Advice" %>
-              <span class="type orange">Advice</span>
+              <span class="type purple">Advice</span>
             <% else %>
             <% end %>
           </div>
           <div class="info">
-            Posted <%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %> by  <%= link_to student_profile_path(@user) do %> <span class="name"><%= @user.full_name %></span> <% end %> on <%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %>
+            Posted by <%= link_to student_profile_path(@user) do %> <span class="name"><%= @user.full_name %></span> <% end %> on <%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %>
           </div>
         </div>
       <% end %><!-- link to post#show -->

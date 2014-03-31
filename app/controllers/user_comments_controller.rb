@@ -188,14 +188,14 @@ end
           end
         end 
       else
-      end # end of if @comment.commentable_type == "Post"
+      end # end of if @comment.commentable_type block
 
       if @comment.save
         track_activity @comment  
         #refresh_dom_with_partial('div#comments_container', 'comments')
         respond_to do |format|
+          format.html { }
           format.js { @comments = @commentable.user_comments.order('created_at desc') }
-          format.html #{ redirect_to @commentable }
         end
       else
         render :new
@@ -214,8 +214,8 @@ end
           track_activity @comment  
           #refresh_dom_with_partial('div#comments_container', 'comments')
           respond_to do |format|
-            format.js { @comments = @commentable.user_comments.order('created_at desc') }
-            format.html #{ redirect_to @commentable }
+              format.js { @comments = @commentable.user_comments.order('created_at desc') }
+              format.html #{ redirect_to @commentable }
           end
         else
           render :new
