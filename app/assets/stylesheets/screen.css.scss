@@ -943,6 +943,14 @@ select:focus {
 		@include rounded-corners;
 	}
 }
+.cancel_changes {
+	input[type="submit"] {
+		width: auto;
+		@include button-red;
+		@include rounded-corners;
+	}
+}
+.content .title input { width: 80%; }
 
 /*********************/
 /***** NAV TABS ******/

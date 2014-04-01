@@ -7,6 +7,14 @@ GIT
       terminal-table (>= 1.4.5)
 
 GIT
+  remote: git://github.com/bernat/best_in_place.git
+  revision: df178520bf9ba405baee9528d5dbb630d6ff760c
+  specs:
+    best_in_place (2.1.0)
+      jquery-rails
+      rails (>= 3.1)
+
+GIT
   remote: git://github.com/gregbell/active_admin.git
   revision: ceb096c5ed4f4d9a4efcb780ba41151fadebe1e4
   specs:
@@ -440,6 +448,7 @@ DEPENDENCIES
   annotate (>= 2.6.0)
   awesome_print
   aws-sdk (~> 1.5.7)
+  best_in_place!
   better_errors
   binding_of_caller
   brakeman

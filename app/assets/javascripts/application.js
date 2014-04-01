@@ -14,8 +14,9 @@
 // = require jquery
 // = require jquery-ui
 // = require nprogress-turbolinks
-//= require ckeditor/override
-//= require ckeditor/init
+// = require jquery.turbolinks
+// = require ckeditor/override
+// = require ckeditor/init
 // = require jquery_ujs
 // = require jquery.infinitescroll
 // = require jquery.autosize
@@ -26,6 +27,8 @@
 // = require private_pub
 // = require slidebars.min
 // = require emoticon
+// = require best_in_place
+// = require best_in_place.purr
 // = require turbolinks
 
 

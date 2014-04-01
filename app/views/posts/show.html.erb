@@ -11,7 +11,9 @@
   <div id="forum-post-show">
     <% @user = User.find_by_id(@post.user_id) %>
     <% @postvotes = @post.votes_for %>
-
+    <% @totalcomments = UserComment.where(:commentable_id => @post.id) %>
+   <!--  <% @voters = @post.voters_who_voted_for %>
+ -->
      <!-- upvoteable -->
       <div class="upvote">
         <% if current_user.voted_for?(@post) %>
@@ -27,18 +29,59 @@
       </div><!-- upvote -->
 
     <!-- image --> 
-    <% if @user.avatar != nil %>
-      <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
-    <% end %>
+    
 
 
     <!-- content -->
-    <% if @post.file_file_name == nil %>
-      <div class="content"><%= raw Rinku.auto_link(@post.content, :all, 'target="_blank"') %></div>
-    <% else %>
-      <div class="content"><%= raw Rinku.auto_link(@post.content, :all, 'target="_blank"') %></div>
-      <div class="image"><%= image_tag @post.file.url(:preview) %></div>
-    <% end %>
+    
+      <div class="content">
+        <% if current_user.id == @post.user_id %>
+          <div class="title">
+            <%= best_in_place @post, :title, :type => :input, :class => 'best_in_place' %>
+            <i class="fa fa-pencil"></i>
+          </div>
+          <div class="full">
+            <%= best_in_place @post, :content, :ok_button => "Save Changes", :type => :textarea, :class => 'autosize' %>
+            <i class="fa fa-pencil"></i>
+          </div>
+        <% else %>
+          <div class="title"><%= @post.title %></div>
+          <div class="full"><%= @post.content %></div>
+        <% end %>
+
+         <div class="info">
+          <%= @totalcomments.count %> Comments - 
+          Posted by <%= link_to student_profile_path(@user) do %>
+          <span class="name"><%= @user.full_name %></span> <% end %> on <%= @post.created_at.to_date.to_formatted_s( :long_ordinal ) %>
+          <br/>
+          <!-- <b>
+            <% if @voters.count == 0 %>
+              No Upvotes
+            <% elsif @voters.count < 6 %>
+              Upvotes by 
+              <% @voters.each_with_index do |voter, index| %>
+                <% if index == @voters.length - 1 %>
+                 and <%= voter.first_name %>
+                <% elsif index == @voters.length - 2 %>
+                  <%= voter.first_name %> 
+                <% else %>
+                  <%= voter.first_name %>, 
+                <% end %>
+              <% end %>
+            <% elsif @voters.count > 5 %>
+              Upvotes by 
+              <% @voters.first(5).each do |voter| %>
+                <%= voter.first_name %>, 
+              <% end %>
+              and <%= @voters.count - 5 %> more
+            <% else %>
+            <% end %>
+          </b> -->
+        </div>
+      </div>
+
+     
+
 
     <!-- delete -->
     <% if current_user.id == @post.user_id %>
@@ -59,4 +102,14 @@
     </div><!-- comments_container -->
   </div><!-- forum-post-show -->
 <% end %>
+
+<script type = "text/javascript">
+
+  
+  $(document).ready(function(){
+
+      $('textarea.autosize').autosize();  
+      $('input.autosize').autosize();  
+  });
+</script>
 

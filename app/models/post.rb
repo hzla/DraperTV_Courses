@@ -16,7 +16,7 @@
 class Post < ActiveRecord::Base
   after_commit :flush_cache
 
-  attr_accessible :content, :user_id
+  attr_accessible :content, :user_id, :title, :category
   attr_accessible :file
   has_attached_file :file, 
 				    :styles => { :medium => "120x120#", :preview => "408x308#" }, 

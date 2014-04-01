@@ -26,6 +26,7 @@ gem 'rinku'
 gem 'turbolinks'
 gem 'thumbs_up'
 gem 'ckeditor'
+gem 'best_in_place', github: 'bernat/best_in_place'
 
 # analytics & email
 gem 'instagram'

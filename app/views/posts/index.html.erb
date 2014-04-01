@@ -1,47 +1,62 @@
 <%= subscribe_to "/layouts/posts" %>
 
 <div class="top-section">
-  <h1>Forum</h1>
-  <!-- ***** CREATE POST BUTTON ***** -->
-  <div class="button-right">
-    <a href="#newPostModal" data-toggle="modal" id="intro-video" data-backdrop="false">
-      <div class="button">New Post</div>
-    </a>
+  <div class="row">
+    <div class="span9">
+      <h1>Forum</h1>
+      <!-- ***** CREATE POST BUTTON ***** -->
+      <div class="button-right">
+        <a href="#newPostModal" data-toggle="modal" id="intro-video" data-backdrop="false">
+          <div class="button">New Post</div>
+        </a>
+      </div>
+    </div><!-- span 9 -->
+    <div class="span3">Test</div>
+  </div><!-- row -->
+</div>
+
+<div class="row" style="height: 100%;">
+  <div class="span9" id="col-left">
+    
+
+    <div class="headerAlert">
+      <div class="alert alert-info">
+        <%= link_to "Please refresh this page to receive new updates.", posts_path %>
+      </div>      
+    </div>
+
+
+    <!-- ***** SHOW POSTS ***** -->
+    <div id="posts-column">
+      <div id="postsDiv">
+        <%= render @posts %>
+      </div>
+      <%= paginate @posts %>
+    </div>
+
+    <%= subscribe_to "/posts/new" %>
+  </div><!-- col-9 -->
+
+  <div class="span4" id="col-right" style="border-left: 1px solid #f2f2f2;">
+  Test
   </div>
-</div>
-
-<div class="headerAlert">
-  <div class="alert alert-info">
-    <%= link_to "Please refresh this page to receive new updates.", posts_path %>
-  </div>      
-</div>
-
- 
-<br/><br/>
-
-
-<!-- ***** SHOW POSTS ***** -->
-<div id="posts-column">
-  <div id="postsDiv">
-    <%= render @posts %>
-  </div>
-  <%= paginate @posts %>
-</div>
-
-<%= subscribe_to "/posts/new" %>
-
+</div><!-- row -->
 
 <!-- ******  NEW POST MODAL ******* -->
 <div id="newPostModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <%= render 'newpost' %>
+  <div style="padding: 30px;">
+    <button type="button" class="close" style="" data-dismiss="modal" aria-hidden="true">x</button>
+    <h1>New Post</h1><br/>
+    <%= render 'newpost' %>
+  </div>
 </div>
+
 
 
 <script type="text/javascript">
   $(".headerAlert").hide();
 
   $( document ).ready(function() { 
-
     // refresh alert for new posts
     var headerAlert = document.querySelector('.headerAlert');
     var origOffsetY = headerAlert.offsetTop;
