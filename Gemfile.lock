@@ -41,6 +41,16 @@ GIT
       railties (>= 3.2.6, < 5)
 
 GIT
+  remote: git://github.com/toolmantim/delayed_job_web.git
+  revision: 5dcb5d46b71ef20963c840917c6580e2ee78f81a
+  branch: fix-rails-sessions
+  specs:
+    delayed_job_web (1.2.7)
+      activerecord (> 3.0.0)
+      delayed_job (> 2.0.3)
+      sinatra (>= 1.4.4)
+
+GIT
   remote: https://github.com/customerio/customerio-ruby
   revision: a75f4973a33b7bd00f235be2daa271f009df68a8
   specs:
@@ -170,10 +180,6 @@ GEM
     delayed_job_active_record (4.0.0)
       activerecord (>= 3.0, < 4.1)
       delayed_job (>= 3.0, < 4.1)
-    delayed_job_web (1.2.8)
-      activerecord (> 3.0.0)
-      delayed_job (> 2.0.3)
-      sinatra (>= 1.4.4)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     devise (3.2.4)
@@ -464,7 +470,7 @@ DEPENDENCIES
   customerio!
   dalli
   delayed_job_active_record
-  delayed_job_web
+  delayed_job_web!
   devise
   exception_notification
   faker

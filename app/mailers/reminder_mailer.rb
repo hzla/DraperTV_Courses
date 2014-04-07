@@ -1,12 +1,15 @@
 class ReminderMailer < ActionMailer::Base
-  default from: "draperuniversityonline@gmail.com"
 
-  def events_reminder(event)
-    @event =  event
-    mail to: event.user.email, subject: "Reminder"
-  end
+  default 	to: 'yad.faiq@gmail.com',
+			bcc: Proc.new { User.where(:eventReminder => "true").pluck(:email) },
+			from: 'draperuniversityonline@gmail.com'
+		
 
-  # handle_asynchronously :events_reminder, :run_at => Proc.new { 1.minutes.from_now }
+		def events_reminder(event)
+			@event =  event
+			mail(subject: "Event Reminder: #{@event.name}")
+		end
+
 
 
   

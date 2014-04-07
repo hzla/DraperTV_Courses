@@ -1,6 +1,6 @@
 # Gemfile
 source "https://rubygems.org"
-
+ruby '1.9.3'
 
 gem 'rails', '4.0.4'
 gem 'pg'
@@ -100,10 +100,9 @@ gem 'actionpack-action_caching'
 
 gem 'exception_notification'
 gem 'dalli'
-gem "delayed_job_web"
+gem "delayed_job_web", github: "toolmantim/delayed_job_web", branch: "fix-rails-sessions"
 
 
-ruby '1.9.3'
 # gem "nifty-generators", :group => :development
 
 # To use ActiveModel has_secure_password

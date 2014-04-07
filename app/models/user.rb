@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :superhero_power, :team, :skype, :gmail, :instagram, :angellist, :dribbble, :github
   attr_accessible :bio, :city, :country, :facebook, :first_name, :last_name, :linkedin, :program, :state, :street_address, :twitter, :zip, :online, :employment
   attr_accessible :avatar, :tag_list, :nCounter
-  attr_accessible :latitude, :longitude
+  attr_accessible :latitude, :longitude, :eventReminder
   has_attached_file :avatar, 
     :styles => { :medium => "120x120#", :thumb => "40x40#" }, 
     :default_url => '/assets/avatars/missing.png',
