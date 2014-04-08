@@ -53,12 +53,16 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.save
         format.html { redirect_to events_path }
+
         # ReminderMailer.events_reminder(@event).deliver
         # cur_ack = (Time.now - (@event.start_time - 1.day)).to_i / 1.day
         cur_ack = (Time.now - (@event.start_time)).to_i / 1.day
         cur_ack = cur_ack.abs
-        # ReminderMailer.delay(queue: "#{@event.name}_letter", run_at: cur_ack.days.from_now).events_reminder(@event)
-        ReminderMailer.delay(queue: "#{@event.name}_letter", run_at: 1.seconds.from_now).events_reminder(@event)
+          if cur_ack < 0
+            ReminderMailer.delay(queue: "#{@event.name}_letter", run_at: 1.seconds.from_now).events_reminder(@event)
+          else
+            ReminderMailer.delay(queue: "#{@event.name}_letter", run_at: cur_ack.days.from_now).events_reminder(@event)
+          end
 
         #format.json { render json: @event, status: :created, location: @event }
       else
