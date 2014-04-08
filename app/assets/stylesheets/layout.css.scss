@@ -338,7 +338,7 @@ body, html {
     
     .main {
       display: block;
-      margin-top: 65px;
+      margin-top: 69px;
       position: absolute;
       width: 100%;
     }
@@ -360,13 +360,14 @@ body, html {
       }
 
       .title {
-        font-size: 14px;
-        color: $gray-med;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.3px;
+        color: #526685;
         font-weight: 700;
-        letter-spacing: 0.3px;
 
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding-top: 18px;
+        padding-bottom: 18px;
         padding-left: 0px;
 
         a { color: $blue; }
@@ -407,7 +408,7 @@ body, html {
     
     padding-left: 20px;
     float: left;
-    margin-top: 80px;
+    margin-top: 90px;
   }
   .top-column-main {
     display: block;
@@ -419,11 +420,30 @@ body, html {
     position: fixed;
     right: 0;
     height: 100%;
-    top: 40px;
+    top: 42px;
     background: none;
     width: calc(30% - 60px);
     border-left: 1px solid #ccc;
     z-index: 1000;
+    .col-right-top-section {
+      height: 67px;
+      width: calc(100% - 20px);
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-left: 20px;
+      h3 {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.3px;
+        color: #526685;
+        font-weight: 700;
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 0px;
+      }
+    }
   }
   .top-section {
     height: 67px;
@@ -454,9 +474,9 @@ body, html {
       a { text-align: center; }
     }
     h1 {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 100px;
-      padding-top: 15px;
+      padding-top: 18px;
     }
   }
   .back a { 
@@ -587,6 +607,26 @@ body, html {
   right: 0;
   padding-bottom: 100px;
 }
+
+//**********************//
+//****** Dropdown ******//
+//**********************//
+
+.navbar .pull-right > li > .dropdown-menu, .navbar .nav > li > .dropdown-menu.pull-right {
+  right: 20px;
+}
+
+.navbar-inner .container .dropdown-menu > li > a {
+  font-size: 14px;
+  font-weight: 500;
+}
+.dropdown-menu .divider { margin: 0; }
+
+.navbar .nav > li { margin-left: 6px; }
+
+//**********************//
+//**** Media Queries ***//
+//**********************//
 
 @media all and (min-width: 1001px) { 
   .course-show-left {

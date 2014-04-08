@@ -72,7 +72,7 @@
                   <i class="fa fa-inbox fa-2x empty" style="padding-top: 10px; padding-right: 12px;" id="notifications"></i>
                   <div class="red-circle"><p></p></div>
                 </div><!-- sb-toggle-right -->
-                <div class="dropdown-menu" id="notification-dropdown">
+                <div class="dropdown-menu" id="notification-dropdown" style="right: 0;">
                   <% if user_signed_in? %>
                     <% @notified = User.find(current_user.id) %>
                       <%= simple_form_for @notified, :remote => true do |f| %>
@@ -160,6 +160,20 @@
                   </script>
                 </div><!-- dropdown menu -->
               </li><!-- dropdown -->
+              <li class="dropdown">
+                <div class="sb-toggle-right dropdown" data-toggle="dropdown" href="#">
+                  <i class="fa fa-gear fa-2x empty" style="padding-top: 10px; padding-right: 12px;" id="notifications"></i>
+                </div> 
+                <ul class="dropdown-menu">
+                  <li role="menu"><%= link_to 'My Profile', student_profile_path(current_user)  %></li>
+                  <li role="menu"><%= link_to 'Edit Settings', edit_user_registration_path %></li>
+                  <li class="divider"></li>
+                  <li role="menu"><%= link_to 'Leave Feedback', feedbacks_path %></li>
+                  <li role="menu"><%= link_to 'Resources', resources_path %></li>
+                  <li class="divider"></li>
+                  <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>
