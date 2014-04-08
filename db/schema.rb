@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320155608) do
+ActiveRecord::Schema.define(version: 20140407213216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -374,6 +374,8 @@ ActiveRecord::Schema.define(version: 20140320155608) do
     t.integer  "user_id"
     t.integer  "assignment_id"
     t.string   "link"
+    t.integer  "point_value"
+    t.integer  "bonus_points_given"
   end
 
   create_table "user_comments", force: true do |t|
@@ -429,6 +431,9 @@ ActiveRecord::Schema.define(version: 20140320155608) do
     t.string   "dribbble"
     t.string   "github"
     t.integer  "nCounter"
+    t.integer  "pCounter"
+    t.integer  "bonus_credits"
+    t.integer  "bonus_points_earned"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

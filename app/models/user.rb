@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :superhero_power, :team, :skype, :gmail, :instagram, :angellist, :dribbble, :github
   attr_accessible :bio, :city, :country, :facebook, :first_name, :last_name, :linkedin, :program, :state, :street_address, :twitter, :zip, :online, :employment
-  attr_accessible :avatar, :tag_list, :nCounter
+  attr_accessible :avatar, :tag_list, :nCounter, :pCounter
   attr_accessible :latitude, :longitude
   has_attached_file :avatar, 
     :styles => { :medium => "120x120#", :thumb => "40x40#" }, 

@@ -4,7 +4,7 @@
 				<div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
 				<div class="info-container">
 					<div class="name"><%= current_user.first_name %> <%= current_user.last_name.chars.first %></div>
-					<div class="points">3,200</div>
+					<div class="points pcounter"><p><%= current_user.pCounter %></p></div>
 				</div>
 		</div>
 	<% end %>
@@ -81,6 +81,7 @@
 
 <div class="section-link">
 	<%= subscribe_to "/layouts/comments" %>
+	<%= subscribe_to "/layouts/points" %>
 	<%= subscribe_to "/layouts/#{current_user.id}" %>
 </div>  
 

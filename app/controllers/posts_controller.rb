@@ -15,7 +15,7 @@ def index
   #@posts = Post.plusminus_tally.order('plusminus_tally desc').page(params[:page]).per(10)
   #listPosts = []
   #@posts = Post.plusminus_tally.order('plusminus_tally desc')
-  @posts = Post.page(params[:page]).per(10).order('created_at DESC')
+  @posts = Post.order('created_at DESC').page(params[:page]).per(10)
   @post = Post.new
   # @users = User.all
   # @user = User.find_by_id(@post.user_id)

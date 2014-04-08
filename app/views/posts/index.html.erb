@@ -2,22 +2,23 @@
 
 <div class="top-section">
   <div class="row">
-    <div class="span9">
-      <h1>Forum</h1>
-      <!-- ***** CREATE POST BUTTON ***** -->
-      <div class="button-right">
-        <a href="#newPostModal" data-toggle="modal" id="intro-video" data-backdrop="false">
-          <div class="button">New Post</div>
-        </a>
+    <div class="top-column-main">
+      <div style="width: 100%; position: relative; display; block; padding-left: 20px;">
+        <h1>Forum</h1>
+        <!-- ***** CREATE POST BUTTON ***** -->
+        <div class="button-right">
+          <a href="#newPostModal" data-toggle="modal" id="intro-video" data-backdrop="false">
+            <div class="circle-button"><p>+</p></div>
+          </a>
+        </div>
       </div>
-    </div><!-- span 9 -->
-    <div class="span3">Test</div>
+    </div><!-- column main -->
+    
   </div><!-- row -->
 </div>
 
 <div class="row" style="height: 100%;">
-  <div class="span9" id="col-left">
-    
+   <div class="column-main"> 
 
     <div class="headerAlert">
       <div class="alert alert-info">
@@ -36,9 +37,8 @@
 
     <%= subscribe_to "/posts/new" %>
   </div><!-- col-9 -->
-
-  <div class="span4" id="col-right" style="border-left: 1px solid #f2f2f2;">
-  Test
+  <div class="column-right">
+    
   </div>
 </div><!-- row -->
 

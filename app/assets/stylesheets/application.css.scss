@@ -177,6 +177,23 @@ $font-small-title: 16px;
           box-shadow: 3px 6px 6px -4px $blue;
 }
 
+@mixin round-button {
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  color: $bright-teal;
+  background: none;
+  border: 2px solid $bright-teal;
+  border-radius: 50px;
+
+  &:hover {
+    color: #fff;
+    background: $bright-teal;
+    border: 1px solid $bright-teal;
+  }
+}
+
 /***********************************
  ******* Import Stylesheets ********
 ************************************/
