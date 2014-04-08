@@ -39,7 +39,7 @@ production:
 staging:
   adapter: postgresql
   encoding: utf8
-  database: duh_staging
+  database: duh_development
   template: template0
   pool: 5
   timeout: 5000
