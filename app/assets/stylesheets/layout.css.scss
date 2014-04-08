@@ -323,9 +323,9 @@ body, html {
         .points {
           padding-top: 0px;
           margin-left: 12px;
-          font-size: 16px;
-          font-weight: 100;
-          color:  $gray-blue-lt;
+          font-size: 15px;
+          font-weight: 500;
+          color:  $bright-blue;
           letter-spacing: 0.3px;
         }
       }
@@ -338,7 +338,7 @@ body, html {
     
     .main {
       display: block;
-      margin-top: 65px;
+      margin-top: 69px;
       position: absolute;
       width: 100%;
     }
@@ -360,13 +360,14 @@ body, html {
       }
 
       .title {
-        font-size: 14px;
-        color: $gray-med;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.3px;
+        color: #526685;
         font-weight: 700;
-        letter-spacing: 0.3px;
 
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding-top: 18px;
+        padding-bottom: 18px;
         padding-left: 0px;
 
         a { color: $blue; }
@@ -402,16 +403,47 @@ body, html {
   background: white;
   position: relative;
   height: 100%; 
-  #col-left {
-    position: relative;
-    padding: 100px 0 0 0;
-  }
-  #col-right {
+  .column-main {
+    display: block;
     
-    min-height: 100%;
+    padding-left: 20px;
+    float: left;
+    margin-top: 90px;
+  }
+  .top-column-main {
+    display: block;
+    
+    padding-left: 20px;
+    float: left;
+  }
+  .column-right {
+    position: fixed;
+    right: 0;
     height: 100%;
-    padding: 0;
-    padding-top: 100px;
+    top: 42px;
+    background: none;
+    width: calc(30% - 60px);
+    border-left: 1px solid #ccc;
+    z-index: 1000;
+    .col-right-top-section {
+      height: 67px;
+      width: calc(100% - 20px);
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-left: 20px;
+      h3 {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.3px;
+        color: #526685;
+        font-weight: 700;
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 0px;
+      }
+    }
   }
   .top-section {
     height: 67px;
@@ -432,7 +464,7 @@ body, html {
     .button-right {
       display: block;
       float: right;
-      min-width: 80px;
+      min-width: 40px;
       width: auto;
       margin-right: 20px;
       padding-top: 10px;
@@ -442,9 +474,9 @@ body, html {
       a { text-align: center; }
     }
     h1 {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 100px;
-      padding-top: 9px;
+      padding-top: 18px;
     }
   }
   .back a { 
@@ -464,6 +496,15 @@ body, html {
       color: $gray-blue-x-lt;
       &:hover { color: $blue; }
     }
+  }
+}
+
+
+.circle-button {
+  @include round-button;
+  p {
+    padding: 5px;
+    font-size: 22px;
   }
 }
 
@@ -567,11 +608,38 @@ body, html {
   padding-bottom: 100px;
 }
 
+//**********************//
+//****** Dropdown ******//
+//**********************//
+
+.navbar .pull-right > li > .dropdown-menu, .navbar .nav > li > .dropdown-menu.pull-right {
+  right: 20px;
+}
+
+.navbar-inner .container .dropdown-menu > li > a {
+  font-size: 14px;
+  font-weight: 500;
+}
+.dropdown-menu .divider { margin: 0; }
+
+.navbar .nav > li { margin-left: 6px; }
+
+//**********************//
+//**** Media Queries ***//
+//**********************//
+
 @media all and (min-width: 1001px) { 
   .course-show-left {
+
   }
+  .top-column-main { width: calc(70% - 40px); }
+  .column-main {  width: calc(70% - 20px); }
+  .column-right { display: block; }
 }
 @media all and (max-width: 1000px) and (min-width: 700px) {  
+  .column-main { width: 100%; }
+  .top-column-main { width: calc(100% - 40px); }
+  .column-right { display: none; }
   .course-show-left {
     width: 100%;
     #intro-video {
@@ -585,8 +653,12 @@ body, html {
     width: 100%; 
     margin-top: 60px;
   }
+  .column-main { }
 }
 @media all and (max-width: 699px) { 
+  .column-main { width: 100%; }
+  .top-column-main { width: calc(100% - 40px); }
+  .column-right { display: none; }
   .course-show-left {
     width: 100%;
     min-height: 40px;

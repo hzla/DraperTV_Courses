@@ -12,6 +12,7 @@ class AssignmentsController < ApplicationController
     @comments = @commentable.user_comments.order(:created_at)
     @comment = UserComment.new
     @user_assignment = @assignment.user_assignments.where(:user_id => current_user[:id])
+    @user = current_user
 		
 		if @assignment.category == "video" or @assignment.category == "reading" or @assignment.category == "founder"
 		  oembed = "http://vimeo.com/api/oembed.json?url=http%3A//vimeo.com/" + @assignment.vimeo_url + '&autoplay=1'
@@ -33,11 +34,41 @@ class AssignmentsController < ApplicationController
   	end
 
     if @assignment.user_assignments.where(:user_id => current_user[:id]).count == 0
-      @user_assignment = @assignment.user_assignments.create(
-        :assignment_id => @assignment.id,
-        :user_id => current_user[:id]
+      if @assignment.category == "video" or @assignment.category == "founder"
+        @user_assignment = @assignment.user_assignments.create(
+          :assignment_id => @assignment.id,
+          :user_id => current_user[:id],
+          :point_value => 100       
         )
+        
+      elsif @assignment.category == "milestone"
+        @user_assignment = @assignment.user_assignments.create(
+          :assignment_id => @assignment.id,
+          :user_id => current_user[:id],
+          :point_value => 0        
+        )
+       
+      elsif @assignment.category == "upload"
+         @user_assignment = @assignment.user_assignments.create(
+          :assignment_id => @assignment.id,
+          :user_id => current_user[:id],
+          :point_value => 0
+        )
+        
+       else
+         @user_assignment = @assignment.user_assignments.create(
+          :assignment_id => @assignment.id,
+          :user_id => current_user[:id],
+          :point_value => 10        
+        )
+        
+       end
+
+      @user.update_attribute(:pCounter, UserAssignment.sum('point_value'))
+      PrivatePub.publish_to("/layouts/points", 
+        "$('.pcounter p').text(<%= current_user.pCounter %>);")
     end
+
 	end
 
   def quiz_save_attempt
@@ -47,7 +78,9 @@ class AssignmentsController < ApplicationController
       @attempt.participant = current_user
 
       if @attempt.valid? and @attempt.save
-         redirect_to assignment_path
+        @assignment.user_assignments.first.update_attribute(:point_value, 200)
+        current_user.update_attribute(:pCounter, UserAssignment.sum('point_value'))
+        redirect_to assignment_path
       else
        render :action => :show
       end

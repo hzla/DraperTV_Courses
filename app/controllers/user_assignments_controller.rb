@@ -18,6 +18,7 @@ class UserAssignmentsController < ApplicationController
     @user_assignment = UserAssignment.find(params[:id])
     respond_to do |format|
       if @user_assignment.update_attributes(params[:user_assignment])
+        current_user.update_attribute(:pCounter, UserAssignment.sum('point_value'))
         format.html { redirect_to :back }
         format.json { head :no_content }
       else
@@ -26,7 +27,5 @@ class UserAssignmentsController < ApplicationController
       end
     end
   end
-
-  
 
 end

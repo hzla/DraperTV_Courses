@@ -4,25 +4,32 @@
 				<div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
 				<div class="info-container">
 					<div class="name"><%= current_user.first_name %> <%= current_user.last_name.chars.first %></div>
-					<div class="points">3,200</div>
+					<div class="points pcounter"><p><%= number_with_delimiter(current_user.pCounter, :delimiter => ',') %></p></div>
 				</div>
 		</div>
 	<% end %>
 
 	<div class="main">
-		<!-- ****** LEARN ******* -->
-		<div class="section-title">Learn</div>
-		<div class="section-link">
-			<%= link_to posts_path do %>
-				<div class="link">
-					<div class="title">Home</div>
-				</div>
-			<% end %>
-		</div>
+		
+		
 		<div class="section-link">
 			<%= link_to courses_path do %>
 				<div class="link">
 					<div class="title">Courses</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="section-link">
+			<%= link_to posts_path do %>
+				<div class="link">
+					<div class="title">Discussion</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="section-link">
+			<%= link_to users_path do %>
+				<div class="link">
+					<div class="title">Students</div>
 				</div>
 			<% end %>
 		</div>
@@ -33,46 +40,7 @@
 				</div>
 			<% end %>
 		</div>
-		<!-- ****** CONNECT ******* -->
-		<div class="section-title">Connect</div>
-		<div class="section-link">
-			<%= link_to users_path do %>
-				<div class="link">
-					<div class="title">Students</div>
-				</div>
-			<% end %>
-		</div>
-		<div class="section-link">
-			<%= link_to resources_path do %>
-				<div class="link">
-					<div class="title">Resources</div>
-				</div>
-			<% end %>
-		</div>
-		
-		<!-- ****** ACCOUNT ******* -->
-		<div class="section-title">Account</div>
-		<div class="section-link">
-			<%= link_to edit_user_registration_path do %>
-				<div class="link">
-					<div class="title">Edit Profile</div>
-				</div>
-			<% end %>
-		</div>
-		<div class="section-link">
-			<%= link_to feedbacks_path do %>
-				<div class="link">
-					<div class="title">Feedback</div>
-				</div>
-			<% end %>
-		</div>
-		<div class="section-link">
-			<%= link_to logout_path do %>
-				<div class="link">
-					<div class="title">Log Out</div>
-				</div>
-			<% end %>
-		</div>
+
 	</div>
 </div>
 
@@ -81,6 +49,7 @@
 
 <div class="section-link">
 	<%= subscribe_to "/layouts/comments" %>
+	<%= subscribe_to "/layouts/points" %>
 	<%= subscribe_to "/layouts/#{current_user.id}" %>
 </div>  
 
