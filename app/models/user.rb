@@ -52,6 +52,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
 
   extend FriendlyId
+
   friendly_id :full_name, use: [:slugged, :finders]
 
   devise :database_authenticatable, :registerable,
@@ -60,8 +61,10 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :superhero_power, :team, :skype, :gmail, :instagram, :angellist, :dribbble, :github
   attr_accessible :bio, :city, :country, :facebook, :first_name, :last_name, :linkedin, :program, :state, :street_address, :twitter, :zip, :online, :employment
-  attr_accessible :avatar, :tag_list, :nCounter, :pCounter
+
   attr_accessible :latitude, :longitude, :eventReminder
+  attr_accessible :avatar, :tag_list, :ncounter, :pcounter
+
   has_attached_file :avatar, 
     :styles => { :medium => "120x120#", :thumb => "40x40#" }, 
     :default_url => '/assets/avatars/missing.png',
@@ -95,6 +98,10 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 5, maximum: 120}, on: :update, allow_blank: true
 
   after_commit :flush_cache
+
+  SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
+
+  
   
   def self.cached_find(id)
     Rails.cache.fetch([first_name, id], expires_in: 5.minutes) { find(id) }
@@ -114,18 +121,18 @@ class User < ActiveRecord::Base
   end
 
 
-  include PgSearch
-  pg_search_scope :search, against: [:first_name, :last_name],
-  using: {tsearch: {dictionary: "english"}},
-  associated_against: {skills: :name}
+  # include PgSearch
+  # pg_search_scope :search, against: [:first_name, :last_name],
+  # using: {tsearch: {dictionary: "english"}},
+  # associated_against: {skills: :name}
 
 
-  def self.text_search(query)
-    if query.present?
-      #where("first_name @@ :q OR last_name @@ :q OR country @@ :q OR (first_name || ' ' || last_name) @@ :q OR online @@ :q OR team @@ :q OR team @@ :q", :q => query)
-    search(query)
-    else
-      scoped
-    end
-  end
+  # def self.text_search(query)
+  #   if query.present?
+  #     #where("first_name @@ :q OR last_name @@ :q OR country @@ :q OR (first_name || ' ' || last_name) @@ :q OR online @@ :q OR team @@ :q OR team @@ :q", :q => query)
+  #   search(query)
+  #   else
+  #     scoped
+  #   end
+  # end
 end

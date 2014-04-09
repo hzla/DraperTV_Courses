@@ -90,12 +90,12 @@ end
         listUsers.delete(current_user.id)
         listUsers.each do |usr|
           @user = User.find(usr)
-          @user.increment!(:nCounter)
+          @user.increment!(:ncounter)
           PrivatePub.publish_to("/layouts/#{usr}", 
             "$('#notifications').removeClass('empty'); 
             $('#notification').addClass('notifications'); 
             $('.red-circle').show();
-            $('.red-circle p').text(#{@user.nCounter});")
+            $('.red-circle p').text(#{@user.ncounter});")
         end              
 
       elsif @comment.commentable_type == "Assignment"
@@ -135,12 +135,12 @@ end
         listUsers.each do |usr|
           if User.find_by_id(usr).present?
             @user = User.find(usr)
-            @user.increment!(:nCounter)
+            @user.increment!(:ncounter)
             PrivatePub.publish_to("/layouts/#{usr}", 
               "$('#notifications').removeClass('empty'); 
               $('#notification').addClass('notifications'); 
               $('.red-circle').show();
-              $('.red-circle p').text(#{@user.nCounter});")
+              $('.red-circle p').text(#{@user.ncounter});")
           end
         end 
 
@@ -178,12 +178,12 @@ end
         listUsers.each do |usr|
           if User.find_by_id(usr).present?
             @user = User.find(usr)
-            @user.increment!(:nCounter)
+            @user.increment!(:ncounter)
             PrivatePub.publish_to("/layouts/#{usr}", 
               "$('#notifications').removeClass('empty'); 
                $('#notification').addClass('notifications'); 
                $('.red-circle').show();
-               $('.red-circle p').text(#{@user.nCounter});")
+               $('.red-circle p').text(#{@user.ncounter});")
           end
         end 
       else

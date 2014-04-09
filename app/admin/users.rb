@@ -5,7 +5,7 @@ ActiveAdmin.register User do
     column :last_name
     column :tag_list
     column :online
-    column :nCounter
+    column :ncounter
     column :last_sign_in_at
     column :eventReminder
     column :email
