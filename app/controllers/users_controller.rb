@@ -6,31 +6,9 @@ class UsersController < ApplicationController
   # GET /users.json
 
   def index
-    if params[:tag]
-      @users = User.where(:online == "online").text_search(params[:query]).tagged_with(params[:tag]).includes(:skills)
-      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag]).includes(:skills)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.js 
-      #format.json { render json: @users }
-    end
-    elsif params[:tag].to_s ==~ /^\s*$/
-      @users = User.where(:online == "online").text_search(params[:query]).includes(:skills)
-      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag]).includes(:skills)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.js 
-      #format.json { render json: @users }
-    end
-    else
-      @users = User.where(:online == "online").text_search(params[:query]).includes(:skills)
-      @boarding = User.where(:online == "boarding").text_search(params[:query]).tagged_with(params[:tag]).includes(:skills)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.js 
-      #format.json { render json: @users }
-    end
-    end
+    @users = User.all
+    @q = User.search(params[:q])
+    @users= @q.result(distinct: true).order('pcounter').page(params[:page]).per(25)
   end
 
 
@@ -144,7 +122,7 @@ class UsersController < ApplicationController
   #       :first_name, :last_name,
   #       :linkedin, :program, :state,
   #       :street_address, :twitter, :zip, :online, :employment,
-  #       :avatar, :tag_list, :nCounter,
+  #       :avatar, :tag_list, :ncounter,
   #       :latitude, :longitude,
   #       :name, :skill_ids) 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407213216) do
+ActiveRecord::Schema.define(version: 20140409161955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -430,8 +430,8 @@ ActiveRecord::Schema.define(version: 20140407213216) do
     t.string   "angellist"
     t.string   "dribbble"
     t.string   "github"
-    t.integer  "nCounter"
-    t.integer  "pCounter"
+    t.integer  "ncounter"
+    t.integer  "pcounter"
     t.integer  "bonus_credits"
     t.integer  "bonus_points_earned"
   end

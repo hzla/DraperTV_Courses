@@ -1,7 +1,4 @@
-
-<% @boarding = User.where(:online == "boarding") %>
-<% @boarding.each do |user| %>
-   <% if user.online == "boarding" %>   
+<% @users.each do |user| %>  
 <div id="network-user-container">
 	<div id="avatar"><%= image_tag user.avatar.url(:medium) %></div>
 	<div class="info">
@@ -33,6 +30,5 @@
   	<% end %>
 	</div>
 </div>
-<% end %>
 <% end %>
 

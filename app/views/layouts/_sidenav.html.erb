@@ -4,7 +4,7 @@
 				<div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
 				<div class="info-container">
 					<div class="name"><%= current_user.first_name %> <%= current_user.last_name.chars.first %></div>
-					<div class="points pcounter"><p><%= number_with_delimiter(current_user.pCounter, :delimiter => ',') %></p></div>
+					<div class="points pcounter"><p><%= number_with_delimiter(current_user.pcounter, :delimiter => ',') %></p></div>
 				</div>
 		</div>
 	<% end %>

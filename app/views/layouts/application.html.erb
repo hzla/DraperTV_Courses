@@ -88,7 +88,7 @@
                         <% end %><!-- errors -->
 
                         <div class="field">
-                          <%= f.hidden_field :nCounter %>
+                          <%= f.hidden_field :ncounter %>
                         </div>
                       <% end %>
                   <% end %>
@@ -128,24 +128,24 @@
                         } 
                       });
 
-                      $('#user_nCounter').val(0);
-                      $('.red-circle p').text('<%= current_user.nCounter %>');
+                      $('#user_ncounter').val(0);
+                      $('.red-circle p').text('<%= current_user.ncounter %>');
 
                       var n = $('.red-circle p').text();
                       n =  parseInt(n);
 
-                      if( '<%= current_user.nCounter %>' === 0 ) {
+                      if( '<%= current_user.ncounter %>' === 0 ) {
                         $('.red-circle p').empty();
                         $("#notifications").removeClass("notifications");
                         $('#notifications').addClass("empty");  
                         $('.red-circle').hide();      
                       }
                       else {
-                        //$('#notifications').text('<%= current_user.nCounter %>');
+                        //$('#notifications').text('<%= current_user.ncounter %>');
                         $('#notifications').removeClass('empty');
                         $('#notification').addClass('notifications');
                         $('.red-circle').show();   
-                        $('.red-circle p').text('<%= current_user.nCounter %>');
+                        $('.red-circle p').text('<%= current_user.ncounter %>');
                       }
                       if(n === 0 ) {
                         $('.red-circle p').empty();

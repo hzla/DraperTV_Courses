@@ -64,9 +64,9 @@ class AssignmentsController < ApplicationController
         
        end
 
-      @user.update_attribute(:pCounter, UserAssignment.sum('point_value'))
+      @user.update_attribute(:pcounter, UserAssignment.sum('point_value'))
       PrivatePub.publish_to("/layouts/points", 
-        "$('.pcounter p').text(<%= current_user.pCounter %>);")
+        "$('.pcounter p').text(<%= current_user.pcounter %>);")
     end
 
 	end
@@ -79,7 +79,7 @@ class AssignmentsController < ApplicationController
 
       if @attempt.valid? and @attempt.save
         @assignment.user_assignments.first.update_attribute(:point_value, 200)
-        current_user.update_attribute(:pCounter, UserAssignment.sum('point_value'))
+        current_user.update_attribute(:pcounter, UserAssignment.sum('point_value'))
         redirect_to assignment_path
       else
        render :action => :show
