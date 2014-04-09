@@ -9,6 +9,8 @@ class UsersController < ApplicationController
     @users = User.all
     @q = User.search(params[:q])
     @users= @q.result(distinct: true).order('pcounter').page(params[:page]).per(25)
+
+    @leaders = User.order('pcounter').limit(10)
   end
 
 

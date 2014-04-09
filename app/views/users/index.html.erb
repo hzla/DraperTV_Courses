@@ -5,7 +5,7 @@
         <h1>Students & Network</h1>
         <!-- ***** CREATE POST BUTTON ***** -->
         <div class="button-right">
-          <h3 id="show-filters">Show Filters</h3>
+          <a id="show-filters"><h4>Filters</h4></a>
         </div>
       </div>
     </div><!-- column main -->
@@ -23,20 +23,27 @@
       </div> -->
       <br/>
       <div id="user-search-form">
-        <%= search_form_for @q do |f| %>
-          <table id="filter-table">
-            <tr>   
-              <td width="20%"> <%= f.label :program_type_cont, 'Type' %>
-                <%= f.select :online_cont, ['boarding', 'online'], include_blank: true %></td>
-              <td width="20%"><%= f.label :first_name_cont, 'First Name Contains' %>
-              <%= f.text_field :first_name_cont %></td>
-              <td width="20%">  <%= f.label :last_name_cont, 'Last Name Contains' %>
-            <%= f.text_field :last_name_cont %></td>
-            </tr>
+        <%= search_form_for @q, :remote => "true" do |f| %>
+          <div class="filter">
             <%= f.label :s, 'Sort by' %>
             <%= f.collection_select :s, User::SORT_FIELDS.to_a, :first, :last, selected: users_sort_value, include_blank: false %>
-          </table>
+          </div>
+          <div class="filter">
+            <%= f.label :program_type_cont, 'Type' %>
+            <%= f.select :online_cont, ['boarding', 'online'], include_blank: true %>
+          </div>
+          <div class="filter">
+            <%= f.label :first_name_cont, 'First Name Contains' %>
+            <%= f.text_field :first_name_cont %>
+          </div>
+          <div class="filter">
+            <%= f.label :last_name_cont, 'Last Name Contains' %>
+            <%= f.text_field :last_name_cont %>
+          </div>
+          <div class="filter">
             <%= f.submit 'Search', :id => "filter-submit" %>
+          </div>
+            
           <% end %>
         </div>
 
@@ -48,14 +55,16 @@
   </div><!-- column-main -->
 
   <div class="column-right">
-
+    <% @leaders.each do |u| %>
+    <%= u.first_name %><%= u.pcounter %><br/>
+    <% end %>
   </div><!-- column-right -->
 </div><!-- row -->
 
 
 <script type="text/javascript">
   $('#show-filters').click(function(){
-    $('#user-search-form').toggle("slow", function() {});
+    $('#user-search-form').toggle('5000', 'easeOutCirc', function() {});
     $('#users').toggleClass('active', [3000]);
     return false;
   });
