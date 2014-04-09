@@ -12,8 +12,16 @@
   position: fixed;
   top: 111px;
   left: 185px;
-  padding-left: 20px;
+  padding: 20px 10px;
   z-index: 100;
+  .filter {
+    display: block;
+    float: left;
+    width: 20%;
+    margin-left: 3%;
+    select { width: 100%; }
+    input { width: 100%; }
+  }
 }
 
 .active {

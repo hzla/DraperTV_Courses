@@ -2,6 +2,18 @@ body, html {
   height: 100%; 
 }
 
+h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: #526685;
+  font-weight: 700;
+
+  padding-top: 0px;
+  padding-bottom: 18px;
+  padding-left: 0px;
+}
+
 .sidr-open {
   overflow: hidden;
 }
@@ -472,6 +484,14 @@ body, html {
       top: 8px;
       right: 20px;
       a { text-align: center; }
+      h4 {
+        margin-top: 5px;
+        color: $bright-teal;
+        &:hover {
+          cursor: pointer;
+          color: $teal;
+        }
+      }
     }
     h1 {
       font-size: 26px;
