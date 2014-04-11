@@ -49,11 +49,12 @@
       color: $gray-lt;
     }
   }
+  .active {
+    margin-top: 180px;
+  }
 }
 
-.active {
-  margin-top: 180px;
-}
+
 
 ::-webkit-input-placeholder {
    color: $gray-x-x-lt;

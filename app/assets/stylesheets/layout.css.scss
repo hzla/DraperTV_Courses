@@ -477,6 +477,17 @@ h4 {
       width: calc(100% - 40px);
       padding: 0 20px;
     }
+    .avatar {
+      display: block;
+      width: 100%;
+      height: 250px;
+      img {
+        width: 120px;
+        height: 120px;
+        margin-top: 25px;
+        margin-left: 75px;
+      }
+    }
   }
   .top-section {
     height: 67px;

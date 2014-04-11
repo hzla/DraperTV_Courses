@@ -25,15 +25,12 @@
 // = require home
 // = require_tree .
 // = require private_pub
-// = require masonry.pkgd.min
-// = require imagesloaded
-// = require classie
-// = require AnimOnScroll
+
 // = require slidebars.min
 // = require emoticon
 // = require best_in_place
 // = require best_in_place.purr
-// = require turbolinks
+//= require jquery.turbolinks
 
 
 NProgress.configure
