@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users.json
 
   def index
-    @users = User.all
+    @users = User.includes(:skills).all
     @q = User.search(params[:q])
     @users= @q.result(distinct: true).order('pcounter').page(params[:page]).per(25)
 
