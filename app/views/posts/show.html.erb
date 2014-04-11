@@ -1,111 +1,115 @@
 <div class="top-section">
-  <h1>Forum Post</h1>
+  <div class="row">
+    <div class="top-column-main">
+      <div style="width: 100%; position: relative; display; block; padding-left: 20px;">
+        <h1>Showing Post</h1>
+      </div>
+
+    </div><!-- column main -->
+  </div><!-- row -->
 </div>
 
-<div class="back-button">
+
+<div class="column-main">
+  <div class="back-button">
     <%= link_to posts_path do %>Back to Forums<% end %>
-</div>
+  </div>
+  <% if User.where(:id => @post.user_id).exists? %>
+    <div id="forum-post-show">
+      <% @user = User.find_by_id(@post.user_id) %>
+      <% @postvotes = @post.votes_for %>
+      <% @totalcomments = UserComment.where(:commentable_id => @post.id) %>
+     <!--  <% @voters = @post.voters_who_voted_for %>
+   -->
+       <!-- upvoteable -->
+        <div class="upvote">
+          <% if current_user.voted_for?(@post) %>
+            <div class="unvote-button" id="unvote-button-<%= @post.id %>">
+              <%=link_to unvote_for_post_posts_path(post_id: @post.id), :remote => true,  :method => :post do %><i class="fa fa-chevron-up"></i><% end %>
+            </div>
+          <% else %>
+            <div class="vote-button" id="vote-button-<%= @post.id %>">
+              <%=link_to vote_for_post_posts_path(post_id: @post.id), :remote => true,  :method => :post do %><i class="fa fa-chevron-up"></i><% end %>
+            </div>
+          <% end %>
+          <div class="vote-count" id="votes-<%= @post.id %>"><%= @postvotes %></div>
+        </div><!-- upvote -->
 
+      <!-- image --> 
+      
+      <!-- content -->
+      
+        <div class="content">
+          <% if current_user.id == @post.user_id %>
+            <div class="title">
+              <%= best_in_place @post, :title, :type => :input, :class => 'best_in_place' %>
+              <i class="fa fa-pencil"></i>
+            </div>
+            <div class="full">
+              <%= best_in_place @post, :content, :ok_button => "Save Changes", :type => :textarea, :class => 'autosize' %>
+              <i class="fa fa-pencil"></i>
+            </div>
+          <% else %>
+            <div class="title"><%= @post.title %></div>
+            <div class="full"><%= @post.content %></div>
+          <% end %>
 
-<% if User.where(:id => @post.user_id).exists? %>
-  <div id="forum-post-show">
-    <% @user = User.find_by_id(@post.user_id) %>
-    <% @postvotes = @post.votes_for %>
-    <% @totalcomments = UserComment.where(:commentable_id => @post.id) %>
-   <!--  <% @voters = @post.voters_who_voted_for %>
- -->
-     <!-- upvoteable -->
-      <div class="upvote">
-        <% if current_user.voted_for?(@post) %>
-          <div class="unvote-button" id="unvote-button-<%= @post.id %>">
-            <%=link_to unvote_for_post_posts_path(post_id: @post.id), :remote => true,  :method => :post do %><i class="fa fa-chevron-up"></i><% end %>
-          </div>
-        <% else %>
-          <div class="vote-button" id="vote-button-<%= @post.id %>">
-            <%=link_to vote_for_post_posts_path(post_id: @post.id), :remote => true,  :method => :post do %><i class="fa fa-chevron-up"></i><% end %>
-          </div>
-        <% end %>
-        <div class="vote-count" id="votes-<%= @post.id %>"><%= @postvotes %></div>
-      </div><!-- upvote -->
-
-    <!-- image --> 
-    
-
-
-    <!-- content -->
-    
-      <div class="content">
-        <% if current_user.id == @post.user_id %>
-          <div class="title">
-            <%= best_in_place @post, :title, :type => :input, :class => 'best_in_place' %>
-            <i class="fa fa-pencil"></i>
-          </div>
-          <div class="full">
-            <%= best_in_place @post, :content, :ok_button => "Save Changes", :type => :textarea, :class => 'autosize' %>
-            <i class="fa fa-pencil"></i>
-          </div>
-        <% else %>
-          <div class="title"><%= @post.title %></div>
-          <div class="full"><%= @post.content %></div>
-        <% end %>
-
-         <div class="info">
-          <%= @totalcomments.count %> Comments - 
-          Posted by <%= link_to student_profile_path(@user) do %>
-          <span class="name"><%= @user.full_name %></span> <% end %> on <%= @post.created_at.to_date.to_formatted_s( :long_ordinal ) %>
-          <br/>
-          <!-- <b>
-            <% if @voters.count == 0 %>
-              No Upvotes
-            <% elsif @voters.count < 6 %>
-              Upvotes by 
-              <% @voters.each_with_index do |voter, index| %>
-                <% if index == @voters.length - 1 %>
-                 and <%= voter.first_name %>
-                <% elsif index == @voters.length - 2 %>
-                  <%= voter.first_name %> 
-                <% else %>
+           <div class="info">
+            <%= @totalcomments.count %> Comments - 
+            Posted by <%= link_to student_profile_path(@user) do %>
+            <span class="name"><%= @user.full_name %></span> <% end %> on <%= @post.created_at.to_date.to_formatted_s( :long_ordinal ) %>
+            <br/>
+            <!-- <b>
+              <% if @voters.count == 0 %>
+                No Upvotes
+              <% elsif @voters.count < 6 %>
+                Upvotes by 
+                <% @voters.each_with_index do |voter, index| %>
+                  <% if index == @voters.length - 1 %>
+                   and <%= voter.first_name %>
+                  <% elsif index == @voters.length - 2 %>
+                    <%= voter.first_name %> 
+                  <% else %>
+                    <%= voter.first_name %>, 
+                  <% end %>
+                <% end %>
+              <% elsif @voters.count > 5 %>
+                Upvotes by 
+                <% @voters.first(5).each do |voter| %>
                   <%= voter.first_name %>, 
                 <% end %>
+                and <%= @voters.count - 5 %> more
+              <% else %>
               <% end %>
-            <% elsif @voters.count > 5 %>
-              Upvotes by 
-              <% @voters.first(5).each do |voter| %>
-                <%= voter.first_name %>, 
-              <% end %>
-              and <%= @voters.count - 5 %> more
-            <% else %>
-            <% end %>
-          </b> -->
+            </b> -->
+          </div>
         </div>
-      </div>
 
-     
-
-
-    <!-- delete -->
-    <% if current_user.id == @post.user_id %>
-      <%= link_to [@post], :confirm => 'Are you sure you want to remove this post? This cannot be undone.', :action => "destroy", :method => :delete do %>
-        <div class="delete-post"></div>
+      <!-- delete -->
+      <% if current_user.id == @post.user_id %>
+        <%= link_to [@post], :confirm => 'Are you sure you want to remove this post? This cannot be undone.', :action => "destroy", :method => :delete do %>
+          <div class="delete-post"></div>
+        <% end %>
+      <% else %>
       <% end %>
-    <% else %>
-    <% end %>
 
-    <!-- comments -->
-    <div id="comments_container">
-      <div id="submit-<%= @post.id %>">
-        <%= render "user_comments/addpostcomment" %>
-      </div>
-      <div id="<%= @post.id %>">
-        <%= render "user_comments/postcomments" %>
-      </div>
-    </div><!-- comments_container -->
-  </div><!-- forum-post-show -->
-<% end %>
+      <!-- comments -->
+      <div id="comments_container">
+        <div id="submit-<%= @post.id %>">
+          <%= render "user_comments/addpostcomment" %>
+        </div>
+        <div id="<%= @post.id %>">
+          <%= render "user_comments/postcomments" %>
+        </div>
+      </div><!-- comments_container -->
+    </div><!-- forum-post-show -->
+  <% end %>
+</div><!-- column-main -->
+
+<div class="column-right"></div>
+
 
 <script type = "text/javascript">
-
-  
   $(document).ready(function(){
       $('textarea.autosize').autosize();  
       $('input.autosize').autosize();  

@@ -17,7 +17,6 @@
   	body { font-family: 'proxima_nova';}
   </style>
 
-
   <!-- google tracking -->
   <script type="text/javascript">
     var fb_param = {};
@@ -54,18 +53,13 @@
               <div id="logo"></div>
             </div>
 
+            <!-- ** Show Score in Nav ** -->
+            <% if current_user.pcounter != nil %>
+              <div class="right-score"><%= number_with_delimiter(current_user.pcounter, :delimiter => ',') %></div>
+            <% else %>
+            <% end %>
+
             <ul class="nav pull-right">
-              <!-- <div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
-              <li class="dropdown">
-                <a class="dropdown" data-toggle="dropdown" href="#">
-                  <%= current_user.full_name %> <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li role="menu"><%= link_to 'View Profile', student_profile_path(current_user)  %></li>
-                  <li role="menu"><%= link_to 'Edit Settings', edit_user_registration_path %></li>
-                  <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
-                </ul>
-              </li> -->
               <!-- <a id="right-menu" href="#right-menu" class="sidr-click"> -->
               <li class="dropdown">
                 <div class="sb-toggle-right dropdown" data-toggle="dropdown" href="#">
@@ -160,6 +154,7 @@
                   </script>
                 </div><!-- dropdown menu -->
               </li><!-- dropdown -->
+
               <li class="dropdown">
                 <div class="sb-toggle-right dropdown" data-toggle="dropdown" href="#">
                   <i class="fa fa-gear fa-2x empty" style="padding-top: 10px; padding-right: 12px;" id="notifications"></i>
@@ -173,7 +168,8 @@
                   <li class="divider"></li>
                   <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
                 </ul>
-              </li>
+              </li><!-- dropdown -->
+
             </ul>
           </div>
         </div>

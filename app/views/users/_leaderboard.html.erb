@@ -1,0 +1,14 @@
+<div class="col-right-top-section">
+  <h3>Leaderboard</h3>
+</div>
+<div class="col-right-bottom">
+  <ul class="leaderboard">
+    <% @leaders.each do |leader| %>
+      <li>
+        <%= image_tag(leader.avatar.url(:large)) %>
+        <p><%= leader.full_name %></p>
+        <p class="score"><%= leader.pcounter %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

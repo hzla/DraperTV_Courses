@@ -12,6 +12,7 @@ end
 # GET /posts
 # GET /posts.json
 def index
+  @leaders = User.where("pcounter is not null").order('pcounter DESC').limit(8)
   #@posts = Post.plusminus_tally.order('plusminus_tally desc').page(params[:page]).per(10)
   #listPosts = []
   #@posts = Post.plusminus_tally.order('plusminus_tally desc')

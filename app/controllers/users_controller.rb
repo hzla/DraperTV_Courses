@@ -8,9 +8,10 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @q = User.search(params[:q])
-    @users= @q.result(distinct: true).order('pcounter').page(params[:page]).per(25)
+    @users= @q.result(distinct: true).order('first_name').page(params[:page]).per(25)
 
-    @leaders = User.order('pcounter').limit(10)
+    #@leaders = User.where("pcounter is not null").order('pcounter DESC').limit(10)
+    @leaders = User.order('pcounter').limit(8)
   end
 
 

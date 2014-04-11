@@ -169,10 +169,14 @@ input[type="submit"] {
 }
 @media all and (min-width: 1001px) {
 	.course-tile {
-		width: 22%;
-		margin-right: 3%;
-		height: 280px;
+		width: 29%;
+		margin-right: 4%;
+		height: 260px;
 		margin-top: 20px;
+	}
+	.student-tile {
+		width: 20%;
+		margin-right: 3%;
 	}
 }
 @media all and (max-width: 1000px) and (min-width: 700px) { 
@@ -182,6 +186,9 @@ input[type="submit"] {
 		height: 350px;
 		margin-top: 20px;
 	}
+	.student-tile {
+
+	}
 }
 @media all and (max-width: 699px) { 
 		.course-tile {
@@ -189,6 +196,9 @@ input[type="submit"] {
 			margin-right: 0;
 			height: 350px;
 			margin-top: 10px;
+		}
+		.student-tile {
+
 		}
 	}
 .course-tile {
@@ -238,6 +248,111 @@ input[type="submit"] {
 		bottom: 0;
 		left: 0;
 		.bar { background-color: $teal; }
+	}
+}
+
+.student-tile {
+	display: block;
+	float: left;
+	overflow: hidden;
+	margin-bottom: 30px;
+	position: relative;
+	width: 21%;
+	margin-right: 1%;
+	margin-left: 1%;
+	height: auto;
+	padding: 1%;
+	.image {
+		position: relative;
+		width: 140px;
+		height: 140px;
+		background-size: contain;
+		margin: 1px;
+		border-radius: 3px;
+		overflow: hidden;
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+		.score {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			padding: 7px 12px;
+			display: block;
+			background: $bright-blue;
+
+			color: white;
+			font-size: 16px;
+			text-align: center;
+			letter-spacing: 1px;
+		}
+	}
+	.name {
+		font-size: 16px;
+		color: $gray-blue-dark;
+		padding-top: 8px;
+		width: 96%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		height: 18px;
+		font-weight: normal;
+	}
+	.program-info {
+		font-size: 12px;
+		color: $gray-lt;
+		height: 16px;
+		font-weight: bold;
+	}
+	.location {
+		font-size: 12px;
+		color: $gray-blue-lt;
+		height: 16px;
+		font-weight: bold;
+	}
+	&:hover {
+		.name { color: $blue; }
+		.image { outline: 1px solid $gray-blue-x-lt; }
+	}
+}
+
+.leaderboard {
+	margin-left: 0;
+	font-size: 14px;
+	color: $gray-blue;
+	font-weight: bold;
+	li {
+		display: block;
+		text-decoration: none;
+		clear: both;
+		margin-bottom: 15px;
+		min-height: 50px;
+		img {
+			float: left;
+			width: 40px;
+			height: 40px;
+			border-radius: 2px;
+			margin: 8px;
+		}
+		p {
+			padding-top: 10px;
+			padding-bottom: 0;
+			margin-bottom: 0;
+			margin-left: 62px;
+			width: calc(100% - 72px);
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		.score {
+			padding-top: 0;
+			color: $gray-blue-x-lt;
+			font-weight: normal;
+			letter-spacing: 1px;
+		}
 	}
 }
 
@@ -1060,19 +1175,26 @@ select:focus {
 }
 
 #event-show {
-	width: 70%;
+	width: 95%;
 	margin-left: 25px;
 	position: relative;
 	h1 { margin-top: 20px; }
+	.back a { margin-left: 0; }
 	.button-container {
 		position: absolute;
 		top: 0px;
-		right: 5px;
+		right: 80px;
 		.float { float: left; }
 		.button { 
 			margin-right: 10px; 
 			a { color: white; }
 		}
+	}
+	label {
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: 12px;
+		color: $gray-lt;
 	}
 }
  #event-table {
