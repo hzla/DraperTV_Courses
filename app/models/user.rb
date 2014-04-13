@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   attr_accessible :latitude, :longitude, :eventReminder
   attr_accessible :avatar, :tag_list, :ncounter, :pcounter
 
-  has_attached_file :avatar,
-    :styles => { :medium => "120x120#", :thumb => "40x40#" }, 
+  has_attached_file :avatar, 
+    :styles => { :medium => "120x120#", :thumb => "40x40#", :large => "220x220#" }, 
     :default_url => '/assets/avatars/missing.png',
     :bucket => 'duhonline',
     :storage => :s3,

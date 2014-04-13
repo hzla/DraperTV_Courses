@@ -1,117 +1,33 @@
 <%= subscribe_to "/layouts/assignments" %>
 
 <div class="top-section">
-  <h1><%= @user.full_name %></h1>
+  <div class="row">
+    <div class="top-column-main">
+      <div style="width: 100%; position: relative; display; block; padding-left: 20px;">
+        <h1><%= @user.full_name %></h1>
+      </div>
+
+    </div><!-- column main -->
+  </div><!-- row -->
 </div>
 
-<div class="back-button">
-    <%= link_to users_path do %>Back to Students<% end %>
-</div>
+<div class="column-main">
+  <div class="back-button">
+      <%= link_to users_path do %>Back to Students<% end %>
+  </div>
 
-<!-- <ul class="breadcrumb">
-  <li><%= link_to 'Students', users_path %> <span class="divider">/</span></li>
-  <li><%= @user.full_name %></li>
-</ul> -->
-
-
+<!-- ************************ -->
+<!-- ******** LEFT ********* -->
+<!-- ************************ -->
 
 <div class="profile-bottom">
-  <!-- ************************ -->
-  <!-- ******** LEFT ********* -->
-  <!-- ************************ -->
-
-  <div class="section-left">
-
-    <div id="profile-info">
-      <div class="info-section">
-
-          <!-- ** general info ** -->
-          <h2>General</h2>
-          <p><%= simple_format(@user.bio) %></p>
-          <table id="profile-about-table">
-            <tr>
-              <% if @user.online == "boarding" %>
-                <td class="icon"><i class="fa fa-building-o icon-muted" style="font-size: 12px;"></i></td>
-                <td><span> <%= @user.program %></span></td>
-              <% elsif @user.online == "online" %>
-                <td class="icon"><i class="fa fa-globe icon-muted" style="font-size: 12px;"></i></td>
-                <td><span> <%= @user.program %></span></td>
-              <% else %>
-                <td class="icon"><i class="fa fa-flash icon-muted" style="font-size: 14px;"></i></td>
-                <td><span> <%= @user.program %></span></td>
-              <% end %>
-            </tr>
-             <tr>
-              <td class="icon"><i class="fa fa-trophy"></i></td>
-              <td><%= @user.team %></td>
-            </tr>
-            <tr>
-              <td class="icon"><i class="fa fa-location-arrow"></i></td>
-              <td><%= @user.country %></td>
-            </tr>
-          </table>
-
-        <!-- ** contact info  ** -->
-        <h2>Contact Info</h2>
-          <table id="profile-about-table">
-            <tr>
-              <td class="icon"><i class="fa fa-envelope-o"></i></td>
-              <td><%= link_to "mailto:#{@user.email}", :target => "blank" do %><%= @user.email %><% end %></td>
-            </tr>
-          </table>
-          <!-- <div id="profile-info">
-            <% if (@user.facebook != '') && (@user.facebook != nil) %>
-              <%= link_to "#{@user.facebook}", :target => "blank" do %><img id="facebook"/><% end %>
-            <% end %>
-           <% if (@user.instagram != '') && (@user.instagram != nil) %>
-               <%= link_to "http://instagram.com/#{@user.instagram}", :target => "blank" do %><img id="instagram"/><% end %>
-            <% end %>
-             <% if (@user.twitter != '') && (@user.twitter != nil) %>
-              <%= link_to "http://twitter.com/#{@user.twitter}", :target => "blank" do %><img id="twitter"/><% end %>
-            <% end %>
-             <% if (@user.linkedin!= '') && (@user.linkedin != nil) %>
-               <%= link_to "#{@user.linkedin}", :target => "blank" do %><img id="linkedin"/><% end %>
-            <% end %>
-            <% if (@user.dribbble != '') && (@user.dribbble != nil) %>
-              <%= link_to "http://dribbble.com/#{@user.dribbble}", :target => "blank" do %><img id="dribbble"/><% end %>
-            <% end %>
-             <% if (@user.github != '') && (@user.github != nil) %>
-              <%= link_to "http://github.com/#{@user.github}", :target => "blank" do %><img id="github"/><% end %>
-            <% end %>
-             <% if (@user.angellist != '') && (@user.angellist != nil) %>
-              <%= link_to "http://angel.co/#{@user.angellist}", :target => "blank" do %><img id="angellist"/><% end %>
-            <% end %>
-        </div> -->
-
-        <!-- ** skills ** -->
-         <h2>Skills</h2>
-         <div class="skills-section">
-          <% @user.skills.each do |skill| %>
-            <%= link_to skill_path(skill) do %>
-              <div class="skill-tag"><%= skill.name %></div>
-            <% end %>
-          <% end %>
-        </div>
-
-      </div><!-- info-section -->
-
-    </div><!-- profile-info -->
-
-</div><!-- section-left -->
-
-
-<!-- ************************ -->
-<!-- ******** RIGHT ********* -->
-<!-- ************************ -->
-  
-<div class="section-right">
+    
   <ul class="nav nav-tabs" style="margin-top: 22px; margin-bottom: 20px;">
    <!--  <li class="active"><a href="#tab-activity" data-toggle="tab">Activity</a></li> -->
     <li class="active"><a href="#tab-assignments" data-toggle="tab">Assignments</a></li>
     <li><a href="#tab-milestones" data-toggle="tab">Milestones</a></li>
     <li><a href="#tab-quizzes" data-toggle="tab">Quizzes</a></li>
     <li><a href="#tab-badges" data-toggle="tab">Badges</a></li>
-    <!-- <li><a href="#tab-ip" data-toggle="tab">In Progress</a></li> -->
   </ul>
 
   <div class="tab-content">
@@ -246,7 +162,6 @@
     </div>
 
     <!-- ******** MILESTONES ********** -->
-   <!--  <div class="section-bar">Business Plan Milestones</div> -->
     <div class="tab-pane" id="tab-milestones">
 
       <% @assignments.each do |assignment| %>
@@ -275,17 +190,95 @@
           <% end %>
         <% end %>
       <% end %>
+      </div>
     </div>
-    <div style="display: block; height: 100px; width: 100%;"></div>
-
-    <!-- <div class="profile-posts">
-      <%= render "posts/posts" %>
-    </div> -->
   </div>
-</div>
-  
-    
 
-</div>
+</div><!-- column-main -->
 
+<!-- ******************** -->
+<!-- *** Right Column *** -->
+<!-- ******************** -->
+
+<div class="column-right" style="background:white;">
+  <div class="avatar">
+    <%= image_tag(@user.avatar.url(:large)) %>
+  </div>
+
+  <div id="profile-info">
+    <div class="info-section">
+
+        <!-- ** general info ** -->
+        <h2>General</h2>
+        <p><%= simple_format(@user.bio) %></p>
+        <table id="profile-about-table">
+          <tr>
+            <% if @user.online == "boarding" %>
+              <td class="icon"><i class="fa fa-building-o icon-muted" style="font-size: 12px;"></i></td>
+              <td><span> <%= @user.program %></span></td>
+            <% elsif @user.online == "online" %>
+              <td class="icon"><i class="fa fa-globe icon-muted" style="font-size: 12px;"></i></td>
+              <td><span> <%= @user.program %></span></td>
+            <% else %>
+              <td class="icon"><i class="fa fa-flash icon-muted" style="font-size: 14px;"></i></td>
+              <td><span> <%= @user.program %></span></td>
+            <% end %>
+          </tr>
+           <tr>
+            <td class="icon"><i class="fa fa-trophy"></i></td>
+            <td><%= @user.team %></td>
+          </tr>
+          <tr>
+            <td class="icon"><i class="fa fa-location-arrow"></i></td>
+            <td><%= @user.country %></td>
+          </tr>
+        </table>
+
+      <!-- ** contact info  ** -->
+      <h2>Contact Info</h2>
+        <table id="profile-about-table">
+          <tr>
+            <td class="icon"><i class="fa fa-envelope-o"></i></td>
+            <td><%= link_to "mailto:#{@user.email}", :target => "blank" do %><%= @user.email %><% end %></td>
+          </tr>
+        </table>
+        <!-- <div id="profile-info">
+          <% if (@user.facebook != '') && (@user.facebook != nil) %>
+            <%= link_to "#{@user.facebook}", :target => "blank" do %><img id="facebook"/><% end %>
+          <% end %>
+         <% if (@user.instagram != '') && (@user.instagram != nil) %>
+             <%= link_to "http://instagram.com/#{@user.instagram}", :target => "blank" do %><img id="instagram"/><% end %>
+          <% end %>
+           <% if (@user.twitter != '') && (@user.twitter != nil) %>
+            <%= link_to "http://twitter.com/#{@user.twitter}", :target => "blank" do %><img id="twitter"/><% end %>
+          <% end %>
+           <% if (@user.linkedin!= '') && (@user.linkedin != nil) %>
+             <%= link_to "#{@user.linkedin}", :target => "blank" do %><img id="linkedin"/><% end %>
+          <% end %>
+          <% if (@user.dribbble != '') && (@user.dribbble != nil) %>
+            <%= link_to "http://dribbble.com/#{@user.dribbble}", :target => "blank" do %><img id="dribbble"/><% end %>
+          <% end %>
+           <% if (@user.github != '') && (@user.github != nil) %>
+            <%= link_to "http://github.com/#{@user.github}", :target => "blank" do %><img id="github"/><% end %>
+          <% end %>
+           <% if (@user.angellist != '') && (@user.angellist != nil) %>
+            <%= link_to "http://angel.co/#{@user.angellist}", :target => "blank" do %><img id="angellist"/><% end %>
+          <% end %>
+      </div> -->
+
+      <!-- ** skills ** -->
+       <h2>Skills</h2>
+       <div class="skills-section">
+        <% @user.skills.each do |skill| %>
+          <%= link_to skill_path(skill) do %>
+            <div class="skill-tag"><%= skill.name %></div>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div><!-- info-section -->
+
+  </div><!-- profile-info -->
+
+</div><!-- column-right -->
 

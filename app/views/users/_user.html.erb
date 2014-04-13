@@ -1,0 +1,15 @@
+<%= link_to(user_path(user)) do %>
+	<li class="student-tile">
+		<div class="image">
+			<%= image_tag user.avatar.url(:large) %>
+			<% if user.pcounter != nil %>
+				<div class="score"><%= user.pcounter %></div>
+			<% else %>
+			<% end %>
+		</div>
+		<div class="name"><%= user.full_name %></div>
+		<div class="program-info"><%= user.program  %></div>
+		<div class="location"><%= user.country %></div>
+	</li>
+<% end %>
+
