@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
   load_and_authorize_resource
 
 	def index
-		@courses = Course.all 
+		@courses = Course.all
     @courses.sort! { |a, b| a.start_date <=> b.start_date }
     @current_courses = Course.includes(:assignments).find(:all, :conditions => ['start_date <= ?', DateTime.now])
     @current_courses.sort! { |a, b| a.start_date <=> b.start_date }

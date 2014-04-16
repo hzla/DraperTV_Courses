@@ -6,7 +6,7 @@ namespace :db do
     password = "password"
     studentProgram = 'admin'
     #[User].each(&:delete_all)
-    
+
     User.populate 5 do |person|
       person.first_name    = Faker::Name.first_name
       person.last_name    = Faker::Name.last_name

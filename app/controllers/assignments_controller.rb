@@ -1,7 +1,7 @@
 class AssignmentsController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
-  
+
 	def index
 		@assignments = Assignment.all
 	end
@@ -13,7 +13,7 @@ class AssignmentsController < ApplicationController
     @comment = UserComment.new
     @user_assignment = @assignment.user_assignments.where(:user_id => current_user[:id])
     @user = current_user
-		
+
 		if @assignment.category == "video" or @assignment.category == "reading" or @assignment.category == "founder"
 		  oembed = "http://vimeo.com/api/oembed.json?url=http%3A//vimeo.com/" + @assignment.vimeo_url + '&autoplay=1'
     	puts (Curl::Easy.perform(oembed).body_str)["html"]
@@ -38,34 +38,34 @@ class AssignmentsController < ApplicationController
         @user_assignment = @assignment.user_assignments.create(
           :assignment_id => @assignment.id,
           :user_id => current_user[:id],
-          :point_value => 100       
+          :point_value => 100
         )
-        
+
       elsif @assignment.category == "milestone"
         @user_assignment = @assignment.user_assignments.create(
           :assignment_id => @assignment.id,
           :user_id => current_user[:id],
-          :point_value => 0        
+          :point_value => 0
         )
-       
+
       elsif @assignment.category == "upload"
          @user_assignment = @assignment.user_assignments.create(
           :assignment_id => @assignment.id,
           :user_id => current_user[:id],
           :point_value => 0
         )
-        
+
        else
          @user_assignment = @assignment.user_assignments.create(
           :assignment_id => @assignment.id,
           :user_id => current_user[:id],
-          :point_value => 10        
+          :point_value => 10
         )
-        
+
        end
 
       @user.update_attribute(:pcounter, UserAssignment.sum('point_value'))
-      PrivatePub.publish_to("/layouts/points", 
+      PrivatePub.publish_to("/layouts/points",
         "$('.pcounter p').text(<%= current_user.pcounter %>);")
     end
 

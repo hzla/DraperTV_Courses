@@ -34,7 +34,7 @@
           <td class="icon"><i class="fa fa-bookmark"></i></td>
           <td>
             <% if @event.user_id %>
-              Created by 
+              Created by
               <%= link_to(student_profile_path(User.find_by_id(@event.user_id))) do %>
                 <%= User.find_by_id(@event.user_id).full_name %>
               <% end %>

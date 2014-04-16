@@ -19,7 +19,7 @@ private
   def markdown(text)
     Redcarpet.new(text, :hard_wrap, :filter_html, :autolink).to_html.html_safe
   end
-  
+
   def method_missing(*args, &block)
     @template.send(*args, &block)
   end

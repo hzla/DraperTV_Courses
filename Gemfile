@@ -44,7 +44,7 @@ group :assets do
   gem 'sass-rails', '~> 4.0.0'
   gem 'compass-rails'
   gem 'coffee-rails', '~> 4.0.0'
-  gem "ransack" 
+  gem "ransack"
   gem 'uglifier', '>= 1.3.0'
 end
 
@@ -62,7 +62,7 @@ group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'
   gem 'hirb' #use Hirb.enable to enable it / text to Column
-  gem 'awesome_print', :require => 'ap' 
+  gem 'awesome_print', :require => 'ap'
   gem 'wirble'
   gem 'railroady' #run this command: rake diagram:all
   gem "bullet" # it always works unless you remove the initilzer

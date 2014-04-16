@@ -19,12 +19,12 @@ ActiveAdmin.register Course do
      f.inputs :badge_vimeo
      f.inputs :length
      f.inputs :course_icon,
-      :styles => { :medium => "120x120#", :thumb => "40x40#" }, 
+      :styles => { :medium => "120x120#", :thumb => "40x40#" },
       :bucket => 'duhonline',
       :storage => :s3,
       :s3_credentials => "#{Rails.root}/config/s3.yml"
      f.inputs :tile_image,
-      :styles => { :medium => "260x320#", :thumb => "80x80#" }, 
+      :styles => { :medium => "260x320#", :thumb => "80x80#" },
       :bucket => 'duhonline',
       :storage => :s3,
       :s3_credentials => "#{Rails.root}/config/s3.yml"

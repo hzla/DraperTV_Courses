@@ -19,12 +19,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    
+
     @user = User.friendly.find(params[:id])
     @courses = Course.all
     @assignments = Assignment.all
     @user_assignments = UserAssignment.all
-  
+
     if @user
       render action: :show
     else
@@ -127,7 +127,7 @@ class UsersController < ApplicationController
   #       :street_address, :twitter, :zip, :online, :employment,
   #       :avatar, :tag_list, :ncounter,
   #       :latitude, :longitude,
-  #       :name, :skill_ids) 
+  #       :name, :skill_ids)
 
 
   #   end

@@ -10,7 +10,7 @@
     <tr>
       <td><%= f.input :first_name, label: "First Name" %></td>
       <td><%= f.input :last_name, label: "Last Name" %></td>
-    </tr> 
+    </tr>
     <tr>
       <td>
         <div class="field">
@@ -19,7 +19,7 @@
         </div>
       </td>
       <td><%= f.input :team, label: "Team", collection: ["Angels", "Magic", "Titans", "Phoenix", "Lightning", "Tornados", "Lanterns", "Wonders", "Blizzards"] %></td>
-    </tr> 
+    </tr>
   </table>
 
   <%= f.input :bio, label: "Short Bio", :input_html => { :rows => 5 } %>
@@ -33,7 +33,7 @@
     </tr>
   </table>
 
-  
+
 
   <div class="simple_form_section">Contact Info</div>
   <table>
@@ -65,7 +65,7 @@
       <td><%= f.input :instagram, label: "Instagram (Name only)" %></td>
       <td><%= f.input :dribbble, label: "Dribbble Handle" %></td>
     </tr>
-  </table> 
+  </table>
 
   <div class="simple_form_section">Email and Password</div>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -78,7 +78,7 @@
         <%= f.email_field :email, label: "" %>
       </td>
       <td>
-        
+
       </td>
     </tr>
     <tr>

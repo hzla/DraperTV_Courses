@@ -21,7 +21,7 @@
 <!-- ************************ -->
 
 <div class="profile-bottom">
-    
+
   <ul class="nav nav-tabs" style="margin-top: 22px; margin-bottom: 20px;">
    <!--  <li class="active"><a href="#tab-activity" data-toggle="tab">Activity</a></li> -->
     <li class="active"><a href="#tab-assignments" data-toggle="tab">Assignments</a></li>
@@ -126,7 +126,7 @@
             <% @ua = UserAssignment.where(:id => assignment.user_assignments.where(:user_id => @user[:id]).first.id).first
                @commentable = @ua
                @comments = @commentable.user_comments.order(:created_at)
-               @comment = UserComment.new 
+               @comment = UserComment.new
               %>
               <div id="assignments">
                 <div class="section">
@@ -170,7 +170,7 @@
              <% @ua = UserAssignment.where(:id => assignment.user_assignments.where(:user_id => @user[:id]).first.id).first
                @commentable = @ua
                @comments = @commentable.user_comments.order(:created_at)
-               @comment = UserComment.new 
+               @comment = UserComment.new
               %>
             <div id="milestones">
               <div class="section">

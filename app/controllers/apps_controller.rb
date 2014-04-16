@@ -1,16 +1,16 @@
 class AppsController < ApplicationController
   def index
-    @apps = App.all 
+    @apps = App.all
     @apps.sort! { |a, b| a.created_at <=> b.created_at }
   end
-  
+
   def new
     @app = App.new
     if user_signed_in?
       redirect_to courses_path
     end
   end
-  
+
   def create
     @app = App.new(params[:app])
 

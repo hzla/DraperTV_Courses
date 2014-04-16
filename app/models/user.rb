@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   attr_accessible :latitude, :longitude, :eventReminder
   attr_accessible :avatar, :tag_list, :ncounter, :pcounter
 
-  has_attached_file :avatar, 
-    :styles => { :medium => "120x120#", :thumb => "40x40#", :large => "220x220#" }, 
+  has_attached_file :avatar,
+    :styles => { :medium => "120x120#", :thumb => "40x40#", :large => "220x220#" },
     :default_url => '/assets/avatars/missing.png',
     :bucket => 'duhonline',
     :storage => :s3,
@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :skill_ids
   has_many :authorships
   has_many :skills, through: :authorships
-  
+
   has_many :activities
   has_many :posts
   has_many :messages
@@ -53,12 +53,12 @@ class User < ActiveRecord::Base
 
   SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
 
-  
-  
+
+
   def self.cached_find(id)
     Rails.cache.fetch([first_name, id], expires_in: 5.minutes) { find(id) }
   end
-  
+
   def flush_cache
     Rails.cache.delete([self.class.first_name, id])
   end

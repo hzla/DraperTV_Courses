@@ -5,7 +5,7 @@
         <h1>Courses</h1>
       </div>
     </div><!-- column main -->
-    
+
   </div><!-- row -->
 </div>
 
@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <% end %> 
+      <% end %>
     <% end %>
 
   <% elsif current_user.program == "Winter 2014" %>
@@ -51,9 +51,9 @@
             </div>
           </div>
         </div>
-    	<% end %> 
+    	<% end %>
     <% end %>
-    
+
     <% @locked_courses.each do |locked_course| %>
       <div class="course-wrapper">
         <div class="course-tile" style="background-image: url(<%= locked_course.tile_image %>);">

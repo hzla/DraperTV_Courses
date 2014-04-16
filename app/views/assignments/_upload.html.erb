@@ -20,10 +20,10 @@
 </div>
 
 
-<div class="edit-form" style="width: 90%;">  
+<div class="edit-form" style="width: 90%;">
   <%= simple_form_for [@user_assignment.first], :html => { :method => :put, :multipart => true } do |f| %>
       <%= f.input :text, :as => :ckeditor, label: "Response (required)", :input_html => { :ckeditor => { :toolbar => 'Pure'} }, :required => true %>
-      
+
       <!-- show upload only if category is upload -->
       <% if @assignment.category == "upload" %>
         <% #f.input :link, label: "Url Link (optional)" %>

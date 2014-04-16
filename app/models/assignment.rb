@@ -1,6 +1,5 @@
 class Assignment < ActiveRecord::Base
 
- 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :finders]
 
@@ -10,7 +9,7 @@ class Assignment < ActiveRecord::Base
   has_many :user_assignments
   has_many :user_comments, as: :commentable
   has_attached_file :speaker_pic,
-    :styles => { :large => "200x200#" }, 
+    :styles => { :large => "200x200#" },
     :default_url => "/assets/missing/missing.png",
     :bucket => 'duhonline'
 
@@ -45,4 +44,4 @@ class Assignment < ActiveRecord::Base
 
 end
 
- 
+

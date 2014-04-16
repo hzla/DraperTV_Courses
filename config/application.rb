@@ -30,7 +30,7 @@ module OnlineSchool
      # config.active_record.default_timezone = 'Eastern Time (US & Canada)'
 
     #config.active_record.default_timezone = :local
-    
+
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
@@ -74,7 +74,7 @@ module OnlineSchool
     config.assets.enabled = true
     config.assets.precompile += Ckeditor.assets
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
-    
+
   end
 end
 

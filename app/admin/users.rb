@@ -35,11 +35,11 @@ ActiveAdmin.register User do
      f.inputs :city
      f.inputs :state
      f.inputs :zip
-     f.inputs :country 
+     f.inputs :country
      f.inputs :eventReminder
      f.inputs :password
      f.inputs :avatar,
-      :styles => { :medium => "120x120#", :thumb => "40x40#" }, 
+      :styles => { :medium => "120x120#", :thumb => "40x40#" },
       :bucket => 'duhonline',
       :storage => :s3,
       :s3_credentials => "#{Rails.root}/config/s3.yml"

@@ -5,7 +5,7 @@
 </div>
 
 <div class="back-button">
-  <%= link_to @assignment.course.title, course_path(@assignment.course) %> 
+  <%= link_to @assignment.course.title, course_path(@assignment.course) %>
 </div>
 
 <!-- split panel if speaker info available -->
@@ -16,7 +16,7 @@
   	   <%= raw @video_embed %>
      </div>
   	<br /><br />
-  	
+
     <div id="comments-bar">class discussion</div>
     <div id="comments_container">
       <div id="<%= @assignment.id %>">
@@ -51,7 +51,7 @@
            </li>
            <% end %>
           </ul> -->
-        </div> 
+        </div>
       </div>
     <% end %>
   <% end %>
@@ -107,7 +107,7 @@
         <%= render 'upload' %>
       <% end %>
     <% end %>
-  <% end %> 
+  <% end %>
 
 </div> <!-- end span10 -->
 

@@ -21,6 +21,6 @@ class ActiveSupport::Logger::SimpleFormatter
       "[#{severity}]" # none
     end
   end
-  
+
 end
 

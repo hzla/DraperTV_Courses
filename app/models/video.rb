@@ -11,11 +11,11 @@ class Video < ActiveRecord::Base
   has_many :user_comments, as: :commentable
   validates_presence_of :slug
   has_attached_file :speaker_pic,
-    :styles => { :large => "300x300#" }, 
+    :styles => { :large => "300x300#" },
     :default_url => "/images/icon_missing.png",
     :bucket => 'duhonline'
-  has_attached_file :video_pic, 
-    :styles => { :large => "300x300#" }, 
+  has_attached_file :video_pic,
+    :styles => { :large => "300x300#" },
     :default_url => "/images/icon_missing.png",
     :bucket => 'duhonline'
 end

@@ -1,10 +1,9 @@
 class Post < ActiveRecord::Base
   after_commit :flush_cache
-
   attr_accessible :content, :user_id, :title, :category
   attr_accessible :file
   has_attached_file :file,
-				    :styles => { :medium => "120x120#", :preview => "408x308#" }, 
+				    :styles => { :medium => "120x120#", :preview => "408x308#" },
 				    :bucket => 'duhonline',
 				    :storage => :s3,
 				    :s3_credentials => "#{Rails.root}/config/s3.yml",
@@ -21,7 +20,7 @@ class Post < ActiveRecord::Base
 
 
   def plusminus
-    
+
   end
 
   def cached_user
@@ -31,7 +30,7 @@ class Post < ActiveRecord::Base
   def self.cached_find(id)
     Rails.cache.fetch([first_name, id]) { find(id) }
   end
-  
+
   def flush_cache
     Rails.cache.delete([self.class.first_name, id])
   end

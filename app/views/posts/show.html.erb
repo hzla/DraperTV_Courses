@@ -35,10 +35,10 @@
           <div class="vote-count" id="votes-<%= @post.id %>"><%= @postvotes %></div>
         </div><!-- upvote -->
 
-      <!-- image --> 
-      
+      <!-- image -->
+
       <!-- content -->
-      
+
         <div class="content">
           <% if current_user.id == @post.user_id %>
             <div class="title">
@@ -55,7 +55,7 @@
           <% end %>
 
            <div class="info">
-            <%= @totalcomments.count %> Comments - 
+            <%= @totalcomments.count %> Comments -
             Posted by <%= link_to student_profile_path(@user) do %>
             <span class="name"><%= @user.full_name %></span> <% end %> on <%= @post.created_at.to_date.to_formatted_s( :long_ordinal ) %>
             <br/>
@@ -63,20 +63,20 @@
               <% if @voters.count == 0 %>
                 No Upvotes
               <% elsif @voters.count < 6 %>
-                Upvotes by 
+                Upvotes by
                 <% @voters.each_with_index do |voter, index| %>
                   <% if index == @voters.length - 1 %>
                    and <%= voter.first_name %>
                   <% elsif index == @voters.length - 2 %>
-                    <%= voter.first_name %> 
+                    <%= voter.first_name %>
                   <% else %>
-                    <%= voter.first_name %>, 
+                    <%= voter.first_name %>,
                   <% end %>
                 <% end %>
               <% elsif @voters.count > 5 %>
-                Upvotes by 
+                Upvotes by
                 <% @voters.first(5).each do |voter| %>
-                  <%= voter.first_name %>, 
+                  <%= voter.first_name %>,
                 <% end %>
                 and <%= @voters.count - 5 %> more
               <% else %>
