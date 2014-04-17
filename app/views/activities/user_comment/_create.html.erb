@@ -3,7 +3,6 @@
 <% if user_comment %>
   <%-#+++++ Creating a list of objects that the current user have COMMENTED on ++++ %>
   <% commentableIDs = [] %>
-  <% @comments = UserComment.all %>
   <% @comments.each do |com| %>
     <% if com.user_id ==  current_user.id %>
       <% commentableIDs << com.commentable_id %>

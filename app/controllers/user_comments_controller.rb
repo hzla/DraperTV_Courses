@@ -188,7 +188,6 @@ end
         end
       else
       end # end of if @comment.commentable_type block
-      rescue
       if @comment.save
         track_activity @comment
         #refresh_dom_with_partial('div#comments_container', 'comments')
