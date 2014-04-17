@@ -1,5 +1,5 @@
 body, html {
-  height: 100%; 
+  height: 100%;
 }
 
 h4 {
@@ -80,9 +80,9 @@ h4 {
         color: $gray;
         &:hover { color: $blue; }
       }
-      .name { 
+      .name {
         float: left;
-        margin-left: 0; 
+        margin-left: 0;
         font-size: 13px;
         color: $blue;
         margin-right: 4px;
@@ -131,7 +131,7 @@ h4 {
   }
 }
 
-.navbar { 
+.navbar {
   background: #246db4; /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iIzI0NmRiNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyOTg5ZDgiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMjA3Y2NhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzdkYjllOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
@@ -143,7 +143,7 @@ h4 {
   background: linear-gradient(135deg,  #246db4 10%,#2989d8 100%,#207cca 100%,#7db9e8 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#246db4', endColorstr='#7db9e8',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
 }
-.navbar-inner { 
+.navbar-inner {
   background: none;
   max-height: 42px;
   min-height: 42px;
@@ -151,7 +151,7 @@ h4 {
   box-shadow: none;
   font-weight: 300;
   letter-spacing: 0.3px;
-  .container { 
+  .container {
     max-width: 100%;
     width: 100%;
     background: none;
@@ -179,7 +179,7 @@ h4 {
       padding-top: 10px;
       letter-spacing: 1px;
     }
-    
+
     .sb-toggle-right {
       position: relative;
       right: 22px;
@@ -188,8 +188,8 @@ h4 {
       #notifications {
         font-size: 15px;
         color: #B3CBEB;
-        &:hover { 
-          opacity: 0.8; 
+        &:hover {
+          opacity: 0.8;
           cursor: pointer;
         }
       }
@@ -223,12 +223,12 @@ h4 {
       left: 14px;
       top: 18px;
       overflow: hidden;
-      &:hover { 
-        opacity: 0.7; 
+      &:hover {
+        opacity: 0.7;
         cursor: pointer;
       }
-      #menu-icon { 
-        background-image: image-url('menu-icon.png'); 
+      #menu-icon {
+        background-image: image-url('menu-icon.png');
         background-repeat: no-repeat;
         display: block;
         width: 17px;
@@ -248,16 +248,16 @@ h4 {
         margin-top: -1px;
       }
     }
-    
+
     .logo {
 
-    } 
-    li a { 
+    }
+    li a {
 
     }
-    .dropdown { 
+    .dropdown {
 
-      a { 
+      a {
         color: white;
         text-shadow: none;
         font-weight: 300;
@@ -265,7 +265,7 @@ h4 {
         &:hover {
           color: white;
           text-shadow: none;
-        .caret { 
+        .caret {
           //border-color: white;
           &:hover {  }
           }
@@ -356,13 +356,13 @@ h4 {
           letter-spacing: 0.3px;
         }
       }
-      
+
       &:hover {
         background: $gray-x-lt;
         .name { color: $blue; }
       }
     }
-    
+
     .main {
       display: block;
       margin-top: 69px;
@@ -401,7 +401,7 @@ h4 {
       }
 
     &:hover {
-      a, i, .title { 
+      a, i, .title {
         color: $blue;
       }
       background: $gray-x-lt;
@@ -424,22 +424,22 @@ h4 {
   display: block;
   float: left;
   margin-left: 185px;
-  padding-bottom: 50px;
-  margin-bottom: 80px;
+  //padding-bottom: 50px;
+  //margin-bottom: 80px;
   width: calc(100% - 185px);
   background: white;
   position: relative;
-  height: 100%; 
+  height: 100%;
   .column-main {
     display: block;
-    
+
     padding-left: 20px;
     float: left;
     margin-top: 90px;
   }
   .top-column-main {
     display: block;
-    
+
     padding-left: 20px;
     float: left;
   }
@@ -452,6 +452,7 @@ h4 {
     width: calc(26% - 60px);
     border-left: 1px solid #ccc;
     z-index: 1000;
+    //overflow-x: auto;
     .col-right-top-section {
       height: 67px;
       width: calc(100% - 20px);
@@ -475,17 +476,75 @@ h4 {
       display: block;
       margin-top: 80px;
       width: calc(100% - 40px);
-      padding: 0 20px;
+      padding: 0px 20px;
+    }
+    .col-right-comments {
+      display: block;
+      margin-top: 70px;
+      width: calc(100% -20px);
+      padding: 10px 20px;
+      height: calc(100% - 230px);
+      overflow-x: auto;
+      #comments {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 12px;
+        .picture {
+          border-radius: 30px;
+          overflow: hidden;
+          width: 25px;
+          height: 25px;
+          padding-right: 0;
+        }
+        .timestamp { display: none; }
+        .name {
+          font-size: 12px;
+          margin-left: 35px;
+          a { color: $blue; }
+        }
+        .content { margin-left: 35px; clear: both; }
+      }
+    }
+    .col-right-addcomment {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 140px;
+        width: 100%;
+        border-top: 1px solid $gray-lt;
+        background: white;
+        #comment_form {
+          width: 100%;
+          margin:0;
+          textarea {
+            margin: 0;
+            width: 100%;
+            border: none;
+            height: 90px;
+            &:focus { border: none; outline: none; box-shadow: none; }
+            &:active { border: none; outline: none; box-shadow: none; }
+          }
+        }
+      }
+    .profile {
+      display: block;
+      width: calc(100% - 20px);
+      margin-left: 10px;
+      margin-right: 10px;
     }
     .avatar {
       display: block;
       width: 100%;
-      height: 250px;
+      height: 180px;
+      border-bottom: 1px solid $gray-x-lt;
       img {
         width: 120px;
         height: 120px;
         margin-top: 25px;
-        margin-left: 75px;
+        margin-bottom: 25px;
+        margin-left: 65px;
+        border-radius: 3px;
       }
     }
   }
@@ -498,9 +557,9 @@ h4 {
     position: fixed;
     background: white;
     z-index: 100;
-    .row { 
-      height: 100%; 
-      .span9 { 
+    .row {
+      height: 100%;
+      .span9 {
         h1 { padding-left: 25px; }
       }
       .span3 { border-left: 1px solid #eee; height: 100%; }
@@ -531,8 +590,8 @@ h4 {
       padding-top: 18px;
     }
   }
-  .back a { 
-    color: $blue; 
+  .back a {
+    color: $blue;
     font-size: 12px;
     font-weight: bold;
     //margin-left: 25px;
@@ -557,7 +616,7 @@ h4 {
     padding: 5px;
     font-size: 22px;
   }
-  i { 
+  i {
     font-size: 14px;
     padding: 8px;
   }
@@ -569,9 +628,9 @@ h4 {
   font-size: 12px;
   font-weight: normal;
   li {
-    a { 
-      color: $blue-0; 
-      font-weight: bold; 
+    a {
+      color: $blue-0;
+      font-weight: bold;
       &:hover { color: $blue-2; }
     }
   }
@@ -683,7 +742,7 @@ h4 {
 //**** Media Queries ***//
 //**********************//
 
-@media all and (min-width: 1001px) { 
+@media all and (min-width: 1001px) {
   .course-show-left {
 
   }
@@ -691,7 +750,7 @@ h4 {
   .column-main {  width: calc(74% - 20px); }
   .column-right { display: block; }
 }
-@media all and (max-width: 1000px) and (min-width: 700px) {  
+@media all and (max-width: 1000px) and (min-width: 700px) {
   .column-main { width: 100%; }
   .top-column-main { width: calc(100% - 40px); }
   .column-right { display: none; }
@@ -705,13 +764,13 @@ h4 {
     }
   }
   .course-show-right {
-    width: 100%; 
+    width: 100%;
     margin-top: 60px;
   }
   .column-main { }
   .right-score { left: 185px;}
 }
-@media all and (max-width: 699px) { 
+@media all and (max-width: 699px) {
   .column-main { width: 100%; }
   .top-column-main { width: calc(100% - 40px); }
   .column-right { display: none; }
@@ -726,7 +785,7 @@ h4 {
     }
   }
   .course-show-right {
-    width: 100%; 
+    width: 100%;
     margin-top: 60px;
     .video-information {
       width: calc(95% - 60px);
@@ -734,7 +793,7 @@ h4 {
     .complete {
       width: 45px;
       height: 45px;
-      background-size: contain; 
+      background-size: contain;
     }
     .right-score { left: 185px;}
     .pic {

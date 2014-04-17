@@ -9,7 +9,7 @@
 
           <div id="user-search-form">
             <%= search_form_for @q do |f| %>
-              
+
                 <div class="filter">
                   <%= f.text_field :last_name_or_first_name_or_country_cont, :placeholder => "Name, Country, Team" %>
                 </div>
@@ -17,17 +17,17 @@
                   <%= f.label :program_type_cont, 'Type' %>
                   <%= f.select :online_cont, ['boarding', 'online'], include_blank: true %>
                 </div>
-                
+
                 <div class="filter">
                   <%= f.label :s, 'Sort by' %>
                   <%= f.collection_select :s, User::SORT_FIELDS.to_a, :first, :last, selected: users_sort_value, include_blank: false %>
-                </div>  
+                </div>
                 <div class="filter">
                   <%= f.submit 'Filter', :id => "filter-submit" %>
-                </div>   
+                </div>
 
                 <% end %>
-            
+
           </div><!-- user-search-form -->
         </div>
       </div>
@@ -35,11 +35,11 @@
   </div><!-- row -->
 </div>
 
-  
+
 
 <div class="row" style="height: 100%;">
 
-   <div class="column-main" style="margin-top: 97px;"> 
+   <div class="column-main" style="margin-top: 97px;">
     <div id="alumni-container">
       <ul id="users" style="margin:0;">
         <%= render @users %>

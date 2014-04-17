@@ -32,7 +32,7 @@ h3 {
 }
 
 input[type="submit"] {
-		@include button-green; 
+		@include button-green;
 		@include rounded-corners;
 	}
 
@@ -52,8 +52,8 @@ input[type="submit"] {
 
 #error_explanation {
 	color: $red;
-	h2 { 
-		font-size: 18px; 
+	h2 {
+		font-size: 18px;
 	}
 	ul {
 		font-weight: 700;
@@ -63,8 +63,8 @@ input[type="submit"] {
 /****** NAVBAR *******/
 /*********************/
 
-#logo { 
-  background-image: image-url('DU_Logo_Flat_White.svg'); 
+#logo {
+  background-image: image-url('DU_Logo_Flat_White.svg');
   background-repeat: no-repeat;
   background-size: contain;
   display: block;
@@ -78,8 +78,8 @@ input[type="submit"] {
   top: 10px;
 
 }
-#logged-out-logo { 
-  background-image: image-url('logo-with-text.png'); 
+#logged-out-logo {
+  background-image: image-url('logo-with-text.png');
   background-repeat: no-repeat;
   display: block;
   width: 145px;
@@ -107,8 +107,8 @@ input[type="submit"] {
 	.dropdown {
 		font-size: 14px;
 
-		.caret { 
-			border-top: 4px solid $gray-lt; 
+		.caret {
+			border-top: 4px solid $gray-lt;
 			&:hover { border-top: 4px solid $gray-lt; }
 			&:active { border-top: 4px solid $gray-lt; }
 		}
@@ -143,8 +143,8 @@ input[type="submit"] {
 	background-color:rgba(155,155,155,0.7);
 	width: 100%;
 	height: 280px;
-	i { 
-		color: white; 
+	i {
+		color: white;
 		margin: 0 auto;
 		margin-top: 40%;
 		margin-left: calc(50% - 22px);
@@ -179,7 +179,7 @@ input[type="submit"] {
 		margin-right: 3%;
 	}
 }
-@media all and (max-width: 1000px) and (min-width: 700px) { 
+@media all and (max-width: 1000px) and (min-width: 700px) {
 	.course-tile {
 		width: 46%;
 		margin-right: 4%;
@@ -190,7 +190,7 @@ input[type="submit"] {
 
 	}
 }
-@media all and (max-width: 699px) { 
+@media all and (max-width: 699px) {
 		.course-tile {
 			width: 100%;
 			margin-right: 0;
@@ -218,7 +218,7 @@ input[type="submit"] {
 		width: 80%;
 		margin: 0 auto;
 		margin-top: 25px;
-		padding: 20px 10px 10px 10px; 
+		padding: 20px 10px 10px 10px;
 		.title {
 			font-weight: 300;
 			font-size: 26px;
@@ -450,17 +450,17 @@ input[type="submit"] {
 	height: 10px;
 	margin-left: 0px;
 	margin-bottom: 0px;
-	/* IE10 Consumer Preview */ 
+	/* IE10 Consumer Preview */
 	background-image: -ms-linear-gradient(top right, #E8E8E8 0%, #CCCCCC 100%);
-	/* Mozilla Firefox */ 
+	/* Mozilla Firefox */
 	background-image: -moz-linear-gradient(top right, #E8E8E8 0%, #CCCCCC 100%);
-	/* Opera */ 
+	/* Opera */
 	background-image: -o-linear-gradient(top right, #E8E8E8 0%, #CCCCCC 100%);
-	/* Webkit (Safari/Chrome 10) */ 
+	/* Webkit (Safari/Chrome 10) */
 	background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #E8E8E8), color-stop(1, #CCCCCC));
-	/* Webkit (Chrome 11+) */ 
+	/* Webkit (Chrome 11+) */
 	background-image: -webkit-linear-gradient(top right, #E8E8E8 0%, #CCCCCC 100%);
-	/* W3C Markup, IE10 Release Preview */ 
+	/* W3C Markup, IE10 Release Preview */
 	background-image: linear-gradient(to bottom left, #E8E8E8 0%, #CCCCCC 100%);
 
 	.bar {
@@ -491,7 +491,7 @@ input[type="submit"] {
 		margin-bottom: 30px;
 	}
 
-	
+
 
 	.inner {
 		display: block;
@@ -528,7 +528,7 @@ input[type="submit"] {
 		padding-left: 2px;
 	}
 
-	
+
 }
 
 .progress-span {
@@ -553,7 +553,6 @@ input[type="submit"] {
 	overflow: hidden;
 	width: calc(70% - 25px);
 	margin-left: 25px;
-	margin-top: 10px;
 }
 #speaker_container {
 	width: 25%;
@@ -728,8 +727,8 @@ input[type="submit"] {
 			color: $gray;
 		}
 	}
-	p { 
-		color: $gray-dark; 
+	p {
+		color: $gray-dark;
 		font-size: 14px;
 	}
 }
@@ -743,8 +742,8 @@ input[type="submit"] {
 	font-size: 12px;
 	font-weight: 700;
 
-	&:hover { 
-		color: white; 
+	&:hover {
+		color: white;
 		background: $blue-hover;
 	}
 }
@@ -759,8 +758,8 @@ input[type="submit"] {
 	font-size: 12px;
 	font-weight: 700;
 
-	&:hover { 
-		color: white; 
+	&:hover {
+		color: white;
 		background: $yellow-hover;
 	}
 }
@@ -793,7 +792,7 @@ input[type="submit"] {
 	padding-bottom: 13px;
 	display: block;
 }
-.quiz-score { 
+.quiz-score {
 	font-size: 22px;
 	font-weight: 500px;
 	color: $gray;
@@ -832,9 +831,9 @@ input[type="submit"] {
 	}
 }
 .new_survey_attempt {
-	width: 85%; 
-	ul { 
-		list-style-type: none; 
+	width: 85%;
+	ul {
+		list-style-type: none;
 		margin-left: 0;
 
 		li {
@@ -848,15 +847,15 @@ input[type="submit"] {
 			padding-left: 20px;
 			border-top: 1px solid $gray-x-lt;
 
-			p { 
-				font-weight: 700; 
+			p {
+				font-weight: 700;
 				color: #333;
 				font-size: 16px;
 
 				padding-bottom: 5px;
 			}
-			input { 
-				margin-left: 15px; 
+			input {
+				margin-left: 15px;
 				margin-top: -3px;
 				margin-right: 10px;
 			}
@@ -871,7 +870,7 @@ input[type="submit"] {
 		}
 	}
 	input[type="submit"] {
-		@include button-green; 
+		@include button-green;
 		@include rounded-corners;
 		margin-top: 20px;
 		margin-left: 20px;
@@ -918,7 +917,7 @@ input[type="submit"] {
 
 		.icon-section {
 			display: block;
-			float:left; 
+			float:left;
 			width: 78px;
 			.image {
 				width: 50px;
@@ -1075,7 +1074,7 @@ select:focus {
 	border-bottom: none;
 	text-transform: uppercase;
 	color: $gray-x-lt;
-	font-size: 13px;	
+	font-size: 13px;
 	font-weight: 700;
 
 	li {
@@ -1100,16 +1099,16 @@ select:focus {
 	  border-right: 1px solid $gray-x-lt;
 		font-weight: 700;
 
-		a { 
+		a {
 			color: $gray-med;
 
-			&:hover { 
+			&:hover {
 				border: none;
 				background: none;
 				color: $gray-med;
 			}
-			&:focus { 
-				background: none; 
+			&:focus {
+				background: none;
 			}
 		}
 	}
@@ -1156,8 +1155,8 @@ select:focus {
 			max-width: 14.28%;
 			width: 14.28%;
 		}
-		a { 
-			color: $blue; 
+		a {
+			color: $blue;
 			display: block;
 			font-weight: bold;
 			font-size: 12px;
@@ -1185,8 +1184,8 @@ select:focus {
 		top: 0px;
 		right: 80px;
 		.float { float: left; }
-		.button { 
-			margin-right: 10px; 
+		.button {
+			margin-right: 10px;
 			a { color: white; }
 		}
 	}
@@ -1264,25 +1263,25 @@ footer .container {
 /****** RESPONSIVE ******/
 /************************/
 
-@media all and (min-width: 1001px) { 
+@media all and (min-width: 1001px) {
 	#assignment_container {
-		width: 100%;
+		width: calc(100% - 60px);
 	}
 	#speaker_container {
 		display: block;
 	}
 }
-@media all and (max-width: 1000px) and (min-width: 700px) { 
+@media all and (max-width: 1000px) and (min-width: 700px) {
 	#assignment_container {
-		width: 100%;
+		width: calc(100% - 60px);
 	}
 	#speaker_container {
 		display: none;
 	}
 }
-@media all and (max-width: 699px) { 
+@media all and (max-width: 699px) {
 	#assignment_container {
-		width: 100%;
+		width: calc(100% - 60px);
 	}
 	#speaker_container {
 		display: none;

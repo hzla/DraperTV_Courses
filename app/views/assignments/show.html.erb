@@ -1,143 +1,126 @@
 <%= subscribe_to "/layouts/assignments" %>
 
 <div class="top-section">
-  <h1><%= @assignment.title %></h1>
+  <div class="top-column-main">
+      <div style="width: 100%; position: relative; display; block; padding-left: 20px;">
+          <h1><%= @assignment.title %></h1>
+      </div>
+  </div><!-- row -->
 </div>
 
-<div class="back-button">
-  <%= link_to @assignment.course.title, course_path(@assignment.course) %> 
-</div>
+<div class="column-main">
+  <div class="back" style="margin-left: 15px;">
+      <%= link_to @assignment.course.title, course_path(@assignment.course) %>
+    </div>
+  <!-- split panel if speaker info available -->
+  <div id="assignment_container">
+    <% if @assignment.category == "reading" or @assignment.category == "video" or @assignment.category == "founder" %>
+    	<br/>
+      <div class="video-responsive-container">
+    	   <%= raw @video_embed %>
+       </div>
 
-<!-- split panel if speaker info available -->
-<div id="assignment_container">
-  <% if @assignment.category == "reading" or @assignment.category == "video" or @assignment.category == "founder" %>
-  	<br/>
-    <div class="video-responsive-container">
-  	   <%= raw @video_embed %>
-     </div>
-  	<br /><br />
-  	
-    <div id="comments-bar">class discussion</div>
+    <% elsif @assignment.category == "quiz" %>
+      <div class="quiz_description" style="min-height: 20px;"></div>
+      <% if @assignment.survey.avaliable_for_participant?(current_user) %>
+        <%= render 'quiz' %>
+      <% else %>
+        <div class="quiz-score">
+          You scored <%= @quiz_high_score %> out of <%= @quiz_total_questions %>
+          <br />
+          <br />
+          <%= @quiz_ratio %>%
+          <br />
+          <br />
+          <!-- show quiz answers -->
+          <div class="quiz-answers">
+            <!-- <ul>
+              <% @assignment.survey.questions.each_with_index do |question, index| %>
+              <li>
+                <p><%= question.text %></p>
+                <% question.options.correct.each do |option| %>
+                    <p class="correct"><%= option.text %></p>
+                <% end %>
+                <% question.options.incorrect.each do |option| %>
+                    <p class="incorrect"><%= option.text %></p>
+                <% end %>
+             </li>
+             <% end %>
+            </ul> -->
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <% if @assignment.require_upload == true %>
+      <% if @assignment.user_assignments.where(:user_id => current_user[:id]).count > 0 %>
+        <% if @user_assignment.first.text != nil %>
+          <div class="upload_show">
+            <div class="upload_description">
+              <table id="event-table" style="margin-top: 0px;">
+                  <tr>
+                    <td class="icon"><i class="fa fa-check-circle" style="color: #24b494"></i></td>
+                    <td><%= @user_assignment.first.updated_at.strftime("%B %e") %></td>
+                  </tr>
+                  <tr>
+                    <td class="icon"><i class="fa fa-align-justify"></i></td>
+                    <td><% if @assignment.description != nil %><%= @assignment.description.html_safe %><% end %></td>
+                  </tr>
+                  <tr>
+                    <td class="icon"><i class="fa fa-user"></i></td>
+                    <td>Completed by Yad Faeq, Charles Taibi, Kelsey Whelan, and 6 more</td>
+                  </tr>
+                  <tr>
+                    <td class="icon"><i class="fa fa-bolt"></i></td>
+                    <td>500 Points</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+            </div>
+            <div class ="section-bar" style="margin-bottom: 10px;">Response</div>
+            <p><%= raw(@user_assignment.first.text) %></p>
+            <br />
+            <% if @assignment.category == "upload" %>
+              <div class ="section-bar" style="margin-bottom: 10px; margin-top: 0;">Uploads</div>
+            <% end %>
+            <% if @user_assignment.first.link != nil %>
+              <p><%= link_to "File Link", "#{@user_assignment.first.link}", target: "_blank", :class => "link-button-yellow" %></p><br/>
+            <% end %>
+            <br />
+            <% if @user_assignment.first.upload_file_name != nil %>
+              <% if @user_assignment.first.upload_content_type == 'image/jpeg' or @user_assignment.first.upload_content_type == 'image/png' or @user_assignment.first.upload_content_type == 'image/gif' %>
+                <%= image_tag(@user_assignment.first.upload) %>
+              <% elsif @user_assignment.first.upload_content_type == '' %>
+              <% else %>
+              <%= link_to "Download File", "#{@user_assignment.first.upload}", :class => "download-button-blue" %>
+              <% end %>
+            <% end %>
+          </div>
+        <% else %>
+          <%= render 'upload' %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+  </div> <!-- end span10 -->
+</div> <!-- column-main -->
+
+<div class="column-right">
+  <div class="col-right-top-section">
+    <h3>Discussion</h3>
+  </div>
+  <div class="col-right-comments">
     <div id="comments_container">
       <div id="<%= @assignment.id %>">
         <%= render "user_comments/comments" %>
       </div>
     </div>
-    <%= render "user_comments/addcomment" %>
-  <% elsif @assignment.category == "quiz" %>
-    <div class="quiz_description" style="min-height: 20px;"></div>
-    <% if @assignment.survey.avaliable_for_participant?(current_user) %>
-      <%= render 'quiz' %>
-    <% else %>
-      <div class="quiz-score">
-        You scored <%= @quiz_high_score %> out of <%= @quiz_total_questions %>
-        <br />
-        <br />
-        <%= @quiz_ratio %>%
-        <br />
-        <br />
-        <!-- show quiz answers -->
-        <div class="quiz-answers">
-          <!-- <ul>
-            <% @assignment.survey.questions.each_with_index do |question, index| %>
-            <li>
-              <p><%= question.text %></p>
-              <% question.options.correct.each do |option| %>
-                  <p class="correct"><%= option.text %></p>
-              <% end %>
-              <% question.options.incorrect.each do |option| %>
-                  <p class="incorrect"><%= option.text %></p>
-              <% end %>
-           </li>
-           <% end %>
-          </ul> -->
-        </div> 
-      </div>
-    <% end %>
-  <% end %>
-
-  <% if @assignment.require_upload == true %>
-    <% if @assignment.user_assignments.where(:user_id => current_user[:id]).count > 0 %>
-      <% if @user_assignment.first.text != nil %>
-        <div class="upload_show">
-          <div class="upload_description">
-            <table id="event-table" style="margin-top: 0px;">
-                <tr>
-                  <td class="icon"><i class="fa fa-check-circle" style="color: #24b494"></i></td>
-                  <td><%= @user_assignment.first.updated_at.strftime("%B %e") %></td>
-                </tr>
-                <tr>
-                  <td class="icon"><i class="fa fa-align-justify"></i></td>
-                  <td><% if @assignment.description != nil %><%= @assignment.description.html_safe %><% end %></td>
-                </tr>
-                <tr>
-                  <td class="icon"><i class="fa fa-user"></i></td>
-                  <td>Completed by Yad Faeq, Charles Taibi, Kelsey Whelan, and 6 more</td>
-                </tr>
-                <tr>
-                  <td class="icon"><i class="fa fa-bolt"></i></td>
-                  <td>500 Points</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </table>
-          </div>
-          <div class ="section-bar" style="margin-bottom: 10px;">Response</div>
-          <p><%= raw(@user_assignment.first.text) %></p>
-          <br />
-          <% if @assignment.category == "upload" %>
-            <div class ="section-bar" style="margin-bottom: 10px; margin-top: 0;">Uploads</div>
-          <% end %>
-          <% if @user_assignment.first.link != nil %>
-            <p><%= link_to "File Link", "#{@user_assignment.first.link}", target: "_blank", :class => "link-button-yellow" %></p><br/>
-          <% end %>
-          <br />
-          <% if @user_assignment.first.upload_file_name != nil %>
-            <% if @user_assignment.first.upload_content_type == 'image/jpeg' or @user_assignment.first.upload_content_type == 'image/png' or @user_assignment.first.upload_content_type == 'image/gif' %>
-              <%= image_tag(@user_assignment.first.upload) %>
-            <% elsif @user_assignment.first.upload_content_type == '' %>
-            <% else %>
-            <%= link_to "Download File", "#{@user_assignment.first.upload}", :class => "download-button-blue" %>
-            <% end %>
-          <% end %>
-        </div>
-      <% else %>
-        <%= render 'upload' %>
-      <% end %>
-    <% end %>
-  <% end %> 
-
-</div> <!-- end span10 -->
-
-<% if @assignment.category == "video" or @assignment.category == "quiz" or @assignment.category == "reading" or @assignment.category == "founder" %>
-  <div id="speaker_container">
-    <% if @assignment.speaker_pic and @assignment.speaker_name %>
-      <% if @assignment.category == "reading" or @assignment.category == "quiz" %>
-        <div class="header">Info</div>
-        <%= image_tag(@assignment.speaker_pic(:large), :class => "book_image") %>
-      <% else %>
-        <div class="header">Speaker Bio</div>
-        <%= image_tag(@assignment.speaker_pic(:large), :class => "image") %>
-      <% end %>
-      <div class="name"><%= @assignment.speaker_name %></div>
-      <div class="description"><%= @assignment.speaker_bio %></div>
-    <% end %>
-    <!-- speaker links -->
-    <!-- <div class="links">
-      <% if @assignment.speaker_angel %>
-        <%= link_to() do %>
-          <div class="angellist"></div>
-        <% end %>
-      <% end %>
-      <% if @assignment.speaker_twitter %>
-        <%= link_to @assignment.speaker_twitter do %>
-          <div class="twitter"></div>
-        <% end %>
-      <% end %>
-    </div> -->
-  </div>
-<% else %>
-<% end %>
+  </div><!-- col-right-comments -->
+  <div class="col-right-addcomment">
+    <%= render "user_comments/addsidenavcomment" %>
+  </div><!-- col-right-addcomment -->
+</div><!-- column-right -->
 

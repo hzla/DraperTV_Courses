@@ -17,11 +17,11 @@
 </div>
 
 <div class="row" style="height: 100%;">
-   <div class="column-main"> 
+   <div class="column-main">
     <div class="headerAlert">
       <div class="alert alert-info">
         <%= link_to "Please refresh this page to receive new updates.", posts_path %>
-      </div>      
+      </div>
     </div>
 
 
@@ -54,7 +54,7 @@
 <script type="text/javascript">
   $(".headerAlert").hide();
 
-  $( document ).ready(function() { 
+  $( document ).ready(function() {
     // refresh alert for new posts
     var headerAlert = document.querySelector('.headerAlert');
     var origOffsetY = headerAlert.offsetTop;
@@ -62,7 +62,7 @@
     window.scrollY >= origOffsetY ? headerAlert.classList.add('sticky') :
       headerAlert.classList.remove('sticky');
     }
-    document.addEventListener('scroll', onScroll);   
+    document.addEventListener('scroll', onScroll);
   });
 </script>
 
