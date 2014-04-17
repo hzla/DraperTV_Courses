@@ -45,13 +45,13 @@
 }
 
 /*********************/
-/****** STYLES *******/ 
+/****** STYLES *******/
 /*********************/
 
 .no-bottom-padding {
   padding-bottom: 0;
   margin-bottom: 0;
-} 
+}
 .uppercase-blue {
   color: $blue-soft;
   font-size: 26px;
@@ -279,8 +279,8 @@
           }
         }
     }
-    ul { 
-      li { padding-bottom: 10px;} 
+    ul {
+      li { padding-bottom: 10px;}
     }
   }
 }
@@ -327,7 +327,7 @@
 /****** RESPONSIVE ******/
 /************************/
 
-@media (min-width: 320px) { 
+@media (min-width: 320px) {
   #home-apply-button-top { display: none; }
   #home-apply-button-bottom { display: none; }
   #home-top-left-bottom-padding { display: none; }
@@ -337,7 +337,7 @@
   #home-video-small-media { display: block; margin-top: 10px; }
   #home-top .left { width: 100%; }
 }
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
   #home-apply-button-top { display: none; }
   #home-apply-button-bottom { display: none; }
   #home-video { display: none; }
@@ -348,7 +348,7 @@
   .home-wrapper .split-right { display: block; }
   .sign-in-container { width: 400px; }
 }
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
   #home-top .left { padding-top: 60px; }
   #home-apply-button-top { display: block; }
   #home-apply-button-bottom { display: inline; }

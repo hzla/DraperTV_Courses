@@ -1,48 +1,24 @@
 <% if @course.course_current? == true or current_user.online == "admin" %>
 
-<div class="top-section">
-  <h1><%= @course.title %></h1>
-</div>
 
-<div class="back-button">
-  <%= link_to "Courses", courses_path %>
-</div>
-
-	<div class="course-show-container">
-		<div class="course-show-left">
-			<h1 class="title"></h1>
-
-			<!-- ******  INTRO VIDEO ******* -->
-			<div style="display: block; overflow: hidden;">
-				<a href="#videoModal" data-toggle="modal" id="intro-video" data-backdrop="false">
-					<%= image_tag(@course.intro_screenshot) %>
-					<div class="play-intro" ></div>
-				</a>
-			</div>
-
-			<!-- ******  INFO TABS ******* -->
-			<div class="information">
-				<ul class="nav nav-tabs" style="margin-top: 22px; margin-bottom: 20px;">
-		      <li class="active"><a href="#tab-description" data-toggle="tab">Description</a></li>
-		      <li><a href="#tab-speakers" data-toggle="tab"> </a></li>
-		    </ul>
-		    <div class="tab-content">
-	      	<div class="tab-pane active" id="tab-description">
-	      		<div class="details">
-							<% if @course.start_date %>
-								<div class="dates"><%= @course.start_date.strftime("%b %e") %> - <%= @course.end_date.strftime("%b %e") %></div>
-							<% end %>
-						</div>
-	      		<%= @course.description %>
-	      	</div>
-	      	<div class="tab-pane" id="tab-speakers">
-	      	</div>
+	<div class="top-section">
+	  <div class="row">
+	    <div class="top-column-main">
+	      <div style="width: 100%; position: relative; display; block; padding-left: 20px;">
+	        <h1><%= @course.title %></h1>
 	      </div>
-			</div>
-		</div>
+	    </div><!-- column main -->
+	  </div><!-- row -->
+	</div>
+	<div class="column-main">
 
-		<!-- ******  CONTENT ******* -->
-		<div class="course-show-right">
+		<div class="back" style="margin-left: 7px;">
+		  <%= link_to "Back to Courses", courses_path %>
+		</div>
+		<br/>
+
+		<div class="course-show-container">
+			<!-- ******  CONTENT ******* -->
 			<% @course.assignments.each do |assignment| %>
 				<%= link_to(assignment_path(assignment)) do %>
 					<!--changed from assignment-container -->
@@ -76,40 +52,61 @@
 					</div>
 				<% end %>
 			<% end %>
+		</div><!-- course-show-container -->
 
-			<% else %>
-				<p>This course has not started yet!</p>
-			<% end %>
-		</div>
-	</div>
-
-	<div id="course-header">
-		<div class="wrapper">
-
-			<!-- ******  VIDEO MODAL ******* -->
-			<div id="videoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			  <div class="modal-header">
-			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			    <h3 id="myModalLabel"><%= @course.title %> Introduction</h3>
-			  </div>
-			  <div class="modal-body">
-			  	<div class="intro">
-			    	<% if @course.intro_vimeo %>
-		          <%= raw @intro_embed %>
-		        <% else %>
-		        <% end %>
-			    </div>
-			  </div>
-			</div>
-
-			<div class="inner">
-
-
+		<div id="course-header">
+			<div class="wrapper">
+				<!-- ******  VIDEO MODAL ******* -->
+				<div id="videoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-header">
+				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				    <h3 id="myModalLabel"><%= @course.title %> Introduction</h3>
+				  </div>
+				  <div class="modal-body">
+				  	<div class="intro">
+				    	<% if @course.intro_vimeo %>
+			          <%= raw @intro_embed %>
+			        <% else %>
+			        <% end %>
+				    </div>
+				  </div>
+				</div>
+				<div class="inner">
+				</div>
 			</div>
 		</div>
-	</div>
+	</div><!-- column-main -->
 
 
+	<div class="column-right">
+	  <div class="col-right-top-section">
+	    <h3>Information</h3>
+	  </div><!-- col-right-top-section -->
+
+	  <div class="col-right-bottom">
+			<!-- ******  INTRO VIDEO ******* -->
+			<div style="display: block; overflow: hidden;">
+				<a href="#videoModal" data-toggle="modal" id="intro-video" data-backdrop="false">
+					<%= image_tag(@course.intro_screenshot) %>
+					<div class="play-intro" ></div>
+				</a>
+			</div>
+
+			<!-- ******  INFO TABS ******* -->
+			<div class="information">
+    		<div class="details">
+					<% if @course.start_date %>
+						<div class="dates"><%= @course.start_date.strftime("%b %e") %> - <%= @course.end_date.strftime("%b %e") %></div>
+					<% end %>
+				</div>
+    		<%= @course.description %>
+			</div><!-- information -->
+	  </div><!-- col-right-bottom -->
+	</div><!-- column-right -->
+
+<% else %>
+	<p>This course has not started yet!</p>
+<% end %>
 
 
 
