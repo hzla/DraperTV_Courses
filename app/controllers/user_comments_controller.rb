@@ -59,7 +59,6 @@ end
 
       if @comment.commentable_type == "Post"
         @posts = Post.all
-        @user_comments = UserComment.all
         listUsers = []
         @comments = UserComment.all
 
@@ -101,7 +100,6 @@ end
       elsif @comment.commentable_type == "Assignment"
 
         @assignment = UserAssignment.all
-        @user_comments = UserComment.all
 
         listUsers = []
         @comments = UserComment.all
@@ -146,8 +144,6 @@ end
 
       elsif @comment.commentable_type == "Event"
         @posts = Event.all
-        @user_comments = UserComment.all
-
         listUsers = []
         @comments = UserComment.all
         @comments.each do |com|
@@ -199,9 +195,7 @@ end
         render :new
       end
 
-      PrivatePub.publish_to("/layouts/comments",
-      "$('##{@commentable.id}').empty();
-      $('##{@commentable.id}').append(#{render(:partial => 'user_comments/postcomments')});")
+      PrivatePub.publish_to("/layouts/comments","$('##{@commentable.id}').empty();$('##{@commentable.id}').append(#{render(:partial => 'user_comments/postcomments')});")
 
 
       rescue => exception
