@@ -41,9 +41,11 @@
 
    <div class="column-main" style="margin-top: 97px;">
     <div id="alumni-container">
+      <% cache @users do %>
       <ul id="users" style="margin:0;">
         <%= render @users %>
       </ul><!-- users -->
+      <% end %>
       <%= paginate @users %>
       <br />
     </div><!-- alumni-container -->
