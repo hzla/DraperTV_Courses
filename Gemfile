@@ -73,7 +73,7 @@ group :development do
   gem 'annotate', ">=2.6.0"
 end
 
-gem 'rack-mini-profiler'
+# gem 'rack-mini-profiler'
 gem 'pg_search'
 gem "simple_calendar", "~> 0.1.9"
 gem "kaminari"
