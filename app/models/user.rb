@@ -54,16 +54,6 @@ class User < ActiveRecord::Base
   SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
 
 
-
-  def self.cached_find(id)
-    Rails.cache.fetch([first_name, id], expires_in: 5.minutes) { find(id) }
-  end
-
-  def flush_cache
-    Rails.cache.delete([self.class.first_name, id])
-  end
-
-
   def full_name
     [first_name, last_name].join(' ')
   end
@@ -71,6 +61,19 @@ class User < ActiveRecord::Base
   def twitter_link
     ['http://www.twitter.com', twitter].join('/')
   end
+
+
+
+
+
+def self.cached_find(id)
+  Rails.cache.fetch([name, id]) { find(id) }
+end
+
+def flush_cache
+  Rails.cache.delete([self.class.name, id])
+end
+
 
 
   # include PgSearch

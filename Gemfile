@@ -73,7 +73,7 @@ group :development do
   gem 'annotate', ">=2.6.0"
 end
 
-#gem 'rack-mini-profiler'
+gem 'rack-mini-profiler'
 gem 'pg_search'
 gem "simple_calendar", "~> 0.1.9"
 gem "kaminari"
@@ -103,6 +103,8 @@ gem "delayed_job_web", github: "toolmantim/delayed_job_web", branch: "fix-rails-
 
 gem 'memcachier'
 gem 'dalli'
+gem 'rack-cache'
+gem 'kgio'
 
 # gem "nifty-generators", :group => :development
 

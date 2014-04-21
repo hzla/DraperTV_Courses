@@ -271,6 +271,7 @@ GEM
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kgio (2.9.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -319,8 +320,12 @@ GEM
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
+    rack-cache (1.2)
+      rack (>= 0.4)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
+    rack-mini-profiler (0.9.1)
+      rack (>= 1.1.3)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.2)
@@ -486,6 +491,7 @@ DEPENDENCIES
   jquery-turbolinks
   jquery-ui-rails
   kaminari
+  kgio
   mailchimp-api (~> 2.0.4)
   mandrill-api
   memcachier
@@ -499,6 +505,8 @@ DEPENDENCIES
   private_pub
   protected_attributes
   quiet_assets
+  rack-cache
+  rack-mini-profiler
   railroady
   rails (= 4.0.4)
   rails-observers

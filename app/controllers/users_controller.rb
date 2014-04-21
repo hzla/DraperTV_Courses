@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users.json
 
   def index
-    @users = User.includes(:skills).all
+    @users = User.all
     @q = User.search(params[:q])
     @users= @q.result(distinct: true).order('first_name').page(params[:page]).per(25)
 
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
 
-    @user = User.friendly.find(params[:id])
+    @user = User.friendly.cached_find(params[:id])
     @courses = Course.all
     @assignments = Assignment.all
     @user_assignments = UserAssignment.all
