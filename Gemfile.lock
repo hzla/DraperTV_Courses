@@ -280,6 +280,7 @@ GEM
     mandrill-api (1.0.51)
       excon (>= 0.16.0, < 1.0)
       json (>= 1.7.7, < 2.0)
+    memcachier (0.0.2)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     meta_request (0.2.9)
@@ -487,6 +488,7 @@ DEPENDENCIES
   kaminari
   mailchimp-api (~> 2.0.4)
   mandrill-api
+  memcachier
   meta_request
   newrelic_rpm
   nprogress-rails

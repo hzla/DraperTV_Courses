@@ -99,9 +99,10 @@ gem 'actionpack-action_caching'
 
 
 gem 'exception_notification'
-gem 'dalli'
 gem "delayed_job_web", github: "toolmantim/delayed_job_web", branch: "fix-rails-sessions"
 
+gem 'memcachier'
+gem 'dalli'
 
 # gem "nifty-generators", :group => :development
 
