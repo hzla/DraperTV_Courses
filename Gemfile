@@ -78,7 +78,7 @@ gem 'pg_search'
 gem "simple_calendar", "~> 0.1.9"
 gem "kaminari"
 gem 'populator'
-gem 'faker'
+gem 'ffaker'
 gem 'acts-as-taggable-on'
 
 gem 'stripe'
@@ -89,7 +89,7 @@ gem 'httparty'
 gem 'jbuilder', '~> 1.2'
 gem "formtastic"
 
-gem 'rails4_upgrade', github: 'alindeman/rails4_upgrade'
+# gem 'rails4_upgrade', github: 'alindeman/rails4_upgrade'
 
 #rails Legacy Gems
 gem 'protected_attributes'
@@ -101,10 +101,17 @@ gem 'actionpack-action_caching'
 gem 'exception_notification'
 gem "delayed_job_web", github: "toolmantim/delayed_job_web", branch: "fix-rails-sessions"
 
+#Cache Gems
 gem 'memcachier'
 gem 'dalli'
 gem 'rack-cache'
 gem 'kgio'
+
+
+
+group :development, :test do
+  gem 'rspec-rails'
+end
 
 # gem "nifty-generators", :group => :development
 

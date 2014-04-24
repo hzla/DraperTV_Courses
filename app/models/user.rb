@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  after_commit :flush_cache
+  after_touch :flush_cache
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -10,12 +12,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :superhero_power, :team, :skype, :gmail, :instagram, :angellist, :dribbble, :github
-  attr_accessible :bio, :city, :country, :facebook, :first_name, :last_name, :linkedin, :program, :state, :street_address, :twitter, :zip, :online, :employment
-
-  attr_accessible :latitude, :longitude, :eventReminder
-  attr_accessible :avatar, :tag_list, :ncounter, :pcounter
 
   has_attached_file :avatar,
     :styles => { :medium => "120x120#", :thumb => "40x40#", :large => "220x220#" },
@@ -38,7 +34,6 @@ class User < ActiveRecord::Base
   validates :email, presence: true,
   					uniqueness: true
 
-  attr_accessible :name, :skill_ids
   has_many :authorships
   has_many :skills, through: :authorships
 
@@ -46,10 +41,6 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :messages
 
-  validates :password, presence: true, length: {minimum: 5, maximum: 120}, on: :create
-  validates :password, length: {minimum: 5, maximum: 120}, on: :update, allow_blank: true
-
-  after_commit :flush_cache
 
   SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
 

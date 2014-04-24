@@ -65,8 +65,11 @@ class AssignmentsController < ApplicationController
        end
 
       @user.update_attribute(:pcounter, UserAssignment.sum('point_value'))
+      begin
       PrivatePub.publish_to("/layouts/points",
         "$('.pcounter p').text(<%= current_user.pcounter %>);")
+      rescue
+      end
     end
 
 	end
