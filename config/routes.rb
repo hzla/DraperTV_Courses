@@ -1,6 +1,6 @@
 
 OnlineSchool::Application.routes.draw do
-  
+
   mount Ckeditor::Engine => '/ckeditor'
   #root :to => 'profiles#show'
   root :to => 'home#index'
@@ -19,14 +19,14 @@ OnlineSchool::Application.routes.draw do
     get 'you-rock', to: 'devise/registrations#new'
     get 'logout', to: 'devise/sessions#destroy', as: :logout
   end
-  
+
   get 'tags/:tag', to: 'users#index', as: :tag
 
   resources :charges
-  
+
   resources :calendar
   #get 'calendar', to: 'calendar#index', as: :calendar
-  
+
   resources :skills
 
   resources :events do
@@ -51,7 +51,7 @@ OnlineSchool::Application.routes.draw do
   get 'profile/:id', to: 'profiles#profile', as: :student_profile
   get 'access', to: 'users#access'
 
- 
+
   resources :contests
   resources :courses
   resources :feedbacks
@@ -98,6 +98,7 @@ OnlineSchool::Application.routes.draw do
   match "/delayed_jobs" => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
 
+
   # get "profile/show"
   # get '/:id', to: 'profiles#show'
 
@@ -130,7 +131,7 @@ OnlineSchool::Application.routes.draw do
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
-  #     resource :seller 
+  #     resource :seller
   #   end
 
   # Sample resource route with more complex sub-resources

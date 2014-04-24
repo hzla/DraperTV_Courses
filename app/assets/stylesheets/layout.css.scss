@@ -472,11 +472,33 @@ h4 {
         padding-left: 0px;
       }
     }
+    h3 {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.3px;
+        color: $gray-lt;
+        font-weight: 700;
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 0px;
+    }
     .col-right-bottom {
       display: block;
       margin-top: 80px;
       width: calc(100% - 40px);
       padding: 0px 20px;
+      .course-icon {
+        display: block;
+        width: calc(100% - 120px);
+        margin: 20px 60px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .dates { color: $gray-blue-x-lt; font-weight: bold; }
+      p { color: $gray; }
     }
     .col-right-comments {
       display: block;
@@ -532,18 +554,21 @@ h4 {
       width: calc(100% - 20px);
       margin-left: 10px;
       margin-right: 10px;
+      p {
+        color: $gray;
+      }
     }
     .avatar {
       display: block;
       width: 100%;
-      height: 180px;
+      height: 160px;
       border-bottom: 1px solid $gray-x-lt;
       img {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
         margin-top: 25px;
         margin-bottom: 25px;
-        margin-left: 65px;
+        margin-left: 75px;
         border-radius: 3px;
       }
     }

@@ -86,19 +86,21 @@
 			<!-- ******  INTRO VIDEO ******* -->
 			<div style="display: block; overflow: hidden;">
 				<a href="#videoModal" data-toggle="modal" id="intro-video" data-backdrop="false">
-					<%= image_tag(@course.intro_screenshot) %>
 					<div class="play-intro" ></div>
 				</a>
+			</div>
+			<div class="course-icon">
+				<%= image_tag(@course.course_icon) %>
 			</div>
 
 			<!-- ******  INFO TABS ******* -->
 			<div class="information">
     		<div class="details">
 					<% if @course.start_date %>
-						<div class="dates"><%= @course.start_date.strftime("%b %e") %> - <%= @course.end_date.strftime("%b %e") %></div>
+						<div class="dates">Start date: <%= @course.start_date.strftime("%B %e") %></div>
 					<% end %>
 				</div>
-    		<%= @course.description %>
+    		<p><%= @course.description %></p>
 			</div><!-- information -->
 	  </div><!-- col-right-bottom -->
 	</div><!-- column-right -->

@@ -19,12 +19,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    
+
     @user = User.friendly.find(params[:id])
     @courses = Course.all
     @assignments = Assignment.all
     @user_assignments = UserAssignment.all
-  
+
     if @user
       render action: :show
     else
@@ -81,7 +81,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(params[:user])
+      if @user.update_attribute(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         #format.json { head :no_content }
       else
@@ -127,8 +127,10 @@ class UsersController < ApplicationController
   #       :street_address, :twitter, :zip, :online, :employment,
   #       :avatar, :tag_list, :ncounter,
   #       :latitude, :longitude,
-  #       :name, :skill_ids) 
+  #       :name, :skill_ids)
 
 
   #   end
 end
+
+
