@@ -609,6 +609,29 @@ h4 {
         }
       }
     }
+    .section-right {
+      display: block;
+      min-width: 50px;
+      width: auto;
+      margin-right: 20px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      height: auto;
+      .course-progress {
+        font-size: 20px;
+        letter-spacing: 1px;
+        color: $gray-blue-x-lt;
+        p {
+          clear: both;
+          font-size: 9px;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: $gray-blue-lt;
+        }
+      }
+    }
     h1 {
       font-size: 26px;
       font-weight: 100px;
