@@ -29,8 +29,8 @@ class User < ActiveRecord::Base
   acts_as_taggable
   acts_as_voter
   has_surveys
-  # validates :first_name, presence: true
-  # validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
   validates :email, presence: true,
   					uniqueness: true
 

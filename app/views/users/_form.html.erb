@@ -1,8 +1,12 @@
+<div class="edit-form" style="width: 70%; margin-left:5%;">
+  <br>
+  <div class="network-section">
+    <div class="header">Edit Your Profile</div>
+  </div>
 <%= simple_form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,56 +14,66 @@
       </ul>
     </div>
   <% end %>
+ <div class="simple_form_section">Basic Info</div>
+  <table>
+    <tr>
+      <td><%= f.input :first_name, label: "First Name" %></td>
+      <td><%= f.input :last_name, label: "Last Name" %></td>
+    </tr>
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label :avatar %><br />
+          <%= f.file_field :avatar %>
+        </div>
+      </td>
+      <td><%= f.input :team, label: "Team", collection: ["Angels", "Magic", "Titans", "Phoenix", "Lightning", "Tornados", "Lanterns", "Wonders", "Blizzards"] %></td>
+    </tr>
+  </table>
+  <%= f.input :bio, label: "Short Bio", :input_html => { :rows => 5 } %>
+  <table>
+    <tr>
+      <div class="field">
+        <%= f.label :skill_ids, "Skills" %>
+        <%= f.collection_select :skill_ids, Skill.order(:name), :id, :name, {}, {multiple: true} %>
+      </div>
+    </tr>
+  </table>
+  <div class="simple_form_section">Contact Info</div>
+  <table>
+    <tr>
+      <td> <%= f.input :street_address, label: "Street Address" %></td>
+      <td> <%= f.input :city %></td>
+    </tr>
+    <tr>
+      <td><%= f.input :state %></td>
+      <td><%= f.input :country %></td>
+    </tr>
+  </table>
+  <div class="simple_form_section">Social Networks</div>
+  <table>
+    <tr>
+      <td><%= f.input :twitter, label: "Twitter (Handle only, no @)" %></td>
+      <td><%= f.input :facebook, label: "Facebook (URL)" %></td>
+    </tr>
+    <tr>
+      <td><%= f.input :linkedin, label: "LinkedIn (URL)" %></td>
+      <td><%= f.input :gmail, label: "Gmail (Name only)" %></td>
+    </tr>
+    <tr>
+      <td><%= f.input :skype, label: "Skype name" %></td>
+      <td><%= f.input :github, label: "Github Handle" %></td>
+    </tr>
+    <tr>
+      <td><%= f.input :instagram, label: "Instagram (Name only)" %></td>
+      <td><%= f.input :dribbble, label: "Dribbble Handle" %></td>
+    </tr>
+  </table>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio %>
-  </div>
-  <div class="field">
-    <%= f.label :twitter %><br />
-    <%= f.text_field :twitter %>
-  </div>
-  <div class="field">
-    <%= f.label :facebook %><br />
-    <%= f.text_field :facebook %>
-  </div>
-  <div class="field">
-    <%= f.label :program %><br />
-    <%= f.text_field :program %>
-  </div>
-  <div class="field">
-    <%= f.label :linkedin %><br />
-    <%= f.text_field :linkedin %>
-  </div>
-  <div class="field">
-    <%= f.label :street_address %><br />
-    <%= f.text_field :street_address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :zip %><br />
-    <%= f.text_field :zip %>
-  </div>
+
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

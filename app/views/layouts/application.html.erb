@@ -161,7 +161,9 @@
                 </div>
                 <ul class="dropdown-menu">
                   <li role="menu"><%= link_to 'My Profile', student_profile_path(current_user)  %></li>
-                  <li role="menu"><%= link_to 'Edit Settings', edit_user_registration_path %></li>
+                  <li role="menu"><%= link_to 'Profile Setting',  edit_user_path(current_user) %></li>
+                  <li role="menu"><%= link_to 'Account Setting',  edit_user_registration_path %></li>
+
                   <li class="divider"></li>
                   <li role="menu"><%= link_to 'Leave Feedback', feedbacks_path %></li>
                   <li role="menu"><%= link_to 'Resources', resources_path %></li>

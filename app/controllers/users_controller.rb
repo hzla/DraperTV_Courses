@@ -77,20 +77,19 @@ class UsersController < ApplicationController
 
   # PUT /users/1
   # PUT /users/1.json
+  def update
+    @user = User.find(params[:id])
 
-  # def update
-  #   @user = User.find(params[:id])
-
-  #   respond_to do |format|
-  #     if @user.update_attributes(user_params)
-  #       format.html { redirect_to @user, notice: 'User was successfully updated.' }
-  #       #format.json { head :no_content }
-  #     else
-  #       format.html { render action: "edit" }
-  #       #format.json { render json: @user.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+    respond_to do |format|
+      if @user.update_attributes(user_params)
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        #format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        #format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # DELETE /users/1
   # DELETE /users/1.json
@@ -113,45 +112,14 @@ class UsersController < ApplicationController
   end
 
 
-  def update
-    @user = User.find(current_user.id)
-
-    successfully_updated = if needs_password?(@user, params)
-      @user.update_with_password(devise_parameter_sanitizer.sanitize(:account_update))
-    else
-      # remove the virtual current_password attribute
-      # update_without_password doesn't know how to ignore it
-      params[:user].delete(:current_password)
-      @user.update_without_password(devise_parameter_sanitizer.sanitize(:account_update))
-    end
-
-    if successfully_updated
-      set_flash_message :notice, :updated
-      # Sign in the user bypassing validation in case his password changed
-      sign_in @user, :bypass => true
-      redirect_to after_update_path_for(@user)
-    else
-      render "edit"
-    end
-  end
-
-  private
-
-  # check if we need password to update user data
-  # ie if password or email was changed
-  # extend this as needed
-  def needs_password?(user, params)
-    user.email != params[:user][:email] ||
-      params[:user][:password].present?
-  end
-
+  #   # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :remember_me, :superhero_power, :team, :skype, :gmail, :instagram, :angellist, :dribbble, :github,
         :bio, :city, :country, :facebook, :first_name, :last_name, :linkedin, :program, :state, :street_address, :twitter, :zip, :online, :employment,
         :latitude, :longitude, :eventReminder,
         :avatar, :tag_list, :ncounter, :pcounter,
         :name, :skill_ids,:current_password)
+
+
     end
 end
-
-
