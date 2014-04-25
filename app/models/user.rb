@@ -1,52 +1,6 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id                     :integer          not null, primary key
-#  first_name             :string(255)
-#  last_name              :string(255)
-#  bio                    :text
-#  twitter                :string(255)
-#  facebook               :string(255)
-#  program                :string(255)
-#  linkedin               :string(255)
-#  street_address         :string(255)
-#  city                   :string(255)
-#  state                  :string(255)
-#  country                :string(255)
-#  zip                    :string(255)
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
-#  email                  :string(255)      default(""), not null
-#  encrypted_password     :string(255)      default(""), not null
-#  reset_password_token   :string(255)
-#  reset_password_sent_at :datetime
-#  remember_created_at    :datetime
-#  sign_in_count          :integer          default(0)
-#  current_sign_in_at     :datetime
-#  last_sign_in_at        :datetime
-#  current_sign_in_ip     :string(255)
-#  last_sign_in_ip        :string(255)
-#  avatar_file_name       :string(255)
-#  avatar_content_type    :string(255)
-#  avatar_file_size       :integer
-#  avatar_updated_at      :datetime
-#  online                 :string(255)      default("online")
-#  team                   :string(255)
-#  skype                  :string(255)
-#  gmail                  :string(255)
-#  slug                   :string(255)
-#  latitude               :float            default(37.5638)
-#  longitude              :float            default(-122.325192)
-#  employment             :string(255)
-#  instagram              :string(255)
-#  angellist              :string(255)
-#  dribbble               :string(255)
-#  github                 :string(255)
-#  nCounter               :integer
-#
-
 class User < ActiveRecord::Base
+  after_commit :flush_cache
+  after_touch :flush_cache
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -58,11 +12,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :superhero_power, :team, :skype, :gmail, :instagram, :angellist, :dribbble, :github
-  attr_accessible :bio, :city, :country, :facebook, :first_name, :last_name, :linkedin, :program, :state, :street_address, :twitter, :zip, :online, :employment
-  attr_accessible :avatar, :tag_list, :ncounter, :pcounter
-  attr_accessible :latitude, :longitude
+
   has_attached_file :avatar,
     :styles => { :medium => "120x120#", :thumb => "40x40#", :large => "220x220#" },
     :default_url => '/assets/avatars/missing.png',
@@ -84,7 +34,6 @@ class User < ActiveRecord::Base
   validates :email, presence: true,
   					uniqueness: true
 
-  attr_accessible :name, :skill_ids
   has_many :authorships
   has_many :skills, through: :authorships
 
@@ -92,22 +41,8 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :messages
 
-  validates :password, presence: true, length: {minimum: 5, maximum: 120}, on: :create
-  validates :password, length: {minimum: 5, maximum: 120}, on: :update, allow_blank: true
-
-  after_commit :flush_cache
 
   SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
-
-
-
-  def self.cached_find(id)
-    Rails.cache.fetch([first_name, id], expires_in: 5.minutes) { find(id) }
-  end
-
-  def flush_cache
-    Rails.cache.delete([self.class.first_name, id])
-  end
 
 
   def full_name
@@ -117,6 +52,19 @@ class User < ActiveRecord::Base
   def twitter_link
     ['http://www.twitter.com', twitter].join('/')
   end
+
+
+
+
+
+def self.cached_find(id)
+  Rails.cache.fetch([name, id]) { find(id) }
+end
+
+def flush_cache
+  Rails.cache.delete([self.class.name, id])
+end
+
 
 
   # include PgSearch

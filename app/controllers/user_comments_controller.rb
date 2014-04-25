@@ -52,16 +52,62 @@ end
     @activities = Activity.order("created_at desc")
 
     begin
+      notifSend(@comment)
+      if @comment.save
+        track_activity @comment
+        #refresh_dom_with_partial('div#comments_container', 'comments')
+        respond_to do |format|
+          format.html { }
+          format.js { @comments = @commentable.user_comments.order('created_at desc') }
+        end
+      else
+        render :new
+      end
+    rescue => exception
+        ExceptionNotifier.notify_exception(exception)
+        PrivatePub.publish_to("/layouts/comments",
+        "$('##{@commentable.id}').empty();
+        $('##{@commentable.id}').append(#{render(:partial => 'user_comments/postcomments')});")
+    rescue
+    ensure
+        # logger.fatal "notifications failed"
+        if @comment.save
+          track_activity @comment
+          #refresh_dom_with_partial('div#comments_container', 'comments')
+          respond_to do |format|
+              format.js { @comments = @commentable.user_comments.order('created_at desc') }
+              format.html #{ redirect_to @commentable }
+          end
+        else
+          render :new
+        end
+      end # end rescue
+    end
 
-    #This is the notification If else Statement:
-    #It checks if a the comment's commentable type is a Post or Event or Assignment
+
+
+  def destroy
+    @comments = @commentable.user_comments.order('created_at desc')
+    @comment = UserComment.find(params[:id])
+    if current_user.id == @comment.user_id
+      @comment.destroy
+        respond_to do |format|
+          format.js { @comments = @commentable.user_comments.order(:created_at) }
+          format.html #{ redirect_to @commentable }
+        end
+    end
+  end
+
+    # notifSend is method for the notification check-sum:
+    #It checks if the comment's commentable type is a Post or Event or Assignment
     # in order to notify the users per their ownership of the post.
+def notifSend(comment)
 
-      if @comment.commentable_type == "Post"
-        @posts = Post.all
-        @user_comments = UserComment.all
+  @comments = UserComment.all
+  begin
+    if @comment.commentable_type == "Post"
         listUsers = []
-        @comments = UserComment.all
+       @posts = Post.all
 
         @comments.each do |com|
           if com.commentable_id ==  @comment.commentable_id
@@ -69,7 +115,6 @@ end
           end
         end
 
-        @posts = Post.all
         @posts.each do |po|
           if po.id ==  @comment.commentable_id
             listUsers << po.user_id
@@ -101,10 +146,8 @@ end
       elsif @comment.commentable_type == "Assignment"
 
         @assignment = UserAssignment.all
-        @user_comments = UserComment.all
 
         listUsers = []
-        @comments = UserComment.all
         @comments.each do |com|
           if com.commentable_id ==  @comment.commentable_id
             listUsers << com.user_id
@@ -146,7 +189,6 @@ end
 
       elsif @comment.commentable_type == "Event"
         @posts = Event.all
-        @user_comments = UserComment.all
 
         listUsers = []
         @comments = UserComment.all
@@ -185,68 +227,14 @@ end
                $('.red-circle').show();
                $('.red-circle p').text(#{@user.ncounter});")
           end
+
         end
       else
       end # end of if @comment.commentable_type block
+  rescue
 
-      if @comment.save
-        track_activity @comment
-        #refresh_dom_with_partial('div#comments_container', 'comments')
-        respond_to do |format|
-          format.html { }
-          format.js { @comments = @commentable.user_comments.order('created_at desc') }
-        end
-      else
-        render :new
-      end
-
-      # Render partial on create depending on commentable type
-      if @comment.commentable_type == "Post"
-        PrivatePub.publish_to("/layouts/comments",
-        "$('##{@commentable.id}').empty();
-        $('##{@commentable.id}').append(#{render(:partial => 'user_comments/postcomments')});")
-      else
-        PrivatePub.publish_to("/layouts/comments",
-        "$('##{@commentable.id}').empty();
-        $('##{@commentable.id}').append(#{render(:partial => 'user_comments/comments')});")
-      end
-
-      rescue => exception
-        ExceptionNotifier.notify_exception(exception)
-      ensure
-        # logger.fatal "notifications failed"
-        if @comment.save
-          track_activity @comment
-          #refresh_dom_with_partial('div#comments_container', 'comments')
-          respond_to do |format|
-              format.js { @comments = @commentable.user_comments.order('created_at desc') }
-              format.html #{ redirect_to @commentable }
-          end
-        else
-          render :new
-        end
-      end # end rescue
-    end
-
-  def destroy
-    @comments = @commentable.user_comments.order('created_at desc')
-    @comment = UserComment.find(params[:id])
-    if current_user.id == @comment.user_id
-      @comment.destroy
-        respond_to do |format|
-          format.js { @comments = @commentable.user_comments.order(:created_at) }
-          format.html #{ redirect_to @commentable }
-        end
-    end
-    # if @comment.user == current_user
-    #   @comment.destroy
-    #   #format.js { @comments = @commentable.user_comments }
-    #   #format.html #{ redirect_to @commentable }
-    # else
-    #   format.html { redirect_to :back, alert: 'You can\'t delete this comment.' }
-    # end
   end
-
+end
 
 
 private

@@ -89,8 +89,8 @@ input[type="submit"] {
   float: left;
   margin-left:0px;
 }
-
-#navbar-avatar {
+// I added a class here
+.navbar-avatar, #navbar-avatar {
 	width: 30px;
 	height:30px;
 	overflow: hidden;

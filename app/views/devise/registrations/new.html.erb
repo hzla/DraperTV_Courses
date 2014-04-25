@@ -3,14 +3,14 @@
   <div class="header" style="width: 100%;">Register for Draper University's Alumni Network</div>
   <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
-    
+
     <div class="simple_form_section">Info</div>
     <div style="width: 100%; margin-left: 35px;">
       <table>
         <tr>
           <td><%= f.input :first_name, label: "First Name" %></td>
           <td><%= f.input :last_name, label: "Last Name" %></td>
-        </tr> 
+        </tr>
         <tr>
           <td>
             <div class="field">
@@ -19,7 +19,7 @@
             </div>
           </td>
           <td></td>
-        </tr> 
+        </tr>
         <tr>
           <td><%= f.input :program, label: "Program", collection: ["Summer 2012", "Spring 2013", "Summer 2013", "Fall 2013"] %></td>
           <td><%= f.input :online, label: "Boarding/Online", collection: ["Boarding", "Online"] %></td>
@@ -27,7 +27,7 @@
         <tr>
           <td><%= f.input :employment, label: "Employment Status", collection: ["Employed", "Freelancing", "Job Hunting", "Student", "Entrepreneur"] %></td>
           <td><%= f.input :team, label: "Team", collection: ["Angels", "Magic", "Titans", "Phoenix", "Lightning", "Tornados", "Lanterns", "Wonders", "Blizzards"] %></td>
-        </tr>  
+        </tr>
       </table>
 
       <%= f.input :bio, label: "Short Bio", :input_html => { :rows => 5 } %>
@@ -76,7 +76,7 @@
           <td><%= f.input :instagram, label: "Instagram (Name only)" %></td>
           <td><%= f.input :dribbble, label: "Dribbble Handle" %></td>
         </tr>
-      </table> 
+      </table>
     </div>
 
     <div class="simple_form_section">Email and Password</div>

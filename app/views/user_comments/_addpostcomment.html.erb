@@ -17,7 +17,7 @@
           }
           else {
             e.preventDefault();
-            var frm = $(this).closest("form");  
+            var frm = $(this).closest("form");
             jQuery.ajax({
                 url: frm.attr("action"),
                 data: frm.serialize(),

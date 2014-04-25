@@ -14,6 +14,11 @@ end
 def index
   @leaders = User.where("pcounter is not null").order('pcounter DESC').limit(8)
   #@posts = Post.plusminus_tally.order('plusminus_tally desc').page(params[:page]).per(10)
+  # listPosts = []
+  # @listPosts = Post.plusminus_tally.order('plusminus_tally desc')
+  # @posts = @listPosts.page(params[:page]).per(10)
+  # @posts  = Kaminari.paginate_array(@listPosts).page(params[:page]).per(5)
+
   #listPosts = []
   #@posts = Post.plusminus_tally.order('plusminus_tally desc')
   @posts = Post.order('created_at DESC').page(params[:page]).per(10)
@@ -22,6 +27,9 @@ def index
   # @user = User.find_by_id(@post.user_id)
   @instagram_draperu = Instagram.tag_recent_media('draperu', options = {count: 20})
   @instagram_draperuonline = Instagram.tag_recent_media('draperuonline', options = {count: 20})
+
+  @users = User.order('pcounter DESC').limit(10)
+
   respond_to do |format|
     format.html
     format.js #{ render js: @post }
@@ -74,7 +82,7 @@ def new
 
   respond_to do |format|
     format.html # new.html.erb
-    format.js 
+    format.js
   end
 end
 
@@ -86,50 +94,50 @@ end
 # POST /posts
 # POST /posts.json
 
-def create 
-    @posts = Post.all(:order => 'created_at desc') 
+def create
+    @posts = Post.all(:order => 'created_at desc')
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
       begin
         if @post.save
-         track_activity @post  
+         track_activity @post
          respond_to do |format|
             format.js { redirect_to :back }
             #format.html # new.html.erb
             format.html { redirect_to :back } #{ redirect_to :back, :remote => true }
 
-            #below line will send a notification to 
+            #below line will send a notification to
             #everyone that there is a new post and they can refres
             PrivatePub.publish_to("/layouts/posts", "$('.headerAlert').show();")
 
           end
-        else  
-            render :new  
-        end  
+        else
+            render :new
+        end
       rescue => exception
           ExceptionNotifier.notify_exception(exception)
         if @post.save
-         track_activity @post  
+         track_activity @post
          respond_to do |format|
             format.js { redirect_to :back }
             #format.html # new.html.erb
             format.html { redirect_to :back } #{ redirect_to :back, :remote => true }
-            #below line will send a notification to 
+            #below line will send a notification to
             #everyone that there is a new post and they can refres
           end
-        else  
-            render :new  
-        end          
+        else
+            render :new
+        end
       end
 
-  end 
+  end
 
 # PUT /posts/1
 # PUT /posts/1.json
 
 def update
   @post = Post.find(params[:id])
-  
+
   if current_user.id == @post.user_id
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -142,7 +150,7 @@ def update
   end
 
   # respond_to do |format|
-  #   track_activity @post  
+  #   track_activity @post
   #   if @post.update_attributes(params[:post])
   #     format.html #{ redirect_to @post, notice: 'Post was successfully updated.' }
   #     #format.js #{ head :no_content }
@@ -160,14 +168,14 @@ def destroy
   @post.destroy
 
   @comments =  UserComment.all
-  @activities = Activity.all 
+  @activities = Activity.all
   @activities.find_by_trackable_id(@post.id).destroy
 
   @comments.each do |com|
     if com.commentable_id == @post.id
         @activities.find_by_trackable_id(com.id).destroy
         com.destroy
-    end  
+    end
   end
 
   respond_to do |format|
@@ -176,4 +184,4 @@ def destroy
   end
 end
 
-end 
+end

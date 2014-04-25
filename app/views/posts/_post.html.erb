@@ -3,7 +3,7 @@
 <% @comment = UserComment.new %>
 
 <% if User.where(:id => post.user_id).exists? %>
-  
+
     <div class="forum-post" id="forum-post-<%=post.id%>">
       <% @user = User.find_by_id(post.user_id) %>
       <% @votes = post.votes_for %>
@@ -48,7 +48,7 @@
       <% end %><!-- link to post#show -->
 
     </div><!-- forum-post -->
- 
+
 <% end %>
 
 

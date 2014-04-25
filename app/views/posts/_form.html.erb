@@ -1,6 +1,6 @@
 <div id="post_form">
   <%= simple_form_for @post, :html => { :multipart => true } do |form| %>
-  
+
     <% if @post.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -22,7 +22,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-    $('#post_content').autosize();   
+    $('#post_content').autosize();
 });
 $(function() {
   $("#file-icon").click(function() {

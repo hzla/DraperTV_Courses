@@ -25,7 +25,8 @@ config/secrets.yml
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 
-
+report.html
+rails_best_practices_output.html
 .DS_Store
 **.DS_Store
 .AppleDouble
@@ -33,8 +34,6 @@ config/secrets.yml
 
 # Icon must ends with two \r.
 Icon
-
-
 # Thumbnails
 ._*
 

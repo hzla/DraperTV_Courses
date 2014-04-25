@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
   		render file: 'public/404', status: 404, formats: [:html]
   	end
 
-    
+
   end
 
   def profile
@@ -26,7 +26,7 @@ class ProfilesController < ApplicationController
     @posts = Post.where(:user_id => @user.id).order('created_at desc')
     @activities =  Activity.all
     @activities = Activity.order("created_at desc")
-  
+
     if @user
       render action: :profile
     else

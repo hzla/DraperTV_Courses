@@ -1,14 +1,13 @@
-source 'https://rubygems.org'
+# Gemfile
+source "https://rubygems.org"
 ruby '1.9.3'
 
-gem 'rails', '~> 4.0.0'
-
+gem 'rails', '4.0.4'
 gem 'pg'
 gem 'jquery-turbolinks'
 gem 'nprogress-rails'
 gem 'rails_12factor', group: :production
 gem 'delayed_job_active_record'
-
 
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
@@ -28,7 +27,6 @@ gem 'turbolinks'
 gem 'thumbs_up'
 gem 'ckeditor'
 gem 'best_in_place', github: 'bernat/best_in_place'
-gem "ransack"
 
 # analytics & email
 gem 'instagram'
@@ -46,8 +44,7 @@ group :assets do
   gem 'sass-rails', '~> 4.0.0'
   gem 'compass-rails'
   gem 'coffee-rails', '~> 4.0.0'
-  gem "ransack" 
-
+  gem "ransack"
   gem 'uglifier', '>= 1.3.0'
 end
 
@@ -65,25 +62,23 @@ group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'
   gem 'hirb' #use Hirb.enable to enable it / text to Column
-  gem 'awesome_print', :require => 'ap' 
+  gem 'awesome_print', :require => 'ap'
   gem 'wirble'
   gem 'railroady' #run this command: rake diagram:all
   gem "bullet" # it always works unless you remove the initilzer
   gem "reek" # run this : reek .
   gem 'brakeman', :require => false # run this : brakeman [appPath] -o output_file
-  gem 'traceroute' # to check unUsed and Unreachable routes > rake traceroute
+  gem 'traceroute' # to check unUsed and Unreachable routes >  rake traceroute
   gem 'quiet_assets' #takes away the Asset messages in the Log
-
-  gem 'daemons' # for the Delay Job in Development Env
+  gem 'annotate', ">=2.6.0"
 end
 
-#gem 'rack-mini-profiler'
-gem 'annotate', ">=2.6.0"
+# gem 'rack-mini-profiler'
 gem 'pg_search'
 gem "simple_calendar", "~> 0.1.9"
 gem "kaminari"
 gem 'populator'
-gem 'faker'
+gem 'ffaker'
 gem 'acts-as-taggable-on'
 
 gem 'stripe'
@@ -94,7 +89,7 @@ gem 'httparty'
 gem 'jbuilder', '~> 1.2'
 gem "formtastic"
 
-gem 'rails4_upgrade', github: 'alindeman/rails4_upgrade'
+# gem 'rails4_upgrade', github: 'alindeman/rails4_upgrade'
 
 #rails Legacy Gems
 gem 'protected_attributes'
@@ -104,8 +99,20 @@ gem 'actionpack-action_caching'
 
 
 gem 'exception_notification'
+gem "delayed_job_web", github: "toolmantim/delayed_job_web", branch: "fix-rails-sessions"
+
+#Cache Gems
+gem 'memcachier'
 gem 'dalli'
-gem "delayed_job_web"
+gem 'rack-cache'
+gem 'kgio'
+
+
+
+group :development, :test do
+  gem 'rspec-rails'
+end
+
 # gem "nifty-generators", :group => :development
 
 # To use ActiveModel has_secure_password

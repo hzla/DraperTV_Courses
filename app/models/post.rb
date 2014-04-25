@@ -1,25 +1,9 @@
-# == Schema Information
-#
-# Table name: posts
-#
-#  id                :integer          not null, primary key
-#  content           :text
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#  file_file_name    :string(255)
-#  file_content_type :string(255)
-#  file_file_size    :integer
-#  file_updated_at   :datetime
-#  user_id           :integer
-#
-
 class Post < ActiveRecord::Base
   after_commit :flush_cache
-
   attr_accessible :content, :user_id, :title, :category
   attr_accessible :file
-  has_attached_file :file, 
-				    :styles => { :medium => "120x120#", :preview => "408x308#" }, 
+  has_attached_file :file,
+				    :styles => { :medium => "120x120#", :preview => "408x308#" },
 				    :bucket => 'duhonline',
 				    :storage => :s3,
 				    :s3_credentials => "#{Rails.root}/config/s3.yml",
@@ -36,7 +20,7 @@ class Post < ActiveRecord::Base
 
 
   def plusminus
-    
+
   end
 
   def cached_user
@@ -46,7 +30,7 @@ class Post < ActiveRecord::Base
   def self.cached_find(id)
     Rails.cache.fetch([first_name, id]) { find(id) }
   end
-  
+
   def flush_cache
     Rails.cache.delete([self.class.first_name, id])
   end

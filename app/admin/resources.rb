@@ -13,7 +13,7 @@ ActiveAdmin.register Resource do
      f.inputs :category
      f.inputs :url
      f.inputs :image,
-      :styles => { :large => "250x200#" }, 
+      :styles => { :large => "250x200#" },
       :bucket => 'duhonline',
       :storage => :s3,
       :s3_credentials => "#{Rails.root}/config/s3.yml"

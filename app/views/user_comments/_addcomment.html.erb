@@ -15,7 +15,7 @@
           }
           else {
             e.preventDefault();
-            var frm = $(this).closest("form");  
+            var frm = $(this).closest("form");
             jQuery.ajax({
                 url: frm.attr("action"),
                 data: frm.serialize(),
@@ -31,6 +31,6 @@
   });
 
   $(document).ready(function(){
-      $('textarea#comment-<%= @commentable.id %>').autosize();   
+      $('textarea#comment-<%= @commentable.id %>').autosize();
   });
 </script>

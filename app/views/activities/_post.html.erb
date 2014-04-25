@@ -1,7 +1,5 @@
 <% if post %>
-    <%  myPostIDs = []  
-    @posts = Post.all
-  %>
+    <%  myPostIDs = [] %>
 
 
   <% @posts.each do |post| %>
@@ -45,9 +43,9 @@
             <% end %>
             <div class="timestamp"><%= post.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
           </div><!-- content -->
-        <% end %>   
+        <% end %>
       </div><!-- post -->
     <% end %>
   <% end %>
-  
+
 <% end %>

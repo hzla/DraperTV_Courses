@@ -1,0 +1,19 @@
+ <div class="col-right-top-section">
+      <h3>Leaderboard</h3>
+
+<br>
+<% @users.each do |student| %>
+	<div class="section-link">
+			<div class="navbar-avatar"><%= image_tag student.avatar.url(:medium) %></div>
+			<div class="info-container">
+				<div class="name"><%= student.first_name %> <%= student.last_name.chars.first %></div>
+				<div class="points pcounter">
+					<p><%= number_with_delimiter(student.pcounter, :delimiter => ',') %></p>
+				</div>
+			</div>
+	</div>
+
+<% end %>
+
+
+  </div>

@@ -3,12 +3,12 @@ ActiveAdmin.register User do
     column :id
     column :first_name
     column :last_name
-    column :city
-    column :longitude
     column :tag_list
     column :online
     column :ncounter
     column :last_sign_in_at
+    column :eventReminder
+    column :email
     default_actions
   end
 
@@ -35,10 +35,11 @@ ActiveAdmin.register User do
      f.inputs :city
      f.inputs :state
      f.inputs :zip
-     f.inputs :country 
+     f.inputs :country
+     f.inputs :eventReminder
      f.inputs :password
      f.inputs :avatar,
-      :styles => { :medium => "120x120#", :thumb => "40x40#" }, 
+      :styles => { :medium => "120x120#", :thumb => "40x40#" },
       :bucket => 'duhonline',
       :storage => :s3,
       :s3_credentials => "#{Rails.root}/config/s3.yml"

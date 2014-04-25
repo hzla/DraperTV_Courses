@@ -1,36 +1,5 @@
-# == Schema Information
-#
-# Table name: assignments
-#
-#  id                       :integer          not null, primary key
-#  title                    :string(255)
-#  description              :text
-#  vimeo_url                :string(255)
-#  preview_url              :string(255)
-#  created_at               :datetime         not null
-#  updated_at               :datetime         not null
-#  course_id                :integer
-#  order_id                 :integer          default(0)
-#  survey_id                :integer
-#  require_upload           :boolean          default(FALSE)
-#  speaker_name             :string(255)
-#  speaker_bio              :text
-#  speaker_linkedin         :string(255)
-#  speaker_twitter          :string(255)
-#  speaker_angel            :string(255)
-#  category                 :string(255)
-#  speaker_pic_file_name    :string(255)
-#  speaker_pic_content_type :string(255)
-#  speaker_pic_file_size    :integer
-#  speaker_pic_updated_at   :datetime
-#  slug                     :string(255)
-#  points                   :integer
-#  user_assignment_id       :integer
-#
-
 class Assignment < ActiveRecord::Base
 
- 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :finders]
 
@@ -39,8 +8,8 @@ class Assignment < ActiveRecord::Base
   belongs_to :course
   has_many :user_assignments
   has_many :user_comments, as: :commentable
-  has_attached_file :speaker_pic, 
-    :styles => { :large => "200x200#" }, 
+  has_attached_file :speaker_pic,
+    :styles => { :large => "200x200#" },
     :default_url => "/assets/missing/missing.png",
     :bucket => 'duhonline'
 
@@ -75,4 +44,4 @@ class Assignment < ActiveRecord::Base
 
 end
 
- 
+
