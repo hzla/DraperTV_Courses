@@ -16,12 +16,10 @@ class Post < ActiveRecord::Base
 
   scope :by_score, joins("LEFT OUTER JOIN votes ON posts.id = votes.voteable_id AND votes.voteable_type = 'Post'").
                    group('posts.id').
-                   order('SUM(CASE user_votes.vote WHEN true THEN 1 WHEN false THEN -1 ELSE 0 END) DESC')
+                   order('SUM(CASE vote WHEN true THEN 1 WHEN false THEN -1 ELSE 0 END) DESC')
 
 
-  def plusminus
 
-  end
 
   def cached_user
     User.cached_find(author_id)

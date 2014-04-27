@@ -21,7 +21,13 @@ def index
 
   #listPosts = []
   #@posts = Post.plusminus_tally.order('plusminus_tally desc')
-  @posts = Post.order('created_at DESC').page(params[:page]).per(10)
+  # @posts = Post.order('created_at DESC').page(params[:page]).per(10)
+
+  # @post = Post.order('created_at DESC').by_score.page(params[:page]).per(10)
+
+  @posts = Post.by_score.order(:created_at).page(params[:page]).per(4)
+  Kaminari.paginate_array(@posts).page(params[:page]).per(4)
+
   @post = Post.new
   # @users = User.all
   # @user = User.find_by_id(@post.user_id)
