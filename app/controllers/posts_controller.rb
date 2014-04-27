@@ -25,7 +25,7 @@ def index
 
   # @post = Post.order('created_at DESC').by_score.page(params[:page]).per(10)
 
-  @posts = Post.by_score.order(:created_at).page(params[:page]).per(4)
+  @posts = Post.order_by_upvote.order(:created_at).page(params[:page]).per(4)
   Kaminari.paginate_array(@posts).page(params[:page]).per(4)
 
   @post = Post.new
