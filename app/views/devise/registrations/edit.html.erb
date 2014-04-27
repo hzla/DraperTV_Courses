@@ -1,49 +1,64 @@
-<div class="edit-form" style="width: 70%; margin-left:5%;">
-  <div class="network-section">
-    <div class="header">Edit Your Profile</div>
-  </div>
-  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true })  do |f| %>
-    <%= devise_error_messages! %>
 
-  <div class="simple_form_section">Email and Password</div>
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-  <table>
-    <tr>
-      <td>
-        <%= f.label :email %><br />
-        <%= f.email_field :email, label: "" %>
-      </td>
-      <td>
-
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%= f.label "New Password" %> <i>leave blank if you don't want to change it</i><br />
-        <%= f.password_field :password, :autocomplete => "off" %>
-      </td>
-      <td>
-        <div><%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation %></div>
-      </td>
-    </tr>
-  </table>
-  <div class="simple_form_section">Enter Password to Save Changes</div>
-  <table>
-    <tr>
-      <td>
-        <div><%= f.label :current_password %> <i>we need your current password to confirm changes</i><br />
-        <%= f.password_field :current_password %></div>
-      </td>
-    </tr>
-  </table>
-  <br />
-
-  <%= f.submit "Update Information" %>
-  <% end %>
-  <br />
-  <br />
-
+<div class="top-section">
+  <div class="row">
+    <div class="top-column-main">
+      <div style="width: 100%; position: relative; display; block; padding-left: 20px;">
+        <h1>Edit Profile</h1>
+      </div>
+    </div><!-- column main -->
+  </div><!-- row -->
 </div>
+
+<div class="column-main">
+
+  <div class="edit-form">
+    <div class="network-section">
+      <div class="header">Edit Your Profile</div>
+    </div>
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true })  do |f| %>
+      <%= devise_error_messages! %>
+
+    <div class="simple_form_section">Email and Password</div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+    <table>
+      <tr>
+        <td>
+          <%= f.label :email %><br />
+          <%= f.email_field :email, label: "" %>
+        </td>
+        <td>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.label "New Password" %> <i>leave blank if you don't want to change it</i><br />
+          <%= f.password_field :password, :autocomplete => "off" %>
+        </td>
+        <td>
+          <div><%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation %></div>
+        </td>
+      </tr>
+    </table>
+    <div class="simple_form_section">Enter Password to Save Changes</div>
+    <table>
+      <tr>
+        <td>
+          <div><%= f.label :current_password %> <i>we need your current password to confirm changes</i><br />
+          <%= f.password_field :current_password %></div>
+        </td>
+      </tr>
+    </table>
+    <br />
+
+    <%= f.submit "Update Information" %>
+    <% end %>
+    <br />
+    <br />
+
+  </div>
+</div><!-- column-main -->
+

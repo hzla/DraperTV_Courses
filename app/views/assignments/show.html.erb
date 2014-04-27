@@ -1,7 +1,6 @@
 <%= subscribe_to "/layouts/assignments" %>
 
 <div class="top-section">
-
   <div class="top-column-main">
       <div style="width: 100%; position: relative; display; block; padding-left: 20px;">
           <h1><%= @assignment.title %></h1>
@@ -16,9 +15,9 @@
   <!-- split panel if speaker info available -->
   <div id="assignment_container">
     <% if @assignment.category == "reading" or @assignment.category == "video" or @assignment.category == "founder" %>
-    	<br/>
+      <br/>
       <div class="video-responsive-container">
-    	   <%= raw @video_embed %>
+         <%= raw @video_embed %>
        </div>
 
     <% elsif @assignment.category == "quiz" %>
@@ -52,9 +51,6 @@
         </div>
       <% end %>
     <% end %>
-
-</div> <!-- end span10 -->
-
 
     <% if @assignment.require_upload == true %>
       <% if @assignment.user_assignments.where(:user_id => current_user[:id]).count > 0 %>
@@ -127,4 +123,3 @@
     <%= render "user_comments/addsidenavcomment" %>
   </div><!-- col-right-addcomment -->
 </div><!-- column-right -->
-
