@@ -34,11 +34,9 @@
           <% end %>
           <div class="vote-count" id="votes-<%= @post.id %>"><%= @postvotes %></div>
         </div><!-- upvote -->
-
       <!-- image -->
 
       <!-- content -->
-
         <div class="content">
           <% if current_user.id == @post.user_id %>
             <div class="title">
@@ -94,7 +92,7 @@
       <% end %>
 
       <!-- comments -->
-      <div id="comments_container">
+      <div id="comments_container" style="width: 80%;">
         <div id="submit-<%= @post.id %>">
           <%= render "user_comments/addpostcomment" %>
         </div>

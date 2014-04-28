@@ -1,4 +1,3 @@
-
 OnlineSchool::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -6,7 +5,6 @@ OnlineSchool::Application.routes.draw do
   root :to => 'home#index'
   resources :messages
   resources :apps
-  get 'apply', to: 'apps#new'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

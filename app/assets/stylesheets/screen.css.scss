@@ -553,6 +553,31 @@ input[type="submit"] {
 	overflow: hidden;
 	width: calc(70% - 25px);
 	margin-left: 25px;
+	.speaker-section {
+		display: block;
+		width: 100%;
+		padding: 35px 0 0 0;
+		img {
+			display: block;
+			width: 80px;
+			height: 80px;
+			float: left;
+			border-radius: 4px;
+			margin-right: 20px;
+		}
+		.info {
+			margin-left: 100px;
+			width: calc(100% - 100px);
+		}
+		h2 {
+			padding: 5px 0 10px 0;
+			color: $gray-dark;
+			margin: 0;
+		}
+		p {
+			color: $gray-med;
+		}
+	}
 }
 #speaker_container {
 	width: 25%;

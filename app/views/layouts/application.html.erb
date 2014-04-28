@@ -161,8 +161,8 @@
                 </div>
                 <ul class="dropdown-menu">
                   <li role="menu"><%= link_to 'My Profile', student_profile_path(current_user)  %></li>
-                  <li role="menu"><%= link_to 'Profile Setting',  edit_user_path(current_user) %></li>
-                  <li role="menu"><%= link_to 'Account Setting',  edit_user_registration_path %></li>
+                  <li role="menu"><%= link_to 'Settings',  edit_user_path(current_user) %></li>
+                  <li role="menu"><%= link_to 'Change Password',  edit_user_registration_path %></li>
 
                   <li class="divider"></li>
                   <li role="menu"><%= link_to 'Leave Feedback', feedbacks_path %></li>
@@ -184,7 +184,6 @@
               <div id="logo"></div>
             <% end %>
             <ul class="nav pull-right">
-              <li id="home_link"><%= link_to "Apply", '/apply' %></li>
               <li id="home_link"><%= link_to "Log In", login_path %></li>
             </ul>
           </div>

@@ -1,19 +1,20 @@
-<div class="sign-in-container"><br />
-	<div class="section-bar">Sign In</div>
-	<div class="sign-in">
-		<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "sign-in"}) do |f| %>
 
-			<%= f.input :email %>
-			<%= f.input :password %>
+<!-- 	<div class="sign-in-container"><br />
+		<div class="section-bar">Sign In</div>
+		<div class="sign-in">
+			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "sign-in"}) do |f| %>
 
-		  <% if devise_mapping.rememberable? -%>
-		    <div><%= f.check_box :remember_me, as: :boolean, :class => 'float' %> <%= f.label :remember_me %></div>
-		  <% end -%><br />
+				<%= f.input :email %>
+				<%= f.input :password %>
 
-		 <div><%= f.button :submit, "Sign in", :use_rails_ajax => false %></div>
-		<% end %>
+			  <% if devise_mapping.rememberable? -%>
+			    <div><%= f.check_box :remember_me, as: :boolean, :class => 'float' %> <%= f.label :remember_me %></div>
+			  <% end -%><br />
 
-		<%= render "devise/shared/links" %>
-	</div>
-</div>
+			 <div><%= f.button :submit, "Sign in", :use_rails_ajax => false %></div>
+			<% end %>
+			<%= render "devise/shared/links" %>
+		</div>
+	</div> -->
+<h1 style="text-align: center; margin: 0 auto;">Sorry, class is not in session.</h1>
 

@@ -17,8 +17,15 @@
     <% if @assignment.category == "reading" or @assignment.category == "video" or @assignment.category == "founder" %>
       <br/>
       <div class="video-responsive-container">
-         <%= raw @video_embed %>
-       </div>
+        <%= raw @video_embed %>
+      </div>
+      <div class="speaker-section">
+        <%= image_tag(@assignment.speaker_pic) %>
+        <div class="info">
+          <h2><%= @assignment.speaker_name %></h2>
+          <p><%= @assignment.speaker_bio %></p>
+        </div>
+      </div><!-- speaker-section -->
 
     <% elsif @assignment.category == "quiz" %>
       <div class="quiz_description" style="min-height: 20px;"></div>
