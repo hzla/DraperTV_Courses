@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   friendly_id :full_name, use: [:slugged, :finders]
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :timeoutable
 
 
   has_attached_file :avatar,
