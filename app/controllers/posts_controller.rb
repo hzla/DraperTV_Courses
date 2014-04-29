@@ -13,15 +13,9 @@ end
 # GET /posts.json
 def index
   @leaders = User.where("pcounter is not null").order('pcounter DESC').limit(8)
-  #@posts = Post.plusminus_tally.order('plusminus_tally desc').page(params[:page]).per(10)
-  # listPosts = []
-  # @listPosts = Post.plusminus_tally.order('plusminus_tally desc')
-  # @posts = @listPosts.page(params[:page]).per(10)
-  # @posts  = Kaminari.paginate_array(@listPosts).page(params[:page]).per(5)
+  @posts = Post.order_by_upvote.order(:created_at).page(params[:page]).per(4)
+  Kaminari.paginate_array(@posts).page(params[:page]).per(4)
 
-  #listPosts = []
-  #@posts = Post.plusminus_tally.order('plusminus_tally desc')
-  @posts = Post.order('created_at DESC').page(params[:page]).per(10)
   @post = Post.new
   # @users = User.all
   # @user = User.find_by_id(@post.user_id)

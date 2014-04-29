@@ -14,14 +14,12 @@ class Post < ActiveRecord::Base
   has_many :user_comments, as: :commentable
   acts_as_voteable
 
-  scope :by_score, joins("LEFT OUTER JOIN votes ON posts.id = votes.voteable_id AND votes.voteable_type = 'Post'").
+  scope :order_by_upvote, joins("LEFT OUTER JOIN votes ON posts.id = votes.voteable_id AND votes.voteable_type = 'Post'").
                    group('posts.id').
-                   order('SUM(CASE user_votes.vote WHEN true THEN 1 WHEN false THEN -1 ELSE 0 END) DESC')
+                   order('SUM(CASE vote WHEN true THEN 1 WHEN false THEN -1 ELSE 0 END) DESC')
 
 
-  def plusminus
 
-  end
 
   def cached_user
     User.cached_find(author_id)
