@@ -4,7 +4,7 @@ OnlineSchool::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   #root :to => 'profiles#show'
   root :to => 'home#index'
-  resources :messages
+  # resources :messages
   resources :apps
   get 'apply', to: 'apps#new'
 

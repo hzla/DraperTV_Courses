@@ -1,4 +1,6 @@
 class ActivitiesController < ApplicationController
+    before_filter :authenticate_user!
+  load_and_authorize_resource
   def index
   	@activities =  Activity.all
     @activities = Activity.page(params[:page]).per(10).order("created_at desc").includes(:trackable)
