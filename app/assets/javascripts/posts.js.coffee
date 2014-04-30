@@ -1,7 +1,7 @@
 jQuery ->
         $('.best_in_place').best_in_place()
-        
-        
+
+
         isScrolledIntoView = (elem) ->
                 docViewTop = $(window).scrollTop()
                 docViewBottom = docViewTop + $(window).height()
@@ -13,9 +13,9 @@ jQuery ->
                 $(window).scroll ->
                         url = $('.pagination .next a').attr('href')
                         if url && isScrolledIntoView('.pagination')
-                                $('.pagination').text('Fetching more...')
+                                $('.pagination').text('Loading more...')
                                 $.getScript(url)
-                
+
                 $(window).scroll()
 
 

@@ -67,27 +67,23 @@
               <table id="event-table" style="margin-top: 0px;">
                   <tr>
                     <td class="icon"><i class="fa fa-check-circle" style="color: #24b494"></i></td>
-                    <td><%= @user_assignment.first.updated_at.strftime("%B %e") %></td>
+                    <td>Completed <%= @user_assignment.first.updated_at.strftime("%B %e") %></td>
                   </tr>
                   <tr>
                     <td class="icon"><i class="fa fa-align-justify"></i></td>
-                    <td><% if @assignment.description != nil %><%= @assignment.description.html_safe %><% end %></td>
+                    <td><% if @assignment.description != nil %><p class="minimize"><%= @assignment.description.html_safe %></p><% end %></td>
                   </tr>
-                  <tr>
+                  <!-- <tr>
                     <td class="icon"><i class="fa fa-user"></i></td>
                     <td>Completed by Yad Faeq, Charles Taibi, Kelsey Whelan, and 6 more</td>
-                  </tr>
-                  <tr>
-                    <td class="icon"><i class="fa fa-bolt"></i></td>
-                    <td>500 Points</td>
-                  </tr>
+                  </tr> -->
                   <tr>
                     <td></td>
                     <td></td>
                   </tr>
                 </table>
             </div>
-            <div class ="section-bar" style="margin-bottom: 10px;">Response</div>
+            <div class ="section-bar" style="margin-bottom: 10px;">Response </div>
             <p><%= raw(@user_assignment.first.text) %></p>
             <br />
             <% if @assignment.category == "upload" %>
