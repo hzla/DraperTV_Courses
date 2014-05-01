@@ -55,11 +55,19 @@ end
       notifSend(@comment)
       if @comment.save
         track_activity @comment
+        @comments = @commentable.user_comments.order('created_at desc')
         #refresh_dom_with_partial('div#comments_container', 'comments')
-        respond_to do |format|
-          format.html { }
-          format.js { @comments = @commentable.user_comments.order('created_at desc') }
-        end
+          if @comment.commentable_type == "Assignment"
+            respond_to do |format|
+              format.html {  }
+              format.js { render :commentAssignment }
+            end
+          else
+            respond_to do |format|
+              format.html { }
+              format.js { render :commentVote }
+            end
+          end
       else
         render :new
       end
@@ -73,11 +81,19 @@ end
         # logger.fatal "notifications failed"
         if @comment.save
           track_activity @comment
+          @comments = @commentable.user_comments.order('created_at desc')
           #refresh_dom_with_partial('div#comments_container', 'comments')
-          respond_to do |format|
-              format.js { @comments = @commentable.user_comments.order('created_at desc') }
-              format.html #{ redirect_to @commentable }
-          end
+            if @comment.commentable_type == "Assignment"
+              respond_to do |format|
+                format.html {  }
+                format.js { render :commentAssignment }
+              end
+            else
+              respond_to do |format|
+                format.html { }
+                format.js { render :commentVote }
+              end
+            end
         else
           render :new
         end
