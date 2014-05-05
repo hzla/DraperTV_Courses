@@ -12,7 +12,7 @@
 
 <div class="column-main">
   <div class="back-button">
-    <%= link_to posts_path do %>Back to Forums<% end %>
+    <%= link_to discussions_path do %>Back to Forums<% end %>
   </div>
   <% if User.where(:id => @post.user_id).exists? %>
     <div id="forum-post-show">

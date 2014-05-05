@@ -1,4 +1,8 @@
 class Post < ActiveRecord::Base
+
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :finders]
+
   after_commit :flush_cache
   attr_accessible :content, :user_id, :title, :category
   attr_accessible :file
@@ -20,6 +24,9 @@ class Post < ActiveRecord::Base
 
 
 
+  def should_generate_new_friendly_id?
+    new_record?
+  end
 
   def cached_user
     User.cached_find(author_id)

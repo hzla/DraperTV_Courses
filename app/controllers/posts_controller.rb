@@ -14,8 +14,8 @@ end
 # GET /posts.json
 def index
   @leaders = User.where("pcounter is not null").order('pcounter DESC').limit(8)
-  @posts = Post.order_by_upvote.order(:created_at).page(params[:page]).per(4)
-  Kaminari.paginate_array(@posts).page(params[:page]).per(4)
+  @posts = Post.order_by_upvote.order(:created_at).page(params[:page]).per(8)
+  Kaminari.paginate_array(@posts).page(params[:page]).per(8)
 
   @post = Post.new
   # @users = User.all
@@ -59,7 +59,7 @@ end
 # GET /posts/1
 # GET /posts/1.json
 def show
-  @post = Post.find(params[:id])
+  @post = Post.friendly.find(params[:id])
   @commentable = @post
   @comments = @commentable.user_comments.order('created_at desc')
   @comment = UserComment.new
