@@ -9,7 +9,7 @@
       <% @votes = post.votes_for %>
 
       <!-- *** upvoteable *** -->
-      <div class="upvote">
+      <div class="upvote" id="upvote-<%= post.id %>">
         <% if current_user.voted_for?(post) %>
           <div class="unvote-button" id="unvote-button-<%= post.id %>">
             <%=link_to unvote_for_post_posts_path(post_id: post.id), :remote => true,  :method => :post do %><i class="fa fa-chevron-up"></i><% end %>
