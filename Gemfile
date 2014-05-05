@@ -27,6 +27,7 @@ gem 'turbolinks'
 gem 'thumbs_up'
 gem 'ckeditor'
 gem 'best_in_place', github: 'bernat/best_in_place'
+gem 'link_thumbnailer'
 
 # analytics & email
 gem 'instagram'
