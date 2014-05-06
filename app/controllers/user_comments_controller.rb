@@ -53,16 +53,6 @@ end
 
     begin
       notifSend(@comment)
-      if @comment.save
-        track_activity @comment
-        #refresh_dom_with_partial('div#comments_container', 'comments')
-        respond_to do |format|
-          format.html { }
-          format.js { @comments = @commentable.user_comments.order('created_at desc') }
-        end
-      else
-        render :new
-      end
     rescue => exception
         ExceptionNotifier.notify_exception(exception)
         PrivatePub.publish_to("/layouts/comments",
@@ -70,17 +60,24 @@ end
         $('##{@commentable.id}').append(#{render(:partial => 'user_comments/postcomments')});")
     rescue
     ensure
-        # logger.fatal "notifications failed"
-        if @comment.save
-          track_activity @comment
-          #refresh_dom_with_partial('div#comments_container', 'comments')
-          respond_to do |format|
-              format.js { @comments = @commentable.user_comments.order('created_at desc') }
-              format.html #{ redirect_to @commentable }
+      if @comment.save
+        track_activity @comment
+        @comments = @commentable.user_comments.order('created_at desc')
+        #refresh_dom_with_partial('div#comments_container', 'comments')
+          if @comment.commentable_type == "Assignment"
+            respond_to do |format|
+              format.html {  }
+              format.js { render :commentAssignment }
+            end
+          else
+            respond_to do |format|
+              format.html { }
+              format.js { render :commentVote }
+            end
           end
-        else
-          render :new
-        end
+      else
+        render :new
+      end
       end # end rescue
     end
 

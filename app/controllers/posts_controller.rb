@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_user!
   load_and_authorize_resource
   before_filter :load
   respond_to :html, :json
@@ -13,14 +14,15 @@ end
 # GET /posts.json
 def index
   @leaders = User.where("pcounter is not null").order('pcounter DESC').limit(8)
-  @posts = Post.order_by_upvote.order(:created_at).page(params[:page]).per(4)
-  Kaminari.paginate_array(@posts).page(params[:page]).per(4)
+  # @posts = Post.order_by_upvote.order(:created_at).page(params[:page]).per(8)
+  @posts = Post.order(sort_column + ' ' + sort_direction).page(params[:page]).per(8)
+  Kaminari.paginate_array(@posts).page(params[:page]).per(8)
 
   @post = Post.new
   # @users = User.all
   # @user = User.find_by_id(@post.user_id)
-  @instagram_draperu = Instagram.tag_recent_media('draperu', options = {count: 20})
-  @instagram_draperuonline = Instagram.tag_recent_media('draperuonline', options = {count: 20})
+  # @instagram_draperu = Instagram.tag_recent_media('draperu', options = {count: 20})
+  # @instagram_draperuonline = Instagram.tag_recent_media('draperuonline', options = {count: 20})
 
   @users = User.order('pcounter DESC').limit(10)
 
@@ -37,6 +39,8 @@ def vote_for_post
     respond_to do |format|
       format.js
     end
+    @post.update_column(:vote, @post.vote.to_i + 1)
+
   rescue
     render :nothing => true, :status => 404
   end
@@ -49,6 +53,7 @@ def unvote_for_post
     respond_to do |format|
       format.js
     end
+    @post.update_column(:vote, @post.vote.to_i - 1)
   rescue
     render :nothing => true, :status => 404
   end
@@ -58,7 +63,7 @@ end
 # GET /posts/1
 # GET /posts/1.json
 def show
-  @post = Post.find(params[:id])
+  @post = Post.friendly.find(params[:id])
   @commentable = @post
   @comments = @commentable.user_comments.order('created_at desc')
   @comment = UserComment.new
@@ -178,4 +183,12 @@ def destroy
   end
 end
 
+  private
+  def sort_column
+    params[:sort] || "created_at"
+  end
+
+  def sort_direction
+    params[:direction] || "desc"
+  end
 end

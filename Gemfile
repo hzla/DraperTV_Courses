@@ -112,6 +112,9 @@ gem 'kgio'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem "database_cleaner", '1.0.0.RC1'
 end
 
 # gem "nifty-generators", :group => :development

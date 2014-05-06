@@ -1,5 +1,8 @@
 class Post < ActiveRecord::Base
-  after_commit :flush_cache
+
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :finders]
+
   attr_accessible :content, :user_id, :title, :category
   attr_accessible :file
   has_attached_file :file,
@@ -20,17 +23,10 @@ class Post < ActiveRecord::Base
 
 
 
-
-  def cached_user
-    User.cached_find(author_id)
+  def should_generate_new_friendly_id?
+    new_record?
   end
 
-  def self.cached_find(id)
-    Rails.cache.fetch([first_name, id]) { find(id) }
-  end
 
-  def flush_cache
-    Rails.cache.delete([self.class.first_name, id])
-  end
 
 end
