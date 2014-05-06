@@ -7,24 +7,34 @@
         <h1>Discussion Board</h1>
         <!-- ***** CREATE POST BUTTON ***** -->
 
-        <div class="button-right">
-
-
-
-          <span class="type blue"><%= sortable "vote", "Votes" %></span>
-          <span class="type green"><%= sortable "created_at", "Date" %></span>
-          <span class="type red"><%= sortable "category", "Category" %></span>
-
-
-
-
-
-
-
+        <div class="button-right" style="margin-right: 0;">
+          <a id="show-filters" style="position: absolute; top: 12px; right: 70px;"><h4>Filters</h4></a>
           <a href="#newPostModal" data-toggle="modal" id="intro-video" data-backdrop="false">
             <div class="circle-button"><p>+</p></div>
           </a>
+          <div id="user-search-form" style="left: -250px;">
+            <%= search_form_for @q do |f| %>
+              <div class="filter">
+                <%= f.text_field :title_or_content_cont, :placeholder => "Post Title or Content" %>
+              </div>
+              <div class="filter">
+                <%= f.label :category_cont, 'Type' %>
+                <%= f.select :category_cont, ['Advice', 'Coursework', 'General'], include_blank: true %>
+              </div>
 
+              <div class="filter">
+                <%= f.label :s, 'Sort by' %>
+                <%= f.collection_select :s, Post::SORT_FIELDS.to_a, :first, :last, selected: posts_sort_value, include_blank: false %>
+              </div>
+              <div class="filter">
+                <%= f.submit 'Filter', :id => "filter-submit" %>
+              </div>
+            <% end %>
+          </div><!-- user-search-form -->
+
+          <!-- <span class="type blue"><%= sortable "vote", "Votes" %></span>
+          <span class="type green"><%= sortable "created_at", "Date" %></span>
+          <span class="type red"><%= sortable "category", "Category" %></span> -->
         </div>
 
       </div>
@@ -52,7 +62,6 @@
     <%= subscribe_to "/posts/new" %>
   </div><!-- col-9 -->
   <div class="column-right">
-
      <%= render '/users/leaderboard' %>
   </div>
 </div><!-- row -->
@@ -70,6 +79,12 @@
 
 <script type="text/javascript">
   $(".headerAlert").hide();
+
+  $('#show-filters').click(function(){
+    $('#user-search-form').toggle('5000', 'easeOutCirc', function() {});
+    //$('#users').toggleClass('active', [3000]);
+    return false;
+  });
 
   $( document ).ready(function() {
     // refresh alert for new posts

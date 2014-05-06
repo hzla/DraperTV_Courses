@@ -19,7 +19,7 @@
             <%=link_to vote_for_post_posts_path(post_id: post.id), :remote => true,  :method => :post do %><i class="fa fa-chevron-up"></i><% end %>
           </div>
         <% end %>
-        <div class="vote-count" id="votes-<%= post.id %>"><%= @votes %></div>
+        <div class="vote-count" id="votes-<%= post.id %>"><%= post.vote %></div>
       </div><!-- upvote -->
 
       <!-- ** post information ** -->

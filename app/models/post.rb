@@ -27,6 +27,8 @@ class Post < ActiveRecord::Base
     new_record?
   end
 
+  SORT_FIELDS = { "vote desc" => 'Most Votes', "vote asc" => 'Least Votes', "created_at desc" => 'Most Recent' }
+
 
 
 end

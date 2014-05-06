@@ -15,15 +15,14 @@ end
 def index
   @leaders = User.where("pcounter is not null").order('pcounter DESC').limit(8)
   # @posts = Post.order_by_upvote.order(:created_at).page(params[:page]).per(8)
-  @posts = Post.order(sort_column + ' ' + sort_direction).page(params[:page]).per(8)
-  Kaminari.paginate_array(@posts).page(params[:page]).per(8)
+  #@posts = Post.order(sort_column + ' ' + sort_direction).page(params[:page]).per(8)
+  #Kaminari.paginate_array(@posts).page(params[:page]).per(8)
+
+  @posts = Post.all
+  @q = Post.search(params[:q])
+  @posts = @q.result(distinct: true).where("vote is not null").order('vote').page(params[:page]).per(25)
 
   @post = Post.new
-  # @users = User.all
-  # @user = User.find_by_id(@post.user_id)
-  # @instagram_draperu = Instagram.tag_recent_media('draperu', options = {count: 20})
-  # @instagram_draperuonline = Instagram.tag_recent_media('draperuonline', options = {count: 20})
-
   @users = User.order('pcounter DESC').limit(10)
 
   respond_to do |format|
