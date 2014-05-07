@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140505193524) do
+ActiveRecord::Schema.define(version: 20140506185050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,6 +115,10 @@ ActiveRecord::Schema.define(version: 20140505193524) do
     t.string   "slug"
     t.integer  "points"
     t.integer  "user_assignment_id"
+    t.string   "question_text"
+    t.text     "question_duh_response"
+    t.boolean  "active"
+    t.boolean  "business"
   end
 
   add_index "assignments", ["slug"], name: "index_assignments_on_slug", using: :btree
@@ -381,6 +385,8 @@ ActiveRecord::Schema.define(version: 20140505193524) do
     t.string   "link"
     t.integer  "point_value"
     t.integer  "bonus_points_given"
+    t.integer  "rating"
+    t.text     "question_response"
   end
 
   create_table "user_comments", force: true do |t|

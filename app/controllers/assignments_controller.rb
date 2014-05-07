@@ -9,10 +9,11 @@ class AssignmentsController < ApplicationController
 	def show
 		@assignment = Assignment.find(params[:id])
     @commentable = @assignment
-    @comments = @commentable.user_comments.order(:created_at)
+    @comments = @commentable.user_comments.order('created_at desc')
     @comment = UserComment.new
     @user_assignment = @assignment.user_assignments.where(:user_id => current_user[:id])
     @user = current_user
+    @completed = UserAssignment.where(:assignment_id => @assignment.id).where("rating is not null").where.not(user_id: current_user.id)
 
 		if @assignment.category == "video" or @assignment.category == "reading" or @assignment.category == "founder"
 		  oembed = "http://vimeo.com/api/oembed.json?url=http%3A//vimeo.com/" + @assignment.vimeo_url + '&autoplay=1'
@@ -38,7 +39,7 @@ class AssignmentsController < ApplicationController
         @user_assignment = @assignment.user_assignments.create(
           :assignment_id => @assignment.id,
           :user_id => current_user[:id],
-          :point_value => 100
+          :point_value => 0
         )
 
       elsif @assignment.category == "milestone"

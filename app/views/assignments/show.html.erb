@@ -14,19 +14,88 @@
     </div>
   <!-- split panel if speaker info available -->
   <div id="assignment_container">
-    <% if @assignment.category == "reading" or @assignment.category == "video" or @assignment.category == "founder" %>
+    <!-- ******** VIDEO/FOUNDER ******* -->
+    <% if @assignment.category == "video" or @assignment.category == "founder" %>
+      <br/>
+
+      <!-- ** completed assignment ** -->
+      <% if @assignment.complete_for_user?(current_user) %>
+        <div class="small-video-container">
+          <div class="video-responsive-container">
+            <%= raw @video_embed %>
+          </div>
+        </div>
+        <div class="float-right-50">
+          <h2><%= @assignment.question_text %></h2>
+          <p class="minimize"><%= @assignment.question_duh_response %></p>
+        </div>
+        <br/><br/>
+        <div class="line"></div>
+        <div class="student-response">
+          <div class="picture">
+            <%= image_tag(current_user.avatar) %>
+          </div>
+          <div class="info">
+            <div class="name"><%= current_user.full_name %></div>
+            <% i = 0 %>
+            <% r = @user_assignment.first.rating.to_i %>
+            <% while i < r do %>
+              <i class="fa fa-star"></i>
+              <% i += 1 %>
+            <% end %>
+            <p class="response"><%= best_in_place @user_assignment.first, :question_response, :type => :textarea, :class => 'best_in_place' %></p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <% @completed.each do |c| %>
+          <div class="student-response">
+            <div class="picture"><%= image_tag(User.find(c.user_id).avatar) %></div>
+            <div class="info">
+              <div class="name"><%= User.find(c.user_id).full_name %></div>
+              <% i = 0 %>
+              <% r = c.rating %>
+              <% while i < r do %>
+                <i class="fa fa-star"></i>
+                <% i += 1 %>
+              <% end %>
+              <p class="response minimize"><%= c.question_response %></p>
+            </div>
+          </div>
+        <% end %>
+
+      <!-- ** not completed ** -->
+      <% else %>
+      <div class="video-responsive-container">
+        <%= raw @video_embed %>
+      </div>
+       <div class="speaker-section">
+          <%= image_tag(@assignment.speaker_pic) %>
+          <a id="complete-video" data-toggle="modal" href="#complete-video-form" data-backdrop="false" style="position: absolute; top: 0; right: 0; width: auto;">Mark as Complete</a>
+
+          <div class="info">
+            <h2><%= @assignment.speaker_name %></h2>
+            <p><%= @assignment.speaker_bio %></p>
+          </div>
+        </div><!-- speaker-section -->
+      <% end %>
+
+    <!-- ******** READING ******* -->
+    <% elsif @assignment.category == "reading" %>
       <br/>
       <div class="video-responsive-container">
         <%= raw @video_embed %>
       </div>
       <div class="speaker-section">
         <%= image_tag(@assignment.speaker_pic) %>
+        <a id="complete-video" data-toggle="modal" href="#complete-video-form" data-backdrop="false" style="position: absolute; top: 0; right: 0; width: auto;">Mark as Complete</a>
+
         <div class="info">
           <h2><%= @assignment.speaker_name %></h2>
           <p><%= @assignment.speaker_bio %></p>
         </div>
       </div><!-- speaker-section -->
 
+    <!-- ******** QUIZ ******* -->
     <% elsif @assignment.category == "quiz" %>
       <div class="quiz_description" style="min-height: 20px;"></div>
       <% if @assignment.survey.avaliable_for_participant?(current_user) %>
@@ -111,6 +180,40 @@
   </div> <!-- end span10 -->
 </div> <!-- column-main -->
 
+<!-- ************************************** -->
+<!-- **** MARK AS COMPLETE MODAL FORM ***** -->
+<!-- ************************************** -->
+
+ <div id="complete-video-form" class="modal hide fade" tabindex="1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div style="padding: 30px;">
+    <%= form_for @user_assignment.first do |f| %>
+      <button type="button" class="close" style="" data-dismiss="modal" aria-hidden="true">x</button>
+      <h2>Complete <%= @assignment.title %></h2><br/>
+      <div class="title">Please rate this lecture from one to five stars, where five is the best.</div>
+      <fieldset class="rating">
+        <%= f.radio_button("rating", 5,  id: "star5") %>
+         <label for="star5" title="Rocks!">5 stars</label>
+        <%= f.radio_button("rating", 4, checked: false, id: "star4") %>
+        <label for="star4" title="Great">4 stars</label>
+        <%= f.radio_button("rating", 3, checked: false, id: "star3") %>
+        <label for="star3" title="Good">3 stars</label>
+        <%= f.radio_button("rating", 2, checked: false, id: "star2") %>
+        <label for="star2" title="OK">2 stars</label>
+        <%= f.radio_button("rating", 1, checked: false, id: "star1") %>
+        <label for="star1" title="meh">1 star</label>
+      </fieldset>
+      <div class="title"><%= @assignment.question_text %></div>
+      <%= f.text_area :question_response, :label => false, :input_html => { :rows => 5, :minlength => 300, :style => "width: 95%;"}, :placeholder => "Your response must be at least 300 characters." %>
+      <%= f.hidden_field :point_value, :value => 300 %>
+      <%= f.submit "Complete Assignment" %>
+    <% end %>
+  </div>
+</div>
+
+<!-- ************************ -->
+<!-- **** COLUMN RIGHT  ***** -->
+<!-- ************************ -->
+
 <div class="column-right">
   <div class="col-right-top-section">
     <h3>Discussion</h3>
@@ -126,3 +229,4 @@
     <%= render "user_comments/addsidenavcomment" %>
   </div><!-- col-right-addcomment -->
 </div><!-- column-right -->
+
