@@ -82,7 +82,7 @@ class AssignmentsController < ApplicationController
 
       if @attempt.valid? and @attempt.save
         @assignment.user_assignments.first.update_attribute(:point_value, 200)
-        current_user.update_attribute(:pcounter, UserAssignment.sum('point_value'))
+        current_user.update_attribute(:pcounter, UserAssignment.where(:user_id => current_user[:id]).sum('point_value'))
         redirect_to assignment_path
       else
        render :action => :show

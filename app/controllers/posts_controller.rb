@@ -52,7 +52,11 @@ def unvote_for_post
     respond_to do |format|
       format.js
     end
-    @post.update_column(:vote, @post.vote.to_i - 1)
+    if @post.vote == 0
+    else
+      @post.update_column(:vote, @post.vote.to_i - 1)
+    end
+
   rescue
     render :nothing => true, :status => 404
   end
