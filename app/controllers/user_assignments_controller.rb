@@ -14,6 +14,10 @@ class UserAssignmentsController < ApplicationController
     end
   end
 
+  def edit
+    @user = UserAssignment.where(:user_id => current_user[:id])
+  end
+
   def update
     @user_assignment = UserAssignment.find(params[:id])
     respond_to do |format|

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507165520) do
+ActiveRecord::Schema.define(version: 20140512160354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,18 @@ ActiveRecord::Schema.define(version: 20140507165520) do
 
   add_index "activities", ["trackable_id"], name: "index_activities_on_trackable_id", using: :btree
   add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
+
+  create_table "activity_feeds", force: true do |t|
+    t.integer  "user_id"
+    t.string   "action"
+    t.integer  "trackable_id"
+    t.string   "trackable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "activity_feeds", ["trackable_id"], name: "index_activity_feeds_on_trackable_id", using: :btree
+  add_index "activity_feeds", ["user_id"], name: "index_activity_feeds_on_user_id", using: :btree
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -111,6 +123,10 @@ ActiveRecord::Schema.define(version: 20140507165520) do
     t.string   "slug"
     t.integer  "points"
     t.integer  "user_assignment_id"
+    t.string   "question_text"
+    t.text     "question_duh_response"
+    t.boolean  "active"
+    t.boolean  "business"
   end
 
   add_index "assignments", ["slug"], name: "index_assignments_on_slug", using: :btree
@@ -368,6 +384,9 @@ ActiveRecord::Schema.define(version: 20140507165520) do
     t.string   "link"
     t.integer  "point_value"
     t.integer  "bonus_points_given"
+    t.integer  "rating"
+    t.text     "question_response"
+    t.boolean  "editcheck"
   end
 
   create_table "user_comments", force: true do |t|

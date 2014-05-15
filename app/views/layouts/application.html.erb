@@ -55,7 +55,7 @@
 
             <!-- ** Show Score in Nav ** -->
             <% if current_user.pcounter != nil %>
-              <div class="right-score"><%= number_with_delimiter(current_user.pcounter + current_user.char_points, :delimiter => ',') %></div>
+              <div class="right-score"><%= number_with_delimiter(current_user.pcounter , :delimiter => ',') %></div>
             <% else %>
             <% end %>
 

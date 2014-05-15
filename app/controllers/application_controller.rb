@@ -58,6 +58,12 @@ end
     end
 
 
+
+
+  def track_activity_feed(tobetrackable, action = params[:action])
+    current_user.activities.create! action: action, tobetrackable: tobetrackable
+  end
+
   private
      def track_activity(trackable, action = params[:action])
        current_user.activities.create! action: action, trackable: trackable

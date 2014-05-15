@@ -24,11 +24,11 @@ namespace :db do
 
     # end
 
-    Post.populate 150 do |post|
+    Post.populate 50 do |post|
       post.content = Faker::Lorem.sentence
       post.title = Faker::Lorem.word
       post.category = "General"
-
+      post.vote = 1
       post.user_id = '1'
 
     end

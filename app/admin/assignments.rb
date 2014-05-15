@@ -5,6 +5,8 @@ ActiveAdmin.register Assignment do
     column :title
     column :description
     column :category
+    column :require_upload
+
     default_actions
   end
 
@@ -12,7 +14,9 @@ ActiveAdmin.register Assignment do
    f.inputs "Assignment Details" do
      f.inputs :course
      f.inputs :title
-     f.inputs :description
+     f.inputs :question_text
+     f.inputs :question_duh_response
+     f.inputs :business
      f.inputs :vimeo_url
      f.inputs :survey_id
      f.inputs :require_upload

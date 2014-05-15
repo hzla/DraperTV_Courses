@@ -50,8 +50,9 @@ end
     @comment.user_id = current_user[:id]
     #@commentable.user_comments.create(:user_id => current_user[:id])
     @user = User.find(@comment.user_id)
-    @words = @comment.content.split.size + @user.char_points
+    @words = @comment.content.split.size.to_i + @user.char_points.to_i
     @user.update_column(:char_points, 1 * @words)
+    @user.update_column(:pcounter, @user.pcounter.to_i + @comment.content.split.size.to_i)
 
     @activities =  Activity.all
     @activities = Activity.order("created_at desc")
@@ -91,8 +92,9 @@ end
     @comments = @commentable.user_comments.order('created_at desc')
     @comment = UserComment.find(params[:id])
     @user = User.find(@comment.user_id)
-    @words =  @user.char_points - @comment.content.split.size
+    @words =  @user.char_points.to_i - @comment.content.split.size.to_i
     @user.update_column(:char_points, 1 * @words)
+    @user.update_column(:pcounter, @user.pcounter.to_i - @comment.content.split.size.to_i)
 
     @activities = Activity.all
     @activities.find_by_trackable_id(@comment.id).destroy
