@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140506185050) do
+ActiveRecord::Schema.define(version: 20140515170037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -374,8 +374,8 @@ ActiveRecord::Schema.define(version: 20140506185050) do
 
   create_table "user_assignments", force: true do |t|
     t.text     "text"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "upload_file_name"
     t.string   "upload_content_type"
     t.integer  "upload_file_size"
@@ -387,6 +387,7 @@ ActiveRecord::Schema.define(version: 20140506185050) do
     t.integer  "bonus_points_given"
     t.integer  "rating"
     t.text     "question_response"
+    t.boolean  "complete",            default: false
   end
 
   create_table "user_comments", force: true do |t|
@@ -446,6 +447,7 @@ ActiveRecord::Schema.define(version: 20140506185050) do
     t.integer  "bonus_credits"
     t.integer  "bonus_points_earned"
     t.boolean  "eventReminder",          default: false
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

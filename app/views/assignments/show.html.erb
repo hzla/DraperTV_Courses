@@ -206,6 +206,7 @@
         <div class="title"><%= @assignment.question_text %></div>
         <%= f.text_area :question_response, :label => false, :input_html => { :rows => 5, :minlength => 300, :style => "width: 95%;"}, :placeholder => "Your response must be at least 300 characters." %>
         <%= f.hidden_field :point_value, :value => 300 %>
+        <%= f.hidden_field :complete, :value => true %>
         <%= f.submit "Complete Assignment" %>
       <% end %>
     <% else %>

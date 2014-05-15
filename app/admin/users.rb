@@ -38,6 +38,7 @@ ActiveAdmin.register User do
      f.inputs :country
      f.inputs :eventReminder
      f.inputs :password
+     f.inputs :role
      f.inputs :avatar,
       :styles => { :medium => "120x120#", :thumb => "40x40#" },
       :bucket => 'duhonline',
