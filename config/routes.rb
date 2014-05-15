@@ -1,7 +1,5 @@
 OnlineSchool::Application.routes.draw do
 
-  resources :activity_feeds
-
   mount Ckeditor::Engine => '/ckeditor'
   #root :to => 'profiles#show'
   root :to => 'home#index'

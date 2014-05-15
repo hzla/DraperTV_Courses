@@ -1,9 +1,9 @@
 class ActivityFeedPresenter < SimpleDelegator
   attr_reader :activity_feed
 
-  def initialize(activity, view)
+  def initialize(activity_feed, view)
     super(view)
-    @activity = activity
+    @activity_feed = activity_feed
   end
 
   def render_activity_feed
@@ -26,9 +26,9 @@ class ActivityFeedPresenter < SimpleDelegator
 
   def partial_paths
     [
-      "activitie_feeds/#{activity_feed.trackable_type.underscore}/#{activity_feed.action}",
-      "activitie_feeds/#{activity_feed.trackable_type.underscore}",
-      "activitie_feeds/activity_feed"
+      "activity_feeds/#{activity_feed.trackable_type.underscore}/#{activity_feed.action}",
+      "activity_feeds/#{activity_feed.trackable_type.underscore}",
+      "activity_feeds/activity_feed"
     ]
   end
 end

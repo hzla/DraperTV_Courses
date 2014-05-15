@@ -1,5 +1,15 @@
 class ApplicationController < ActionController::Base
+  # rescue_from CanCan::AccessDenied do |exception|
+  #   flash[:error] = "Access denied."
+  #   redirect_to root_url
+  # end
   protect_from_forgery
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to back, :alert => exception.message
+  end
+
+
   before_filter :cors_preflight_check
   after_filter :cors_set_access_control_headers
   before_filter :configure_permitted_parameters, if: :devise_controller?
@@ -61,7 +71,7 @@ end
 
 
   def track_activity_feed(tobetrackable, action = params[:action])
-    current_user.activities.create! action: action, tobetrackable: tobetrackable
+    current_user.activity_feeds.create! action: action, tobetrackable: tobetrackable
   end
 
   private

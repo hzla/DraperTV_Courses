@@ -7,7 +7,6 @@ class Assignment < ActiveRecord::Base
   attr_accessible :speaker_pic, :user_assignment_id, :question_text, :question_duh_response
   belongs_to :course
   has_many :user_assignments
-  has_many :activity_feeds
 
   has_many :user_comments, as: :commentable
   has_attached_file :speaker_pic,

@@ -44,6 +44,7 @@
               <% i += 1 %>
             <% end %>
             <p class="response"><%= best_in_place @user_assignment.first, :question_response, :type => :textarea, :class => 'best_in_place' %></p>
+            <!-- <p><a href="#complete-video-form" data-toggle="modal" data-backdrop="false">Edit Your Response</a></p> -->
           </div>
         </div>
         <div class="line"></div>
@@ -70,9 +71,10 @@
       </div>
        <div class="speaker-section">
           <%= image_tag(@assignment.speaker_pic) %>
-          <a id="complete-video" data-toggle="modal" href="#complete-video-form" data-backdrop="false" style="position: absolute; top: 0; right: 0; width: auto;">Mark as Complete</a>
 
           <div class="info">
+             <a id="complete-video" class="button" data-toggle="modal" href="#complete-video-form" data-backdrop="false">Mark as Complete</a>
+
             <h2><%= @assignment.speaker_name %></h2>
             <p><%= @assignment.speaker_bio %></p>
           </div>
@@ -87,8 +89,6 @@
       </div>
       <div class="speaker-section">
         <%= image_tag(@assignment.speaker_pic) %>
-        <a id="complete-video" data-toggle="modal" href="#complete-video-form" data-backdrop="false" style="position: absolute; top: 0; right: 0; width: auto;">Mark as Complete</a>
-
         <div class="info">
           <h2><%= @assignment.speaker_name %></h2>
           <p><%= @assignment.speaker_bio %></p>
@@ -188,26 +188,30 @@
 
  <div id="complete-video-form" class="modal hide fade" tabindex="1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div style="padding: 30px;">
-    <%= form_for @user_assignment.first do |f| %>
-      <button type="button" class="close" style="" data-dismiss="modal" aria-hidden="true">x</button>
-      <h2>Complete <%= @assignment.title %></h2><br/>
-      <div class="title">Please rate this lecture from one to five stars, where five is the best.</div>
-      <fieldset class="rating">
-        <%= f.radio_button("rating", 5,  id: "star5") %>
-         <label for="star5" title="Rocks!">5 stars</label>
-        <%= f.radio_button("rating", 4, checked: false, id: "star4") %>
-        <label for="star4" title="Great">4 stars</label>
-        <%= f.radio_button("rating", 3, checked: false, id: "star3") %>
-        <label for="star3" title="Good">3 stars</label>
-        <%= f.radio_button("rating", 2, checked: false, id: "star2") %>
-        <label for="star2" title="OK">2 stars</label>
-        <%= f.radio_button("rating", 1, checked: false, id: "star1") %>
-        <label for="star1" title="meh">1 star</label>
-      </fieldset>
-      <div class="title"><%= @assignment.question_text %></div>
-      <%= f.text_area :question_response, :label => false, :input_html => { :rows => 5, :minlength => 300, :style => "width: 95%;"}, :placeholder => "Your response must be at least 300 characters." %>
-      <%= f.hidden_field :point_value, :value => 300 %>
-      <%= f.submit "Complete Assignment" %>
+    <% if @user_assignment %>
+      <%= form_for @user_assignment.first do |f| %>
+        <button type="button" class="close" style="" data-dismiss="modal" aria-hidden="true">x</button>
+        <h2>Complete <%= @assignment.title %></h2><br/>
+        <div class="title">Please rate this lecture from one to five stars, where five is the best.</div>
+        <fieldset class="rating">
+          <%= f.radio_button("rating", 5,  id: "star5") %>
+           <label for="star5" title="Rocks!">5 stars</label>
+          <%= f.radio_button("rating", 4, checked: false, id: "star4") %>
+          <label for="star4" title="Great">4 stars</label>
+          <%= f.radio_button("rating", 3, checked: false, id: "star3") %>
+          <label for="star3" title="Good">3 stars</label>
+          <%= f.radio_button("rating", 2, checked: false, id: "star2") %>
+          <label for="star2" title="OK">2 stars</label>
+          <%= f.radio_button("rating", 1, checked: false, id: "star1") %>
+          <label for="star1" title="meh">1 star</label>
+        </fieldset>
+        <div class="title"><%= @assignment.question_text %></div>
+        <%= f.text_area :question_response, :label => false, :input_html => { :rows => 5, :minlength => 300, :style => "width: 95%;"}, :placeholder => "Your response must be at least 300 characters." %>
+        <%= f.hidden_field :point_value, :value => 300 %>
+        <%= f.hidden_field :complete, :value => true %>
+        <%= f.submit "Complete Assignment" %>
+      <% end %>
+    <% else %>
     <% end %>
   </div>
 </div>
