@@ -1,0 +1,10 @@
+<h1>Activities Feed</h1>
+
+
+<div id="Activities">
+<% @activity_feeds.each do |feed| %>
+  <%= ActivityFeedPresenter.new(feed, self).render_activity_feed %>
+<% end %>
+</div>
+
+

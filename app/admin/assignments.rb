@@ -5,6 +5,8 @@ ActiveAdmin.register Assignment do
     column :title
     column :description
     column :category
+    column :require_upload
+
     default_actions
   end
 

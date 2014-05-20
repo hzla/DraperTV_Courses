@@ -23,6 +23,14 @@
       <br/>
       <!-- ** completed assignment ** -->
       <% if @assignment.complete_for_user?(current_user) %>
+      <%  @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
+      <% if @user_assignment.first.complete == false %>
+
+        <% track_activity_feed @user_assignment.first %>
+
+       <% end %>
+      <% @user_assignment.first.update_column(:complete, true) %>
+
         <div class="small-video-container">
           <div class="video-responsive-container">
             <%= raw @video_embed %>
@@ -116,14 +124,25 @@
     <!-- ******** QUIZ ******* -->
     <% elsif @assignment.category == "quiz" %>
       <div class="quiz_description" style="min-height: 20px;"></div>
+
       <% if @assignment.survey.avaliable_for_participant?(current_user) %>
         <%= render 'quiz' %>
       <% else %>
+
+
         <div class="quiz-score">
+        <% if @assignment.complete_for_user?(current_user) %>
+          <%  @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
+          <% if @user_assignment.first.complete == false %>
+              <% track_activity_feed @user_assignment.first %>
+           <% end %>
+          <% @user_assignment.first.update_column(:complete, true) %>
+         <% end %>
+
           You scored <%= @quiz_high_score %> out of <%= @quiz_total_questions %>
           <br />
           <br />
-          <%= @quiz_ratio %>%
+          <%= @quiz_ratio %>
           <br />
           <br />
           <!-- show quiz answers -->
@@ -145,10 +164,15 @@
         </div>
       <% end %>
     <% end %>
-
+    <%  @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
     <% if @assignment.require_upload == true %>
       <% if @assignment.user_assignments.where(:user_id => current_user[:id]).count > 0 %>
         <% if @user_assignment.first.text != nil %>
+
+          <% if @user_assignment.first.complete == false %>
+          <% track_activity_feed @user_assignment.first %>
+         <% end %>
+        <% @user_assignment.first.update_column(:complete, true) %>
           <div class="upload_show">
             <div class="upload_description">
               <table id="event-table" style="margin-top: 0px;">
@@ -171,6 +195,8 @@
                 </table>
             </div>
             <div class ="section-bar" style="margin-bottom: 10px;">Response </div>
+            <li role="menu"><%= link_to 'Edit',  edit_user_assignment_path(@user_assignment.first) %></li>
+
             <p><%= raw(@user_assignment.first.text) %></p>
             <br />
             <% if @assignment.category == "upload" %>
@@ -201,10 +227,11 @@
 <!-- ************************************** -->
 <!-- **** MARK AS COMPLETE MODAL FORM ***** -->
 <!-- ************************************** -->
+<%  @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
 
  <div id="complete-video-form" class="modal hide fade" tabindex="1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div style="padding: 30px;">
-    <% if @user_assignment.first %>
+    <% if @user_assignment %>
       <%= form_for @user_assignment.first do |f| %>
         <button type="button" class="close" style="" data-dismiss="modal" aria-hidden="true">x</button>
         <h2>Complete <%= @assignment.title %></h2><br/>
@@ -230,7 +257,7 @@
         </div>
         <%= f.text_area :question_response, :label => false, :input_html => { :rows => 5, :minlength => 300, :style => "width: 95%;"}, :placeholder => "Your response must be at least 300 characters." %>
         <%= f.hidden_field :point_value, :value => 300 %>
-        <%= f.hidden_field :complete, :value => true %>
+        <%= f.hidden_field :complete, value: true %>
         <%= f.submit "Complete Assignment" %>
       <% end %>
     <% else %>

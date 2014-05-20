@@ -46,8 +46,14 @@ end
   def create
     @users = User.all
     @comment = @commentable.user_comments.new(params[:user_comment])
+
     @comment.user_id = current_user[:id]
     #@commentable.user_comments.create(:user_id => current_user[:id])
+    @user = User.find(@comment.user_id)
+    @words = @comment.content.split.size.to_i + @user.char_points.to_i
+    @user.update_column(:char_points, 1 * @words)
+    @user.update_column(:pcounter, @user.pcounter.to_i + @comment.content.split.size.to_i)
+
     @activities =  Activity.all
     @activities = Activity.order("created_at desc")
 
@@ -85,12 +91,34 @@ end
   def destroy
     @comments = @commentable.user_comments.order('created_at desc')
     @comment = UserComment.find(params[:id])
+    @user = User.find(@comment.user_id)
+    @words =  @user.char_points.to_i - @comment.content.split.size.to_i
+    @user.update_column(:char_points, 1 * @words)
+    @user.update_column(:pcounter, @user.pcounter.to_i - @comment.content.split.size.to_i)
+
+    @activities = Activity.all
+    @activities.find_by_trackable_id(@comment.id).destroy
+
+      @comments.each do |com|
+        if com.commentable_id == @comment.id
+            @activities.find_by_trackable_id(com.id).destroy
+        end
+      end
     if current_user.id == @comment.user_id
       @comment.destroy
-        respond_to do |format|
-          format.js { @comments = @commentable.user_comments.order(:created_at) }
-          format.html #{ redirect_to @commentable }
-        end
+        @comments = @commentable.user_comments.order('created_at desc')
+        #refresh_dom_with_partial('div#comments_container', 'comments')
+          if @comment.commentable_type == "Assignment"
+            respond_to do |format|
+              format.html {  }
+              format.js { render :commentAssignment }
+            end
+          else
+            respond_to do |format|
+              format.html { }
+              format.js { render :commentVote }
+            end
+          end
     end
   end
 

@@ -1,5 +1,7 @@
 OnlineSchool::Application.routes.draw do
 
+  resources :activity_feeds
+
   mount Ckeditor::Engine => '/ckeditor'
   #root :to => 'profiles#show'
   root :to => 'home#index'
@@ -88,6 +90,8 @@ OnlineSchool::Application.routes.draw do
   end
 
   resources :activities
+  get 'notifications', to: 'activities#index', via: :all
+
 
   post '/assignments/:id/quiz_save_attempt', to: 'assignments#quiz_save_attempt', as: :assignments_survey_attempts
 

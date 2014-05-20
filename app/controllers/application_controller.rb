@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to back, :alert => exception.message
   end
-
+  helper_method :track_activity_feed
 
   before_filter :cors_preflight_check
   after_filter :cors_set_access_control_headers
@@ -67,6 +67,12 @@ end
       end
     end
 
+
+
+
+  def track_activity_feed(tobetrackable, action = params[:action])
+    current_user.activity_feeds.create! action: action, tobetrackable: tobetrackable
+  end
 
   private
      def track_activity(trackable, action = params[:action])

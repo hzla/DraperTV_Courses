@@ -55,7 +55,7 @@
 
             <!-- ** Show Score in Nav ** -->
             <% if current_user.pcounter != nil %>
-              <div class="right-score"><%= number_with_delimiter(current_user.pcounter, :delimiter => ',') %></div>
+              <div class="right-score"><%= number_with_delimiter(current_user.pcounter , :delimiter => ',') %></div>
             <% else %>
             <% end %>
 
@@ -96,7 +96,7 @@
 
                   <div id="load-more">
                     <div class="view-all">
-                      <%= link_to 'View All', activities_path %>
+                      <%= link_to 'View All', notifications_path %>
                     </div>
                     <div class="clear-notifications">
                     </div>

@@ -6,4 +6,6 @@ class UserAssignment < ActiveRecord::Base
   belongs_to :user
   belongs_to :assignment
   has_many :user_comments, as: :commentable
+
+
 end

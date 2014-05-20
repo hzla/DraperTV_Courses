@@ -7,8 +7,6 @@ class PostsController < ApplicationController
 def load
   @posts = Post.all
   @post = Post.new
-  @messages = Message.all
-  @message = Message.new
 end
 # GET /posts
 # GET /posts.json
@@ -52,7 +50,11 @@ def unvote_for_post
     respond_to do |format|
       format.js
     end
-    @post.update_column(:vote, @post.vote.to_i - 1)
+    if @post.vote == 0
+    else
+      @post.update_column(:vote, @post.vote.to_i - 1)
+    end
+
   rescue
     render :nothing => true, :status => 404
   end
@@ -98,7 +100,7 @@ def create
     @post.user_id = current_user.id
       begin
         if @post.save
-         track_activity @post
+          @post.vote = 1
          respond_to do |format|
             format.js { redirect_to :back }
             #format.html # new.html.erb
@@ -115,7 +117,7 @@ def create
       rescue => exception
           ExceptionNotifier.notify_exception(exception)
         if @post.save
-         track_activity @post
+          @post.vote = 1
          respond_to do |format|
             format.js { redirect_to :back }
             #format.html # new.html.erb
@@ -165,16 +167,16 @@ def destroy
   @post = Post.find(params[:id])
   @post.destroy
 
-  @comments =  UserComment.all
-  @activities = Activity.all
-  @activities.find_by_trackable_id(@post.id).destroy
+  # @comments =  UserComment.all
+  # @activities = Activity.all
+  # @activities.find_by_trackable_id(@post.id).destroy
 
-  @comments.each do |com|
-    if com.commentable_id == @post.id
-        @activities.find_by_trackable_id(com.id).destroy
-        com.destroy
-    end
-  end
+  # @comments.each do |com|
+  #   if com.commentable_id == @post.id
+  #       @activities.find_by_trackable_id(com.id).destroy
+  #       com.destroy
+  #   end
+  # end
 
   respond_to do |format|
     format.html { redirect_to posts_url }

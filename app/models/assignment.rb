@@ -7,6 +7,7 @@ class Assignment < ActiveRecord::Base
   attr_accessible :speaker_pic, :user_assignment_id, :question_text, :question_duh_response
   belongs_to :course
   has_many :user_assignments
+
   has_many :user_comments, as: :commentable
   has_attached_file :speaker_pic,
     :styles => { :large => "200x200#" },
@@ -39,6 +40,10 @@ class Assignment < ActiveRecord::Base
         complete = self.user_assignments.where(:user_id => current_user[:id]).first.rating != nil || self.user_assignments.where(:user_id => current_user[:id]).first.question_response != nil
       end
     elsif self.category == "founder"
+      if self.user_assignments.where(:user_id => current_user[:id]).exists?
+        complete = self.user_assignments.where(:user_id => current_user[:id]).first.rating != nil || self.user_assignments.where(:user_id => current_user[:id]).first.question_response != nil
+      end
+    elsif self.category == "quiz"
       if self.user_assignments.where(:user_id => current_user[:id]).exists?
         complete = self.user_assignments.where(:user_id => current_user[:id]).first.rating != nil || self.user_assignments.where(:user_id => current_user[:id]).first.question_response != nil
       end

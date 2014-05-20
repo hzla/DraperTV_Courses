@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
 
   has_many :authorships
   has_many :skills, through: :authorships
+  has_many :activity_feeds
 
   has_many :activities
   has_many :posts

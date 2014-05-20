@@ -41,16 +41,24 @@ class AssignmentsController < ApplicationController
           :user_id => current_user[:id],
           :point_value => 0
         )
-
       elsif @assignment.category == "milestone"
         @user_assignment = @assignment.user_assignments.create(
           :assignment_id => @assignment.id,
           :user_id => current_user[:id],
           :point_value => 0
         )
-
+      track_activity_feed @user_assignment
+      @user_assignment.update_column(:complete, true)
       elsif @assignment.category == "upload"
          @user_assignment = @assignment.user_assignments.create(
+          :assignment_id => @assignment.id,
+          :user_id => current_user[:id],
+          :point_value => 0
+        )
+      track_activity_feed @user_assignment
+      @user_assignment.update_column(:complete, true)
+      elsif @assignment.category == "quiz"
+        @user_assignment = @assignment.user_assignments.create(
           :assignment_id => @assignment.id,
           :user_id => current_user[:id],
           :point_value => 0
@@ -62,9 +70,13 @@ class AssignmentsController < ApplicationController
           :user_id => current_user[:id],
           :point_value => 10
         )
+
+        track_activity_feed @user_assignment
+        @user_assignment.update_column(:complete, true)
+
        end
 
-      @user.update_attribute(:pcounter, UserAssignment.where(:user_id => current_user[:id]).sum('point_value'))
+      @user.update_column(:pcounter, UserAssignment.where(:user_id => current_user[:id]).sum('point_value'))
 
       begin
       PrivatePub.publish_to("/layouts/points",
@@ -89,12 +101,13 @@ class AssignmentsController < ApplicationController
   def quiz_save_attempt
     @assignment = Assignment.find params[:id]
     @attempt = @assignment.survey.attempts.new(params[:survey_attempt])
+
       # ensure that current user is assigned with this attempt
       @attempt.participant = current_user
 
       if @attempt.valid? and @attempt.save
         @assignment.user_assignments.first.update_attribute(:point_value, 200)
-        current_user.update_attribute(:pcounter, UserAssignment.sum('point_value'))
+        current_user.update_attribute(:pcounter, UserAssignment.where(:user_id => current_user[:id]).sum('point_value'))
         redirect_to assignment_path
       else
        render :action => :show
