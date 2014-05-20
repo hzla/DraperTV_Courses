@@ -7,74 +7,81 @@
 <% @assignment = Assignment.where(:id => user_assignment.assignment_id).first %>
 
 <% @user = User.find_by_id(user_assignment.user_id) %>
-     <div id="post">
-     <div class="content">
+	 <div id="post">
+		 <div class="content">
 
-		 <% if @assignment.category == "video" or @assignment.category == "founder" %>
-					<% if @user.avatar != nil %>
-						<div class="picture">
-							<%= image_tag @user.avatar.url(:medium) %>
-						</div>
-					<% end %>
-			   		<%= link_to student_profile_path(@user) do %>
-					    	<div class="name"><%= @user.full_name %></div>
-					  	<% end %>
-					<% if user_assignment.complete == true %>
-					  <p>Completed the <%= link_to @assignment.title, assignment_path(@assignment) %></p>
-					 <% end %>
+				 <% if @assignment.category == "video" or @assignment.category == "founder" %>
+							<% if @user.avatar != nil %>
+								<div class="picture">
+									<%= image_tag @user.avatar.url(:medium) %>
+								</div>
+							<% end %>
+					   		<%= link_to student_profile_path(@user) do %>
+							    	<div class="name"><%= @user.full_name %></div>
+							  	<% end %>
+							<% if user_assignment.complete == true %>
+							  <p>Completed the <%= link_to @assignment.title, assignment_path(@assignment) %></p>
+							 <% end %>
+               	<div class="timestamp"><%= user_assignment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
 
-		 <% elsif @assignment.category == "milestone" %>
-					<% if @user.avatar != nil %>
-						<div class="picture">
-							<%= image_tag @user.avatar.url(:medium) %>
-						</div>
-					<% end %>
-			   		<%= link_to student_profile_path(@user) do %>
-					    	<div class="name"><%= @user.full_name %></div>
-					 <% end %>
-					<% if user_assignment.complete == true %>
-					  <p>Completed <%= link_to @assignment.title %></p>
-					 <% end %>
-		 <% elsif @assignment.category == "upload" %>
-					<% if @user.avatar != nil %>
-						<div class="picture">
-							<%= image_tag @user.avatar.url(:medium) %>
-						</div>
-					<% end %>
-			   		<%= link_to student_profile_path(@user) do %>
-					    	<div class="name"><%= @user.full_name %></div>
-					  <% end %>
-				 	<% if user_assignment.complete == true %>
-					  <p>Uploaded <%= link_to @assignment.title %></p>
-					 <% end %>
-		 <% elsif @assignment.category == "reading" %>
+				 <% elsif @assignment.category == "milestone" %>
+							<% if @user.avatar != nil %>
+								<div class="picture">
+									<%= image_tag @user.avatar.url(:medium) %>
+								</div>
+							<% end %>
+					   		<%= link_to student_profile_path(@user) do %>
+							    	<div class="name"><%= @user.full_name %></div>
+							 <% end %>
+							<% if user_assignment.complete == true %>
+							  <p>Completed <%= link_to @assignment.title %></p>
+							 <% end %>
+							 <div class="timestamp"><%= user_assignment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
 
-		 			<% if @user.avatar != nil %>
-						<div class="picture">
-							<%= image_tag @user.avatar.url(:medium) %>
-						</div>
-					<% end %>
-			   		<%= link_to student_profile_path(@user) do %>
-					    	<div class="name"><%= @user.full_name %></div>
-					  <% end %>
-					<% if user_assignment.complete == true %>
-					  <p>Finished <%= link_to @assignment.title %></p>
-					 <% end %>
-		<% elsif @assignment.category == "quiz" %>
+				 <% elsif @assignment.category == "upload" %>
+							<% if @user.avatar != nil %>
+								<div class="picture">
+									<%= image_tag @user.avatar.url(:medium) %>
+								</div>
+							<% end %>
+					   		<%= link_to student_profile_path(@user) do %>
+							    	<div class="name"><%= @user.full_name %></div>
+							  <% end %>
+						 	<% if user_assignment.complete == true %>
+							  <p>Uploaded <%= link_to @assignment.title %></p>
+							 <% end %>
+							<div class="timestamp"><%= user_assignment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
 
-		 			<% if @user.avatar != nil %>
-						<div class="picture">
-							<%= image_tag @user.avatar.url(:medium) %>
-						</div>
-					<% end %>
-			   		<%= link_to student_profile_path(@user) do %>
-					    	<div class="name"><%= @user.full_name %></div>
-					  <% end %>
-					<% if user_assignment.complete == true %>
-					  <p>Took <%= link_to @assignment.title %></p>
-					 <% end %>
-		 <% end %>
-	</div>
-	</div>
+				 <% elsif @assignment.category == "reading" %>
+
+				 			<% if @user.avatar != nil %>
+								<div class="picture">
+									<%= image_tag @user.avatar.url(:medium) %>
+								</div>
+							<% end %>
+					   		<%= link_to student_profile_path(@user) do %>
+							    	<div class="name"><%= @user.full_name %></div>
+							  <% end %>
+							<% if user_assignment.complete == true %>
+							  <p>Finished <%= link_to @assignment.title %></p>
+							 <% end %>
+							 <div class="timestamp"><%= user_assignment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+				<% elsif @assignment.category == "quiz" %>
+
+				 			<% if @user.avatar != nil %>
+								<div class="picture">
+									<%= image_tag @user.avatar.url(:medium) %>
+								</div>
+							<% end %>
+					   		<%= link_to student_profile_path(@user) do %>
+							    	<div class="name"><%= @user.full_name %></div>
+							  <% end %>
+							<% if user_assignment.complete == true %>
+							  <p>Took <%= link_to @assignment.title %></p>
+							 <% end %>
+							 <div class="timestamp"><%= user_assignment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+				 <% end %>
+			</div>
+		</div>
 
  <% end %>
