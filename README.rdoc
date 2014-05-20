@@ -1,6 +1,32 @@
-== Welcome to Rails
+== Activity Feed for Assignments
+1.  The MVC structure is
+..* activty_feeds_controller.rb and app/model/activty_feed.rb
+..* activtiy_feeds
+2.  There is a method in application_controller.rb under the name (track_activity_feed) for adding record to the polymorphic association of tobetrackable.
+#### How it works ?
+1. All you need is to put this method before @user_assignment,(not other objects), because the presenter and path shared information, it's built to directed name of the object to the path.
+...For Example: if @user_assignment was tracked, it will look for activity_feeds/_user_assignment.html.erb
 
-Steps and Changes that were required for Upgrading to Rails 4.0.0 
+2. If this method was needed in the view, it needs to be declared as a (**helper method**), which is already have been assigned as **helper method**.
+
+#### What's happening in the view ?
+1. The View takes the object @activty_feeds which is ActivityFeed.all and pass it on to a presenter.
+2. Depedning on different **user_assignment** types, it will show different textual option.
+...There is an option that the user_assignment needs to meet, which is (**complete**) boolean to be true. Otherwise, the tracked object won't show up.
+
+
+== Steps to make Faye fucntional:
+1. Faye Server confguration setup in **config/private_pub.yml**, depending on each environmen name.
+2. If the the server is hosted on another server, the **CORS** information for Outbound and inbound Ajax calls need to be setup: Which is only changing the Server URL.
+
+3. If there is a *Publush_to* to */someChannel*, then there needs to be a */someChannel* in the view or else it fails to transmit and might cause problems.
+
+4 **Best Practice**: Wrap the *publish_to* methods around a beign..rescue method always, just in case it fails.
+
+
+== Information About DUH Rails App
+...### *(not updated since January)
+Steps and Changes that were required for Upgrading to Rails 4.0.0
 
 1. Gems that were updated and the Gems that broke and setup again were:
   i.  meta_search: this was changed to it's successor called  ransack

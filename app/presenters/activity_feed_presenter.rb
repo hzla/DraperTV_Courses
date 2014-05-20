@@ -9,12 +9,10 @@ class ActivityFeedPresenter < SimpleDelegator
   def render_activity_feed
     render_partial
   end
-  #link_to(activity.user.first_name, activity.user) + " " + render_partial
-
 
   def render_partial
     locals = {activity_feed: activity_feed, presenter: self}
-    locals[activity_feed.trackable_type.underscore.to_sym] = activity_feed.trackable
+    locals[activity_feed.tobetrackable_type.underscore.to_sym] = activity_feed.tobetrackable
     render partial_path, locals
   end
 
@@ -26,8 +24,8 @@ class ActivityFeedPresenter < SimpleDelegator
 
   def partial_paths
     [
-      "activity_feeds/#{activity_feed.trackable_type.underscore}/#{activity_feed.action}",
-      "activity_feeds/#{activity_feed.trackable_type.underscore}",
+      "activity_feeds/#{activity_feed.tobetrackable_type.underscore}/#{activity_feed.action}",
+      "activity_feeds/#{activity_feed.tobetrackable_type.underscore}",
       "activity_feeds/activity_feed"
     ]
   end

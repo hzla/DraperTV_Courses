@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515185614) do
+ActiveRecord::Schema.define(version: 20140515195804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,13 +46,13 @@ ActiveRecord::Schema.define(version: 20140515185614) do
   create_table "activity_feeds", force: true do |t|
     t.integer  "user_id"
     t.string   "action"
-    t.integer  "trackable_id"
-    t.string   "trackable_type"
+    t.integer  "tobetrackable_id"
+    t.string   "tobetrackable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "activity_feeds", ["trackable_id"], name: "index_activity_feeds_on_trackable_id", using: :btree
+  add_index "activity_feeds", ["tobetrackable_id"], name: "index_activity_feeds_on_tobetrackable_id", using: :btree
   add_index "activity_feeds", ["user_id"], name: "index_activity_feeds_on_user_id", using: :btree
 
   create_table "admin_users", force: true do |t|

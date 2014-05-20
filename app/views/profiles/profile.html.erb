@@ -252,37 +252,7 @@
             <% end %>
           <% end %>
         </div> -->
-        <h3>Badges Earned</h3>
-        <div id="badges">
-        <% @user.badges.each do |badge| %>
-          <% if badge.course_id %>
-            <% @course = Course.find_by_id(badge.course_id) %>
-              <%= link_to(course_path(@course)) do %>
-                <div class="container">
-                  <div class="box">
-                   <%= image_tag(@course.course_icon(:large)) %>
-                  </div>
-                 <!--  <div class="title">
-                    <%= @course.title %>
-                  </div>
-                  <div class="date">
-                    <%= badge.created_at.to_date.to_formatted_s( :long_ordinal ) %>
-                  </div> -->
-                </div>
-              <% end %>
-          <% else %>
-           <div class="container">
-              <div class="box" style="background-image: url(<%= image_tag(badge.icon) %>)"></div>
-              <div class="title">
-                <%= badge.name %>
-              </div>
-              <div class="date">
-                <%= badge.created_at.to_date.to_formatted_s( :long_ordinal ) %>
-              </div>
-           </div>
-          <% end %>
-        <% end %>
-      </div><!-- badges -->
+
       </div>
 
     </div><!-- profile-info -->

@@ -41,16 +41,24 @@ class AssignmentsController < ApplicationController
           :user_id => current_user[:id],
           :point_value => 0
         )
-      track_activity_feed @user_assignment
       elsif @assignment.category == "milestone"
         @user_assignment = @assignment.user_assignments.create(
           :assignment_id => @assignment.id,
           :user_id => current_user[:id],
           :point_value => 0
         )
-
+      track_activity_feed @user_assignment
+      @user_assignment.update_column(:complete, true)
       elsif @assignment.category == "upload"
          @user_assignment = @assignment.user_assignments.create(
+          :assignment_id => @assignment.id,
+          :user_id => current_user[:id],
+          :point_value => 0
+        )
+      track_activity_feed @user_assignment
+      @user_assignment.update_column(:complete, true)
+      elsif @assignment.category == "quiz"
+        @user_assignment = @assignment.user_assignments.create(
           :assignment_id => @assignment.id,
           :user_id => current_user[:id],
           :point_value => 0
@@ -62,7 +70,8 @@ class AssignmentsController < ApplicationController
           :user_id => current_user[:id],
           :point_value => 10
         )
-
+      track_activity_feed @user_assignment
+      @user_assignment.update_column(:complete, true)
        end
 
       @user.update_column(:pcounter, UserAssignment.where(:user_id => current_user[:id]).sum('point_value'))
@@ -78,6 +87,7 @@ class AssignmentsController < ApplicationController
   def quiz_save_attempt
     @assignment = Assignment.find params[:id]
     @attempt = @assignment.survey.attempts.new(params[:survey_attempt])
+
       # ensure that current user is assigned with this attempt
       @attempt.participant = current_user
 
