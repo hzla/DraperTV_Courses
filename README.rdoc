@@ -1,11 +1,11 @@
 == Activity Feed for Assignments
 1.  The MVC structure is
-.. * activty_feeds_controller.rb and app/model/activty_feed.rb
-.. * activtiy_feeds
+..* activty_feeds_controller.rb and app/model/activty_feed.rb
+..* activtiy_feeds
 2.  There is a method in application_controller.rb under the name (track_activity_feed) for adding record to the polymorphic association of tobetrackable.
 #### How it works ?
 1. All you need is to put this method before @user_assignment,(not other objects), because the presenter and path shared information, it's built to directed name of the object to the path.
-... For Example: if @user_assignment was tracked, it will look for activity_feeds/_user_assignment.html.erb
+...For Example: if @user_assignment was tracked, it will look for activity_feeds/_user_assignment.html.erb
 
 2. If this method was needed in the view, it needs to be declared as a (**helper method**), which is already have been assigned as **helper method**.
 
