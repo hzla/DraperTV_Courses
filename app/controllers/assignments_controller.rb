@@ -47,16 +47,14 @@ class AssignmentsController < ApplicationController
           :user_id => current_user[:id],
           :point_value => 0
         )
-      track_activity_feed @user_assignment
-      @user_assignment.update_column(:complete, true)
+
       elsif @assignment.category == "upload"
          @user_assignment = @assignment.user_assignments.create(
           :assignment_id => @assignment.id,
           :user_id => current_user[:id],
           :point_value => 0
         )
-      track_activity_feed @user_assignment
-      @user_assignment.update_column(:complete, true)
+
       elsif @assignment.category == "quiz"
         @user_assignment = @assignment.user_assignments.create(
           :assignment_id => @assignment.id,
@@ -68,12 +66,10 @@ class AssignmentsController < ApplicationController
          @user_assignment = @assignment.user_assignments.create(
           :assignment_id => @assignment.id,
           :user_id => current_user[:id],
-          :point_value => 10
-        )
-
-        track_activity_feed @user_assignment
-        @user_assignment.update_column(:complete, true)
-
+          :point_value => 10,
+          :complete => true
+          )
+          track_activity_feed @user_assignment
        end
 
       @user.update_column(:pcounter, UserAssignment.where(:user_id => current_user[:id]).sum('point_value'))
