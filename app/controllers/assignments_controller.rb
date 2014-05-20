@@ -62,7 +62,6 @@ class AssignmentsController < ApplicationController
           :user_id => current_user[:id],
           :point_value => 10
         )
-
        end
 
       @user.update_attribute(:pcounter, UserAssignment.where(:user_id => current_user[:id]).sum('point_value'))
@@ -74,6 +73,18 @@ class AssignmentsController < ApplicationController
       end
     end
 	end
+
+  def update
+    @assignment = Assignment.find params[:id]
+    respond_to do |format|
+      if @assignment.update_attributes(params[:assignment])
+        format.html { redirect_to @assignment }
+        format.json { respond_with_bip(@assignment) }
+      else
+        format.html { redirect_to :back, :notice => 'Something went wrong'}
+      end
+    end
+  end
 
   def quiz_save_attempt
     @assignment = Assignment.find params[:id]

@@ -1,6 +1,5 @@
 <% if @course.course_current? == true or current_user.online == "admin" %>
 
-
 	<div class="top-section">
 	  <div class="row">
 	    <div class="top-column-main">
@@ -53,7 +52,7 @@
 						</div>
 						<div class="video-information">
 							<h2><%= assignment.title %></h2>
-							<div class="description"><%= assignment.description %></div>
+							<div class="description minimize"><%= assignment.description %></div>
 						</div>
 					</div>
 				<% end %>

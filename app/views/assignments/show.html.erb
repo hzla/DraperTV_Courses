@@ -3,7 +3,11 @@
 <div class="top-section">
   <div class="top-column-main">
       <div style="width: 100%; position: relative; display; block; padding-left: 20px;">
+        <% if can? :update, @assignment %>
+          <h1><%= best_in_place @assignment, :title, :type => :input, :class => 'best_in_place' %></h1>
+        <% else %>
           <h1><%= @assignment.title %></h1>
+        <% end %>
       </div>
   </div><!-- row -->
 </div>
@@ -17,7 +21,6 @@
     <!-- ******** VIDEO/FOUNDER ******* -->
     <% if @assignment.category == "video" or @assignment.category == "founder" %>
       <br/>
-
       <!-- ** completed assignment ** -->
       <% if @assignment.complete_for_user?(current_user) %>
         <div class="small-video-container">
@@ -26,8 +29,13 @@
           </div>
         </div>
         <div class="float-right-50">
-          <h2><%= @assignment.question_text %></h2>
-          <p class="minimize"><%= @assignment.question_duh_response %></p>
+          <% if can? :update, @assignment %>
+            <h2><%= best_in_place @assignment, :question_text, :type => :input, :class => 'best_in_place' %></h2>
+            <p><%= best_in_place @assignment, :question_duh_response, :type => :textarea, :class => 'best_in_place' %></p>
+          <% else %>
+            <h2><%= @assignment.question_text %></h2>
+            <p class="minimize"><%= @assignment.question_duh_response %></p>
+          <% end %>
         </div>
         <br/><br/>
         <div class="line"></div>
@@ -75,8 +83,13 @@
           <div class="info">
              <a id="complete-video" class="button" data-toggle="modal" href="#complete-video-form" data-backdrop="false">Mark as Complete</a>
 
+            <% if can? :update, @assignment %>
+              <h2><%= best_in_place @assignment, :speaker_name, :type => :input, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add speaker name" %></h2>
+              <p><%= best_in_place @assignment, :description, :type => :textarea, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add description" %></p>
+          <% else %>
             <h2><%= @assignment.speaker_name %></h2>
-            <p><%= @assignment.speaker_bio %></p>
+            <p><%= @assignment.description %></p>
+          <% end %>
           </div>
         </div><!-- speaker-section -->
       <% end %>
@@ -90,8 +103,13 @@
       <div class="speaker-section">
         <%= image_tag(@assignment.speaker_pic) %>
         <div class="info">
-          <h2><%= @assignment.speaker_name %></h2>
-          <p><%= @assignment.speaker_bio %></p>
+          <% if can? :update, @assignment %>
+              <h2><%= best_in_place @assignment, :speaker_name, :type => :input, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add speaker name" %></h2>
+              <p><%= best_in_place @assignment, :description, :type => :textarea, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add description" %></p>
+          <% else %>
+            <h2><%= @assignment.speaker_name %></h2>
+            <p><%= @assignment.description %></p>
+          <% end %>
         </div>
       </div><!-- speaker-section -->
 
@@ -203,7 +221,13 @@
           <%= f.radio_button("rating", 1, checked: false, id: "star1") %>
           <label for="star1" title="meh">1 star</label>
         </fieldset>
-        <div class="title"><%= @assignment.question_text %></div>
+        <div class="title">
+          <% if can? :update, @assignment %>
+            <%= best_in_place @assignment, :question_text, :type => :input, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add question text" %>
+          <% else %>
+            <%= @assignment.question_text %>
+          <% end %>
+        </div>
         <%= f.text_area :question_response, :label => false, :input_html => { :rows => 5, :minlength => 300, :style => "width: 95%;"}, :placeholder => "Your response must be at least 300 characters." %>
         <%= f.hidden_field :point_value, :value => 300 %>
         <%= f.hidden_field :complete, :value => true %>

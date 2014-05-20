@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable, :timeout_in => 3.months
 
-
   has_attached_file :avatar,
     :styles => { :medium => "120x120#", :thumb => "40x40#", :large => "220x220#" },
     :default_url => '/assets/avatars/missing.png',
