@@ -21,10 +21,16 @@
 			<% end %>
 			<% if user_assignment.complete == true %>
 			  <p>finished watching <%= link_to @assignment.title, assignment_path(@assignment) %></p>
-			  <%= @user_assignment.question_response %>
-			<% end %>
-
-	    <div class="timestamp"><%= time_ago_in_words(@assignment.created_at) %></div>
+			  <% i = 0 %>
+          <% r = @user_assignment.rating %>
+          <% while i < r do %>
+            <i class="fa fa-star"></i>
+            <% i += 1 %>
+          <% end %>
+				<% end %>
+				<br/>
+				<%= @user_assignment.question_response %>
+	    <div class="timestamp"><%= time_ago_in_words(@assignment.created_at) %> ago</div>
 
 		 <% elsif @assignment.category == "milestone" %>
 				<% if @user.avatar != nil %>

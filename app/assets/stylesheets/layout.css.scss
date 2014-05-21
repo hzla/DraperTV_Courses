@@ -80,6 +80,10 @@ h4 {
         color: $gray;
         &:hover { color: $blue; }
       }
+      i {
+        color: $yellow;
+      }
+      p { margin: 0; }
       .name {
         float: left;
         margin-left: 0;
