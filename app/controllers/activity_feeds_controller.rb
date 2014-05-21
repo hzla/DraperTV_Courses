@@ -5,11 +5,10 @@ class ActivityFeedsController < ApplicationController
   	@activity_feeds =  ActivityFeed.all
     @activity_feeds = ActivityFeed.order("created_at desc").includes(:tobetrackable)
 
-respond_to do |format|
-    format.js
-    format.html
-
-  end
+  respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
 end

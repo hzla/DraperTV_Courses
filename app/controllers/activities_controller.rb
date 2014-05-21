@@ -12,11 +12,10 @@ class ActivitiesController < ApplicationController
 
   	# @posts = Post.all
   	# @user_comments = UserComment.all
-  respond_to do |format|
-    format.js
-    format.html
-
-  end
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
 
