@@ -5,7 +5,7 @@
 <%
 	@assignment = Assignment.where(:id => user_assignment.assignment_id).first
 	@user = User.find_by_id(user_assignment.user_id)
-	@user_assignment = UserAssignment.where(:user_id => @user.id).first
+	@user_assignment = UserAssignment.where(:user_id => @user.id).where(:assignment_id => @assignment.id).first
 %>
 
  <div id="activity">
@@ -21,12 +21,7 @@
 			<% end %>
 			<% if user_assignment.complete == true %>
 			  <p>finished watching <%= link_to @assignment.title, assignment_path(@assignment) %></p>
-			  <% i = 0 %>
-	      <% r = @user_assignment.rating %>
-	      <% while i < r do %>
-	        <i class="fa fa-star"></i>
-	        <% i += 1 %>
-	      <% end %>
+			  <%= @user_assignment.question_response %>
 			<% end %>
 
 	    <div class="timestamp"><%= time_ago_in_words(@assignment.created_at) %></div>
