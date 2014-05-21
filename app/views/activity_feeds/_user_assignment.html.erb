@@ -10,6 +10,7 @@
 
  <div id="activity">
 	<div class="content">
+		<!-- ****** Video / Founder ****** -->
 		 <% if @assignment.category == "video" or @assignment.category == "founder" %>
 			<% if @user.avatar != nil %>
 				<div class="picture">
@@ -22,16 +23,18 @@
 			<% if user_assignment.complete == true %>
 			  <p>finished watching <%= link_to @assignment.title, assignment_path(@assignment) %></p>
 			  <% i = 0 %>
-          <% r = @user_assignment.rating %>
-          <% while i < r do %>
-            <i class="fa fa-star"></i>
-            <% i += 1 %>
-          <% end %>
-				<% end %>
-				<br/>
-				<%= @user_assignment.question_response %>
-	    <div class="timestamp"><%= time_ago_in_words(@assignment.created_at) %> ago</div>
+        <% r = @user_assignment.rating %>
+        <% while i < r do %>
+          <i class="fa fa-star"></i>
+        	<% i += 1 %>
+      	<% end %>
+      	<br/>
+      	<div class="minimize"><%= @user_assignment.question_response %></div>
+	    	<div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
+			<% end %><!-- complete == true  -->
 
+
+	  <!-- ****** Milestone ***** -->
 		 <% elsif @assignment.category == "milestone" %>
 				<% if @user.avatar != nil %>
 					<div class="picture">
@@ -42,9 +45,11 @@
 				    	<div class="name"><%= @user.full_name %></div>
 				 <% end %>
 				<% if user_assignment.complete == true %>
-				  <p>completed <%= link_to @assignment.title %></p>
+				  <p>completed <%= link_to @user_assignment.title %></p>
+				  <div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 				 <% end %>
 
+		<!-- ****** Upload ****** -->
 		 <% elsif @assignment.category == "upload" %>
 				<% if @user.avatar != nil %>
 					<div class="picture">
@@ -56,8 +61,10 @@
 				  <% end %>
 			 	<% if user_assignment.complete == true %>
 				  <p>uploaded <%= link_to @assignment.title, user_assignments_path %></p>
+				  <div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 				 <% end %>
 
+		<!-- ****** Reading ****** -->
 		 <% elsif @assignment.category == "reading" %>
 	 			<% if @user.avatar != nil %>
 					<div class="picture">
@@ -69,8 +76,10 @@
 				  <% end %>
 				<% if user_assignment.complete == true %>
 				  <p>finished <%= link_to @assignment.title %></p>
-				 <% end %>
+				  <div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
+				<% end %>
 
+		<!-- ***** Reading ***** -->
 		 <% elsif @assignment.category == "reading" %>
 	 			<% if @user.avatar != nil %>
 					<div class="picture">
@@ -82,9 +91,10 @@
 				  <% end %>
 				<% if user_assignment.complete == true %>
 				  <p>finished <%= link_to @assignment.title %></p>
+				  <div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 				 <% end %>
-				 <div class="timestamp"><%= user_assignment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
 
+		<!-- ***** Quiz ***** -->
 		<% elsif @assignment.category == "quiz" %>
 				<% if @user.avatar != nil %>
 				<div class="picture">
@@ -97,7 +107,7 @@
 			<% if user_assignment.complete == true %>
 			  <p>took <%= link_to @assignment.title %></p>
 			 <% end %>
-			 <div class="timestamp"><%= user_assignment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+			  <div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 				 <% end %>
 		</div><!-- content -->
 	</div><!-- post -->
