@@ -21,6 +21,7 @@
 			<% end %>
 			<% if user_assignment.complete == true %>
 			  <p>finished watching <%= link_to @assignment.title, assignment_path(@assignment) %></p>
+
 			  <% i = 0 %>
 	      <% r = @user_assignment.rating %>
 	      <% while i < r do %>
