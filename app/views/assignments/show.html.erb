@@ -164,7 +164,6 @@
         </div>
       <% end %>
     <% end %>
-
     <!-- ******** UPLOAD ******* -->
     <%  @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
     <% if @assignment.require_upload == true %>

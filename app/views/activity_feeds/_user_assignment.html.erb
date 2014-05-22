@@ -22,6 +22,8 @@
 			<% end %>
 			<% if user_assignment.complete == true %>
 			  <p>finished watching <%= link_to @assignment.title, assignment_path(@assignment) %></p>
+			<% if user_assignment.rating.nil? %>
+			<% else %>
 
 			  <% i = 0 %>
         <% r = @user_assignment.rating %>
@@ -29,6 +31,8 @@
           <i class="fa fa-star"></i>
         	<% i += 1 %>
       	<% end %>
+    		<% end %>
+
       	<br/>
       	<div class="minimize"><%= @user_assignment.question_response %></div>
 	    	<div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
