@@ -70,7 +70,7 @@ end
         track_activity @comment
         @comments = @commentable.user_comments.order('created_at desc')
         #refresh_dom_with_partial('div#comments_container', 'comments')
-          if @comment.commentable_type == "Assignment"
+          if @comment.commentable_type == "Assignment" || @comment.commentable_type == "UserAssignment"
             respond_to do |format|
               format.html {  }
               format.js { render :commentAssignment }
@@ -108,7 +108,7 @@ end
       @comment.destroy
         @comments = @commentable.user_comments.order('created_at desc')
         #refresh_dom_with_partial('div#comments_container', 'comments')
-          if @comment.commentable_type == "Assignment"
+          if @comment.commentable_type == "Assignment" || @comment.commentable_type == "UserAssignment"
             respond_to do |format|
               format.html {  }
               format.js { render :commentAssignment }
