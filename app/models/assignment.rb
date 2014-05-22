@@ -4,7 +4,7 @@ class Assignment < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :finders]
 
   attr_accessible :description, :preview_url, :title, :vimeo_url, :order_id, :survey_id, :require_upload, :speaker_name, :category, :speaker_bio, :speaker_twitter, :speaker_linkedin, :speaker_angel, :course_id
-  attr_accessible :speaker_pic, :user_assignment_id, :question_text, :question_duh_response
+  attr_accessible :speaker_pic, :user_assignment_id, :question_text, :question_duh_response, :complete, :rating
   belongs_to :course
   has_many :user_assignments
 
@@ -18,7 +18,7 @@ class Assignment < ActiveRecord::Base
     if self.survey_id.nil?
       return nil
     else
-      Survey::Survey.find self.survey_id
+      Survey::Survey.find_or_create_by_id(self.survey_id)
     end
   end
 

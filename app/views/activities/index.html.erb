@@ -5,13 +5,14 @@
       </div>
   </div><!-- row -->
 </div>
+
 <div class="column-main">
 	<div id="Activities">
 		<% @activities.each do |activity| %>
 		  <%= ActivityPresenter.new(activity, self).render_activity %>
 		<% end %>
 	</div>
-<%= paginate @activities %>
+  <%= paginate @activities %>
 </div> <!-- column-main -->
 
 <div class="column-right">
