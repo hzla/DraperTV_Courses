@@ -3,7 +3,6 @@
 <% if user_comment %>
   <%-#+++++ Creating a list of objects that the current user have COMMENTED on ++++ %>
   <% commentableIDs = [] %>
-  <% @comments = UserComment.all %>
   <% @comments.each do |com| %>
     <% if com.user_id ==  current_user.id %>
       <% commentableIDs << com.commentable_id %>
@@ -15,24 +14,12 @@
   <%-#++++++ Checking the type of the current user Comment Object  +++++++%>
   <% if user_comment.commentable_type == "Post" %>
 
-      <%-#Creating a list of Posts that the current User Created %>
-      <% currentUserPosts = []
-        @posts = Post.all
-        @post = Post.where(:user_id => user_comment.user_id).first %>
-
-        <% @posts.each do |userPost| %>
-          <% if userPost.user_id ==  current_user.id %>
-              <% currentUserPosts << userPost.id %>
-          <% end %>
-        <% end %>
-        <%-### end of the list and now we create a list of Unique Post IDs %>
-        <% listOfPosts = currentUserPosts + commentableIDs
-        listOfPosts = listOfPosts.uniq %>
-
+        <%-### Now we create a list of Unique Post IDs %>
+        <% listOfPosts = commentableIDs.uniq %>
 
         <%-## Now checking if there are any NEW Posts that are Commented on while the CURRENT user can relate to, so that it can show up their FEED %>
 
-        <% if listOfPosts.include? user_comment.commentable_id && @post.user_id != current_user.id %>
+        <% if listOfPosts.include? user_comment.commentable_id %>
 
         <%-### From here until end of this IF Else statement, it's brining back Posts, similar to loading posts.%>
 
@@ -100,20 +87,10 @@
 
   <% elsif user_comment.commentable_type == "Assignment"  %>
 
-    <%-#Creating a list of Assignments that the current User Created %>
 
-    <% currentAssignments = []
-      @assignments = UserAssignment.all %>
 
-        <% @assignments.each do |userAssignment| %>
-          <% if userAssignment.user_id ==  current_user.id %>
-            <% currentAssignments << userAssignment.id %>
-          <% end %>
-        <% end %>
-
-      <%-### end of the list and now we create a list of Unique Assignment IDs %>
-      <% listOfAssignments = currentAssignments + commentableIDs
-          listOfAssignments = listOfAssignments.uniq  %>
+      <%-### Now we create a list of Unique Assignment IDs %>
+      <% listOfAssignments = listOfAssignments.uniq  %>
 
       <%-## Now we are checking if there are any NEW Assignments that are Commented on while the CURRENT user can relate to, so that it can show up their FEED %>
 
@@ -151,18 +128,8 @@
 
   <% elsif user_comment.commentable_type == "Event"  %>
 
-    <%-#Creating a list of Events that the current User Created %>
-    <% currentEvents = []
-      @events = Event.all %>
-
-    <% @events.each do |event| %>
-      <% if event.user_id ==  current_user.id %>
-          <% currentEvents << event.id %>
-      <% end %>
-    <% end %>
-
-      <% listOfEvents = currentEvents + commentableIDs
-         listOfEvents = listOfEvents.uniq %>
+        <%-### Now we create a list of Unique Event IDs %>
+      <% listOfEvents = listOfEvents.uniq %>
       <% event = Event.find_by_id(user_comment.commentable_id)  %>
 
        <% if listOfEvents.include? user_comment.commentable_id  %>
@@ -201,4 +168,3 @@
 
 
 <% end %>
-

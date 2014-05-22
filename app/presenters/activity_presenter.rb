@@ -9,8 +9,6 @@ class ActivityPresenter < SimpleDelegator
   def render_activity
     render_partial
   end
-  #link_to(activity.user.first_name, activity.user) + " " + render_partial
-
 
   def render_partial
     locals = {activity: activity, presenter: self}
