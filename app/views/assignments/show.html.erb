@@ -242,7 +242,7 @@
         <button type="button" class="close" style="" data-dismiss="modal" aria-hidden="true">x</button>
         <h2>Complete <%= @assignment.title %></h2><br/>
         <div class="title">Please rate this lecture from one to five stars, where five is the best.</div>
-        <fieldset class="rating">
+        <fieldset class="rating" required="required">
           <%= f.radio_button("rating", 5,  id: "star5") %>
            <label for="star5" title="Rocks!">5 stars</label>
           <%= f.radio_button("rating", 4, checked: false, id: "star4") %>
