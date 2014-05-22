@@ -1,3 +1,5 @@
+<%= subscribe_to "/layouts/assignments" %>
+
 <div class="top-section">
   <div class="top-column-main">
       <div style="width: 100%; position: relative; display; block; padding-left: 20px;">
@@ -10,9 +12,23 @@
 	<div id="ActivityFeed">
 		<% @activity_feeds.each do |activity_feed| %>
 		  <%= ActivityFeedPresenter.new(activity_feed, self).render_activity_feed %>
+
+		    <!-- Inner-Div-comments -->
+		    <div class="col-right-comments">
+		    <div id="comments_container">
+		      <div id="<%= @assignment.id %>">
+		        <%= render "user_comments/uacomments" %>
+		      </div>
+		    </div>
+		      <div class="col-right-addcomment">
+    			<%= render "user_comments/addcomment_uafeed" %>
+  			</div><!-- col-right-addcomment -->
+		  </div><!-- Inner-Div-comments -->
+
 		<% end %>
 	</div>
 	<%= paginate @activity_feeds %>
+
 
 </div> <!-- column-main -->
 

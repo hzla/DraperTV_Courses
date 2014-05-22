@@ -4,6 +4,13 @@ class ActivityFeedsController < ApplicationController
   def index
   	@activity_feeds =  ActivityFeed.all
     @activity_feeds = ActivityFeed.page(params[:page]).per(10).order("created_at desc").includes(:tobetrackable)
+    @comments = UserComment.all
+    @comments = @comments.order('created_at desc')
+
+    # @assignment = Assignment.find(params[:id])
+    # @commentable = @assignment
+    @comment = UserComment.new
+
 
   respond_to do |format|
       format.js

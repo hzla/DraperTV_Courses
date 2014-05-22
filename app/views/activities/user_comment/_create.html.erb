@@ -88,6 +88,21 @@
   <% elsif user_comment.commentable_type == "Assignment"  %>
 
 
+    <%-#Creating a list of Assignments that the current User Created %>
+
+    <% currentAssignments = []
+      @assignments = UserAssignment.all %>
+
+        <% @assignments.each do |userAssignment| %>
+          <% if userAssignment.user_id ==  current_user.id %>
+            <% currentAssignments << userAssignment.id %>
+          <% end %>
+        <% end %>
+
+      <%-### end of the list and now we create a list of Unique Assignment IDs %>
+      <% listOfAssignments = currentAssignments + commentableIDs
+          listOfAssignments = listOfAssignments.uniq  %>
+
 
       <%-### Now we create a list of Unique Assignment IDs %>
       <% listOfAssignments = listOfAssignments.uniq  %>
