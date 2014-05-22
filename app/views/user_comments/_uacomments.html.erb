@@ -1,5 +1,5 @@
 <div id="comments_list">
-  <% @comments.where(:commentable_id => @assignment.id).each do |comment| %>
+  <% @comments.where(:commentable_id => @user_assignment.id).each do |comment| %>
     <% if User.where(:id => comment.user_id).exists? %>
       <div id="comments">
         <% if comment.user_id %>

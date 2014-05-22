@@ -13,17 +13,16 @@
 		<% @activity_feeds.each do |activity_feed| %>
 		  <%= ActivityFeedPresenter.new(activity_feed, self).render_activity_feed %>
 
-		    <!-- Inner-Div-comments -->
-		    <div class="col-right-comments">
-		    <div id="comments_container">
-		      <div id="<%= @assignment.id %>">
-		        <%= render "user_comments/uacomments" %>
-		      </div>
-		    </div>
-		      <div class="col-right-addcomment">
-    			<%= render "user_comments/addcomment_uafeed" %>
-  			</div><!-- col-right-addcomment -->
-		  </div><!-- Inner-Div-comments -->
+    <!-- ActivityFeed-comments -->
+        <div id="comments_container">
+          <div id="<%= @assignment.user_assignments.where(:user_id => @user[:id]).first.id %>">
+            <%= render "user_comments/uacomments" %>
+          </div>
+          <div id="submit-<%= @assignment.user_assignments.where(:user_id => @user[:id]).first.id %>">
+            <%= render "user_comments/addcomment_uafeed" %>
+          </div>
+        </div> <!-- ActivityFeed-comments -->
+
 
 		<% end %>
 	</div>

@@ -6,7 +6,9 @@
 	@assignment = Assignment.where(:id => user_assignment.assignment_id).first
 	@user = User.find_by_id(user_assignment.user_id)
 	@user_assignment = UserAssignment.where(:user_id => @user.id).where(:assignment_id => @assignment.id).first
-	  @commentable = @assignment
+	@commentable = @assignment
+	@ua = UserAssignment.where(:id => @assignment.user_assignments.where(:user_id => @user[:id]).first.id).first
+  @commentable = @ua
 %>
 
  <div id="activity">
