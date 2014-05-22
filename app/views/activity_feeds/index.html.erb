@@ -9,11 +9,12 @@
 </div>
 
 <div class="column-main">
-	<div id="ActivityFeed">
+	<div>
 		<% @activity_feeds.each do |activity_feed| %>
 		  <%= ActivityFeedPresenter.new(activity_feed, self).render_activity_feed %>
 
     <!-- ActivityFeed-comments -->
+    <div id="comments_section">
         <div id="comments_container">
           <div id="<%= @assignment.user_assignments.where(:user_id => @user[:id]).first.id %>">
             <%= render "user_comments/uacomments" %>
@@ -22,8 +23,7 @@
             <%= render "user_comments/addcomment_uafeed" %>
           </div>
         </div> <!-- ActivityFeed-comments -->
-
-
+    </div>
 		<% end %>
 	</div>
 	<%= paginate @activity_feeds %>
