@@ -1,3 +1,168 @@
 // Place all the styles related to the activity_feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#comments_section {
+	.section {
+		display: block;
+		position: relative;
+		width: 96%;
+		border-bottom: 1px solid $gray-x-lt;
+		padding: 10px 0 20px 0;
+		margin-bottom: 20px;
+		overflow: hidden;
+		min-height: 65px;
+    border-bottom: 2px solid $gray-x-lt;
+
+		.icon {
+			display: block;
+			width: 60px;
+			height: 60px;
+			position: absolute;
+			top: 5px;
+			left: 0;
+		}
+		.description {
+			display: block;
+			margin-left: 80px;
+			margin-bottom: 8px;
+			width: 80%;
+
+			font-size: 18px;
+			font-weight: normal;
+			color: $gray-dark;
+		}
+		.response {
+			display: block;
+			margin-left: 80px;
+			width: 85%;
+
+			font-size: 15px;
+			color: $gray;
+			font-weight: normal;
+		}
+	}
+	#comments_container {
+    width: 100%;
+    margin-bottom: 50px;
+    border: 1px solid $gray-x-x-lt;
+    position: relative;
+    padding: 10px 0;
+    margin-top: 20px;
+    margin-left: 0;
+    .picture {
+      width: 30px;
+      height: 30px;
+    }
+    #comments {
+      margin-bottom: 8px;
+      margin-top: 8px;
+      margin-left: 70px;
+
+      border-bottom: 1px solid $gray-x-x-lt;
+      min-height: 30px;
+      .timestamp { display: none; }
+      .picture {
+        height: 30px;
+        width: 30px;
+        img {
+          height: 30px;
+          width: 30px;
+        }
+      }
+      .name {
+        font-size: 13px;
+        margin-left: 38px;
+        margin-right: 5px;
+      }
+      a {
+        color: $blue;
+        &:hover { color: $blue-4; }
+      }
+      .content {
+        margin-left: 38px;
+        font-size: 12px;
+        min-height: 30px;
+        word-wrap: break-word;
+      }
+    } //end comments
+
+    #comment_form {
+      margin-top: 15px;
+      textarea {
+        resize: none;
+        height: 20px;
+        width: calc(80% - 38px);
+        margin-left: 38px;
+        font-size: 12px;
+
+      }
+      .picture {
+        height: 30px;
+        width: 30px;
+        img {
+          height: 30px;
+          width: 30px;
+        }
+      }
+    } //comment_form
+  }
+}
+
+#activityfeed {
+    width: 90%;
+    padding-left: 3%;
+    padding-right: 2%;
+    position: relative;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    .content {
+      margin-left: 50px;
+      font-size: 14px;
+      color: $gray-med;
+      min-height: 50px;
+      a {
+        color: $gray;
+        &:hover { color: $blue; }
+      }
+      i {
+        color: $yellow;
+      }
+      p { margin: 0; }
+      .name {
+        float: left;
+        margin-left: 0;
+        font-size: 14px;
+        font-weight: bold;
+        color: $blue;
+        margin-right: 4px;
+        &:hover { color: $blue; }
+      }
+      .item {
+        float: left;
+        display: block;
+        color: $gray;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .timestamp {
+        margin-left: 0;
+        font-size: 10px;
+        color: $gray-lt;
+      }
+    }
+    .picture {
+      border-radius: 2px;
+      overflow: hidden;
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      top: 2px;
+      left: 3%;
+    }
+    img {
+      width: 35px;
+      height: 35px;
+    }
+  }
