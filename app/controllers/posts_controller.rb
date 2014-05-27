@@ -100,7 +100,7 @@ def create
     @post.user_id = current_user.id
       begin
         if @post.save
-          @post.vote = 1
+          @post.vote = 0
          respond_to do |format|
             format.js { redirect_to :back }
             #format.html # new.html.erb
