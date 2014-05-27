@@ -70,10 +70,17 @@ end
         track_activity @comment
         @comments = @commentable.user_comments.order('created_at desc')
         #refresh_dom_with_partial('div#comments_container', 'comments')
-          if @comment.commentable_type == "Assignment" || @comment.commentable_type == "UserAssignment"
+          if @comment.commentable_type == "Assignment"
             respond_to do |format|
               format.html {  }
               format.js { render :commentAssignment }
+            end
+          elsif @comment.commentable_type == "UserAssignment"
+            @comments = @commentable.user_comments.order('created_at asc')
+            @user_assignment = UserAssignment.where(:id => @comment.commentable_id).first
+            respond_to do |format|
+              format.html {  }
+              format.js { render :commentUA }
             end
           else
             respond_to do |format|
@@ -108,10 +115,17 @@ end
       @comment.destroy
         @comments = @commentable.user_comments.order('created_at desc')
         #refresh_dom_with_partial('div#comments_container', 'comments')
-          if @comment.commentable_type == "Assignment" || @comment.commentable_type == "UserAssignment"
+          if @comment.commentable_type == "Assignment"
             respond_to do |format|
               format.html {  }
               format.js { render :commentAssignment }
+            end
+          elsif @comment.commentable_type == "UserAssignment"
+            @comments = @commentable.user_comments.order('created_at asc')
+            @user_assignment = UserAssignment.where(:id => @comment.commentable_id).first
+            respond_to do |format|
+              format.html {  }
+              format.js { render :commentUA }
             end
           else
             respond_to do |format|

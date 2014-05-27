@@ -1,4 +1,5 @@
 <div id="comments_list">
+  <% @comments = @commentable.user_comments.order('created_at ASC') %>
   <% @comments.where(:commentable_id => @user_assignment.id).each do |comment| %>
     <% if User.where(:id => comment.user_id).exists? %>
       <div id="comments">
