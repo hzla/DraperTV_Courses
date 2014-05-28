@@ -6,11 +6,10 @@ class ActivityFeedsController < ApplicationController
     @activity_feeds = ActivityFeed.page(params[:page]).per(10).order("created_at desc").includes(:tobetrackable)
     @comments = UserComment.all
     @comments = @comments.order('created_at desc')
-
     # @assignment = Assignment.find(params[:id])
     # @commentable = @assignment
     @comment = UserComment.new
-
+    @leaders = User.order('pcounter').limit(10)
 
     respond_to do |format|
       format.js

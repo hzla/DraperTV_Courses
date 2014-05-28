@@ -26,23 +26,12 @@
     </div>
 		<% end %>
 	</div>
-	<%= paginate @activity_feeds %>
 
+	<%= paginate @activity_feeds %>
 
 </div> <!-- column-main -->
 
 
 <div class="column-right">
-  <div class="col-right-top-section">
-    <h3></h3>
-  </div>
-  <div class="col-right-comments">
-    <div id="comments_container">
-
-      </div>
-    </div>
-  </div><!-- col-right-comments -->
-  <div class="col-right-addcomment">
-
-  </div><!-- col-right-addcomment -->
+  <%= render '/users/leaderboard' %>
 </div><!-- column-right -->

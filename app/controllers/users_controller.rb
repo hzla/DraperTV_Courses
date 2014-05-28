@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @users= @q.result(distinct: true).order('first_name').page(params[:page]).per(25)
 
     #@leaders = User.where("pcounter is not null").order('pcounter DESC').limit(10)
-    @leaders = User.order('pcounter').limit(8)
+    @leaders = User.order('pcounter').limit(10)
   end
 
 
