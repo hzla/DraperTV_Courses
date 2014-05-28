@@ -52,8 +52,8 @@ end
     @user = User.find(@comment.user_id)
     @words = @comment.content.split.size.to_i + @user.char_points.to_i
     @user.update_column(:char_points, 1 * @words)
-    @user.update_column(:pcounter, @user.pcounter.to_i + @comment.content.split.size.to_i)
-
+    commentsize = @comment.content.split.size.to_i
+    pcalculate(commentsize)
     @activities =  Activity.all
     @activities = Activity.order("created_at desc")
 
