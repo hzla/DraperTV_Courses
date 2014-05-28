@@ -1,0 +1,13 @@
+<div class="col-right-top-section">
+	<h3>Recent Activity</h3>
+</div>
+<div class="col-right-comments">
+	<div id="comments_container">
+		<% @activity_feeds.each do |activity_feed| %>
+			<%= ActivityFeedPresenter.new(activity_feed, self).render_activity_feed %>
+		<% end %>
+	</div>
+</div>
+<!-- This goes into col-right-comments -->
+
+

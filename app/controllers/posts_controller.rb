@@ -18,7 +18,7 @@ def index
 
   @posts = Post.all
   @q = Post.search(params[:q])
-  @posts = @q.result(distinct: true).where("vote is not null").order('vote').page(params[:page]).per(25)
+  @posts = @q.result(distinct: true).where("vote is not null").order('created_at DESC').page(params[:page]).per(25)
 
   @post = Post.new
   @users = User.order('pcounter DESC').limit(10)

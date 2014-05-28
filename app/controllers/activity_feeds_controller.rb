@@ -12,7 +12,7 @@ class ActivityFeedsController < ApplicationController
     @comment = UserComment.new
 
 
-  respond_to do |format|
+    respond_to do |format|
       format.js
       format.html
     end
