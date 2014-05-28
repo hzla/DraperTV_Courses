@@ -76,7 +76,7 @@ class AssignmentsController < ApplicationController
           track_activity_feed @user_assignment
        end
 
-      @user.update_column(:pcounter, UserAssignment.where(:user_id => current_user[:id]).sum('point_value'))
+      pcalculate
 
       begin
       PrivatePub.publish_to("/layouts/points",
@@ -88,6 +88,7 @@ class AssignmentsController < ApplicationController
 
   def update
     @assignment = Assignment.find params[:id]
+    pcalculate
     respond_to do |format|
       if @assignment.update_attributes(params[:assignment])
         format.html { redirect_to @assignment }
@@ -107,7 +108,7 @@ class AssignmentsController < ApplicationController
 
       if @attempt.valid? and @attempt.save
         @assignment.user_assignments.first.update_attribute(:point_value, 200)
-        current_user.update_attribute(:pcounter, UserAssignment.where(:user_id => current_user[:id]).sum('point_value'))
+        pcalculate
         redirect_to assignment_path
       else
        render :action => :show

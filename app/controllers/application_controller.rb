@@ -77,14 +77,14 @@ end
     end
   end
 
-  def pcalculate(commentsize)
+  def cpcalculate(commentsize)
     points = current_user.char_points.to_i + UserAssignment.where(:user_id => current_user[:id]).sum('point_value').to_i
     current_user.update_column(:pcounter, commentsize.to_i + points.to_i)
   end
 
-  def pcalculate(commentsize)
+  def pcalculate
     points = current_user.char_points.to_i + UserAssignment.where(:user_id => current_user[:id]).sum('point_value').to_i
-    current_user.update_column(:pcounter, commentsize.to_i + points.to_i)
+    current_user.update_column(:pcounter, points.to_i)
   end
 
   def track_activity_feed(tobetrackable, action = params[:action])

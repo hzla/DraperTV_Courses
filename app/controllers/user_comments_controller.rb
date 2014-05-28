@@ -53,7 +53,7 @@ end
     @words = @comment.content.split.size.to_i + @user.char_points.to_i
     @user.update_column(:char_points, 1 * @words)
     commentsize = @comment.content.split.size.to_i
-    pcalculate(commentsize)
+    cpcalculate(commentsize)
     @activities =  Activity.all
     @activities = Activity.order("created_at desc")
 

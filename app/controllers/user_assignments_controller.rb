@@ -27,7 +27,7 @@ class UserAssignmentsController < ApplicationController
     @user_assignment = UserAssignment.find(params[:id])
     respond_to do |format|
       if @user_assignment.update_attributes(params[:user_assignment])
-
+        pcalculate
         format.html { redirect_to :back }
         format.json { head :no_content }
       else
