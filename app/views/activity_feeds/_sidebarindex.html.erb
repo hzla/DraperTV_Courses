@@ -1,13 +1,118 @@
+<!-- *************************************** -->
+<!-- *** include this partial in sidebar *** -->
+<!-- ***      to show activity feed      *** -->
+<!-- *************************************** -->
+
 <div class="col-right-top-section">
-	<h3>Recent Activity</h3>
+	<h3>Activity</h3>
 </div>
-<div class="col-right-comments">
+
+<div class="col-right-comments" style="padding: 0; height: calc(100% - 110px);">
 	<div id="comments_container">
 		<% @activity_feeds.each do |activity_feed| %>
-			<%= ActivityFeedPresenter.new(activity_feed, self).render_activity_feed %>
+
+      <!-- ***** Define Variables ***** -->
+			<% @user_assignment = UserAssignment.where(:id => activity_feed.tobetrackable_id).first
+      @user = User.find_by_id(@user_assignment.user_id)
+        @assignment = Assignment.where(:id => @user_assignment.assignment_id).first
+      %>
+
+      <!-- ********************************************** -->
+      <!-- *** Similar to _user_assignments presenter *** -->
+      <!-- ********************************************** -->
+
+      <div id="activityfeed_sidebar">
+        <div class="content">
+          <!-- ****** Video / Founder ****** -->
+          <% if @assignment.category == "video" or @assignment.category == "founder" %>
+            <% if @user.avatar != nil %>
+              <div class="picture">
+                <%= link_to student_profile_path(@user) do %>
+                  <%= image_tag @user.avatar.url(:medium) %>
+                <% end %>
+              </div>
+            <% end %>
+            <%= link_to student_profile_path(@user) do %>
+              <div class="name"><%= @user.full_name %></div>
+            <% end %>
+            <% if @user_assignment.complete == true %>
+              <p>finished watching <%= link_to @assignment.title, assignment_path(@assignment) %></p>
+            <% end %><!-- complete == true  -->
+
+          <!-- ****** Milestone ****** -->
+          <% elsif @assignment.category == "milestone" %>
+            <% if @user.avatar != nil %>
+              <div class="picture">
+                <%= link_to student_profile_path(@user) do %>
+                  <%= image_tag @user.avatar.url(:medium) %>
+                <% end %>
+              </div>
+            <% end %>
+              <%= link_to student_profile_path(@user) do %>
+                  <div class="name"><%= @user.full_name %></div>
+             <% end %>
+            <% if @user_assignment.complete == true %>
+              <p>completed <%= link_to @user_assignment.title %></p>
+             <% end %>
+
+          <!-- ****** Upload ****** -->
+          <% elsif @assignment.category == "upload" %>
+            <% if @user.avatar != nil %>
+              <div class="picture">
+                <%= link_to student_profile_path(@user) do %>
+                  <%= image_tag @user.avatar.url(:medium) %>
+                <% end %>
+              </div>
+            <% end %>
+              <%= link_to student_profile_path(@user) do %>
+                  <div class="name"><%= @user.full_name %></div>
+              <% end %>
+            <% if @user_assignment.complete == true %>
+              <p>uploaded <%= link_to @assignment.title, @user_assignments_path %></p>
+             <% end %>
+
+          <!-- ****** Reading ****** -->
+          <% elsif @assignment.category == "reading" %>
+            <% if @user.avatar != nil %>
+              <div class="picture">
+                <%= link_to student_profile_path(@user) do %>
+                  <%= image_tag @user.avatar.url(:medium) %>
+                <% end %>
+              </div>
+            <% end %>
+            <%= link_to student_profile_path(@user) do %>
+                <div class="name"><%= @user.full_name %></div>
+            <% end %>
+            <% if @user_assignment.complete == true %>
+              <p>finished <%= link_to @assignment.title %></p>
+            <% end %>
+
+          <!-- ***** Quiz ***** -->
+          <% elsif @assignment.category == "quiz" %>
+            <% if @user.avatar != nil %>
+              <div class="picture">
+                <%= link_to student_profile_path(@user) do %>
+                  <%= image_tag @user.avatar.url(:medium) %>
+                <% end %>
+              </div>
+            <% end %>
+            <%= link_to student_profile_path(@user) do %>
+              <div class="name"><%= @user.full_name %></div>
+            <% end %>
+            <% if @user_assignment.complete == true %>
+              <p>took <%= link_to @assignment.title %></p>
+            <% end %>
+
+          <% else %>
+          <% end %><!-- assignment category loop -->
+        </div><!-- content -->
+      </div><!-- activityfeed_sidebar -->
+
 		<% end %>
 	</div>
 </div>
 <!-- This goes into col-right-comments -->
+
+
 
 

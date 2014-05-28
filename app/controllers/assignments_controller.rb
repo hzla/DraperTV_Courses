@@ -13,7 +13,11 @@ class AssignmentsController < ApplicationController
     @comment = UserComment.new
     @user_assignment = @assignment.user_assignments.where(:user_id => current_user[:id])
     @user = current_user
+    #@users = User.joins(:user_assignment).where(user_assignments: { assignment_id: @assignment.id })
+    @ua = UserAssignment.where(:assignment_id => @assignment.id).where(:complete => true)
+
     @completed = UserAssignment.where(:assignment_id => @assignment.id).where("rating is not null").where.not(user_id: current_user.id)
+    #@completed_by = User.where()
 
 		if @assignment.category == "video" or @assignment.category == "reading" or @assignment.category == "founder"
 		  oembed = "http://vimeo.com/api/oembed.json?url=http%3A//vimeo.com/" + @assignment.vimeo_url + '&autoplay=1'

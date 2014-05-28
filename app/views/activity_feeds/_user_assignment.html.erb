@@ -86,21 +86,6 @@
 				  <div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 				<% end %>
 
-		<!-- ***** Reading ***** -->
-		 <% elsif @assignment.category == "reading" %>
-	 			<% if @user.avatar != nil %>
-					<div class="picture">
-						<%= image_tag @user.avatar.url(:medium) %>
-					</div>
-				<% end %>
-		   		<%= link_to student_profile_path(@user) do %>
-				    	<div class="name"><%= @user.full_name %></div>
-				  <% end %>
-				<% if user_assignment.complete == true %>
-				  <p>finished <%= link_to @assignment.title %></p>
-				  <div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
-				 <% end %>
-
 		<!-- ***** Quiz ***** -->
 		<% elsif @assignment.category == "quiz" %>
 				<% if @user.avatar != nil %>

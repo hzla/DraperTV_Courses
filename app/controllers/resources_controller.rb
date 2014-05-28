@@ -3,5 +3,6 @@ class ResourcesController < ApplicationController
 
   def index
     @resources = Resource.all
+    sidebarindex
   end
 end

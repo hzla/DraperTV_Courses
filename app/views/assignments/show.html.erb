@@ -19,6 +19,7 @@
 
   <!-- split panel if speaker info available -->
   <div id="assignment_container">
+
     <!-- ******** VIDEO/FOUNDER ******* -->
     <% if @assignment.category == "video" or @assignment.category == "founder" %>
       <br/>
@@ -243,15 +244,15 @@
         <div class="title">Please rate this lecture from one to five stars, where five is the best.</div>
         <fieldset class="rating" required="required">
           <%= f.radio_button("rating", 5,  id: "star5") %>
-           <label for="star5" title="Rocks!">5 stars</label>
+           <label for="star5" title="Rocks!"></label>
           <%= f.radio_button("rating", 4, checked: false, id: "star4") %>
-          <label for="star4" title="Great">4 stars</label>
+          <label for="star4" title="Great"></label>
           <%= f.radio_button("rating", 3, checked: false, id: "star3") %>
-          <label for="star3" title="Good">3 stars</label>
+          <label for="star3" title="Good"></label>
           <%= f.radio_button("rating", 2, checked: false, id: "star2") %>
-          <label for="star2" title="OK">2 stars</label>
+          <label for="star2" title="OK"></label>
           <%= f.radio_button("rating", 1, checked: false, id: "star1") %>
-          <label for="star1" title="meh">1 star</label>
+          <label for="star1" title="meh"></label>
         </fieldset>
         <div class="title">
           <% if can? :update, @assignment %>
