@@ -166,3 +166,63 @@
       height: 35px;
     }
   }
+
+  #activityfeed_sidebar {
+    width: 100%;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $gray-x-x-lt;
+    .content {
+      margin-left: 50px;
+      font-size: 14px;
+      color: $gray-med;
+      min-height: 50px;
+      a {
+        color: $gray;
+        &:hover { color: $blue; }
+      }
+      i {
+        color: $yellow;
+      }
+      p { margin: 0; }
+      .name {
+        float: left;
+        margin-left: 0;
+        font-size: 14px;
+        font-weight: bold;
+        color: $blue;
+        margin-right: 4px;
+        &:hover { color: $blue; }
+      }
+      .item {
+        float: left;
+        display: block;
+        color: $gray;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .timestamp {
+        margin-left: 0;
+        font-size: 10px;
+        color: $gray-lt;
+      }
+    }
+    .picture {
+      border-radius: 2px;
+      overflow: hidden;
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+    img {
+      width: 25px;
+      height: 25px;
+    }
+    &:hover {
+      background: $gray-x-x-lt;
+    }
+  }

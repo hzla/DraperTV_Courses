@@ -7,11 +7,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @event = Event.new(params[:event])
-
-    respond_to do |format|
-      format.html # index.html.erb
-      #format.json { render json: @events }
-    end
+    sidebarindex
   end
 
   # GET /events/1
@@ -21,11 +17,7 @@ class EventsController < ApplicationController
     @commentable = @event
     @comments = @commentable.user_comments.order(:created_at)
     @comment = UserComment.new
-
-    respond_to do |format|
-      format.html # show.html.erb
-      #format.json { render json: @event }
-    end
+    sidebarindex
   end
 
   # GET /events/new

@@ -19,14 +19,9 @@ def index
   @posts = Post.all
   @q = Post.search(params[:q])
   @posts = @q.result(distinct: true).where("vote is not null").order('created_at DESC').page(params[:page]).per(25)
-
   @post = Post.new
   @users = User.order('pcounter DESC').limit(10)
-
-  respond_to do |format|
-    format.html
-    format.js #{ render js: @post }
-  end
+  sidebarindex
 end
 
 def vote_for_post

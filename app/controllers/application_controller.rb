@@ -70,7 +70,7 @@ end
 
   def sidebarindex
     @activity_feeds =  ActivityFeed.all
-    @activity_feeds = ActivityFeed.page(params[:page]).per(10).order("created_at desc").includes(:tobetrackable)
+    @activity_feeds = ActivityFeed.page(params[:page]).per(10).order("created_at desc")
     respond_to do |format|
       format.js
       format.html

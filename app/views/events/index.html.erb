@@ -15,7 +15,6 @@
 </div>
 
 
-
 <div class="column-main" style="margin-top: 80px;">
   <div class="event-calendar">
     <%= calendar @events, :start_day => :sunday do |event| %>
@@ -25,6 +24,7 @@
 </div>
 
 <div class="column-right">
+  <%= render "activity_feeds/sidebarindex"%>
 </div>
 
 <!-- ******  EVENT MODAL ******* -->
