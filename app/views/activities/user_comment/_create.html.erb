@@ -74,7 +74,7 @@
         <% end %>
         <%-### end of checking for Posts that are in the Unique list or not%>
 
-  <% elsif user_comment.commentable_type == "Assignment" && user_comment.user_id != current_user.id %>
+  <% elsif user_comment.commentable_type == "Assignment" && user_comment.user_id != current_user.id  %>
 
 
     <%-#Creating a list of Assignments that the current User Created %>
@@ -188,6 +188,10 @@
       <% end %>
       <%-### end of checking for Assignments that are in the Unique list or not%>
 
+<<<<<<< HEAD
+  <% elsif user_comment.commentable_type == "Event" && user_comment.user_id != current_user.id  %>
+=======
+>>>>>>> 0b1a803bcfdc57a73023f11cc0c0f6b6c1bc1665
 
 
 
@@ -226,7 +230,11 @@
         </div>
       <% end %>
       <% end %>
+<<<<<<< HEAD
+      <%-### end of checking for Posts that are in the Unique list or not%>
+=======
        <%-### end of checking for Posts that are in the Unique list or not%>
+>>>>>>> 0b1a803bcfdc57a73023f11cc0c0f6b6c1bc1665
 
   <% end %>
   <%-### End of the %>
