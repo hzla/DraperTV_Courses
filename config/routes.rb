@@ -69,6 +69,7 @@ OnlineSchool::Application.routes.draw do
 
   ##### GET #####
 
+  get 'activity', to: 'activity_feeds#index', as: :feed
   get 'notifications', to: 'activities#index', via: :all
   get 'feedback', to: 'feedbacks#index'
   get 'profile', to: 'profiles#show', as: :profile
