@@ -9,7 +9,7 @@
           <h1><%= @assignment.title %></h1>
         <% end %>
       </div>
-  </div><!-- row -->
+  </div>
 </div>
 
 <div class="column-main">
@@ -17,7 +17,6 @@
     <%= link_to @assignment.course.title, course_path(@assignment.course) %>
   </div>
 
-  <!-- split panel if speaker info available -->
   <div id="assignment_container">
 
     <!-- ******** VIDEO/FOUNDER ******* -->
@@ -78,7 +77,7 @@
                 <i class="fa fa-star"></i>
                 <% i += 1 %>
               <% end %>
-              <p class="response minimize"><%= c.question_response %></p>
+              <p class="response minimize"><%= simple_format(c.question_response) %></p>
             </div>
           </div>
         <% end %>
@@ -99,7 +98,7 @@
               <p><%= best_in_place @assignment, :description, :type => :textarea, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add description" %></p>
           <% else %>
             <h2><%= @assignment.speaker_name %></h2>
-            <p><%= @assignment.description %></p>
+            <p><%= simple_format(@assignment.description) %></p>
           <% end %>
           </div>
         </div><!-- speaker-section -->
