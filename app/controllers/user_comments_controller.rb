@@ -82,6 +82,12 @@ end
               format.html {  }
               format.js { render :commentUA }
             end
+          elsif @comment.commentable_type == "Event"
+            @comments = @commentable.user_comments.order('created_at asc')
+            respond_to do |format|
+              format.html {  }
+              format.js { render :commentEvent }
+            end
           else
             respond_to do |format|
               format.html { }
@@ -126,6 +132,12 @@ end
             respond_to do |format|
               format.html {  }
               format.js { render :commentUA }
+            end
+          elsif @comment.commentable_type == "Event"
+            @comments = @commentable.user_comments.order('created_at asc')
+            respond_to do |format|
+              format.html {  }
+              format.js { render :commentEvent }
             end
           else
             respond_to do |format|
