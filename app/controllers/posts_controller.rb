@@ -15,7 +15,6 @@ def index
   # @posts = Post.order_by_upvote.order(:created_at).page(params[:page]).per(8)
   #@posts = Post.order(sort_column + ' ' + sort_direction).page(params[:page]).per(8)
   #Kaminari.paginate_array(@posts).page(params[:page]).per(8)
-
   @posts = Post.all
   @q = Post.search(params[:q])
   @posts = @q.result(distinct: true).where("vote is not null").order('created_at DESC').page(params[:page]).per(25)
