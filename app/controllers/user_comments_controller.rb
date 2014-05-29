@@ -61,9 +61,7 @@ end
       notifSend(@comment)
     rescue => exception
         ExceptionNotifier.notify_exception(exception)
-        PrivatePub.publish_to("/layouts/comments",
-        "$('##{@commentable.id}').empty();
-        $('##{@commentable.id}').append(#{render(:partial => 'user_comments/postcomments')});")
+        PrivatePub.publish_to("/layouts/comments","$('##{@commentable.id}').empty();$('##{@commentable.id}').append(#{render(:partial => 'user_comments/postcomments')});")
     rescue
     ensure
       if @comment.save
