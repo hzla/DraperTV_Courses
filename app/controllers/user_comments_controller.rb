@@ -61,12 +61,15 @@ end
       notifSend(@comment)
     rescue => exception
         ExceptionNotifier.notify_exception(exception)
-        PrivatePub.publish_to("/layouts/comments","$('##{@commentable.id}').empty();$('##{@commentable.id}').append(#{render(:partial => 'user_comments/postcomments')});")
+        PrivatePub.publish_to("/layouts/comments",
+        "$('##{@commentable.id}').empty();
+        $('##{@commentable.id}').append(#{render(:partial => 'user_comments/postcomments')});")
     rescue
     ensure
       if @comment.save
         track_activity @comment
-        @comments = @commentable.user_comments.order('created_at desc')
+        @comments = @commentable.user_comments.order('created_at desc').where(:commentable_type => "Post")
+
         #refresh_dom_with_partial('div#comments_container', 'comments')
           if @comment.commentable_type == "Assignment"
             respond_to do |format|

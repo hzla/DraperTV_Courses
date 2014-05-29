@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515195804) do
+ActiveRecord::Schema.define(version: 20140515195809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,22 +22,22 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.integer  "author_id"
     t.string   "author_type"
     t.text     "body"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "namespace"
   end
 
   add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_admin_notes_on_resource_type_and_resource_id", using: :btree
+  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
   create_table "activities", force: true do |t|
     t.integer  "user_id"
     t.string   "action"
     t.integer  "trackable_id"
     t.string   "trackable_type"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "activities", ["trackable_id"], name: "index_activities_on_trackable_id", using: :btree
@@ -66,8 +66,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
@@ -91,16 +91,12 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.string   "marketing"
     t.string   "technical"
     t.string   "city"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.string   "response"
-    t.string   "status"
-    t.boolean  "payment"
-    t.text     "notes"
   end
 
   create_table "assignments", force: true do |t|
@@ -108,8 +104,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.text     "description"
     t.string   "vimeo_url"
     t.string   "preview_url"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "course_id"
     t.integer  "order_id",                 default: 0
     t.integer  "survey_id"
@@ -138,15 +134,15 @@ ActiveRecord::Schema.define(version: 20140515195804) do
   create_table "attachments", force: true do |t|
     t.string   "url"
     t.string   "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "authorships", force: true do |t|
     t.integer  "user_id"
     t.integer  "skill_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "authorships", ["skill_id"], name: "index_authorships_on_skill_id", using: :btree
@@ -156,8 +152,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.string   "name"
     t.integer  "user_id"
     t.integer  "course_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "icon_file_name"
     t.string   "icon_content_type"
     t.integer  "icon_file_size"
@@ -165,8 +161,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
   end
 
   create_table "bucketlist_items", force: true do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "bucketlist_id"
     t.string   "title"
@@ -175,18 +171,9 @@ ActiveRecord::Schema.define(version: 20140515195804) do
   end
 
   create_table "bucketlists", force: true do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "user_id"
-  end
-
-  create_table "calendars", force: true do |t|
-    t.string   "name"
-    t.datetime "start_time"
-    t.text     "description"
-    t.string   "location"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "ckeditor_assets", force: true do |t|
@@ -208,8 +195,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
   create_table "courses", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "course_icon_file_name"
     t.string   "course_icon_content_type"
     t.integer  "course_icon_file_size"
@@ -251,8 +238,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
   create_table "events", force: true do |t|
     t.string   "name"
     t.datetime "start_time"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "description"
     t.string   "location"
     t.integer  "user_id"
@@ -263,14 +250,14 @@ ActiveRecord::Schema.define(version: 20140515195804) do
   create_table "feedbacks", force: true do |t|
     t.string   "type"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "messages", force: true do |t|
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "user_id"
   end
 
@@ -282,14 +269,14 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.text     "power"
     t.text     "survival"
     t.text     "brilliance"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts", force: true do |t|
     t.text     "content"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"
@@ -299,7 +286,7 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.string   "privacy"
     t.string   "title"
     t.string   "slug"
-    t.integer  "vote"
+    t.integer  "vote",              default: 0
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
@@ -309,8 +296,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.string   "url"
     t.text     "description"
     t.string   "category"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -319,8 +306,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
 
   create_table "skills", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "survey_answers", force: true do |t|
@@ -328,8 +315,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.integer  "question_id"
     t.integer  "option_id"
     t.boolean  "correct"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "survey_attempts", force: true do |t|
@@ -345,15 +332,15 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.integer  "weight",      default: 0
     t.string   "text"
     t.boolean  "correct"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "survey_questions", force: true do |t|
     t.integer  "survey_id"
     t.string   "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "survey_surveys", force: true do |t|
@@ -362,8 +349,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.integer  "attempts_number", default: 0
     t.boolean  "finished",        default: false
     t.boolean  "active",          default: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taggings", force: true do |t|
@@ -386,8 +373,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
 
   create_table "user_assignments", force: true do |t|
     t.text     "text"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "upload_file_name"
     t.string   "upload_content_type"
     t.integer  "upload_file_size"
@@ -399,8 +386,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.integer  "bonus_points_given"
     t.integer  "rating"
     t.text     "question_response"
-    t.boolean  "complete",            default: false
     t.boolean  "editcheck"
+    t.boolean  "complete",            default: false
   end
 
   create_table "user_comments", force: true do |t|
@@ -408,11 +395,11 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "user_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "user_comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
+  add_index "user_comments", ["commentable_id", "commentable_type"], name: "index_user_comments_on_commentable_id_and_commentable_type", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -427,8 +414,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.string   "state"
     t.string   "country"
     t.string   "zip"
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "email",                  default: "",          null: false
     t.string   "encrypted_password",     default: "",          null: false
     t.string   "reset_password_token"
@@ -443,7 +430,6 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "online",                 default: "online"
     t.string   "team"
     t.string   "skype"
     t.string   "gmail"
@@ -456,12 +442,13 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.string   "dribbble"
     t.string   "github"
     t.integer  "ncounter"
+    t.boolean  "eventReminder",          default: false
     t.integer  "pcounter"
     t.integer  "bonus_credits"
     t.integer  "bonus_points_earned"
-    t.boolean  "eventReminder",          default: false
-    t.string   "role"
+    t.string   "online"
     t.integer  "char_points"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -481,8 +468,8 @@ ActiveRecord::Schema.define(version: 20140515195804) do
     t.string   "speaker_angel"
     t.string   "category"
     t.string   "slug"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "speaker_pic_file_name"
     t.string   "speaker_pic_content_type"
     t.integer  "speaker_pic_file_size"
