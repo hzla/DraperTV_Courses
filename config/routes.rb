@@ -67,7 +67,7 @@ OnlineSchool::Application.routes.draw do
 
 
   ##### GET #####
-
+  get 'workreport', to: 'users#workreport', via: :all
   get 'activity', to: 'activity_feeds#index', as: :feed
   get 'notifications', to: 'activities#index', via: :all
   get 'feedback', to: 'feedbacks#index'
@@ -82,7 +82,6 @@ OnlineSchool::Application.routes.draw do
   get 'discussions/:id', to: 'posts#show', via: :all
   get '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/}, via: :get
   get "/delayed_jobs" => DelayedJobWeb, :anchor => false, via: [:get, :post]
-
 
   post '/assignments/:id/quiz_save_attempt', to: 'assignments#quiz_save_attempt', as: :assignments_survey_attempts
   mount Ckeditor::Engine => '/ckeditor'

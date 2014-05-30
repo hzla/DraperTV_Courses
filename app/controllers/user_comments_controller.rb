@@ -61,10 +61,6 @@ end
       notifSend(@comment)
     rescue => exception
         ExceptionNotifier.notify_exception(exception)
-        PrivatePub.publish_to("/layouts/comments",
-        "$('##{@commentable.id}').empty();
-        $('##{@commentable.id}').append(#{render(:partial => 'user_comments/postcomments')});")
-    rescue
     ensure
       if @comment.save
         track_activity @comment
@@ -92,13 +88,21 @@ end
           else
             respond_to do |format|
               format.html { }
-              format.js { render :commentVote }
+              format.js {  }
             end
           end
+
       else
         render :new
       end
       end # end rescue
+        begin
+          PrivatePub.publish_to("/layouts/comments",
+          "$('##{@commentable.id}').empty();
+          $('##{@commentable.id}').append(#{render(:partial => 'user_comments/postcomments')});")
+          rescue => exception
+              ExceptionNotifier.notify_exception(exception)
+        end
     end
 
 

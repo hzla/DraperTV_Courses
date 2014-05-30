@@ -14,7 +14,12 @@ class UsersController < ApplicationController
     @leaders = User.order('pcounter').limit(10)
   end
 
-
+  def workreport
+    @users = User.all
+    @courses = Course.all
+    @assignments = Assignment.all
+    @user_assignments = UserAssignment.all
+  end
 
   # GET /users/1
   # GET /users/1.json
