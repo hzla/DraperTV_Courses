@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def workreport
-    @users = User.all.limit(5)
+    @users = User.all
     @courses = Course.all
     @assignments = Assignment.all
     @user_assignments = UserAssignment.all

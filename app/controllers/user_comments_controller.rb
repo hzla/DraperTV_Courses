@@ -62,69 +62,16 @@ end
     rescue => exception
         ExceptionNotifier.notify_exception(exception)
     ensure
+      savenormal(@comment)
+    end # end rescue
+
+  end
+
+  def savenormal(comment)
+      @comment = comment
       if @comment.save
         track_activity @comment
         @comments = @commentable.user_comments.order('created_at desc').where(:commentable_type => "Post")
-
-        #refresh_dom_with_partial('div#comments_container', 'comments')
-          if @comment.commentable_type == "Assignment"
-            respond_to do |format|
-              format.html {  }
-              format.js { render :commentAssignment }
-            end
-          elsif @comment.commentable_type == "UserAssignment"
-            @comments = @commentable.user_comments.order('created_at asc')
-            @user_assignment = UserAssignment.where(:id => @comment.commentable_id).first
-            respond_to do |format|
-              format.html {  }
-              format.js { render :commentUA }
-            end
-          elsif @comment.commentable_type == "Event"
-            @comments = @commentable.user_comments.order('created_at asc')
-            respond_to do |format|
-              format.html {  }
-              format.js { render :commentEvent }
-            end
-          else
-            respond_to do |format|
-              format.html { }
-              format.js {  }
-            end
-          end
-
-      else
-        render :new
-      end
-      end # end rescue
-        begin
-          PrivatePub.publish_to("/layouts/comments",
-          "$('##{@commentable.id}').empty();
-          $('##{@commentable.id}').append(#{render(:partial => 'user_comments/postcomments')});")
-          rescue => exception
-              ExceptionNotifier.notify_exception(exception)
-        end
-    end
-
-
-  def destroy
-    @comments = @commentable.user_comments.order('created_at desc')
-    @comment = UserComment.find(params[:id])
-    @user = User.find(@comment.user_id)
-    @words =  @user.char_points.to_i - @comment.content.split.size.to_i
-    @user.update_column(:char_points, 1 * @words)
-    @user.update_column(:pcounter, @user.pcounter.to_i - @comment.content.split.size.to_i)
-
-    @activities = Activity.all
-    @activities.find_by_trackable_id(@comment.id).destroy
-
-      @comments.each do |com|
-        if com.commentable_id == @comment.id
-            @activities.find_by_trackable_id(com.id).destroy
-        end
-      end
-    if current_user.id == @comment.user_id
-      @comment.destroy
-        @comments = @commentable.user_comments.order('created_at desc')
         #refresh_dom_with_partial('div#comments_container', 'comments')
           if @comment.commentable_type == "Assignment"
             respond_to do |format|
@@ -150,54 +97,52 @@ end
               format.js { render :commentVote }
             end
           end
-    end
+      else
+            render :new
+      end
+
   end
 
-    # notifSend is method for the notification check-sum:
-    #It checks if the comment's commentable type is a Post or Event or Assignment
-    # in order to notify the users per their ownership of the post.
 def notifSend(comment)
-
-  @comments = UserComment.all
   begin
-    if @comment.commentable_type == "Post"
-        listUsers = []
-       @posts = Post.all
+  @comments = UserComment.all
+      if @comment.commentable_type == "Post"
+          listUsers = []
+         @posts = Post.all
 
-        @comments.each do |com|
-          if com.commentable_id ==  @comment.commentable_id
-            listUsers << com.user_id
+          @comments.each do |com|
+            if com.commentable_id ==  @comment.commentable_id
+              listUsers << com.user_id
+            end
           end
-        end
 
-        @posts.each do |po|
-          if po.id ==  @comment.commentable_id
-            listUsers << po.user_id
+          @posts.each do |po|
+            if po.id ==  @comment.commentable_id
+              listUsers << po.user_id
+            end
           end
-        end
 
-        @posts.each do |po|
-          if po.user_id ==  @comment.user_id
-            listUsers << po.user_id
+          @posts.each do |po|
+            if po.user_id ==  @comment.user_id
+              listUsers << po.user_id
+            end
           end
-        end
 
-        @topic = Post.find_by_id(@comment.commentable_id)
-        @commenter = User.find_by_id(@comment.user_id)
-        listUsers << @topic.user_id
+          @topic = Post.find_by_id(@comment.commentable_id)
+          @commenter = User.find_by_id(@comment.user_id)
+          listUsers << @topic.user_id
 
-        listUsers = listUsers.uniq
-        listUsers.delete(current_user.id)
-        listUsers.each do |usr|
-          @user = User.find(usr)
-          @user.increment!(:ncounter)
-          PrivatePub.publish_to("/layouts/#{usr}",
-            "$('#notifications').removeClass('empty');
-            $('#notification').addClass('notifications');
-            $('.red-circle').show();
-            $('.red-circle p').text(#{@user.ncounter});")
-        end
-
+          listUsers = listUsers.uniq
+          listUsers.delete(current_user.id)
+          listUsers.each do |usr|
+            @user = User.find(usr)
+            @user.increment!(:ncounter)
+            PrivatePub.publish_to("/layouts/#{usr}",
+              "$('#notifications').removeClass('empty');
+              $('#notification').addClass('notifications');
+              $('.red-circle').show();
+              $('.red-circle p').text(#{@user.ncounter});")
+          end
       elsif @comment.commentable_type == "Assignment"
 
         @assignment = UserAssignment.all
@@ -241,7 +186,6 @@ def notifSend(comment)
               $('.red-circle p').text(#{@user.ncounter});")
           end
         end
-
       elsif @comment.commentable_type == "Event"
         @posts = Event.all
 
@@ -286,9 +230,9 @@ def notifSend(comment)
         end
       else
       end # end of if @comment.commentable_type block
-  rescue
-
-  end
+    rescue => exception
+    ExceptionNotifier.notify_exception(exception)
+    end
 end
 
 

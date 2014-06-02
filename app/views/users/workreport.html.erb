@@ -1,17 +1,24 @@
 
   <% @uas = UserAssignment.all %>
   <% @as = Assignment.all %>
-
+<br>
+<br>
+<br>
 <div class="slide">
-<table class="table table-hover">
+<table class="table table-hover" id="studentstable">
   <tr>
   		<td>Student Name</td>
+  		<td>Country</td>
+  		 <td>Program</td>
+
 
   		<% @as.each do |assignment| %>
           <% course = Course.find_by_id(assignment.course_id) %>
 			<td>
-					<div class="name"><%= assignment.title %></div> <br>
-                	<div class="name"><%= course.title %></div><br>
+
+					<div class="name"><%= assignment.title %></div>
+
+
 			</td>
         <% end %>
 
@@ -19,16 +26,19 @@
   	 <% @users.each do |user| %>
 		<tr>
 			<td><div class="name"><%= user.full_name %></div></td>
+			<td><div class="name"><%= user.country %></div></td>
+			<td><div class="name"><%= user.online %></div></td>
+
+
         <% @as.each do |assignment| %>
         	<td>
 
 		<% if UserAssignment.where(:assignment_id => assignment.id,:user_id => user.id ).blank? %>
-		 	<i class="fa fa-square-o"></i></td>
+		 	<i class="fa fa-square-o"></i>0</td>
 		<% else %>
-				<div class="name"><%= assignment.title %></div>
-
-			<i class="fa fa-check-square-o"></i>
-			<div class="name"></div></td>
+			<i class="fa fa-check-square-o">1</i>
+			<div class="name"></div>
+			</td>
 		<% end %>
 
 
@@ -40,8 +50,10 @@
 	<% end %>
 
 </table>
+<input type="button" onclick="$('#studentstable').table2CSV()" value="Report into CSV">
 </div>
 
+<script type="text/javascript" src="http://www.kunalbabre.com/projects/table2CSV.js" > </script>
 <style type="text/css">
 	.slide
 	{

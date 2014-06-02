@@ -33,6 +33,14 @@ GIT
       railties (>= 3.2.6, < 5)
 
 GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: d637e0967dc66e9824345009ad74fbfdb1e4349f
+  specs:
+    jquery-datatables-rails (1.12.2)
+      jquery-rails
+      sass-rails
+
+GIT
   remote: git://github.com/toolmantim/delayed_job_web.git
   revision: 5dcb5d46b71ef20963c840917c6580e2ee78f81a
   branch: fix-rails-sessions
@@ -513,6 +521,7 @@ DEPENDENCIES
   httparty
   instagram
   jbuilder (~> 1.2)
+  jquery-datatables-rails!
   jquery-rails (= 2.3.0)
   jquery-turbolinks
   jquery-ui-rails
