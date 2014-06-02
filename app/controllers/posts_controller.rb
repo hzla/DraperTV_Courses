@@ -11,7 +11,7 @@ end
 # GET /posts
 # GET /posts.json
 def index
-  @leaders = User.where("pcounter is not null").order('pcounter DESC').limit(8)
+  @leaders = User.order('pcounter DESC').limit(8)
   # @posts = Post.order_by_upvote.order(:created_at).page(params[:page]).per(8)
   #@posts = Post.order(sort_column + ' ' + sort_direction).page(params[:page]).per(8)
   #Kaminari.paginate_array(@posts).page(params[:page]).per(8)
@@ -94,7 +94,6 @@ def create
     @post.user_id = current_user.id
       begin
         if @post.save
-          @post.vote = 0
          respond_to do |format|
             format.js { redirect_to :back }
             #format.html # new.html.erb

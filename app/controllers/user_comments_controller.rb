@@ -52,8 +52,8 @@ end
     @user = User.find(@comment.user_id)
     @words = @comment.content.split.size.to_i + @user.char_points.to_i
     @user.update_column(:char_points, 1 * @words)
-    @user.update_column(:pcounter, @user.pcounter.to_i + @comment.content.split.size.to_i)
-
+    commentsize = @comment.content.split.size.to_i
+    cpcalculate(commentsize)
     @activities =  Activity.all
     @activities = Activity.order("created_at desc")
 
@@ -68,7 +68,8 @@ end
     ensure
       if @comment.save
         track_activity @comment
-        @comments = @commentable.user_comments.order('created_at desc')
+        @comments = @commentable.user_comments.order('created_at desc').where(:commentable_type => "Post")
+
         #refresh_dom_with_partial('div#comments_container', 'comments')
           if @comment.commentable_type == "Assignment"
             respond_to do |format|
