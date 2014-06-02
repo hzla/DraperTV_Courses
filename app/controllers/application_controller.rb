@@ -68,19 +68,6 @@ class ApplicationController < ActionController::Base
  #    Rack::MiniProfiler.authorize_request
  #  end
 
-# def concheck
-#   PrivatePub.publish_to("/value",
-#               "$('##{@commentable.id}').empty();
-#               $('##{@commentable.id}').append(#{render(:partial => 'user_comments/postcomments')});")
-# PrivatePub.subscribe_to("/value")
-#     value = 0
-#     console.log("error message goes here")
-#     <script type="text/javascript">
-#      $(function() {
-#           alert('called');
-#       });
-#     </script>
-# end
 
   protected
     def configure_permitted_parameters

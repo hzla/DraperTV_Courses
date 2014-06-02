@@ -74,6 +74,7 @@ class UserCommentsController < ApplicationController
         @comments = @commentable.user_comments.order('created_at desc').where(:commentable_type => "Post")
         #refresh_dom_with_partial('div#comments_container', 'comments')
           if @comment.commentable_type == "Assignment"
+            @comments = @commentable.user_comments.order('created_at desc').where(:commentable_type => "Assignment")
             respond_to do |format|
               format.html {  }
               format.js { render :commentAssignment }
