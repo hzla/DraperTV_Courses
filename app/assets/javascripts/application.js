@@ -33,6 +33,7 @@
 //= require jquery.turbolinks
 
 
+
 NProgress.configure
   showSpinner: false
   ease: 'ease'

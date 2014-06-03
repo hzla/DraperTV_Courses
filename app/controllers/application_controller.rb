@@ -15,24 +15,48 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   #For all responses in this controller, return the CORS access control headers.
-  def cors_set_access_control_headers
-    headers['Access-Control-Allow-Origin'] = 'http://fayesrvr.herokuapp.com'
-    headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
-    headers['Access-Control-Request-Method'] = 'http://fayesrvr.herokuapp.com'
-    headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-  end
-  # If this is a preflight OPTIONS request, then short-circuit the
-  # request, return only the necessary headers and return an empty
-  # text/plain.
-  def cors_preflight_check
-    if request.method == :options
+
+  if Rails.env.staging? || Rails.env.development?
+    def cors_set_access_control_headers
       headers['Access-Control-Allow-Origin'] = 'http://fayesrvr.herokuapp.com'
       headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
       headers['Access-Control-Request-Method'] = 'http://fayesrvr.herokuapp.com'
       headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-      render :text => '', :content_type => 'text/plain'
     end
-end
+    # If this is a preflight OPTIONS request, then short-circuit the
+    # request, return only the necessary headers and return an empty
+    # text/plain.
+    def cors_preflight_check
+      if request.method == :options
+        headers['Access-Control-Allow-Origin'] = 'http://fayesrvr.herokuapp.com'
+        headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
+        headers['Access-Control-Request-Method'] = 'http://fayesrvr.herokuapp.com'
+        headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+        render :text => '', :content_type => 'text/plain'
+      end
+    end
+  end
+
+  if Rails.env.production?
+    def cors_set_access_control_headers
+      headers['Access-Control-Allow-Origin'] = 'http://fsrvrproduction.herokuapp.com'
+      headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
+      headers['Access-Control-Request-Method'] = 'http://fsrvrproduction.herokuapp.com'
+      headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+    end
+    # If this is a preflight OPTIONS request, then short-circuit the
+    # request, return only the necessary headers and return an empty
+    # text/plain.
+    def cors_preflight_check
+      if request.method == :options
+        headers['Access-Control-Allow-Origin'] = 'http://fsrvrproduction.herokuapp.com'
+        headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
+        headers['Access-Control-Request-Method'] = 'http://fsrvrproduction.herokuapp.com'
+        headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+        render :text => '', :content_type => 'text/plain'
+      end
+    end
+  end
 
   #PRODUCTION FAYE: : http://fsrvrproduction.herokuapp.com
   #STAGING FAYE:  http://fayesrvr.herokuapp.com
@@ -43,6 +67,7 @@ end
  #  def miniprofiler
  #    Rack::MiniProfiler.authorize_request
  #  end
+
 
   protected
     def configure_permitted_parameters

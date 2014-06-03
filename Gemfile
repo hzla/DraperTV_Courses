@@ -28,7 +28,7 @@ gem 'thumbs_up'
 gem 'ckeditor'
 gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'link_thumbnailer'
-
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 # analytics & email
 gem 'instagram'
 gem 'twitter'
@@ -79,7 +79,7 @@ gem 'pg_search'
 gem "simple_calendar", "~> 0.1.9"
 gem "kaminari"
 gem 'populator'
-gem 'ffaker'
+gem 'faker'
 gem 'acts-as-taggable-on'
 
 gem 'stripe'
