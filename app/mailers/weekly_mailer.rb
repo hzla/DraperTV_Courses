@@ -2,9 +2,9 @@ class WeeklyMailer < ActionMailer::Base
   ### set default e-mail address
   default :from => "info@draperuniversity.com"
 
-  def registration_confirmation(user)
-  @user = user
-  mail( :to => user.email, :subject => "Your Weekly Report Card")
+  def progress_report_email(user)
+    @user = user
+    mail( :to => user.email, :subject => "Your Progress Report")
   end
 
   # def application_confirmation(app, file = nil)
