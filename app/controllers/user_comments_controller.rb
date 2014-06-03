@@ -44,9 +44,9 @@ class UserCommentsController < ApplicationController
   end
 
   def create
+    WeeklyMailer.weekly_top_stories
     @users = User.all
     @comment = @commentable.user_comments.new(params[:user_comment])
-
     @comment.user_id = current_user[:id]
     #@commentable.user_comments.create(:user_id => current_user[:id])
     @user = User.find(@comment.user_id)

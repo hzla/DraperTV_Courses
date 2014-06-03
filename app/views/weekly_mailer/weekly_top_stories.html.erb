@@ -1,7 +1,7 @@
 <p>This weeks Top Discussions</p>
 <p>Top 5 Up Votes Stories</p>
 
-	<% posts.where("vote ASC").limit(5).each do |post| %>
+	<% @posts.limit(5).each do |post| %>
 
 		<p><%= link_to post.title, post_url(post) %></p>
 

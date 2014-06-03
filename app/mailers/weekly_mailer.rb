@@ -2,13 +2,11 @@ class WeeklyMailer < ActionMailer::Base
   ### set default e-mail address
 
 default   to: 'yad.faiq@gmail.com',
-      bcc: Proc.new { User.where(:eventReminder => "true").pluck(:email) },
-      from: 'draperuniversityonline@gmail.com'
-
+          from: 'draperuniversityonline@gmail.com'
 
     def weekly_top_stories
-      posts = Post.all
-      users =  User.all
+      @posts = Post.all
+      @users =  User.all
       mail(subject: "This Week's Top Discussions")
     end
   # def application_confirmation(app, file = nil)
