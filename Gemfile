@@ -107,7 +107,6 @@ gem 'memcachier'
 gem 'dalli'
 gem 'rack-cache'
 gem 'kgio'
-gem 'whenever', require: false
 
 
 
