@@ -1,10 +1,13 @@
-<p>This weeks Top Discussions</p>
-<p>Top 5 Up Votes Stories</p>
+<h1>This Week's Top Discussions</h1>
+<h2>Top 5 Most Commented Stories</h2>
 
 	<% @posts.limit(5).each do |post| %>
-
-		<p><%= link_to post.title, post_url(post) %></p>
-
+		<% totalcomments = UserComment.where(:commentable_id => post.id, :commentable_type => "Post").count %>
+		<% user = User.where(:id => post.user_id)  %>
+		<ul><li><p>
+			<%= link_to post.title, post_url(post) %> with <%= totalcomments %> comments
+				Created by <%= link_to user.first.full_name, user_url(user) %>
+		</p></li></ul>
 	<% end %>
 
 
