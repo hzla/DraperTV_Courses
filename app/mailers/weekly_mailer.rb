@@ -1,5 +1,4 @@
 class WeeklyMailer < ActionMailer::Base
-
   def progress_report_email(user)
     @user = user
     mail( :to => user.email, :subject => "Your Progress Report")
