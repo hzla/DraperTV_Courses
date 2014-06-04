@@ -17,14 +17,9 @@
     <div id="forum-post-show">
       <% @user = User.find_by_id(@post.user_id) %>
       <% @postvotes = @post.votes_for %>
-<<<<<<< HEAD
       <% @totalcomments = UserComment.where(:commentable_id => @post.id, :commentable_type => "Post") %>
      <!--  <% @voters = @post.voters_who_voted_for %>
    -->
-=======
-      <% @totalcomments = UserComment.where(:commentable_id => @post.id) %>
-      <!--  <% @voters = @post.voters_who_voted_for %> -->
->>>>>>> 1037c1d5cf66a7e5ddfa8ea06698c211e09e366d
        <!-- upvoteable -->
         <div class="upvote">
           <% if current_user.voted_for?(@post) %>
