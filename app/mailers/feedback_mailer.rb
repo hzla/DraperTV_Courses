@@ -1,6 +1,6 @@
 class FeedbackMailer < ActionMailer::Base
   ### set default e-mail address
-  default :from => "duhboardingapps@gmail.com"
+  default :from => "info@draperuniversity.com"
 
   def feedback_send(feedback, user)
     @feedback = feedback
