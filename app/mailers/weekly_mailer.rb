@@ -16,9 +16,8 @@ default   to: 'yad.faiq@gmail.com',
         postIds << comment.commentable_id
       end
       postIds = comment_freq_counter(postIds)
-      postIds = postIds.sort_by {|k,v| v}.reverse
-      postIds = postIds.map { |key, value| key }
-      @posts = Post.find(postIds.keys)
+      @posts = postIds.sort_by {|k,v| -v }.first(5).map(&:first)
+
 
       mail(subject: "This Week's Top Discussions")
 
