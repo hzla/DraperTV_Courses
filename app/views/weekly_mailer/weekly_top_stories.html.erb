@@ -2,14 +2,37 @@
 <h2>Top 5 Most Commented Stories</h2>
 
 <% @posts.each do |post| %>
-  <% post = Post.find(post) %>
+	<% post = Post.find(post) %>
 	<% totalcomments = UserComment.where(:commentable_id => post.id, :commentable_type => "Post").count %>
 	<% user = User.where(:id => post.user_id)  %>
 	<ul>
-    <li>
-      <p>
-		    <%= link_to post.title, post_url(post) %> with <%= totalcomments %>comments created by <%= link_to user.first.full_name, user_url(user) %>
-	   </p>
-    </li>
-  </ul>
+		<li>
+			<p> <%= link_to post.title, post_url(post) %> with <%= totalcomments %>
+				comments created by <%= link_to user.first.full_name, user_url(user) %></p>
+		</li>
+	</ul>
+<% end %>
+
+<h1>This Week's Top Students</h1>
+
+<h2>Top 5 Commenters</h2>
+<% @topCommenters.each do |commenter| %>
+	<% commenter = User.find(commenter) %>
+	<% totalcomments = UserComment.where(:user_id => commenter.id).count %>
+	<ul>
+		<li>
+			<p> <%= link_to commenter.full_name, user_url(commenter) %> with <%= totalcomments %> comments</p>
+		</li>
+	</ul>
+<% end %>
+
+<h2>Top 5 Assignment Explorers</h2>
+<% @topGeeks.each do |geek| %>
+	<% geek = User.find(geek) %>
+	<% totalAssignments = UserAssignment.where(:user_id => geek.id).count %>
+	<ul>
+		<li>
+			<p> <%= link_to geek.full_name, user_url(geek) %> explored <%= totalAssignments %> Assignments</p>
+		</li>
+	</ul>
 <% end %>
