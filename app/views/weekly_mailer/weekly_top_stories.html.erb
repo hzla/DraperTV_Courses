@@ -18,7 +18,7 @@
 <h2>Top 5 Commenters</h2>
 	<% @topCommenters.each do |commenter| %>
 		<% commenter = User.find(commenter) %>
-		<% totalcomments = UserComment.where(:user_id => commenter.id).count %>
+		<% totalcomments = UserComment.where("created_at > ?", (Date.today-7.days)).where(:user_id => commenter.id).count %>
 		<ul>
 			<li>
 				<p> <%= link_to commenter.full_name, user_url(commenter) %> with <%= totalcomments %> comments</p>
@@ -29,7 +29,7 @@
 <h2>Top 5 Assignment Explorers</h2>
 	<% @topGeeks.each do |geek| %>
 		<% geek = User.find(geek) %>
-		<% totalAssignments = UserAssignment.where(:user_id => geek.id).count %>
+		<% totalAssignments = UserAssignment.where("created_at > ?", (Date.today-7.days)).where(:user_id => geek.id).count %>
 		<ul>
 			<li>
 				<p> <%= link_to geek.full_name, user_url(geek) %> explored <%= totalAssignments %> Assignments</p>
