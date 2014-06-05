@@ -15,13 +15,7 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   # Method to create a hash of PostIDs with Number of Comments in them!
-  def comment_freq_counter(ary)
-    ary.inject(Hash.new(0)) { |h,e| h[e] += 1; h }.select {
-      |k,v| v > 1 }.inject({}) { |r, e| r[e.first] = e.last; r }
-  end
-  def largest_hash_key(hash)
-    hash.max_by{|k,v| v}
-  end
+
 
   #For all responses in this controller, return the CORS access control headers.
   if Rails.env.staging? || Rails.env.development?

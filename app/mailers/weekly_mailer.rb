@@ -1,13 +1,22 @@
 class WeeklyMailer < ActionMailer::Base
   ### set default e-mail address
 
-default   to: 'kelsey@draperuniversity.com',
+default   to: 'yad.faiq@gmail.com',
           from: 'draperuniversityonline@gmail.com'
 
     def progress_report_email(user)
       @user = user
       mail( :to => user.email, :subject => "Your Progress Report")
     end
+
+    def comment_freq_counter(ary)
+      ary.inject(Hash.new(0)) { |h,e| h[e] += 1; h }.select {
+        |k,v| v > 1 }.inject({}) { |r, e| r[e.first] = e.last; r }
+    end
+    def largest_hash_key(hash)
+      hash.max_by{|k,v| v}
+    end
+
     def weekly_top_stories
       @comments =  UserComment.all
       @comments = @comments.where("created_at > ?", (Date.today - 7.days)).where(:commentable_type => "Post")
