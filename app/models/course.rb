@@ -5,13 +5,17 @@ class Course < ActiveRecord::Base
   attr_accessible :description, :title, :start_date, :end_date, :intro_vimeo, :length, :badge_vimeo, :tile_image
   attr_accessible :course_icon, :intro_screenshot
   has_attached_file :course_icon,
-  :styles => { :large => "200x200#", :badge => "80x80#" },
-  :default_url => "/images/icon_missing.png",
-  :bucket => 'duhonline'
+    :styles => { :large => "200x200#", :badge => "80x80#" },
+    :default_url => "/images/icon_missing.png",
+    :bucket => 'duhonline',
+    :access_key_id => ENV['S3_KEY'],
+    :secret_access_key => ENV['S3_SECRET']
   has_attached_file :intro_screenshot, :bucket => 'duhonline'
   has_attached_file :tile_image,
-  :bucket => 'duhonline',
-  :styles => { :medium => "260x320#", :thumb => "80x80#" }
+    :bucket => 'duhonline',
+    :access_key_id => ENV['S3_KEY'],
+    :secret_access_key => ENV['S3_SECRET'],
+    :styles => { :medium => "260x320#", :thumb => "80x80#" }
   has_many :assignments
 
   def assignment_count
