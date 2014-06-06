@@ -8,12 +8,15 @@ class Course < ActiveRecord::Base
     :styles => { :large => "200x200#", :badge => "80x80#" },
     :default_url => "/images/icon_missing.png",
     :bucket => 'duhonline',
+    :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/s3.yml"
   has_attached_file :intro_screenshot,
     :bucket => 'duhonline',
+    :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/s3.yml"
   has_attached_file :tile_image,
     :bucket => 'duhonline',
+    :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/s3.yml",
     :styles => { :medium => "260x320#", :thumb => "80x80#" }
   has_many :assignments
