@@ -1,0 +1,31 @@
+
+<div class="top-section">
+  <div class="top-column-main">
+      <div style="width: 100%; position: relative; display; block; padding-left: 20px;">
+       <h1>Email Panel</h1>
+      </div>
+  </div><!-- row -->
+</div>
+
+<div class="column-main">
+	<div>
+		<%= link_to 'Weekly E-Mail', weekly_tops_path,{:'class' => 'big-button'} %>
+		<%= link_to 'Progress E-Mail', progress_report_path,{:'class' => 'big-button'} %>
+
+	</div>
+
+ <%  @jobs.each do |job| %>
+
+	Id: <%= job.id %> 	<br>
+	Queue Name: <%= job.queue %><br>
+	Created at: <%= time_ago_in_words(job.created_at) %><br>
+	Run at: <%= time_ago_in_words(job.run_at)  %><br>
+
+ <% end %>
+
+
+</div> <!-- column-main -->
+
+
+<div class="column-right">
+</div><!-- column-right -->

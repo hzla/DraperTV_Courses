@@ -81,10 +81,17 @@ OnlineSchool::Application.routes.draw do
   get 'discussions', to: 'posts#index', via: :all
   get 'discussions/:id', to: 'posts#show', via: :all
   get '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/}, via: :get
-  get "/delayed_jobs" => DelayedJobWeb, :anchor => false, via: [:get, :post]
+  get "/delayed_jobs" => DelayedJobWeb, :anchor => false, via: :all
 
   post '/assignments/:id/quiz_save_attempt', to: 'assignments#quiz_save_attempt', as: :assignments_survey_attempts
   mount Ckeditor::Engine => '/ckeditor'
+
+  #Email Methods
+  get "email_panel", to: 'email_panel#index', via: :all
+  get "weekly_tops", to: 'email_panel#weekly_tops', as: :weekly_tops
+  get "progress_report", to: 'email_panel#progress_report', as: :progress_report
+
+
 
 end
 

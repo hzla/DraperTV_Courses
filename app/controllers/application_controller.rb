@@ -10,12 +10,10 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :track_activity_feed
+  helper_method :mailitnow
   before_filter :cors_preflight_check
   after_filter :cors_set_access_control_headers
   before_filter :configure_permitted_parameters, if: :devise_controller?
-
-  # Method to create a hash of PostIDs with Number of Comments in them!
-
 
   #For all responses in this controller, return the CORS access control headers.
   if Rails.env.staging? || Rails.env.development?
@@ -70,6 +68,9 @@ class ApplicationController < ActionController::Base
  #    Rack::MiniProfiler.authorize_request
  #  end
 
+  def mailitnow
+    WeeklyMailer.weekly_top_stories.deliver
+  end
 
   protected
     def configure_permitted_parameters

@@ -4,17 +4,10 @@ class WeeklyMailer < ActionMailer::Base
 default   to: 'yad.faiq@gmail.com',
           from: 'draperuniversityonline@gmail.com'
 
+        #This needs to be a field in the user table not a parameter
     def progress_report_email(user)
       @user = user
       mail( :to => user.email, :subject => "Your Progress Report")
-    end
-
-    def comment_freq_counter(ary)
-      ary.inject(Hash.new(0)) { |h,e| h[e] += 1; h }.select {
-        |k,v| v > 1 }.inject({}) { |r, e| r[e.first] = e.last; r }
-    end
-    def largest_hash_key(hash)
-      hash.max_by{|k,v| v}
     end
 
     def weekly_top_stories
@@ -46,10 +39,16 @@ default   to: 'yad.faiq@gmail.com',
       end
       userAssignmentStudentIds = comment_freq_counter(userAssignmentStudentIds)
       @topGeeks = userAssignmentStudentIds.sort_by {|k,v| -v }.first(5).map(&:first)
-
       mail(subject: "This Week's Top Discussions")
-
     end
 
+    # Method to create a hash of PostIDs with Number of Comments in them!
+    def comment_freq_counter(ary)
+      ary.inject(Hash.new(0)) { |h,e| h[e] += 1; h }.select {
+        |k,v| v > 1 }.inject({}) { |r, e| r[e.first] = e.last; r }
+    end
+    def largest_hash_key(hash)
+      hash.max_by{|k,v| v}
+    end
 
 end
