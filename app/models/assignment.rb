@@ -12,7 +12,9 @@ class Assignment < ActiveRecord::Base
   has_attached_file :speaker_pic,
     :styles => { :large => "200x200#" },
     :default_url => "/assets/missing/missing.png",
-    :bucket => 'duhonline'
+    :bucket => 'duhonline',
+    :storage => :s3,
+    :s3_credentials => "#{Rails.root}/config/s3.yml"
 
   def survey
     if self.survey_id.nil?
