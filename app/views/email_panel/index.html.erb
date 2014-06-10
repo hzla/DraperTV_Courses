@@ -10,19 +10,21 @@
 <div class="column-main">
 	<div><%= link_to 'Weekly E-Mail', weekly_tops_path,{:'class' => 'big-button'} %></div>
 	<div><%= link_to 'Progress E-Mail', progress_report_path,{:'class' => 'big-button'} %></div>
-
- <%  @jobs.each do |job| %>
-
-	Id: <%= job.id %> 	<br>
-	Queue Name: <%= job.queue %><br>
-	Created at: <%= time_ago_in_words(job.created_at) %><br>
-	Run at: <%= time_ago_in_words(job.run_at)  %><br>
-
- <% end %>
-
-
+	<table class="table table-striped">
+		<tr>
+		<td>Id</td>
+		<td>Queue Name</td>
+		<td>Created at</td>
+		<td>Run at</td>
+	</tr>
+	 <%  @jobs.each do |job| %>
+	<tr>
+		<td><%= job.id %></td>
+		<td><%= job.queue %></td>
+		<td><%= time_ago_in_words(job.created_at) %></td>
+		<td><%= time_ago_in_words(job.run_at)  %></td>
+	</tr>
+	 <% end %>
+	</table>
 </div> <!-- column-main -->
 
-
-<div class="column-right">
-</div><!-- column-right -->

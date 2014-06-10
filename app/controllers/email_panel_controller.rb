@@ -9,7 +9,11 @@ class EmailPanelController < ApplicationController
   end
 
   def weekly_tops
-    WeeklyMailer.delay.weekly_top_stories
+    @users = User.all
+    @users.each do |user|
+      @user = user
+        WeeklyMailer.delay.weekly_top_stories(@user)
+    end
     redirect_to email_panel_path
   end
 

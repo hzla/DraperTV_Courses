@@ -9,7 +9,7 @@ default   to: 'yad.faiq@gmail.com',
       mail( :to => user.email, :subject => "Your Progress Report")
     end
 
-    def weekly_top_stories
+    def weekly_top_stories(user)
       @comments =  UserComment.all
       @comments = @comments.where("created_at > ?", (Date.today - 7.days)).where(:commentable_type => "Post")
       postIds = []
@@ -38,8 +38,9 @@ default   to: 'yad.faiq@gmail.com',
       end
       userAssignmentStudentIds = comment_freq_counter(userAssignmentStudentIds)
       @topGeeks = userAssignmentStudentIds.sort_by {|k,v| -v }.first(5).map(&:first)
-      @user = User.where(:id => 11)
-      mail(subject: "This Week's Top Discussions")
+
+      @user = user
+      mail(to: "#{user.full_name} <#{user.email}>",subject: "This Week's Top Discussions")
     end
 
     # Method to create a hash of PostIDs with Number of Comments in them!

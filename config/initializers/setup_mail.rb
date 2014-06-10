@@ -10,3 +10,11 @@ ActionMailer::Base.smtp_settings = {
 
 ActionMailer::Base.default_url_options[:host] = "http://localhost:3000"
 #Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
+
+ if Rails.env.development?
+		ActionMailer::Base.default_url_options[:host] = "http://localhost:3000"
+elsif Rails.env.staging?
+		ActionMailer::Base.default_url_options[:host] = "http://staging-online.draperuniversity.com/"
+elsif Rails.env.production?
+		ActionMailer::Base.default_url_options[:host] = "http://draperuniversity.com/"
+end
