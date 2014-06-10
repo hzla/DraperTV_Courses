@@ -99,7 +99,7 @@ a.twitter-hashtag-button:focus {
 </head>
 
 <body>
-   <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ecf0f1">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
       <tr>
          <td valign="top">
             <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -110,7 +110,7 @@ a.twitter-hashtag-button:focus {
                   <td valign="top">
                      <table width="100%" height="5" border="0" align="center" cellpadding="0" cellspacing="0">
                         <tr>
-                           <td valign="top" style="border-top:5px solid #ffffff;">
+                           <td valign="top" style="border-top:0px solid #fff;">
                               <table class="table600" width="600" border="0" align="center" cellpadding="0" cellspacing="0">
 
                                  <!--Link Browser-->
@@ -125,16 +125,19 @@ a.twitter-hashtag-button:focus {
                                  <!--End Link Browser-->
 
                                  <tr>
-                                    <td height="20"></td>
+                                    <td height="40" bgcolor="#ecf0f1">
+                                      <p style="text-align: center; font-family: 'Open Sans', Helvetica, Arial; font-weight: lighter; font-size: 15px; letter-spacing: 0.5px;">Congratulations, you completed Vision!
+                                    </td>
                                  </tr>
                                  <tr>
-                                    <td align="left" valign="top">
-                                       <table width="600" border="0" align="left" cellpadding="0" cellspacing="0" bgcolor="#ffffff" class="table600">
+                                    <td align="center" valign="top">
+                                       <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" class="table600" style="margin-top: 15px; margin-bottom: 5px;">
                                           <tr>
-                                             <td style="padding-left:0px; padding-right:0px;">
+                                             <td align="center">
+                                              <img id="logo" src="http://online.draperuniversity.com/r/email/logo.png" width="170" height="85" alt="logo" />
                                                 <!--Logo-->
 
-                                                <table class="table1-3" width="250" bgcolor="#ffffff" border="0" align="left" cellpadding="0" cellspacing="0">
+                                                <!-- <table class="table1-3" width="250" bgcolor="#ffffff" border="0" align="left" cellpadding="0" cellspacing="0">
                                                    <tr>
                                                       <td height="30" align="right" valign="top">
                                                          <div class="hide">
@@ -143,16 +146,16 @@ a.twitter-hashtag-button:focus {
                                                    </tr>
                                                    <tr>
                                                       <td align="center">
-                                                         <img id="logo" src="http://online.draperuniversity.com/r/email/logo.png" width="170" height="50" alt="logo" />
+
                                                       </td>
                                                    </tr>
-                                                </table>
+                                                </table> -->
 
                                                 <!--End Logo-->
 
                                                 <!--Navigation-->
 
-                                                <table id="navigation" border="0" align="right" cellpadding="0" cellspacing="0" class="table3-1">
+                                                <!-- <table id="navigation" border="0" align="right" cellpadding="0" cellspacing="0" class="table3-1">
                                                    <tr>
                                                       <td height="30" align="right" valign="top">
 
@@ -190,7 +193,7 @@ a.twitter-hashtag-button:focus {
                                                    <tr>
                                                       <td height="40"></td>
                                                    </tr>
-                                                </table>
+                                                </table> -->
 
                                                 <!--End Navigation--> </td>
                                           </tr>
@@ -250,7 +253,7 @@ a.twitter-hashtag-button:focus {
                                  <!--Article Title-->
 
                                  <tr>
-                                    <td align="center" valign="top" width="100" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight:normal; font-size:18px; color:#34495e;">
+                                    <td align="center" valign="top" width="100" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight:lighter; font-size:18px; color:#34495e;">
                                       You completed <%= @course.title %>! <span>&nbsp;</span>
                                       <% if @course.title == "Vision" %>
                                         <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Vision badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
