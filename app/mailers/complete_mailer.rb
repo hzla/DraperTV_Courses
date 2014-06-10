@@ -7,7 +7,7 @@ class CompleteMailer < ActionMailer::Base
     @user = user
     @course = Course.find(@badge.course_id)
     mail(
-      :to => "kelsey@draperuniversity.com, kelseymwhelan@gmail.com",
+      :to => @user.email,
       :subject => "Congratulations, you finished #{@course.title}!",
       :from => 'Draper University',
       :date => Time.now,

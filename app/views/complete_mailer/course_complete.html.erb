@@ -44,6 +44,8 @@ a { color: #418ADF; text-decoration: none; font-weight: bold; }
   .hide { max-height: 26px !important; font-size: 0px !important; display: block !important; }
   /*space*/
   table[class="space"] { display: none !important; }
+  #navigation {display: none; }
+  img#logo { width: 119px; height: 35px; margin-bottom: 15px;}
 }
 
 .video-container {
@@ -73,7 +75,7 @@ a.twitter-hashtag-button {
               -webkit-linear-gradient(#fff, #dedede);
   background: url('http://online.draperuniversity.com/r/email/twitter-button.png') 2px 3px no-repeat,
               linear-gradient(#fff, #dedede);
-  background-size: 16px 13px, auto auto;
+  background-size: 13px 13px, auto auto;
 
   /* Text */
   font: bold 11px/17px Helvetica, Arial, sans-serif;
@@ -141,7 +143,7 @@ a.twitter-hashtag-button:focus {
                                                    </tr>
                                                    <tr>
                                                       <td align="center">
-                                                         <img id="logo" src="http://online.draperuniversity.com/r/email/logo.png" width="85" height="25" alt="logo" />
+                                                         <img id="logo" src="http://online.draperuniversity.com/r/email/logo.png" width="170" height="50" alt="logo" />
                                                       </td>
                                                    </tr>
                                                 </table>
@@ -150,7 +152,7 @@ a.twitter-hashtag-button:focus {
 
                                                 <!--Navigation-->
 
-                                                <table border="0" align="right" cellpadding="0" cellspacing="0" class="table3-1">
+                                                <table id="navigation" border="0" align="right" cellpadding="0" cellspacing="0" class="table3-1">
                                                    <tr>
                                                       <td height="30" align="right" valign="top">
 
@@ -321,7 +323,7 @@ a.twitter-hashtag-button:focus {
                                  <tr>
                                     <td align="left" valign="top" width="100" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight:normal; font-size:15px; color:#34495e;">
                                        <br/>
-                                       <span style="font-size: 18px; color:#34495e; font-weight: bold;">Great job, <%= @user.first_name %></span><br/><br/>
+                                       <span style="font-size: 18px; color:#34495e; font-weight: bold;">Great job, <%= @user.first_name %>!</span><br/><br/>
                                        <span style="font-size: 15px;">You now have the superpower <%= @course.title %>. <%= @course.description %></span>
                                        <br/><br/>
                                        - The Draper University Team

@@ -28,6 +28,9 @@ class CoursesController < ApplicationController
           :name => @course.title,
           # :vimeo => @course.badge_vimeo
           )
+        #########################
+        ## trigger mailer here ##
+        #########################
       end
     end
 
