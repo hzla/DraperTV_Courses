@@ -45,7 +45,7 @@ a { color: #418ADF; text-decoration: none; font-weight: bold; }
   /*space*/
   table[class="space"] { display: none !important; }
   #navigation {display: none; }
-  img#logo { width: 119px; height: 35px; margin-bottom: 15px;}
+  img#logo { width: 119px; height: 60px; margin-bottom: 15px;}
 }
 
 .video-container {
@@ -110,6 +110,11 @@ a.twitter-hashtag-button:focus {
                   <td valign="top">
                      <table width="100%" height="5" border="0" align="center" cellpadding="0" cellspacing="0">
                         <tr>
+                          <td height="40" bgcolor="#576681">
+                            <p style="text-align: center; padding-left: 5px; padding-right: 5px; font-family: 'Open Sans', Helvetica, Arial; font-weight: lighter; font-size: 14px; letter-spacing: 0.5px; color: #f2f2f2;">Congratulations, you completed Vision!
+                          </td>
+                       </tr>
+                        <tr>
                            <td valign="top" style="border-top:0px solid #fff;">
                               <table class="table600" width="600" border="0" align="center" cellpadding="0" cellspacing="0">
 
@@ -124,14 +129,10 @@ a.twitter-hashtag-button:focus {
 
                                  <!--End Link Browser-->
 
-                                 <tr>
-                                    <td height="40" bgcolor="#ecf0f1">
-                                      <p style="text-align: center; font-family: 'Open Sans', Helvetica, Arial; font-weight: lighter; font-size: 15px; letter-spacing: 0.5px;">Congratulations, you completed Vision!
-                                    </td>
-                                 </tr>
+
                                  <tr>
                                     <td align="center" valign="top">
-                                       <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" class="table600" style="margin-top: 15px; margin-bottom: 5px;">
+                                       <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" class="table600" style="margin-top: 25px; margin-bottom: 5px;">
                                           <tr>
                                              <td align="center">
                                               <img id="logo" src="http://online.draperuniversity.com/r/email/logo.png" width="170" height="85" alt="logo" />
@@ -252,7 +253,7 @@ a.twitter-hashtag-button:focus {
 
                                  <!--Article Title-->
 
-                                 <tr>
+                                 <!-- <tr>
                                     <td align="center" valign="top" width="100" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight:lighter; font-size:18px; color:#34495e;">
                                       You completed <%= @course.title %>! <span>&nbsp;</span>
                                       <% if @course.title == "Vision" %>
@@ -273,7 +274,7 @@ a.twitter-hashtag-button:focus {
                                         <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned a badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
                                       <% end %>
                                     </td>
-                                 </tr>
+                                 </tr> -->
 
                                  <!--End Article Title-->
 
@@ -326,10 +327,12 @@ a.twitter-hashtag-button:focus {
                                  <tr>
                                     <td align="left" valign="top" width="100" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight:normal; font-size:15px; color:#34495e;">
                                        <br/>
-                                       <span style="font-size: 18px; color:#34495e; font-weight: bold;">Great job, <%= @user.first_name %>!</span><br/><br/>
-                                       <span style="font-size: 15px;">You now have the superpower <%= @course.title %>. <%= @course.description %></span>
-                                       <br/><br/>
+                                       <span style="font-size: 18px; color:#34495e; font-weight: normal;">Great job, <%= @user.first_name %>!</span><br/><br/>
+                                       <span style="font-size: 15px; font-weight: lighter; line-height: 20px;">You now have the superpower <%= @course.title %>. <%= @course.description %>
+                                          <br/><br/>
                                        - The Draper University Team
+                                       </span>
+
                                        <br/><br/>
                                        Share your accomplishment:<span>&nbsp;</span>
                                       <% if @course.title == "Vision" %>
@@ -385,7 +388,7 @@ a.twitter-hashtag-button:focus {
                                           <!--info-->
 
                                           <tr>
-                                             <td align="center" valign="top" style="font-family: Helvetica, Arial, sans-serif; font-size:12px; color:#ecf0f1; line-height:22px;">
+                                             <td align="center" valign="top" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-size:12px; color:#ecf0f1; line-height:22px; font-weight: lighter;">
                                                 You are currently subscribed to receive email updates from
                                                 <a href="#">online.draperuniversity.com</a>
                                                 If you have any questions, please email us by clicking
