@@ -60,6 +60,39 @@ a { color: #418ADF; text-decoration: none; font-weight: bold; }
    width: 100%;
    height: 100%;
 }
+a.twitter-share-button,
+a.twitter-mention-button,
+a.twitter-hashtag-button {
+  display: inline-block;
+  padding: 1px 3px 0 19px;
+
+  border: #ccc solid 1px;
+  border-radius: 3px;
+  background: #f8f8f8 url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat;
+  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
+              -webkit-linear-gradient(#fff, #dedede);
+  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
+              linear-gradient(#fff, #dedede);
+  background-size: 16px 13px, auto auto;
+
+  /* Text */
+  font: bold 11px/17px Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+
+  white-space: nowrap;
+}
+
+/* Colour Highlight for keyboard navigation */
+a.twitter-share-button:focus,
+a.twitter-mention-button:focus,
+a.twitter-hashtag-button:focus {
+  outline: none;
+  border-color: #0089cb;
+}
+
+
 </style>
 </head>
 
@@ -109,7 +142,7 @@ a { color: #418ADF; text-decoration: none; font-weight: bold; }
                                                    </tr>
                                                    <tr>
                                                       <td align="center">
-                                                         <img src="images/logo.png" width="170" height="50" alt="logo" />
+                                                         <img src="http://online.draperuniversity.com/r/email/logo.png" width="170" height="50" alt="logo" />
                                                       </td>
                                                    </tr>
                                                 </table>
@@ -132,19 +165,19 @@ a { color: #418ADF; text-decoration: none; font-weight: bold; }
                                                                  <tr>
                                                                      <td>
                                                                         <a href="http://facebook.com/draperuniversity" target="_blank">
-                                                                           <img src="images/facebook.png" width="32" height="32" alt="facebook" />
+                                                                           <img src="http://online.draperuniversity.com/r/email/facebook.png" width="32" height="32" alt="facebook" />
                                                                         </a>
                                                                      </td>
                                                                      <td width="17"></td>
                                                                      <td>
                                                                         <a href="http://twitter.com/draper_u" target="_blank">
-                                                                           <img src="images/twitter.png" width="32" height="32" alt="twitter" />
+                                                                           <img src="http://online.draperuniversity.com/r/email/twitter.png" width="32" height="32" alt="twitter" />
                                                                         </a>
                                                                      </td>
                                                                      <td width="17"></td>
                                                                      <td>
                                                                         <a href="http://instagram.com/draperuniversity" target="_blank">
-                                                                           <img src="images/instagram.png" width="32" height="32" />
+                                                                           <img src="http://online.draperuniversity.com/r/email/instagram.png" width="32" height="32" />
                                                                         </a>
                                                                      </td>
                                                                   </tr>
@@ -218,7 +251,10 @@ a { color: #418ADF; text-decoration: none; font-weight: bold; }
                                  <tr>
                                     <td align="center" valign="top" width="100" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight:normal; font-size:18px; color:#34495e;">
                                       You completed <%= @course.title %>! <span>&nbsp;</span>
-                                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://draperuniversity.com" data-text="I just finished Vision!" data-via="draper_u">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                                      <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just finished a course on Draper University online!&via=draper_u" target="_blank">
+                                       Tweet
+                                      </a>
+
                                     </td>
                                  </tr>
 
@@ -236,11 +272,10 @@ a { color: #418ADF; text-decoration: none; font-weight: bold; }
                                        <br/>
                                        <div class="video-container">
                                         <% if @course.title == "Vision" %>
-                                          <iframe src="http://player.vimeo.com/video/73506166" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                                         <% elsif @course.title == "Creativity" %>
-                                          <iframe src="//player.vimeo.com/video/73507454" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                          <img src="http://online.draperuniversity.com/r/email/vimeo-creativity.png" width="32" height="32" alt="Congrats, Creativity" />
                                         <% elsif @course.title == "Speed & Strength" %>
-                                          <iframe src="//player.vimeo.com/video/73506757" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                          <iframe src="http://player.vimeo.com/video/73506757" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                                         <% elsif @course.title == "Evangelism" %>
                                           <iframe src="//player.vimeo.com/video/73507455" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                                         <% elsif @course.title == "Survival" %>
@@ -264,8 +299,7 @@ a { color: #418ADF; text-decoration: none; font-weight: bold; }
                                        <br/><br/>
                                        - The Draper University Team
                                        <br/><br/>
-                                       Share your accomplishment:<span>&nbsp;</span><span>&nbsp;</span><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://draperuniversity.com" data-text="I just finished Vision!" data-via="draper_u">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
                                        <span>&nbsp;</span>
                                        <br/>
                                        <br/>
@@ -325,22 +359,22 @@ a { color: #418ADF; text-decoration: none; font-weight: bold; }
                                                 <table width="130" border="0" cellspacing="0" cellpadding="0">
                                                    <tr>
                                                       <td>
-                                                         <a href="http://facebook.com/draperuniversity" target="_blank">
-                                                            <img src="images/facebook.png" width="32" height="32" alt="facebook" />
-                                                         </a>
-                                                      </td>
-                                                      <td width="17"></td>
-                                                      <td>
-                                                         <a href="http://twitter.com/draper_u" target="_blank">
-                                                            <img src="images/twitter.png" width="32" height="32" alt="twitter" />
-                                                         </a>
-                                                      </td>
-                                                      <td width="17"></td>
-                                                      <td>
-                                                         <a href="http://instagram.com/draperuniversity" target="_blank">
-                                                            <img src="images/instagram.png" width="32" height="32" />
-                                                         </a>
-                                                      </td>
+                                                        <a href="http://facebook.com/draperuniversity" target="_blank">
+                                                           <img src="http://online.draperuniversity.com/r/email/facebook.png" width="32" height="32" alt="facebook" />
+                                                        </a>
+                                                     </td>
+                                                     <td width="17"></td>
+                                                     <td>
+                                                        <a href="http://twitter.com/draper_u" target="_blank">
+                                                           <img src="http://online.draperuniversity.com/r/email/twitter.png" width="32" height="32" alt="twitter" />
+                                                        </a>
+                                                     </td>
+                                                     <td width="17"></td>
+                                                     <td>
+                                                        <a href="http://instagram.com/draperuniversity" target="_blank">
+                                                           <img src="http://online.draperuniversity.com/r/email/instagram.png" width="32" height="32" />
+                                                        </a>
+                                                     </td>
                                                    </tr>
                                                 </table>
                                              </td>
