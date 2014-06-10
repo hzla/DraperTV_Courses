@@ -98,7 +98,7 @@ gem 'rails-observers'
 gem 'actionpack-page_caching'
 gem 'actionpack-action_caching'
 
-
+#Gems related to Mailer (somehow)
 gem 'exception_notification'
 gem "delayed_job_web", github: "toolmantim/delayed_job_web", branch: "fix-rails-sessions"
 

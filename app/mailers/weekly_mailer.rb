@@ -4,7 +4,6 @@ class WeeklyMailer < ActionMailer::Base
 default   to: 'yad.faiq@gmail.com',
           from: 'draperuniversityonline@gmail.com'
 
-        #This needs to be a field in the user table not a parameter
     def progress_report_email(user)
       @user = user
       mail( :to => user.email, :subject => "Your Progress Report")

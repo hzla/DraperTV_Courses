@@ -39,8 +39,6 @@ class User < ActiveRecord::Base
 
   has_many :activities
   has_many :posts
-  has_many :messages
-
 
   SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
 
