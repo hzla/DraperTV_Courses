@@ -1,6 +1,6 @@
 class WeeklyMailer < ActionMailer::Base
   ### set default e-mail address
-
+helper :mailer
 default   to: 'yad.faiq@gmail.com',
           from: 'draperuniversityonline@gmail.com'
 
@@ -38,6 +38,7 @@ default   to: 'yad.faiq@gmail.com',
       end
       userAssignmentStudentIds = comment_freq_counter(userAssignmentStudentIds)
       @topGeeks = userAssignmentStudentIds.sort_by {|k,v| -v }.first(5).map(&:first)
+      @user = User.where(:id => 11)
       mail(subject: "This Week's Top Discussions")
     end
 

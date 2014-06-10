@@ -93,10 +93,6 @@ GEM
       activerecord (>= 3, < 5)
       activesupport (>= 3, < 5)
     addressable (2.3.6)
-    ahoy_email (0.2.1)
-      addressable
-      nokogiri
-      rails
     analytics-ruby (0.6.0)
       faraday (>= 0.8)
       faraday_middleware (>= 0.8, < 0.10)
@@ -492,7 +488,6 @@ DEPENDENCIES
   actionpack-page_caching
   activeadmin!
   acts-as-taggable-on
-  ahoy_email
   analytics-ruby (< 1.0)
   annotate (>= 2.6.0)
   awesome_print

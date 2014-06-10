@@ -8,8 +8,16 @@ CONFIG = YAML.load(File.read(File.expand_path('../s3.yml', __FILE__)))
 CONFIG.merge! CONFIG.fetch(Rails.env, {})
 CONFIG.symbolize_keys!
 
+
+
 module OnlineSchool
   class Application < Rails::Application
+
+    #Mounting a rack App! which is the email tracker library, it's counted as a rackapp
+    require Rails.root.join('lib', 'email_tracker', 'rack')
+    config.middleware.use EmailTracker::Rack
+
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

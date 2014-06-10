@@ -1,6 +1,10 @@
 <!-- ******************** -->
 <!-- ** POST COMMMENTS ** -->
 <!-- ******************** -->
+
+  <% student = javascript_tag "$('.name').text();" %>
+  <%= student %>
+
 <div id="comments_list">
   <% @comments.where(:commentable_type => "Post").each do |comment| %>
     <% if User.where(:id => comment.user_id).exists? %>
