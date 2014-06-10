@@ -53,7 +53,7 @@ a { color: #418ADF; text-decoration: none; font-weight: bold; }
    height: 0;
    overflow: hidden;
 }
-.video-container iframe, .video-container object, .video-container embed {
+.video-container iframe, .video-container object, .video-container img {
    position: absolute;
    top: 0;
    left: 0;
@@ -68,10 +68,10 @@ a.twitter-hashtag-button {
 
   border: #ccc solid 1px;
   border-radius: 3px;
-  background: #f8f8f8 url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat;
-  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
+  background: #f8f8f8 url('http://online.draperuniversity.com/r/email/twitter-button.png') 2px 3px no-repeat;
+  background: url('http://online.draperuniversity.com/r/email/twitter-button.png') 2px 3px no-repeat,
               -webkit-linear-gradient(#fff, #dedede);
-  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
+  background: url('http://online.draperuniversity.com/r/email/twitter-button.png') 2px 3px no-repeat,
               linear-gradient(#fff, #dedede);
   background-size: 16px 13px, auto auto;
 
@@ -136,13 +136,12 @@ a.twitter-hashtag-button:focus {
                                                    <tr>
                                                       <td height="30" align="right" valign="top">
                                                          <div class="hide">
-
                                                          </div>
                                                       </td>
                                                    </tr>
                                                    <tr>
                                                       <td align="center">
-                                                         <img src="http://online.draperuniversity.com/r/email/logo.png" width="170" height="50" alt="logo" />
+                                                         <img id="logo" src="http://online.draperuniversity.com/r/email/logo.png" width="85" height="25" alt="logo" />
                                                       </td>
                                                    </tr>
                                                 </table>
@@ -251,10 +250,23 @@ a.twitter-hashtag-button:focus {
                                  <tr>
                                     <td align="center" valign="top" width="100" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-weight:normal; font-size:18px; color:#34495e;">
                                       You completed <%= @course.title %>! <span>&nbsp;</span>
-                                      <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just finished a course on Draper University online!&via=draper_u" target="_blank">
-                                       Tweet
-                                      </a>
-
+                                      <% if @course.title == "Vision" %>
+                                        <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Vision badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% elsif @course.title == "Creativity" %>
+                                         <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Creativity badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% elsif @course.title == "Speed & Strength" %>
+                                        <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Speed and Strength badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% elsif @course.title == "Evangelism" %>
+                                         <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Evangelism badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% elsif @course.title == "Survival" %>
+                                         <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Survival badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% elsif @course.title == "Power" %>
+                                        <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Power badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% elsif @course.title == "Brilliance" %>
+                                        <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Brilliance badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% else %>
+                                        <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned a badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% end %>
                                     </td>
                                  </tr>
 
@@ -272,18 +284,33 @@ a.twitter-hashtag-button:focus {
                                        <br/>
                                        <div class="video-container">
                                         <% if @course.title == "Vision" %>
+                                          <a href="https://vimeo.com/73506166" target="_blank">
+                                            <img src="http://online.draperuniversity.com/r/email/vimeo-creativity.png" width="500" height="304" alt="Congrats, Creativity" />
+                                          </a>
                                         <% elsif @course.title == "Creativity" %>
-                                          <img src="http://online.draperuniversity.com/r/email/vimeo-creativity.png" width="32" height="32" alt="Congrats, Creativity" />
+                                          <a href="https://vimeo.com/73507454" target="_blank">
+                                            <img src="http://online.draperuniversity.com/r/email/vimeo-creativity.png" width="500" height="304" alt="Congrats, Creativity" />
+                                          </a>
                                         <% elsif @course.title == "Speed & Strength" %>
-                                          <iframe src="http://player.vimeo.com/video/73506757" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                          <a href="https://vimeo.com/73507455" target="_blank">
+                                            <img src="http://online.draperuniversity.com/r/email/vimeo-creativity.png" width="500" height="304" alt="Congrats, Creativity" />
+                                          </a>
                                         <% elsif @course.title == "Evangelism" %>
-                                          <iframe src="//player.vimeo.com/video/73507455" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                          <a href="https://vimeo.com/73507455" target="_blank">
+                                            <img src="http://online.draperuniversity.com/r/email/vimeo-evangelism.png" width="500" height="304" alt="Congrats, Evangelism" />
+                                          </a>
                                         <% elsif @course.title == "Survival" %>
-                                          <iframe src="//player.vimeo.com/video/73506756" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                          <a href="https://vimeo.com/73506756" target="_blank">
+                                            <img src="http://online.draperuniversity.com/r/email/vimeo-survival.png" width="500" height="304" alt="Congrats, Survival" />
+                                          </a>
                                         <% elsif @course.title == "Power" %>
-                                          <iframe src="//player.vimeo.com/video/73507189" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                          <a href="https://vimeo.com/73507189" target="_blank">
+                                            <img src="http://online.draperuniversity.com/r/email/vimeo-power.png" width="500" height="304" alt="Congrats, Power" />
+                                          </a>
                                         <% elsif @course.title == "Brilliance" %>
-                                          <iframe src="//player.vimeo.com/video/73506165" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                          <a href="https://vimeo.com/73506165" target="_blank">
+                                            <img src="http://online.draperuniversity.com/r/email/vimeo-brilliance.png" width="500" height="304" alt="Congrats, Brilliance" />
+                                          </a>
                                         <% else %>
                                         <% end %>
 
@@ -299,11 +326,27 @@ a.twitter-hashtag-button:focus {
                                        <br/><br/>
                                        - The Draper University Team
                                        <br/><br/>
-
-                                       <span>&nbsp;</span>
-                                       <br/>
-                                       <br/>
-                                       <br/>
+                                       Share your accomplishment:<span>&nbsp;</span>
+                                      <% if @course.title == "Vision" %>
+                                        <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Vision badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% elsif @course.title == "Creativity" %>
+                                         <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Creativity badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% elsif @course.title == "Speed & Strength" %>
+                                        <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Speed and Strength badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% elsif @course.title == "Evangelism" %>
+                                         <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Evangelism badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% elsif @course.title == "Survival" %>
+                                         <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Survival badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% elsif @course.title == "Power" %>
+                                        <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Power badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% elsif @course.title == "Brilliance" %>
+                                        <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned the Brilliance badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% else %>
+                                        <a class="twitter-share-button" href="http://twitter.com/intent/tweet?url=http://draperuniversity.com&text=I just earned a badge on Draper University online!&via=draper_u" target="_blank">Tweet</a>
+                                      <% end %>
+                                      <br/>
+                                      <br/>
+                                      <br/>
                                     </td>
                                  </tr>
 
