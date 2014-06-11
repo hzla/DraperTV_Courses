@@ -32,23 +32,12 @@
         <% end %>
         <div class="timestamp"><%= comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
         <div class="content"><%= simple_format raw Rinku.auto_link(comment.content, :all, 'target="_blank"') %></div>
-        <script type="text/javascript">
-
-               if($("#user").val() == $("#comUserid").val() {
-            <%= link_to [@commentable, comment], :confirm => 'Are you sure you want to remove this comment? This cannot be undone.', :action => "destroy", :method => :delete, :remote => true do %>
-              <div class="delete"></div>
-            <% end %>
-
-              }
-              else {
-
-              };
-
-          <% if current_user.id == comment.user_id %>
-
-          <% else %>
+        <% if current_user.id == comment.user_id %>
+          <%= link_to [@commentable, comment], :confirm => 'Are you sure you want to remove this comment? This cannot be undone.', :action => "destroy", :method => :delete, :remote => true do %>
+            <div class="delete"></div>
           <% end %>
-        </script>
+        <% else %>
+        <% end %>
 
       </div><!-- post-comments -->
     <% end %>

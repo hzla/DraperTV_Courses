@@ -46,16 +46,7 @@ class EventsController < ApplicationController
       if @event.save
         format.html { redirect_to events_path }
 
-        # ReminderMailer.events_reminder(@event).deliver
-        # cur_ack = (Time.now - (@event.start_time - 1.day)).to_i / 1.day
-        cur_ack = (Time.now - (@event.start_time)).to_i / 1.day
-        cur_ack = cur_ack.abs
-          if cur_ack < 0
-            ReminderMailer.delay(queue: "#{@event.name}_letter", run_at: 1.seconds.from_now).events_reminder(@event)
-          else
-            ReminderMailer.delay(queue: "#{@event.name}_letter", run_at: cur_ack.days.from_now).events_reminder(@event)
-          end
-
+        eventEmail(@event).delay
         #format.json { render json: @event, status: :created, location: @event }
       else
         format.html { render action: "new" }
@@ -64,6 +55,14 @@ class EventsController < ApplicationController
     end
   end
 
+  def eventEmail(event)
+    if DateTime.now.to_date == @event.start_time.to_date || DateTime.tomorrow.to_date == @event.start_time.to_date
+      ReminderMailer.delay(queue: "#{@event.name}_letter", run_at: 1.seconds.from_now).events_reminder(@event)
+    else
+      time = @event.start_time.to_date - 24.hours
+      ReminderMailer.delay(queue: "#{@event.name}_letter", run_at: time).events_reminder(@event)
+    end
+  end
   # PUT /events/1
   # PUT /events/1.json
   def update

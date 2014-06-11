@@ -23,7 +23,6 @@ class EmailPanelController < ApplicationController
     users.each do |user|
       WeeklyMailer.delay.progress_report_email(user)
     end
-    WeeklyMailer.delay.progress_report_email
     redirect_to email_panel_path
 
   end
