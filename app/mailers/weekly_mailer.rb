@@ -2,7 +2,7 @@ class WeeklyMailer < ActionMailer::Base
   ### set default e-mail address
 helper :mailer
 default   to: 'yad.faiq@gmail.com',
-          from: 'draperuniversityonline@gmail.com'
+          from: 'info@draperuniversity.com'
 
     def progress_report_email(user)
       @user = user
@@ -40,7 +40,15 @@ default   to: 'yad.faiq@gmail.com',
       @topGeeks = userAssignmentStudentIds.sort_by {|k,v| -v }.first(5).map(&:first)
 
       @user = user
-      mail(to: "#{user.full_name} <#{user.email}>",subject: "This Week's Top Discussions")
+      mail(
+        to: "#{user.full_name} <#{user.email}>",
+        subject: "Draper University Weekly Digest",
+        from: 'Draper University',
+        :date => Time.now,
+
+        :template_path => "weekly_mailer",
+        :template_name => "weekly_top_stories"
+      )
     end
 
     # Method to create a hash of PostIDs with Number of Comments in them!
