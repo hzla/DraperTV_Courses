@@ -6,7 +6,18 @@ default   to: 'yad.faiq@gmail.com',
 
     def progress_report_email(user)
       @user = user
-      mail( :to => user.email, :subject => "Your Progress Report")
+      @badges = Badge.all
+      @courses = Course.includes(:assignments).find(:all, :conditions => ['start_date <= ?', DateTime.now])
+      @courses_closed = Course.find(:all, :conditions => ['start_date >= ?', DateTime.now])
+      mail(
+        to: user.email,
+        subject: "Draper University Progress Report",
+        from: 'Draper University',
+        date: Time.now,
+
+        template_path: "weekly_mailer",
+        template_name: 'progress_report_email'
+      )
     end
 
     def weekly_top_stories(user)
