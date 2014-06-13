@@ -22,13 +22,13 @@ class Course < ActiveRecord::Base
   has_many :assignments
 
   def assignment_count
-    if current_user.role == "online"
-      #return self.assignments.where(:req_online => 'required').count
-    elsif current_user.role == "boarding"
-      #return self.assignments.where(:req_boarding => 'required').count
-    else
+    # if current_user.role == "online"
+    #   #return self.assignments.where(:req_online => 'required').count
+    # elsif current_user.role == "boarding"
+    #   #return self.assignments.where(:req_boarding => 'required').count
+    # else
       return self.assignments.count
-    end
+    # end
   end
 
   def complete_count(current_user)
