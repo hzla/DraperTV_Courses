@@ -15,7 +15,7 @@ class CoursesController < ApplicationController
 	def show
 		@course = Course.includes(:assignments).friendly.find(params[:id])
     @assignments = @course.assignments
-		@assignments = @assignments.sort! { |a, b| a.order_id <=> b.order_id }
+		@assignments = @assignments.sort! l{ |a, b| a.order_id <=> b.order_id }
 
 
     if @course.course_complete_for_user?(current_user) == true
