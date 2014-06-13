@@ -1,12 +1,3 @@
-<% begin %>
-	<% publish_to "/layouts/comments" do %>
-	$("#votes-<%= @comment.id %>").empty();
-	$("#votes-<%= @comment.id %>").append("<%= @comment.commentvotes_for %>");
-	$("#unvote-button-<%= @comment.id %> i").css('color', '#ccc');
-	<% end %>
-<% rescue => exception
-        ExceptionNotifier.notify_exception(exception) %>
-	$("#<%= @commentable.id %>").empty();
-	$("#<%= @commentable.id  %>").append("<%= escape_javascript(render(:partial => 'comments')) %>");
-	$("textarea#user_comment_content").val(null);
-<% end %>
+$("#<%= @commentable.id %>").empty();
+$("#<%= @commentable.id  %>").append("<%= escape_javascript(render(:partial => 'comments')) %>");
+$("textarea#user_comment_content").val(null);

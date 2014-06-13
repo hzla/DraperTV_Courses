@@ -59,7 +59,7 @@ class UserCommentsController < ApplicationController
     begin
       notifSend(@comment)
     rescue => exception
-        ExceptionNotifier.notify_exception(exception)
+        ExceptionNotifier.delay.notify_exception(exception)
     ensure
       savenormal(@comment)
     end # end rescue

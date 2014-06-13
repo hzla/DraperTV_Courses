@@ -1,11 +1,12 @@
 <% begin %>
 	<% publish_to "/layouts/comments" do %>
-	  $("#<%= @commentable.id %>").empty();
-	  $("#<%= @commentable.id  %>").append("<%= escape_javascript(render(:partial => 'postcomments')) %>");
+	$("#<%= @commentable.id %>").empty();
+	$("#<%= @commentable.id  %>").append("<%= escape_javascript(render(:partial => 'postcomments')) %>");
+	$("textarea#user_comment_content").val(null);
 	<% end %>
 <% rescue => exception
-        ExceptionNotifier.notify_exception(exception) %>
-  $("#<%= @commentable.id %>").empty();
-  $("#<%= @commentable.id  %>").append("<%= escape_javascript(render(:partial => 'postcomments')) %>");
-  $("textarea#user_comment_content").val(null);
+        ExceptionNotifier.delay.notify_exception(exception) %>
+	$("#<%= @commentable.id %>").empty();
+	$("#<%= @commentable.id  %>").append("<%= escape_javascript(render(:partial => 'postcomments')) %>");
+	$("textarea#user_comment_content").val(null);
 <% end %>

@@ -1,4 +1,3 @@
-
 class Badge < ActiveRecord::Base
   attr_accessible :name, :user_id, :course_id
   attr_accessible :icon

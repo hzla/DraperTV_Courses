@@ -117,6 +117,8 @@ group :development, :test do
   gem "database_cleaner", '1.0.0.RC1'
 end
 
+
+
 # gem "nifty-generators", :group => :development
 
 # To use ActiveModel has_secure_password
