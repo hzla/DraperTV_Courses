@@ -21,14 +21,14 @@ class Course < ActiveRecord::Base
     :styles => { :medium => "260x320#", :thumb => "80x80#" }
   has_many :assignments
 
-  def assignment_count
-    # if current_user.role == "online"
-    #   #return self.assignments.where(:req_online => 'required').count
-    # elsif current_user.role == "boarding"
-    #   #return self.assignments.where(:req_boarding => 'required').count
-    # else
+  def assignment_count(current_user)
+    if current_user.role == "online"
+       #return self.assignments.where(:req_online => 'required').count
+     elsif current_user.role == "boarding"
+       #return self.assignments.where(:req_boarding => 'required').count
+     else
       return self.assignments.count
-    # end
+     end
   end
 
   def complete_count(current_user)
@@ -46,7 +46,7 @@ class Course < ActiveRecord::Base
   def progress(current_user)
     percent = 0
     count = self.complete_count(current_user).to_f
-    all = self.assignment_count.to_f
+    all = self.assignment_count(current_user).to_f
     percent = count / all * 100
     return percent
   end
