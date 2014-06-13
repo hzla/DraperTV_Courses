@@ -225,15 +225,7 @@ tr.spaceUnder > td {
                                                       <!-- Line -->
                                                       <div style="display: block; width: 100%; height: 1px; background: #fff;"></div>
                                                       <!-- Course Progress -->
-                                                      <div style="display: block; width: 100%; height: 30px; position: relative;">
-                                                        <div class="progress" style="display;block;">
-                                                          <div class="bar" style="width: <%= number_to_percentage(course.progress(@user)) %>;">
-                                                          </div>
-                                                        </div>
-                                                        <div class="progress-percent">
-                                                          <%= course.progress(@user).to_i %>%
-                                                        </div>
-                                                      </div><!-- End Course Progress -->
+
                                                   </div><!-- End Course Tile -->
                                                 <% end %><!-- End Link -->
                                               <% end %>
@@ -247,7 +239,7 @@ tr.spaceUnder > td {
                                               <div style="display: block; width: 100%; height: 1px; background: #eee; margin-bottom: 10px;"></div>
                                               <!-- Loop Completed Courses -->
                                               <% @courses_closed.each do |course| %>
-                                                <div class="course-tile">
+                                                <div class="course-tile" style="border: 1px solid #39BABF;">
                                                     <%= image_tag course.course_icon %>
                                                     <br/>
                                                     <span style="font-size: 20px; color: #576681;"><%= course.title %></span>
