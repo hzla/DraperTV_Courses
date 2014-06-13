@@ -3,7 +3,14 @@ class AssignmentsController < ApplicationController
   load_and_authorize_resource
 
 	def index
-		@assignments = Assignment.all
+    if current_user.role == "online"
+      @assignments = Assignment.all.where(:req_online => 'required')
+    elsif current_user.role == "boarding"
+      @assignments = Assignment.all.where(:req_boarding => 'required')
+    else
+      @assignments = Assignment.all
+    end
+
 	end
 
 	def show
