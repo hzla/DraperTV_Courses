@@ -3,11 +3,9 @@ ActiveAdmin.register User do
     column :id
     column :first_name
     column :last_name
-    column :tag_list
-    column :online
-    column :ncounter
+    column :role
+    column :team
     column :last_sign_in_at
-    column :eventReminder
     column :email
     default_actions
   end
