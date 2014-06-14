@@ -62,11 +62,7 @@ def show
   @commentable = @post
   @comments = @commentable.user_comments.order('created_at desc')
   @comment = UserComment.new
-
-  respond_to do |format|
-    format.html # show.html.erb
-    format.js #{ render js: @post }
-  end
+  sidebarindex
 end
 
 # GET /posts/new
