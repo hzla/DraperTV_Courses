@@ -4,11 +4,13 @@
 <div class="col-right-bottom">
   <ul class="leaderboard">
     <% @leaders.each do |leader| %>
-      <li>
-        <%= image_tag(leader.avatar.url(:large)) %>
-        <p><%= leader.full_name %></p>
-        <p class="score"><%= leader.pcounter %></p>
-      </li>
+      <%= link_to student_profile_path(leader) do %>
+        <li>
+          <%= image_tag(leader.avatar.url(:large)) %>
+          <p style="color: #246db4;"><%= leader.full_name %></p>
+          <p class="score"><%= leader.pcounter %></p>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 </div>

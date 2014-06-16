@@ -2,7 +2,7 @@
   <% @comments = @commentable.user_comments.order('created_at ASC') %>
   <% @comments.where(:commentable_id => @user_assignment.id).each do |comment| %>
     <% if User.where(:id => comment.user_id).exists? %>
-      <div id="comments">
+      <div id="comments" style="margin-left: 30px;">
         <% if comment.user_id %>
           <% @comment_user = User.find_by_id(comment.user_id) %>
           <div class="picture"><%= image_tag @comment_user.avatar.url(:thumb) %></div>

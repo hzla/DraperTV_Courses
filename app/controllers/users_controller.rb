@@ -6,12 +6,12 @@ class UsersController < ApplicationController
   # GET /users.json
 
   def index
-    @users = User.all
+    @users = User.where.not(role: 'admin')
     @q = User.search(params[:q])
     @users= @q.result(distinct: true).order('first_name').page(params[:page]).per(25)
 
     #@leaders = User.where("pcounter is not null").order('pcounter DESC').limit(10)
-    @leaders = User.order('pcounter').limit(10)
+    @leaders = User.where.not(role: 'admin').order('pcounter').limit(10)
   end
 
   def workreport
