@@ -3,7 +3,9 @@
 		<div class="image">
 			<%= image_tag user.avatar.url(:large) %>
 			<% if user.pcounter != nil %>
-				<div class="score"><%= user.pcounter %></div>
+				<% if user.role == 'online' || user.role == 'boarding' %>
+					<div class="score"><%= user.pcounter %></div>
+				<% end %>
 			<% else %>
 			<% end %>
 		</div>
