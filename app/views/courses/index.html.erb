@@ -12,7 +12,7 @@
 
 <div class="column-main" style="margin-top: 30px; padding-left: 30px;">
 
-  <% if current_user.online == "admin" %>
+  <% if current_user.role == "admin" %>
      <% @courses.each do |course| %>
       <%= link_to(course_path(course)) do %>
       <div class="course-wrapper">
@@ -29,8 +29,7 @@
       <% end %>
     <% end %>
 
-  <% elsif current_user.program == "Winter 2014" %>
-
+  <% elsif current_user.role == "online" || current_user.role == "boarding" %>
     <% @current_courses.each do |course| %>
     	<%= link_to(course_path(course)) do %>
         <div class="course-wrapper">

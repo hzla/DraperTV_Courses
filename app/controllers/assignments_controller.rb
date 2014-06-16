@@ -3,13 +3,7 @@ class AssignmentsController < ApplicationController
   load_and_authorize_resource
 
 	def index
-    if current_user.role == "online"
-      @assignments = Assignment.all.where(:req_online => 'required')
-    elsif current_user.role == "boarding"
-      @assignments = Assignment.all.where(:req_boarding => 'required')
-    else
-      @assignments = Assignment.all
-    end
+
 
 	end
 
@@ -83,7 +77,16 @@ class AssignmentsController < ApplicationController
           track_activity_feed @user_assignment
        end
 
-      pcalculate
+      if @assignment.category == "video" or @assignment.category == "founder"
+          pcalculate(300)
+      elsif @assignment.category == "milestone"
+          pcalculate(300)
+      elsif @assignment.category == "upload"
+          pcalculate(500)
+      elsif @assignment.category == "quiz"
+          pcalculate(100)
+      else
+      end
 
       begin
       PrivatePub.publish_to("/layouts/points",
@@ -95,7 +98,16 @@ class AssignmentsController < ApplicationController
 
   def update
     @assignment = Assignment.find params[:id]
-    pcalculate
+    if @assignment.category == "video" or @assignment.category == "founder"
+        pcalculate(300)
+    elsif @assignment.category == "milestone"
+        pcalculate(300)
+    elsif @assignment.category == "upload"
+        pcalculate(500)
+    elsif @assignment.category == "quiz"
+        pcalculate(100)
+    else
+    end
     respond_to do |format|
       if @assignment.update_attributes(params[:assignment])
         format.html { redirect_to @assignment }
@@ -115,7 +127,7 @@ class AssignmentsController < ApplicationController
 
       if @attempt.valid? and @attempt.save
         @assignment.user_assignments.first.update_attribute(:point_value, 200)
-        pcalculate
+        pcalculate(200)
         redirect_to assignment_path
       else
        render :action => :show

@@ -35,8 +35,22 @@ class Course < ActiveRecord::Base
     count = 0
 
     self.assignments.each do |assignment|
-      if assignment.complete_for_user?(current_user) == true
-        count += 1
+      if current_user.role == "online"
+        if assignment.complete_for_user?(current_user) == true
+          if assignment.req_online == "required"
+            count += 1
+          end
+        end
+      elsif current_user.role == "boarding"
+        if assignment.complete_for_user?(current_user) == true
+          if assignment.req_boarding == "required"
+            count += 1
+          end
+        end
+      else
+        if assignment.complete_for_user?(current_user) == true
+          count += 1
+        end
       end
     end
 
@@ -47,7 +61,7 @@ class Course < ActiveRecord::Base
     percent = 0
     count = self.complete_count(current_user).to_f
     all = self.assignment_count(current_user).to_f
-    percent = count / all * 100
+    percent = count / all * 100.0
     return percent
   end
 

@@ -14,8 +14,18 @@ class CoursesController < ApplicationController
 
 	def show
 		@course = Course.includes(:assignments).friendly.find(params[:id])
-    @assignments = @course.assignments
-		@assignments = @assignments.sort! l{ |a, b| a.order_id <=> b.order_id }
+    @allAssignments = @course.assignments
+    if current_user.role == "online"
+      @assignments = @allAssignments.where(:req_online => 'required')
+      @assignmentsOpt = @allAssignments.where(:req_online => 'optional')
+    elsif current_user.role == "boarding"
+      @assignments = @allAssignments.here(:req_boarding => 'required')
+      @assignmentsOpt = @allAssignments.where(:req_online => 'optional')
+    else
+      @assignments = @allAssignments
+      @assignmentsOpt = @allAssignments.limit(0)
+    end
+		@assignments = @assignments.sort! { |a, b| a.order_id <=> b.order_id }
 
 
     if @course.course_complete_for_user?(current_user) == true

@@ -27,7 +27,17 @@ class UserAssignmentsController < ApplicationController
     @user_assignment = UserAssignment.find(params[:id])
     respond_to do |format|
       if @user_assignment.update_attributes(params[:user_assignment])
-        pcalculate
+        @assignment = Assignment.where(:id => @user_assignment.assignment_id).first
+        if @assignment.category == "video" or @assignment.category == "founder"
+            pcalculate(300)
+        elsif @assignment.category == "milestone"
+            pcalculate(300)
+        elsif @assignment.category == "upload"
+            pcalculate(500)
+        elsif @assignment.category == "quiz"
+            pcalculate(100)
+        else
+        end
         format.html { redirect_to :back }
         format.json { head :no_content }
       else

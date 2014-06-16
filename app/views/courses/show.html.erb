@@ -52,7 +52,47 @@
 						</div>
 						<div class="video-information">
 							<h2><%= assignment.title %></h2>
-							<div class="description minimize"><%= assignment.description %></div>
+							<div class="description minimize"><%= assignment.description %>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		</div><!-- course-show-container -->
+
+		<div class="course-show-container">
+			<!-- ******  CONTENT ******* -->
+			<% @assignmentsOpt.each do |assignment| %>
+				<%= link_to(assignment_path(assignment)) do %>
+					<!--changed from assignment-container -->
+					<div class="video-container">
+						<% if assignment.complete_for_user?(current_user) %>
+							<div class="complete"></div>
+						<% end %>
+						<!-- select icon depending on assignment type #changed from assignment-icon -->
+						<div class="pic">
+							<%= image_tag(assignment.speaker_pic(:large)) %>
+							<div class="icon">
+								<% if assignment.category == "quiz" %>
+									<%= image_tag("icons/quiz.png") %>
+								<% elsif assignment.category == "video" %>
+									<%= image_tag("icons/video.png") %>
+								<% elsif assignment.category == "founder" %>
+									<%= image_tag("icons/idea.png") %>
+								<% elsif assignment.category == "reading" %>
+									<%= image_tag("icons/reading.png") %>
+								<% elsif assignment.category == "upload" %>
+									<%= image_tag("icons/assignment.png") %>
+								<% elsif assignment.category == "milestone" %>
+									<%= image_tag("icons/milestone.png") %>
+								<% end %>
+							</div>
+						</div>
+						<div class="video-information">
+							<h2><%= assignment.title %></h2>
+							<div class="description minimize"><%= assignment.description %>
+								<i class="fa fa-dot-circle-o pull-right"> Optional</i>
+							</div>
 						</div>
 					</div>
 				<% end %>
