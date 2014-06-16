@@ -49,10 +49,11 @@ class UserCommentsController < ApplicationController
     @comment.user_id = current_user[:id]
     #@commentable.user_comments.create(:user_id => current_user[:id])
     @user = User.find(@comment.user_id)
-    @words = @comment.content.split.size.to_i + @user.char_points.to_i
-    @words = 1 * @words/5.to_f
-    @user.update_column(:char_points, @words.ceil)
-    commentsize = @comment.content.split.size.to_i
+    @words = @comment.content.split.size.to_i
+    @words = 1 * @words/5.0.to_f
+    @points = @words.ceil + @user.char_points.to_i
+    @user.update_column(:char_points, @points)
+    commentsize = @words.ceil
     cpcalculate(commentsize)
     @activities =  Activity.all
     @activities = Activity.order("created_at desc")
