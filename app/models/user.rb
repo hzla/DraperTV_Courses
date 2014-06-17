@@ -63,8 +63,6 @@ def flush_cache
   Rails.cache.delete([self.class.name, id])
 end
 
-
-
   # include PgSearch
   # pg_search_scope :search, against: [:first_name, :last_name],
   # using: {tsearch: {dictionary: "english"}},
