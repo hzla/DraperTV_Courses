@@ -8,7 +8,22 @@
 </div>
 
 <div class="column-main">
-	<div><%= link_to 'Weekly E-Mail', weekly_tops_path,{:'class' => 'btn btn-primary'} %> | <%= link_to 'Progress E-Mail', progress_report_path,{:'class' => 'btn btn-primary'} %></div>
+	<div>
+			<%= link_to 'Weekly E-Mail', weekly_tops_path,{:'class' => 'btn btn-primary'} %>
+		| <%= link_to 'Progress E-Mail', progress_report_path,{:'class' => 'btn btn-primary'} %>
+			<br>
+			<% @courses = Course.all %>
+ 			<br>
+
+			<br><%= link_to 'Course Open', :controller => "email_panel", :action => "course_open", :course => @thiscourse %>
+
+		<%= form_tag(course_open_path, :method => "get") do %>
+			<%= select_tag "course", options_from_collection_for_select(@courses, "id", "title")%>
+		  <%= submit_tag("send") %>
+		<% end %>
+
+	</div>
+
 	<br>
 	<table class="table table-striped">
 		<tr>

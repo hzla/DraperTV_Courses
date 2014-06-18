@@ -11,7 +11,7 @@
 
 <div class="column-main">
 	<div>
-		<% @activity_feeds.each do |activity_feed| %>
+		<% @activity_feeds.where("user_id NOT IN (?)", User.where(:role => "admin").pluck(:id)).each do |activity_feed| %>
 		  <%= ActivityFeedPresenter.new(activity_feed, self).render_activity_feed %>
 
       <!-- ActivityFeed-comments -->

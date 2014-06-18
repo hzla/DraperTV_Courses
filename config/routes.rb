@@ -90,6 +90,7 @@ OnlineSchool::Application.routes.draw do
   get "email_panel", to: 'email_panel#index', via: :all
   get "weekly_tops", to: 'email_panel#weekly_tops', as: :weekly_tops
   get "progress_report", to: 'email_panel#progress_report', as: :progress_report
+  get "course_open", to: 'email_panel#course_open', as: :course_open
 
 
 
