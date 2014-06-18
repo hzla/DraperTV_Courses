@@ -62,6 +62,12 @@ default   to: 'yad.faiq@gmail.com',
       )
     end
 
+    def course_open(courseid)
+      course = Course.find(courseid)
+      @course = course
+      mail(to: 'yad.faiq@gmail.com')
+    end
+
     # Method to create a hash of PostIDs with Number of Comments in them!
     def comment_freq_counter(ary)
       ary.inject(Hash.new(0)) { |h,e| h[e] += 1; h }.select {

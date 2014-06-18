@@ -1,5 +1,6 @@
 class EmailPanelController < ApplicationController
 	before_filter :authenticate_user!
+  before_filter :must_be_admin
 
 	def index
     @jobs = Delayed::Job.all
@@ -16,6 +17,16 @@ class EmailPanelController < ApplicationController
     end
     redirect_to email_panel_path
   end
+
+  def course_open
+    @course = Course.find(params[:course])
+    # logger.debug params.inspect
+    courseid = @course.id
+    WeeklyMailer.delay.course_open(courseid)
+     # logger.info @course.id
+    redirect_to email_panel_path
+  end
+
 
   def progress_report
     users = User.all
@@ -45,6 +56,5 @@ class EmailPanelController < ApplicationController
       format.html {redirect_to(admin_delayed_jobs_path, :notice => 'Job destroyed')}
     end
   end
-
 
 end

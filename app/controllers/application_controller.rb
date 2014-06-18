@@ -123,5 +123,12 @@ class ApplicationController < ActionController::Base
      def track_activity(trackable, action = params[:action])
        current_user.activities.create! action: action, trackable: trackable
      end
+
+private
+  def must_be_admin
+    unless current_user && current_user.role == "admin"
+      redirect_to root_path
+    end
+  end
 end
 
