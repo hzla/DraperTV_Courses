@@ -1,11 +1,22 @@
 // **** ADMIN ASSIGNMENT VIEW **** //
 .admin {
-	width: 90%;
+	width: 95%;
 	border: 1px solid red;
 	padding: 10px;
 	display: block;
 	clear: both;
-	margin-top: 20px;
+	margin-top: 50px;
+	overflow: hidden;
+	.right {
+		display: block;
+		float: right;
+		width: 70%;
+	}
+	.left {
+		display: block;
+		float: left;
+		width: 25%;
+	}
 }
 
 // **** COMPLETED ASSIGNMENT VIEW **** //

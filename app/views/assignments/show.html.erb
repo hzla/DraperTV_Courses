@@ -95,7 +95,7 @@
 
             <% if can? :update, @assignment %>
               <h2><%= best_in_place @assignment, :speaker_name, :type => :input, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add speaker name" %></h2>
-              <p><%= best_in_place @assignment, :description, :type => :textarea, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add description" %></p>
+              <p><%= best_in_place @assignment, :description, :type => :textarea, :class => 'best_in_place', :nil => "Click me to add description" %></p>
             <% else %>
               <h2><%= @assignment.speaker_name %></h2>
               <p><%= simple_format(@assignment.description) %></p>
@@ -104,8 +104,19 @@
 
           <% if can? :update, @assignment %>
             <div class="admin">
-              <h3>Admin Only</h3>
-              <p>Only admin users can see this panel.</p>
+              <div class="left">
+                <p><b>Required for Online?</b></p>
+                <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [[1, "required"], [2, "optional"]] %></p>
+                <p><b>Required for Boarding?</b></p>
+                <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [[1, "required"], [2, "optional"], [3, "hidden"]] %></p>
+              </div>
+              <div class="right">
+                <p><b>Question:</b></p>
+                <p><%= best_in_place @assignment, :question_text, :type => :input, :class => 'best_in_place', :nil => 'Click me to add question' %></p>
+                <p><b>Tim's Takeaway:</b></p>
+                <p><%= best_in_place @assignment, :question_duh_response, :type => :textarea, :class => 'best_in_place', :nil => 'Click me to add Tims Takeaway' %></p>
+              </div>
+
             </div>
           <% end %>
         </div><!-- speaker-section -->
