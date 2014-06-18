@@ -241,6 +241,8 @@ class UserCommentsController < ApplicationController
     @comment = UserComment.find(params[:id])
     @user = User.find(@comment.user_id)
 
+    if current_user.id == @comment.user_id
+
     @words = @comment.content.split.size.to_i
     @words = 1 * @words/5.0.to_f
     @points =  @user.char_points.to_i - @words.ceil
@@ -248,15 +250,15 @@ class UserCommentsController < ApplicationController
     commentsize = @words.ceil
     cpcalculateDelete(commentsize)
 
-    @activities = Activity.all
-    @activities.find_by_trackable_id(@comment.id).destroy
-
-      @comments.each do |com|
-        if com.commentable_id == @comment.id
-            @activities.find_by_trackable_id(com.id).destroy
-        end
+    if Activity.exists?(:trackable_id => @comment.id)
+      Activity.find_by_trackable_id(@comment.id).destroy
+    end
+    @comments.each do |com|
+      if com.commentable_id == @comment.id
+          Activity.find_by_trackable_id(com.id).destroy
       end
-    if current_user.id == @comment.user_id
+    end
+
       @comment.destroy
         @comments = @commentable.user_comments.order('created_at desc')
         #refresh_dom_with_partial('div#comments_container', 'comments')
