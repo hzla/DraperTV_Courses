@@ -4,7 +4,7 @@ jQuery ->
                 docViewBottom = docViewTop + $(window).height()
                 elemTop = $(elem).offset().top
                 elemBottom = elemTop + $(elem).height()
-                (elemTop >= docViewTop) && (elemTop <= docViewBottom)
+                (elemTop <= docViewBottom)
 
         if $('.pagination').length
                 $(window).scroll ->

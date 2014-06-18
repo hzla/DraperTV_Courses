@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def index
     @users = User.where.not(role: 'admin')
     @q = User.search(params[:q])
-    @users= @q.result(distinct: true).order('first_name').page(params[:page]).per(25)
+    @users= @q.result(distinct: true).order('first_name').page(params[:page]).per(24)
 
     #@leaders = User.where("pcounter is not null").order('pcounter DESC').limit(10)
     @leaders = User.where.not(role: 'admin').order('pcounter').limit(10)
