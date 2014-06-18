@@ -61,7 +61,11 @@ class Course < ActiveRecord::Base
     percent = 0
     count = self.complete_count(current_user).to_f
     all = self.assignment_count(current_user).to_f
-    percent = count / all * 100.0
+    if all == 0
+      return percent
+    else
+      percent = count.ceil / all.ceil * 100.0
+    end
     return percent
   end
 
