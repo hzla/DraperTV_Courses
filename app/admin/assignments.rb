@@ -16,7 +16,7 @@ ActiveAdmin.register Assignment do
    f.inputs "Assignment Details" do
      f.inputs :course
      f.inputs :title
-     f.inputs :req_online
+     f.inputs :req_online, as: :select, collection: ['required', 'optional']
      f.inputs :req_boarding
      f.inputs :question_text
      f.inputs :question_duh_response

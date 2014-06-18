@@ -1,4 +1,4 @@
-<% if @course.course_current? == true or current_user.online == "admin" %>
+<% if @course.course_current? == true or current_user.role == "admin" %>
 
 	<div class="top-section">
 	  <div class="row">

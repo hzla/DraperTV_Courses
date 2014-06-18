@@ -14,5 +14,5 @@ if Rails.env.development?
 elsif Rails.env.staging?
 		ActionMailer::Base.default_url_options[:host] = "http://staging-online.draperuniversity.com/"
 elsif Rails.env.production?
-		ActionMailer::Base.default_url_options[:host] = "http://draperuniversity.com/"
+		ActionMailer::Base.default_url_options[:host] = "http://online.draperuniversity.com/"
 end

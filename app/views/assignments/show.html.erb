@@ -96,13 +96,20 @@
             <% if can? :update, @assignment %>
               <h2><%= best_in_place @assignment, :speaker_name, :type => :input, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add speaker name" %></h2>
               <p><%= best_in_place @assignment, :description, :type => :textarea, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add description" %></p>
-          <% else %>
-            <h2><%= @assignment.speaker_name %></h2>
-            <p><%= simple_format(@assignment.description) %></p>
-          <% end %>
+            <% else %>
+              <h2><%= @assignment.speaker_name %></h2>
+              <p><%= simple_format(@assignment.description) %></p>
+            <% end %>
           </div>
+
+          <% if can? :update, @assignment %>
+            <div class="admin">
+              <h3>Admin Only</h3>
+              <p>Only admin users can see this panel.</p>
+            </div>
+          <% end %>
         </div><!-- speaker-section -->
-      <% end %>
+      <% end %><!-- End Not Completed -->
 
     <!-- ******** READING ******* -->
     <% elsif @assignment.category == "reading" %>
