@@ -46,8 +46,9 @@ class EventsController < ApplicationController
       if @event.save
         format.html { redirect_to events_path }
 
-        eventEmail(@event).delay
-        #format.json { render json: @event, status: :created, location: @event }
+        if current_user.role == "admin"
+          eventEmail(@event).delay
+        end
       else
         format.html { render action: "new" }
         #format.json { render json: @event.errors, status: :unprocessable_entity }

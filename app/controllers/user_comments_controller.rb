@@ -240,9 +240,13 @@ class UserCommentsController < ApplicationController
     @comments = @commentable.user_comments.order('created_at desc')
     @comment = UserComment.find(params[:id])
     @user = User.find(@comment.user_id)
-    @words =  @user.char_points.to_i - @comment.content.split.size.to_i
-    @user.update_column(:char_points, 1 * @words)
-    @user.update_column(:pcounter, @user.pcounter.to_i - @comment.content.split.size.to_i)
+
+    @words = @comment.content.split.size.to_i
+    @words = 1 * @words/5.0.to_f
+    @points =  @user.char_points.to_i - @words.ceil
+    @user.update_column(:char_points, @points)
+    commentsize = @words.ceil
+    cpcalculateDelete(commentsize)
 
     @activities = Activity.all
     @activities.find_by_trackable_id(@comment.id).destroy
