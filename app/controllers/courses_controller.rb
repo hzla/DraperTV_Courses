@@ -5,7 +5,8 @@ class CoursesController < ApplicationController
 	def index
 		@courses = Course.all
     @courses.sort! { |a, b| a.start_date <=> b.start_date }
-    @current_courses = Course.includes(:assignments).find(:all, :conditions => ['start_date <= ?', DateTime.now])
+    #@current_courses = Course.includes(:assignments).find(:all, :conditions => ['start_date <= ?', DateTime.now])
+    @current_courses = Course.all
     @current_courses.sort! { |a, b| a.start_date <=> b.start_date }
     @locked_courses = Course.find(:all, :conditions => ['start_date >= ?', DateTime.now])
     @locked_courses.sort! { |a, b| a.start_date <=> b.start_date }
