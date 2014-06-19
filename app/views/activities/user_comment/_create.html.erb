@@ -191,6 +191,7 @@
 
   <% elsif user_comment.commentable_type == "Event" && user_comment.user_id != current_user.id %>
       <%-### Now we create a list of Unique Event IDs %>
+      <% listOfEvents = Event.all %>
       <% listOfEvents = listOfEvents.uniq %>
       <% event = Event.find_by_id(user_comment.commentable_id)  %>
 
@@ -223,11 +224,8 @@
         </div>
       <% end %>
       <% end %>
-<<<<<<< HEAD
       <%-### end of checking for Posts that are in the Unique list or not%>
-=======
-       <%-### end of checking for Posts that are in the Unique list or not%>
->>>>>>> 0b1a803bcfdc57a73023f11cc0c0f6b6c1bc1665
+
 
   <% end %>
   <%-### End of the %>
