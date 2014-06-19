@@ -64,7 +64,7 @@ class Course < ActiveRecord::Base
     if all == 0
       return percent
     else
-      percent = count.ceil / all.ceil * 100.0
+      percent = count / all * 100.0
     end
     return percent
   end
