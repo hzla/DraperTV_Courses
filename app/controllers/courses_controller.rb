@@ -20,7 +20,7 @@ class CoursesController < ApplicationController
       @assignmentsOpt = @allAssignments.where(:req_online => 'optional')
     elsif current_user.role == "boarding"
       @assignments = @allAssignments.where(:req_boarding => 'required')
-      @assignmentsOpt = @allAssignments.where(:req_online => 'optional')
+      @assignmentsOpt = @allAssignments.where(:req_boarding => 'optional')
     else
       @assignments = @allAssignments
       @assignmentsOpt = @allAssignments.limit(0)
