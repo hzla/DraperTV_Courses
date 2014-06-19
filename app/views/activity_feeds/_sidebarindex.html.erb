@@ -9,7 +9,7 @@
 
 <div class="col-right-comments" style="padding: 0; height: calc(100% - 110px);">
 	<div id="comments_container">
-		<% @activity_feeds.each do |activity_feed| %>
+		<% @activity_feeds.where("user_id NOT IN (?)", User.where(:role => "admin").pluck(:id)).each do |activity_feed| %>
 
       <!-- ***** Define Variables ***** -->
 			<% @user_assignment = UserAssignment.where(:id => activity_feed.tobetrackable_id).first
