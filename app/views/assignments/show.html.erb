@@ -50,11 +50,11 @@
         </div>
         <br/><br/>
         <div class="line" style="background: white;"></div>
-        <h2><%= best_in_place_if can?(:edit, @assignment), @assignment, :question_text, :type => :input, :class => 'best_in_place' %></h2>
+        <h2 style="line-height: 1.2;"><%= best_in_place_if can?(:edit, @assignment), @assignment, :question_text, :type => :input, :class => 'best_in_place' %></h2>
         <div class="line"></div>
         <div class="student-response">
           <div class="picture">
-            <%= image_tag(current_user.avatar) %>
+            <%= image_tag(current_user.avatar(:medium)) %>
           </div>
           <div class="info">
             <div class="name"><%= current_user.full_name %></div>
@@ -73,7 +73,7 @@
         <div class="line"></div>
         <% @completed.where("user_id NOT IN (?)", User.where(:role => "admin").pluck(:id)).each do |c| %>
           <div class="student-response">
-            <div class="picture"><%= image_tag(User.find(c.user_id).avatar) %></div>
+            <div class="picture"><%= image_tag(User.find(c.user_id).avatar(:medium)) %></div>
             <div class="info">
               <div class="name">
                 <%= link_to student_profile_path(User.find(c.user_id)) do %>
