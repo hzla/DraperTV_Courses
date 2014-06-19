@@ -94,6 +94,7 @@ class AssignmentsController < ApplicationController
       rescue
       end
     end
+    sidebarindex
 	end
 
   def update

@@ -4,9 +4,9 @@
   <div class="top-column-main">
       <div style="width: 100%; position: relative; display; block; padding-left: 20px;">
         <% if can? :update, @assignment %>
-          <h1><%= best_in_place @assignment, :title, :type => :input, :class => 'best_in_place' %></h1>
+          <h1 style="font-size: 21px;"><%= best_in_place @assignment, :title, :type => :input, :class => 'best_in_place' %></h1>
         <% else %>
-          <h1><%= @assignment.title %></h1>
+          <h1 style="font-size: 21px;"><%= @assignment.title %></h1>
         <% end %>
       </div>
   </div>
@@ -41,14 +41,16 @@
 
         <div class="float-right-50">
           <% if can? :update, @assignment %>
-            <h2><%= best_in_place @assignment, :question_text, :type => :input, :class => 'best_in_place' %></h2>
+            <h2 style="margin-top: 5px;">Tim's Takeaway</h2>
             <p><%= best_in_place @assignment, :question_duh_response, :type => :textarea, :class => 'best_in_place' %></p>
           <% else %>
-            <h2><%= @assignment.question_text %></h2>
+            <h2>Tim's Takeaway</h2>
             <p class="minimize"><%= @assignment.question_duh_response %></p>
           <% end %>
         </div>
         <br/><br/>
+        <div class="line" style="background: white;"></div>
+        <h2><%= best_in_place_if can?(:edit, @assignment), @assignment, :question_text, :type => :input, :class => 'best_in_place' %></h2>
         <div class="line"></div>
         <div class="student-response">
           <div class="picture">
@@ -62,6 +64,9 @@
               <i class="fa fa-star"></i>
               <% i += 1 %>
             <% end %>
+            <span style="margin-left: 10px;">
+              <a id="video-form" data-toggle="modal" href="#complete-video-form" data-backdrop="false">Edit Response</a>
+            </span>
             <p class="response"><%= best_in_place @user_assignment.first, :question_response, :type => :textarea, :class => 'best_in_place' %></p>
           </div>
         </div>
@@ -70,7 +75,11 @@
           <div class="student-response">
             <div class="picture"><%= image_tag(User.find(c.user_id).avatar) %></div>
             <div class="info">
-              <div class="name"><%= User.find(c.user_id).full_name %></div>
+              <div class="name">
+                <%= link_to student_profile_path(User.find(c.user_id)) do %>
+                  <%= User.find(c.user_id).full_name %>
+                <% end %>
+              </div>
               <% i = 0 %>
               <% r = c.rating %>
               <% while i < r do %>
@@ -181,6 +190,18 @@
           </div>
         </div>
       <% end %>
+
+      <!-- ** Admin Panel ** -->
+      <% if can? :update, @assignment %>
+        <div class="admin">
+          <div class="left">
+            <p><b>Required for Online?</b></p>
+            <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [[1, "required"], [2, "optional"]] %></p>
+            <p><b>Required for Boarding?</b></p>
+            <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [[1, "required"], [2, "optional"], [3, "hidden"]] %></p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
     <!-- ******** UPLOAD ******* -->
     <%  @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
@@ -242,8 +263,20 @@
           <%= render 'upload' %>
         <% end %>
       <% end %>
-    <% end %>
 
+      <!-- ** Admin Panel ** -->
+      <% if can? :update, @assignment %>
+        <div class="admin">
+          <div class="left">
+            <p><b>Required for Online?</b></p>
+            <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [[1, "required"], [2, "optional"]] %></p>
+            <p><b>Required for Boarding?</b></p>
+            <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [[1, "required"], [2, "optional"], [3, "hidden"]] %></p>
+          </div>
+        </div>
+      <% end %>
+
+    <% end %><!-- End if assignment type is Upload -->
   </div> <!-- end span10 -->
 </div> <!-- column-main -->
 
@@ -279,30 +312,37 @@
           <% end %>
         </div>
         <%= f.text_area :question_response, :label => false, :input_html => { :rows => 5, :minlength => 300, :style => "width: 95%;"}, :placeholder => "Your response must be at least 300 characters." %>
-        <%= f.submit "Complete Assignment" %>
+        <%= f.submit "Submit" %>
       <% end %>
     <% else %>
     <% end %>
   </div>
 </div>
 
+
 <!-- ************************ -->
 <!-- **** COLUMN RIGHT  ***** -->
 <!-- ************************ -->
 
-<div class="column-right">
-  <div class="col-right-top-section">
-    <h3>Discussion</h3>
+<% if @assignment.category == "quiz" %>
+  <div class="column-right">
+    <%= render "activity_feeds/sidebarindex"%>
   </div>
-  <div class="col-right-comments">
-    <div id="comments_container">
-      <div id="<%= @assignment.id %>">
-        <%= render "user_comments/comments" %>
-      </div>
+<% else %>
+  <div class="column-right">
+    <div class="col-right-top-section">
+      <h3>Discussion</h3>
     </div>
-  </div><!-- col-right-comments -->
-  <div class="col-right-addcomment">
-    <%= render "user_comments/addsidenavcomment" %>
-  </div><!-- col-right-addcomment -->
-</div><!-- column-right -->
+    <div class="col-right-comments">
+      <div id="comments_container">
+        <div id="<%= @assignment.id %>">
+          <%= render "user_comments/comments" %>
+        </div>
+      </div>
+    </div><!-- col-right-comments -->
+    <div class="col-right-addcomment">
+      <%= render "user_comments/addsidenavcomment" %>
+    </div><!-- col-right-addcomment -->
+  </div><!-- column-right -->
+<% end %>
 
