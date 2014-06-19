@@ -42,7 +42,7 @@
         <div class="float-right-50">
           <% if can? :update, @assignment %>
             <h2 style="margin-top: 5px;">Tim's Takeaway</h2>
-            <p><%= best_in_place @assignment, :question_duh_response, :type => :textarea, :class => 'best_in_place' %></p>
+            <p class="minimize"><%= @assignment.question_duh_response %></p>
           <% else %>
             <h2>Tim's Takeaway</h2>
             <p class="minimize"><%= @assignment.question_duh_response %></p>
@@ -91,6 +91,24 @@
           </div>
         <% end %>
 
+        <% if can? :update, @assignment %>
+            <div class="admin">
+              <div class="left">
+                <p><b>Required for Online?</b></p>
+                <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"]] %></p>
+                <p><b>Required for Boarding?</b></p>
+                <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"],["hidden", "Hidden"]] %></p>
+              </div>
+              <div class="right">
+                <p><b>Question:</b></p>
+                <p><%= best_in_place @assignment, :question_text, :type => :input, :class => 'best_in_place', :nil => 'Click me to add question' %></p>
+                <p><b>Tim's Takeaway:</b></p>
+                <p><%= best_in_place @assignment, :question_duh_response, :type => :textarea, :class => 'best_in_place', :nil => 'Click me to add Tims Takeaway' %></p>
+              </div>
+
+            </div>
+          <% end %>
+
       <!-- ** not completed ** -->
       <% else %>
         <div class="video-responsive-container">
@@ -115,9 +133,9 @@
             <div class="admin">
               <div class="left">
                 <p><b>Required for Online?</b></p>
-                <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => ["required", "optional"] %></p>
+                <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"]] %></p>
                 <p><b>Required for Boarding?</b></p>
-                <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => ["required", "optional", "hidden"] %></p>
+                <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"],["hidden", "Hidden"]] %></p>
               </div>
               <div class="right">
                 <p><b>Question:</b></p>
@@ -155,9 +173,9 @@
         <div class="admin">
           <div class="left">
             <p><b>Required for Online?</b></p>
-            <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => ["required", "optional"] %></p>
+            <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"]] %></p>
             <p><b>Required for Boarding?</b></p>
-            <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => ["required", "optional", "hidden"] %></p>
+            <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"],["hidden", "Hidden"]] %></p>
           </div>
         </div>
       <% end %>
@@ -209,12 +227,13 @@
         <div class="admin">
           <div class="left">
             <p><b>Required for Online?</b></p>
-            <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => ["required", "optional"] %></p>
+            <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"]] %></p>
             <p><b>Required for Boarding?</b></p>
-            <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => ["required", "optional", "hidden"] %></p>
+            <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"],["hidden", "Hidden"]] %></p>
           </div>
         </div>
       <% end %>
+
     <% end %>
     <!-- ******** UPLOAD ******* -->
     <%  @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
@@ -278,13 +297,13 @@
       <% end %>
 
       <!-- ** Admin Panel ** -->
-      <% if can? :update, @assignment %>
+       <% if can? :update, @assignment %>
         <div class="admin">
           <div class="left">
             <p><b>Required for Online?</b></p>
-            <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => ["required", "optional"] %></p>
+            <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"]] %></p>
             <p><b>Required for Boarding?</b></p>
-            <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => ["required", "optional", "hidden"] %></p>
+            <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"],["hidden", "Hidden"]] %></p>
           </div>
         </div>
       <% end %>
