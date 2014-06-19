@@ -150,6 +150,18 @@
         </div>
       </div><!-- speaker-section -->
 
+      <!-- ** Admin Panel ** -->
+      <% if can? :update, @assignment %>
+        <div class="admin">
+          <div class="left">
+            <p><b>Required for Online?</b></p>
+            <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [[1, "required"], [2, "optional"]] %></p>
+            <p><b>Required for Boarding?</b></p>
+            <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [[1, "required"], [2, "optional"], [3, "hidden"]] %></p>
+          </div>
+        </div>
+      <% end %>
+
     <!-- ******** QUIZ ******* -->
     <% elsif @assignment.category == "quiz" %>
       <div class="quiz_description" style="min-height: 20px;"></div>
@@ -162,32 +174,33 @@
           <%  @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
           <% if @user_assignment.first.complete == false %>
             <% track_activity_feed @user_assignment.first %>
-             <% @user_assignment.first.update_column(:complete, true) %>
+            <% @user_assignment.first.update_column(:complete, true) %>
             <% @user_assignment.first.update_column(:point_value, 300) %>
           <% end %>
          <% end %>
-          You scored <%= @quiz_high_score %> out of <%= @quiz_total_questions %>
+          <p style="font-size: 20px; color: #333; font-weight lighter; margin-bottom: 10px;">You got <%= @quiz_high_score %> out of <%= @quiz_total_questions %> questions correct</p>
+         <!--  <%= @quiz_ratio %>
           <br />
-          <br />
-          <%= @quiz_ratio %>
-          <br />
-          <br />
-          <!-- show quiz answers -->
-          <div class="quiz-answers">
-            <!-- <ul>
-              <% @assignment.survey.questions.each_with_index do |question, index| %>
-              <li>
-                <p><%= question.text %></p>
-                <% question.options.correct.each do |option| %>
-                    <p class="correct"><%= option.text %></p>
-                <% end %>
-                <% question.options.incorrect.each do |option| %>
-                    <p class="incorrect"><%= option.text %></p>
-                <% end %>
-             </li>
-             <% end %>
-            </ul> -->
-          </div>
+          <br /> -->
+          <!-- ** Show quiz answers ** -->
+          <% if current_user.role == "boarding" %>
+          <% else %>
+            <div class="quiz-answers">
+              <ul>
+                <% @assignment.survey.questions.each_with_index do |question, index| %>
+                <li>
+                  <p style="font-weight: normal;"><%= question.text %></p>
+                  <% question.options.correct.each do |option| %>
+                      <p class="correct"><%= option.text %></p>
+                  <% end %>
+                  <% question.options.incorrect.each do |option| %>
+                      <p class="incorrect"><%= option.text %></p>
+                  <% end %>
+               </li>
+               <% end %>
+              </ul>
+            </div>
+          <% end %><!-- End if available for user -->
         </div>
       <% end %>
 
