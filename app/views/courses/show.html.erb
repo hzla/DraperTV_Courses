@@ -1,4 +1,4 @@
-<% #if @course.course_current? == true or current_user.role == "admin" %>
+<% if @course.course_current? == true or current_user.role == "admin" or current_user.role == "boarding" or current_user.role == "online" %>
 
 	<div class="top-section">
 	  <div class="row">
@@ -151,7 +151,7 @@
 	  </div><!-- col-right-bottom -->
 	</div><!-- column-right -->
 
-<% #else %>
+<% else %>
 	<div class="top-section">
 	  <div class="row">
 	    <div class="top-column-main">
@@ -170,7 +170,7 @@
 	<div class="column-main">
 		<p>This course has not started yet!</p>
 	</div>
-<% #end %>
+<% end %>
 
 
 
