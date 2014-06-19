@@ -13,28 +13,24 @@ class Ability
         can :manage, UserAssignment, :user_id => user.id
         can :manage, Event, :user_id => user.id
         can :manage, Post, :user_id => user.id
-        #can [:update], Vendor, :user_id => user.id
     elsif user.role == "online"
         can :read, :all
         can :manage, UserComment, :user_id => user.id
         can :manage, UserAssignment, :user_id => user.id
         can :manage, Event, :user_id => user.id
         can :manage, Post, :user_id => user.id
-        #can [:update], Vendor, :user_id => user.id
     elsif user.role == "boarding"
         can :read, :all
         can :manage, UserComment, :user_id => user.id
         can :manage, UserAssignment, :user_id => user.id
         can :manage, Event, :user_id => user.id
         can :manage, Post, :user_id => user.id
-        #can [:update], Vendor, :user_id => user.id
     elsif user.role == "network"
         can :read, :all
         can :manage, UserComment, :user_id => user.id
         can :manage, UserAssignment, :user_id => user.id
         can :manage, Event, :user_id => user.id
         can :manage, Post, :user_id => user.id
-        #can [:update], Vendor, :user_id => user.id
     else
     end
     # Define abilities for the passed in user here. For example:
