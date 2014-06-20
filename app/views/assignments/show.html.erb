@@ -42,15 +42,17 @@
         <div class="float-right-50">
           <% if can? :update, @assignment %>
             <h2 style="margin-top: 5px;">Tim's Takeaway</h2>
-            <p class="minimize"><%= @assignment.question_duh_response %></p>
+
           <% else %>
-            <h2>Tim's Takeaway</h2>
-            <p class="minimize"><%= @assignment.question_duh_response %></p>
+            <h4 style="padding-bottom: 0; margin-bottom: 0; margin-top: 5px;">Study Question:</h4>
+            <h2 style="margin-top: 5px;"><%= best_in_place_if can?(:edit, @assignment), @assignment, :question_text, :type => :input, :class => 'best_in_place' %></h2>
           <% end %>
         </div>
         <br/><br/>
         <div class="line" style="background: white;"></div>
-        <h2 style="line-height: 1.2;"><%= best_in_place_if can?(:edit, @assignment), @assignment, :question_text, :type => :input, :class => 'best_in_place' %></h2>
+        <h2 style="line-height: 1.2;">Tim's Takeaway</h2>
+        <p class="minimize"><%= @assignment.question_duh_response %></p>
+        <br/>
         <div class="line"></div>
         <div class="student-response">
           <div class="picture">
@@ -92,21 +94,21 @@
         <% end %>
 
         <% if can? :update, @assignment %>
-            <div class="admin">
-              <div class="left">
-                <p><b>Required for Online?</b></p>
-                <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"]] %></p>
-                <p><b>Required for Boarding?</b></p>
-                <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"],["hidden", "Hidden"]] %></p>
-              </div>
-              <div class="right">
-                <p><b>Question:</b></p>
-                <p><%= best_in_place @assignment, :question_text, :type => :input, :class => 'best_in_place', :nil => 'Click me to add question' %></p>
-                <p><b>Tim's Takeaway:</b></p>
-                <p><%= best_in_place @assignment, :question_duh_response, :type => :textarea, :class => 'best_in_place', :nil => 'Click me to add Tims Takeaway' %></p>
-              </div>
-
+          <div class="admin">
+            <div class="left">
+              <p><b>Required for Online?</b></p>
+              <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"]] %></p>
+              <p><b>Required for Boarding?</b></p>
+              <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"],["hidden", "Hidden"]] %></p>
             </div>
+            <div class="right">
+              <p><b>Question:</b></p>
+              <p><%= best_in_place @assignment, :question_text, :type => :input, :class => 'best_in_place', :nil => 'Click me to add question' %></p>
+              <p><b>Tim's Takeaway:</b></p>
+              <p><%= best_in_place @assignment, :question_duh_response, :type => :textarea, :class => 'best_in_place', :nil => 'Click me to add Tims Takeaway' %></p>
+            </div>
+
+          </div>
           <% end %>
 
       <!-- ** not completed ** -->
@@ -156,7 +158,7 @@
         <%= raw @video_embed %>
       </div>
       <div class="speaker-section">
-        <%= image_tag(@assignment.speaker_pic) %>
+        <%= image_tag(@assignment.speaker_pic(:large)) %>
         <div class="info">
           <% if can? :update, @assignment %>
               <h2><%= best_in_place @assignment, :speaker_name, :type => :input, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add speaker name" %></h2>
