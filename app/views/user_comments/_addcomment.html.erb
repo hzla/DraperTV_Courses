@@ -14,17 +14,19 @@
             //new line
           }
           else {
+            if ($.trim($("textarea#comment-<%= @commentable.id %>").val()).length > 0){
             e.preventDefault();
             var frm = $(this).closest("form");
             jQuery.ajax({
-                url: frm.attr("action"),
-                data: frm.serialize(),
-                complete: function(){
-                  frm.submit();
-                  $("textarea#comment-<%= @commentable.id %>").val(null);
-                 },
-                dataType: "json"
-            });
+                          url: frm.attr("action"),
+                          data: frm.serialize(),
+                          complete: function(){
+                            frm.submit();
+                            $("textarea#comment-<%= @commentable.id %>").val(null);
+                           },
+                          dataType: "json"
+                      });
+            }
           }
         }
     });

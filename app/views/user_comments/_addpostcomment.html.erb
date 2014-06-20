@@ -11,24 +11,31 @@
 <script type ="text/javascript">
   $(function() {
     $("textarea#comment-<%= @commentable.id %>").keypress(function (e) {
-        if(e.which == 13) {
-          if (e.shiftKey === true) {
+        if(e.which == 13)
+        {
+
+          if (e.shiftKey === true)
+          {
             //new line
           }
-          else {
+          else
+          {
+            if ($.trim($("textarea#comment-<%= @commentable.id %>").val()).length > 0){
             e.preventDefault();
             var frm = $(this).closest("form");
             jQuery.ajax({
-                url: frm.attr("action"),
-                data: frm.serialize(),
-                complete: function(){
-                  frm.submit();
-                  $("textarea#comment-<%= @commentable.id %>").val(null);
-                 },
-                dataType: "json"
-            });
+                          url: frm.attr("action"),
+                          data: frm.serialize(),
+                          complete: function(){
+                            frm.submit();
+                            $("textarea#comment-<%= @commentable.id %>").val(null);
+                           },
+                          dataType: "json"
+                      });
+            }
           }
         }
     });
   });
+
 </script>
