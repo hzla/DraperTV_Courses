@@ -51,7 +51,10 @@
 							</div>
 						</div>
 						<div class="video-information">
-							<h4 style="margin: 0; padding-top: 10px; padding-bottom: 0;">Day One</h4>
+							<% if current_user.role == "boarding" %>
+							<% else %>
+								<h4 style="margin: 0; padding-top: 10px; padding-bottom: 0;"><%= assignment.day %></h4>
+							<% end %>
 							<h2 style="font-size: 18px; margin-top: 0;"><%= assignment.title %></h2>
 							<div class="description minimize">
 								<% if assignment.category == "quiz" %>

@@ -95,6 +95,8 @@
               <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"]] %></p>
               <p><b>Required for Boarding?</b></p>
               <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"],["hidden", "Hidden"]] %></p>
+              <p><b>Day?</b></p>
+              <p width="80%;"><%= best_in_place @assignment, :day, :type => :select, :collection => [["Day One", "Day One"], ["Day Two", "Day Two"],["Day Three", "Day Three"], ["Day Four", "Day Four"], ["Day Five", "Day Five"], ["Day Six", "Day Six"], ["Day Seven", "Day Seven"]] %></p>
             </div>
             <div class="right">
               <p><b>Question:</b></p>
@@ -134,6 +136,8 @@
                 <p><b>Required for Boarding?</b></p>
                 <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"],["hidden", "Hidden"]] %></p>
               </div>
+              <p><b>Day?</b></p>
+              <p width="80%;"><%= best_in_place @assignment, :day, :type => :select, :collection => [["Day One", "Day One"], ["Day Two", "Day Two"],["Day Three", "Day Three"], ["Day Four", "Day Four"], ["Day Five", "Day Five"], ["Day Six", "Day Six"], ["Day Seven", "Day Seven"]] %></p>
               <div class="right">
                 <p><b>Question:</b></p>
                 <p><%= best_in_place @assignment, :question_text, :type => :input, :class => 'best_in_place', :nil => 'Click me to add question' %></p>
@@ -173,6 +177,8 @@
             <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"]] %></p>
             <p><b>Required for Boarding?</b></p>
             <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"],["hidden", "Hidden"]] %></p>
+            <p><b>Day?</b></p>
+              <p width="80%;"><%= best_in_place @assignment, :day, :type => :select, :collection => [["Day One", "Day One"], ["Day Two", "Day Two"],["Day Three", "Day Three"], ["Day Four", "Day Four"], ["Day Five", "Day Five"], ["Day Six", "Day Six"], ["Day Seven", "Day Seven"]] %></p>
           </div>
         </div>
       <% end %>
@@ -227,6 +233,8 @@
             <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"]] %></p>
             <p><b>Required for Boarding?</b></p>
             <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"],["hidden", "Hidden"]] %></p>
+            <p><b>Day?</b></p>
+              <p width="80%;"><%= best_in_place @assignment, :day, :type => :select, :collection => [["Day One", "Day One"], ["Day Two", "Day Two"],["Day Three", "Day Three"], ["Day Four", "Day Four"], ["Day Five", "Day Five"], ["Day Six", "Day Six"], ["Day Seven", "Day Seven"]] %></p>
           </div>
         </div>
       <% end %>
@@ -301,6 +309,8 @@
             <p width="80%;"><%= best_in_place @assignment, :req_online, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"]] %></p>
             <p><b>Required for Boarding?</b></p>
             <p width="80%;"><%= best_in_place @assignment, :req_boarding, :type => :select, :collection => [["required", "Required"], ["optional", "Optional"],["hidden", "Hidden"]] %></p>
+            <p><b>Day?</b></p>
+              <p width="80%;"><%= best_in_place @assignment, :day, :type => :select, :collection => [["Day One", "Day One"], ["Day Two", "Day Two"],["Day Three", "Day Three"], ["Day Four", "Day Four"], ["Day Five", "Day Five"], ["Day Six", "Day Six"], ["Day Seven", "Day Seven"]] %></p>
           </div>
         </div>
       <% end %>
