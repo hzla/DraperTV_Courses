@@ -171,7 +171,7 @@ input[type="submit"] {
 	.course-tile {
 		width: 29%;
 		margin-right: 4%;
-		height: 260px;
+		height: 280px;
 		margin-top: 20px;
 	}
 	.student-tile {
@@ -211,21 +211,32 @@ input[type="submit"] {
 	border-bottom-right-radius: 8px;
 	border-top-right-radius: 8px;
 	background-size: cover;
+	background: #f2f2f2;
+	img {
+		display: block;
+		margin: 0 auto;
+		width: 80px;
+		height: 80px;
+		margin-top: 0px;
+		margin-bottom: 20px;
+	}
 	.information {
 		display: block;
-		background: white;
-		background-color:rgba(255,255,255,0.95);
+		//background: white;
+		//background-color:rgba(255,255,255,0.95);
 		width: 80%;
 		margin: 0 auto;
 		margin-top: 25px;
 		padding: 20px 10px 10px 10px;
 		.title {
 			font-weight: 300;
-			font-size: 26px;
+			font-size: 22px;
 			line-height: 1.3;
+			text-align: center;
 		}
 		.description {
 			font-weight: 300;
+			text-align: center;
 			font-size: 13px;
 			color: $gray;
 			line-height: 1.3;
@@ -243,11 +254,37 @@ input[type="submit"] {
 		font-weight: 300;
 		color: white;
 	}
-	.progress {
+	.progress-section {
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		.bar { background-color: $teal; }
+		width: 100%;
+		display: block;
+		border-top: 2px solid #fff;
+		background: #f2f2f2;
+		height: 50px;
+		.progress-bar {
+			width: 60%;
+			margin-left: 5%;
+			margin-right: 25%;
+			background: #fff;
+			margin-top: 24px;
+			height: 2px;
+		}
+		.progress-bar-percent {
+			background-color: $bright-teal;
+			height: 2px;
+		}
+		.progress-percent {
+			display: block;
+			position: absolute;
+			top: 15px;
+			font-size: 15px;
+			color: $bright-teal;
+			font-weight: 100;
+			width: 25%;
+			right: 0;
+		}
 	}
 }
 
