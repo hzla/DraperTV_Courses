@@ -38,6 +38,7 @@ default   to: 'yad.faiq@gmail.com',
         userCommentIds << comment.user_id
       end
 
+
       userCommentIds = comment_freq_counter(userCommentIds)
       @topCommenters = userCommentIds.sort_by {|k,v| -v }.first(5).map(&:first)
 
