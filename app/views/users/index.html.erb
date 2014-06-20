@@ -18,6 +18,11 @@
                   <%= f.select :role_cont, ['boarding', 'online'], include_blank: true %>
                 </div>
 
+                <!-- <div class="filter">
+                  <%= f.label :team_cont, 'Team' %>
+                  <%= f.select :team_cont, ['Angels', 'Magic', 'Tornadoes', 'Phoenix', 'Wonders', 'Blizzards', 'Lightning', 'Titans', 'Lanterns'], include_blank: true %>
+                </div> -->
+
                 <div class="filter">
                   <%= f.label :s, 'Sort by' %>
                   <%= f.collection_select :s, User::SORT_FIELDS.to_a, :first, :last, selected: users_sort_value, include_blank: false %>

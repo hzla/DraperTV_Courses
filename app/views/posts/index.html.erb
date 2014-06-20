@@ -26,6 +26,7 @@
                 <%= f.label :s, 'Sort by' %>
                 <%= f.collection_select :s, Post::SORT_FIELDS.to_a, :first, :last, selected: posts_sort_value, include_blank: false %>
               </div>
+
               <div class="filter">
                 <%= f.submit 'Filter', :id => "filter-submit" %>
               </div>
