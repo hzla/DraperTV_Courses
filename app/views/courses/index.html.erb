@@ -16,13 +16,23 @@
      <% @courses.each do |course| %>
       <%= link_to(course_path(course)) do %>
       <div class="course-wrapper">
-        <div class="course-tile" style="background-image: url(<%= course.tile_image %>);">
+        <div class="course-tile">
           <div class="information">
+            <%= image_tag course.course_icon %>
             <div class="title"><%= course.title %></div>
             <div class="description"><%= course.start_date.strftime("%A, %B %e") %></div>
           </div>
-          <div class="progress" style="display;block; width: 100%;">
-            <div class="bar" style="width: <%= number_to_percentage(course.progress(current_user)) %>;"></div>
+
+          <div class="progress-section">
+            <div class="progress-bar">
+              <div class="progress-bar-percent" style="width: <%= number_to_percentage(course.progress(current_user)) %>;"></div>
+            </div>
+            <div class="progress-percent">
+               <% if course.progress(current_user).to_i > 0 %>
+                <%= course.progress(current_user).to_i %>%
+              <% else %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

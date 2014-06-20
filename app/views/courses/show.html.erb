@@ -60,18 +60,21 @@
 								<% if assignment.category == "quiz" %>
 									Quiz
 								<% elsif assignment.category == "video" %>
-									Video Lecture
+									Video Lecture |
 								<% elsif assignment.category == "founder" %>
-									Founder Story
+									Founder Story |
 								<% elsif assignment.category == "reading" %>
-									Reading Assignment
+									Reading Assignment |
 								<% elsif assignment.category == "upload" %>
 									Activity
 								<% elsif assignment.category == "milestone" %>
 									Business Plan Milestone
 								<% end %>
-								 | <%= assignment.speaker_name %>
+								&nbsp;<%= assignment.speaker_name %>
 							</div>
+							<% if current_user.role == "admin" %>
+								<span style="font-size: 12px; color: #AEBBCC;">[ Online: <%= assignment.req_online %>  |  Residential: <%= assignment.req_boarding %> ]</span>
+							<% end %>
 						</div>
 					</div>
 				<% end %>
