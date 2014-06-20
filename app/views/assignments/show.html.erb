@@ -40,13 +40,8 @@
         </div>
 
         <div class="float-right-50">
-          <% if can? :update, @assignment %>
-            <h2 style="margin-top: 5px;">Tim's Takeaway</h2>
-
-          <% else %>
-            <h4 style="padding-bottom: 0; margin-bottom: 0; margin-top: 5px;">Study Question:</h4>
-            <h2 style="margin-top: 5px;"><%= best_in_place_if can?(:edit, @assignment), @assignment, :question_text, :type => :input, :class => 'best_in_place' %></h2>
-          <% end %>
+          <h4 style="padding-bottom: 0; margin-bottom: 0; margin-top: 5px;">Study Question:</h4>
+          <h2 style="margin-top: 5px;"><%= best_in_place_if can?(:edit, @assignment), @assignment, :question_text, :type => :input, :class => 'best_in_place' %></h2>
         </div>
         <br/><br/>
         <div class="line" style="background: white;"></div>
