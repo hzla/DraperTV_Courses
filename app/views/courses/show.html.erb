@@ -72,9 +72,6 @@
 								<% end %>
 								&nbsp;<%= assignment.speaker_name %>
 							</div>
-							<% if current_user.role == "admin" %>
-								<span style="font-size: 12px; color: #AEBBCC;">[ Online: <%= assignment.req_online %>  |  Residential: <%= assignment.req_boarding %> ]</span>
-							<% end %>
 						</div>
 					</div>
 				<% end %>
@@ -155,9 +152,9 @@
 					<div class="play-intro" ></div>
 				</a>
 			</div>
-			<!-- <div class="course-icon">
+			<div class="course-icon">
 				<%= image_tag(@course.course_icon) %>
-			</div> -->
+			</div>
 
 			<!-- ******  INFO TABS ******* -->
 			<div class="information">
@@ -165,7 +162,7 @@
 					<% if @course.start_date %>
 						<div class="dates">Start date: <%= @course.start_date.strftime("%B %e") %></div>
 					<% end %>
-				</div><br/>
+				</div>
     		<p><%= @course.description %></p>
 			</div><!-- information -->
 	  </div><!-- col-right-bottom -->
