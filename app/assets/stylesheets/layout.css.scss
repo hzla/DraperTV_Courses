@@ -559,9 +559,10 @@ h4 {
           width: 70px;
           height: 70px;
         }
+        p { font-size: 12px; }
       }
       .dates { color: $gray-blue-x-lt; font-weight: bold; }
-      p { color: $gray; }
+      p { color: $gray; font-size: 12px; }
     }
     .col-right-comments {
       display: block;
