@@ -329,7 +329,7 @@
  <div id="complete-video-form" class="modal hide fade" tabindex="1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div style="padding: 30px;">
     <% if @user_assignment %>
-      <%= form_for @user_assignment.first do |f| %>
+      <%= form_for @user_assignment.first, :html => {:id => 'complete-video-form'} do |f| %>
         <button type="button" class="close" style="" data-dismiss="modal" aria-hidden="true">x</button>
         <h2>Complete <%= @assignment.title %></h2><br/>
         <div class="title">Please rate this lecture from one to five stars, where five is the best.</div>
@@ -390,40 +390,40 @@
 
 
 <script type ="text/javascript">
-  $(function() {
+$(function() {
 
-
-$(document).on("submit", "form", function(e){
+  $("#complete-video-form").submit(function(e) {
     if ($.trim($("textarea#user_assignment_question_response").val()).length == 0)
-          {
-              $("#warning").text("Your Response Can't Be Empty");
-              e.preventDefault();
-              return  false;
-          }
+      {
+        $("#warning").text("Your Response Can't Be Empty");
+        e.preventDefault();
+        return  false;
+      }
 
-      else if ($.trim($("textarea#user_assignment_question_response").val()).length < 300)
-          {
-              $("#warning").text("Your Response Can't Be Less Than 300 Characters");
-              e.preventDefault();
-              return  false;
-          }
-      else if ($.trim($("textarea#user_assignment_question_response").val()).length > 300)
-          {
-            var frm = $("form#edit_user_assignment_<%= @assignment.id %>");
-            jQuery.ajax({
-                          url: frm.attr("action"),
-                          data: frm.serialize(),
-                          complete: function(){
-                            frm.submit();
-                           },
-                          dataType: "json"
-                      });
-          }
-});
+    else if ($.trim($("textarea#user_assignment_question_response").val()).length < 300)
+      {
+        $("#warning").text("Your Response Can't Be Less Than 300 Characters");
+        e.preventDefault();
+        return  false;
+      }
+    else if ($.trim($("textarea#user_assignment_question_response").val()).length > 300)
+      {
+      var frm = $("form#edit_user_assignment_<%= @assignment.id %>");
+      jQuery.ajax(
+        {
+            url: frm.attr("action"),
+            data: frm.serialize(),
+            complete: function(){
+              frm.submit();
+             },
+            dataType: "json"
+        });
+      }
+    });
 
-  $(document).ready(function(){
+    $(document).ready(function(){
       $("textarea#user_assignment_question_response").autosize();
-  });
+    });
 
  });
 </script>
