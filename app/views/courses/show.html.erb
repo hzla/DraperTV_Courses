@@ -163,7 +163,7 @@
 						<div class="dates">Start date: <%= @course.start_date.strftime("%B %e") %></div>
 					<% end %>
 				</div>
-    		<p><%= @course.description %></p>
+    		<p style="font-size: 10px;"><%= simple_format(@course.description) %></p>
 			</div><!-- information -->
 	  </div><!-- col-right-bottom -->
 	</div><!-- column-right -->

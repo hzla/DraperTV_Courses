@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @users= @q.result(distinct: true).order('first_name').page(params[:page]).per(24)
 
     #@leaders = User.where("pcounter is not null").order('pcounter DESC').limit(10)
-    @leaders = User.where.not(role: 'admin').order('pcounter').limit(10)
+    @leaders = User.where.not(role: 'admin').order('pcounter DESC').limit(10)
   end
 
   def workreport
