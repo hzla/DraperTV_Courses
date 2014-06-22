@@ -56,7 +56,7 @@
 <div class="profile-bottom">
 
   <ul class="nav nav-tabs" style="margin-top: 22px; margin-bottom: 20px;">
-    <li class="active"><a href="#tab-activity" data-toggle="tab">Activites</a></li>
+    <li class="active"><a href="#tab-activity" data-toggle="tab">Activity</a></li>
     <li><a href="#tab-assignments" data-toggle="tab">Assignments</a></li>
     <li><a href="#tab-milestones" data-toggle="tab">Milestones</a></li>
     <li><a href="#tab-quizzes" data-toggle="tab">Quizzes</a></li>
@@ -121,11 +121,11 @@
 
       <!-- ActivityFeed-comments -->
       <div id="comments_section">
-          <div id="comments_container" style="width: 85%;">
+          <div id="comments_container" style="width: 85%; margin-top: 0; margin-bottom: 30px;">
             <div id="<%= @assignment.user_assignments.where(:user_id => @user[:id]).first.id %>">
               <%= render "user_comments/uacomments" %>
             </div>
-            <div id="submit-<%= @assignment.user_assignments.where(:user_id => @user[:id]).first.id %>">
+            <div id="submit-<%= @assignment.user_assignments.where(:user_id => @user[:id]).first.id %>" style="margin-left: 20px;">
               <%= render "user_comments/addcomment_uafeed" %>
             </div>
           </div> <!-- ActivityFeed-comments -->
