@@ -8,7 +8,7 @@ class ActivityFeedsController < ApplicationController
     @comments = UserComment.all
     @comments = @comments.order('created_at desc')
     @comment = UserComment.new
-    @leaders = User.where.not(role: 'admin').order('pcounter DESC').limit(10)
+    @leaders = User.where.not(role: 'admin').where("pcounter is not null").order('pcounter ASC').limit(10)
   end
 
 end
