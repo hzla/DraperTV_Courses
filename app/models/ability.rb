@@ -16,7 +16,7 @@ class Ability
         can :manage, Post, :user_id => user.id
     elsif user.role == "online"
         can :read, :all
-        can :manage, UserComment, :user_id => user.id
+        can :manage, UserComment
         can :manage, User, :id => user.id
         can :manage, UserAssignment, :user_id => user.id
         can :manage, Event, :user_id => user.id
@@ -24,7 +24,7 @@ class Ability
         can :manage, Assignment
     elsif user.role == "boarding"
         can :read, :all
-        can :manage, UserComment, :user_id => user.id
+        can :manage, UserComment
         can :manage, User, :id => user.id
         can :manage, UserAssignment, :user_id => user.id
         can :manage, Event, :user_id => user.id
