@@ -5,6 +5,23 @@ OnlineSchool::Application.configure do
   config.cache_classes = true
   config.eager_load = true
   # Full error reports are disabled and caching is turned on
+  config.assets.digest = true
+  config.consider_all_requests_local       = false
+  config.action_controller.perform_caching = true
+  config.cache_store = :dalli_store
+  client = Dalli::Client.new((ENV["MEMCACHIER_SERVERS"] || "").split(","),
+                           :username => ENV["MEMCACHIER_USERNAME"],
+                           :password => ENV["MEMCACHIER_PASSWORD"],
+                           :failover => true,
+                           :socket_timeout => 1.5,
+                           :socket_failure_delay => 0.2,
+                           :value_max_bytes => 5242880)
+  config.action_dispatch.rack_cache = {
+    :metastore    => client,
+    :entitystore  => client
+  }
+  config.static_cache_control = "public, max-age=2592000"
+
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
@@ -18,7 +35,6 @@ OnlineSchool::Application.configure do
   config.assets.compile = true
 
   # Generate digests for assets URLs
-  config.assets.digest = true
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
