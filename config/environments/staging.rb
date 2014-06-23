@@ -5,8 +5,6 @@ OnlineSchool::Application.configure do
   config.cache_classes = true
   config.eager_load = true
   # Full error reports are disabled and caching is turned on
-
-
   config.assets.digest = true
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
@@ -24,7 +22,6 @@ OnlineSchool::Application.configure do
   }
   config.static_cache_control = "public, max-age=2592000"
 
-  # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
 
   # Compress JavaScripts and CSS

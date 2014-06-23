@@ -88,7 +88,7 @@
           </div>
         <% end %>
 
-        <% if can? :update, @assignment %>
+        <% if current_user.role == "admin" %>
           <div class="admin">
             <div class="left">
               <p><b>Required for Online?</b></p>
@@ -130,7 +130,7 @@
 
 
 
-          <% if can? :update, @assignment %>
+        <% if current_user.role == "admin" %>
             <div class="admin">
               <div class="left">
                 <p><b>Required for Online?</b></p>
@@ -304,7 +304,7 @@
       <% end %>
 
       <!-- ** Admin Panel ** -->
-       <% if can? :update, @assignment %>
+       <% if current.role == "admin" %>
         <div class="admin">
           <div class="left">
             <p><b>Required for Online?</b></p>
