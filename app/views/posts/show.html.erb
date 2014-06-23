@@ -47,8 +47,8 @@
               <i class="fa fa-pencil"></i>
             </div>
           <% else %>
-            <div class="title"><%= @post.title %></div>
-            <div class="full"><%= @post.content %></div>
+            <div class="title"><%= simple_format(@post.title) %></div>
+            <div class="full"><%= simple_format(@post.content) %></div>
           <% end %>
 
            <div class="info">
@@ -108,4 +108,6 @@
 </div>
 
 
-
+<script type="text/javascript">
+  $('.best_in_place').bind('ajax:success', function(){ this.innerHTML = this.innerHTML.replace(/\n/g, '<br />') });
+</script>
