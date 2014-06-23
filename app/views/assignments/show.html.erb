@@ -3,7 +3,7 @@
 <div class="top-section">
   <div class="top-column-main">
       <div style="width: 100%; position: relative; display; block; padding-left: 20px;">
-        <% if can? :update, @assignment %>
+        <% if current_user.role == "admin" %>
           <h1 style="font-size: 21px;"><%= best_in_place @assignment, :title, :type => :input, :class => 'best_in_place' %></h1>
         <% else %>
           <h1 style="font-size: 21px;"><%= @assignment.title %></h1>
@@ -41,7 +41,7 @@
 
         <div class="float-right-50">
           <h4 style="padding-bottom: 0; margin-bottom: 0; margin-top: 5px;">Study Question:</h4>
-          <h2 style="margin-top: 5px;"><%= best_in_place_if can?(:edit, @assignment), @assignment, :question_text, :type => :input, :class => 'best_in_place' %></h2>
+          <h2 style="margin-top: 5px;"><%= simple_format(@assignment.question_text) %></h2>
         </div>
         <br/><br/>
         <div class="line" style="background: white;"></div>
@@ -119,7 +119,7 @@
           <div class="info">
              <a id="complete-video" class="button" data-toggle="modal" href="#complete-video-form" data-backdrop="false">Mark as Complete</a>
 
-            <% if can? :update, @assignment %>
+            <% if current_user.role == "admin" %>
               <h2><%= best_in_place @assignment, :speaker_name, :type => :input, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add speaker name" %></h2>
               <p><%= best_in_place @assignment, :description, :type => :textarea, :class => 'best_in_place', :nil => "Click me to add description" %></p>
             <% else %>
@@ -161,7 +161,7 @@
       <div class="speaker-section">
         <%= image_tag(@assignment.speaker_pic(:large)) %>
         <div class="info">
-          <% if can? :update, @assignment %>
+          <% if current_user.role == "admin" %>
               <h2><%= best_in_place @assignment, :speaker_name, :type => :input, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add speaker name" %></h2>
               <p><%= best_in_place @assignment, :description, :type => :textarea, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add description" %></p>
           <% else %>
@@ -172,7 +172,7 @@
       </div><!-- speaker-section -->
 
       <!-- ** Admin Panel ** -->
-      <% if can? :update, @assignment %>
+      <% if current_user.role == "admin" %>
         <div class="admin">
           <div class="left">
             <p><b>Required for Online?</b></p>
@@ -228,7 +228,7 @@
       <% end %>
 
       <!-- ** Admin Panel ** -->
-      <% if can? :update, @assignment %>
+      <% if current_user.role == "admin" %>
         <div class="admin">
           <div class="left">
             <p><b>Required for Online?</b></p>
@@ -304,7 +304,7 @@
       <% end %>
 
       <!-- ** Admin Panel ** -->
-       <% if current.role == "admin" %>
+       <% if current_user.role == "admin" %>
         <div class="admin">
           <div class="left">
             <p><b>Required for Online?</b></p>
@@ -346,7 +346,7 @@
           <label for="star1" title="meh"></label>
         </fieldset>
         <div class="title">
-          <% if can? :update, @assignment %>
+          <% if current_user.role == "admin" %>
             <%= best_in_place @assignment, :question_text, :type => :input, :class => 'best_in_place', :html_attrs => { :maxlength => 255 }, :nil => "Click me to add question text" %>
           <% else %>
             <%= @assignment.question_text %>
