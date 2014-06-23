@@ -19,7 +19,7 @@
 
                       <% @user = User.find_by_id(user_comment.user_id) %>
                         <% if @user.avatar != nil %>
-                          <div class="picture">
+                          <div class="picture" style="left: 50px;">
                             <%= image_tag @user.avatar.url(:medium) %>
                           </div>
                         <% end %>
@@ -102,7 +102,7 @@
                 <div id="post">
                   <% @user = User.find_by_id(user_comment.user_id) %>
                     <% if @user.avatar != nil %>
-                      <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
+                      <div class="picture" style="left: 50px;"><%= image_tag @user.avatar.url(:medium) %></div>
                     <% end %>
                   <div class="content">
                     <%= link_to student_profile_path(@user) do %>
@@ -157,7 +157,7 @@
                 <div id="post">
                   <% @user = User.find_by_id(user_comment.user_id) %>
                     <% if @user.avatar != nil %>
-                      <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
+                      <div class="picture" style="left: 50px;"><%= image_tag @user.avatar.url(:medium) %></div>
                     <% end %>
                   <div class="content">
                     <%= link_to student_profile_path(@user) do %>
@@ -201,7 +201,7 @@
         <div id="post">
           <% @user = User.find_by_id(user_comment.user_id) %>
             <% if @user.avatar != nil %>
-              <div class="picture"><%= image_tag @user.avatar.url(:medium) %></div>
+              <div class="picture" style="left: 50px;"><%= image_tag @user.avatar.url(:medium) %></div>
             <% end %>
 
             <div class="content">
