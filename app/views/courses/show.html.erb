@@ -164,6 +164,12 @@
 					<% end %>
 				</div>
     		<p style="font-size: 10px;"><%= simple_format(@course.description) %></p>
+    		<% if @course.intro_screenshot.url != nil %>
+    			<%= link_to @course.intro_screenshot.url, target: '_blank' do %>
+    				<i class="fa fa-file-pdf-o"></i>
+    				<span> View Syllabus</span>
+    			<% end %>
+    		<% end %>
 			</div><!-- information -->
 	  </div><!-- col-right-bottom -->
 	</div><!-- column-right -->
