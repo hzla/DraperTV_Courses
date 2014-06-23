@@ -15,7 +15,7 @@
         <% post = Post.find_by_id(user_comment.commentable_id) %>
             <% if User.where(:id => user_comment.user_id).exists? %>
               <% if post.present? %>
-                    <div id="post">
+                    <div id="post" style="width: 95%;">
 
                       <% @user = User.find_by_id(user_comment.user_id) %>
                         <% if @user.avatar != nil %>
@@ -37,7 +37,7 @@
                             <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
                           <% end %>
 
-                          <div class="timestamp">
+                          <div class="timestamp" style="margin-left: 65px;">
                             <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %>
                           </div>
 
@@ -57,7 +57,7 @@
                                 <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
                                   <div class="image"><%= image_tag post.file.url(:preview) %></div>
 
-                                <div class="timestamp">
+                                <div class="timestamp" style="margin-left: 65px;">
                                   <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
           <% curAssignment = Assignment.find_by_id(uassignment.assignment_id) %>
 
             <% if User.where(:id => user_comment.user_id).exists? %>
-                <div id="post">
+                <div id="post" style="width: 95%;">
                   <% @user = User.find_by_id(user_comment.user_id) %>
                     <% if @user.avatar != nil %>
                       <div class="picture" style="left: 50px;"><%= image_tag @user.avatar.url(:medium) %></div>
@@ -115,7 +115,8 @@
                         <%= truncate(curAssignment.title, length: 30) %>
                       <% end %>
 
-                    <div class="timestamp"><%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+                    <div class="timestamp" style="margin-left: 65px;">
+                      <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
 
                   </div>
                 </div>
@@ -154,7 +155,7 @@
           <% curAssignment = Assignment.where(:id => uassignment.first.assignment_id) %>
 
             <% if User.where(:id => user_comment.user_id).exists? %>
-                <div id="post">
+                <div id="post" style="width: 95%;">
                   <% @user = User.find_by_id(user_comment.user_id) %>
                     <% if @user.avatar != nil %>
                       <div class="picture" style="left: 50px;"><%= image_tag @user.avatar.url(:medium) %></div>
@@ -178,7 +179,8 @@
                         <%= truncate(curAssignment.first.title, length: 30) %>
                       <% end %>
 
-                    <div class="timestamp"><%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
+                    <div class="timestamp" style="margin-left: 65px;">
+                      <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
 
                   </div>
                 </div>
@@ -198,7 +200,7 @@
       <% if listOfEvents.include? user_comment.commentable_id  %>
       <% if event.present? %>
 
-        <div id="post">
+        <div id="post" style="width: 95%;">
           <% @user = User.find_by_id(user_comment.user_id) %>
             <% if @user.avatar != nil %>
               <div class="picture" style="left: 50px;"><%= image_tag @user.avatar.url(:medium) %></div>
@@ -215,7 +217,7 @@
                 commented on event
 
               <%= link_to truncate(event.name, length: 30), event %>
-              <div class="timestamp">
+              <div class="timestamp" style="margin-left: 65px;">
                 <%= user_comment.created_at.to_date.to_formatted_s( :long_ordinal ) %>
               </div>
           </div>
