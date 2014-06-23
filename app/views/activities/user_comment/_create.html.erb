@@ -34,7 +34,7 @@
                             commented on post
 
                           <%= link_to post_path(post) do %>
-                            <%= raw Rinku.auto_link(truncate(post.content, length: 40), :all, 'target="_blank"') %>
+                            <%= raw Rinku.auto_link(truncate(post.title, length: 40), :all, 'target="_blank"') %>
                           <% end %>
 
                           <div class="timestamp" style="margin-left: 65px;">
