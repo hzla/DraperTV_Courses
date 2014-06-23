@@ -52,7 +52,7 @@
 				    	<div class="name"><%= @user.full_name %></div>
 				 <% end %>
 				<% if user_assignment.complete == true %>
-				  <p>completed <%= link_to @user_assignment.title %></p>
+				  <p>completed <%= link_to @assignment.title %></p>
 				  <div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 				 <% end %>
 

@@ -21,6 +21,7 @@ class Ability
         can :manage, UserAssignment, :user_id => user.id
         can :manage, Event, :user_id => user.id
         can :manage, Post, :user_id => user.id
+        can :manage, Assignment
     elsif user.role == "boarding"
         can :read, :all
         can :manage, UserComment, :user_id => user.id
@@ -28,6 +29,7 @@ class Ability
         can :manage, UserAssignment, :user_id => user.id
         can :manage, Event, :user_id => user.id
         can :manage, Post, :user_id => user.id
+        can :manage, Assignment
     elsif user.role == "network"
         can :read, :all
         can :manage, UserComment, :user_id => user.id
@@ -35,6 +37,7 @@ class Ability
         can :manage, UserAssignment, :user_id => user.id
         can :manage, Event, :user_id => user.id
         can :manage, Post, :user_id => user.id
+        can :manage, Assignment
     else
     end
     # Define abilities for the passed in user here. For example:
