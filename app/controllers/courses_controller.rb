@@ -15,6 +15,7 @@ class CoursesController < ApplicationController
 	def show
 		@course = Course.includes(:assignments).friendly.find(params[:id])
     @allAssignments = @course.assignments
+
     if current_user.role == "online"
       @assignments = @allAssignments.where(:req_online => 'required')
       @assignmentsOpt = @allAssignments.where(:req_online => 'optional')
@@ -27,20 +28,23 @@ class CoursesController < ApplicationController
     end
 		@assignments = @assignments.sort! { |a, b| a.order_id <=> b.order_id }
 
-
     if @course.course_complete_for_user?(current_user) == true
       if current_user.badges.exists?(:course_id => @course.id) == true
       else
+        #########################
+        ### create user badge ###
+        #########################
         @badge = current_user.badges.create(
           :course_id => @course.id,
           :user_id => current_user[:id],
           # :icon => @course.course_icon(:badge),
           :name => @course.title,
           # :vimeo => @course.badge_vimeo
-          )
-        #########################
-        ## trigger mailer here ##
-        #########################
+        )
+        #############################
+        ## trigger complete mailer ##
+        #############################
+        # CompleteMailer.course_complete(current_user, @badge).deliver
       end
     end
 

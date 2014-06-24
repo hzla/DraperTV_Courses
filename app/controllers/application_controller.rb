@@ -73,27 +73,27 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-    def configure_permitted_parameters
-      devise_parameter_sanitizer.for(:sign_up)  do |u|
-        u.permit(:email, :password, :password_confirmation, :remember_me, :superhero_power, :team, :skype, :gmail, :instagram, :angellist, :dribbble, :github,
-        :bio, :city, :country, :facebook, :first_name, :last_name, :linkedin, :program, :state, :street_address, :twitter, :zip, :online, :employment,
-        :latitude, :longitude, :eventReminder,
-        :avatar, :tag_list, :ncounter, :pcounter,
-        :name, :skill_ids)
-      end
-
-      devise_parameter_sanitizer.for(:account_update) do |u|
-        u.permit(:email, :password, :password_confirmation, :remember_me, :superhero_power, :team, :skype, :gmail, :instagram, :angellist, :dribbble, :github,
-        :bio, :city, :country, :facebook, :first_name, :last_name, :linkedin, :program, :state, :street_address, :twitter, :zip, :online, :employment,
-        :latitude, :longitude, :eventReminder,
-        :avatar, :tag_list, :ncounter, :pcounter,
-        :name, :skill_ids,:current_password)
-      end
-
-      devise_parameter_sanitizer.for(:sign_in) do |u|
-        u.permit(:email, :password)
-      end
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up)  do |u|
+      u.permit(:email, :password, :password_confirmation, :remember_me, :superhero_power, :team, :skype, :gmail, :instagram, :angellist, :dribbble, :github,
+      :bio, :city, :country, :facebook, :first_name, :last_name, :linkedin, :program, :state, :street_address, :twitter, :zip, :online, :employment,
+      :latitude, :longitude, :eventReminder,
+      :avatar, :tag_list, :ncounter, :pcounter,
+      :name, :skill_ids)
     end
+
+    devise_parameter_sanitizer.for(:account_update) do |u|
+      u.permit(:email, :password, :password_confirmation, :remember_me, :superhero_power, :team, :skype, :gmail, :instagram, :angellist, :dribbble, :github,
+      :bio, :city, :country, :facebook, :first_name, :last_name, :linkedin, :program, :state, :street_address, :twitter, :zip, :online, :employment,
+      :latitude, :longitude, :eventReminder,
+      :avatar, :tag_list, :ncounter, :pcounter,
+      :name, :skill_ids,:current_password)
+    end
+
+    devise_parameter_sanitizer.for(:sign_in) do |u|
+      u.permit(:email, :password)
+    end
+  end
 
 
   def sidebarindex
@@ -125,15 +125,16 @@ class ApplicationController < ActionController::Base
   end
 
   private
-     def track_activity(trackable, action = params[:action])
-       current_user.activities.create! action: action, trackable: trackable
-     end
+  def track_activity(trackable, action = params[:action])
+    current_user.activities.create! action: action, trackable: trackable
+  end
 
-private
+  private
   def must_be_admin
     unless current_user && current_user.role == "admin"
       redirect_to root_path
     end
   end
+
 end
 

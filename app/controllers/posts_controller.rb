@@ -8,6 +8,7 @@ def load
   @posts = Post.all
   @post = Post.new
 end
+
 # GET /posts
 # GET /posts.json
 def index
@@ -54,7 +55,6 @@ def unvote_for_post
   end
 end
 
-
 # GET /posts/1
 # GET /posts/1.json
 def show
@@ -85,27 +85,26 @@ end
 # POST /posts.json
 
 def create
-    @posts = Post.all(:order => 'created_at desc')
-    @post = Post.new(params[:post])
-    @post.user_id = current_user.id
-    begin
-      if @post.save
-       respond_to do |format|
-          format.js { redirect_to :back }
-          #format.html # new.html.erb
-          format.html { redirect_to :back } #{ redirect_to :back, :remote => true }
+  @posts = Post.all(:order => 'created_at desc')
+  @post = Post.new(params[:post])
+  @post.user_id = current_user.id
+  begin
+    if @post.save
+      respond_to do |format|
+        format.js { redirect_to :back }
+        #format.html # new.html.erb
+        format.html { redirect_to :back } #{ redirect_to :back, :remote => true }
 
-          #below line will send a notification to
-          #everyone that there is a new post and they can refres
-          PrivatePub.publish_to("/layouts/posts", "$('.headerAlert').show();")
-
-        end
-      else
-          render :new
+        #below line will send a notification to
+        #everyone that there is a new post and they can refres
+        PrivatePub.publish_to("/layouts/posts", "$('.headerAlert').show();")
       end
+    else
+      render :new
+    end
 
     rescue => exception
-        ExceptionNotifier.notify_exception(exception)
+      ExceptionNotifier.notify_exception(exception)
       if @post.save
         @post.vote = 1
         respond_to do |format|
@@ -119,7 +118,6 @@ def create
         render :new
       end
     end
-
   end
 
 # PUT /posts/1

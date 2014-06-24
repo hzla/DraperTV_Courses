@@ -23,7 +23,6 @@ class ActivitiesController < ApplicationController
 
     #End of the list that contains Object Ids that this User commented on
 
-
     respond_to do |format|
       format.js
       format.html
