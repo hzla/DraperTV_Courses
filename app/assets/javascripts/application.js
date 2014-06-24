@@ -19,19 +19,18 @@
 // = require ckeditor/init
 // = require jquery_ujs
 // = require jquery.infinitescroll
+// = require analytics
 // = require jquery.autosize
 // = require underscore
 // = require chosen
 // = require home
 // = require_tree .
 // = require private_pub
-
 // = require slidebars.min
 // = require emoticon
 // = require best_in_place
 // = require best_in_place.purr
-//= require jquery.turbolinks
-
+// = require jquery.turbolinks
 
 
 NProgress.configure

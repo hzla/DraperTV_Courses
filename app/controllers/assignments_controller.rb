@@ -3,8 +3,6 @@ class AssignmentsController < ApplicationController
   load_and_authorize_resource
 
 	def index
-
-
 	end
 
 	def show
@@ -18,7 +16,6 @@ class AssignmentsController < ApplicationController
     @ua = UserAssignment.where(:assignment_id => @assignment.id).where(:complete => true)
 
     @completed = UserAssignment.where(:assignment_id => @assignment.id).where("rating is not null").where.not(user_id: current_user.id)
-    #@completed_by = User.where()
 
 		if @assignment.category == "video" or @assignment.category == "reading" or @assignment.category == "founder"
 		  oembed = "http://vimeo.com/api/oembed.json?url=http%3A//vimeo.com/" + @assignment.vimeo_url + '&autoplay=1'
@@ -46,6 +43,7 @@ class AssignmentsController < ApplicationController
           :user_id => current_user[:id],
           :point_value => 0
         )
+
       elsif @assignment.category == "milestone"
         @user_assignment = @assignment.user_assignments.create(
           :assignment_id => @assignment.id,

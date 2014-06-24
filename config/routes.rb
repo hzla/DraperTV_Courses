@@ -14,7 +14,6 @@ OnlineSchool::Application.routes.draw do
     get 'logout', to: 'devise/sessions#destroy', as: :logout
   end
 
-
   ##### RESOURCES #####
 
   resources :apps

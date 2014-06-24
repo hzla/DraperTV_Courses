@@ -37,7 +37,7 @@
     		<% end %>
 
       	<br/>
-      	<div class="minimize"><%= @user_assignment.question_response %></div>
+      	<div class="minimize"><%= simple_format(@user_assignment.question_response) %></div>
 	    	<div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 			<% end %><!-- complete == true  -->
 
@@ -52,7 +52,7 @@
 				    	<div class="name"><%= @user.full_name %></div>
 				 <% end %>
 				<% if user_assignment.complete == true %>
-				  <p>completed <%= link_to @assignment.title %></p>
+				  <p>completed <%= link_to @assignment.title, assignment_path(@assignment) %></p>
 				  <div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 				 <% end %>
 
@@ -82,7 +82,7 @@
 				    	<div class="name"><%= @user.full_name %></div>
 				  <% end %>
 				<% if user_assignment.complete == true %>
-				  <p>finished <%= link_to @assignment.title %></p>
+				  <p>finished <%= link_to @assignment.title, assignment_path(@assignment) %></p>
 				  <div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 				<% end %>
 
@@ -97,7 +97,7 @@
 			    	<div class="name"><%= @user.full_name %></div>
 			  <% end %>
 			<% if user_assignment.complete == true %>
-			  <p>took <%= link_to @assignment.title %></p>
+			  <p>took <%= link_to @assignment.title, assignment_path(@assignment) %></p>
 			 <% end %>
 			  <div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 				 <% end %>

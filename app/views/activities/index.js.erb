@@ -5,9 +5,9 @@ $('#notify').append('<%= escape_javascript(render :partial => 'layouts/activity'
 
 $('#Activities').append('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
 <% if (@activities.current_page < @activities.num_pages) %>
-        $('.pagination').replaceWith('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
+  $('.pagination').replaceWith('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
 <% else %>
-        $('.pagination').remove();
+  $('.pagination').remove();
 <% end %>
 <% sleep 1 %>
 

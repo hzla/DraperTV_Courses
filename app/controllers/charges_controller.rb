@@ -21,12 +21,11 @@ def create
     :currency    => 'usd'
   )
 
-rescue Stripe::CardError => e
-  flash[:error] = e.message
-  redirect_to charges_path
-end
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to charges_path
+  end
 
-#Source Tutorial
-# https://stripe.com/docs/checkout/guides/rails
-
+  #Source Tutorial
+  # https://stripe.com/docs/checkout/guides/rails
 end

@@ -11,7 +11,9 @@
 		<% @activities.each do |activity| %>
 		  <%= ActivityPresenter.new(activity, self).render_activity %>
 		<% end %>
+    <%= paginate @activities %>
 	</div>
+
 </div> <!-- column-main -->
 
 <div class="column-right">

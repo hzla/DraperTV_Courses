@@ -8,7 +8,7 @@
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,400italic' rel='stylesheet' type='text/css'>
   <!-- install icons -->
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
   <%= javascript_include_tag 'jquery', 'application' %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
@@ -248,30 +248,8 @@
     });
   </script>
 
-  // <script>
-  //    (function($) {
-  //      $(document).ready(function() {
-  //        $.slidebars();
-  //      });
-  //    }) (jQuery);
-  //  </script>
+<%= render 'layouts/footer' %>
 
 </body>
-
-<!-- <footer>
-  <div class="container">
-    <div class="wrapper">
-      <div class="left">
-        <span>44 E 3rd Avenue</span><br>
-        <span>San Mateo, CA 94401</span><br>
-        <a href="mailto:questions@draperuniversity.com" target="_blank"><span>questions@draperuniversity.com</span></a>
-      </div>
-      <div class="right">
-        <span>© Draper University of Heroes.  All Rights Reserved.</span>
-      </div>
-    </div>
-  </div>
-</footer> -->
-
 
 </html>

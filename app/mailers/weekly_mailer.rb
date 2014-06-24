@@ -1,8 +1,8 @@
 class WeeklyMailer < ActionMailer::Base
   ### set default e-mail address
-helper :mailer
-default   to: 'yad.faiq@gmail.com',
-          from: 'info@draperuniversity.com'
+  helper :mailer
+  default   to: 'yad.faiq@gmail.com',
+            from: 'info@draperuniversity.com'
 
     def progress_report_email(user)
       @user = user
@@ -74,6 +74,7 @@ default   to: 'yad.faiq@gmail.com',
       ary.inject(Hash.new(0)) { |h,e| h[e] += 1; h }.select {
         |k,v| v > 1 }.inject({}) { |r, e| r[e.first] = e.last; r }
     end
+
     def largest_hash_key(hash)
       hash.max_by{|k,v| v}
     end

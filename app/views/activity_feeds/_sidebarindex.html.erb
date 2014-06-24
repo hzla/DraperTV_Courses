@@ -52,7 +52,7 @@
                   <div class="name"><%= @user.full_name %></div>
              <% end %>
             <% if @user_assignment.complete == true %>
-              <p>completed <%= link_to @user_assignment.title %></p>
+              <p>completed <%= link_to @assignment.title, assignment_path(@assignment) %></p>
              <% end %>
 
           <!-- ****** Upload ****** -->
@@ -68,7 +68,8 @@
                   <div class="name"><%= @user.full_name %></div>
               <% end %>
             <% if @user_assignment.complete == true %>
-              <p>uploaded <%= link_to @assignment.title, @assignment_path(@assignment) %></p>
+
+              <p>uploaded <%= link_to @assignment.title, assignment_path(@assignment) %></p>
              <% end %>
 
           <!-- ****** Reading ****** -->
@@ -84,7 +85,7 @@
                 <div class="name"><%= @user.full_name %></div>
             <% end %>
             <% if @user_assignment.complete == true %>
-              <p>finished <%= link_to @assignment.title %></p>
+              <p>finished <%= link_to @assignment.title, assignment_path(@assignment) %></p>
             <% end %>
 
           <!-- ***** Quiz ***** -->
@@ -100,7 +101,7 @@
               <div class="name"><%= @user.full_name %></div>
             <% end %>
             <% if @user_assignment.complete == true %>
-              <p>took <%= link_to @assignment.title %></p>
+              <p>took <%= link_to @assignment.title, assignment_path(@assignment) %></p>
             <% end %>
 
           <% else %>
