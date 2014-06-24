@@ -278,8 +278,7 @@
                 </table>
             </div>
             <div class ="section-bar" style="margin-bottom: 10px;">Response </div>
-            <!-- <li role="menu"><%= link_to 'Edit',  edit_user_assignment_path(@user_assignment.first) %></li>
- -->
+            <a id="upload-form" data-toggle="modal" href="#complete-upload-form" data-backdrop="false">Edit Response</a>
             <p><%= raw(@user_assignment.first.text) %></p>
             <br />
             <% if @assignment.category == "upload" %>
@@ -361,6 +360,16 @@
   </div>
 </div>
 
+<!-- ************************************** -->
+<!-- ****** EDIT USER ASSIGNMENT FORM ***** -->
+<!-- ************************************** -->
+
+<div id="complete-upload-form" class="modal hide fade" tabindex="1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 800px; margin-left: -400px; height: 500px; overflow-y: scroll;">
+  <div style="padding: 20px;">
+    <button type="button" class="close" style="" data-dismiss="modal" aria-hidden="true">x</button>
+    <%= render 'upload' %>
+  </div>
+</div>
 
 <!-- ************************ -->
 <!-- **** COLUMN RIGHT  ***** -->
