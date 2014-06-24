@@ -68,6 +68,7 @@
                   <div class="name"><%= @user.full_name %></div>
               <% end %>
             <% if @user_assignment.complete == true %>
+
               <p>uploaded <%= link_to @assignment.title, assignment_path(@assignment) %></p>
              <% end %>
 
