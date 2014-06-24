@@ -278,8 +278,8 @@
                 </table>
             </div>
             <div class ="section-bar" style="margin-bottom: 10px;">Response </div>
-            <li role="menu"><%= link_to 'Edit',  edit_user_assignment_path(@user_assignment.first) %></li>
-
+            <!-- <li role="menu"><%= link_to 'Edit',  edit_user_assignment_path(@user_assignment.first) %></li>
+ -->
             <p><%= raw(@user_assignment.first.text) %></p>
             <br />
             <% if @assignment.category == "upload" %>

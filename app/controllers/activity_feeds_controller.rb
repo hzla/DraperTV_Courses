@@ -4,7 +4,7 @@ class ActivityFeedsController < ApplicationController
 
   def index
   	@activity_feeds =  ActivityFeed.all
-    @activity_feeds = ActivityFeed.page(params[:page]).per(10).order("created_at desc").includes(:tobetrackable)
+    @activity_feeds = ActivityFeed.where("user_id NOT IN (?)", User.where(:role => "admin").pluck(:id)).page(params[:page]).per(20).order("created_at desc").includes(:tobetrackable)
     @comments = UserComment.all
     @comments = @comments.order('created_at desc')
     @comment = UserComment.new
