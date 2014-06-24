@@ -44,7 +44,7 @@ class CoursesController < ApplicationController
         #############################
         ## trigger complete mailer ##
         #############################
-        # CompleteMailer.course_complete(current_user, @badge).deliver
+        CompleteMailer.course_complete(current_user, @badge).deliver
       end
     end
 

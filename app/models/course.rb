@@ -19,10 +19,6 @@ class Course < ActiveRecord::Base
     :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/s3.yml",
     :styles => { :medium => "260x320#", :thumb => "80x80#" }
-  # has_attached_file :syllabus,
-  #   :bucket => 'duhonline',
-  #   :storage => :s3,
-  #   :s3_credentials => "#{Rails.root}/config/s3.yml"
   has_many :assignments
 
   def assignment_count(current_user)
