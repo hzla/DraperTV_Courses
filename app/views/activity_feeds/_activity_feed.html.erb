@@ -1,1 +1,12 @@
 <%= ActivityFeedPresenter.new(activity_feed, self).render_activity_feed %>
+
+<div id="comments_section">
+  <div id="comments_container" style="width: 85%; margin-top: 0; padding: 0;">
+    <div id="<%= @assignment.user_assignments.where(:user_id => @user[:id]).first.id %>">
+      <%= render "user_comments/uacomments" %>
+    </div>
+    <div id="submit-<%= @assignment.user_assignments.where(:user_id => @user[:id]).first.id %>" style="margin-left: 20px;">
+      <%= render "user_comments/addcomment_uafeed" %>
+    </div>
+  </div> <!-- ActivityFeed-comments -->
+</div>
