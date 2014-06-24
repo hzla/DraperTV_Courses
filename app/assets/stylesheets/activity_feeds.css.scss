@@ -12,6 +12,14 @@
   }
 }
 
+.activity-feed-comments {
+  #comments_container {
+    margin-top: 0;
+    padding: 0;
+  }
+
+  #comment-form { margin-left: 20px; }
+}
 
 #comments_section {
 	.section {

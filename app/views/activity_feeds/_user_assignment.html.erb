@@ -37,7 +37,7 @@
     		<% end %>
 
       	<br/>
-      	<div class="minimize"><%= @user_assignment.question_response %></div>
+      	<div class="minimize"><%= simple_format(@user_assignment.question_response) %></div>
 	    	<div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 			<% end %><!-- complete == true  -->
 
