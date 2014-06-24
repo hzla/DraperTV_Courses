@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#Activities {
+  margin-left: 20px;
+  .content {
+    margin-left: 0;
+  }
+  .timestamp {
+    margin-left: 65px;
+  }
+}
+
+
 #comments_section {
 	.section {
 		display: block;
