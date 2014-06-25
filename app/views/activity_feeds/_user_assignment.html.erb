@@ -27,14 +27,18 @@
 			  <p>finished watching <%= link_to @assignment.title, assignment_path(@assignment) %></p>
 			<% if user_assignment.rating.nil? %>
 			<% else %>
-
 			  <% i = 0 %>
         <% r = @user_assignment.rating %>
         <% while i < r do %>
           <i class="fa fa-star"></i>
         	<% i += 1 %>
       	<% end %>
-    		<% end %>
+      	<% n = 5 - i %>
+        <% while n > 0 do %>
+          <i class="fa fa-star" style="color: #ccc;"></i>
+          <% n -= 1 %>
+        <% end %>
+    	<% end %>
 
       	<br/>
       	<p class="minimize-500"><%= @user_assignment.question_response %></p>

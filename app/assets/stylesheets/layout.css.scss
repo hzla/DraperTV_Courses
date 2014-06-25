@@ -16,6 +16,15 @@ h4 {
 }
 
 tt, code, kbd, samp { font-family: 'proxima_nova'}
+a:active {
+    outline: none;
+}
+input::-moz-focus-inner {
+  border: 0;
+}
+object, embed {
+  outline: 0;
+}
 
 .sidr-open {
   overflow: hidden;

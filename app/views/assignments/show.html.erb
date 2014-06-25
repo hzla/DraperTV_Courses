@@ -46,7 +46,7 @@
         <br/><br/>
         <div class="line" style="background: white;"></div>
         <h2 style="line-height: 1.2;">Tim's Takeaway</h2>
-        <p class="minimize"><%= @assignment.question_duh_response %></p>
+        <p class="minimize-500"><%= @assignment.question_duh_response %></p>
         <br/>
         <div class="line"></div>
         <div class="student-response">
@@ -61,6 +61,11 @@
               <i class="fa fa-star"></i>
               <% i += 1 %>
             <% end %>
+            <% n = 5 - i %>
+            <% while n > 0 do %>
+              <i class="fa fa-star" style="color: #ccc;"></i>
+              <% n -= 1 %>
+            <% end %>
             <span style="margin-left: 10px;">
               <a id="video-form" data-toggle="modal" href="#complete-video-form" data-backdrop="false">Edit Response</a>
             </span>
@@ -69,6 +74,8 @@
         </div>
         <div class="line"></div>
         <% @completed.where("user_id NOT IN (?)", User.where(:role => "admin").pluck(:id)).each do |c| %>
+          <% @user_assignment = c %>
+          <% @c_user = User.find(c.user_id) %>
           <div class="student-response">
             <div class="picture"><%= image_tag(User.find(c.user_id).avatar(:medium)) %></div>
             <div class="info">
@@ -83,9 +90,15 @@
                 <i class="fa fa-star"></i>
                 <% i += 1 %>
               <% end %>
-              <p class="response minimize"><%= simple_format(c.question_response) %></p>
-            </div>
-          </div>
+              <% n = 5 - i %>
+              <% while n > 0 do %>
+                <i class="fa fa-star" style="color: #ccc;"></i>
+                <% n -= 1 %>
+              <% end %>
+              <p class="response minimize-500"><%= sanitize c.question_response %></p>
+            </div><!-- info -->
+          </div><!-- student-response -->
+
         <% end %>
 
         <% if current_user.role == "admin" %>
@@ -436,6 +449,8 @@ $(function() {
     // });
 
  });
+
+
 </script>
 
 
