@@ -32,23 +32,6 @@ class ActivitiesController < ApplicationController
 
     @activities = Activity.order("created_at desc").where("trackable_id IN (?)", @trackableIDs).where.not(:user_id => current_user.id).page(params[:page]).per(10).includes(:trackable)
 
-# .where("user_id NOT IN (?)", User.where(:role => "admin").pluck(:id))
-    #Creating a list of objects that the current user have COMMENTED on
-
-    # @commentableIDs = []
-    # @comments.each do |com|
-    #    @commentableIDs << com.commentable_id
-    # end
-
-    # @posts.each do |post|
-    #    @commentableIDs << post.id
-    # end
-
-
-    #activites where the posts relates to me
-
-    #End of the list that contains Object Ids that this User commented on
-
     respond_to do |format|
       format.js
       format.html
