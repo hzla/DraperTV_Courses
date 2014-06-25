@@ -2,15 +2,10 @@
 $('#notify').empty();
 $('#notify').append('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
 
-
-$('#Activities').append('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
+$('#sushi').append('<%= j render(@activities) %>');
 <% if (@activities.current_page < @activities.num_pages) %>
-  $('.pagination').replaceWith('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
+        $('.pagination').replaceWith('<%= j paginate(@activities) %>');
 <% else %>
-  $('.pagination').remove();
+        $('.pagination').remove();
 <% end %>
 <% sleep 1 %>
-
-
-
-
