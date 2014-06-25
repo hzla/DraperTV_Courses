@@ -14,10 +14,6 @@ class ActivityFeedsController < ApplicationController
         format.js
         format.html
     end
-
-
   end
 
 end
-
-#.where("user_id NOT IN (?)", User.where(:role => "admin").pluck(:id))
