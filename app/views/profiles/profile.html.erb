@@ -159,7 +159,7 @@
                     </div>
                     <div class="text-section">
                       <div class="title"><%= assignment.title %></div>
-                      <div class="description"><%= simple_format(assignment.user_assignments.where(:user_id => @user[:id]).first.text) %></div>
+                      <div class="description"><%= sanitize(simple_format(assignment.user_assignments.where(:user_id => @user[:id]).first.text)) %></div>
                     </div><!-- Text Section -->
                     <div class="button-section">
                       <% if assignment.user_assignments.where(:user_id => @user[:id]).first.link != nil %>
@@ -201,7 +201,7 @@
               <div id="milestones">
                 <div class="section">
                   <div class="icon"><%= image_tag(assignment.course.course_icon) %></div>
-                  <div class="description"><%= simple_format(assignment.description) %></div>
+                  <div class="description"><%= sanitize(simple_format(assignment.description)) %></div>
                   <div class="response"><%= simple_format(assignment.user_assignments.where(:user_id => @user[:id]).first.text) %></div>
                   <div id="comments_container">
                     <div id="<%= assignment.user_assignments.where(:user_id => @user[:id]).first.id %>">
