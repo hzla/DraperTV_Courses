@@ -37,7 +37,7 @@
     		<% end %>
 
       	<br/>
-      	<div class="minimize"><%= simple_format(@user_assignment.question_response) %></div>
+      	<p class="minimize-500"><%= @user_assignment.question_response %></p>
 	    	<div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 			<% end %><!-- complete == true  -->
 
@@ -53,6 +53,7 @@
 				 <% end %>
 				<% if user_assignment.complete == true %>
 				  <p>completed <%= link_to @assignment.title, assignment_path(@assignment) %></p>
+				  <p class="minimize-500"><%= raw(@user_assignment.text) %></p>
 				  <div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 				 <% end %>
 
@@ -68,6 +69,7 @@
 				  <% end %>
 			 	<% if user_assignment.complete == true %>
 				  <p>uploaded <%= link_to @assignment.title, assignment_path(@assignment) %></p>
+				  <p class="minimize-500"><%= raw(@user_assignment.text) %></p>
 				  <div class="timestamp"><%= time_ago_in_words(@user_assignment.updated_at) %> ago</div>
 				 <% end %>
 

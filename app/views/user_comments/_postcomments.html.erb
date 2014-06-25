@@ -31,7 +31,7 @@
           <div class="name"><%= link_to student_profile_path(@comment_user) do %><%= @comment_user.full_name %><% end %></div>
         <% end %>
         <div class="timestamp"><%= comment.created_at.to_date.to_formatted_s( :long_ordinal ) %></div>
-        <div class="content"><%= simple_format raw Rinku.auto_link(comment.content, :all, 'target="_blank"') %></div>
+        <div class="content minimize-500"><%= simple_format raw Rinku.auto_link(comment.content, :all, 'target="_blank"') %></div>
         <% if current_user.id == comment.user_id %>
           <%= link_to [@commentable, comment], :confirm => 'Are you sure you want to remove this comment? This cannot be undone.', :action => "destroy", :method => :delete, :remote => true do %>
             <div class="delete"></div>
