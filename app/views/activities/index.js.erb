@@ -1,4 +1,4 @@
-<% @activities = Activity.where.not(user_id: current_user.id).order("created_at desc").page(params[:page]).per(5) %>
+<% @activities = Activity.order("created_at desc").where("trackable_id IN (?)", @trackableIDs).where.not(:user_id => current_user.id).page(params[:page]).per(5) %>
 $('#notify').empty();
 $('#notify').append('<%= escape_javascript(render :partial => 'layouts/activity', :collection => @activities) %>');
 

@@ -64,9 +64,6 @@
 
                           <% end %>
                           <%-### end of Checking for Post with File.%>
-
-
-
                     </div>
               <% end %>
               <%-### end of checking if Post Exsist%>
@@ -76,7 +73,6 @@
 
         <% end %>
         <%-### end of checking for Posts that are in the Unique list or not%>
-
 
   <% elsif user_comment.commentable_type == "Assignment"  %>
 
@@ -134,7 +130,7 @@
 
 
 
-  <% elsif user_comment.commentable_type == "UserAssignment"  %>
+  <% elsif user_comment.commentable_type == "UserAssignment" %>
 
 
     <%-#Creating a list of Assignments that the current User Created %>
@@ -195,7 +191,7 @@
       <%-### end of checking for Assignments that are in the Unique list or not%>
 
 
-  <% elsif user_comment.commentable_type == "Event"  %>
+  <% elsif user_comment.commentable_type == "Event" %>
       <%-### Now we create a list of Unique Event IDs %>
       <% listOfEvents = Event.all %>
       <% listOfEvents = listOfEvents.uniq %>
