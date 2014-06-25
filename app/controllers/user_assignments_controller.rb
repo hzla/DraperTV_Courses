@@ -41,7 +41,7 @@ class UserAssignmentsController < ApplicationController
         format.html { redirect_to :back }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { redirect_to :back }
         format.json { render }
       end
     end
