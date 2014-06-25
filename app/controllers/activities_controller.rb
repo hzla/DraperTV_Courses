@@ -8,18 +8,29 @@ class ActivitiesController < ApplicationController
     @comments = UserComment.all
 
     #Creating a list of objects that the current user have COMMENTED on
-     @commentableIDs = []
+
+  @commentableIDs = []
      @comments.each do |com|
-       if com.user_id ==  current_user.id
          @commentableIDs << com.commentable_id
-       end
+
+     end
+     @posts.each do |post|
+         @commentableIDs << post.id
      end
 
-     @posts.each do |post|
-       if post.user_id ==  current_user.id
-         @commentableIDs << post.id
-       end
-     end
+
+     # @commentableIDs = []
+     # @comments.each do |com|
+     #   if com.user_id ==  current_user.id
+     #     @commentableIDs << com.commentable_id
+     #   end
+     # end
+
+     # @posts.each do |post|
+     #   if post.user_id ==  current_user.id
+     #     @commentableIDs << post.id
+     #   end
+     # end
 
     #End of the list that contains Object Ids that this User commented on
 
