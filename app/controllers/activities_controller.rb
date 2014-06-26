@@ -19,6 +19,16 @@ class ActivitiesController < ApplicationController
          @commentableIDs << post.id
        end
      end
+      UserAssignment.all.each do |uassignment|
+       if uassignment.user_id ==  current_user.id
+         @commentableIDs << uassignment.id
+       end
+     end
+      Event.all.each do |event|
+       if event.user_id ==  current_user.id
+         @commentableIDs << uassignment.id
+       end
+     end
      @commentableIDs = @commentableIDs.uniq
 
   @trackableIDs = []
