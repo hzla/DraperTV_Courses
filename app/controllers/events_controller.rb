@@ -58,10 +58,10 @@ class EventsController < ApplicationController
 
   def eventEmail(event)
     if DateTime.now.to_date == @event.start_time.to_date || DateTime.tomorrow.to_date == @event.start_time.to_date
-      ReminderMailer.delay(queue: "#{@event.name}_letter", run_at: 1.seconds.from_now).events_reminder(@event)
+      #ReminderMailer.delay(queue: "#{@event.name}_letter", run_at: 1.seconds.from_now).events_reminder(@event)
     else
       time = @event.start_time.to_date - 24.hours
-      ReminderMailer.delay(queue: "#{@event.name}_letter", run_at: time).events_reminder(@event)
+      #ReminderMailer.delay(queue: "#{@event.name}_letter", run_at: time).events_reminder(@event)
     end
   end
   # PUT /events/1
