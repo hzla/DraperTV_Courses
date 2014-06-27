@@ -3,11 +3,9 @@ ActiveAdmin.register Assignment do
     column :id
     column :course
     column :title
-    column :description
     column :category
     column :req_online
     column :req_boarding
-    column :require_upload
 
     default_actions
   end
@@ -16,6 +14,7 @@ ActiveAdmin.register Assignment do
    f.inputs "Assignment Details" do
      f.inputs :course
      f.inputs :title
+     f.inputs :description
      f.inputs :req_online, as: :select, collection: ['required', 'optional']
      f.inputs :req_boarding
      f.inputs :question_text
