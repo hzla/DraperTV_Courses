@@ -555,8 +555,6 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   simple_calendar (~> 0.1.9)
   simple_form
-  sprockets
-  sprockets-rails
   stripe
   survey!
   thin
