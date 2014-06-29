@@ -13,7 +13,7 @@ CONFIG.symbolize_keys!
 
 module OnlineSchool
   class Application < Rails::Application
-
+    config.middleware.use Rack::Deflater
     #Mounting a rack App! which is the email tracker library, it's counted as a rackapp
     require Rails.root.join('lib', 'email_tracker', 'rack')
     config.middleware.use EmailTracker::Rack
