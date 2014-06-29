@@ -8,6 +8,8 @@ gem 'jquery-turbolinks'
 gem 'nprogress-rails'
 gem 'rails_12factor', group: :production
 gem 'delayed_job_active_record'
+gem 'sprockets'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
