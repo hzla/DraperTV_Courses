@@ -66,10 +66,26 @@
             </span>
             <p class="response"><%= best_in_place @user_assignment.first, :question_response, :type => :textarea, :class => 'best_in_place' %></p>
           </div>
+
+          <%-#++++++ Start: Commenting for the Current User Assignments  +++++++%>
+          <% @ctable = @user_assignment.first %>
+         <% @c = @user_assignment.first %>
+          <div id="comments_section">
+            <div id="comments_container" style="width: 85%; margin-top: 0; padding: 0;">
+              <div id="<%= @c.id %>">
+                <%= render "user_comments/uaCommentCurrentUser",  c: @c %>
+              </div>
+              <div id="submit-<%= @c.id %>" style="margin-left: 20px;">
+                <%= render "user_comments/addcomment_uac",  c: @c %>
+              </div>
+            </div>
+          </div>
+          <%-#++++++ End: Commenting for the Current User Assignments  +++++++%>
+
         </div>
         <div class="line"></div>
         <% @completed.where("user_id NOT IN (?)", User.where(:role => "admin").pluck(:id)).each do |c| %>
-          <div class="student-response">
+         <div class="student-response">
             <div class="picture"><%= image_tag(User.find(c.user_id).avatar(:medium)) %></div>
             <div class="info">
               <div class="name">
@@ -86,6 +102,22 @@
               <p class="response minimize"><%= simple_format(c.question_response) %></p>
             </div>
           </div>
+
+          <%-#++++++ Start: Commenting for the Other Student User Assignments  +++++++%>
+          <% @ctable = c %>
+          <% @c = c %>
+          <div id="comments_section">
+            <div id="comments_container" style="width: 85%; margin-top: 0; padding: 0;">
+              <div id="<%= c.id %>">
+                <%= render "user_comments/uaCommentOtherUser",  c: @c %>
+              </div>
+              <div id="submit-<%= c.id %>" style="margin-left: 20px;">
+                <%= render "user_comments/addcomment_uac",  c: @c %>
+              </div>
+            </div> <!-- Other Students Comments -->
+          </div>
+          <%-#++++++ End: Commenting for the Other Student User Assignments  +++++++%>
+
         <% end %>
 
         <% if current_user.role == "admin" %>
@@ -297,6 +329,47 @@
               <% end %>
             <% end %>
           </div>
+
+        <div class ="section-bar" style="margin-bottom: 10px;">Responses from other Heroes </div>
+        <%-#++++++ Other Student Uploads & Responses  +++++++%>
+        <% UserAssignment.where(:assignment_id => @assignment.id).where.not(user_id: current_user.id).where("user_id NOT IN (?)", User.where(:role => "admin").pluck(:id)).each do |user_assignment| %>
+         <div class="student-response">
+            <div class="picture"><%= image_tag(User.find(user_assignment.user_id).avatar(:medium)) %></div>
+            <div class="info">
+              <div class="name">
+                <%= link_to student_profile_path(User.find(user_assignment.user_id)) do %>
+                  <%= User.find(user_assignment.user_id).full_name %>
+                <% end %>
+              </div>
+
+              <% @user_assignment = user_assignment %>
+          <div class="upload_show">
+            <div class ="section-bar" style="margin-bottom: 10px;">Response </div>
+            <a id="upload-form" data-toggle="modal" href="#complete-upload-form" data-backdrop="false">Edit Response</a>
+            <p><%= raw(@user_assignment.text) %></p>
+            <br />
+            <% if @assignment.category == "upload" %>
+              <div class ="section-bar" style="margin-bottom: 10px; margin-top: 0;">Uploads</div>
+            <% end %>
+            <% if @user_assignment.link != nil %>
+              <p><%= link_to "File Link", "#{@user_assignment.link}", target: "_blank", :class => "link-button-yellow" %></p><br/>
+            <% end %>
+            <br />
+            <% if @user_assignment.upload_file_name != nil %>
+              <% if @user_assignment.upload_content_type == 'image/jpeg' or @user_assignment.upload_content_type == 'image/png' or @user_assignment.upload_content_type == 'image/gif' %>
+                <%= image_tag(@user_assignment.upload) %>
+              <% elsif @user_assignment.upload_content_type == '' %>
+              <% else %>
+              <%= link_to "Download File", "#{@user_assignment.upload}", :class => "download-button-blue" %>
+              <% end %>
+            <% end %>
+          </div>
+
+            </div>
+          </div>
+        <% end %>
+
+
         <% else %>
           <%= render 'upload' %>
         <% end %>
@@ -381,13 +454,16 @@
   </div>
 <% else %>
   <div class="column-right">
+    <%-#++++++ @commentable have to re-assigned otherwise  +++++++%>
+    <%-#++++++ it will pick up the other 2 commentings partial @commentables  +++++++%>
+    <% @commentable = @assignment %>
     <div class="col-right-top-section">
       <h3>Discussion</h3>
     </div>
     <div class="col-right-comments">
       <div id="comments_container">
         <div id="<%= @assignment.id %>">
-          <%= render "user_comments/comments" %>
+          <%= render "user_comments/assingmentCommentSiderbar" %>
         </div>
       </div>
     </div><!-- col-right-comments -->
@@ -398,45 +474,6 @@
 <% end %>
 
 
-<script type ="text/javascript">
-$(function() {
-
-  $("#complete-video-form").submit(function(e) {
-    if ($.trim($("textarea#user_assignment_question_response").val()).length == 0)
-      {
-        $("#warning").text("Your Response Can't Be Empty");
-        e.preventDefault();
-        return  false;
-      }
-
-    else if ($.trim($("textarea#user_assignment_question_response").val()).length < 300)
-      {
-        $("#warning").text("Your Response Can't Be Less Than 300 Characters");
-        e.preventDefault();
-        return  false;
-      }
-    else if ($.trim($("textarea#user_assignment_question_response").val()).length > 300)
-      {
-      var frm = $("form#edit_user_assignment_<%= @assignment.id %>");
-      jQuery.ajax(
-        {
-            url: frm.attr("action"),
-            data: frm.serialize(),
-            complete: function(){
-              frm.submit();
-             },
-            dataType: "json"
-        });
-      }
-    });
-
-    // Took out textarea resize because it was hiding the submit button
-    // $(document).ready(function(){
-    //   $("textarea#user_assignment_question_response").autosize();
-    // });
-
- });
-</script>
 
 
 

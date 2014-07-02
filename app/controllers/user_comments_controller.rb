@@ -83,6 +83,7 @@ class UserCommentsController < ApplicationController
           elsif @comment.commentable_type == "UserAssignment"
             @comments = @commentable.user_comments.order('created_at asc')
             @user_assignment = UserAssignment.where(:id => @comment.commentable_id).first
+            @ctable = @commentable
             respond_to do |format|
               format.html {  }
               format.js { render :commentUA }

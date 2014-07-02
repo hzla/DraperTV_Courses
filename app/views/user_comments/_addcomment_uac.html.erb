@@ -1,0 +1,39 @@
+<div id="comment_form">
+  <%= simple_form_for [@ctable, @comment], :remote => true do |f| %>
+    <%= f.input :content, label: false, :placeholder => "Add Comment", :input_html => { :rows => 4, :id => "comment-#{@c.user_id}" } %>
+    <!--<%= f.submit "Add Comment" %>-->
+  <% end %>
+</div>
+
+
+
+<script type ="text/javascript">
+  $(function() {
+    $("textarea#comment-<%= @c.user_id %>").keypress(function (e) {
+        if(e.which == 13) {
+          if (e.shiftKey === true) {
+            //new line
+          }
+          else {
+            if ($.trim($("textarea#comment-<%= @c.user_id %>").val()).length > 0){
+            e.preventDefault();
+            var frm = $(this).closest("form");
+            jQuery.ajax({
+                          url: frm.attr("action"),
+                          data: frm.serialize(),
+                          complete: function(){
+                            frm.submit();
+                            $("textarea#comment-<%= @c.user_id %>").val(null);
+                           },
+                          dataType: "json"
+                      });
+            }
+          }
+        }
+    });
+  });
+
+  $(document).ready(function(){
+      $('textarea#comment-<%= @c.user_id %>').autosize();
+  });
+</script>
