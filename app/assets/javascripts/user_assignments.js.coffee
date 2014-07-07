@@ -22,9 +22,3 @@ $ ->
     return
 
   return
-
-
-# Took out textarea resize because it was hiding the submit button
-# $(document).ready(function(){
-#   $("textarea#user_assignment_question_response").autosize();
-# });

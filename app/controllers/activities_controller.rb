@@ -26,7 +26,7 @@ class ActivitiesController < ApplicationController
      end
       Event.all.each do |event|
        if event.user_id ==  current_user.id
-         @commentableIDs << uassignment.id
+         @commentableIDs << event.id
        end
      end
      @commentableIDs = @commentableIDs.uniq
@@ -35,9 +35,12 @@ class ActivitiesController < ApplicationController
     @activities.each do |activity|
       @trackable = activity.trackable_type
       arr = eval(@trackable)
+      if UserComment.where(:id => activity.trackable_id).first.nil?
+      else
       if @commentableIDs.include? UserComment.where(:id => activity.trackable_id).first.commentable_id
          @trackableIDs << activity.trackable_id
        end
+      end
     end
 
     @activities = Activity.order("created_at desc").where("trackable_id IN (?)", @trackableIDs).where.not(:user_id => current_user.id).page(params[:page]).per(10).includes(:trackable)
