@@ -35,7 +35,7 @@ class ActivitiesController < ApplicationController
     @activities.each do |activity|
       @trackable = activity.trackable_type
       arr = eval(@trackable)
-      if UserComment.where(:id => activity.trackable_id).first.commentable_id.nil?
+      if UserComment.where(:id => activity.trackable_id).first.nil?
       else
       if @commentableIDs.include? UserComment.where(:id => activity.trackable_id).first.commentable_id
          @trackableIDs << activity.trackable_id
