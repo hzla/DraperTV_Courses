@@ -67,6 +67,8 @@ OnlineSchool::Application.routes.draw do
 
   ##### GET #####
   get 'workreport', to: 'users#workreport', via: :all
+  get 'workreport2', to: 'users#workreport2', via: :all
+
   get 'activity', to: 'activity_feeds#index', as: :feed
   get 'notifications', to: 'activities#index', via: :all
   get 'feedback', to: 'feedbacks#index'

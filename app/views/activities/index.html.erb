@@ -6,15 +6,19 @@
   </div><!-- row -->
 </div>
 
-<div class="column-main">
-	<div id="Activities">
-		<% @activities.each do |activity| %>
-		  <%= ActivityPresenter.new(activity, self).render_activity %>
-		<% end %>
-    <%= paginate @activities %>
-	</div>
 
-</div> <!-- column-main -->
+  <div class="column-main">
+   <div id="Activities">
+        <ul id="sushi">
+          <%= render @activities %>
+        </ul><!-- activites -->
+  </div>
+  <%= paginate @activities %>
+  </div><!-- column-main -->
+
+
+
+<!-- sushi -->
 
 <div class="column-right">
   <div class="col-right-top-section">

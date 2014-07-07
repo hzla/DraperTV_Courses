@@ -2,7 +2,7 @@
 <% if user_comment %>
 
   <%-#++++++ Checking the type of the current user Comment Object  +++++++%>
-  <% if user_comment.commentable_type == "Post" && user_comment.user_id != current_user.id %>
+  <% if user_comment.commentable_type == "Post" %>
         <%-### Now we create a list of Unique Post IDs %>
 
         <%-## Now checking if there are any NEW Posts that are Commented on while the CURRENT user can relate to, so that it can show up their FEED %>
@@ -74,7 +74,7 @@
         <% end %>
         <%-### end of checking for Posts that are in the Unique list or not%>
 
-  <% elsif user_comment.commentable_type == "Assignment" && user_comment.user_id != current_user.id  %>
+  <% elsif user_comment.commentable_type == "Assignment"  %>
 
 
     <%-#Creating a list of Assignments that the current User Created %>
@@ -130,7 +130,7 @@
 
 
 
-  <% elsif user_comment.commentable_type == "UserAssignment" && user_comment.user_id != current_user.id %>
+  <% elsif user_comment.commentable_type == "UserAssignment" %>
 
 
     <%-#Creating a list of Assignments that the current User Created %>
@@ -191,7 +191,7 @@
       <%-### end of checking for Assignments that are in the Unique list or not%>
 
 
-  <% elsif user_comment.commentable_type == "Event" && user_comment.user_id != current_user.id %>
+  <% elsif user_comment.commentable_type == "Event" %>
       <%-### Now we create a list of Unique Event IDs %>
       <% listOfEvents = Event.all %>
       <% listOfEvents = listOfEvents.uniq %>
