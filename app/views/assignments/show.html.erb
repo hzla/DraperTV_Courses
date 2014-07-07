@@ -24,7 +24,7 @@
       <br/>
       <!-- ** completed assignment ** -->
       <% if @assignment.complete_for_user?(current_user) %>
-        <%  @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
+        <% @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
 
         <!-- Track user assignment, mark as complete, update point value -->
         <% if @user_assignment.first.complete == false %>
@@ -46,7 +46,7 @@
         <br/><br/>
         <div class="line" style="background: white;"></div>
         <h2 style="line-height: 1.2;">Tim's Takeaway</h2>
-        <p class="minimize-500"><%= @assignment.question_duh_response %></p>
+        <p class="minimize"><%= @assignment.question_duh_response %></p>
         <br/>
         <div class="line"></div>
         <div class="student-response">
@@ -61,39 +61,31 @@
               <i class="fa fa-star"></i>
               <% i += 1 %>
             <% end %>
-            <% n = 5 - i %>
-            <% while n > 0 do %>
-              <i class="fa fa-star" style="color: #ccc;"></i>
-              <% n -= 1 %>
-            <% end %>
             <span style="margin-left: 10px;">
               <a id="video-form" data-toggle="modal" href="#complete-video-form" data-backdrop="false">Edit Response</a>
             </span>
             <p class="response"><%= best_in_place @user_assignment.first, :question_response, :type => :textarea, :class => 'best_in_place' %></p>
           </div>
 
-          <%-#++++++ Start: Commenting for the Current User Assignments  +++++++%>
+          <%-#++++++ Start: Commenting for the Current User Assignments +++++++%>
           <% @ctable = @user_assignment.first %>
          <% @c = @user_assignment.first %>
           <div id="comments_section">
             <div id="comments_container" style="width: 85%; margin-top: 0; padding: 0;">
               <div id="<%= @c.id %>">
-                <%= render "user_comments/uaCommentCurrentUser",  c: @c %>
+                <%= render "user_comments/uaCommentCurrentUser", c: @c %>
               </div>
               <div id="submit-<%= @c.id %>" style="margin-left: 20px;">
-                <%= render "user_comments/addcomment_uac",  c: @c %>
+                <%= render "user_comments/addcomment_uac", c: @c %>
               </div>
             </div>
           </div>
-          <%-#++++++ End: Commenting for the Current User Assignments  +++++++%>
+          <%-#++++++ End: Commenting for the Current User Assignments +++++++%>
 
         </div>
         <div class="line"></div>
         <% @completed.where("user_id NOT IN (?)", User.where(:role => "admin").pluck(:id)).each do |c| %>
-          <%= @completed.count %>
-          <% @user_assignment = c %>
-          <% @c_user = User.find(c.user_id) %>
-          <div class="student-response">
+         <div class="student-response">
             <div class="picture"><%= image_tag(User.find(c.user_id).avatar(:medium)) %></div>
             <div class="info">
               <div class="name">
@@ -107,31 +99,24 @@
                 <i class="fa fa-star"></i>
                 <% i += 1 %>
               <% end %>
+              <p class="response minimize"><%= simple_format(c.question_response) %></p>
+            </div>
+          </div>
 
-              <% n = 5 - i %>
-              <% while n > 0 do %>
-                <i class="fa fa-star" style="color: #ccc;"></i>
-                <% n -= 1 %>
-              <% end %>
-              <p class="response minimize-500"><%= sanitize c.question_response %></p>
-            </div><!-- info -->
-          </div><!-- student-response -->
-
-          <%-#++++++ Start: Commenting for the Other Student User Assignments  +++++++%>
+          <%-#++++++ Start: Commenting for the Other Student User Assignments +++++++%>
           <% @ctable = c %>
           <% @c = c %>
           <div id="comments_section">
             <div id="comments_container" style="width: 85%; margin-top: 0; padding: 0;">
               <div id="<%= c.id %>">
-                <%= render "user_comments/uaCommentOtherUser",  c: @c %>
+                <%= render "user_comments/uaCommentOtherUser", c: @c %>
               </div>
               <div id="submit-<%= c.id %>" style="margin-left: 20px;">
-                <%= render "user_comments/addcomment_uac",  c: @c %>
+                <%= render "user_comments/addcomment_uac", c: @c %>
               </div>
             </div> <!-- Other Students Comments -->
           </div>
-          <%-#++++++ End: Commenting for the Other Student User Assignments  +++++++%>
-
+          <%-#++++++ End: Commenting for the Other Student User Assignments +++++++%>
 
         <% end %>
 
@@ -174,6 +159,7 @@
               <p><%= simple_format(@assignment.description) %></p>
             <% end %>
           </div>
+
 
 
         <% if current_user.role == "admin" %>
@@ -240,7 +226,7 @@
       <% else %>
         <div class="quiz-score">
         <% if @assignment.complete_for_user?(current_user) %>
-          <%  @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
+          <% @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
           <% if @user_assignment.first.complete == false %>
             <% track_activity_feed @user_assignment.first %>
             <% @user_assignment.first.update_column(:complete, true) %>
@@ -248,9 +234,9 @@
           <% end %>
          <% end %>
           <p style="font-size: 20px; color: #333; font-weight lighter; margin-bottom: 10px;">You got <%= @quiz_high_score %> out of <%= @quiz_total_questions %> questions correct</p>
-         <!--  <%= @quiz_ratio %>
-          <br />
-          <br /> -->
+         <!-- <%= @quiz_ratio %>
+<br />
+<br /> -->
           <!-- ** Show quiz answers ** -->
           <% if current_user.role == "boarding" %>
           <% else %>
@@ -289,7 +275,7 @@
 
     <% end %>
     <!-- ******** UPLOAD ******* -->
-    <%  @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
+    <% @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
     <% if @assignment.require_upload == true %>
       <% if @assignment.user_assignments.where(:user_id => current_user[:id]).count > 0 %>
         <% if @user_assignment.first.text != nil %>
@@ -344,10 +330,11 @@
             <% end %>
           </div>
 
-
         <div class ="section-bar" style="margin-bottom: 10px;">Responses from other Heroes </div>
-        <%-#++++++ Other Student Uploads & Responses  +++++++%>
+        <%-#++++++ Other Student Uploads & Responses +++++++%>
         <% UserAssignment.where(:assignment_id => @assignment.id).where.not(user_id: current_user.id).where("user_id NOT IN (?)", User.where(:role => "admin").pluck(:id)).each do |user_assignment| %>
+        <% if User.where(:id => user_assignment.user_id).first.nil? %>
+        <% else %>
          <div class="student-response">
             <div class="picture"><%= image_tag(User.find(user_assignment.user_id).avatar(:medium)) %></div>
             <div class="info">
@@ -357,7 +344,7 @@
                 <% end %>
               </div>
 
-              <% @user_assignment = user_assignment %>
+          <% @user_assignment = user_assignment %>
           <div class="upload_show">
             <div class ="section-bar" style="margin-bottom: 10px;">Response </div>
             <a id="upload-form" data-toggle="modal" href="#complete-upload-form" data-backdrop="false">Edit Response</a>
@@ -382,7 +369,10 @@
 
             </div>
           </div>
+
         <% end %>
+        <% end %>
+
 
         <% else %>
           <%= render 'upload' %>
@@ -410,7 +400,7 @@
 <!-- ************************************** -->
 <!-- **** MARK AS COMPLETE MODAL FORM ***** -->
 <!-- ************************************** -->
-<%  @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
+<% @user_assignment = UserAssignment.where(:user_id => current_user[:id],:assignment_id => @assignment.id) %>
 
  <div id="complete-video-form" class="modal hide fade" tabindex="1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div style="padding: 30px;">
@@ -420,7 +410,7 @@
         <h2>Complete <%= @assignment.title %></h2><br/>
         <div class="title">Please rate this lecture from one to five stars, where five is the best.</div>
         <fieldset class="rating" required="required">
-          <%= f.radio_button("rating", 5,  id: "star5") %>
+          <%= f.radio_button("rating", 5, id: "star5") %>
            <label for="star5" title="Rocks!"></label>
           <%= f.radio_button("rating", 4, checked: false, id: "star4") %>
           <label for="star4" title="Great"></label>
@@ -459,7 +449,7 @@
 </div>
 
 <!-- ************************ -->
-<!-- **** COLUMN RIGHT  ***** -->
+<!-- **** COLUMN RIGHT ***** -->
 <!-- ************************ -->
 
 <% if @assignment.category == "quiz" %>
@@ -468,8 +458,8 @@
   </div>
 <% else %>
   <div class="column-right">
-    <%-#++++++ @commentable have to re-assigned otherwise  +++++++%>
-    <%-#++++++ it will pick up the other 2 commentings partial @commentables  +++++++%>
+    <%-#++++++ @commentable have to re-assigned otherwise +++++++%>
+    <%-#++++++ it will pick up the other 2 commentings partial @commentables +++++++%>
     <% @commentable = @assignment %>
     <div class="col-right-top-section">
       <h3>Discussion</h3>
@@ -486,6 +476,4 @@
     </div><!-- col-right-addcomment -->
   </div><!-- column-right -->
 <% end %>
-
-
 

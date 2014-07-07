@@ -16,7 +16,7 @@ class AssignmentsController < ApplicationController
     @ua = UserAssignment.where(:assignment_id => @assignment.id).where(:complete => true)
 
     @completed = UserAssignment.where(:assignment_id => @assignment.id).where("rating is not null").where.not(user_id: current_user.id)
-    @upload_complete = UserAssignment.where(:assignment_id => @assignment.id).first.where(:text != nil)
+    # @upload_complete = UserAssignment.where(:assignment_id => @assignment.id).first.where(:text != nil)
 
 		if @assignment.category == "video" or @assignment.category == "reading" or @assignment.category == "founder"
 		  oembed = "http://vimeo.com/api/oembed.json?url=http%3A//vimeo.com/" + @assignment.vimeo_url + '&autoplay=1'
