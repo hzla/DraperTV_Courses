@@ -2,7 +2,7 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: duh_development
+  database: DBTestNEW
   template: template0
   pool: 5
   timeout: 5000

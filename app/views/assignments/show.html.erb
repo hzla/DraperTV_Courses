@@ -309,20 +309,6 @@
                   </tr>
                 </table>
             </div>
-          <%-#++++++ Start: Commenting for the Current User Assignments +++++++%>
-          <% @ctable = @user_assignment.first %>
-         <% @c = @user_assignment.first %>
-          <div id="comments_section">
-            <div id="comments_container" style="width: 85%; margin-top: 0; padding: 0;">
-              <div id="<%= @c.id %>">
-                <%= render "user_comments/uaCommentCurrentUser", c: @c %>
-              </div>
-              <div id="submit-<%= @c.id %>" style="margin-left: 20px;">
-                <%= render "user_comments/addcomment_uac", c: @c %>
-              </div>
-            </div>
-          </div>
-          <%-#++++++ End: Commenting for the Current User Assignments +++++++%>
 
             <div class ="section-bar" style="margin-bottom: 10px;">Response </div>
             <a id="upload-form" data-toggle="modal" href="#complete-upload-form" data-backdrop="false">Edit Response</a>
@@ -343,11 +329,26 @@
               <%= link_to "Download File", "#{@user_assignment.first.upload}", :class => "download-button-blue" %>
               <% end %>
             <% end %>
+
+          <%-#++++++ Start: Commenting for the Current User Assignments +++++++%>
+          <% @ctable = @user_assignment.first %>
+         <% @c = @user_assignment.first %>
+          <div id="comments_section">
+            <div id="comments_container" style="width: 85%; margin-top: 0; padding: 0;">
+              <div id="<%= @c.id %>">
+                <%= render "user_comments/uaCommentCurrentUser", c: @c %>
+              </div>
+              <div id="submit-<%= @c.id %>" style="margin-left: 20px;">
+                <%= render "user_comments/addcomment_uac", c: @c %>
+              </div>
+            </div>
+          </div>
+          <%-#++++++ End: Commenting for the Current User Assignments +++++++%>
           </div>
 
         <div class ="section-bar" style="margin-bottom: 10px;">Responses from other Heroes </div>
         <%-#++++++ Other Student Uploads & Responses +++++++%>
-        <% UserAssignment.where(:assignment_id => @assignment.id).where.not(user_id: current_user.id).where("user_id NOT IN (?)", User.where(:role => "admin").pluck(:id)).each do |user_assignment| %>
+        <% UserAssignment.where(:assignment_id => @assignment.id, :complete => true).where.not(user_id: current_user.id).where("user_id NOT IN (?)", User.where(:role => "admin").pluck(:id)).each do |user_assignment| %>
         <% if User.where(:id => user_assignment.user_id).first.nil? %>
         <% else %>
          <div class="student-response">
@@ -361,28 +362,30 @@
 
           <% @user_assignment = user_assignment %>
           <div class="upload_show">
-            <div class ="section-bar" style="margin-bottom: 10px;">Response </div>
-            <a id="upload-form" data-toggle="modal" href="#complete-upload-form" data-backdrop="false">Edit Response</a>
+            <!-- <div class ="section-bar" style="margin-bottom: 10px;">Response </div> -->
+
             <p><%= raw(@user_assignment.text) %></p>
             <br />
             <% if @assignment.category == "upload" %>
-              <div class ="section-bar" style="margin-bottom: 10px; margin-top: 0;">Uploads</div>
+              <!-- <div class ="section-bar" style="margin-bottom: 10px; margin-top: 0;">Uploads</div> -->
             <% end %>
             <% if @user_assignment.link != nil %>
               <p><%= link_to "File Link", "#{@user_assignment.link}", target: "_blank", :class => "link-button-yellow" %></p><br/>
             <% end %>
             <br />
             <% if @user_assignment.upload_file_name != nil %>
-              <% if @user_assignment.upload_content_type == 'image/jpeg' or @user_assignment.upload_content_type == 'image/png' or @user_assignment.upload_content_type == 'image/gif' %>
               <p><%= link_to "Show Image", "#{@user_assignment.upload}", target: "_blank", :class => "link-button-yellow" %></p><br/>
+             <!--  <% if @user_assignment.upload_content_type == 'image/jpeg' or @user_assignment.upload_content_type == 'image/png' or @user_assignment.upload_content_type == 'image/gif' %>
+
               <% elsif @user_assignment.upload_content_type == '' %>
               <% else %>
               <%= link_to "Download File", "#{@user_assignment.upload}", :class => "download-button-blue" %>
-              <% end %>
+              <% end %> -->
             <% end %>
           </div>
 
             </div>
+            <br>
           <%-#++++++ Start: Commenting for the Other Student User Assignments +++++++%>
           <% @ctable = user_assignment %>
           <% @c = user_assignment %>
