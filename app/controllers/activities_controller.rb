@@ -26,7 +26,7 @@ class ActivitiesController < ApplicationController
      end
       Event.all.each do |event|
        if event.user_id ==  current_user.id
-         @commentableIDs << uassignment.id
+         @commentableIDs << event.id
        end
      end
      @commentableIDs = @commentableIDs.uniq
