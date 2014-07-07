@@ -309,6 +309,21 @@
                   </tr>
                 </table>
             </div>
+          <%-#++++++ Start: Commenting for the Current User Assignments +++++++%>
+          <% @ctable = @user_assignment.first %>
+         <% @c = @user_assignment.first %>
+          <div id="comments_section">
+            <div id="comments_container" style="width: 85%; margin-top: 0; padding: 0;">
+              <div id="<%= @c.id %>">
+                <%= render "user_comments/uaCommentCurrentUser", c: @c %>
+              </div>
+              <div id="submit-<%= @c.id %>" style="margin-left: 20px;">
+                <%= render "user_comments/addcomment_uac", c: @c %>
+              </div>
+            </div>
+          </div>
+          <%-#++++++ End: Commenting for the Current User Assignments +++++++%>
+
             <div class ="section-bar" style="margin-bottom: 10px;">Response </div>
             <a id="upload-form" data-toggle="modal" href="#complete-upload-form" data-backdrop="false">Edit Response</a>
             <p><%= raw(@user_assignment.first.text) %></p>
@@ -359,7 +374,7 @@
             <br />
             <% if @user_assignment.upload_file_name != nil %>
               <% if @user_assignment.upload_content_type == 'image/jpeg' or @user_assignment.upload_content_type == 'image/png' or @user_assignment.upload_content_type == 'image/gif' %>
-                <%= image_tag(@user_assignment.upload) %>
+              <p><%= link_to "Show Image", "#{@user_assignment.upload}", target: "_blank", :class => "link-button-yellow" %></p><br/>
               <% elsif @user_assignment.upload_content_type == '' %>
               <% else %>
               <%= link_to "Download File", "#{@user_assignment.upload}", :class => "download-button-blue" %>
@@ -368,6 +383,20 @@
           </div>
 
             </div>
+          <%-#++++++ Start: Commenting for the Other Student User Assignments +++++++%>
+          <% @ctable = user_assignment %>
+          <% @c = user_assignment %>
+          <div id="comments_section">
+            <div id="comments_container" style="width: 85%; margin-top: 0; padding: 0;">
+              <div id="<%= user_assignment.id %>">
+                <%= render "user_comments/uaCommentOtherUser", c: @c %>
+              </div>
+              <div id="submit-<%= user_assignment.id %>" style="margin-left: 20px;">
+                <%= render "user_comments/addcomment_uac", c: @c %>
+              </div>
+            </div> <!-- Other Students Comments -->
+          </div>
+          <%-#++++++ End: Commenting for the Other Student User Assignments +++++++%>
           </div>
 
         <% end %>

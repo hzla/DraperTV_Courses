@@ -37,10 +37,11 @@ class ActivitiesController < ApplicationController
       arr = eval(@trackable)
       if UserComment.where(:id => activity.trackable_id).first.nil?
       else
-      if @commentableIDs.include? UserComment.where(:id => activity.trackable_id).first.commentable_id
-         @trackableIDs << activity.trackable_id
-       end
+        if @commentableIDs.include? UserComment.where(:id => activity.trackable_id).first.commentable_id
+           @trackableIDs << activity.trackable_id
+         end
       end
+
     end
 
     @activities = Activity.order("created_at desc").where("trackable_id IN (?)", @trackableIDs).where.not(:user_id => current_user.id).page(params[:page]).per(10).includes(:trackable)
