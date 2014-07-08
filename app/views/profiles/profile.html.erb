@@ -158,7 +158,9 @@
                       <%= image_tag(assignment.speaker_pic) %>
                     </div>
                     <div class="text-section">
-                      <div class="title"><%= assignment.title %></div>
+                    <%= link_to(assignment_path(assignment)) do %>
+                      <div class="title" style="color:#246db4;"><%= assignment.title %></div>
+                    <% end %>
                       <div class="description"><%= sanitize(simple_format(assignment.user_assignments.where(:user_id => @user[:id]).first.text)) %></div>
                     </div><!-- Text Section -->
                     <div class="button-section">
@@ -171,14 +173,6 @@
                       <% end %>
                     </div><!-- Button Section -->
                   </div><!-- Section -->
-                  <div id="comments_container">
-                    <div id="<%= assignment.user_assignments.where(:user_id => @user[:id]).first.id %>">
-                      <%= render "user_comments/comments" %>
-                    </div>
-                    <div id="submit-<%=assignment.user_assignments.where(:user_id => @user[:id]).first.id %>">
-                      <%= render "user_comments/addcomment" %>
-                    </div>
-                  </div><!-- Comments Container -->
                 </div><!-- Assignments -->
               <% end %>
             <% end %>
@@ -201,16 +195,10 @@
               <div id="milestones">
                 <div class="section">
                   <div class="icon"><%= image_tag(assignment.course.course_icon) %></div>
-                  <div class="description"><%= sanitize(simple_format(assignment.description)) %></div>
+                  <%= link_to(assignment_path(assignment)) do %>
+                    <div class="description" style="color:#246db4;"><%= sanitize(simple_format(assignment.description)) %></div>
+                  <% end %>
                   <div class="response"><%= simple_format(assignment.user_assignments.where(:user_id => @user[:id]).first.text) %></div>
-                  <div id="comments_container">
-                    <div id="<%= assignment.user_assignments.where(:user_id => @user[:id]).first.id %>">
-                      <%= render "user_comments/comments" %>
-                    </div>
-                    <div id="submit-<%=assignment.user_assignments.where(:user_id => @user[:id]).first.id %>">
-                      <%= render "user_comments/addcomment" %>
-                    </div>
-                  </div>
                 </div>
               </div>
             <% end %>
