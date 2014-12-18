@@ -59,9 +59,9 @@ gem 'right_aws'
 
 # Development Only
 group :development do
-	gem 'meta_request'
-	gem 'better_errors'
-	gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'hirb' #use Hirb.enable to enable it / text to Column
   gem 'awesome_print', :require => 'ap'
   gem 'wirble'

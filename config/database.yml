@@ -2,7 +2,7 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: July08
+  database: July28
   template: template0
   pool: 5
   timeout: 5000

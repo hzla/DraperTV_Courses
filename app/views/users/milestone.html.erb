@@ -1,7 +1,6 @@
-
-  <% @uas = UserAssignment.all %>
-  <% @as = Assignment.all %>
-  <% @estudents = User.pluck(:id) %>
+<% @uas = UserAssignment.all %>
+<% @as = Assignment.all %>
+<% @estudents = User.pluck(:id) %>
 
 <br>
 <br>
@@ -14,7 +13,7 @@
   		 <td>Program</td>
 
 
-  		<% @as.each do |assignment| %>
+  		<% @as.where(:category => "milestone").each do |assignment| %>
           <% course = Course.find_by_id(assignment.course_id) %>
 			<td>
 
@@ -32,16 +31,16 @@
 			<td><div class="name"><%= user.online %></div></td>
 
 
-        <% @as.each do |assignment| %>
-        	<td>
+        <% @as.where(:category => "milestone").each do |assignment| %>
+        	<td class="hidetable">
 
 		<% if UserAssignment.where(:assignment_id => assignment.id,:user_id => user.id ).blank? %>
-		 	<i class="fa fa-square-o"></i>0</td>
 		<% else %>
 		<% if UserAssignment.where(:assignment_id => assignment.id,:user_id => user.id ).first.complete == false %>
-					 	<i class="fa fa-square-o"></i>0</td>
 			<% else %>
-				<i class="fa fa-check-square-o">1</i>
+	      <% @user_assignment = UserAssignment.where(:assignment_id => assignment.id,:user_id => user.id).first %>
+				<%= raw(@user_assignment.text) %>
+
 				<div class="name"></div>
 				</td>
 		<% end %>
@@ -55,11 +54,18 @@
 		</tr>
 	<% end %>
 
+
 </table>
 <input type="button" onclick="$('#studentstable').table2CSV()" value="Report into CSV">
 </div>
 
 <script type="text/javascript" src="http://www.kunalbabre.com/projects/table2CSV.js" > </script>
+
+<script type ="text/javascript">
+  $(function() {
+		$('.hidetable').find('table').remove();
+  });
+</script>
 <style type="text/css">
 	.slide
 	{
