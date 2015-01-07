@@ -1,4 +1,4 @@
-<% if @course.course_current? == true or current_user.role == "admin" %>
+<%# if @course.course_current? == true or current_user.role == "admin" %>
 
 	<div class="top-section">
 	  <div class="row">
@@ -174,26 +174,9 @@
 	  </div><!-- col-right-bottom -->
 	</div><!-- column-right -->
 
-<% else %>
-	<div class="top-section">
-	  <div class="row">
-	    <div class="top-column-main">
-	      <div style="width: 100%; position: relative; display; block; padding-left: 20px;">
-	        <h1><%= @course.title %></h1>
-	        <div class="section-right">
-	        	<div class="course-progress">
-	        		<%= @course.progress(current_user).to_i %>%
-	        		<p>Complete</p>
-	        	</div>
-	        </div><!-- button-right -->
-	      </div>
-	    </div><!-- column main -->
-	  </div><!-- row -->
-	</div>
-	<div class="column-main">
-		<p>This course has not started yet!</p>
-	</div>
-<% end %>
+<%# else %>
+
+<%# end %>
 
 
 
