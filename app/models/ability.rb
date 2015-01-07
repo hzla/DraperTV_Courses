@@ -8,7 +8,7 @@ class Ability
     elsif user.role == "registered"
     elsif user.role == "alumni"
     elsif user.role == "active"
-        can :read, :all
+        can :manage, :all
         can :manage, UserComment, :user_id => user.id
         can :manage, User, :id => user.id
         can :manage, UserAssignment, :user_id => user.id
