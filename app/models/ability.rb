@@ -8,14 +8,14 @@ class Ability
     elsif user.role == "registered"
     elsif user.role == "alumni"
     elsif user.role == "active"
-        can :manage, :all
+        can :read, :all
         can :manage, UserComment, :user_id => user.id
         can :manage, User, :id => user.id
         can :manage, UserAssignment, :user_id => user.id
         can :manage, Event, :user_id => user.id
         can :manage, Post, :user_id => user.id
     elsif user.role == "online"
-        can :manage, :all
+        can :read, :all
         can :manage, UserComment
         can :manage, User, :id => user.id
         can :manage, UserAssignment, :user_id => user.id
@@ -23,7 +23,7 @@ class Ability
         can :manage, Post, :user_id => user.id
         can :manage, Assignment
     elsif user.role == "boarding"
-        can :manage, :all
+        can :read, :all
         can :manage, UserComment
         can :manage, User, :id => user.id
         can :manage, UserAssignment, :user_id => user.id
