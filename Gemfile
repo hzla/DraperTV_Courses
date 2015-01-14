@@ -117,6 +117,7 @@ group :development, :test do
   gem "database_cleaner", '1.0.0.RC1'
 end
 
+gem 'upmin-admin'
 
 
 # gem "nifty-generators", :group => :development
