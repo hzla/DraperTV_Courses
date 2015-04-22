@@ -73,48 +73,6 @@ ActiveRecord::Schema.define(version: 20140620205730) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "ahoy_messages", force: true do |t|
-    t.string   "token"
-    t.text     "to"
-    t.integer  "user_id"
-    t.string   "user_type"
-    t.string   "mailer"
-    t.text     "subject"
-    t.text     "content"
-    t.datetime "sent_at"
-    t.datetime "opened_at"
-    t.datetime "clicked_at"
-  end
-
-  add_index "ahoy_messages", ["token"], name: "index_ahoy_messages_on_token", using: :btree
-  add_index "ahoy_messages", ["user_id", "user_type"], name: "index_ahoy_messages_on_user_id_and_user_type", using: :btree
-
-  create_table "apps", force: true do |t|
-    t.string   "first"
-    t.string   "last"
-    t.string   "email"
-    t.string   "phone"
-    t.text     "exist"
-    t.text     "business"
-    t.string   "dob"
-    t.string   "college"
-    t.string   "media"
-    t.string   "gender"
-    t.string   "street_address"
-    t.string   "postal_code"
-    t.string   "state"
-    t.string   "country"
-    t.string   "marketing"
-    t.string   "technical"
-    t.string   "city"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-  end
-
   create_table "assignments", force: true do |t|
     t.string   "title"
     t.text     "description"
@@ -271,13 +229,6 @@ ActiveRecord::Schema.define(version: 20140620205730) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "messages", force: true do |t|
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "milestones", force: true do |t|
@@ -482,7 +433,6 @@ ActiveRecord::Schema.define(version: 20140620205730) do
     t.integer  "pcounter"
     t.integer  "bonus_credits"
     t.integer  "bonus_points_earned"
-    t.string   "online"
     t.integer  "char_points"
     t.string   "role"
   end
