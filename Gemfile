@@ -57,6 +57,7 @@ gem 'jquery-ui-rails'
 gem 'aws-sdk', '~> 1.5.7'
 gem 'foreman'
 gem 'right_aws'
+gem 'pry'
 
 # Development Only
 group :development do

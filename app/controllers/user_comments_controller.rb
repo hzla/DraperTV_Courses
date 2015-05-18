@@ -237,6 +237,7 @@ class UserCommentsController < ApplicationController
       ExceptionNotifier.notify_exception(exception)
       end
   end
+  
   def destroy
     @comments = @commentable.user_comments.order('created_at desc')
     @comment = UserComment.find(params[:id])
