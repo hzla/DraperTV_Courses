@@ -19,16 +19,11 @@ OnlineSchool::Application.routes.draw do
 
   resources :apps
   resources :charges
-  
-  resources :skills #need to ask yad
 
   resources :activity_feeds
 
-  resources :community
-  
   resources :social
   resources :resources
-  resources :contests
   resources :courses
   resources :feedbacks
   resources :activities
