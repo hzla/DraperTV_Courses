@@ -57,11 +57,7 @@
               <% end %>
             </div>
 
-            <!-- ** Show Score in Nav ** -->
-            <% if current_user.pcounter != nil %>
-              <div class="right-score"><%= number_with_delimiter(current_user.pcounter , :delimiter => ',') %></div>
-            <% else %>
-            <% end %>
+            <!-- ** Dont Show Score in Nav ** -->
 
             <ul class="nav pull-right">
               <!-- <a id="right-menu" href="#right-menu" class="sidr-click"> -->

@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
 
   has_many :activities
   has_many :posts
+  has_many :comments
 
   SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
 
@@ -55,26 +56,12 @@ class User < ActiveRecord::Base
 
 
 
-def self.cached_find(id)
-  Rails.cache.fetch([name, id]) { find(id) }
-end
+  def self.cached_find(id)
+    Rails.cache.fetch([name, id]) { find(id) }
+  end
 
-def flush_cache
-  Rails.cache.delete([self.class.name, id])
-end
+  def flush_cache
+    Rails.cache.delete([self.class.name, id])
+  end
 
-  # include PgSearch
-  # pg_search_scope :search, against: [:first_name, :last_name],
-  # using: {tsearch: {dictionary: "english"}},
-  # associated_against: {skills: :name}
-
-
-  # def self.text_search(query)
-  #   if query.present?
-  #     #where("first_name @@ :q OR last_name @@ :q OR country @@ :q OR (first_name || ' ' || last_name) @@ :q OR online @@ :q OR team @@ :q OR team @@ :q", :q => query)
-  #   search(query)
-  #   else
-  #     scoped
-  #   end
-  # end
 end

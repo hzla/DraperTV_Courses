@@ -1,0 +1,89 @@
+<%= content_for :side_nav do %>
+  <% @track.mods.includes(:lessons).each_with_index do |mod, i| %>
+    <div class="bar-header">
+      <%= link_to mod_path(mod) do %>
+        Module <%= i + 1 %> - <%= mod.name %>
+      <% end %>
+    </div>
+    <% mod.lessons.each do |lesson| %>
+      <div class="bar-item <%= 'current' if lesson == @lesson %>">
+        <%= link_to lesson_path(lesson) do %>
+          <%= image_tag lesson.icon(lesson == @lesson ? nil : "grey"), :class => "bar-icon" %>
+          <p class="bar-text">
+            <%= lesson.lesson_type.capitalize %><% if lesson == @lesson %>&nbsp;- <%= lesson.description %><% end %>
+          </p>
+          <div class="bar-circle"></div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+
+
+<% end %>
+
+
+
+<div class="top-section">
+  <div class="row">
+    <div class="top-column-main">
+      <%= link_to mod_path(@mod) do %>
+        <p class="header-back"><< Lessons</p>
+      <% end %>
+      <h1><%= @lesson.lesson_type.capitalize %></h1>
+      <p class="header-info">Complete and Continue</p>
+    </div><!-- column main -->
+  </div><!-- row -->
+</div>
+
+<div class="column-main">
+  <div class="lesson-container">
+    <% if @lesson.video %>
+      <iframe src="https://player.vimeo.com/video/48181711" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+
+      <p class="video-title">
+        <%= @lesson.video_title %>
+      </p>
+      <p class="video-author">
+        <%= @lesson.video_author %>
+      </p>
+    <% end %>
+
+    <% if @lesson.body %>
+      <div class="lesson-body">
+        <%= @lesson.body.html_safe %>
+      </div>
+    <% end %>
+
+    <% if @lesson.discussion %>
+      <%= form_for @comment do |f| %>
+        <%= f.text_area :body, :class => "comment-body", placeholder: "Leave a comment here..." %>
+        <%= f.submit "Submit", :class => "submit-comment" %>
+      <% end %>
+
+      <div class="comments">
+        <% @lesson.comments.includes(:user).each do |comment| %>
+          <div class="comment">
+            <div class="comment-vote-container">
+            7
+            </div>
+            <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
+            <div class="comment-main">
+              <div class="comment-header">
+                <span class="comment-user"> <%= comment.user.full_name %> -&nbsp;</span><span class="user-title">Trainee</span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= comment.created_at %></span> 
+              </div>
+              <div class="comment-body">
+                <%= comment.body %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    <% end %>
+  </div>
+
+
+</div><!-- column-main -->
+<div class="column-right">
+  <%= render "activity_feeds/sidebarindex"%>
+</div>

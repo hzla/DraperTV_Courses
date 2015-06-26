@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620205730) do
+ActiveRecord::Schema.define(version: 20150625205231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,6 +169,14 @@ ActiveRecord::Schema.define(version: 20140620205730) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "lesson_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "courses", force: true do |t|
     t.string   "title"
     t.text     "description"
@@ -231,6 +239,22 @@ ActiveRecord::Schema.define(version: 20140620205730) do
     t.datetime "updated_at"
   end
 
+  create_table "lessons", force: true do |t|
+    t.string   "lesson_type"
+    t.boolean  "video"
+    t.boolean  "started",      default: false
+    t.boolean  "finished",     default: false
+    t.string   "video_uid"
+    t.string   "video_title"
+    t.string   "video_author"
+    t.text     "body"
+    t.boolean  "discussion"
+    t.text     "description"
+    t.integer  "mod_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "milestones", force: true do |t|
     t.text     "vision"
     t.text     "creativity"
@@ -239,6 +263,14 @@ ActiveRecord::Schema.define(version: 20140620205730) do
     t.text     "power"
     t.text     "survival"
     t.text     "brilliance"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mods", force: true do |t|
+    t.string   "name"
+    t.string   "order"
+    t.integer  "track_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -357,6 +389,21 @@ ActiveRecord::Schema.define(version: 20140620205730) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
+
+  create_table "topics", force: true do |t|
+    t.string  "icon"
+    t.string  "name"
+    t.integer "percent_complete"
+    t.integer "order"
+  end
+
+  create_table "tracks", force: true do |t|
+    t.integer "order"
+    t.string  "name"
+    t.string  "icon"
+    t.string  "percent_complete"
+    t.integer "topic_id"
+  end
 
   create_table "user_assignments", force: true do |t|
     t.text     "text"

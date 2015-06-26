@@ -1,0 +1,136 @@
+.tracks {
+	@include flexbox;
+	flex-wrap: wrap;
+	padding: 30px 50px 0px 50px;
+	box-sizing: border-box;
+}
+
+.track {
+	width: calc(33% - (40px / 3));
+	margin-right: 20px;
+}
+
+.track:nth-child(3n) {
+	margin-right: 0px;
+}
+
+.track-name {
+	color: #a7a7a7;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.track-icon-container {
+	height: 80px;
+	width: 80px;
+	background: #f0f0f0;
+	border-radius: 50%;
+	position: relative;
+	margin: 0 auto 20px auto;
+	.track-icon {
+		height: 30px;
+		width: 30px;
+		left: 25px;
+		top: 25px;
+		position: absolute;
+	}
+}
+
+.track-percent-complete {
+	text-align: right;
+	margin-bottom: 5px;
+	font-weight: 300;
+}
+
+.track-completion {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 8px;
+}
+
+.track-percent-complete-bar {
+	width: 100%;
+	background: #f0f0f0;
+	height: 8px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.mods {
+	background: #f7f7f7;
+}
+.mod {
+	padding: 10px 20px;
+	font-size: 14px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #f0f0f0;
+	position: relative;
+}
+
+.mod-completion-circle {
+	position: absolute;
+	right: 20px;
+	top: calc(50% - 5px);
+	height: 10px;
+	width: 10px;
+	background: #e7e7e7;
+	border-radius: 50%;
+}
+
+.mod-number {
+	font-weight: 300;
+}
+
+.mod-name {
+	font-weight: 600;
+}
+
+
+
+
+$topic-list: "attitude", "starting-up", "fundraising", "product", "marketing", "sales", "hiring", "finance", "legal", "auxiliary";
+$color-list: #246DB4, #35B3DE, #24B494, #88B250, #F2B81D, #F38F31, #E1474C, #A53A6A, #414141, #B6B6B6;
+
+
+@each $topic in $topic-list {
+	$i: index($topic-list, $topic);
+	.#{$topic} {
+		h1, .track-percent-complete, .header-info, .started .topic-name, .completed .topic-name, .percent-complete {
+			color: nth($color-list, $i);
+		}
+		.started .track-icon-container, .track-completion, .started .topic-icon-container {
+			background: nth($color-list, $i);
+		}
+		.completed {
+			.track-icon-container {
+				border: 1px solid nth($color-list, $i);
+				background: white;
+			}
+			.mods {
+				border: 1px solid nth($color-list, $i);
+				box-sizing: border-box;
+				border-bottom: 0px;
+			}
+			.mod {
+				border-bottom: 1px solid nth($color-list, $i);
+				box-sizing: border-box;
+				background: white;
+				* {
+					color: nth($color-list, $i);
+				}
+			}
+			.topic-icon-container {
+				box-sizing: border-box;
+				background: white;
+				border: 1px solid nth($color-list, $i);
+			}
+		}
+	}
+	.#{$topic}.completed {
+		border: 1px solid nth($color-list, $i);
+		background: white;
+	}
+} 
+
+

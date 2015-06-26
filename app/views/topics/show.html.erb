@@ -1,0 +1,57 @@
+<div class="top-section">
+  <div class="row">
+    <div class="top-column-main">
+      <%= link_to topics_path do %>
+        <p class="header-back"><< Topics</p>
+      <% end %>
+      <h1><%= @topic.name %></h1>
+      <p class="header-info"><%= @tracks.count %> tracks</p>
+    </div><!-- column main -->
+  </div><!-- row -->
+</div>
+
+<div class="column-main <%= @topic.name.downcase.gsub(" ", "-") %>">
+  <div class="tracks">
+    <% @tracks.each do |track| %>
+      <div class="track <%= track.status %>">
+        <div class="track-name"><%= track.name %></div>
+        <div class="track-icon-container">
+          
+          <% if track.complete? %>
+            <%= image_tag track.done_icon, :class => "track-icon" %>
+          <% else %>
+            <%= image_tag track.icon, :class => "track-icon" %>
+          <% end %>
+        </div>
+        <div class="track-percent-complete">
+          <% if track.complete? %>
+            Complete!
+          <% else %>
+            <%= track.percent_complete %>%
+          <% end %>
+        </div>
+        <div class="track-percent-complete-bar">
+          <div class="track-completion" style="width: <%= track.percent_complete %>%;">
+            
+          </div>
+        </div>
+        <div class="mods">
+          <% track.mods.each_with_index do |mod, i| %>
+            <div class="mod">
+              <%= link_to mod_path(mod) do %>
+                <div class="mod-number">Module <%= i %></div>
+                <div class="mod-name"><%= mod.name %></div>
+                <div class="mod-completion-circle"></div>
+              <% end %>
+            </div>
+          <% end %>
+
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+</div><!-- column-main -->
+<div class="column-right">
+  <%= render "activity_feeds/sidebarindex"%>
+</div>

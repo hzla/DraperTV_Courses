@@ -6,6 +6,7 @@ OnlineSchool::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  
   devise_for :users
   devise_scope :user do
     #get 'register', to: 'devise/registrations#new', as: :register
@@ -28,6 +29,11 @@ OnlineSchool::Application.routes.draw do
   resources :feedbacks
   resources :activities
   resources :users
+
+  resources :topics 
+  resources :mods
+  resources :lessons
+  resources :comments
 
 
   resources :events do
@@ -93,7 +99,6 @@ OnlineSchool::Application.routes.draw do
   get "weekly_tops", to: 'email_panel#weekly_tops', as: :weekly_tops
   get "progress_report", to: 'email_panel#progress_report', as: :progress_report
   get "course_open", to: 'email_panel#course_open', as: :course_open
-
 
 
 end

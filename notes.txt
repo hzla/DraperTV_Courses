@@ -23,18 +23,6 @@ QUESTIONS FOR YAD
 _________________
 
 
-What are skills?
-	-not used
-
-What are bucketlists? Are they needed?
-	-not used
-
-What are communities? Are they needed?
-	-not used
-
-What are contests?
-	-not used
-
 Why does the feedback index page look like the new page?
 	-change to new
 
@@ -50,10 +38,6 @@ How does activites work?
 
 Why does clicking on the activity feed causes an update to the user?
 	-it gets notifications
-
-
-
-
 
 
 CURRENT FUNCTIONALITY

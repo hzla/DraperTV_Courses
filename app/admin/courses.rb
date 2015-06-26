@@ -9,7 +9,7 @@ ActiveAdmin.register Course do
     default_actions
   end
 
-  form :html => { :enctype => "multipart/form-data" } do |f|
+  form do |f|
    f.inputs "Course Details" do
      f.inputs :title
      f.inputs :description
