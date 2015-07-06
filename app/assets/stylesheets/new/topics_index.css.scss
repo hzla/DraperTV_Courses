@@ -13,6 +13,15 @@
 	margin-bottom: 20px;
 	color: #A7A7A7;
 	position: relative;
+	transition-duration: 0.3s;
+	a {
+		display: block;
+		height: 100%;
+	}
+}
+
+.topic:hover {
+	background: #f0f0f0;
 }
 
 .topic:nth-child(4n) {
@@ -31,18 +40,18 @@
 .topic-icon-container {
 	width: 45%;
 	height: 45%;
-	margin: 20px auto 30px auto;
+	margin: calc(35% - 45px) auto 30px auto;
 	border-radius: 50%;
 	background: #F0F0F0;
 	position: relative;
 	.topic-icon {
 		position: absolute;
-		height: 40%;
-		width: 40%;
+		height: 45%;
+		width: 45%;
 		// top: calc((((100vw - 580px) / 4) - 115px)/2 - ((((100vw - 580px) / 4) - 160px)/2));
 		// left: calc((((100vw - 580px) / 4) - 115px)/2 - ((((100vw - 580px) / 4) - 160px)/2));
-		top: calc((((100vw - 580px) / 4) - 15px) * 0.135);
-		left: calc((((100vw - 580px) / 4) - 15px) * 0.135);
+		top: calc((((100vw - 580px) / 4) - 15px) * 0.12375);
+		left: calc((((100vw - 580px) / 4) - 15px) * 0.12375);
 	}
 }
 
