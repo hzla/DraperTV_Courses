@@ -3,7 +3,6 @@
 		<div class="top-bar">
 				<div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
 				<div class="info-container">
-					<!-- <div class="name"><%= current_user.first_name %> <%= current_user.last_name.chars.first %></div> -->
 					<div class="name"><%= current_user.full_name %></div>
 					<div class="points pcounter"><p><%= number_with_delimiter(current_user.pcounter, :delimiter => ',') %></p></div>
 				</div>
@@ -11,47 +10,7 @@
 	<% end %>
 
 	<div class="main">
-		<div class="section-link">
-			<%= link_to courses_path do %>
-				<div class="link">
-					<div class="title">Courses</div>
-				</div>
-			<% end %>
-		</div>
-		<div class="section-link">
-			<%= link_to discussions_path do %>
-				<div class="link">
-					<div class="title">Discussion</div>
-				</div>
-			<% end %>
-		</div>
-		<div class="section-link">
-			<%= link_to users_path do %>
-				<div class="link">
-					<div class="title">Students</div>
-				</div>
-			<% end %>
-		</div>
-		<div class="section-link">
-			<%= link_to events_path do %>
-				<div class="link">
-					<div class="title">Calendar</div>
-				</div>
-			<% end %>
-		</div>
-
+		<%= yield :side_nav %>
 	</div>
 </div>
-
-<br>
-<br>
-
-<div class="section-link">
-	<%= subscribe_to "/layouts/comments" %>
-	<%= subscribe_to "/layouts/points" %>
-	<%= subscribe_to "/layouts/#{current_user.id}" %>
-	<%= subscribe_to "/layouts/posts" %>
-
-</div>
-
 

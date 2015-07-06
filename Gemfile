@@ -1,9 +1,10 @@
 # Gemfile
 source "https://rubygems.org"
-ruby '1.9.3'
+ruby '2.0.0'
 
 gem 'rails', '4.0.4'
-gem 'pg'
+gem 'nokogiri', "~> 1.6.6"
+gem 'pg', '~> 0.18.1'
 gem 'jquery-turbolinks'
 gem 'nprogress-rails'
 gem 'rails_12factor', group: :production
@@ -56,6 +57,7 @@ gem 'jquery-ui-rails'
 gem 'aws-sdk', '~> 1.5.7'
 gem 'foreman'
 gem 'right_aws'
+gem 'pry'
 
 # Development Only
 group :development do

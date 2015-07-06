@@ -1,0 +1,2 @@
+change done track coloring
+add status circle to track show

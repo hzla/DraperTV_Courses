@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620205730) do
+ActiveRecord::Schema.define(version: 20150706191645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,48 +72,6 @@ ActiveRecord::Schema.define(version: 20140620205730) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "ahoy_messages", force: true do |t|
-    t.string   "token"
-    t.text     "to"
-    t.integer  "user_id"
-    t.string   "user_type"
-    t.string   "mailer"
-    t.text     "subject"
-    t.text     "content"
-    t.datetime "sent_at"
-    t.datetime "opened_at"
-    t.datetime "clicked_at"
-  end
-
-  add_index "ahoy_messages", ["token"], name: "index_ahoy_messages_on_token", using: :btree
-  add_index "ahoy_messages", ["user_id", "user_type"], name: "index_ahoy_messages_on_user_id_and_user_type", using: :btree
-
-  create_table "apps", force: true do |t|
-    t.string   "first"
-    t.string   "last"
-    t.string   "email"
-    t.string   "phone"
-    t.text     "exist"
-    t.text     "business"
-    t.string   "dob"
-    t.string   "college"
-    t.string   "media"
-    t.string   "gender"
-    t.string   "street_address"
-    t.string   "postal_code"
-    t.string   "state"
-    t.string   "country"
-    t.string   "marketing"
-    t.string   "technical"
-    t.string   "city"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-  end
 
   create_table "assignments", force: true do |t|
     t.string   "title"
@@ -211,6 +169,14 @@ ActiveRecord::Schema.define(version: 20140620205730) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "lesson_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "courses", force: true do |t|
     t.string   "title"
     t.text     "description"
@@ -273,11 +239,20 @@ ActiveRecord::Schema.define(version: 20140620205730) do
     t.datetime "updated_at"
   end
 
-  create_table "messages", force: true do |t|
-    t.text     "content"
+  create_table "lessons", force: true do |t|
+    t.string   "lesson_type"
+    t.boolean  "video"
+    t.boolean  "started",      default: false
+    t.boolean  "finished",     default: false
+    t.string   "video_uid"
+    t.string   "video_title"
+    t.string   "video_author"
+    t.text     "body"
+    t.boolean  "discussion"
+    t.text     "description"
+    t.integer  "track_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "milestones", force: true do |t|
@@ -288,6 +263,14 @@ ActiveRecord::Schema.define(version: 20140620205730) do
     t.text     "power"
     t.text     "survival"
     t.text     "brilliance"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mods", force: true do |t|
+    t.string   "name"
+    t.string   "order"
+    t.integer  "track_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -407,6 +390,21 @@ ActiveRecord::Schema.define(version: 20140620205730) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
+  create_table "topics", force: true do |t|
+    t.string  "icon"
+    t.string  "name"
+    t.integer "percent_complete"
+    t.integer "order"
+  end
+
+  create_table "tracks", force: true do |t|
+    t.integer "order"
+    t.string  "name"
+    t.string  "icon"
+    t.string  "percent_complete"
+    t.integer "topic_id"
+  end
+
   create_table "user_assignments", force: true do |t|
     t.text     "text"
     t.datetime "created_at"
@@ -482,7 +480,6 @@ ActiveRecord::Schema.define(version: 20140620205730) do
     t.integer  "pcounter"
     t.integer  "bonus_credits"
     t.integer  "bonus_points_earned"
-    t.string   "online"
     t.integer  "char_points"
     t.string   "role"
   end

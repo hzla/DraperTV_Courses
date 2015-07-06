@@ -1,0 +1,143 @@
+.tracks {
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.track {
+	background: #f7f7f7;
+	width: 100%;
+	margin-bottom: 20px;
+	height: 80px;
+	align-items: center;
+	@include flexbox;
+	justify-content: space-between;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.track-name {
+	color: #a7a7a7;
+	text-align: center;
+	line-height: 40px;
+	letter-spacing: 1px;
+	font-weight: 600;
+}
+
+.track-icon-container {
+	height: 40px;
+	width: 40px;
+	background: #f0f0f0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 40px;
+	.track-icon {
+		height: 20px;
+		width: 20px;
+		left: 10px;
+		top: 10px;
+		position: absolute;
+	}
+}
+
+.topic-info-icon {
+	margin-bottom: 30px;
+}
+
+.topic-description {
+	font-weight: 300;
+}
+
+.track-info {
+	@include flexbox;
+}
+
+.track-status {
+	justify-content: flex-end;
+}
+
+.track-percent-complete {
+	text-align: right;
+	margin-bottom: 5px;
+	font-weight: 300;
+}
+
+.track-completion {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 8px;
+}
+
+.track-percent-complete-bar {
+	width: 200px;
+	background: #f0f0f0;
+	height: 8px;
+	position: relative;
+}
+
+.start-lesson-btn {
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: white;
+	font-weight: 600;
+	background: #24B494;
+	cursor: pointer;
+}
+
+.track-percent-complete-bar {
+
+}
+
+$topic-list: "vision", "starting-up", "fundraising", "product", "marketing", "sales", "hiring", "biz-finance", "legal", "auxiliary";
+$color-list: #246DB4, #35B3DE, #24B494, #88B250, #F2B81D, #F38F31, #E1474C, #A53A6A, #414141, #B6B6B6;
+$rgba-color-list: rgba(36,	109,	180, 0.2),rgba(53,	179,	222, 0.2),rgba(36,	180,	148, 0.2),rgba(136,	178,	80, 0.2),rgba(242,	184,29, 0.2),rgba(243,	143,	49, 0.2),rgba(225,	71,	76, 0.2),rgba(165,	58,	106, 0.2),rgba(65,	65,	65, 0.2),rgba(182,	182,	182, 0.2);
+
+@each $topic in $topic-list {
+	$i: index($topic-list, $topic);
+	.#{$topic} {
+		h1, .track-percent-complete, .header-info, .started .topic-name, .completed .topic-name, .percent-complete, .started .track-name {
+			color: nth($color-list, $i);
+		}
+		.started .track-icon-container, .track-completion, .started .topic-icon-container, {
+			background: nth($color-list, $i);
+		}
+		.track-percent-complete-bar, .percent-complete-bar {
+			background: nth($rgba-color-list, $i);
+		}
+		.completed:not(a) {
+			background: white;
+			border: 1px solid nth($color-list, $i);
+			.track-icon-container {
+				background: black;
+			}
+			.track-name {
+				color: nth($color-list, $i);
+			}
+			.topic-icon-container {
+				box-sizing: border-box;
+				background: white;
+				border: 1px solid nth($color-list, $i);
+			}
+		}
+		.untouched {
+			.percent-complete {
+				display: none;
+			}
+			.percent-complete-bar {
+				background: #f0f0f0;
+			}
+			.topic-name {
+				color: rgba(0,0,0,0.3);
+			}
+		}
+	}
+	.#{$topic}.completed {
+		border: 1px solid nth($color-list, $i);
+		box-sizing: border-box;
+		background: white;
+	}
+} 
+
+

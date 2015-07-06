@@ -1,0 +1,118 @@
+.lesson-container {
+	box-sizing: border-box;
+	padding: 40px;
+	iframe {
+		width: calc(100vw - 620px);
+		height: calc((100vw - 620px) * 9 / 16);
+		margin-bottom: 20px;
+	}
+	.video-title {
+		font-size: 20px;
+		font-weight: 600;
+	}
+	.video-author {
+
+	}
+	.lesson-body {
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	form {
+		margin-bottom: 40px;
+	}
+	textarea.comment-body {
+		width: 100%;
+		height: 50px;
+		font-size: 14px;
+		padding: 5px;
+		box-sizing: border-box;
+		border-radius: 5px;
+	}
+	.comment {
+		@include flexbox;
+		align-content: top;
+		margin-bottom: 20px;
+	}
+	.comment-vote-container {
+		text-align: center;
+		width: 40px;
+	}
+	.comment-pic {
+		width: 40px;
+		height: 40px;
+		border-radius: 5px;
+	}
+	.comment-main {
+		box-sizing: border-box;
+		padding-left: 20px;
+		width: calc(100% - 80px);
+	}
+	.comment-header {
+		margin-bottom: 10px;
+		font-weight: 600;
+		.user-title {
+			color: #2AB4FF;
+		}
+		.comment-date {
+			color: #939393;
+			font-weight: 400;
+		}
+	}
+}
+
+// SideBar
+
+.bar-header {
+	box-sizing: border-box;
+	padding: 12px 20px;
+	font-weight: 600;
+	background: #e7e7e7;
+	cursor: pointer;
+}
+.bar-item a {
+	@include flexbox;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 10px 20px 10px 10px;
+	align-items: center;;
+	border-bottom: 1px solid #E7E7E7;
+}
+
+.bar-lesson-desc {
+	display: none;
+}
+
+.bar-item.current a{
+	align-items: initial;
+	background: rgba(36,109,180,0.2);
+	.bar-lesson-desc {
+		display: block;
+	}
+}
+
+.bar-icon {
+	height: 20px;
+	width: 20px;
+}
+
+.bar-text {
+	width: calc(100% - 60px);
+	margin-bottom: 0px;
+}
+
+.bar-circle {
+	height: 10px;
+	width: 10px;
+	background: #e7e7e7;
+	border-radius: 50%;
+}
+
+.header-info.complete-btn {
+	color: #24B494;
+}
+
+
+
+
+
+

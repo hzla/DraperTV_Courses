@@ -112,7 +112,7 @@ class ApplicationController < ActionController::Base
 
   def cpcalculateDelete(commentsize)
     points = current_user.char_points.to_i + UserAssignment.where(:user_id => current_user[:id]).sum('point_value').to_i
-    current_user.update_column(:pcounter,points.to_i -  commentsize.to_i )
+    current_user.update_column(:pcounter, points.to_i - commentsize.to_i )
   end
 
   def pcalculate(uapoints)
@@ -130,6 +130,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  
   def must_be_admin
     unless current_user && current_user.role == "admin"
       redirect_to root_path

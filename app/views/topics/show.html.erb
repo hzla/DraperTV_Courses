@@ -1,0 +1,67 @@
+<div class="top-section <%= @topic.name.downcase.gsub(" ", "-").gsub("&-", "") %>">
+  <div class="row">
+    <div class="top-column-main">
+      <%= link_to topics_path do %>
+        <p class="header-back"><< TOPICS</p>
+      <% end %>
+      <h1><%= @topic.name.downcase.split(" ").map(&:capitalize).join(" ") %></h1>
+      <p class="header-info"><%= @tracks.count %> LESSONS</p>
+    </div><!-- column main -->
+  </div><!-- row -->
+</div>
+
+<div class="column-main <%= @topic.name.downcase.gsub(" ", "-").gsub("&-", "") %>">
+  <div class="tracks">
+    <% @tracks.each do |track| %>
+      <%= link_to track_path(track) do %>
+        <div class="track <%= track.status %>">
+
+          <div class="track-info">
+            <div class="track-icon-container">
+              
+              <% if track.started? %>
+                <%= image_tag track.started_icon, :class => "track-icon" %>
+              <% else %>
+                <%= image_tag track.icon, :class => "track-icon" %>
+              <% end %>
+            </div>
+
+            <div class="track-name"><%= track.name %></div>
+          </div>
+          
+          <div class="track-status">
+            <% if track.percent_complete == 0 %>
+              <div class="start-lesson-btn">
+                Start Lesson
+              </div>
+            <% else %>
+              <div class="track-percent-complete">
+                <% if track.complete? %>
+                  Complete!
+                <% else %>
+                  <%= track.percent_complete %>%
+                <% end %>
+              </div>
+              <div class="track-percent-complete-bar">
+                <div class="track-completion" style="width: <%= track.percent_complete %>%;">  
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div><!-- column-main -->
+<div class="column-right">
+  <div class="column-header">
+    <p>INFORMATION</p>
+  </div>
+
+  <%= image_tag @topic.done_icon, :class => "topic-info-icon" %>
+
+  <p class="topic-description">
+    As an entrepreneur you gotta do stuff that people need you to do. And that takes Vision. Vision to see the stuff that you gotta do. So you can show people the stuff they gotta do. And that takes Vision.
+  </p>
+
+</div>

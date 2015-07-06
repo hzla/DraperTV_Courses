@@ -39,8 +39,8 @@ class UsersController < ApplicationController
   def show
     @user = User.friendly.find(params[:id])
     @courses = Course.all
-    @assignments = Assignment.all
-    @user_assignments = UserAssignment.all
+    # @assignments = Assignment.all
+    # @user_assignments = UserAssignment.all
 
     if @user
       render action: :show

@@ -1,0 +1,43 @@
+<div class="top-section">
+  <div class="row">
+    <div class="top-column-main">
+      <h1 class="no-letter-spacing">Topics</h1>
+    </div><!-- column main -->
+  </div><!-- row -->
+</div>
+
+<div class="column-main">
+  <div class="topics">
+    <% @topics.each do |topic| %>
+      <div class='topic <%= topic.name.downcase.gsub(" ", "-").gsub("&-", "") + " " + topic.status %>'>
+        <%= link_to topic_path(topic), :class => topic.status do %>
+          <p class="topic-name"><%= topic.name %></p>
+          <div class="topic-icon-container <%= 'complete' if topic.complete? %>">
+            <% if topic.complete? %>
+              <%= image_tag topic.done_icon, :class => "topic-icon" %>
+            <% else %>
+              <%= image_tag topic.icon, :class => "topic-icon" %>
+            <% end %>
+          </div>
+          <div class="percent-complete">
+            <% if topic.complete? %>
+                Complete!
+            <% else %>
+              <%= topic.percent_complete %>%
+            <% end %>
+          </div>
+          <div class="percent-complete-bar">
+            <div class="track-completion" style="width: <%= topic.percent_complete %>%;"></div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div><!-- column-main -->
+<div class="column-right">
+  <%= render "activity_feeds/sidebarindex"%>
+</div>
+
+
+

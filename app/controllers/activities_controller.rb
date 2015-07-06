@@ -41,11 +41,8 @@ class ActivitiesController < ApplicationController
            @trackableIDs << activity.trackable_id
          end
       end
-
     end
-
     @activities = Activity.order("created_at desc").where("trackable_id IN (?)", @trackableIDs).where.not(:user_id => current_user.id).page(params[:page]).per(10).includes(:trackable)
-
     respond_to do |format|
       format.js
       format.html
