@@ -29,18 +29,20 @@
 }
 
 .topic-icon-container {
-	width: calc(((100vw - 580px) / 4) - 115px);
-	height: calc(((100vw - 580px) / 4) - 115px);
+	width: 45%;
+	height: 45%;
 	margin: 20px auto 30px auto;
 	border-radius: 50%;
 	background: #F0F0F0;
 	position: relative;
 	.topic-icon {
 		position: absolute;
-		height: calc(((100vw - 580px) / 4) - 160px);
-		width: calc(((100vw - 580px) / 4) - 160px);
-		top: calc((((100vw - 580px) / 4) - 115px)/2 - ((((100vw - 580px) / 4) - 160px)/2));
-		left: calc((((100vw - 580px) / 4) - 115px)/2 - ((((100vw - 580px) / 4) - 160px)/2));
+		height: 40%;
+		width: 40%;
+		// top: calc((((100vw - 580px) / 4) - 115px)/2 - ((((100vw - 580px) / 4) - 160px)/2));
+		// left: calc((((100vw - 580px) / 4) - 115px)/2 - ((((100vw - 580px) / 4) - 160px)/2));
+		top: calc((((100vw - 580px) / 4) - 15px) * 0.135);
+		left: calc((((100vw - 580px) / 4) - 15px) * 0.135);
 	}
 }
 
