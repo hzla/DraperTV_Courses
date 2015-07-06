@@ -1,24 +1,24 @@
 <%= content_for :side_nav do %>
-  <% @track.mods.includes(:lessons).each_with_index do |mod, i| %>
-    <div class="bar-header">
-      <%= link_to mod_path(mod) do %>
-        Module <%= i + 1 %> - <%= mod.name %>
-      <% end %>
-    </div>
-    <% mod.lessons.each do |lesson| %>
-      <div class="bar-item <%= 'current' if lesson == @lesson %>">
-        <%= link_to lesson_path(lesson) do %>
-          <%= image_tag lesson.icon(lesson == @lesson ? nil : "grey"), :class => "bar-icon" %>
-          <p class="bar-text">
-            <%= lesson.lesson_type.capitalize %><% if lesson == @lesson %>&nbsp;- <%= lesson.description %><% end %>
-          </p>
-          <div class="bar-circle"></div>
+  <% @tracks.includes(:lessons).each_with_index do |track, i| %>
+    <div class="bar-group">
+      <div class="bar-header">
+        <%= link_to track_path(track) do %>
+          Module <%= i + 1 %> - <%= track.name %>
         <% end %>
       </div>
-    <% end %>
+      <% track.lessons.each do |lesson| %>
+        <div class="bar-item <%= 'current' if lesson == @lesson %>">
+          <%= link_to lesson_path(lesson) do %>
+            <%= image_tag lesson.icon(lesson == @lesson ? nil : "grey"), :class => "bar-icon" %>
+            <p class="bar-text">
+              <%= lesson.lesson_type.capitalize %><% if lesson == @lesson %>&nbsp;- <%= lesson.description %><% end %>
+            </p>
+            <%= image_tag lesson.status_icon, :class => "bar-circle" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-
-
 <% end %>
 
 
@@ -26,11 +26,18 @@
 <div class="top-section">
   <div class="row">
     <div class="top-column-main">
-      <%= link_to mod_path(@mod) do %>
-        <p class="header-back"><< Lessons</p>
+      <%= link_to track_path(@track) do %>
+        <p class="header-back"><< LESSONS</p>
       <% end %>
-      <h1><%= @lesson.lesson_type.capitalize %></h1>
-      <p class="header-info">Complete and Continue</p>
+      <h1 class="no-letter-spacing"><%= @lesson.lesson_type.capitalize.downcase.split(" ").map(&:capitalize).join(" ")  %></h1>
+
+      <% if @lesson.finished? %>
+        <p class="header-info complete-btn">COMPLETED</p>
+      <% else %>
+        <%= link_to lesson_complete_path(@lesson) do %>
+          <p class="header-info complete-btn">COMPLETE AND CONTINUE</p>
+        <% end %>
+      <% end %>
     </div><!-- column main -->
   </div><!-- row -->
 </div>
@@ -57,15 +64,16 @@
     <% if @lesson.discussion %>
       <%= form_for @comment do |f| %>
         <%= f.text_area :body, :class => "comment-body", placeholder: "Leave a comment here..." %>
+        <%= f.hidden_field :lesson_id, value: @lesson.id %>
         <%= f.submit "Submit", :class => "submit-comment" %>
       <% end %>
 
       <div class="comments">
         <% @lesson.comments.includes(:user).each do |comment| %>
           <div class="comment">
-            <div class="comment-vote-container">
+<!--             <div class="comment-vote-container">
             7
-            </div>
+            </div> -->
             <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
             <div class="comment-main">
               <div class="comment-header">

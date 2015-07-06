@@ -2,6 +2,29 @@ body {
   a, p, h1, h2, h3, h4, h5, h6, div {
     color: #414141;
   }
+  .top-section {
+    .header-info, h1, .header-back {
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    h1 {
+      letter-spacing: initial;
+    }
+  }
+
+  .column-right {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .column-header p {
+      color: 414141;
+      margin: 0px;
+      height: 20px;
+      line-height: 20px;
+      margin-bottom: 25px;
+      font-weight: 600;
+  }
 
 	#side-nav, .navbar-inner .container .left-blue {
 		width: 240px;

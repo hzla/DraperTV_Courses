@@ -19,13 +19,30 @@
 	@include flexbox;
 	align-items: center;
 	margin-bottom: 10px;
+	justify-content: space-between;
 	.lesson-icon {
 		height: 30px;
 		width: 30px;
 		margin-right: 10px;
 	}
-
 }
+
+.lesson-status-icon {
+	height: 10px;
+	width: 10px;
+}
+
+.lesson-info {
+	@include flexbox;
+	align-items: center;
+}
+
+.lesson-type {
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+
+
 
 .lesson:nth-child(3n) {
 	margin-right: 0px;

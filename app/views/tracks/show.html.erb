@@ -1,0 +1,36 @@
+<div class="top-section <%= @topic.name.downcase.gsub(" ", "-").gsub("&-", "") %>">
+  <div class="row">
+    <div class="top-column-main">
+      <%= link_to topic_path(@track.topic) do %>
+        <p class="header-back"><< TRACKS</p>
+      <% end %>
+      <h1 class="no-letter-spacing"><%= @track.name.downcase.split(" ").map(&:capitalize).join(" ") %></h1>
+      <p class="header-info"><%= @lessons.count %> LESSONS</p>
+    </div><!-- column main -->
+  </div><!-- row -->
+</div>
+
+<div class="column-main">
+  <div class="lessons">
+    <% @lessons.each do |lesson| %>
+      <div class="lesson">
+        <%= link_to lesson_path(lesson) do %>
+          <div class="lesson-header">
+            <div class="lesson-info">
+              <%= image_tag lesson.icon, :class => "lesson-icon" %>
+              <div class="lesson-type <%= lesson.action_type %>"><%= lesson.lesson_type.upcase %></div>
+            </div>
+            <%= image_tag lesson.status_icon, :class => "lesson-status-icon" %>
+          </div>
+          <p class="lesson-description">
+            <%= lesson.description %>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div><!-- column-main -->
+<div class="column-right">
+  <%= render "activity_feeds/sidebarindex"%>
+</div>

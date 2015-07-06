@@ -65,6 +65,5 @@ class CoursesController < ApplicationController
       puts (Curl::Easy.perform(oembed).body_str)["html"]
       @intro_embed = JSON.parse(Curl::Easy.perform(oembed).body_str)["html"]
     end
-
 	end
 end

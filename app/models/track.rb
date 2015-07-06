@@ -1,12 +1,11 @@
 class Track < ActiveRecord::Base
   attr_accessible :name, :percent_complete, :icon, :topic_id, :order
   belongs_to :topic
-  has_many :mods
+  has_many :lessons
 
   def percent_complete
-  	total = mods.includes(:lessons).map(&:lessons).flatten.length
-  	mod_ids = mods.pluck(:id)
-  	complete = Lesson.where('mod_id in (?)', mod_ids).where(finished: true).count
+  	total = lessons.count
+  	complete = lessons.where(finished: true).count
   	percentage = complete / total.to_f * 100
   	percentage.floor
   end
@@ -27,6 +26,10 @@ class Track < ActiveRecord::Base
 
   def done_icon
     done = icon.gsub(".svg", "done.svg") 
+  end
+
+  def started_icon
+    done = icon.gsub(".svg", "white.svg") 
   end
 
 

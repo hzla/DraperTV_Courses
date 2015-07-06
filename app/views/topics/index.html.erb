@@ -1,7 +1,7 @@
 <div class="top-section">
   <div class="row">
     <div class="top-column-main">
-      <h1>Topics</h1>
+      <h1 class="no-letter-spacing">Topics</h1>
     </div><!-- column main -->
   </div><!-- row -->
 </div>
@@ -9,10 +9,10 @@
 <div class="column-main">
   <div class="topics">
     <% @topics.each do |topic| %>
-      <div class='topic <%= topic.name.downcase.gsub(" ", "-") + " " + topic.status %>'>
+      <div class='topic <%= topic.name.downcase.gsub(" ", "-").gsub("&-", "") + " " + topic.status %>'>
         <%= link_to topic_path(topic), :class => topic.status do %>
           <p class="topic-name"><%= topic.name %></p>
-          <div class="topic-icon-container">
+          <div class="topic-icon-container <%= 'complete' if topic.complete? %>">
             <% if topic.complete? %>
               <%= image_tag topic.done_icon, :class => "topic-icon" %>
             <% else %>

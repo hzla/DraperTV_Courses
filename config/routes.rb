@@ -1,6 +1,6 @@
 OnlineSchool::Application.routes.draw do
 
-  root :to => 'home#index'
+  root :to => 'topics#index'
 
   ##### DEVISE #####
 
@@ -31,9 +31,11 @@ OnlineSchool::Application.routes.draw do
   resources :users
 
   resources :topics 
-  resources :mods
+  resources :tracks
   resources :lessons
   resources :comments
+
+  get '/lessons/:id/complete', to: 'lessons#complete', as: 'lesson_complete'
 
 
   resources :events do

@@ -2,7 +2,7 @@ ActiveAdmin.register Lesson do
   index do
     column :id
     column :lesson_type
-    column :mod_id
+    column :track_id
     column :video
     column :body
     column :icon
@@ -13,7 +13,7 @@ ActiveAdmin.register Lesson do
   form :html => { :enctype => "multipart/form-data" } do |f|
    f.inputs "Lesson Details" do
      f.inputs :lesson_type
-     f.inputs :mod_id
+     f.inputs :track_id
      f.inputs :video
      f.inputs :video_uid
      f.inputs :video_title
@@ -26,5 +26,3 @@ ActiveAdmin.register Lesson do
  end
 
 end
-
-:lesson_type, :mod_id, :started, :finished, :video, :video_uid, :video_title, :video_author, :body, :description, :discussion

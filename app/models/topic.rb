@@ -1,5 +1,5 @@
 class Topic < ActiveRecord::Base
-  attr_accessible :name, :percent_complete, :icon
+  attr_accessible :name, :percent_complete, :icon, :order
   has_many :tracks
 
   def status
@@ -26,9 +26,7 @@ class Topic < ActiveRecord::Base
   end
 
   def done_icon
-    done = icon.gsub(".svg", "done.svg") 
+    done = icon.gsub(".svg", "badge.svg") 
   end
-
-
 
 end

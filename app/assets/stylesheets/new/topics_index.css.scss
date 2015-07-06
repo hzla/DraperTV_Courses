@@ -24,6 +24,8 @@
 	width: 100%;
 	text-align: center;
 	font-size: 14px;
+	letter-spacing: 1px;
+	font-weight: 600;
 }
 
 .topic-icon-container {
@@ -39,6 +41,16 @@
 		width: calc(((100vw - 580px) / 4) - 160px);
 		top: calc((((100vw - 580px) / 4) - 115px)/2 - ((((100vw - 580px) / 4) - 160px)/2));
 		left: calc((((100vw - 580px) / 4) - 115px)/2 - ((((100vw - 580px) / 4) - 160px)/2));
+	}
+}
+
+.topic-icon-container.complete {
+	border: none !important;
+	.topic-icon {
+		height: 100%;
+		width: 100%;
+		left: 0;
+		top: 0;
 	}
 }
 
