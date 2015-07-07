@@ -18,11 +18,11 @@ class Topic < ActiveRecord::Base
   end
 
   def started?
-  	percent_complete > 0
+  	percent_complete && percent_complete > 0
   end
 
   def complete?
-  	percent_complete == 100
+  	percent_complete && percent_complete == 100
   end
 
   def done_icon

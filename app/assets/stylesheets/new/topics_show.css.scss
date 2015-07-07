@@ -13,6 +13,12 @@
 	justify-content: space-between;
 	padding: 20px;
 	box-sizing: border-box;
+	-webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+.track:hover {
+	background: #f0f0f0;
 }
 
 .track-name {
@@ -131,6 +137,12 @@ $rgba-color-list: rgba(36,	109,	180, 0.2),rgba(53,	179,	222, 0.2),rgba(36,	180,	
 			.topic-name {
 				color: rgba(0,0,0,0.3);
 			}
+		}
+		.untouched:hover {
+			.topic-name {
+				color: nth($color-list, $i);
+			}
+
 		}
 	}
 	.#{$topic}.completed {
