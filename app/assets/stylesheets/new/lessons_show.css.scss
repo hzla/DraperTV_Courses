@@ -16,6 +16,13 @@
 	.lesson-body {
 		font-size: 20px;
 		margin-bottom: 20px;
+		font-weight: 300;
+		a {
+			color: #0000ff;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
 	}
 	form {
 		margin-bottom: 40px;
