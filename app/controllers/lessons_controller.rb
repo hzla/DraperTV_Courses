@@ -12,6 +12,6 @@ class LessonsController < ApplicationController
   def complete
 	@lesson = Lesson.find params[:id]
 	@lesson.update_attributes finished: true
-	redirect_to lesson_path(@lesson)
+	redirect_to lesson_path(@lesson.next_lesson)
   end
 end

@@ -1,12 +1,12 @@
 <%= content_for :side_nav do %>
-  <% @tracks.includes(:lessons).each_with_index do |track, i| %>
+  <% @tracks.each_with_index do |track, i| %>
     <div class="bar-group">
       <div class="bar-header">
         <%= link_to track_path(track) do %>
           Module <%= i + 1 %> - <%= track.name %>
         <% end %>
       </div>
-      <% track.lessons.each do |lesson| %>
+      <% track.lessons.order(:order).each do |lesson| %>
         <div class="bar-item <%= 'current' if lesson == @lesson %>">
           <%= link_to lesson_path(lesson) do %>
             <%= image_tag lesson.icon(lesson == @lesson ? nil : "grey"), :class => "bar-icon" %>

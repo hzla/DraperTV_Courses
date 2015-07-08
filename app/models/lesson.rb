@@ -1,7 +1,7 @@
 class Lesson < ActiveRecord::Base
 	belongs_to :track
 	has_many :comments
-	attr_accessible :lesson_type, :track_id, :started, :finished, :video, :video_uid, :video_title, :video_author, :body, :description, :discussion
+	attr_accessible :order, :lesson_type, :track_id, :started, :finished, :video, :video_uid, :video_title, :video_author, :body, :description, :discussion
 	after_update :update_topic_percentage
 
 	def icon color=nil
@@ -35,6 +35,12 @@ class Lesson < ActiveRecord::Base
 		else
 			"untouched.svg"
 		end
+	end
+
+	def next_lesson
+		lesson_ids = track.lessons.order(:order).pluck(:id)
+		next_lesson_id = lesson_ids[lesson_ids.index(id) + 1]
+		Lesson.find next_lesson_id
 	end
 end
 
