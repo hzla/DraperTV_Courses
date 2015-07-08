@@ -40,7 +40,11 @@ class Lesson < ActiveRecord::Base
 	def next_lesson
 		lesson_ids = track.lessons.order(:order).pluck(:id)
 		next_lesson_id = lesson_ids[lesson_ids.index(id) + 1]
-		Lesson.find next_lesson_id
+		if next_lesson_id
+			Lesson.find next_lesson_id
+		else
+			self
+		end
 	end
 end
 
