@@ -21,6 +21,7 @@ ActiveAdmin.register Lesson do
      f.inputs :body
      f.inputs :description
      f.inputs :discussion
+     f.inputs :order
     end
   f.actions
  end
