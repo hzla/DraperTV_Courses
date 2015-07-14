@@ -3,24 +3,29 @@ class Track < ActiveRecord::Base
   belongs_to :topic
   has_many :lessons
 
-  def percent_complete
-  	total = lessons.count
-  	complete = lessons.where(finished: true).count
-  	percentage = complete / total.to_f * 100
-  	percentage.floor
+  def started? user
+    progress_percentage(user) > 0
   end
 
-  def started?
-    percent_complete > 0
+  def complete? user
+    progress_percentage(user) == 100
   end
 
-  def complete?
-    percent_complete == 100
+  def progress user
+    Progress.where(model_id: id, model_type: "track", user_id: user.id).first
   end
 
-  def status
-    return "completed" if percent_complete == 100
-    return "started" if percent_complete > 0
+  def progress_percentage user
+    if progress user
+      progress(user).percent_complete
+    else
+      0
+    end
+  end
+
+  def status user
+    return "completed" if complete?(user)
+    return "started" if started?(user)
     return "untouched"
   end
 

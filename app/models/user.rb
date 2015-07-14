@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
   has_many :activities
   has_many :posts
   has_many :comments
+  has_many :progresses
 
   SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
 
@@ -52,10 +53,6 @@ class User < ActiveRecord::Base
     ['http://www.twitter.com', twitter].join('/')
   end
 
-
-
-
-
   def self.cached_find(id)
     Rails.cache.fetch([name, id]) { find(id) }
   end
@@ -64,4 +61,7 @@ class User < ActiveRecord::Base
     Rails.cache.delete([self.class.name, id])
   end
 
+  def progress_for model
+    
+  end
 end

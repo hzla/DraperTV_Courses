@@ -20,7 +20,7 @@
               <%= image_tag lesson.icon, :class => "lesson-icon" %>
               <div class="lesson-type <%= lesson.action_type %>"><%= lesson.lesson_type.upcase %></div>
             </div>
-            <%= image_tag lesson.status_icon, :class => "lesson-status-icon" %>
+            <%= image_tag lesson.status_icon(current_user), :class => "lesson-status-icon" %>
           </div>
           <p class="lesson-description">
             <%= lesson.description %>

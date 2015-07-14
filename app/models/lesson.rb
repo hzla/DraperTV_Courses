@@ -4,12 +4,18 @@ class Lesson < ActiveRecord::Base
 	attr_accessible :order, :lesson_type, :track_id, :started, :finished, :video, :video_uid, :video_title, :video_author, :body, :description, :discussion
 	after_update :update_topic_percentage
 
+	#put progress method into a progressable module
+
 	def icon color=nil
 		image = action_type + ".svg"
 		if color == "grey"
 			image.gsub!(".", "grey.")
 		end
 		image
+	end
+
+	def progress user
+		Progress.where(model_type: "lesson", model_id: id, user_id: user.id).first
 	end
 
 	def action_type
@@ -29,8 +35,8 @@ class Lesson < ActiveRecord::Base
 		end
 	end
 
-	def status_icon
-		if finished?
+	def status_icon user
+		if progress user
 			"done.svg"
 		else
 			"untouched.svg"
@@ -45,6 +51,17 @@ class Lesson < ActiveRecord::Base
 		else
 			self
 		end
+	end
+
+	def completed? user
+		progress user
+	end
+
+	def complete user
+		if !progress user
+			Progress.create(percent_complete: 100, user_id: user.id, model_type: "lesson", model_id: id).update_percentage_for_parent_progresses user
+		end
+		self
 	end
 end
 

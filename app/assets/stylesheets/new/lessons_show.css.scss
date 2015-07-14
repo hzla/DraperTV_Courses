@@ -115,8 +115,14 @@
 	border-radius: 50%;
 }
 
-.header-info.complete-btn {
+.header-info.complete-btn, .header-info.complete-btn:hover {
 	color: #24B494;
+  	background: none;
+  	border: none;
+  	padding: 0px;
+  	height: 100%;
+  	font-size: 14px;
+  	line-height: 60px;
 }
 
 

@@ -18,6 +18,14 @@ OnlineSchool::Application.routes.draw do
 
   ##### RESOURCES #####
 
+  resources :topics 
+  resources :tracks
+  resources :lessons
+  resources :comments
+  resources :progresses
+
+  ##### OLD #####
+
   resources :apps
   resources :charges
 
@@ -30,12 +38,7 @@ OnlineSchool::Application.routes.draw do
   resources :activities
   resources :users
 
-  resources :topics 
-  resources :tracks
-  resources :lessons
-  resources :comments
 
-  get '/lessons/:id/complete', to: 'lessons#complete', as: 'lesson_complete'
 
 
   resources :events do

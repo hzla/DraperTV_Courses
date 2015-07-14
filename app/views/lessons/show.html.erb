@@ -13,15 +13,13 @@
             <p class="bar-text">
               <%= lesson.lesson_type.capitalize %><% if lesson == @lesson %>&nbsp;- <%= lesson.description %><% end %>
             </p>
-            <%= image_tag lesson.status_icon, :class => "bar-circle" %>
+            <%= image_tag lesson.status_icon(current_user), :class => "bar-circle" %>
           <% end %>
         </div>
       <% end %>
     </div>
   <% end %>
 <% end %>
-
-
 
 <div class="top-section">
   <div class="row">
@@ -31,11 +29,12 @@
       <% end %>
       <h1 class="no-letter-spacing"><%= @lesson.lesson_type.capitalize.downcase.split(" ").map(&:capitalize).join(" ")  %></h1>
 
-      <% if @lesson.finished? %>
+      <% if @lesson.completed?(current_user) %>
         <p class="header-info complete-btn">COMPLETED</p>
       <% else %>
-        <%= link_to lesson_complete_path(@lesson) do %>
-          <p class="header-info complete-btn">COMPLETE AND CONTINUE</p>
+        <%= form_for Progress.new do |f| %>
+          <%= f.hidden_field :model_id, value: @lesson.id %>
+          <%= f.submit "COMPLETE AND CONTINUE", :class => "header-info complete-btn" %>
         <% end %>
       <% end %>
     </div><!-- column main -->

@@ -13,6 +13,7 @@ gem 'delayed_job_active_record'
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'cancan'
+gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'simple_form'
 gem 'country_select'

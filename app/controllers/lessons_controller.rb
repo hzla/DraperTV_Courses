@@ -8,10 +8,4 @@ class LessonsController < ApplicationController
   	@comment = Comment.new lesson_id: @lesson.id
   	sidebarindex
   end
-
-  def complete
-	@lesson = Lesson.find params[:id]
-	@lesson.update_attributes finished: true
-	redirect_to lesson_path(@lesson.next_lesson)
-  end
 end

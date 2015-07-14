@@ -14,36 +14,34 @@
   <div class="tracks">
     <% @tracks.each do |track| %>
       <%= link_to track_path(track) do %>
-        <div class="track <%= track.status %>">
+        <div class="track <%= track.status current_user %>">
 
           <div class="track-info">
-            <div class="track-icon-container">
-              
-              <% if track.started? %>
+            <div class="track-icon-container">           
+              <% if track.started? current_user %>
                 <%= image_tag track.started_icon, :class => "track-icon" %>
               <% else %>
                 <%= image_tag track.icon, :class => "track-icon" %>
               <% end %>
             </div>
-
             <div class="track-name"><%= track.name %></div>
           </div>
           
           <div class="track-status">
-            <% if track.percent_complete == 0 %>
+            <% if track.progress_percentage(current_user) == 0 %>
               <div class="start-lesson-btn">
                 Start Lesson
               </div>
             <% else %>
               <div class="track-percent-complete">
-                <% if track.complete? %>
+                <% if track.complete? current_user %>
                   Complete!
                 <% else %>
-                  <%= track.percent_complete %>%
+                  <%= track.progress_percentage current_user %>%
                 <% end %>
               </div>
               <div class="track-percent-complete-bar">
-                <div class="track-completion" style="width: <%= track.percent_complete %>%;">  
+                <div class="track-completion" style="width: <%= track.progress_percentage current_user %>%;">  
                 </div>
               </div>
             <% end %>
