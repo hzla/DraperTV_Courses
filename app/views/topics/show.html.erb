@@ -12,7 +12,7 @@
 
 <div class="column-main <%= @topic.name.downcase.gsub(" ", "-").gsub("&-", "") %>">
   <div class="tracks">
-    <% @tracks.each do |track| %>
+    <% @tracks.order(:order).each do |track| %>
       <%= link_to track_path(track) do %>
         <div class="track <%= track.status current_user %>">
 
