@@ -604,13 +604,13 @@ $font-small-title: 16px;
          url('proxima/proximanova-semibold-webfont.woff') format('woff'),
          url('proxima/proximanova-semibold-webfont.ttf') format('truetype'),
          url('proxima/proximanova-semibold-webfont.svg#proxima_novasemibold') format('svg');
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'proxima-nova';
+    font-family: 'proxima_nova';
     src: font-url('proxima/proximanova-bold-webfont.eot');
     src: font-url('proxima/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
          font-url('proxima/proximanova-bold-webfont.woff') format('woff'),
@@ -618,7 +618,6 @@ $font-small-title: 16px;
          font-url('proxima/proximanova-bold-webfont.svg#proxima_novasemibold') format('svg');
     font-weight: 700;
     font-style: normal;
-
 }
 
 @font-face {
