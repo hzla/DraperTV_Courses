@@ -6,6 +6,13 @@ body {
     .header-info, h1, .header-back {
       font-weight: 700;
       letter-spacing: 1px;
+      font-family: 'proxima_nova'
+    }
+    .header-back, .header-info {
+      width: 180px;
+    }
+    .header-back {
+      text-align: left;
     }
     h1 {
       letter-spacing: initial;
