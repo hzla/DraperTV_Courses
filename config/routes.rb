@@ -22,7 +22,10 @@ OnlineSchool::Application.routes.draw do
   resources :tracks
   resources :lessons
   resources :comments
+    get '/comments/:id/upvote', to: "comments#upvote", as: "comment_upvote"
   resources :progresses
+
+  get '/auth/facebook/callback', :to => 'auths#facebook_create'
 
   ##### OLD #####
 

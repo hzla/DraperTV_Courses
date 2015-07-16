@@ -1,98 +1,40 @@
-<div class="register-form" style="width: 840px; margin: 0 auto;">
-  <div class="network-section"><br />
-  <div class="header" style="width: 100%;">Register for Draper University's Alumni Network</div>
-  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-
-    <div class="simple_form_section">Info</div>
-    <div style="width: 100%; margin-left: 35px;">
-      <table>
-        <tr>
-          <td><%= f.input :first_name, label: "First Name" %></td>
-          <td><%= f.input :last_name, label: "Last Name" %></td>
-        </tr>
-        <tr>
-          <td>
-            <div class="field">
-              <%= f.label "Picture" %><br />
-              <%= f.file_field :avatar %>
-            </div>
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><%= f.input :program, label: "Program", collection: ["Summer 2012", "Spring 2013", "Summer 2013", "Fall 2013"] %></td>
-          <td><%= f.input :online, label: "Boarding/Online", collection: ["Boarding", "Online"] %></td>
-        </tr>
-        <tr>
-          <td><%= f.input :employment, label: "Employment Status", collection: ["Employed", "Freelancing", "Job Hunting", "Student", "Entrepreneur"] %></td>
-          <td><%= f.input :team, label: "Team", collection: ["Angels", "Magic", "Titans", "Phoenix", "Lightning", "Tornados", "Lanterns", "Wonders", "Blizzards"] %></td>
-        </tr>
-      </table>
-
-      <%= f.input :bio, label: "Short Bio", :input_html => { :rows => 5 } %>
-
-      <table>
-        <tr>
-          <div class="field">
-            <%= f.label :skill_ids, "Skills" %>
-            <%= f.collection_select :skill_ids, Skill.order(:name), :id, :name, {}, {multiple: true} %>
-          </div>
-        </tr>
-      </table>
-    </div>
-
-    <div class="simple_form_section">Contact Info</div>
-    <div style="width: 100%; margin-left: 35px;">
-      <table>
-        <tr>
-          <td> <%= f.input :street_address, label: "Street Address" %></td>
-          <td> <%= f.input :city %></td>
-        </tr>
-        <tr>
-          <td><%= f.input :state %></td>
-          <td><%= f.input :country %></td>
-        </tr>
-      </table>
-    </div>
-
-
-    <div class="simple_form_section">Social Networks</div>
-    <div style="width: 100%; margin-left: 35px;">
-      <table>
-        <tr>
-          <td><%= f.input :twitter, label: "Twitter (Handle only, no @)" %></td>
-          <td><%= f.input :facebook, label: "Facebook (URL)" %></td>
-        </tr>
-        <tr>
-          <td><%= f.input :linkedin, label: "LinkedIn (URL)" %></td>
-          <td><%= f.input :gmail, label: "Gmail (Name only)" %></td>
-        </tr>
-        <tr>
-          <td><%= f.input :skype, label: "Skype name" %></td>
-          <td><%= f.input :github, label: "Github Handle" %></td>
-        </tr>
-        <tr>
-          <td><%= f.input :instagram, label: "Instagram (Name only)" %></td>
-          <td><%= f.input :dribbble, label: "Dribbble Handle" %></td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="simple_form_section">Email and Password</div>
-    <div style="width: 100%; margin-left: 35px;">
-      <div><%= f.label :email %><br />
-      <%= f.email_field :email, :autofocus => true %></div>
-
-      <div><%= f.label :password %><br />
-      <%= f.password_field :password %></div>
-
-      <div><%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %></div>
-      <br />
-
-      <div><%= f.submit "Register New Student" %></div>
-    </div>
-  <% end %>
+<div class="top-section">
+  <div class="row">
+    <div class="top-column-main">
+      <h1>Sign Up</h1>
+    </div><!-- column main -->
+  </div><!-- row -->
 </div>
+
+
+<div class="column-main">
+  <div class="sign-in-container">
+    
+    <%= link_to '/auth/facebook' do %>
+      <div class="fb-connect-btn">
+        <%= image_tag "fb.svg", :class => "fb-icon" %>
+        <p class="fb-btn-text">
+          CONNECT WITH FACEBOOK
+        </p>
+      </div>
+    <% end %>
+    <p id="or">
+      OR
+    </p>
+    <div class="sign-in sign-up">
+      <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+        <%= f.input :email, label: 'EMAIL:' %>
+        <%= f.input :password, label: "PASSWORD:" %>
+        <%= f.input :password_confirmation, label: "PASSWORD CONFIRMATION:" %>
+        <%= f.button :submit, "SIGN UP", :use_rails_ajax => false %>
+      <% end %>
+
+      <div class="separator"></div>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div><!-- column-main -->
+
+<div class="column-right">
 </div>
+

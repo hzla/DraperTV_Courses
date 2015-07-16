@@ -9,25 +9,27 @@
 <div class="column-main">
   <div class="topics">
     <% @topics.each do |topic| %>
-      <div class='topic <%= topic.name.downcase.gsub(" ", "-").gsub("&-", "") + " " + topic.status(current_user) %>'>
-        <%= link_to topic_path(topic), :class => topic.status(current_user) do %>
+      <% info = topic.progress_info(@user) %>
+      <% completed = info[:status] == "completed" %>
+      <div class='topic <%= topic.name.downcase.gsub(" ", "-").gsub("&-", "") + " " + info[:status] %>'>
+        <%= link_to topic_path(topic), :class => info[:status] do %>
           <p class="topic-name"><%= topic.name %></p>
-          <div class="topic-icon-container <%= 'complete' if topic.complete? current_user %>">
-            <% if topic.complete?(current_user) %>
+          <div class="topic-icon-container <%= 'complete' if completed %>">
+            <% if completed %>
               <%= image_tag topic.done_icon, :class => "topic-icon" %>
             <% else %>
               <%= image_tag topic.icon, :class => "topic-icon" %>
             <% end %>
           </div>
           <div class="percent-complete">
-            <% if topic.complete? current_user %>
+            <% if completed %>
                 Complete!
             <% else %>
-              <%= topic.progress_percentage current_user %>%
+              <%= info[:percentage] %>%
             <% end %>
           </div>
           <div class="percent-complete-bar">
-            <div class="track-completion" style="width: <%= topic.progress_percentage current_user %>%;"></div>
+            <div class="track-completion" style="width: <%= info[:percentage] %>%;"></div>
           </div>
         <% end %>
       </div>

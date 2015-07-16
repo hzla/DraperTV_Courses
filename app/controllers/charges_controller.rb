@@ -1,31 +1,28 @@
 class ChargesController < ApplicationController
+  include ApplicationHelper
+  before_filter :authenticate_user!
 
-def new
-end
-
-def create
-  # @user = current_user
-  # Amount in cents
-  @amount = 85000
-
-  customer = Stripe::Customer.create(
-    # :email => @user.email,
-    :email => params[:stripeEmail],
-    :card  => params[:stripeToken]
-  )
-
-  charge = Stripe::Charge.create(
-    :customer    => customer.id,
-    :amount      => @amount,
-    :description => 'Rails Stripe customer',
-    :currency    => 'usd'
-  )
-
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to charges_path
+  def new
   end
 
-  #Source Tutorial
-  # https://stripe.com/docs/checkout/guides/rails
+  def create
+    if !current_user.customer_id
+      @customer = Stripe::Customer.create(
+        :description => current_user.full_name,
+        :source => params["stripeToken"]
+      )
+      current_user.update_attributes customer_id: @customer.id
+    else
+      @customer = Stripe::Customer.retrieve(current_user.customer_id)
+    end
+    @plan = params["plan"] || "Hero" 
+    current_user.update_attributes email: params["email"], plan: @plan
+    if @customer.subscriptions.count > 0
+      @subscription = @customer.subscriptions.first
+      @subscription.plan = @plan
+      @subscription.save
+    else
+      @subscription = @customer.subscriptions.create plan: @plan
+    end
+  end
 end

@@ -40,6 +40,7 @@ gem 'customerio', :git => 'https://github.com/customerio/customerio-ruby'
 gem 'mandrill-api'
 #gem 'mandrill-rails'
 gem "mailchimp-api", "~> 2.0.4"
+gem 'omniauth-facebook'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -59,6 +60,7 @@ gem 'aws-sdk', '~> 1.5.7'
 gem 'foreman'
 gem 'right_aws'
 gem 'pry'
+gem 'dotenv-rails'
 
 # Development Only
 group :development do
@@ -112,6 +114,8 @@ gem 'rack-cache'
 gem 'kgio'
 
 
+gem 'fb_graph2'
+
 
 group :development, :test do
   gem 'rspec-rails'
@@ -121,6 +125,8 @@ group :development, :test do
 end
 
 gem 'upmin-admin'
+
+gem 'httparty'
 
 
 # gem "nifty-generators", :group => :development

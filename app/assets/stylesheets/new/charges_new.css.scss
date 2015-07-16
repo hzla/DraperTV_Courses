@@ -1,0 +1,73 @@
+#plans {
+	padding: 40px 20px;
+	box-sizing: border-box;
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.plans-text {
+	margin-bottom: 20px;
+}
+
+.plan {
+	background: #F7F7F7;
+	box-sizing: border-box;
+	padding: 20px;
+	@include flexbox;
+	@include justify-content(space-between);
+	@include align-items(center);
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.plan-info {
+	width: calc(100% - 40px);
+	height: 100%;
+}
+
+.plan-icon {
+	height: 20px;
+	width: 20px;
+}
+
+.plan-title {
+	margin-bottom: 10px;
+}
+
+.plan-description {
+	margin-bottom: 0px;
+}
+
+.form-row {
+	@include flexbox;
+	@include justify-content(space-between);
+}
+
+.payment-input {
+	height: 40px;
+	width: 100%;
+	border: 1px solid $blue;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	padding: 0px 10px;
+	text-align: center;
+	font-weight: 300;
+}
+
+.payment-input.mini {
+	width: 80px;
+}
+
+.checkout {
+	height: 40px;
+	background: $green;
+	color: white;
+	text-align: center;
+	width: 100%;
+	border-radius: 5px;
+	border: none;
+	letter-spacing: 1px;
+	font-size: 14px;
+	font-weight: 600;
+}

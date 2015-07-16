@@ -70,13 +70,16 @@
       <div class="comments">
         <% @lesson.comments.includes(:user).each do |comment| %>
           <div class="comment">
-<!--             <div class="comment-vote-container">
-            7
-            </div> -->
+            <div class="comment-vote-container">
+              <%= link_to comment_upvote_path(comment) do %>
+                <%= image_tag "upvote-arrow.svg", :class => "upvote-arrow" %>
+              <% end %>
+              <p class="vote-count"><%= comment.get_upvotes.size %></p>
+            </div>
             <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
             <div class="comment-main">
               <div class="comment-header">
-                <span class="comment-user"> <%= comment.user.full_name %> -&nbsp;</span><span class="user-title">Trainee</span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= comment.created_at %></span> 
+                <span class="comment-user"> <%= comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= comment.created_at %></span> 
               </div>
               <div class="comment-body">
                 <%= comment.body %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709230437) do
+ActiveRecord::Schema.define(version: 20150716004511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,11 @@ ActiveRecord::Schema.define(version: 20150709230437) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "authorizations", force: true do |t|
+    t.string  "uid"
+    t.integer "user_id"
   end
 
   create_table "authorships", force: true do |t|
@@ -460,7 +465,7 @@ ActiveRecord::Schema.define(version: 20150709230437) do
     t.string   "zip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",                  default: "",          null: false
+    t.string   "email",                  default: ""
     t.string   "encrypted_password",     default: "",          null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -492,6 +497,11 @@ ActiveRecord::Schema.define(version: 20150709230437) do
     t.integer  "bonus_points_earned"
     t.integer  "char_points"
     t.string   "role"
+    t.integer  "timezone"
+    t.string   "title",                  default: "Recruit"
+    t.boolean  "paid",                   default: false
+    t.string   "subscription"
+    t.string   "customer_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -524,17 +534,18 @@ ActiveRecord::Schema.define(version: 20150709230437) do
   end
 
   create_table "votes", force: true do |t|
-    t.boolean  "vote",          default: false, null: false
-    t.integer  "voteable_id",                   null: false
-    t.string   "voteable_type",                 null: false
+    t.integer  "votable_id"
+    t.string   "votable_type"
     t.integer  "voter_id"
     t.string   "voter_type"
+    t.boolean  "vote_flag"
+    t.string   "vote_scope"
+    t.integer  "vote_weight"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "votes", ["voteable_id", "voteable_type"], name: "index_votes_on_voteable_id_and_voteable_type", using: :btree
-  add_index "votes", ["voter_id", "voter_type", "voteable_id", "voteable_type"], name: "fk_one_vote_per_user_per_entity", unique: true, using: :btree
-  add_index "votes", ["voter_id", "voter_type"], name: "index_votes_on_voter_id_and_voter_type", using: :btree
+  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
+  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
 end

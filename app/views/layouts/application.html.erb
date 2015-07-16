@@ -35,6 +35,8 @@
     </script>
 
     <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6009982432893&amp;value=0&amp;currency=USD" /></noscript>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
 </head>
 <body>
 
@@ -42,7 +44,7 @@
   <!-- **** Navbar ***** -->
   <!-- ***************** -->
 
-    <% if user_signed_in? %>
+
       <div class="navbar navbar-fixed-top sb-slide">
         <div class="navbar-inner">
           <div class="container">
@@ -103,55 +105,6 @@
                   </div>
 
                   <%= link_to "", activities_path, :data => { :'class' => 'displayLink' }, :remote => true %>
-
-                  <script type="text/javascript">
-                    <% if user_signed_in? %>
-                      $( ".sb-toggle-right" ).on( "click", function() {
-                         if($( "html" ).hasClass( "sb-active-right" )) {
-                          $("#notifications").removeClass("notifications");
-                          $('#notifications').addClass("empty");
-                          $('.red-circle p').empty();
-                          $('.red-circle').hide();
-                          $('form#edit_user_' + '<%= current_user.id %>').submit();
-                        }
-                        else {
-                          $('a[data\-class="displayLink"]').click();
-                          $('.red-circle p').empty();
-                          $('.red-circle').hide();
-                          $('form#edit_user_' + '<%= current_user.id %>').submit();
-                        }
-                      });
-
-                      $('#user_ncounter').val(0);
-                      $('.red-circle p').text('<%= current_user.ncounter %>');
-
-                      var n = $('.red-circle p').text();
-                      n =  parseInt(n);
-
-                      if( '<%= current_user.ncounter %>' === 0 ) {
-                        $('.red-circle p').empty();
-                        $("#notifications").removeClass("notifications");
-                        $('#notifications').addClass("empty");
-                        $('.red-circle').hide();
-                      }
-                      else {
-                        //$('#notifications').text('<%= current_user.ncounter %>');
-                        $('#notifications').removeClass('empty');
-                        $('#notification').addClass('notifications');
-                        $('.red-circle').show();
-                        $('.red-circle p').text('<%= current_user.ncounter %>');
-                      }
-                      if(n === 0 ) {
-                        $('.red-circle p').empty();
-                        $("#notifications").removeClass("notifications");
-                        $('#notifications').addClass("empty");
-                        $('.red-circle').hide();
-                      }
-                      else {
-                          // code to be executed if condition is false
-                      }
-                    <% end %>
-                  </script>
                 </div><!-- dropdown menu -->
               </li><!-- dropdown -->
 
@@ -159,37 +112,27 @@
                 <div class="sb-toggle-right dropdown" data-toggle="dropdown" href="#">
                   <i class="fa fa-gear fa-2x empty" style="padding-top: 10px; padding-right: 12px;" id="notifications"></i>
                 </div>
-                <ul class="dropdown-menu">
-                  <li role="menu"><%= link_to 'My Profile', student_profile_path(current_user)  %></li>
-                  <li role="menu"><%= link_to 'Settings',  edit_user_path(current_user) %></li>
-                  <li role="menu"><%= link_to 'Change Password',  edit_user_registration_path %></li>
+                <% if user_signed_in? %>
+                  <ul class="dropdown-menu">
+                    <li role="menu"><%= link_to 'My Profile', student_profile_path(current_user)  %></li>
+                    <li role="menu"><%= link_to 'Settings',  edit_user_path(current_user) %></li>
+                    <li role="menu"><%= link_to 'Change Password',  edit_user_registration_path %></li>
 
-                  <li class="divider"></li>
-                  <li role="menu"><%= link_to 'Leave Feedback', feedbacks_path %></li>
-                  <li role="menu"><%= link_to 'Resources', resources_path %></li>
-                  <li class="divider"></li>
-                  <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
-                </ul>
+                    <li class="divider"></li>
+                    <li role="menu"><%= link_to 'Leave Feedback', feedbacks_path %></li>
+                    <li role="menu"><%= link_to 'Resources', resources_path %></li>
+                    <li class="divider"></li>
+                    <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
+                  </ul>
+                <% end %>
               </li><!-- dropdown -->
 
             </ul>
           </div>
         </div>
       </div>
-    <% else %>
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <%= link_to '/' do %>
-              <div id="logo"></div>
-            <% end %>
-            <ul class="nav pull-right">
-              <li id="home_link"><%= link_to "Log In", login_path %></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    <% end %>
+
+ 
 
     <!-- took out flash messages here -->
 
@@ -201,18 +144,14 @@
   <!-- ***** Body ****** -->
   <!-- ***************** -->
 
-    <% if user_signed_in? %>
+  
       <div style="display: block; width: 100%; overflow: visible; background: white; height: auto;">
         <div id="loadingbar-frame"></div>
         <div id="main-body">
           <%= yield %>
         </div>
       </div>
-    <% else %>
-      <div id="logged-out-main">
-    		<%= yield %>
-      </div>
-    <% end %>
+
 
   </div><!-- end sb-site -->
 
@@ -221,9 +160,9 @@
   <!-- ***************** -->
 
   <!--<div class="sb-slidebar sb-left">-->
-    <% if user_signed_in? %>
-      <%= render 'layouts/sidenav' %>
-    <% end %>
+
+  <%= render 'layouts/sidenav' %>
+
   <!--</div>-->
 
   <div class="sb-slidebar sb-right" id="right-menu">

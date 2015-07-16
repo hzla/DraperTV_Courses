@@ -21,6 +21,9 @@ body {
       letter-spacing: initial;
     }
   }
+  .hidden {
+    display: none !important;
+  }
 
   .column-right {
     padding: 20px;
@@ -32,7 +35,8 @@ body {
       margin: 0px;
       height: 20px;
       line-height: 20px;
-      margin-bottom: 25px;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
       font-weight: 700;
   }
 
@@ -52,6 +56,8 @@ body {
 	}
 	#main-body {
 		margin-left: 240px;
+    border-right: 1px solid #E7E7E7;
+    min-height: 100vh;
   		width: calc(100% - 540px);
   		.top-section {
   			width: 100%;
@@ -94,5 +100,16 @@ body {
         margin-top: 0px;
   		}
 	}
+}
 
+.green-text {
+  color: $green !important;
+}
+
+.blue-text {
+  color: $blue !important;
+}
+
+.red-text {
+  color: $red !important;
 }

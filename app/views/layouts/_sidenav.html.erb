@@ -1,13 +1,5 @@
 <div id="side-nav" style="display: block;">
-	<%= link_to student_profile_path(current_user) do %>
-		<div class="top-bar">
-				<div id="navbar-avatar"><%= image_tag current_user.avatar.url(:medium) %></div>
-				<div class="info-container">
-					<div class="name"><%= current_user.full_name %></div>
-					<div class="points pcounter"><p><%= number_with_delimiter(current_user.pcounter, :delimiter => ',') %></p></div>
-				</div>
-		</div>
-	<% end %>
+	
 
 	<div class="main">
 		<%= yield :side_nav %>

@@ -10,4 +10,11 @@ class CommentsController < ApplicationController
    		redirect_to lesson_path(lesson)
    	end
   end
+
+  def upvote
+  	comment = Comment.find params[:id]
+  	comment.liked_by current_user
+  	comment.user.update_title
+  	redirect_to lesson_path(comment.lesson)
+  end
 end

@@ -1,17 +1,117 @@
-<div style="width: 90%; display: block; margin: 0 auto; margin-top: 60px; text-align: center; color: #919191;">
-  <h1 style="color: #414141;">Hello, future Hero!</h1>
-  <p style="padding-top: 20px; padding-bottom: 20px; font-size: 14px; max-width: 450px; margin: 0 auto;">You're one step closer to becoming a Draper University superhero!  Tuition for the session is $850, which will include all of your required reading for the program.  If you have any questions about the payment process, please contact <a href="mailto:admissions@draperuniversity.com">admissions@draperuniversity.com</a></p>
-  <%= form_tag charges_path do %>
-    <article>
-      <label class="amount">
-        <span style="margin-bottom: 20px; font-style: italic; display: block;">Amount: $850.00</span>
-      </label>
-    </article>
+<div class="top-section">
+  <div class="row">
+    <div class="top-column-main">
+      <h1>Enroll Now</h1>
+    </div><!-- column main -->
+  </div><!-- row -->
+</div>
 
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-image="/assets/stripe-logo.png"
-            data-description="Summer Tuition 2014"
-            data-amount="85000"></script>
+
+<div class="column-main">
+  <div id="plans">
+
+    <p class="plans-text">
+      You’ll need to purchase membership to view our online courses, select one of the memberships below and check out to start your entrepreneurial learning!
+    </p>
+    <div class="plan" data-plan="Hero">
+      <div class="plan-select">
+        <%= image_tag "untouched.svg", :class => "plan-icon hidden unselected" %>
+        <%= image_tag "done.svg", :class => "plan-icon selected" %>
+      </div>
+      <div class="plan-info">
+        <p class="plan-title green-text">Hero Membership - $10/month</p>
+        <p class="plan-description">Get access to courses, weekly hangouts, and monthly live interviews with Silicon Valley’s best.</p>    
+      </div>
+    </div>
+
+    <div class="plan" data-plan="SuperHero">
+      <div class="plan-select">
+        <%= image_tag "untouched.svg", :class => "plan-icon unselected" %>
+        <%= image_tag "done.svg", :class => "plan-icon hidden selected" %>
+      </div>
+      <div class="plan-info">
+        <p class="plan-title blue-text">Superbro Membership - $15/month</p>
+        <p class="plan-description">Same as the Hero Package, but you get access to the entire library of past Draper lectures, interviews, and fireside chats. </p>    
+      </div>
+    </div>
+
+    <div class="plan" data-plan="SuperHeroYearly">
+      <div class="plan-select">
+        <%= image_tag "untouched.svg", :class => "plan-icon unselected" %>
+        <%= image_tag "done.svg", :class => "plan-icon hidden selected" %>
+      </div>
+      <div class="plan-info">
+        <p class="plan-title red-text">Superbro Yearly Membership - $90/year</p>
+        <p class="plan-description">Get everything in the Superbro, but we’ll give you 6 months free!</p>    
+      </div>
+    </div>
+
+  </div>
+</div><!-- column-main -->
+
+<div class="column-right">
+  <div class="column-header">
+    <p>PAYMENT INFO</p>
+  </div>
+
+  <%= form_tag '/charges', id: "payment-form" do %>
+    <span class="payment-errors"></span>
+
+    <div class="form-row">
+      <input type="text" name="email" class="payment-input" placeholder="Email"/>
+    </div>
+
+    <div class="form-row">
+      <input type="text" data-stripe="number" class="payment-input" placeholder="Card Number"/>
+    </div>
+
+    <div class="form-row">
+      <input type="text" data-stripe="exp-month" class="payment-input mini" placeholder="MM"/>
+      <input type="text" data-stripe="exp-year" class="payment-input mini" placeholder="YY"/>
+      <input type="text" data-stripe="cvc" class="payment-input mini" placeholder="CVC"/>
+    </div>
+
+    <input type="hidden" name="plan" value="Hero" id="plan-input">
+
+    <button type="submit" class="checkout">CHECKOUT</button>
   <% end %>
 </div>
+
+
+
+<script type="text/javascript">
+  // This identifies your website in the createToken call below
+  Stripe.setPublishableKey('<%= ENV['PUBLISHABLE_KEY'] %>');
+  // ...
+
+  $(function($) {
+    $('#payment-form').submit(function(event) {
+      var $form = $(this);
+
+      // Disable the submit button to prevent repeated clicks
+      $form.find('button').prop('disabled', true);
+
+      Stripe.card.createToken($form, stripeResponseHandler);
+
+      // Prevent the form from submitting with the default action
+      return false;
+    });
+
+    function stripeResponseHandler(status, response) {
+      var $form = $('#payment-form');
+
+      if (response.error) {
+        // Show the errors on the form
+        $form.find('.payment-errors').text(response.error.message);
+        $form.find('button').prop('disabled', false);
+      } else {
+        //response contains id and card, which contains additional card details
+        var token = response.id;
+        // Insert the token into the form so it gets submitted to the server
+        $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+        // and submit
+        $form.get(0).submit();
+      }
+    };
+  });
+</script>

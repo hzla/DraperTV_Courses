@@ -15,6 +15,7 @@ class Lesson < ActiveRecord::Base
 	end
 
 	def progress user
+		return nil if !user
 		Progress.where(model_type: "lesson", model_id: id, user_id: user.id).first
 	end
 
@@ -36,6 +37,7 @@ class Lesson < ActiveRecord::Base
 	end
 
 	def status_icon user
+		return "untouched.svg" if !user
 		if progress user
 			"done.svg"
 		else
@@ -54,10 +56,12 @@ class Lesson < ActiveRecord::Base
 	end
 
 	def completed? user
+		return nil if !user
 		progress user
 	end
 
 	def complete user
+		return nil if !user
 		if !progress user
 			Progress.create(percent_complete: 100, user_id: user.id, model_type: "lesson", model_id: id).update_percentage_for_parent_progresses user
 		end

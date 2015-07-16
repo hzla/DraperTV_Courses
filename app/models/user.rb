@@ -28,12 +28,11 @@ class User < ActiveRecord::Base
   acts_as_taggable
   acts_as_voter
   has_surveys
-  validates :first_name, presence: true
-  validates :last_name, presence: true
   validates :email, presence: true,
   					uniqueness: true
 
   has_many :authorships
+  has_many :authorizations
   has_many :skills, through: :authorships
   has_many :activity_feeds
 
@@ -44,6 +43,15 @@ class User < ActiveRecord::Base
 
   SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
 
+
+  def self.create_with_facebook auth_hash
+    timezone = auth_hash.extra.raw_info.timezone
+    profile = auth_hash['info']
+    fb_token = auth_hash.credentials.token
+    user = User.new first_name: profile["name"].split(" ")[0], last_name: profile["name"].split(" ")[-1], timezone: timezone, email: profile["email"], password: rand(1213920) + 1000000
+    user.authorizations.build :uid => auth_hash["uid"]
+    user if user.save(validate: false)
+  end
 
   def full_name
     [first_name, last_name].join(' ')
@@ -61,7 +69,29 @@ class User < ActiveRecord::Base
     Rails.cache.delete([self.class.name, id])
   end
 
-  def progress_for model
-    
+  def tier
+    karma = comments.map {|c| c.get_upvotes.size }.inject(:+)
+    case karma
+    when karma >= 4000
+      "Guru"
+    when karma >= 3000
+      "Legend"
+    when karma >= 2300
+      "Champion"
+    when karma >= 1700
+      "Hero"
+    when karma >= 1200
+      "Challenger"
+    when karma >= 700
+      "Rookie"
+    when karma >= 300
+      "Trainee"
+    else karma >= 0
+      "Recruit"
+    end
+  end
+
+  def update_title
+    update_attributes title: tier
   end
 end

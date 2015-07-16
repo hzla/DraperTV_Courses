@@ -71,6 +71,11 @@ $bright-purple: #AC65A6;
 $bright-blue: #009FF1;
 
 
+$green: #24B494;
+$blue: #246DB4;
+$red: #E2575B;
+
+
 /**************************
  **** Declare Mixins ******
 ***************************/
@@ -555,6 +560,8 @@ $font-small-title: 16px;
 @import 'new/topics_show';
 @import 'new/tracks_show';
 @import 'new/lessons_show';
+@import 'new/sessions_new';
+@import 'new/charges_new';
 
 /***********************************
  ****** Install Proxima Nova *******

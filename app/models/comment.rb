@@ -3,4 +3,10 @@ class Comment < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :lesson
 	acts_as_votable
+	after_create :self_upvote
+
+
+	def self_upvote
+		liked_by user
+	end
 end

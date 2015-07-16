@@ -1,18 +1,38 @@
-<div class="sign-in-container"><br />
-		<div class="section-bar">Sign In</div>
+<div class="top-section">
+  <div class="row">
+    <div class="top-column-main">
+      <h1>Log In</h1>
+    </div><!-- column main -->
+  </div><!-- row -->
+</div>
+
+
+<div class="column-main">
+	<div class="sign-in-container">
+		<%= link_to '/auth/facebook' do %>
+	      <div class="fb-connect-btn">
+	        <%= image_tag "fb.svg", :class => "fb-icon" %>
+	        <p class="fb-btn-text">
+	          CONNECT WITH FACEBOOK
+	        </p>
+	      </div>
+	    <% end %>
+	    <p id="or">
+	      OR
+	    </p>
 		<div class="sign-in">
 			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "sign-in"}) do |f| %>
-
-				<%= f.input :email %>
-				<%= f.input :password %>
-
-			  <% if devise_mapping.rememberable? -%>
-			    <div><%= f.check_box :remember_me, as: :boolean, :class => 'float' %> <%= f.label :remember_me %></div>
-			  <% end -%><br />
-
-			 <div><%= f.button :submit, "Sign in", :use_rails_ajax => false %></div>
+				<%= f.input :email, label: 'EMAIL:' %>
+				<%= f.input :password, label: "PASSWORD:" %>
+				<%= f.button :submit, "LOG IN", :use_rails_ajax => false %>
 			<% end %>
+
+			<div class="separator"></div>
 			<%= render "devise/shared/links" %>
 		</div>
 	</div>
+</div><!-- column-main -->
+
+<div class="column-right">
+</div>
 
