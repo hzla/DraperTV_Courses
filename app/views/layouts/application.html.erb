@@ -18,25 +18,7 @@
   <style>
   	body { font-family: 'proxima_nova';}
   </style>
-
-  <!-- google tracking -->
-  <script type="text/javascript">
-    var fb_param = {};
-    fb_param.pixel_id = '6009982432893';
-    fb_param.value = '0.00';
-    fb_param.currency = 'USD';
-    (function(){
-      var fpw = document.createElement('script');
-      fpw.async = true;
-      fpw.src = '//connect.facebook.net/en_US/fp.js';
-      var ref = document.getElementsByTagName('script')[0];
-      ref.parentNode.insertBefore(fpw, ref);
-    })();
-    </script>
-
-    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6009982432893&amp;value=0&amp;currency=USD" /></noscript>
-    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 </head>
 <body>
 
@@ -44,149 +26,23 @@
   <!-- **** Navbar ***** -->
   <!-- ***************** -->
 
-
-      <div class="navbar navbar-fixed-top sb-slide">
-        <div class="navbar-inner">
-          <div class="container">
-
-            <div class="left-blue">
-              <div id="left-menu" class="sb-toggle-left">
-                <div id="menu-icon"></div>
-                <div class="title">menu</div>
-              </div>
-              <%= link_to feed_path do %>
-                <div id="logo"></div>
-              <% end %>
-            </div>
-
-            <!-- ** Dont Show Score in Nav ** -->
-
-            <ul class="nav pull-right">
-              <!-- <a id="right-menu" href="#right-menu" class="sidr-click"> -->
-              <li class="dropdown">
-                <div class="sb-toggle-right dropdown" data-toggle="dropdown" href="#">
-                  <i class="fa fa-inbox fa-2x empty" style="padding-top: 10px; padding-right: 12px;" id="notifications"></i>
-                  <div class="red-circle"><p></p></div>
-                </div><!-- sb-toggle-right -->
-                <div class="dropdown-menu" id="notification-dropdown" style="right: 0;">
-                  <% if user_signed_in? %>
-                    <% @notified = User.find(current_user.id) %>
-                      <%= simple_form_for @notified, :remote => true do |f| %>
-                        <% if @notified.errors.any? %>
-                          <div id="error_explanation">
-                            <h2><%= pluralize(@notified.errors.count, "error") %> prohibited this user from being saved:</h2>
-                            <ul>
-                            <% @notified.errors.full_messages.each do |msg| %>
-                              <li><%= msg %></li>
-                            <% end %>
-                            </ul>
-                          </div>
-                        <% end %><!-- errors -->
-
-                        <div class="field">
-                          <%= f.hidden_field :ncounter %>
-                        </div>
-                      <% end %>
-                  <% end %>
-
-                  <div id="ajax-loading">
-                    <%= image_tag("loading1.gif") %>
-                  </div>
-
-                  <div id="notify" class="section-link">
-                  </div><!-- notify -->
-
-                  <div id="load-more">
-                    <div class="view-all">
-                      <%= link_to 'View All', notifications_path %>
-                    </div>
-                    <div class="clear-notifications">
-                    </div>
-                  </div>
-
-                  <%= link_to "", activities_path, :data => { :'class' => 'displayLink' }, :remote => true %>
-                </div><!-- dropdown menu -->
-              </li><!-- dropdown -->
-
-              <li class="dropdown">
-                <div class="sb-toggle-right dropdown" data-toggle="dropdown" href="#">
-                  <i class="fa fa-gear fa-2x empty" style="padding-top: 10px; padding-right: 12px;" id="notifications"></i>
-                </div>
-                <% if user_signed_in? %>
-                  <ul class="dropdown-menu">
-                    <li role="menu"><%= link_to 'My Profile', student_profile_path(current_user)  %></li>
-                    <li role="menu"><%= link_to 'Settings',  edit_user_path(current_user) %></li>
-                    <li role="menu"><%= link_to 'Change Password',  edit_user_registration_path %></li>
-
-                    <li class="divider"></li>
-                    <li role="menu"><%= link_to 'Leave Feedback', feedbacks_path %></li>
-                    <li role="menu"><%= link_to 'Resources', resources_path %></li>
-                    <li class="divider"></li>
-                    <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
-                  </ul>
-                <% end %>
-              </li><!-- dropdown -->
-
-            </ul>
-          </div>
-        </div>
-      </div>
-
- 
-
-    <!-- took out flash messages here -->
-
-
-  <div id="sb-site" style="padding-top: 42px; overflow: visible; height: auto; background: none; z-index: 0;  height: calc(100% - 42px;); ">
-
-
+  <%= render partial: "layouts/header" %>
   <!-- ***************** -->
   <!-- ***** Body ****** -->
   <!-- ***************** -->
-
-  
-      <div style="display: block; width: 100%; overflow: visible; background: white; height: auto;">
-        <div id="loadingbar-frame"></div>
-        <div id="main-body">
-          <%= yield %>
-        </div>
-      </div>
-
-
-  </div><!-- end sb-site -->
+    <div id="main-body">
+      <%= yield %>
+    </div>
 
   <!-- ***************** -->
   <!-- *** Sidebars **** -->
   <!-- ***************** -->
-
-  <!--<div class="sb-slidebar sb-left">-->
-
   <%= render 'layouts/sidenav' %>
-
-  <!--</div>-->
-
   <div class="sb-slidebar sb-right" id="right-menu">
     <div class="top-bar">
     </div>
-
-
   </div><!-- #right-menu -->
-
-  <script type="text/javascript">
-    $(function() {
-      $('#ajax-loading').hide();  // hide it initially.
-      $(document)
-        .ajaxStart(function() {
-          $('#ajax-loading').show(); // show on any Ajax event.
-        })
-        .ajaxStop(function() {
-          $('#ajax-loading').hide(); // hide it when it is done.
-      });
-    });
-  </script>
-
-<%= render 'layouts/footer' %>
-
+  <%= render 'layouts/footer' %>
 </body>
 
 </html>

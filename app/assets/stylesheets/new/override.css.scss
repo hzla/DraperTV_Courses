@@ -47,17 +47,14 @@ body {
 		.top-bar {
 			height: 60px;
 		}
-		.main {
-			margin-top: 60px;
-		}
 	}
 	#main-body .column-right {
 		width: 300px;
 	}
 	#main-body {
 		margin-left: 240px;
-    border-right: 1px solid #E7E7E7;
     min-height: 100vh;
+    padding-top: 50px;
   		width: calc(100% - 540px);
   		.top-section {
   			width: 100%;
@@ -85,6 +82,9 @@ body {
           height: auto;
           margin: 0;
           line-height: 60px;
+        }
+        .circle-button p {
+          line-height: 20px;
         }
         h1 {
           padding: 0px;

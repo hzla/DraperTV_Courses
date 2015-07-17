@@ -7,7 +7,11 @@ class CommentsController < ApplicationController
     lesson = comment.lesson
 
     if comment.save!
-   		redirect_to lesson_path(lesson)
+   		if comment.lesson_id
+        redirect_to lesson_path(lesson) and return
+      else
+        redirect_to ama_path(comment.ama)
+      end
    	end
   end
 

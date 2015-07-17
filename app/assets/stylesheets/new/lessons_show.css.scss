@@ -1,4 +1,4 @@
-.lesson-container {
+.lesson-container, #amas {
 	box-sizing: border-box;
 	padding: 40px;
 	iframe {
@@ -35,6 +35,7 @@
 		padding: 5px;
 		box-sizing: border-box;
 		border-radius: 5px;
+		border: 1px solid #CCCCCC;
 	}
 
 

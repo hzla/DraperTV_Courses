@@ -389,7 +389,7 @@ object, embed {
   height: 100%;
   position: fixed;
   left: 0px;
-  top: 42px;
+  top: 50px;
   overflow: hidden;
   //width: 180px;
     .top-bar {
@@ -523,10 +523,10 @@ object, embed {
     position: fixed;
     right: 0;
     height: 100%;
-    top: 42px;
+    top: 50px;
     background: none;
     width: calc(26% - 60px);
-    border-left: 1px solid #ccc;
+    border-left: 1px solid #E7E7E7;
     z-index: 1000;
     //overflow-x: auto;
     .col-right-top-section {
@@ -652,10 +652,9 @@ object, embed {
   }
   .top-section {
     height: 67px;
-    border-bottom: 1px solid $gray-blue-lt;
-    border-top: 1px solid $gray-x-lt;
+    border-bottom: 1px solid #E7E7E7;
+    box-sizing: border-box;
     width: calc(100% - 185px);
-    //padding: 5px 25px;
     position: fixed;
     background: white;
     z-index: 100;

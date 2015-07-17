@@ -25,6 +25,8 @@ OnlineSchool::Application.routes.draw do
     get '/comments/:id/upvote', to: "comments#upvote", as: "comment_upvote"
   resources :progresses
 
+  resources :amas
+
   get '/auth/facebook/callback', :to => 'auths#facebook_create'
 
   ##### OLD #####

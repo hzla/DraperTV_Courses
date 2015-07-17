@@ -1,0 +1,54 @@
+<div class="top-section">
+  <div class="row">
+    <div class="top-column-main">
+      <%= link_to amas_path do %>
+        <p class="header-back"><< ARCHIVE</p>
+      <% end %>
+      <h1 class="no-letter-spacing">Monthly AMA</h1>
+      <p class="header-info"></p>
+    </div><!-- column main -->
+  </div><!-- row -->
+</div>
+
+<div id="amas">
+  <iframe src="https://player.vimeo.com/video/48181711" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+
+  <p class="video-title">
+    <%= @ama.title %>
+  </p>
+  <p class="video-author">
+    <%= @ama.description %>
+  </p>
+
+  <%= form_for @comment do |f| %>
+    <%= f.text_area :body, :class => "comment-body", placeholder: "Ask a question..." %>
+    <%= f.hidden_field :ama_id, value: @ama.id %>
+    <%= f.submit "Submit", :class => "submit-comment" %>
+  <% end %>
+
+  <div class="comments">
+    <% @ama.comments.includes(:user).each do |comment| %>
+      <div class="comment">
+        <div class="comment-vote-container">
+          <%= link_to comment_upvote_path(comment) do %>
+            <%= image_tag "upvote-arrow.svg", :class => "upvote-arrow" %>
+          <% end %>
+          <p class="vote-count"><%= comment.get_upvotes.size %></p>
+        </div>
+        <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
+        <div class="comment-main">
+          <div class="comment-header">
+            <span class="comment-user"> <%= comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= comment.created_at %></span> 
+          </div>
+          <div class="comment-body">
+            <%= comment.body %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="column-right">
+
+</div>

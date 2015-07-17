@@ -1,0 +1,10 @@
+#amas {
+	textarea.comment-body {
+		height: 80px;
+		margin-bottom: 20px;
+	}
+	iframe {
+		width: calc(100vw - 580px);
+  		height: calc((100vw - 580px) * 9 / 16);
+	}
+}

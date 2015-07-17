@@ -91,7 +91,8 @@ class User < ActiveRecord::Base
     end
   end
 
-  def update_title
-    update_attributes title: tier
+
+  def update_title_and_karma
+    update_attributes title: tier, karma: karma + 1
   end
 end

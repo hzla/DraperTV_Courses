@@ -1,8 +1,32 @@
-<div id="side-nav" style="display: block;">
+<div id="side-nav">
+	<div class="profile-info">
+		<% if current_user %>
+			<%= image_tag current_user.avatar.url, :class => "profile-pic" %>
+			<div class="profile-text">
+				<div class="profile-name">
+					<%= current_user.full_name %>
+				</div>
+				<div class="profile-karma">
+					<%= current_user.karma %> - <%= current_user.title %>
+				</div>
+			</div>
+		<% end %>
+	</div>
 	
 
 	<div class="main">
-		<%= yield :side_nav %>
+		<%= link_to topics_path, :class => "side-link" do %>
+			COURSES
+		<% end %>
+		<%= link_to events_path, :class => "side-link" do %>
+			CALENDAR
+		<% end %>
+		<%= link_to amas_path, :class => "side-link" do %>
+			MONTHLY AMA
+		<% end %>
+		<%= link_to events_path, :class => "side-link" do %>
+			WEEKLY STREAM
+		<% end %>
 	</div>
 </div>
 
