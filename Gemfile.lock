@@ -98,6 +98,8 @@ GEM
       faraday (>= 0.8)
       faraday_middleware (>= 0.8, < 0.10)
       multi_json (~> 1.0)
+    ancestry (2.1.0)
+      activerecord (>= 3.0.0)
     annotate (2.6.3)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -536,6 +538,7 @@ DEPENDENCIES
   acts-as-taggable-on
   acts_as_votable (~> 0.10.0)
   analytics-ruby (< 1.0)
+  ancestry
   annotate (>= 2.6.0)
   awesome_print
   aws-sdk (~> 1.5.7)

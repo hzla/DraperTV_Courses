@@ -69,23 +69,54 @@
 
       <div class="comments">
         <% @lesson.comments.includes(:user).each do |comment| %>
-          <div class="comment">
-            <div class="comment-vote-container">
+          <div class="comment collapsed">
+            <%= image_tag 'discussionexpand.svg', :class => 'comment-open comment-action' %>
+            <%= image_tag 'discussioncontract.svg', :class => 'comment-close comment-action hidden' %>
+            <span class="comment-text-vote"><%= comment.get_upvotes.size %> points</span>
+            <div class="comment-vote-container hidden">
               <%= link_to comment_upvote_path(comment) do %>
                 <%= image_tag "upvote-arrow.svg", :class => "upvote-arrow" %>
               <% end %>
               <p class="vote-count"><%= comment.get_upvotes.size %></p>
             </div>
-            <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
+            <%= image_tag current_user.avatar.url, :class => "comment-pic hidden" %>
             <div class="comment-main">
               <div class="comment-header">
                 <span class="comment-user"> <%= comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= comment.created_at %></span> 
               </div>
-              <div class="comment-body">
+              <div class="comment-body hidden">
                 <%= comment.body %>
               </div>
             </div>
           </div>
+          <div class="comment-children hidden">
+                <% comment.children.includes(:user).each do |child_comment| %>
+                   <div class="comment child">
+                      <div class="comment-vote-container">
+                        <%= link_to comment_upvote_path(child_comment) do %>
+                          <%= image_tag "upvote-arrow.svg", :class => "upvote-arrow" %>
+                        <% end %>
+                        <p class="vote-count"><%= child_comment.get_upvotes.size %></p>
+                      </div>
+                      <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
+                      <div class="comment-main">
+                        <div class="comment-header">
+                          <span class="comment-user"> <%= child_comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= child_comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= child_comment.created_at %></span> 
+                        </div>
+                        <div class="comment-text">
+                          <%= child_comment.body %>
+                        </div>
+                      </div>
+                    </div>
+                <% end %>
+                <%= form_for Comment.new do |f| %>
+                  <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
+                  <%= f.text_area :body, :class => "comment-body", placeholder: "Ask a question..." %>
+                  <%= f.hidden_field :lesson_id, value: @lesson.id %>
+                  <%= f.hidden_field :parent_id, value: comment.id %>
+                  <%= f.submit "Submit", :class => "submit-comment hidden" %>
+                <% end %>
+              </div>
         <% end %>
       </div>
 

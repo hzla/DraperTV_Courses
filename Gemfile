@@ -41,6 +41,7 @@ gem 'mandrill-api'
 #gem 'mandrill-rails'
 gem "mailchimp-api", "~> 2.0.4"
 gem 'omniauth-facebook'
+gem 'ancestry'
 
 # Gems used only for assets and not required
 # in production environments by default.

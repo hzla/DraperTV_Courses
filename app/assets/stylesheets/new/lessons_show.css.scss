@@ -26,7 +26,7 @@
 		}
 	}
 	form {
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 	}
 	textarea.comment-body {
 		width: 100%;
@@ -36,6 +36,7 @@
 		box-sizing: border-box;
 		border-radius: 5px;
 		border: 1px solid #CCCCCC;
+		margin-bottom: 10px;
 	}
 
 
@@ -43,6 +44,7 @@
 		@include flexbox;
 		align-content: top;
 		margin-bottom: 20px;
+		position: relative;
 	}
 	.comment-vote-container {
 		text-align: center;
@@ -77,6 +79,51 @@
 		.comment-date {
 			color: #939393;
 			font-weight: 400;
+		}
+	}
+	.comment-action {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 20px;
+		width: 20px;
+		cursor: pointer;
+	}
+	.comment-children {
+		box-sizing: border-box;
+		padding-left: 50px;
+	}
+	.comment-children .comment-body {
+		height: 40px;
+	}
+
+	.comment-children .new_comment {
+		@include flexbox;
+		box-sizing: border-box;
+		padding-left: 40px;
+	}
+	.comment.collapsed {
+		span {
+			color: #C0C0C0;
+		}
+	}
+	.comment-text-vote {
+		margin-right: 20px;
+	}
+	.sort-bar {
+		@include flexbox;
+		margin-bottom: 20px;
+		p {
+			margin-right: 20px;
+			color: #919191;
+			font-weight: 300;
+		}
+		p.active {
+			font-weight: 700;
+			color: #414141;
+		}
+		.sort-item {
+			cursor: pointer;
 		}
 	}
 }
