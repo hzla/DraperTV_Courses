@@ -123,11 +123,18 @@
 	box-sizing: border-box;
 	padding: 20px;
 	margin-top: 0px;
+	position: relative;
+	min-height: 100vh;
 	.side-link {
 		margin-bottom: 20px;
 		font-weight: 700;
 		display: block;
 		letter-spacing: 1px;
+	}
+	.side-link.logout {
+		position: absolute;
+		bottom: 100px;
+		left: 20px;
 	}
 }
 

@@ -4,8 +4,9 @@ class Topic < ActiveRecord::Base
 
   def status user
     return "untouched" if !user
-  	return "completed" if complete?(user)
-  	return "started" if started?(user)
+    percentage = progress_percentage(user)
+  	return "completed" if percentage == 100
+  	return "started" if percentage > 0
   	return "untouched"
   end
 
@@ -30,8 +31,9 @@ class Topic < ActiveRecord::Base
 
   def progress_percentage user
     return 0 if !user
-    if progress user
-      progress(user).percent_complete
+    selected_progress = progress(user)
+    if selected_progress
+      selected_progress.percent_complete
     else
       0
     end
@@ -41,6 +43,12 @@ class Topic < ActiveRecord::Base
     {status: status(user), percentage: progress_percentage(user)}
   end
 
+  def html_class_name
+    name.downcase.gsub(" ", "-").gsub("&-", "")
+  end
 
+  def display_name
+    name.downcase.split(" ").map(&:capitalize).join(" ")
+  end
 
 end

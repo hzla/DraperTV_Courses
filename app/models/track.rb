@@ -20,8 +20,9 @@ class Track < ActiveRecord::Base
 
   def progress_percentage user
     return 0 if !user
-    if progress user
-      progress(user).percent_complete
+    selected_progress = progress(user)
+    if selected_progress
+      selected_progress.percent_complete
     else
       0
     end
@@ -29,8 +30,9 @@ class Track < ActiveRecord::Base
 
   def status user
     return "untouched" if !user
-    return "completed" if complete?(user)
-    return "started" if started?(user)
+    percentage = progress_percentage(user)
+    return "completed" if percentage == 100
+    return "started" if percentage > 0
     return "untouched"
   end
 
@@ -40,6 +42,14 @@ class Track < ActiveRecord::Base
 
   def started_icon
     done = icon.gsub(".svg", "white.svg") 
+  end
+
+  def progress_info user
+    {status: status(user), percentage: progress_percentage(user)}
+  end
+
+  def display_name
+    name.downcase.split(" ").map(&:capitalize).join(" ")
   end
 
 

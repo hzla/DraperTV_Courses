@@ -107,7 +107,7 @@ $rgba-color-list: rgba(36,	109,	180, 0.2),rgba(53,	179,	222, 0.2),rgba(36,	180,	
 		h1, .track-percent-complete, .header-info, .started .topic-name, .completed .topic-name, .percent-complete, .started .track-name {
 			color: nth($color-list, $i);
 		}
-		.started .track-icon-container, .track-completion, .started .topic-icon-container, {
+		.started .track-icon-container, .track-completion, .started .topic-icon-container, .untouched .topic-icon-container {
 			background: nth($color-list, $i);
 		}
 		.track-percent-complete-bar, .percent-complete-bar {

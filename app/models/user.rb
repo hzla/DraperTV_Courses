@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   has_many :progresses
+  attr_accessible :karma, :paid
 
   SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
 
@@ -70,7 +71,6 @@ class User < ActiveRecord::Base
   end
 
   def tier
-    karma = comments.map {|c| c.get_upvotes.size }.inject(:+)
     case karma
     when karma >= 4000
       "Guru"
@@ -92,7 +92,10 @@ class User < ActiveRecord::Base
   end
 
 
+
+
   def update_title_and_karma
-    update_attributes title: tier, karma: karma + 1
+    update_attribute 'karma', karma + 1
+    update_attribute 'title', tier
   end
 end

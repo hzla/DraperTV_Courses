@@ -1,7 +1,7 @@
 <div class="top-section">
   <div class="row">
     <div class="top-column-main">
-      <h1>Log In</h1>
+      <h1>Sign In</h1>
     </div><!-- column main -->
   </div><!-- row -->
 </div>
@@ -22,9 +22,17 @@
 	    </p>
 		<div class="sign-in">
 			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "sign-in"}) do |f| %>
+				<% if params[:error] %>
+					<p class="error-message red-text">
+						Your email and/or password was incorrect.
+					</p>
+				<% end %>
 				<%= f.input :email, label: 'EMAIL:' %>
 				<%= f.input :password, label: "PASSWORD:" %>
-				<%= f.button :submit, "LOG IN", :use_rails_ajax => false %>
+				<%= f.button :submit, "SIGN IN", :use_rails_ajax => false %>
+				<% if params[:lesson_id] %>
+					<%= hidden_field_tag :lesson_id, params[:lesson_id] %>
+				<% end %>
 			<% end %>
 
 			<div class="separator"></div>

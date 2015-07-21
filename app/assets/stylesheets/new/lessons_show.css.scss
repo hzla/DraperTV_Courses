@@ -11,7 +11,7 @@
 		font-weight: 700;
 	}
 	.video-author {
-
+		font-weight: 300;
 	}
 	.lesson-body {
 		font-size: 20px;
@@ -93,7 +93,7 @@
 		box-sizing: border-box;
 		padding-left: 50px;
 	}
-	.comment-children .comment-body {
+	.comment-children form .comment-body {
 		height: 40px;
 	}
 
@@ -124,6 +124,13 @@
 		}
 		.sort-item {
 			cursor: pointer;
+		}
+	}
+	.comment-form-bottom {
+		@include flexbox;
+		@include justify-content(space-between);
+		.submit-comment {
+			height: 40px;
 		}
 	}
 }

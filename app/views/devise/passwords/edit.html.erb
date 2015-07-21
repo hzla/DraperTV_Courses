@@ -1,6 +1,5 @@
 <div class="row">
   <div class="sign-in-container">
-    <div class="section-bar">Forgot Your Password?</div>
     <div class="sign-in">
       <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
         <%= devise_error_messages! %>

@@ -13,7 +13,7 @@
     <p class="plans-text">
       You’ll need to purchase membership to view our online courses, select one of the memberships below and check out to start your entrepreneurial learning!
     </p>
-    <div class="plan" data-plan="Hero">
+    <div class="plan selected" data-plan="Hero">
       <div class="plan-select">
         <%= image_tag "untouched.svg", :class => "plan-icon hidden unselected" %>
         <%= image_tag "done.svg", :class => "plan-icon selected" %>
@@ -72,6 +72,8 @@
     </div>
 
     <input type="hidden" name="plan" value="Hero" id="plan-input">
+    <input type="hidden" name="lesson_id" value="<%= params[:lesson_id] %>">
+
 
     <button type="submit" class="checkout">CHECKOUT</button>
   <% end %>

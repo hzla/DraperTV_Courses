@@ -25,6 +25,8 @@ Lesson =
 
 
 	selectPlan: ->
+		$('.plan').removeClass('selected')
+		$(@).addClass('selected')
 		$('.plan-icon').addClass('hidden')
 		$('.plan-icon.unselected').removeClass('hidden')
 		$(@).find('.plan-icon.unselected').addClass('hidden')

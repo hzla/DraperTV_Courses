@@ -10,38 +10,37 @@
   </div><!-- row -->
 </div>
 
-<div class="column-main <%= @topic.name.downcase.gsub(" ", "-").gsub("&-", "") %>">
+<div class="column-main <%= @topic.html_class_name %>">
   <div class="tracks">
     <% @tracks.order(:order).each do |track| %>
+      <% info = track.progress_info(@user) %>
       <%= link_to track_path(track) do %>
         <div class="track <%= track.status current_user %>">
-
           <div class="track-info">
             <div class="track-icon-container">           
-              <% if track.started? current_user %>
+              <% if info[:status] == "started" %>
                 <%= image_tag track.started_icon, :class => "track-icon" %>
               <% else %>
                 <%= image_tag track.icon, :class => "track-icon" %>
               <% end %>
             </div>
             <div class="track-name"><%= track.name %></div>
-          </div>
-          
+          </div>          
           <div class="track-status">
-            <% if track.progress_percentage(current_user) == 0 %>
+            <% if info[:percentage] == 0 %>
               <div class="start-lesson-btn">
                 Start Lesson
               </div>
             <% else %>
               <div class="track-percent-complete">
-                <% if track.complete? current_user %>
+                <% if info[:status] == "completed" %>
                   Complete!
                 <% else %>
                   <%= track.progress_percentage current_user %>%
                 <% end %>
               </div>
               <div class="track-percent-complete-bar">
-                <div class="track-completion" style="width: <%= track.progress_percentage current_user %>%;">  
+                <div class="track-completion" style="width: <%= info[:percentage] %>%;">  
                 </div>
               </div>
             <% end %>

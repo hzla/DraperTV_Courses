@@ -89,3 +89,24 @@
 	letter-spacing: 1px;
 	font-weight: 700;
 }
+
+.links {
+	@include flexbox;
+	@include justify-content(space-between);
+	width: 240px;
+	margin: 0 auto;
+	.devise-link {
+		font-weight: 700;
+	}
+}
+
+.sign-in a {
+	font-size: 14px;
+}
+
+
+.already-account {
+	font-weight: 300;
+	color: #919191;
+	margin-right: 20px;
+}
