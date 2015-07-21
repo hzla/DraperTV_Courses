@@ -7,7 +7,7 @@
 					<%= current_user.full_name %>
 				</div>
 				<div class="profile-karma">
-					<%= current_user.karma %> - <%= current_user.title %>
+					<%= current_user.karma || 0 %> - <%= current_user.title %>
 				</div>
 			</div>
 		<% end %>
