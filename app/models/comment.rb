@@ -24,7 +24,7 @@ class Comment < ActiveRecord::Base
 	      stamp = "#{elapsed_time_in_hours} hours ago"
 	    elsif elapsed_time_in_minutes > 1440 && elapsed_time_in_minutes < 43200
 	    	elapsed_time_in_days = (elapsed_time_in_minutes / 1440).floor
-	    	stamp = "#{elapsed_time_in_days} days ago"
+	    	stamp = "#{elapsed_time_in_days} #{elapsed_time_in_days > 1 ? 'days' : 'day'} ago"
 	    else
 	      stamp = created_at.strftime("%b %-d %Y")
 	    end

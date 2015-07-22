@@ -32,12 +32,6 @@
   </table>
   <%= f.input :bio, label: "Short Bio", :input_html => { :rows => 5 } %>
   <table>
-    <tr>
-      <div class="field">
-        <%= f.label :skill_ids, "Skills" %>
-        <%= f.collection_select :skill_ids, Skill.order(:name), :id, :name, {}, {multiple: true} %>
-      </div>
-    </tr>
   </table>
   <div class="simple_form_section">Contact Info</div>
   <table>
