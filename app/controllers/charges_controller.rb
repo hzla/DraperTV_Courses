@@ -1,6 +1,6 @@
 class ChargesController < ApplicationController
   include ApplicationHelper
-  before_filter :authenticate_user!
+
 
   def new
   end

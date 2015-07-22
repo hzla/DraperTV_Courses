@@ -39,6 +39,12 @@ class Ability
             can :manage, Post, :user_id => user.id
             can :manage, Assignment
         else
+            can :read, :all
+            can :manage, UserComment, :user_id => user.id
+            can :manage, User, :id => user.id
+            can :manage, UserAssignment, :user_id => user.id
+            can :manage, Event, :user_id => user.id
+            can :manage, Post, :user_id => user.id
         end
     end
 end

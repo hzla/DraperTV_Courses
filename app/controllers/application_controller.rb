@@ -60,7 +60,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    binding.pry
     if !params[:lesson_id]
       root_path
     else

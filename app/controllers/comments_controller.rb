@@ -17,8 +17,12 @@ class CommentsController < ApplicationController
 
   def upvote
   	comment = Comment.find params[:id]
-  	comment.liked_by current_user
-  	comment.user.update_title_and_karma
+    if comment.liked_by? current_user
+      comment.unliked_by current_user
+    else
+      comment.liked_by current_user
+    end
+    comment.user.update_title_and_karma
     if comment.lesson
   	 redirect_to lesson_path(comment.lesson) and return
     else

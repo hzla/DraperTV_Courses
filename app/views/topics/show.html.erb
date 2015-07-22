@@ -50,7 +50,7 @@
     <% end %>
   </div>
 </div><!-- column-main -->
-<div class="column-right">
+<%= content_for :column_right do %>
   <div class="column-header">
     <p>INFORMATION</p>
   </div>
@@ -61,4 +61,6 @@
     As an entrepreneur you gotta do stuff that people need you to do. And that takes Vision. Vision to see the stuff that you gotta do. So you can show people the stuff they gotta do. And that takes Vision.
   </p>
 
-</div>
+<% end %>
+
+

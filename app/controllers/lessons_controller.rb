@@ -1,6 +1,7 @@
 class LessonsController < ApplicationController
   # before_filter :authenticate_user!
   # load_and_authorize_resource
+  include ApplicationHelper
   
   def show
     @lesson = Lesson.find params[:id]

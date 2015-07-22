@@ -11,5 +11,9 @@ class AmasController < ApplicationController
     @ama = Ama.find params[:id]
     @comment = Comment.new
     @comments = @ama.comments.includes(:user).where(ancestry: nil).order('created_at desc')
+    if params["sort"] && params["sort"] == "top"
+
+      @comments = @comments.sort_by {|c| c.get_upvotes.size}.reverse
+    end
   end
 end

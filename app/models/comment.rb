@@ -15,12 +15,16 @@ class Comment < ActiveRecord::Base
 
 	def elapsed_time
 	    elapsed_time_in_minutes = (Time.now - created_at) / 60
+	    elapsed_time_in_hours = nil
 	    stamp = nil
 	    if elapsed_time_in_minutes.floor < 60
 	      stamp = "#{elapsed_time_in_minutes.floor} minutes ago"
 	    elsif elapsed_time_in_minutes < 1440
 	      elapsed_time_in_hours = (elapsed_time_in_minutes / 60).floor
 	      stamp = "#{elapsed_time_in_hours} hours ago"
+	    elsif elapsed_time_in_minutes > 1440 && elapsed_time_in_minutes < 43200
+	    	elapsed_time_in_days = (elapsed_time_in_minutes / 1440).floor
+	    	stamp = "#{elapsed_time_in_days} days ago"
 	    else
 	      stamp = created_at.strftime("%b %-d %Y")
 	    end

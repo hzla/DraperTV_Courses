@@ -26,8 +26,12 @@
     <div class="comment-form-bottom">
       <div class="sort-bar">
         <p>Sort by:</p>
-        <p class="active sort-item">New</p>
-        <p class="sort-item">Top</p>
+        <%= link_to ama_path(id: @ama.id, sort: "new") do %>
+          <p class="active sort-item">New</p>
+        <% end %>
+        <%= link_to ama_path(id: @ama.id, sort: "top") do %>
+          <p class="sort-item">Top</p>
+        <% end %>
       </div>
       <%= f.submit "Submit", :class => "submit-comment" %>
     </div>  
@@ -55,33 +59,33 @@
         </div>
       </div>
       <div class="comment-children">
-            <% comment.children.includes(:user).each do |child_comment| %>
-               <div class="comment child">
-                  <div class="comment-vote-container">
-                    <%= link_to comment_upvote_path(child_comment) do %>
-                      <%= image_tag "upvote#{child_comment.liked_by?(current_user) ? 'd' : ''}-arrow.svg", :class => "upvote-arrow" %>
-                    <% end %>
-                    <p class="vote-count"><%= child_comment.get_upvotes.size %></p>
-                  </div>
-                  <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
-                  <div class="comment-main">
-                    <div class="comment-header">
-                      <span class="comment-user"> <%= child_comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= child_comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= child_comment.elapsed_time %></span> 
-                    </div>
-                    <div class="comment-body">
-                      <%= child_comment.body %>
-                    </div>
-                  </div>
-                </div>
-            <% end %>
-            <%= form_for Comment.new do |f| %>
+        <% comment.children.includes(:user).each do |child_comment| %>
+           <div class="comment child">
+              <div class="comment-vote-container">
+                <%= link_to comment_upvote_path(child_comment) do %>
+                  <%= image_tag "upvote#{child_comment.liked_by?(current_user) ? 'd' : ''}-arrow.svg", :class => "upvote-arrow" %>
+                <% end %>
+                <p class="vote-count"><%= child_comment.get_upvotes.size %></p>
+              </div>
               <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
-              <%= f.text_area :body, :class => "comment-body", placeholder: "Ask a question..." %>
-              <%= f.hidden_field :ama_id, value: @ama.id %>
-              <%= f.hidden_field :parent_id, value: comment.id %>
-              <%= f.submit "Submit", :class => "submit-comment hidden" %>
-            <% end %>
-          </div>
+              <div class="comment-main">
+                <div class="comment-header">
+                  <span class="comment-user"> <%= child_comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= child_comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= child_comment.elapsed_time %></span> 
+                </div>
+                <div class="comment-body">
+                  <%= child_comment.body %>
+                </div>
+              </div>
+            </div>
+        <% end %>
+        <%= form_for Comment.new do |f| %>
+          <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
+          <%= f.text_area :body, :class => "comment-body", placeholder: "Ask a question..." %>
+          <%= f.hidden_field :ama_id, value: @ama.id %>
+          <%= f.hidden_field :parent_id, value: comment.id %>
+          <%= f.submit "Submit", :class => "submit-comment hidden" %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>

@@ -28,6 +28,25 @@
         <%= form_for "http://drapertv.com/searches" do |f| %>
           <%= f.text_field :terms, :class => "search-input", placeholder: "Search" %>
         <% end %>
+        
+        <% if current_user %>
+          <ul class="nav">
+            <li class="dropdown">
+              <div class="sb-toggle-right dropdown" data-toggle="dropdown" href="#">
+                <i class="fa fa-gear fa-2x empty"></i>
+              </div>
+              <ul class="dropdown-menu">
+                <li role="menu"><%= link_to 'My Profile', student_profile_path(current_user)  %></li>
+                <li role="menu"><%= link_to 'Settings',  edit_user_path(current_user) %></li>
+                <li role="menu"><%= link_to 'Change Password',  edit_user_registration_path %></li>
+                <li class="divider"></li>
+                <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
+              </ul>
+            </li><!-- dropdown -->
+          </ul>
+        <% end %>
       </div>
+
+
   </div>
 </header>

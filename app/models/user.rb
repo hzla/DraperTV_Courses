@@ -28,8 +28,10 @@ class User < ActiveRecord::Base
   acts_as_taggable
   acts_as_voter
   has_surveys
-  validates :email, presence: true,
-  					uniqueness: true
+  validates :email, presence: true, uniqueness: {message: "email has already been taken"}
+
+  validates :password, presence: {message: "you must fill out a password"}, on: :create
+  validates :password, presence: true, on: :update, allow_blank: true
 
   has_many :authorships
   has_many :authorizations
@@ -40,7 +42,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   has_many :progresses
-  attr_accessible :karma, :paid
+  attr_accessible :karma, :paid, :email, :password, :password_confirmation, :customer_id, :plan
 
   SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
 

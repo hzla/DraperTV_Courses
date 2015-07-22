@@ -31,17 +31,16 @@
   <!-- ***** Body ****** -->
   <!-- ***************** -->
     <div id="main-body">
-      <%= yield %>
+      <%= render 'layouts/sidenav' %>
+      <div class="column-mid">
+        <%= yield %>
+      </div>   
+      <div class="column-right">
+        <%= yield :column_right %>
+      </div>
     </div>
 
-  <!-- ***************** -->
-  <!-- *** Sidebars **** -->
-  <!-- ***************** -->
-  <%= render 'layouts/sidenav' %>
-  <div class="sb-slidebar sb-right" id="right-menu">
-    <div class="top-bar">
-    </div>
-  </div><!-- #right-menu -->
+      
   <%= render 'layouts/footer' %>
 </body>
 

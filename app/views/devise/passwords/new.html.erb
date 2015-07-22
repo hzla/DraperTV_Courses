@@ -9,7 +9,11 @@
 
         <div><%= f.button :submit, "Send" %></div>
       <% end %>
-      <%= render "devise/shared/links" %>
+      <div class="separator"></div>
+      <div class="links">
+          <span class="already-account">Already have an account?</span>
+          <%= link_to "SIGN IN", new_session_path(resource_name, lesson_id: params[:lesson_id]), :class => "devise-link login-link" %>
+      </div>
     </div>
   </div>
 </div>

@@ -13,8 +13,7 @@
 <div class="column-main">
   <div class="lessons">
     <% @lessons.order(:order).each do |lesson| %>
-      <div class="lesson">
-        <%= link_to lesson_path(lesson) do %>
+      <%= link_to lesson_path(lesson), :class => "lesson" do %>
           <div class="lesson-header">
             <div class="lesson-info">
               <%= image_tag lesson.icon, :class => "lesson-icon" %>
@@ -25,8 +24,7 @@
           <p class="lesson-description">
             <%= lesson.description %>
           </p>
-        <% end %>
-      </div>
+      <% end %>
     <% end %>
   </div>
 

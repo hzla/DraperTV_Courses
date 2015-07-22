@@ -138,6 +138,26 @@
 	}
 }
 
+.header-mid-left {
+	@include flexbox;
+	@include justify-content(flex-end);
+	@include align-items(center);
+	width: 400px;
+	form {
+		margin: 0;
+	}
+	.dropdown-menu {
+		top: 20px;
+		left: initial;
+		right: 10px;
+	}
+}
+.nav {
+	margin: 0;
+	margin-left: 20px;
+
+}
+
 
 
 
