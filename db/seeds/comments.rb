@@ -17,5 +17,8 @@ Ama.all.each do |lesson|
 		2.times do 
 			Comment.create user_id: user.id, ama_id: lesson.id, body: Faker::Lorem.paragraph, parent_id: comment.id
 		end
+		2.times do 
+			Comment.create user_id: user.id, ama_id: lesson.id, body: Faker::Lorem.paragraph, comment_type: "chat"
+		end
 	end
 end

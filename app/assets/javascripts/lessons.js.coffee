@@ -4,7 +4,16 @@ Lesson =
 		$('body').on 'click', '.plan', @selectPlan
 		$('body').on 'click', '.comment-open', @openComment
 		$('body').on 'click', '.comment-close', @closeComment
-		$("body").on 'keypress', '.comment-children, .comment-body', @submitFormOnEnter
+		$("body").on 'keypress', '.comment-children, .comment-body, .chat-comment-body', @submitFormOnEnter
+		$('body').on 'ajax:success', '.chat-box-container .new_comment', @addComment
+
+	addComment: (event, data) ->
+		$(@)[0].reset()
+		$('.chat-messages').append data
+		setTimeout ->
+			$('.chat-messages').scrollTop(100000)
+		, 100
+
 
 	submitFormOnEnter: (e) ->
 		if e.which == 13

@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-	attr_accessible :user_id, :lesson_id, :body, :ama_id, :parent, :parent_id
+	attr_accessible :user_id, :lesson_id, :body, :ama_id, :parent, :parent_id, :comment_type
 	belongs_to :user
 	belongs_to :lesson
 	belongs_to :ama

@@ -90,6 +90,56 @@
   </div>
 </div>
 
-<div class="column-right">
 
-</div>
+  <%= content_for :column_right do %>
+    <div class="chat-header">
+      <p>CHAT</p>
+    </div>
+    <div class="chat-divider"></div>
+    <div class="chat-messages">  
+      <% @chat_comments.each do |comment| %>
+        <div class="comment ">
+          <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
+          <div class="comment-main">
+            <div class="comment-header">
+              <span class="comment-user"> <%= comment.user.full_name %></span> 
+            </div>
+            <div class="comment-body">
+              <%= comment.body %>
+            </div>
+          </div>
+        </div>
+      <% end %>    
+    </div>
+    <div class="chat-box-container">
+      <%= form_for Comment.new, remote: true do |f| %>
+        <%= f.text_area :body, :class => "chat-comment-body", placeholder: "Type something here..." %>
+        <%= f.hidden_field :ama_id, value: @ama.id %>
+        <%= f.hidden_field :comment_type, value: "chat" %>
+        <%= f.submit "Submit", :class => "submit-comment hidden" %>
+      <% end %>
+    </div>
+  <% end %>
+
+
+<script>
+  $(function() {
+    $('.chat-messages').scrollTop(100000);
+    Faye.Transport.WebSocket.isUsable = function($, _, c) { c(false) };
+    var faye = new Faye.Client('http://faye-server-10.herokuapp.com/faye');
+    faye.unsubscribe("<%= ama_path(@ama) %>" + "/chat")
+    if (typeof sub === "undefined") { 
+        sub = faye.subscribe("<%= ama_path @ama %>" + "/chat", function(data) {
+          var message = $.parseJSON(data)
+          $.get('/comments/' + message.id, function(data) {
+            $('.chat-messages').append(data)
+            setTimeout(function(){
+              $('.chat-messages').scrollTop(100000);
+            }, 100)
+          });
+      }) 
+    };
+  })
+</script>
+
+

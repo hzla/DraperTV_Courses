@@ -7,12 +7,21 @@ class CommentsController < ApplicationController
     lesson = comment.lesson
 
     if comment.save!
+      if request.xhr?
+        broadcast ama_path(comment.ama)+ "/chat", comment.to_json
+        render nothing: true and return
+      end
    		if comment.lesson_id
         redirect_to lesson_path(lesson) and return
       else
         redirect_to ama_path(comment.ama)
       end
    	end
+  end
+
+  def show
+    comment = Comment.find params[:id]
+    render partial: 'show', locals: {comment: comment}
   end
 
   def upvote

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722204945) do
+ActiveRecord::Schema.define(version: 20150723212044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -192,6 +192,7 @@ ActiveRecord::Schema.define(version: 20150722204945) do
     t.datetime "updated_at"
     t.integer  "ama_id"
     t.string   "ancestry"
+    t.string   "comment_type", default: "regular"
   end
 
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree

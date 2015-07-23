@@ -1,4 +1,4 @@
-.lesson-container, #amas {
+.lesson-container, #amas, .chat-messages {
 	box-sizing: border-box;
 	padding: 40px;
 	iframe {
@@ -38,8 +38,6 @@
 		border: 1px solid #CCCCCC;
 		margin-bottom: 10px;
 	}
-
-
 	.comment {
 		@include flexbox;
 		align-content: top;
