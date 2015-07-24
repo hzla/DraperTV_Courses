@@ -11,6 +11,7 @@ class LessonsController < ApplicationController
   	@topic = @track.topic
   	@tracks = @topic.tracks
   	@comment = Comment.new lesson_id: @lesson.id
+    @comments = @lesson.comments.includes(:user)
   	sidebarindex
   end
 end
