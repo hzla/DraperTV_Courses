@@ -45,7 +45,9 @@
       <% end %>
     <% end %>
     <div class="track-body">
-      <%= @topic.body.html_safe %>
+      <% if @topic.body %>
+        <%= @topic.body.html_safe %>
+      <% end %>
     </div>
   </div>
 </div><!-- column-main -->
