@@ -50,33 +50,36 @@
 </div><!-- column-main -->
 
 <%= content_for :column_right do %>
-  <div class="column-header">
+  <div class="chat-header">
     <p>PAYMENT INFO</p>
   </div>
 
-  <%= form_tag '/charges', id: "payment-form" do %>
-    <span class="payment-errors"></span>
+  <div class="column-body">
+    <%= form_tag '/charges', id: "payment-form" do %>
+      <span class="payment-errors"></span>
 
-    <div class="form-row">
-      <input type="text" name="email" class="payment-input" placeholder="Email"/>
-    </div>
+      <div class="form-row">
+        <input type="text" name="email" class="payment-input" placeholder="Email"/>
+      </div>
 
-    <div class="form-row">
-      <input type="text" data-stripe="number" class="payment-input" placeholder="Card Number"/>
-    </div>
+      <div class="form-row">
+        <input type="text" data-stripe="number" class="payment-input" placeholder="Card Number"/>
+      </div>
 
-    <div class="form-row">
-      <input type="text" data-stripe="exp-month" class="payment-input mini" placeholder="MM"/>
-      <input type="text" data-stripe="exp-year" class="payment-input mini" placeholder="YY"/>
-      <input type="text" data-stripe="cvc" class="payment-input mini" placeholder="CVC"/>
-    </div>
+      <div class="form-row">
+        <input type="text" data-stripe="exp-month" class="payment-input mini" placeholder="MM"/>
+        <input type="text" data-stripe="exp-year" class="payment-input mini" placeholder="YY"/>
+        <input type="text" data-stripe="cvc" class="payment-input mini" placeholder="CVC"/>
+      </div>
 
-    <input type="hidden" name="plan" value="Hero" id="plan-input">
-    <input type="hidden" name="lesson_id" value="<%= params[:lesson_id] %>">
+      <input type="hidden" name="plan" value="Hero" id="plan-input">
+      <input type="hidden" name="lesson_id" value="<%= params[:lesson_id] %>">
 
 
-    <button type="submit" class="checkout">CHECKOUT</button>
-  <% end %>
+      <button type="submit" class="checkout">CHECKOUT</button>
+    <% end %> 
+  </div>
+
 <% end %>
 
 
