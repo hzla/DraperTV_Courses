@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723212044) do
+ActiveRecord::Schema.define(version: 20150723234516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -425,6 +425,7 @@ ActiveRecord::Schema.define(version: 20150723212044) do
     t.string  "name"
     t.integer "percent_complete"
     t.integer "order"
+    t.text    "body"
   end
 
   create_table "tracks", force: true do |t|

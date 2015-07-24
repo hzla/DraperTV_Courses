@@ -9,8 +9,10 @@ class Comment < ActiveRecord::Base
 
 
 	def self_upvote
-		liked_by user
-		user.update_title_and_karma
+		if comment_type != "chat"
+			liked_by user
+			user.update_title_and_karma 1
+		end
 	end
 
 	def elapsed_time

@@ -1,0 +1,17 @@
+<div class="comment child">
+  <div class="comment-vote-container">
+    <%= link_to comment_upvote_path(child_comment) do %>
+      <%= image_tag "upvote#{child_comment.liked_by?(current_user) ? 'd' : ''}-arrow.svg", :class => "upvote-arrow" %>
+    <% end %>
+    <p class="vote-count"><%= child_comment.get_upvotes.size %></p>
+  </div>
+  <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
+  <div class="comment-main">
+    <div class="comment-header <%= 'admin-title' if child_comment.user.role == 'admin' %>">
+      <span class="comment-user"> <%= child_comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= child_comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= child_comment.elapsed_time %></span> 
+    </div>
+    <div class="comment-body">
+      <%= child_comment.body %>
+    </div>
+  </div>
+</div>

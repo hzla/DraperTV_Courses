@@ -10,7 +10,7 @@ body {
       font-family: 'proxima_nova'
     }
     .header-back, .header-info {
-      width: 180px;
+      width: 220px;
     }
     .header-back {
       text-align: left;
@@ -28,6 +28,10 @@ body {
 
   .column-right {
     box-sizing: border-box;
+    .column-body {
+      box-sizing: border-box;
+      padding: 0px 20px;
+    }
   }
 
   .column-header p {
@@ -43,6 +47,11 @@ body {
 	#side-nav, .navbar-inner .container .left-blue {
 		width: 240px;
 	}
+  .sign-in {
+    height: 40px;
+    color: $green;
+    line-height: 40px;
+  }
 	#side-nav {
 		.top-bar {
 			height: 60px;
@@ -74,9 +83,9 @@ body {
   		.top-column-main {
   			float: none;
         @include flexbox;
-        justify-content: space-between;
+        @include justify-content(space-between);
         box-sizing: border-box;
-        align-content: center;
+        @include align-items(center);
   			text-align: center;
   			padding: 0px 20px;
   			width: 100%;

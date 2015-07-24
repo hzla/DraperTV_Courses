@@ -1,0 +1,16 @@
+<%= form_for @comment, remote: true, html: {:class => "main-comment"} do |f| %>
+  <%= f.text_area :body, :class => "comment-body", placeholder: "Ask a question..." %>
+  <%= f.hidden_field :ama_id, value: @ama.id %>
+  <div class="comment-form-bottom">
+    <div class="sort-bar">
+      <p>Sort by:</p>
+      <%= link_to ama_path(id: @ama.id, sort: "new") do %>
+        <p class="active sort-item">New</p>
+      <% end %>
+      <%= link_to ama_path(id: @ama.id, sort: "top") do %>
+        <p class="sort-item">Top</p>
+      <% end %>
+    </div>
+    <%= f.submit "Submit", :class => "submit-comment" %>
+  </div>  
+<% end %>

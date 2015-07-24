@@ -6,6 +6,18 @@ Lesson =
 		$('body').on 'click', '.comment-close', @closeComment
 		$("body").on 'keypress', '.comment-children, .comment-body, .chat-comment-body', @submitFormOnEnter
 		$('body').on 'ajax:success', '.chat-box-container .new_comment', @addComment
+		$('body').on 'ajax:success', '.main-comment', @addMainComment
+		$('body').on 'ajax:success', '.comment-children .new_comment', @addChildComment
+		$('body').on 'ajax:success', '.upvote-link', @updateUpvotes
+
+	updateUpvotes: (event, data) ->
+		value = data.value
+		console.log value
+		voteCount = $(@).parents('.comment-vote-container').find('.vote-count')
+		voteCount.text value
+		toShow = $(@).find '.hidden'
+		$(@).children().addClass 'hidden'
+		toShow.removeClass 'hidden'
 
 	addComment: (event, data) ->
 		$(@)[0].reset()
@@ -14,6 +26,13 @@ Lesson =
 			$('.chat-messages').scrollTop(100000)
 		, 100
 
+	addMainComment: (event, data) ->
+		$(@)[0].reset()
+		$('.comments').prepend data
+
+	addChildComment: (event, data) ->
+		$(@)[0].reset()
+		$(@).parents('.comment-children').prepend data
 
 	submitFormOnEnter: (e) ->
 		if e.which == 13

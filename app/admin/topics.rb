@@ -12,6 +12,7 @@ ActiveAdmin.register Topic do
      f.inputs :name
      f.inputs :icon
      f.inputs :percent_complete
+     f.inputs :body
     end
   f.actions
  end

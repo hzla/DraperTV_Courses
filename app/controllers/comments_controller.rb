@@ -7,35 +7,39 @@ class CommentsController < ApplicationController
     lesson = comment.lesson
 
     if comment.save!
-      if request.xhr?
+      if comment.comment_type == "chat"
         broadcast ama_path(comment.ama)+ "/chat", comment.to_json
         render nothing: true and return
-      end
-   		if comment.lesson_id
-        redirect_to lesson_path(lesson) and return
+      elsif comment.parent_id
+        render partial: 'child_comment', locals: {child_comment: comment} and return
       else
-        redirect_to ama_path(comment.ama)
+        commentable = comment.ama_id ? comment.ama : comment.lesson
+        render partial: 'comment', locals: {comment: comment, commentable: commentable}
       end
    	end
   end
 
   def show
     comment = Comment.find params[:id]
-    render partial: 'show', locals: {comment: comment}
+    if comment.comment_type == "chat"
+      render partial: 'chat_comment', locals: {comment: comment} and return
+    elsif comment.parent_id
+      render partial: 'child_comment', locals: {child_commnet: comment} and return
+    else
+      commentable = comment.ama_id ? comment.ama : comment.lesson
+      render partial: 'comment', locals: {comment: comment, commentable: commentable}
+    end
   end
 
   def upvote
   	comment = Comment.find params[:id]
     if comment.liked_by? current_user
       comment.unliked_by current_user
+      comment.user.update_title_and_karma -1
     else
       comment.liked_by current_user
+      comment.user.update_title_and_karma 1
     end
-    comment.user.update_title_and_karma
-    if comment.lesson
-  	 redirect_to lesson_path(comment.lesson) and return
-    else
-      redirect_to ama_path(comment.ama)
-    end
+    render json: {value: comment.get_upvotes.size}
   end
 end

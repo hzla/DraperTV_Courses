@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   has_many :progresses
-  attr_accessible :karma, :paid, :email, :password, :password_confirmation, :customer_id, :plan
+  attr_accessible :karma, :paid, :email, :password, :password_confirmation, :customer_id, :plan, :role
 
   SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
 
@@ -73,20 +73,20 @@ class User < ActiveRecord::Base
   end
 
   def tier
-    case karma
-    when karma >= 4000
-      "Guru"
-    when karma >= 3000
+    return "Riskmaster" if role == "admin"
+    if karma >= 4000
+      "Guru" 
+    elsif karma >= 3000
       "Legend"
-    when karma >= 2300
+    elsif karma >= 2300
       "Champion"
-    when karma >= 1700
+    elsif karma >= 1700
       "Hero"
-    when karma >= 1200
+    elsif karma >= 1200
       "Challenger"
-    when karma >= 700
+    elsif karma >= 700
       "Rookie"
-    when karma >= 300
+    elsif karma >= 10
       "Trainee"
     else karma >= 0
       "Recruit"
@@ -96,8 +96,9 @@ class User < ActiveRecord::Base
 
 
 
-  def update_title_and_karma
-    update_attribute 'karma', karma + 1
+  def update_title_and_karma direction
+
+    update_attribute 'karma', karma + direction
     update_attribute 'title', tier
   end
 end

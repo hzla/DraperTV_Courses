@@ -10,22 +10,15 @@
 }
 
 .chat-header p {
-	height: 59px;
+	height: 60px;
 	line-height: 60px;
 	box-sizing: border-box;
 	padding: 0px 20px;
 	font-weight: 700;
 	letter-spacing: 1px;
 	margin-bottom: 0px;
+	border-bottom: 1px solid #E7E7E7;
 }
-
-.chat-divider {
-	height: 6px; 
-	background: #d8d8d8;
-	border: 1px solid #979797;
-	box-sizing: border-box;
-}
-
 .chat-messages {
 	height: calc(100% - 235px);
 	padding: 20px;

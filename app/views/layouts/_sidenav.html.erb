@@ -14,7 +14,12 @@
 						<%= current_user.karma || 0 %> - <%= current_user.title %>
 					</div>
 				</div>
+			<% else %>
+				<%= link_to '/users/sign_in' do %>
+					<p class="green sign-in">SIGN IN</p>
+				<% end %>
 			<% end %>
+
 		</div>
 		<div class="main">
 			<%= link_to topics_path, :class => "side-link" do %>

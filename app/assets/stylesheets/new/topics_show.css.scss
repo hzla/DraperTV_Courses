@@ -97,6 +97,10 @@
 
 }
 
+.track-body {
+	margin-top: 40px;
+}
+
 $topic-list: "vision-spirit", "starting-up", "product", "sales", "marketing", "fundraising", "hiring", "biz-finance", "legal", "auxiliary";
 $color-list: #246DB4, #35B3DE, #24B494, #88B250, #F2B81D, #F38F31, #E1474C, #A53A6A, #414141, #B6B6B6;
 $rgba-color-list: rgba(36,	109,	180, 0.2),rgba(53,	179,	222, 0.2),rgba(36,	180,	148, 0.2),rgba(136,	178,	80, 0.2),rgba(242,	184,29, 0.2),rgba(243,	143,	49, 0.2),rgba(225,	71,	76, 0.2),rgba(165,	58,	106, 0.2),rgba(65,	65,	65, 0.2),rgba(182,	182,	182, 0.2);
@@ -107,7 +111,7 @@ $rgba-color-list: rgba(36,	109,	180, 0.2),rgba(53,	179,	222, 0.2),rgba(36,	180,	
 		h1, .track-percent-complete, .header-info, .started .topic-name, .completed .topic-name, .percent-complete, .started .track-name {
 			color: nth($color-list, $i);
 		}
-		.started .track-icon-container, .track-completion, .started .topic-icon-container, .untouched .topic-icon-container {
+		.started .track-icon-container, .track-completion, .started .topic-icon-container, .untouched .topic-icon-container, .untouched .track-icon-container {
 			background: nth($color-list, $i);
 		}
 		.track-percent-complete-bar, .percent-complete-bar {
@@ -117,7 +121,8 @@ $rgba-color-list: rgba(36,	109,	180, 0.2),rgba(53,	179,	222, 0.2),rgba(36,	180,	
 			background: white;
 			border: 1px solid nth($color-list, $i);
 			.track-icon-container {
-				background: black;
+				background: white;
+				border: 1px solid nth($color-list, $i);
 			}
 			.track-name {
 				color: nth($color-list, $i);

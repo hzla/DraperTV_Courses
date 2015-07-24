@@ -13,16 +13,12 @@
 <div class="column-main <%= @topic.html_class_name %>">
   <div class="tracks">
     <% @tracks.order(:order).each do |track| %>
-      <% info = track.progress_info(@user) %>
+      <% info = track.progress_info(current_user) %>
       <%= link_to track_path(track) do %>
         <div class="track <%= track.status current_user %>">
           <div class="track-info">
             <div class="track-icon-container">           
-              <% if info[:status] == "started" %>
-                <%= image_tag track.started_icon, :class => "track-icon" %>
-              <% else %>
-                <%= image_tag track.icon, :class => "track-icon" %>
-              <% end %>
+              <%= image_tag track.started_icon, :class => "track-icon" %>
             </div>
             <div class="track-name"><%= track.name %></div>
           </div>          
@@ -48,18 +44,24 @@
         </div>
       <% end %>
     <% end %>
+    <div class="track-body">
+      <%= @topic.body.html_safe %>
+    </div>
   </div>
 </div><!-- column-main -->
 <%= content_for :column_right do %>
-  <div class="column-header">
+  <div class="chat-header">
     <p>INFORMATION</p>
   </div>
 
-  <%= image_tag @topic.done_icon, :class => "topic-info-icon" %>
+  <div class="column-body">
 
-  <p class="topic-description">
-    As an entrepreneur you gotta do stuff that people need you to do. And that takes Vision. Vision to see the stuff that you gotta do. So you can show people the stuff they gotta do. And that takes Vision.
-  </p>
+    <%= image_tag @topic.done_icon, :class => "topic-info-icon" %>
+
+    <p class="topic-description">
+      As an entrepreneur you gotta do stuff that people need you to do. And that takes Vision. Vision to see the stuff that you gotta do. So you can show people the stuff they gotta do. And that takes Vision.
+    </p>
+  </div>
 
 <% end %>
 

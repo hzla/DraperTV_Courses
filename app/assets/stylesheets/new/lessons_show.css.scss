@@ -68,6 +68,7 @@
 		box-sizing: border-box;
 		width: calc(100% - 80px);
 	}
+
 	.comment-header {
 		margin-bottom: 10px;
 		font-weight: 700;
@@ -77,6 +78,11 @@
 		.comment-date {
 			color: #939393;
 			font-weight: 400;
+		}
+	}
+	.admin-title.comment-header {		
+		.comment-user, .user-title {
+			color: $blue;
 		}
 	}
 	.comment-action {
@@ -180,14 +186,19 @@
 	border-radius: 50%;
 }
 
+.new_progress {
+	margin: 0;
+	height: 40px;
+}
+
 .header-info.complete-btn, .header-info.complete-btn:hover {
-	color: #24B494;
-  	background: none;
+	color: white;
+  	background: $green;
   	border: none;
-  	padding: 0px;
-  	height: 100%;
+  	padding: 0px 20px;
+  	height: 40px;
   	font-size: 14px;
-  	line-height: 60px;
+  	line-height: 40px;
 }
 
 
