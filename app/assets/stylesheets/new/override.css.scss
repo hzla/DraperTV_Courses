@@ -30,7 +30,7 @@ body {
     box-sizing: border-box;
     .column-body {
       box-sizing: border-box;
-      padding: 0px 20px;
+      padding: 20px;
     }
   }
 
@@ -47,7 +47,7 @@ body {
 	#side-nav, .navbar-inner .container .left-blue {
 		width: 240px;
 	}
-  .sign-in {
+  #side-nav .sign-in {
     height: 40px;
     color: $green;
     line-height: 40px;
