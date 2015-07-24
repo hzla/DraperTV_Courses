@@ -33,7 +33,7 @@
           <ul class="nav">
             <li class="dropdown">
               <div class="sb-toggle-right dropdown" data-toggle="dropdown" href="#">
-                <i class="fa fa-gear fa-2x empty"></i>
+                <%= image_tag "settings.svg", :class => "settings-icon" %>
               </div>
               <ul class="dropdown-menu">
                 <li role="menu"><%= link_to 'My Profile', student_profile_path(current_user)  %></li>

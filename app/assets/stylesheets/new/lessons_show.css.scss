@@ -208,6 +208,14 @@ body #main-body .top-column-main p.complete-btn {
 	text-align: center;
 }
 
+body #main-body .top-column-main p.complete-btn.completed {
+	color: $green;
+	background: none;
+	padding: 0px;
+	line-height: 40px;
+	text-align: right;
+}
+
 
 
 

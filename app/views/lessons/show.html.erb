@@ -30,7 +30,7 @@
       <h1 class="no-letter-spacing"><%= @lesson.lesson_type.capitalize.downcase.split(" ").map(&:capitalize).join(" ")  %></h1>
 
       <% if @lesson.completed?(current_user) %>
-        <p class="header-info complete-btn">COMPLETED</p>
+        <p class="header-info complete-btn completed">COMPLETED</p>
       <% else %>
         <%= form_for Progress.new do |f| %>
           <%= f.hidden_field :model_id, value: @lesson.id %>

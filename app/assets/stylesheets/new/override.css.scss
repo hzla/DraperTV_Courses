@@ -43,7 +43,6 @@ body {
       letter-spacing: 1px;
       font-weight: 700;
   }
-
 	#side-nav, .navbar-inner .container .left-blue {
 		width: 240px;
 	}
@@ -51,8 +50,10 @@ body {
     height: 40px;
     color: $green;
     line-height: 40px;
+    letter-spacing: 1px;
   }
 	#side-nav {
+    overflow-y: scroll;
 		.top-bar {
 			height: 60px;
 		}
