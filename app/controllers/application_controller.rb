@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   before_filter :cors_preflight_check
   after_filter :cors_set_access_control_headers
   before_filter :configure_permitted_parameters, if: :devise_controller?
-  before_filter :ensure_payment
+  before_filter :ensure_payment, unless: :devise_controller?
 
   #For all responses in this controller, return the CORS access control headers.
   if Rails.env.staging? || Rails.env.development?
@@ -116,7 +116,7 @@ class ApplicationController < ActionController::Base
 
   def ensure_payment
     if current_user
-      redirect_to new_charge_path if current_user.paid == false
+      redirect_to new_charge_path if (current_user.paid == false && current_user.role != "admin")
     end
   end
 

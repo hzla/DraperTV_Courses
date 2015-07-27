@@ -79,6 +79,7 @@ ActiveAdmin.setup do |config|
   #
   # Default:
   config.logout_link_path = :destroy_admin_user_session_path
+  config.skip_before_filter :ensure_payment
 
   # This setting changes the http method used when rendering the
   # link. For example :get, :delete, :put, etc..
