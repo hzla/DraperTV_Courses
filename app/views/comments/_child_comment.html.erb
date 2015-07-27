@@ -1,7 +1,9 @@
 <div class="comment child">
-  <div class="comment-vote-container">
-    <%= link_to comment_upvote_path(child_comment) do %>
-      <%= image_tag "upvote#{child_comment.liked_by?(current_user) ? 'd' : ''}-arrow.svg", :class => "upvote-arrow" %>
+  <% liked = child_comment.liked_by?(current_user) %>
+  <div class="comment-vote-container <%= 'upvoted' if liked %>">
+    <%= link_to comment_upvote_path(child_comment), remote: true, :class => "upvote-link" do %>
+        <%= image_tag "upvote-arrow.svg", :class => "upvote-arrow #{liked ? 'hidden' : ''}" %>
+        <%= image_tag "upvoted-arrow.svg", :class => "upvote-arrow #{liked ? '' : 'hidden'}"  %>
     <% end %>
     <p class="vote-count"><%= child_comment.get_upvotes.size %></p>
   </div>

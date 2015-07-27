@@ -72,12 +72,13 @@
 		box-sizing: border-box;
 		width: calc(100% - 80px);
 	}
-
+	.comment:not(.child) .comment-header {
+		justify-content: space-between;
+	}
 	.comment-header {
 		margin-bottom: 10px;
 		font-weight: 700;
 		@include flexbox;
-		justify-content: space-between;
 		.user-title {
 			color: #414141;
 		}
