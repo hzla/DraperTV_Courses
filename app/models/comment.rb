@@ -35,4 +35,14 @@ class Comment < ActiveRecord::Base
 	def liked_by? user
 		!ActsAsVotable::Vote.where(votable_id: id, voter_id: user.id).empty?
 	end
+
+	def toggle_upvote_from voting_user
+		if liked_by? voting_user
+	      unliked_by voting_user
+	      user.update_title_and_karma -1
+	    else
+	      liked_by voting_user
+	      user.update_title_and_karma 1
+	    end
+	end
 end

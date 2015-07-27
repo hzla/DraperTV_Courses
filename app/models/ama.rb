@@ -26,7 +26,6 @@ class Ama < ActiveRecord::Base
 		"https://drapertv.s3.amazonaws.com/uploads/video/vthumbnail/141/Michelle.png"
 	end
 
-
   def formatted_start_date
   	pst_start_date = start_date - 7.hours
   	pst_current_time = Time.now.utc - 7.hours
@@ -50,5 +49,13 @@ class Ama < ActiveRecord::Base
         pst_start_date.strftime("#{days_ago.floor} day ago")
       end
   	end
+  end
+
+  def regular_comments
+    comments.includes(:user).where(ancestry: nil, comment_type: "regular").order('created_at desc')
+  end
+
+  def chat_comments
+    comments.includes(:user).where(comment_type: "chat").order(:created_at)
   end
 end

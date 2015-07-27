@@ -10,8 +10,9 @@ class LessonsController < ApplicationController
   	@track = @lesson.track
   	@topic = @track.topic
   	@tracks = @topic.tracks
-  	@comment = Comment.new lesson_id: @lesson.id
-    @comments = @lesson.comments.includes(:user)
-  	sidebarindex
+    if @lesson.discussion
+    	@comment = Comment.new lesson_id: @lesson.id
+      @comments = @lesson.comments.includes(:user)
+    end
   end
 end

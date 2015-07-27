@@ -1,5 +1,6 @@
 class ChargesController < ApplicationController
   include ApplicationHelper
+  skip_before_filter :ensure_payment
 
 
   def new
@@ -25,6 +26,6 @@ class ChargesController < ApplicationController
     else
       @subscription = @customer.subscriptions.create plan: @plan
     end
-    redirect_to lesson_path(params[:lesson_id])
+    redirect_to root_path
   end
 end

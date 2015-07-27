@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
       elsif comment.parent_id
         render partial: 'child_comment', locals: {child_comment: comment} and return
       else
-        commentable = comment.ama_id ? comment.ama : comment.lesson
+        commentable = comment.ama_id ? comment.ama : lesson
         render partial: 'comment', locals: {comment: comment, commentable: commentable}
       end
    	end
@@ -21,25 +21,12 @@ class CommentsController < ApplicationController
 
   def show
     comment = Comment.find params[:id]
-    if comment.comment_type == "chat"
-      render partial: 'chat_comment', locals: {comment: comment} and return
-    elsif comment.parent_id
-      render partial: 'child_comment', locals: {child_commnet: comment} and return
-    else
-      commentable = comment.ama_id ? comment.ama : comment.lesson
-      render partial: 'comment', locals: {comment: comment, commentable: commentable}
-    end
+    render partial: 'chat_comment', locals: {comment: comment} and return
   end
 
   def upvote
   	comment = Comment.find params[:id]
-    if comment.liked_by? current_user
-      comment.unliked_by current_user
-      comment.user.update_title_and_karma -1
-    else
-      comment.liked_by current_user
-      comment.user.update_title_and_karma 1
-    end
+    comment.toggle_upvote_from current_user
     render json: {value: comment.get_upvotes.size}
   end
 end
