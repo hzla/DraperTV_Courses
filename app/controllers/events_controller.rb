@@ -7,6 +7,7 @@ class EventsController < ApplicationController
     @events = Event.all
     @event = Event.new(params[:event])
     sidebarindex
+    @page = "calendar"
   end
 
   # GET /events/1

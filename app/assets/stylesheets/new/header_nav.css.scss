@@ -131,6 +131,9 @@
 		display: block;
 		letter-spacing: 1px;
 	}
+	.side-link.active {
+		color: $blue;
+	}
 	.side-link.logout {
 		position: absolute;
 		bottom: 110px;

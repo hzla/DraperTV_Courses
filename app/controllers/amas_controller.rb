@@ -5,6 +5,7 @@ class AmasController < ApplicationController
   def index
     @upcoming_amas = Ama.upcoming
     @past_amas = Ama.past
+    @page = "ama"
   end
 
   def show

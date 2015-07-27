@@ -22,16 +22,16 @@
 
 		</div>
 		<div class="main">
-			<%= link_to topics_path, :class => "side-link" do %>
+			<%= link_to topics_path, :class => "side-link #{ 'active' if @page == 'courses' }" do %>
 				COURSES
 			<% end %>
-			<%= link_to events_path, :class => "side-link" do %>
+			<%= link_to events_path, :class => "side-link #{ 'active' if @page == 'calendar' }" do %>
 				CALENDAR
 			<% end %>
-			<%= link_to amas_path, :class => "side-link" do %>
+			<%= link_to amas_path, :class => "side-link #{ 'active' if @page == 'ama' }" do %>
 				MONTHLY AMA
 			<% end %>
-			<%= link_to events_path, :class => "side-link" do %>
+			<%= link_to amas_path, :class => "side-link #{ 'active' if @page == 'ama' }" do %>
 				WEEKLY STREAM
 			<% end %>
 			<% if current_user %>

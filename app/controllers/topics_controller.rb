@@ -5,6 +5,7 @@ class TopicsController < ApplicationController
   def index
     @topics = Topic.all.order(:order)
     @user = current_user
+    @page = "courses"
     sidebarindex
   end
 
