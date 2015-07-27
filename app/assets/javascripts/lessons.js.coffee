@@ -9,15 +9,20 @@ Lesson =
 		$('body').on 'ajax:success', '.main-comment', @addMainComment
 		$('body').on 'ajax:success', '.comment-children .new_comment', @addChildComment
 		$('body').on 'ajax:success', '.upvote-link', @updateUpvotes
+		$('body').on 'click', '.reply-comment', @showCommentReplyForm
+
+	showCommentReplyForm: ->
+		$(@).parents('.comment').next().find('form').toggleClass('hidden')
+
 
 	updateUpvotes: (event, data) ->
 		value = data.value
-		console.log value
 		voteCount = $(@).parents('.comment-vote-container').find('.vote-count')
 		voteCount.text value
 		toShow = $(@).find '.hidden'
 		$(@).children().addClass 'hidden'
 		toShow.removeClass 'hidden'
+		$(@).parents('.comment-vote-container').toggleClass 'upvoted'
 
 	addComment: (event, data) ->
 		$(@)[0].reset()

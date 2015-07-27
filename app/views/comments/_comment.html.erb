@@ -2,17 +2,26 @@
   <%= image_tag 'discussionexpand.svg', :class => 'comment-open comment-action hidden' %>
   <%= image_tag 'discussioncontract.svg', :class => 'comment-close comment-action' %>
   <span class="comment-text-vote hidden"><%= comment.get_upvotes.size %> points</span>
-  <div class="comment-vote-container">
+  <% liked = comment.liked_by?(current_user) %>
+  <div class="comment-vote-container <%= 'upvoted' if liked %>">
     <%= link_to comment_upvote_path(comment), remote: true, :class => "upvote-link" do %>
-        <%= image_tag "upvote-arrow.svg", :class => "upvote-arrow #{comment.liked_by?(current_user) ? 'hidden' : ''}" %>
-        <%= image_tag "upvoted-arrow.svg", :class => "upvote-arrow #{comment.liked_by?(current_user) ? '' : 'hidden'}"  %>
+        <%= image_tag "upvote-arrow.svg", :class => "upvote-arrow #{liked ? 'hidden' : ''}" %>
+        <%= image_tag "upvoted-arrow.svg", :class => "upvote-arrow #{liked ? '' : 'hidden'}"  %>
     <% end %>
     <p class="vote-count"><%= comment.get_upvotes.size %></p>
   </div>
   <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
   <div class="comment-main">
     <div class="comment-header <%= 'admin-title' if comment.user.role == 'admin' %>">
-      <span class="comment-user"> <%= comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= comment.elapsed_time %></span> 
+      <div class="comment-header-left">
+        <span class="comment-user"> <%= comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= comment.elapsed_time %></span> 
+      </div>
+      <div class="comment-header-right">
+        <span class="reply-comment">
+          Reply
+        </span>
+      </div>
+      
     </div>
     <div class="comment-body">
       <%= comment.body %>
@@ -23,9 +32,9 @@
   <% comment.children.includes(:user).each do |child_comment| %>
      <%= render partial: "comments/child_comment", locals: {child_comment: child_comment} %>
   <% end %>
-  <%= form_for Comment.new, remote: true do |f| %>
+  <%= form_for Comment.new, remote: true, html: {:class => "hidden new_comment"} do |f| %>
     <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
-    <%= f.text_area :body, :class => "comment-body", placeholder: "Ask a question..." %>
+    <%= f.text_area :body, :class => "comment-body", placeholder: "Reply..." %>
     <%= f.hidden_field :parent_id, value: comment.id %>
     <%= f.submit "Submit", :class => "submit-comment hidden" %>
   <% end %>

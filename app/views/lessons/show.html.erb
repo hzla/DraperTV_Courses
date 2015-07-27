@@ -68,10 +68,10 @@
           <div class="sort-bar">
             <p>Sort by:</p>
             <%= link_to lesson_path(id: @lesson.id, sort: "new") do %>
-              <p class="active sort-item">New</p>
+              <p class="<%= 'active' if @sort == "date" %> sort-item">New</p>
             <% end %>
             <%= link_to lesson_path(id: @lesson.id, sort: "top") do %>
-              <p class="sort-item">Top</p>
+              <p class="<%= 'active' if @sort == "top" %> sort-item">Top</p>
             <% end %>
           </div>
           <%= f.submit "Submit", :class => "submit-comment" %>
@@ -84,9 +84,13 @@
       </div>
     <% end %>
   </div>
-      
+  
 
 
 </div><!-- column-main -->
 <div class="column-right">
 </div>
+
+<script>
+  $('#side-nav').addClass('scrollable')
+</script>

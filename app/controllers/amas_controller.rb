@@ -12,8 +12,10 @@ class AmasController < ApplicationController
     @comment = Comment.new
     @comments = @ama.regular_comments
     @chat_comments = @ama.chat_comments
+    @sort = "date"
     if params["sort"] == "top"      
       @comments = @comments.sort_by {|c| c.get_upvotes.size}.reverse
+      @sort = "top"
     end
   end
 end

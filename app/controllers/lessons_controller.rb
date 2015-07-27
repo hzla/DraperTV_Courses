@@ -13,6 +13,11 @@ class LessonsController < ApplicationController
     if @lesson.discussion
     	@comment = Comment.new lesson_id: @lesson.id
       @comments = @lesson.comments.includes(:user)
+      @sort = "date"
+      if params["sort"] == "top"      
+        @comments = @comments.sort_by {|c| c.get_upvotes.size}.reverse
+        @sort = "top"
+      end
     end
   end
 end
