@@ -4,8 +4,8 @@
 		margin-bottom: 20px;
 	}
 	iframe {
-		width: calc(100vw - 580px);
-  		height: calc((100vw - 580px) * 9 / 16);
+		width: calc(100vw - 620px);
+  		height: calc((100vw - 620px) * 9 / 16);
 	}
 }
 
@@ -37,6 +37,9 @@
 	.comment-user, .comment-body {
 		font-size: 12px;
 	}
+	.comment-user {
+		font-weight: 700;
+	}
 }
 
 .chat-box-container {
@@ -50,6 +53,6 @@
 		border: none;
 		border-radius: 5px;
 		box-sizing: border-box;
-		padding: 10 15px;
+		padding: 10px 15px;
 	}
 }

@@ -50,17 +50,7 @@
     </div>
     <div class="chat-messages">  
       <% @chat_comments.each do |comment| %>
-        <div class="comment ">
-          <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
-          <div class="comment-main">
-            <div class="comment-header">
-              <span class="comment-user"> <%= comment.user.full_name %></span> 
-            </div>
-            <div class="comment-body">
-              <%= comment.body %>
-            </div>
-          </div>
-        </div>
+        <%= render partial: 'comments/chat_comment', locals: {comment: comment} %>
       <% end %>    
     </div>
     <div class="chat-box-container">

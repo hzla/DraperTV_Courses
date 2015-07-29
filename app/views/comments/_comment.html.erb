@@ -1,7 +1,5 @@
 <!-- cache upvotes and children -->
 <div class="comment ">
-  <%= image_tag 'discussionexpand.svg', :class => 'comment-open comment-action hidden' %>
-  <%= image_tag 'discussioncontract.svg', :class => 'comment-close comment-action' %>
   <span class="comment-text-vote hidden"><%= comment.get_upvotes.size %> points</span>
   <% liked = comment.liked_by?(@user) %>
   <div class="comment-vote-container <%= 'upvoted' if liked %>">
@@ -18,9 +16,9 @@
         <span class="comment-user"> <%= comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= comment.elapsed_time %></span> 
       </div>
       <div class="comment-header-right">
-        <span class="reply-comment">
-          Reply
-        </span>
+        <span class="reply-comment">Reply</span>
+        <%= image_tag 'discussionexpand.svg', :class => 'comment-open comment-action hidden' %>
+        <%= image_tag 'discussioncontract.svg', :class => 'comment-close comment-action' %>
       </div>
       
     </div>

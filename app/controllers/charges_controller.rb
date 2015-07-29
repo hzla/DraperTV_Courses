@@ -26,6 +26,10 @@ class ChargesController < ApplicationController
     else
       @subscription = @customer.subscriptions.create plan: @plan
     end
-    redirect_to root_path
+    if params[:lesson_id]
+      redirect_to lesson_path(params[:lesson_id]) and return
+    else
+      redirect_to root_path 
+    end
   end
 end

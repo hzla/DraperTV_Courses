@@ -1,11 +1,5 @@
-<div class="comment ">
-  <%= image_tag @user.avatar.url, :class => "comment-pic" %>
+<div class="comment">
   <div class="comment-main">
-    <div class="comment-header">
-      <span class="comment-user"> <%= comment.user.full_name %></span> 
-    </div>
-    <div class="comment-body">
-      <%= comment.body %>
-    </div>
+    <span class="comment-user chat" style="color: #<%= '%06x' % (rand * 0xffffff) %>;"> <%= comment.user.full_name %></span> - <span class="comment-body"><%= comment.body %></span>
   </div>
 </div>

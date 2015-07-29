@@ -11,13 +11,13 @@
 		font-weight: 700;
 	}
 	.video-author {
-		font-weight: 300;
+		font-weight: 500;
 		margin-bottom: 20px;
 	}
 	.lesson-body {
 		font-size: 20px;
 		margin-bottom: 20px;
-		font-weight: 300;
+		font-weight: 500;
 		line-height: 1.2;
 		a {
 			color: #0000ff;
@@ -54,10 +54,11 @@
 	}
 	.upvote-arrow {
 		margin-bottom: 5px;
+		height: 12px;
 	}
 	.vote-count {
 		color: #939393;
-		font-weight: 400;
+		font-weight: 500;
 	}
 	.upvoted .vote-count {
 		color: $green;
@@ -84,21 +85,25 @@
 		}
 		.comment-date {
 			color: #939393;
-			font-weight: 400;
+			font-weight: 500;
 		}
 		.comment-header-left {
 			@include flexbox;
 		}
 		.comment-header-right {
-			padding-right: 35px;
 			box-sizing: border-box;
+			@include flexbox;
 		}
 		.reply-comment {
 			color: #c0c0c0;
 			font-weight: 700;
 			text-decoration: underline;
 			cursor: pointer;
+			margin-right: 20px;
 		}
+	}
+	.comment-body {
+		width: calc(100% - 40px);
 	}
 	.admin-title.comment-header {		
 		.comment-user, .user-title {
@@ -106,9 +111,6 @@
 		}
 	}
 	.comment-action {
-		position: absolute;
-		top: 0;
-		right: 0;
 		height: 20px;
 		width: 20px;
 		cursor: pointer;
@@ -141,7 +143,7 @@
 		p {
 			margin-right: 20px;
 			color: #c0c0c0;
-			font-weight: 300;
+			font-weight: 500;
 		}
 		p.active {
 			font-weight: 700;
