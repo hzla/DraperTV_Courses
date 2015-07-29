@@ -1,5 +1,5 @@
 <div class="comment child">
-  <% liked = child_comment.liked_by?(current_user) %>
+  <% liked = child_comment.liked_by?(@user) %>
   <div class="comment-vote-container <%= 'upvoted' if liked %>">
     <%= link_to comment_upvote_path(child_comment), remote: true, :class => "upvote-link" do %>
         <%= image_tag "upvote-arrow.svg", :class => "upvote-arrow #{liked ? 'hidden' : ''}" %>
@@ -7,7 +7,7 @@
     <% end %>
     <p class="vote-count"><%= child_comment.get_upvotes.size %></p>
   </div>
-  <%= image_tag current_user.avatar.url, :class => "comment-pic" %>
+  <%= image_tag @user.avatar.url, :class => "comment-pic" %>
   <div class="comment-main">
     <div class="comment-header <%= 'admin-title' if child_comment.user.role == 'admin' %>">
       <span class="comment-user"> <%= child_comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= child_comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= child_comment.elapsed_time %></span> 

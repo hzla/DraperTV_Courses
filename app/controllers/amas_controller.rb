@@ -18,5 +18,6 @@ class AmasController < ApplicationController
       @comments = @comments.sort_by {|c| c.get_upvotes.size}.reverse
       @sort = "top"
     end
+    @user = current_user
   end
 end

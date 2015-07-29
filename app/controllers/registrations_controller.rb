@@ -31,4 +31,8 @@ class RegistrationsController < Devise::RegistrationsController
     user.email != params[:user][:email] ||
       params[:user][:password].present?
   end
+
+  def after_sign_up_path_for(resource)
+    new_charge_path
+  end
 end

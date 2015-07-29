@@ -4,14 +4,15 @@
 		<%= yield :side_nav %>
 	<% else %>
 		<div class="profile-info">
-			<% if current_user %>
-				<%= image_tag current_user.avatar.url, :class => "profile-pic" %>
+			<% user = current_user %>
+			<% if user %>
+				<%= image_tag user.avatar.url, :class => "profile-pic" %>
 				<div class="profile-text">
 					<div class="profile-name">
-						<%= current_user.full_name %>
+						<%= user.full_name %>
 					</div>
 					<div class="profile-karma">
-						<%= current_user.karma || 0 %> - <%= current_user.title %>
+						<%= user.karma || 0 %> - <%= user.title %>
 					</div>
 				</div>
 			<% else %>
@@ -34,7 +35,7 @@
 			<%= link_to amas_path, :class => "side-link #{ 'active' if @page == 'amas' }" do %>
 				WEEKLY STREAM
 			<% end %>
-			<% if current_user %>
+			<% if user %>
 				<%= link_to 'LOG OUT', logout_path, :use_rails_ajax => false, :class => "side-link logout" %>
 			<% end %>
 		</div>

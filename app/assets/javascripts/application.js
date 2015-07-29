@@ -21,7 +21,6 @@
 // = require jquery.infinitescroll
 // = require analytics
 // = require vendor/jquery.autosize
-// = require underscore
 // = require vendor/chosen
 // = require home
 // = require_tree .

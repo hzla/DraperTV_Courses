@@ -13,6 +13,7 @@ Lesson =
 
 	showCommentReplyForm: ->
 		$(@).parents('.comment').next().find('form').toggleClass('hidden')
+		$(@).hide()
 
 
 	updateUpvotes: (event, data) ->

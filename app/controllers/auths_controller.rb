@@ -12,7 +12,7 @@ class AuthsController < ApplicationController
         user = User.create_with_facebook auth_hash
         session[:user_id] = user.id 
         sign_in current_user
-        redirect_to root_path({sign_in: true, sign_up: true}) and return
+        redirect_to new_charge_path and return
       end
   end
 

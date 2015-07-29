@@ -19,5 +19,6 @@ class LessonsController < ApplicationController
         @sort = "top"
       end
     end
+    @user = current_user
   end
 end

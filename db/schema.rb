@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723234516) do
+ActiveRecord::Schema.define(version: 20150728001128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -195,7 +195,10 @@ ActiveRecord::Schema.define(version: 20150723234516) do
     t.string   "comment_type", default: "regular"
   end
 
+  add_index "comments", ["ama_id"], name: "index_comments_on_ama_id", using: :btree
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree
+  add_index "comments", ["lesson_id"], name: "index_comments_on_lesson_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "courses", force: true do |t|
     t.string   "title"
@@ -276,6 +279,8 @@ ActiveRecord::Schema.define(version: 20150723234516) do
     t.integer  "order"
   end
 
+  add_index "lessons", ["track_id"], name: "index_lessons_on_track_id", using: :btree
+
   create_table "milestones", force: true do |t|
     t.text     "vision"
     t.text     "creativity"
@@ -322,6 +327,9 @@ ActiveRecord::Schema.define(version: 20150723234516) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "progresses", ["model_id"], name: "index_progresses_on_model_id", using: :btree
+  add_index "progresses", ["user_id"], name: "index_progresses_on_user_id", using: :btree
 
   create_table "resources", force: true do |t|
     t.string   "title"
@@ -435,6 +443,8 @@ ActiveRecord::Schema.define(version: 20150723234516) do
     t.string  "percent_complete"
     t.integer "topic_id"
   end
+
+  add_index "tracks", ["topic_id"], name: "index_tracks_on_topic_id", using: :btree
 
   create_table "user_assignments", force: true do |t|
     t.text     "text"
