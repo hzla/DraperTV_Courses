@@ -1,2 +1,4 @@
-change done track coloring
-add status circle to track show
+test payment
+load test
+ajax
+move assets to amazon

@@ -45,6 +45,9 @@
 		margin-bottom: 20px;
 		position: relative;
 	}
+	.comment.collapsed {
+		@include justify-content(space-between);
+	}
 	.comment-vote-container {
 		text-align: center;
 		width: 40px;
@@ -108,6 +111,11 @@
 	.admin-title.comment-header {		
 		.comment-user, .user-title {
 			color: $blue;
+		}
+	}
+	.collapsed .admin-title.comment-header {
+		.comment-user, .user-title {
+			color: #c0c0c0;
 		}
 	}
 	.comment-action {

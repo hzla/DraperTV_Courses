@@ -46,13 +46,13 @@ Lesson =
 			$(@).parents('form').submit()
 
 	openComment: ->
-		$(@).parents('.comment').find('.comment-close, .comment-pic, .comment-body, .comment-vote-container, .comment-text-vote').toggleClass('hidden')
+		$(@).parents('.comment').find('.comment-close, .comment-pic, .comment-body, .comment-vote-container, .comment-text-vote, .reply-comment').toggleClass('hidden')
 		$(@).parents('.comment').toggleClass('collapsed')
 		$(@).parents('.comment').next().removeClass('hidden')
 		$(@).addClass('hidden')
 
 	closeComment: ->
-		$(@).parents('.comment').find('.comment-open, .comment-pic, .comment-body, .comment-vote-container, .comment-text-vote').toggleClass('hidden')
+		$(@).parents('.comment').find('.comment-open, .comment-pic, .comment-body, .comment-vote-container, .comment-text-vote, .reply-comment').toggleClass('hidden')
 		$(@).parents('.comment').toggleClass('collapsed')
 		$(@).parents('.comment').next().addClass('hidden')
 		$(@).addClass('hidden')

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>designdone</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Main-Attraction" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="TRACK-ICONS" sketch:type="MSArtboardGroup" transform="translate(-178.000000, -159.000000)">
+            <g id="designdone" sketch:type="MSLayerGroup" transform="translate(178.000000, 159.000000)">
+                <circle id="Oval-20-Copy-12" stroke="#24B494" opacity="0.8" sketch:type="MSShapeGroup" cx="20" cy="20" r="20"></circle>
+                <g id="Group" transform="translate(10.000000, 12.000000)" fill="#50C3AA" sketch:type="MSShapeGroup">
+                    <path d="M14.3020227,15.7401799 C16.9611716,15.7401799 19.1168375,13.584514 19.1168375,10.9253651 C19.1168375,8.26621622 16.9611716,6.1105503 14.3020227,6.1105503 C13.6112875,6.1105503 12.9545246,6.25600215 12.3606916,6.51794807 L11.9185112,5.905654 C12.6407931,5.56208178 13.4489542,5.36980956 14.3020227,5.36980956 C17.3702716,5.36980956 19.8575783,7.85711622 19.8575783,10.9253651 C19.8575783,13.993614 17.3702716,16.4809207 14.3020227,16.4809207 C11.8830986,16.4809207 9.82524863,14.9349807 9.06258863,12.777217 L0.601569,12.777217 C0.395224185,12.777217 0.311137156,12.6357962 0.414759,12.4596396 L7.44854567,0.502201778 C7.55171826,0.326808441 7.71854456,0.326045107 7.82216641,0.502201778 L14.8559531,12.4596396 C14.9591257,12.6350329 14.876386,12.777217 14.6691431,12.777217 L11.1111111,12.7772169 L11.1111111,12.0364762 L13.7464671,12.0364762 L7.63535604,1.66610585 L1.52424493,12.0364762 L9.5675073,12.0364762 L9.85677081,12.7888868 C10.5915146,14.5240761 12.3047505,15.7401799 14.3020227,15.7401799 L14.3020227,15.7401799 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

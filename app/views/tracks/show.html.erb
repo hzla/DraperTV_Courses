@@ -5,7 +5,7 @@
         <p class="header-back"><< TRACKS</p>
       <% end %>
       <h1 class="no-letter-spacing"><%= @track.display_name %></h1>
-      <p class="header-info"><%= @lessons.count %> LESSONS</p>
+      <p class="header-info"><%= @lessons.count %> TRACKS</p>
     </div><!-- column main -->
   </div><!-- row -->
 </div>
@@ -25,7 +25,7 @@
               <% lesson_group[1].each do |lesson_item| %>
                 <%= link_to lesson_path(lesson_item), :class => "lesson-item" do %>
                   <p class="lesson-description">
-                    <%= lesson_item.description[0..90] %>
+                    <%= lesson_item.description[0..80] + (lesson_item.description.length > 80 ? "..." : "") %>
                   </p>
                   <%= image_tag lesson_item.status_icon(current_user), :class => "lesson-status-icon" %>
                 <% end %>

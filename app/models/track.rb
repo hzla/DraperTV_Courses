@@ -41,7 +41,7 @@ class Track < ActiveRecord::Base
   end
 
   def started_icon
-    done = icon.gsub(".svg", "white.svg") 
+    icon
   end
 
   def progress_info user
