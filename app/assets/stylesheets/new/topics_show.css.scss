@@ -30,20 +30,12 @@
 	font-weight: 700;
 }
 
-.track-icon-container {
+.track-icon {
 	height: 40px;
 	width: 40px;
-	background: #f0f0f0;
 	border-radius: 50%;
 	position: relative;
 	margin-right: 40px;
-	.track-icon {
-		height: 40px;
-		width: 40px;
-		left: 0px;
-		top: 0px;
-		position: absolute;
-	}
 }
 
 .topic-info-icon {
@@ -119,6 +111,9 @@ $rgba-color-list: rgba(36,	109,	180, 0.2),rgba(53,	179,	222, 0.2),rgba(36,	180,	
 		.track-percent-complete-bar, .percent-complete-bar {
 			background: nth($rgba-color-list, $i);
 			opacity: 0.8;
+		}
+		.track:hover .track-name {
+			color: nth($color-list, $i);
 		}
 		.completed:not(a) {
 			background: white;

@@ -49,11 +49,11 @@
 		@include justify-content(space-between);
 	}
 	.comment-vote-container {
-		text-align: center;
-		width: 40px;
+		width: 20px;
 		@include flexbox;
 		@include flex-direction(column);
 		@include align-items(center);
+		margin-right: 10px;
 	}
 	.upvote-arrow {
 		margin-bottom: 5px;
@@ -62,6 +62,8 @@
 	.vote-count {
 		color: #939393;
 		font-weight: 500;
+		width: 20px;
+		text-align: center;
 	}
 	.upvoted .vote-count {
 		color: $green;
@@ -129,6 +131,7 @@
 	}
 	.comment-children form .comment-body {
 		height: 40px;
+		width: calc(100% - 90px);
 	}
 
 	.comment-children .new_comment {

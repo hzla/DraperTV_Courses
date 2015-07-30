@@ -37,6 +37,43 @@
   </div>
 </div><!-- column-main -->
 
+<% if !current_user %>
+  <%= content_for :column_right do %>
+    <div class="padding"></div>
+    
+    <div class="welcome-container">
+      <div class="welcome-messages">
+        <p class="welcome-message">Welcome to Draper Online!</p>
+        <p class="welcome-message">Feel free to stop by and look around, but to take the courses or participate in Monthly & Biweekly streams, you’ll need to sign up and purchase a membership.</p>
+        <%= link_to new_user_registration_path do %>
+          <div class="get-started">
+            GET STARTED
+          </div>
+        <% end %>
+      </div>
+      <div class="hero-oath">
+        <p class="oath-title">THE SUPERHERO OATH</p>
+        <p class="oath">
+          I will promote freedom at all costs.
+          <br>I will do everything in my power to drive, build and pursue progress and change.
+          <br>My brand, my network, and my reputation are paramount.
+          <br>I will set positive examples for others to emulate.
+          <br>I will instill good habits in myself. I will take care of myself.
+          <br>I will fail and fail again until I succeed.
+          <br>I will explore the world with gusto and enthusiasm.
+          <br>I will treat people well.
+          <br>I will make short term sacrifices for long term success.
+          <br>I will pursue fairness, openness, health and fun with all that I encounter. Mostly fun!
+          <br>I will keep my word.
+          <br>I will try my best to make reparations for my digressions.
+        </p>
+
+      </div>
+    </div>
+    
+  <% end %>
+
+<% end %>
 
 
 

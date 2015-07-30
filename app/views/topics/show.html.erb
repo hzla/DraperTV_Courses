@@ -5,7 +5,7 @@
         <p class="header-back"><< TOPICS</p>
       <% end %>
       <h1><%= @topic.name.downcase.split(" ").map(&:capitalize).join(" ") %></h1>
-      <p class="header-info"><%= @tracks.count %> LESSONS</p>
+      <p class="header-info"><%= @tracks.count %> TRACKS</p>
     </div><!-- column main -->
   </div><!-- row -->
 </div>
@@ -16,10 +16,8 @@
       <% info = track.progress_info(current_user) %>
       <%= link_to track_path(track) do %>
         <div class="track <%= track.status current_user %>">
-          <div class="track-info">
-            <div class="track-icon-container">           
-              <%= image_tag track.started_icon, :class => "track-icon" %>
-            </div>
+          <div class="track-info">       
+            <%= image_tag track.started_icon, :class => "track-icon" %>
             <div class="track-name"><%= track.name %></div>
           </div>          
           <div class="track-status">

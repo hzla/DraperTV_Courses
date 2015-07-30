@@ -13,7 +13,7 @@
 	margin-right: 0px;
 }
 
-.lesson:hover {
+.lesson-item:hover {
 	background: #f0f0f0;
 }
 
@@ -50,6 +50,8 @@
 	padding: 15px 20px;
 	height: 80px;
 	background: #F7F7F7;
+	-webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
 	border-bottom: 1px solid #f0f0f0;
 	p {
 		margin: 0px;

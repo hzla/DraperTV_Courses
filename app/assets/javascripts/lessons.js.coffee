@@ -38,7 +38,8 @@ Lesson =
 
 	addChildComment: (event, data) ->
 		$(@)[0].reset()
-		$(@).parents('.comment-children').prepend data
+		$(data).insertBefore(@)
+		# $(@).parents('.comment-children').append data
 
 	submitFormOnEnter: (e) ->
 		if e.which == 13

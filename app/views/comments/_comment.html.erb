@@ -28,7 +28,7 @@
   </div>
 </div>
 <div class="comment-children">
-  <% comment.children.includes(:user).each do |child_comment| %>
+  <% comment.children.includes(:user).order('created_at').each do |child_comment| %>
      <%= render partial: "comments/child_comment", locals: {child_comment: child_comment} %>
   <% end %>
   <%= form_for Comment.new, remote: true, html: {:class => "hidden new_comment"} do |f| %>

@@ -109,3 +109,53 @@
 	bottom: 10px;
 	right: 5px;
 }
+
+// Right Column
+
+.padding {
+	height: 60px;
+}
+
+.welcome-container {
+	box-sizing: border-box;
+	padding: 20px;
+	@include flexbox;
+	@include flex-direction(column);
+	@include justify-content(space-between);
+	min-height: calc(100% - 110px);
+}
+
+.welcome-message {
+	font-weight: 700;
+	color: $blue;
+	margin-bottom: 20px;
+}
+
+.get-started {
+	background: $green;
+	color: white;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+	border: none;
+	border-radius: 5px;
+	letter-spacing: 1px;
+	font-weight: 700;
+}
+
+.oath, .oath-title {
+	font-size: 10px;
+	color: black;
+	opacity: 0.2;
+	margin: 0;
+}
+
+.oath-title {
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+
+
+
