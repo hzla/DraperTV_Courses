@@ -22,6 +22,14 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def after_sign_up_path_for(resource)
+    new_charge_path
+  end
+
+  def after_inactive_sign_up_path_for(resource)
+    new_charge_path
+  end
+
   private
 
   # check if we need password to update user data
@@ -32,7 +40,5 @@ class RegistrationsController < Devise::RegistrationsController
       params[:user][:password].present?
   end
 
-  def after_sign_up_path_for(resource)
-    new_charge_path
-  end
+
 end

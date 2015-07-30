@@ -42,7 +42,8 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   has_many :progresses
-  attr_accessible :karma, :paid, :email, :password, :password_confirmation, :customer_id, :plan, :role
+  attr_accessible :karma, :paid, :email, :password, :password_confirmation, :customer_id, :plan, :role, :color, :first_name, :last_name, :avatar
+  after_create :assign_color
 
   SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
 
@@ -95,10 +96,19 @@ class User < ActiveRecord::Base
 
 
 
-
   def update_title_and_karma direction
 
     update_attribute 'karma', karma + direction
     update_attribute 'title', tier
+  end
+
+  def randomize_color
+    update_attributes color: "#" + ('%06x' % (rand * 0xffffff))
+  end
+
+  private
+
+  def assign_color
+    update_attributes color: "#" + ('%06x' % (rand * 0xffffff))
   end
 end

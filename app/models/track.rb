@@ -52,6 +52,18 @@ class Track < ActiveRecord::Base
     name.downcase.split(" ").map(&:capitalize).join(" ")
   end
 
+  def type_sorted_lessons
+    sorted_lessons = {}
+    lessons.each do |lesson|
+      if sorted_lessons[lesson.lesson_type]
+        sorted_lessons[lesson.lesson_type] << lesson
+      else
+        sorted_lessons[lesson.lesson_type] = [lesson]
+      end
+    end
+    formatted_lessons = [[["watch", sorted_lessons["watch"]]],[["challenge", sorted_lessons["challenge"]], ["discussion", sorted_lessons["discussion"]]],[["reading", sorted_lessons["reading"]],["tools", sorted_lessons["tools"]]]]
+  end
+
 
 
 end

@@ -7,7 +7,8 @@ OnlineSchool::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
+  
   devise_scope :user do
     #get 'register', to: 'devise/registrations#new', as: :register
     get 'login', to: 'devise/sessions#new', as: :login

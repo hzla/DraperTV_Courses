@@ -12,19 +12,28 @@
 
 <div class="column-main">
   <div class="lessons">
-    <% @lessons.order(:order).each do |lesson| %>
-      <%= link_to lesson_path(lesson), :class => "lesson" do %>
-          <div class="lesson-header">
-            <div class="lesson-info">
-              <%= image_tag lesson.icon, :class => "lesson-icon" %>
-              <div class="lesson-type <%= lesson.action_type %>"><%= lesson.lesson_type.upcase %></div>
+    <% @lessons.each do |lesson_column| %>
+      <div class="lesson-column">
+        <% lesson_column.each do |lesson_group| %>
+          <% if lesson_group[1] %>
+            <div class="lesson-group">
+              <div class="lesson-header">
+                <%= image_tag lesson_group[1][0].icon, :class => "lesson-icon" %>
+                <p class="<%= lesson_group[1][0].action_type %>"><%= lesson_group[0].upcase %></p>
+              </div>
+              
+              <% lesson_group[1].each do |lesson_item| %>
+                <%= link_to lesson_path(lesson_item), :class => "lesson-item" do %>
+                  <p class="lesson-description">
+                    <%= lesson_item.description[0..90] %>
+                  </p>
+                  <%= image_tag lesson_item.status_icon(current_user), :class => "lesson-status-icon" %>
+                <% end %>
+              <% end %>
             </div>
-            <%= image_tag lesson.status_icon(current_user), :class => "lesson-status-icon" %>
-          </div>
-          <p class="lesson-description">
-            <%= lesson.description %>
-          </p>
-      <% end %>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 

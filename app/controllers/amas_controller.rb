@@ -19,5 +19,6 @@ class AmasController < ApplicationController
       @sort = "top"
     end
     @user = current_user
+    @user.randomize_color
   end
 end

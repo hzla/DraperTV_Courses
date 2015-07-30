@@ -67,14 +67,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def after_sign_up_path_for(resource)
-    if !current_user.paid
-      redirect_to new_charges_path
-    else
-      super
-    end
-  end
-
   #PRODUCTION FAYE: : http://fsrvrproduction.herokuapp.com
   #STAGING FAYE:  http://fayesrvr.herokuapp.com
 
