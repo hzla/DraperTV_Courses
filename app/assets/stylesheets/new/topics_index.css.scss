@@ -38,6 +38,8 @@
 	font-size: 14px;
 	letter-spacing: 1px;
 	font-weight: 700;
+	-webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
 }
 
 .topic-icon-container {

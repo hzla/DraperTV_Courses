@@ -37,18 +37,20 @@
   </div>
 </div><!-- column-main -->
 
-<% if !current_user %>
+
   <%= content_for :column_right do %>
     <div class="padding"></div>
     
     <div class="welcome-container">
       <div class="welcome-messages">
-        <p class="welcome-message">Welcome to Draper Online!</p>
-        <p class="welcome-message">Feel free to stop by and look around, but to take the courses or participate in Monthly & Biweekly streams, you’ll need to sign up and purchase a membership.</p>
-        <%= link_to new_user_registration_path do %>
-          <div class="get-started">
-            GET STARTED
-          </div>
+        <% if !current_user %>
+          <p class="welcome-message">Welcome to Draper Online!</p>
+          <p class="welcome-message">Feel free to stop by and look around, but to take the courses or participate in Monthly & Biweekly streams, you’ll need to sign up and purchase a membership.</p>
+          <%= link_to new_user_registration_path do %>
+            <div class="get-started">
+              GET STARTED
+            </div>
+          <% end %>
         <% end %>
       </div>
       <div class="hero-oath">
@@ -73,7 +75,6 @@
     
   <% end %>
 
-<% end %>
 
 
 
