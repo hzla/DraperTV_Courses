@@ -60,6 +60,11 @@
 	font-weight: 500;
 }
 
+.payment-input.error {
+	border: 1px solid $red;
+	color: #414141;
+}
+
 .payment-input.mini {
 	width: 80px;
 }
@@ -75,4 +80,21 @@
 	letter-spacing: 1px;
 	font-size: 14px;
 	font-weight: 600;
+}
+
+.checkout.code {
+	background: $blue;
+}
+
+.column-body.payment {
+	@include flexbox;
+	@include flex-direction(column);
+	@include justify-content(space-between);
+	min-height: calc(100vh - 110px);
+}
+
+.column-header {
+	font-weight: 700;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
 }

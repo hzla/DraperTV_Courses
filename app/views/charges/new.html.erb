@@ -54,7 +54,7 @@
     <p>PAYMENT INFO</p>
   </div>
 
-  <div class="column-body">
+  <div class="column-body payment">
     <%= form_tag '/charges', id: "payment-form" do %>
       <span class="payment-errors"></span>
 
@@ -78,6 +78,14 @@
 
       <button type="submit" class="checkout">CHECKOUT</button>
     <% end %> 
+
+    <div class="column-bottom">
+      <p class="column-header">ALUMNI ACCESS</p>
+      <%= form_tag update_code_path, :class => "code-form" do %>
+        <%= text_field_tag :code, nil, :class => "payment-input #{'error' if @bad_code}", placeholder: "Code" %>
+        <button type="submit" class="checkout code">SUBMIT</button>
+      <% end %>
+    </div>
   </div>
 
 <% end %>

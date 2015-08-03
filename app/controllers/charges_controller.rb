@@ -4,6 +4,7 @@ class ChargesController < ApplicationController
 
 
   def new
+    @bad_code = params['bad_code'] == "true"
   end
 
   def create
