@@ -13,27 +13,29 @@
 <div class="column-main">
   <div class="lessons">
     <% @lessons.each do |lesson_column| %>
-      <div class="lesson-column">
-        <% lesson_column.each do |lesson_group| %>
-          <% if lesson_group[1] %>
-            <div class="lesson-group">
-              <div class="lesson-header">
-                <%= image_tag lesson_group[1][0].icon, :class => "lesson-icon" %>
-                <p class="<%= lesson_group[1][0].action_type %>"><%= lesson_group[0].upcase %></p>
-              </div>
-              
-              <% lesson_group[1].each do |lesson_item| %>
-                <%= link_to lesson_path(lesson_item), :class => "lesson-item" do %>
-                  <p class="lesson-description">
-                    <%= lesson_item.description[0..80] + (lesson_item.description.length > 80 ? "..." : "") %>
-                  </p>
-                  <%= image_tag lesson_item.status_icon(current_user), :class => "lesson-status-icon" %>
+      <% if lesson_column[0][1] %>
+        <div class="lesson-column">
+          <% lesson_column.each do |lesson_group| %>
+            <% if lesson_group[1] %>
+              <div class="lesson-group">
+                <div class="lesson-header">
+                  <%= image_tag lesson_group[1][0].icon, :class => "lesson-icon" %>
+                  <p class="<%= lesson_group[1][0].action_type %>"><%= lesson_group[0].upcase %></p>
+                </div>
+                
+                <% lesson_group[1].each do |lesson_item| %>
+                  <%= link_to lesson_path(lesson_item), :class => "lesson-item" do %>
+                    <p class="lesson-description">
+                      <%= lesson_item.description[0..80] + (lesson_item.description.length > 80 ? "..." : "") %>
+                    </p>
+                    <%= image_tag lesson_item.status_icon(current_user), :class => "lesson-status-icon" %>
+                  <% end %>
                 <% end %>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 

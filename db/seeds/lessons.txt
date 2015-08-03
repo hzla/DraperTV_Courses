@@ -1,0 +1,523 @@
+Track: Fail Spectacularly
+Type: Watch
+Aim High
+Joon Yun, President of Palo Alto Investors
+Joon talks about how aiming too low is detrimental to progress.
+Changing the World Through Innovation
+Naveen Jain, Board member of Singularity University
+Naveen talks about how innovation is more important than invention: flawless execution with a mediocre idea can triumph over poor execution with a great idea.
+SpaceX and Daring to Think Big
+Steve Jurvetson, Partner at Draper Fisher Jurvetson
+Steve talks about how SpaceX derives much of its success from being guided by an incredible vision. 
+Becoming an Entrepreneur
+Dan Price, CEO of Gravity Payments
+Dan talks about his story and the hurdles he faced in the early days of his journey.
+None of this is Easy
+Ron Johnson, former Senior Vice President of Retail Operations at Apple
+Ron talks about how difficult business is, and why being persistent and passionate is crucial to success.
+Type: Challenge 
+Make 5 predictions about how technology will fundamentally change how humanity lives.
+It’s easy to lose sight of what’s important in life in the minutia. Write a bucket list of 101 things you want to do before you die. Save your biggest task for last.
+Memorize the Draper University Oath and record yourself saying it. Repeat during times of stress to find inner peace.
+Many entrepreneurs get rejected by more than 50 investors before one eventually says yes. They get rejected by potential hires, customers, and partners. Rejection is a part of startup life and every entrepreneur needs to know how to deal with it. Go ask people out and get rejected 5 times.
+Type: Discussion
+Failure is only good if we learn from it. Think about two times you failed spectacularly- one time when something good came out of it and one time when it just sucked and you had to overcome it and move on. Can you discern a key difference in the two times? What did you do differently afterwards? 
+Sometimes we can even optimize failure. How can you “rig” your next spectacular failure to work out in the end? In other words, how can you engineer a silver lining for a risky moonshot idea?
+Apply one thing you learned from Joon Yun’s talk to imagine the future of your own industry. If you aim for 10X return, how will you go about making changes? 
+Track: Hustle
+Type: Watch
+AirBnB & Early Obstacles
+Nate Blecharczyk, Founder and CTO of Airbnb
+Nate talks about the early obstacles Airbnb faced and how they dealt with them.
+Be Scrappy, Be Loyal, and Ride the Wave of Success
+Nate Blecharczyk, Founder and CTO of Airbnb
+Nate talks about surviving through the 2008 US recession and how they hustled through it to success.
+Bootstrapping Enforces Creativity
+Gleb Budman, CEO of Backblaze
+Gleb talks about how bootstrapping forced his team to come up with a simple solution to a tech problem they were having.
+Bootstrapping Can Be Used to Your Advantage
+Gleb Budman, CEO of BackBlaze
+Gleb talks about how his team leveraged their bootstrapping position to get more favorable terms in a termsheet.
+How to Deal with Roadblocks
+Gleb Budman, CEO of BackBlaze
+Gleb talks about how they had to physically go to stores to buy hard drives during a supply drought, even getting friends and customers involved.
+Type: Challenge
+During hard times you’ll have to make do without many things and even figure out how to survive without much money. Give yourself a budget of $5/day; live on it for 2 weeks.
+There are a lot of problems in our life that we don’t believe we can solve until we get desperate enough to make a concerted effort. What’s a problem in your life that you think you need money to solve? Brainstorm hard about 3 ways you can solve it with a small amount  or for free, then go implement 1 of those solutions.
+We definitely don’t know everything and advice from veterans is always needed. Getting yourself in front of a prominent figure when you don’t have much credit starting out can be difficult, but is absolutely necessary to grow and learn. Figure out a way to get in contact with a mentor in your industry, whether through a chain of people or an eye catching promotion.
+Many events on Eventbrite list a price but are actually a cinch to attend for free. Find an event near you and try to get in for free.
+Your skills stay with you even if you fail and start back at zero, what are you good at and would it be possible for you to survive if you were reduced down to nothing? Go to any food business and work out an exchange to get a meal without paying money.
+Type: Discussion
+Knowing what is worth spending money on in your company can be a tough decision. How do you decide when to spend and when to save for your business? 
+Young startups often face a dilemma in app development since developers can be very expensive in the USA. The popular choices are:
+<tab>a) developing the app themselves
+<tab>b) outsourcing to India/China/Russia for low cost development but with possible quality and language roadblocks.
+<tab>c) outsource to an American company with rapid release times but at a high cost
+Track: Leadership
+Type: Watch
+Negotiations
+Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
+Heidi talks about how negotiation is not about winning against someone else, but about coming to terms that benefit both parties.
+Type: Challenge
+Good leaders need to be able to reduce complex and complicated ideas down to simple explanations that people can understand. Learn about a scientific theory and explain it to us like you would to a 5 year old.
+Many think leadership is about making decisions and convincing others to follow you. Practice “servant leadership” (http://bit.ly/1f9qDIM)  by serving others on your team or community- volunteer at an event, donate something useful to a homeless person besides money, get a stranger to tell you their life story, or ask the intern/secretary at your day job if you can help them out with some of their tasks. You’ll be surprised what you learn by leading from behind.
+Knowing yourself helps with determining your strengths, weaknesses, and compatibility with other people. Being a leader means improving your flaws and harnessing your abilities. Take this test: http://www.16personalities.com/ to figure out roughly what your mental tendencies are. Share your results below and tell us about how you will make changes to how you work with other people.
+Being a good leader means more than showing your followers where to go, but also helping those who may not have the ability to keep up. Do something a friend is afraid of, then help walk them through it together.
+Leaders need to be good at figuring out other people’s strengths and what benefit they can provide. Find 5 strangers and learn something from each of them that you can use to better yourself.
+Are you an aggressive negotiator or more of a mediator? Describe the pros and cons of your negotiation style.
+Type: Discussion
+Knowing our own blind spots is important in more than just driving. After reading about the 8 common leadership styles you can probably find 1 near-perfect fit and a couple other styles you identify with...but what is your leadership “blindspot” and how can you compensate for it? 
+Track: Idea
+Type: Watch 
+Origin of AirBnB
+Nate Blecharczyk, Founder and CTO of Airbnb
+Nate talks about how though Airbnb seems like an obvious success now, it was a culmination of years spent acquiring skills, perseverance, and hustle
+Shazam and its Origin
+Chris Barton, Founder of Shazam
+Chris talks about the early days of Shazam and how they came up with the idea and how it has evolved from the original concept.
+Market Size and the Success of a Startup
+Shawn Fanning, Founder of Napster
+Shawn talks about how important it is to pick a big market so that you have space to grow your business into.
+The Beginning of Box
+Aaron Levie, CEO and Founder of Box
+Aaron talks about the tech, economical, cultural conditions, and environment that enabled him to start Box.
+You're Doing a Startup for the Wrong Reasons
+Dave McClure,  Founder of 500 Startups & Investor
+Dave talks about why it’s important to be passionate about the problem you are trying to solve.
+Type: Challenge 
+The act of starting a business itself breeds great ideas. Start up a business you are unfamiliar with for just a week - such as a lemonade stand, reselling old items on ebay for a profit, or anything else. Did you turn a profit? Why or why not? What did you learn?
+Ideas actually start with problem seeking. List 5 interesting markets and document their problems and potential solutions.
+Think about 3 of the most annoying problems in your life and come up with easy solutions that most people will be able to replicate.
+Good ideas come from finding solutions to real problems, rather than creating a product and finding a market for it. Go out and ask 5 strangers what their biggest problems are, come up with solutions for them on the spot and note their reactions.
+Stressing out on what to name your company? Take the 3-Column Chain Reaction approach. Get together your friends or cofounders  and have each person make 3 columns their own piece of paper. Also have 3 large columns drawn on a whiteboard or large piece of paper next to your group.
+<tab>Give everyone 45 seconds to write down any crazy names they have in the first column on their paper. Don’t edit for good names, go for quantity.
+<tab>Have everyone pick the top 3 names from their 1st column and put them in the first column on the whiteboard.
+<tab>Give everyone 45 seconds to write down names in the 2nd column on their paper that they thought of by seeing the top picks of everyone from the 1st column on the whiteboard.
+<tab>Have everyone pick top 3 names from their 2nd column and put them in the 2nd column on the whiteboard.
+<tab>Give everyone 45 seconds to write down names in the 3rd column on their paper that they thought of by seeing the top picks of everyone from the 2nd column on the whiteboard.
+<tab>Have everyone pick the top 3 names from their 3rd column and put them in the 3rd column on the whiteboard.
+<tab>Pick your name from this 3rd column on the whiteboard. Now that you’ve been inspired by everyone’s best contributions and filtered them 3 times, these will be your best ideas!
+Stressed that you haven’t come up with a good idea to work on yet? You can also use the 3 Column Chain Reaction approach for startup ideas too. Get together your friends or cofounders and identify 3 industries you would all be happy starting a company in, such as transportation, currency, education, etc. Make 3 sets of 3 large columns on a whiteboard, and have each person make 3 columns on their own piece of paper for each industry. For each industry:
+<tab>Give everyone 45 seconds to write down any industry associations, products, or services they think of in the first column on their paper. If they already have idea tell them to write that on the side and save it for later. Don’t edit for quality, go for quantity here. An example could be the words bus, taxi, google maps, pedestrian, or traffic for transportation.
+<tab>Have everyone pick top 3 entries from their 1st column and put them in the first column on the whiteboard.
+<tab>Give everyone 45 seconds to write down user experiences or feelings in the 2nd column on their paper that they thought of by seeing the top picks of everyone from the 1st column on the whiteboard. An example would be “inefficient” for bus, or “walk through unsafe neighborhoods” for google maps and pedestrian.
+<tab>Have everyone pick top 3 entries from their 2nd column and put them in the 2nd column on the whiteboard.
+<tab>Give everyone 45 seconds to write down actual ideas or problems to solve in the 3rd column on their paper that they thought of by seeing the top picks of everyone from the 2nd column on the whiteboard. An example could be “crowdsource reporting of dangerous metropolitan areas and build alternate routes around flagged areas” for the walk through unsafe areas experience. Or “make a better bus scheduling/mapping app” for the inefficient bus problem.
+<tab>Have everyone pick the top 3 ideas or problems to solve from their 3rd column and put them in the 3rd column on the whiteboard.
+<tab>Pick your favorite idea to work on in this industry from this 3rd column on the whiteboard. Now that you’ve been inspired by everyone’s best contributions and filtered them 3 times these will be your best ideas! Repeat for the other two industries you would like to work in. Then do some more market research on each of the top one or two ideas from each industry to decide which one to pursue!
+Type: Discussion
+The beginning can often be the most difficult part of starting up: you may have no capital, partners, product, or way to easily describe your idea. What is the hardest part of starting up from ground zero? 
+How can you be sure this idea is “The One”? Think of something you passionately started before but then quit. Write down 3 reasons you started it and 3 reasons you quit. Think of your startup idea now and write 3 reasons you are starting it. Are there any similarities? What can you do to ensure you don’t quit this time? 
+Explaining your startup with a comparison to other startups is a good way to avoid duplicating someone else’s idea and to quickly convey what you do. Come up with 5 ideas that solve 5 different problems and describe your idea as X for Y in relation to other startups. For instance: Uber for Dogs, or Youtube for Cats.
+Track: Founders
+Type: Watch 
+Working with Steve Jobs
+Ron Johnson, former Senior Vice President of Retail Operations at Apple
+Ron talks about working with Steve Jobs and why it’s important to work with and learn from good people.
+Cofounders and the Big Picture
+Shawn Fanning, Founder of Napster
+Shawn talks about the importance of picking the right people to work with. He explains how Sean Parker’s high level thinking complemented Shawn’s technical focus.
+Having the Difficult Conversations
+Shawn Fanning, Founder of Napster
+Shawn talks about the importance of having the difficult conversations up front: about equity, exit, and vision.
+Type: Challenge 
+If you can convince someone to work on a bad idea, then you can definitely convince them of a good one! Think of an incredibly bad startup idea, then go to a networking event or coffee shop and try to convince people to cofound it with you. What are their reactions? For those you convinced, how did you do it? 
+Find someone who has the tools to build or sell what you need and start bro-mancing them using the reading’s techniques. It’s ok if you’re not sure if they’re the right fit - this is how you find out! (http://entm.ag/1T1B2L8)
+You’re going to work and live around your founder almost 24 hours a day, 7 days a week, so it’s incredibly important to not only work well with them but be okay with living with them. Grab a friend to work on a personal project and live with them for 4 days. You must be together at all times: eat meals together, sleep in the same room, work in the same room or same desk, and do the same activities when you’re on break.
+Sometimes you can get the best leads online. Post to craigslist, angellist, or a silicon valley facebook group looking for a cofounder. Explain your idea and let people know what skills you need as a start.
+Type: Discussion
+Think of a great team you’ve worked with in the past. What were your favorite qualities in each person? How did you fit into the team and what was your role?
+What do you think is the best way to convince a potential cofounder to work on your idea? It can be harder than you think to convince a smart person to work on your idea versus their job or on their own idea!
+Equity can be the hardest thing to negotiate and talk about with founders. What are you willing to give or accept? What range are you comfortable with in negotiation? Would you walk away from the right cofounder if they asked for too much, and why?
+Track: Environment
+Type: Watch 
+Global Startups
+Hermione Way, Reality TV Personality & Founder of Vibease
+Hermione introduces startups from different places in the world and talks about locations outside of Silicon Valley where startup culture is also booming.
+Type: Challenge 
+Does your product have international appeal? Try selling a “looks-like” prototype in your local “Chinatown” “Koreatown” or other ethnic area in your city. You’d be surprised which markets would love to use or repurpose your product.
+Investors in different regions look for different flavors of pitches. What 60 second pitch for your product would you give an investor in California? Would you change it for an investor in New York? How about your pitch for a Chinese investor? Or one from Saudi Arabia?
+Your solution to a problem doesn’t just need to be effective, it needs to also be culturally accepted. Xiaomi owes its success to this strength! Spend a week in another city or country and figure out what you’d have to change about your product (or even yourself!)for your business idea to succeed there.
+People often fly from around the world for large Hackathons which can make them a great way to meet culturally diverse people. Use eventbrite or meetup to find a startup meetup or hackathon around you, and get 4 people’s life stories on how they arrived at this point.
+Type: Discussion
+Many have said that it’s very hard to raise money or flourish as a young company outside of Silicon Valley due to the network effect of tech talent and risk tolerant investors. To you, is it worth the high cost of living (4x USA national average)? Would you rather live in your hometown, or move to Silicon Valley when raising money? Why or why not?
+After looking at international markets, or even different buying behaviors in the US, other than Silicon Valley where would be the best strategic place for you to live and start your business? Make a case for moving there.
+Appropriate negotiation tactics in one country maybe be very offensive in other areas of the world, such as haggling. Pick 3 different cultures, think about how you’d negotiate with people based on which culture they came from.
+Track: Incorporation
+Type: Watch 
+Corporate Formation and Why, 
+Jared Brubaker, Founder of Brubaker Law & Angel Investor
+Jared explains why incorporating a company is important.
+What Makes a Corporation a Corporation?
+Jared Brubaker, Founder of Brubaker Law & Angel Investor
+Jared talks about the importance of using Silicon Valley standard documentation.
+Should you Incorporate Outside of the US?
+Jared Brubaker, Founder of Brubaker Law & Angel Investor
+Jared talks about pros and cons of incorporation inside & outside the US.
+Why should I Incorporate as a C-Corp? 
+Jared Brubaker, Founder of Brubaker Law & Angel Investor
+Jared lists the different types of corporations and why the standard procedure is for startups to incorporate as C corps in Delaware.
+How to Split Shares When You Incorporate a Startup
+Jared Brubaker, Founder of Brubaker Law & Angel Investor
+Jared talks about splitting equity, issuing shares, vesting, and 83(b)elections.
+Vesting 
+Jared Brubaker, Founder of Brubaker Law & Angel Investor
+Jared explains Vesting and 83(b)elections in more detail. (We’ve put this here because it’s INCREDIBLY important. If you ever wonder if your team should vest their shares, the answer is ALWAYS yes. If you ever wonder if you should pay painstaking attention to your 83(b)election, the answer is ALWAYS yes.)
+Management of a Company
+Jared Brubaker, Founder of Brubaker Law & Angel Investor
+Jared talks about the board of directors, management of the company, and intellectual property.
+Type: Challenge 
+Starting incorporation itself is intimidating. Start a basic incorporation package on Clerky and check your business name with the State department of Delaware - but don’t buy it just yet. How long did it take you to fill out? How difficult was it?
+Find a low-cost but well rated business lawyer who can incorporate your business, by either searching online, asking in a startup forum such as Quora, or by visiting your local small business help center. Get an estimate from the law firm of how much it will be and compare that with Clerky.
+Type: Discussion
+When do you think is the ideal time to incorporate? Now, before seeking funding, right before closing funding, when hiring employees, or another time? What event in your business will trigger the leap to incorporate and why?
+Track: Value prop
+Type: Watch 
+Find Someone Who Needs Help and the Funding Will Come
+Dan Price, CEO of Gravity Payments
+Dan talks about how focusing on helping others instead of solely on profit  will naturally lead to receiving more support and eventual success.
+The Competition Was Built by People Who Were Too Qualified.
+Scott Cook & Tom Proulx, Founders of Intuit
+Scott and Tom talk about how they built a superior product by learning what customers wanted and needed. They also talk about figuring out who they are building for, understanding the real problem and how to tailor a good solution.
+Have a Vision
+Ron Johnson, former Senior Vice President of Retail Operations at Apple
+Ron talks about the importance of having a vision for your goals and why it helps you achieve better outcomes.
+Type: Challenge 
+Interviewing people without getting biased responses is hard, but you want to do it right or the data you collect is useless! Interview 20 people in your “target market” (the people who have your chosen problem and need your solution). Instead of asking them if they would use your product, ask them about the pains that they are trying to solve and how they have solved them before. Then ask them what they would use to solve these problems if they had a magic wand and could make anything appear. Bonus points if any of them come up with a solution close your product. If none did, think about augmenting your solution with some of their more popular ideas.
+Ask a friend about their opinion on your idea and keep asking “why?” until they reveal the deepest truth to their reasoning. Or until they burn out.
+Complete a business model canvas for your product. If you’re having trouble with this one then complete a business model canvas for a popular product you love first. (https://bitly.com/shorten/) 
+Prototyping
+<tab>Is your product a physical good? Make 3 “low fidelity” prototypes out of materials in your home. Show them to 10 people you think would need it and have them pick the best one. It’s better to iterate early before you’ve committed money and hours to a form factor.
+<tab>Is your product a service? Invite 3 users for a “mock beta test”- Have them tell you what they want, then fulfill that service of your own accord without them knowing, and get their feedback on their experience. Ex. If you are a food delivery service, deliver the food yourself instead of putting in the work to hire a team of delivery people.
+It’s important to remember that there are a myriad of ways of doing something, and your product should support multiple types of usage. Think of your favorite hobby, then have a friend who isn't familiar with it do it in front of you and note how their experience differs from yours.
+Type: Discussion
+What’s more difficult to you with interviewing customers: soliciting so many strangers in the first place, or talking to them about your product in an unbiased manner? Why?
+Describe a time you decided to pivot instead of improve on your idea. What motivated you to go in a different direction? What was the hardest part about changing your business model?
+Think about a product you REALLY love, why do you love it so much? Break down each of its features, what value does each feature provide? Is there a simpler or better way it could have to provide these same values?
+What is your goal in helping users or customers? What do you want to help people with and why do you want to help them?
+Track: Tech stack
+Type: Watch 
+Developing a Working Algorithm for Shazam
+Chris Barton, Founder of Shazam
+Chris talks about finding the right people to work on their tech, and the process of developing the Shazam audio algorithm.
+Shazam Was a Product Ahead of Its Time
+Chris Barton, Founder of Shazam
+Chris talks about how it’s important to consider what is possible with technology that is available. Sometimes you may have to wait for technology to catch up to your idea. Work with what you have.
+Type: Challenge 
+Don’t know how to code? Scratch is a tool teachers use to show kids how to code in middle school with drag & drop building blocks of code. This won’t teach you how to program but will give you a general idea of how it works. (http://bit.ly/1zyj1aI)
+<tab>Complete this project: make a working Pong game (http://bit.ly/1S8ZDR8)
+Know how to code? Join a Hackathon and see what you can create with a team using a web framework such as node.js, ruby on rails, or django.
+Can you hack hardware? Create a prototype for a modular backpack like this successful kickstarter. A modular backpack is a backpack that you can remove or add different compartments or have customer integrations for things like sleeping bags, yoga mats, tripods, etc for outdoors. How were your difficulties for this challenge different than for your software challenge?
+In development or product design, it’s usually much faster to use tools that already exist instead of building from scratch. Many startups actually begin by hacking together their product with services provided by a mix of other startups or companies. Take a look at your own product and break it down into its component tools. Look up which startups exist that provide services for these tools and piece together on paper a way to create your product without having to create the majority of the technology yourself.
+Type: Discussion
+An open source project can be great for creating a developer ecosystem and large user base but can also be difficult to monetize. Think about making your software or hardware open source - what are the pros and cons? When is it the right decision to open source?
+Almost no startups have a fully rounded out technical team in the beginning. What is your “blindspot” in your tech stack development? Are you lacking a developer to do backend, an engineer with manufacturing experience, or a developer who understands UX? Look around Quora or see if you can find a creative workaround.
+Look up the basic differences between programming languages, what seems to be the best ones for your product and why?
+Track: Design
+Type: Watch 
+Harness Your Imagination
+Ron Johnson, former Senior Vice President of Retail Operations at Apple
+Ron talks about how keeping your imagination alive helps you to build great products and follow a unique path in life. He explains how this in turn lead to him designing an amazing retail experience for customers.
+Design for What People Want
+Ron Johnson, former Senior Vice President of Retail Operations at Apple
+Ron talks about coming up with creative solutions to problems encountered with Apple’s retail store. He outlines how apple created the glass cube in Manhattan and made the store successful even though most retail stores never do well underground.
+Type: Challenge 
+What is a product or tool in your life that doesn’t work the way you want it to? Redesign it yourself and show us visually or with a written explanation.
+With all the prototyping software around, it’s tempting to jump right in to making wireframes and mockups. But it often helps you think things through, notice mistakes, or understand user flow better when you go low tech with pencil and paper. Take an idea for a product you haven’t designed yet and draw it on paper. Did you learn anything new about your vision for the design?
+A product has many moving parts that all have to work in concert with each other to get it right, much like a Rube Goldberg machine. Create your own Rube Goldberg machine. (http://bit.ly/1MABJKN) 
+Use Webflow or Strikingly to create your company website landing/splash page. These tools make it easy to create a well designed page to start getting users.
+Create your logo or business card. Be sure to think about your brand and what sort of feeling you want to evoke when people see it. For ideas, check out: https://www.fiverr.com/, http://us.moo.com/, https://dribbble.com/.
+Prototyping websites enable you to create detailed mockups that look and function like a real app! Launch a working protoype on Proto.io.
+Type: Discussion
+First, write down what you feel design is. Then read this article (https://ia.net/know-how/learning-to-see), and write again when you feel design is. How has your perspective changed? How can you “see with one eye, feel with another”? What area do you have “fingertippiness” in?
+A recent trend is “empathy by design” or understanding what your user or customer sees, feels, and experiences in their everyday life, then designing for that instead of beauty or aesthetics. How can you incorporate empathy in your product design?
+People often confuse design with art, design is about functionality and how a user interacts with a product, art is about presenting ideas in a beautiful way. Name 3 products and their issues where the “art” gets in the way of the design. Name 3 products and how they merge the two together perfectly.
+Think of 3 products you think are badly designed, share them and why and how you would make them function better for their purpose.
+Track: Feedback & testing
+Type: Watch 
+Backboard
+Jeff Seibert, Founder of Crashlytics & Sr. Director of Product at Twitter.
+Jeff talks about going through variations of his initial idea and figuring out what features to later add to the product.
+Type: Challenge 
+Facebook for business is a great easy way to get started with feedback testing! Create a quick facebook page for your business and write 3 or so posts to make it seem legitimate. Then create 3 different ads for it with different pictures and one-liners to attract people to like your page. What worked and what didn’t? Pay attention to Facebook’s relevance score and click through rate that it provides you.
+If you have a website or app out but no analytics then you are missing out on an ocean of insights about your customers! Implement Heap/KISS Analytics on your Mobile/Web Platform.
+Create a simple toy, then go out and talk to 5 strangers and try to sell it to them. When they say no, ask them for feedback on how you can make it better. Try asking what they consider fun in a toy, not what they want you to do, to get to the heart of their desires.
+Come up with an idea, ask 5 of your friends and family for feedback, then go out and ask 5 strangers. What’s the difference between how “nice” their feedback is?
+Type: Discussion
+Watch this video (http://bit.ly/1OUuCv5). How can you convey your message in a more emotionally stirring way? How can you test and measure that your message is converting users?
+We want to make sure we aren’t just getting users, but retaining them and keeping them active. What are some ways you can analyze your first batch of users and track their engagement? How would you respond to low engagement before they become inactive?
+Marketing
+Track: Evangelism
+Type: Watch 
+How to Get Attention from the Press
+Hermione Way, Reality TV Personality & Founder of Vibease
+Hermione talks about how it is imperative to be unique to get the attention of the press. Pitch an interesting story to them and think of interesting ways to launch.
+The Do's of the Silicon Valley
+Hermione Way, Reality TV Personality & Founder of Vibease
+Hermione talks about being unique with investors, having thick skin, and what you should do in Silicon Valley.
+The Do Not's of Silicon Valley
+Hermione Way, Reality TV Personality & Founder of Vibease
+Hermione way talks about understanding how press people work, story timing, and what not to do in Silicon Valley.
+Have a Beer With Reporters
+Hermione Way, Reality TV Personality & Founder of Vibease
+Hermione talks about building relationships with press and the benefit of offering exclusives.
+Type: Challenge 
+Tell 100 people about your idea. That’s right, 100 people. You’ll have to personally pitch, validate, and sell your idea to thousands if not tens of thousands of people, all without losing passion or energy. This small exercise will get you used to telling your startup's story.
+Send a story to 8 different publications to try and get an article online. What's your strategy with creating content and targeting writers?
+Do something to build up a crowd of people, take a selfie with them and post it to your social media. Bonus: Tweet it to us at @Draper_U and tag it with #DUOnlineChallenge
+Type: Discussion
+A great sales strategy will end up with customers selling your product for you! Many companies do this with referral discounts, and rewards for spreading the work. What are ways you can “activate” your user base to evangelize your product? What are some channels you can use to give concrete rewards to users helping you market your product?
+Who is your target market, what do they care about? Are they moms? Fashionistas? Lovers of food? What press channels and creative social media venues (such as Vine, Periscope, Pinterest) can you leverage to reach them from a trusted source that won’t get lost in the noise?
+Pick two big PR disasters in the past, tell us how would you have dealt with them differently.
+Track: Branding & Storytelling
+Type: Watch 
+Raising Funds as an Athlete
+Harris Barton, Fund Manager & Former American Football Offensive Lineman for the San Francisco 49ers
+Harris talks about how he leveraged being a famous football player to get a hand in the big investment funds. He shows how having reach & exposure can be just as valuable as having technical skills or a good product.
+Type: Challenge 
+Read Indiegogo’s guide on how to build a great crowdfunding campaign, then create your own crowdfunding page! Create a 30 second Vine micro-pitch for your crowdfunding video and show it to your friends and mentors for feedback. What are you missing? (http://bit.ly/1yqfuz9, http://bit.ly/1vlNEhs) 
+It’s hard to remember that our brand is ultimately in the eyes of the viewer, no matter what we may say it is. What is your startup’s brand in just 3 words? Write those words down, then give an elevator pitch, show off your landing page, or facebook/twitter page (for your business) to 5 friends and 5 strangers. Ask them to give 3 words to describe your startup’s brand. Was it even close? Ask them what features of your pitch and page made them choose those words.
+Create an entirely new personality or personal image and live it for two days in front of your friends and family, what are their reactions during and after? Which person do they prefer?
+For brand success you need to say the right things on the right channel to get to your viewers. Set up as many social media accounts for your startup as you can, then ask yourself what channels would be most effective to keep?
+Type: Discussion
+Unfortunately just tell your customers that your product is perfect for them isn’t enough, they have to be able to see themselves using it. The best way to convey this aspect of your brand is in pictures! How would you tell the story behind your company through just 5 pictures? Does your journey to creating this product match your brand?
+How is storytelling, branding, and crowdfunding different for a startup that is selling consumer products (such as Sonos speakers) versus solutions for another business (such as Zenefits for health insurance)? Do you think startups that provide solutions for other startups and small businesses (such as SquareSpace) have their own form of branding too? Does this change how you will brand your own company?
+How can you brand your company to be very attractive to your target market, but still appealing to secondary markets? You don’t want to gain customers at the expense of alienating many potential customers in another demographic. For example, Reddit has issues with this. Their target market of young adult males comprises almost all of their users: 78% of users are males and 85% of them are between 18-34 years old. On the other hand, Facebook has quite a varied reach. They started out with a target market of college students but still have a massive adoption among baby boomers.
+What is a story that moved you to take action recently, such as donating, buying, sharing on social media, or replying? What was so compelling about it?
+Track: Opening & Closing
+Type: Watch 
+Create Demand and Sell the Product Yourself
+Scott Cook & Tom Proulx, Founders of Intuit
+Scott and Tom talk about how big banks fail to sell Intuit’s software well, so they take matters into their own hands.
+Type: Challenge 
+In order to sell your product you’ll also need to be able to sell yourself! Cold call 5 businesses and try to sell them your skills. Doesn’t matter if you code, design, sell, strategize, or are just really good with people. Follow through with at least 1 gig.
+Selling to strangers is much harder than to your friends! Create something such as a toy, food, artwork, music, or film and make $50 selling it. Don’t use anything you’ve made before, and don’t sell to friends or family. Record video or transcribe the process of you selling if you’d like feedback!
+Create a sales pitch for your product, then deliver to 10 different people each time in a different style. For example, you can talk about it’s luxury value, its features, how pretty it looks, how easy it is to use, or how much money/time it can save. You can be aggressive, easy going, friendly, pushy, loud, or calm, just be sure to pitch differently each time. Which method worked best for your product? How did your body language and tone of voice change for each?
+If you can sell a taboo product then you can definitely sell a standard one! Buy a sex toy and practice selling it to at least 10 people, and use a different opening line each time. 
+Make an appointment with a personal shopper in a high end store like J. Crew, Saks, or Nordstrom. Take note of how the shopper opens the sale, assesses your needs, and then closes. Now make an appointment to test drive a vehicle with a car salesman. How is their approach different? Which do you prefer?
+Trade an item you own up 3 times, what did you start with, and what did you end up with? How high of a value can you get yourself to? For instance, you could start with a pencil, trade it for a book, trade that for a cooking pan, and then trade that for a new chair!
+Type: Discussion
+Do you prefer going for a hard close (Would you like to buy this today?) or a soft close (Would you like to buy this on Tuesday or Wednesday?)? Why?
+How do you think the sales process would differ if you made your product for consumers versus a business?
+If you think about it, when you shop in a store you are much more likely to purchase whatever you decide to put in your cart, however, on the internet it’s common to fill your “cart” with items and then never make a purchase. What do you think is the best way to drive sales online to prevent “cart abandonment”?
+Track: User acquisition
+Type: Watch 
+Type: Challenge 
+Get 20 strangers to sign up for a fictional service without talking to them directly to practice your user acquisition skills. Some possible ways are through ads, friends, or writing an article.
+Create a rigorous 20 day diet and get your friends to follow it to get in better shape. Think of incentives you can give them to keep them motivated and on track. Monitor your friends throughout the diet and every time someone drops off, ask them why they quit in an exit interview. What could you have offered them or done differently to keep them in it?
+Type: Discussion
+Think of your “target market” for your product. Do they seem like a “normal” person? Now think of a super intense power user who would use your product 10x a day or more. Who would this person be and what would they be like? For example, exosuits are being developed now for the military, but were originally thought out for a more mild user like the elderly for body support.
+Think of all the ways companies you subscribe to try to retain you: emails, special sales, coupon codes, party invitations. Which offers move you to click to their site the most often? Is it usually in the form of a product savings opportunity or them personally connecting with you, such as by offering advice, or a heartfelt thank you message/letter?
+What sort of sales tactics make you walk out the door or unsubscribe from a service? Why?
+Track: Pitching
+Type: Watch 
+There Are Two Types of Investors
+Jeff Seibert, Founder of Crashlytics & Sr. Director of Product at Twitter.
+Jeff talks about the variations in what investors look for in startups, and how you should manage their expectations.
+Business Pitching is Incredibly Difficult
+Reena Jadhav, Serial Entrepreneur & Startup Advisor & Investor
+Reena talks about the difficulties and obstacles to pitching.
+The Business Pitch Structure 
+Reena Jadhav, Serial Entrepreneur & Startup Advisor & Investor
+Reena talks about the general sections of a business pitch.
+The Content of the Business Pitch 
+Reena Jadhav, Serial Entrepreneur & Startup Advisor & Investor
+Reena talks about the details and content of the pitch.
+The Ten Rules of Business Pitching 
+Reena Jadhav, Serial Entrepreneur & Startup Advisor & Investor
+Reena talks about strategies with specific elements in the pitch.
+The Five Minute Business Pitch 
+Reena Jadhav, Serial Entrepreneur & Startup Advisor & Investor
+Reena talks about the elements of a winning pitch.
+Lightning Round
+Dave McClure,  Founder of 500 Startups & Investor
+Dave tears down various students’ pitches, and stresses the importance of being focused and concise.
+Elevator Pitch
+Dave McClure,  Founder of 500 Startups & Investor
+Dave talks about focusing on problems, not solutions.
+Natural Selection
+Dave McClure,  Founder of 500 Startups & Investor
+Dave talks about the fundamental forces that move people. “People do things to get laid, paid, and made”.  Roughly translated: Love/Attraction, Money/Wealth, and Fame/Reputation.
+Getting Interrupted is Good
+Dave talks about how interruptions signal interest. The goal is to get a reaction; not a lukewarm response.
+Type: Challenge 
+AngelList is like Facebook/Linkedin for startups. Create your AngelList profile and make sure you fill out every box. Check out this article on hacking AngelList for some tips. (http://bit.ly/1DPpBSU) 
+Film, upload, and share your 2 minute elevator pitch on your social media or here with us so you can get feedback. Reach out online to startup or Silicon Valley communities if your friends don’t know too much about startups.
+Go out and pitch 10 people your idea until you know your pitch by heart.
+Take your favorite children’s story and distill it into a 2 minute pitch on how it has affected you so strongly and why you think other children should or shouldn’t read it.
+It can be easy to lose your nerve asking investors for such huge sums of money as an investment. Go out, pitch 5 strangers and ask for 5 dollars as fundraising for your idea.
+There are slightly different pitches that you give to different audiences to evoke certain reactions. Create 3 different pitches: one for an investor, one for a customer, and one for a cofounder. Go out and pitch the right people the right pitch. Then go out and pitch customers a cofounder pitch, investors a customer pitch, and cofounders and investor pitch. How did they react?
+Type: Discussion
+Why have you picked the problem you are working on specifically? What is your story behind this issue? How can you work this into your pitch?
+What’s your opinion on the X for Y format, which is advocated by Y Combinator, for pitching your business quickly? Why? An example of this format would be: Uber for babysitters.
+What are you most scared of about pitching? People who don’t have this problem, why aren’t you scared?
+What is the “emotional hook” of your pitch? Why did you choose that?
+Track: Networking
+Type: Watch 
+Why Your Network Matters
+Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
+Heidi talks about why building a network is important.
+Making a Connection 
+Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
+Heidi talks about how to make yourself more available and approachable.
+The Art of Giving 
+Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
+Heidi talks about how genuinely helping others will demonstrate your value to people around you.
+Being Consistent and Personal Branding
+Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
+Heidi talks about how presenting a consistent image helps you build stronger relationships.
+Hustling and Mark Cuban
+Aaron Levie, CEO and Founder of Box
+Aaron Levie talks about how he and his team got in contact with Mark Cuban.
+Investors Don't Fund Dots
+Jeff Seibert, Founder of Crashlytics & Sr. Director of Product at Twitter
+Jeff talks about how it’s important to constantly have meetings with investors while you are fundraising. Following up keeps investors updated on your progress and builds your image in their eyes. Instead of being seen as just a “dot” with a single meeting, multiple meetings contribute into building you up into a “curve”. He also remarks that it is often more important to have a relationship with a venture partner rather than the firm itself.
+Type: Challenge 
+Go to a meetup and get 10 business cards, then connect with them on Linkedin and set up 5 in-person meetings.
+Networking needs to be genuine and not just for the sake of networking. Make friends with someone new today who you intend to meet again. Tell us about them.
+Pick someone high profile that you admire and find a way to get in contact with them. Meet with them and learn about how they developed into the person that you look up to today.
+Networking is not about you telling people your story, it’s about you listening to others. Learn the life stories of 10 strangers.
+Often the most genuine connections come from helping people out. Hang out at a coffee shop or startup hangout and offer your help to 4 people for free. How easy is it to ask for a favor after?
+Set up a skype call with one of the other online students; comment below!
+You never know which connections will be the most fortuitous. Go to an event and purposefully network with someone who seems to be on the lowest rung on the ladder: the intern, waiter, etc. What comes out of the experience?
+Type: Discussion
+When you ask someone for a favor, how do you feel afterwards? Do you tend to feel like you need to repay them? Happy they helped you out and wanting to pay it forward to another person? Or threatened that they might hold it against you later?
+What’s one networking mistake you have made? How can you prevent doing it again?
+Are you a giver, matcher, or taker when it comes to doing favors for people? Why do you act this way?
+Who is someone you look up to as “that guy” or “that girl” who everyone likes and wants to be around in a professional setting? Why do you think they are so good at attracting people?
+How would you change your pitch if it was for a public competition versus a 1 on 1 investor meeting?
+Track: Startup
+Type: Watch 
+Type: Challenge 
+Create a job on UpWork.com. Get applicants and interview them.
+Go out and get a job (any job!) in just one day. Think through the tactics you used to secure that job in just one day, as well as what must have been going through the employer’s mind as they were evaluating you. What are the differences between what employers and employees look for and how can knowing this help improve the way you build a team?
+Convince someone to do your chores without pay and offer them something of value that isn’t money.
+Come up with a good  interview exercise, not just a question, to determine how dedicated an employee might be.
+Convince someone to be your intern. How did you find them? What were their credentials?
+Type: Discussion
+How would you determine how much equity your employees deserve?
+Other than money, what do you think people care about when looking for jobs at startups?
+When hiring for your startup do you think technical prowess is more important or personality (persistence, grit, honesty etc)?
+How would you evaluate a prospective team member’s ability to work in a group of people or level of commitment?
+Would you prefer more of a flat transparent corporate culture or a typical top down approach where salaries etc are private? Does your position as the founder/CEO change your answer rather than if you were an employee?
+How would you create a company culture in a startup with many remote employees?
+Track: Company
+Type: Watch 
+Make Yourself Irrelevant
+Jeff Seibert, Founder of Crashlytics & Sr. Director of Product at Twitter
+Jeff explains how the goal of a CEO should be to hire for whatever they are spending their time on.
+Type: Challenge 
+In a group/club/hobby you belong to, stop doing any work on a current project or activity and delegate all tasks to the right people. How is this different than doing the activity yourself? Does the activity get done more efficiently? Is it more or less enjoyable for you?
+Create 3 different creative salary packages that you think are all equal in the end, such as one has more vacation but less pay or less benefits, and then propose these different packages to 6 people you would consider hiring. Which package gets accepted more often?
+Talk to a friend as if you were going to hire them to work at your company, but ask them to negotiate their salary. How did the negotiation go? What was difficult about it in ways you didn’t expect?
+Many startups employ developers around the world due to budget or time constraints. Find and contact 5 developers in India and China and interview them. Try looking on Linkedin, Upwork, or AngelList. How would you integrate them into your business or team? 
+Running a good team is not just about knowing how to attract good people; you’ll need to know how to cut someone out if they aren’t performing well. Call a friend and talk to them as if you were firing them from your company.
+Type: Discussion
+Think about the differences between what co-founders, advisors, employees, and executives look for, what can you offer to each of them if they join your company?
+After what milestone would you create a dedicated HR department? Why?
+When you hire normal employees, do you plan to attract them with market value wages or more of a gritty startup atmosphere? Which do you think leads to better employee performance?
+How do you feel about the new Silicon Valley championed “unlimited vacation days” or that most employees don’t really have to come to work as long as they make their deadlines? How does this affect culture? What type of talent does this attract?
+Track: Business plan
+Type: Watch 
+Type: Challenge 
+Update your Business Model Canvas based on the feedback you’ve gotten so far, now show it to 5 startup founders or employees and ask them to tear it apart. Go back and fix it based on their feedback. (Check out the “Value Prop” track in “Product” if you haven’t created a BMC yet!)
+An Executive Summary summarizes everything about your product and business plan in just one page and is given to investors as a first look at your business. It also helps give you a high level view of the vision for your company. Write an executive summary. You can use INC Magazine’s article as a rough guide (http://bit.ly/1gHd2gp). 
+Time for some straight learning. Learn how to calculate customer acquisition cost, or CAC (http://bit.ly/1ySvnBg), lifetime customer value, or LTV (http://bit.ly/1CLtFRc), and annualized run-rate, or ARR (http://bit.ly/1vQWfjK). You can learn about how to calculate them and what they mean for your business with the links provided.
+Find all your competitors and place them on a 2x2 with your product placed in the top right quadrant. Learn how to create a 2x2 of the competitive landscape here: http://stanford.io/1JYJvYY. 
+Type: Discussion
+How do you project your revenues? What factors do those projections rely on? What do the optimistic and conservative projections look like?
+When a new competitor pops up, what is your first reaction? What is your next move?
+What is your incentive to partner with another company? Access to their user base, legitimizing yourself, help with design, or something else?
+Do you think you should partner pre-launch in order to jumpstart sales or would you rather build your own brand first then partner?
+Why do you think you should project revenue now when so much is still left unknown?
+Which competitor of yours could become a partner if you approach them right? How?
+Track: Biz Dev
+Type: Watch 
+The Future of Enterprise 
+<tab>Aaron Levie, CEO and Founder of Box
+<tab>Aaron talks about how box developed towards the future they saw for enterprise software.
+The Evolution of Gravity Payments
+<tab>Dan Price, CEO of Gravity Payments
+<tab>Dan talks about the business strategies and tactics he implemented while building up Gravity Payments.
+Type: Challenge 
+Your business will need to be agile and quick if you want to keep it alive, are you? Go ahead with a life pivot! Move to a new location! Dump your significant other! Quit smoking! Try soylent! Change your commute!
+Get over a fear by implementing 3 different strategies over 3 weeks. Which worked best? How did you decide when to implement each strategy?
+Cold email 20 potential brand partners asking about the process to partner with them and if they would be interested. Did any reply? What did you learn?
+Create a strategy map for your company. Who will be your early adopters? How will you use them as a bridge to reach the customers you really need to become profitable? Which partners do you need to succeed? How will you get resources and fundraise along the way? 
+Make a list of things in the business that you can take from 0-1. How will you hire and develop programs to take these things from 1-100?
+Type: Discussion
+What’s the difference to you between business development and user acquisition? 
+What v2.0 of your product or accessory product do you plan to release later on to grow your business?
+Can you think of a way to build subscription revenue into your business to stabilize your cash flow?
+After you launch, what new channels and business verticals can you use to distribute your product?
+Do you think a product visionary should have a crystal clear, sharp vision of the future or more of a general, blurry one? Why?
+Do you think a startup should have a Chief of Operations? Why or why not?
+Track: Finance
+Type: Watch 
+Type: Challenge 
+Google some sample term sheets online, put together two of your own term sheets with terms you feel would be favorable to you if you were an investor and a founder. Don’t worry about getting the language right, the point of this is to understand what terms each party would be looking for.
+Create your own cap table for your family members based on how much effort they’ve put into bringing the family together for events or meals. How much equity does each person deserve? Are you applying any cliffs or vesting schedules?
+Figure out what your personal burn rate (how much money you spend) will be for the next 3 months, then cut that amount by 30% however you can and figure out how you can spend it more productively. Then start doing it.
+Project your startup/idea’s 6 month burn rate to figure out how much revenue you’d make to become profitable. It’s easy to miss expenses you normally might not think of. Taxes, licenses, legal fees, food, rent, transportation, software, office supplies, etc.
+Figure out how much money you need to launch and then how long it would take you to make the money back, as if you’re paying off a loan. This is called your payback period. How many units/subscriptions do you need to sell each month to keep from losing money?
+Type: Discussion
+What is your largest cost? If it’s living expenses, how can you bring them down?
+What do you think is a VC’s attitude about paying for the founding team’s living expenses as part of the investment? How would you handle this in talking to them?
+What is the lifetime value of your customer? What is your cost to acquire them? Will your company ever be profitable with this ratio?
+Track: Exit
+Type: Watch 
+Type: Challenge 
+Sell lemonade on a hot day. Set a finite amount of lemonade you will sell all day such as only 100 cups. Experiment by setting different prices and selling at different times in the day. What price left you with all lemonade sold the quickest and with a supply shortage so that some people were left out? How is this like an IPO? Feel free to do this with anything other than lemonade: you could sell online game items, artwork, cookies, hugs, etc.
+Follow a rumor about a current impending acquisition, such as Facebook acquiring Meerkat, and pretend you are the larger company’s lawyers doing “due diligence”. What price would you recommend to buy this company at and why? What are the weak spots that you think your company can smooth over? Would you recommend buying it or not?
+Type: Discussion
+What sort of exit are you looking for? An IPO or acquisition?
+Under what terms would you accept an acquisition; considering monetary compensation, and HR/leadership, and how your customers  and employees would be treated?
+If you could acquire one startup right now, who would it be and why?
+You often see companies with high valuations bought much below that, but if their valuation is what they’re worth then why is that? What does this tell you about a valuation?
+Track: Set up
+Type: Watch
+How to Raise Money For Your Startup
+Jared Brubaker, Founder of Brubaker Law & Angel Investor
+Jared talks about term sheets and convertible notes.
+Term Sheets
+Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
+Tim talks specifics on term sheets and how they work.
+Debt & Shares
+Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
+Tim talks about the types of stock companies can give out.
+Vesting & Splitting Shares at Investment
+Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
+Tim talks gives an example of how a vesting schedule works.
+Do NOT Borrow Money
+Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
+Tim explains why you should never borrow money and the wonderful gift that is bankruptcy protection in the US.
+Dividends & Conversion
+Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
+Tim talks about stock conversion and liquidation preference.
+Anti-Dilution and How to Deal with a Company Failure
+Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
+Tim talks about anti-dilution and what happens when a company fails.
+Type: Challenge
+There are many lawyers out there who do a portion of their work pro bono (for free), finding one who does so can be an inexpensive way to learn about how to talk with and build relationships with lawyers. Look up 10 lawyers in any field you’d like to know more about and ask them for a free consultation.
+Find a law you disagree with and improve it. Think through the practicalities of implementing it, who it will affect, and whether it will benefit society as a whole or just you.
+Write up your own contract for a freelancer. Make sure it has all the valid parts of a contract and include an assignment of rights to their work over to your company.
+Ask for money for your company from friends or family as an exercise, Explain to them the differences between a convertible note and giving them equity. Ask them what sort of equity they would want for their investment, then counter them with your terms. Where does the dissonance on what that money is worth come from? Why did they prefer equity or convertible note? 
+Pay your friend for an odd job with a vesting schedule over 4 weeks with a 1 week cliff.  How did it go over? How was this payment schedule safer for you? 
+Type: Discussion
+Let’s say you’ve raised $100,000 for 3% equity or that same money as a convertible note with 20% discount rate and 5% yearly interest at a 5 million dollar cap. Which deal would you choose? Why? Would it be easier to raise money on the convertible note deal or the equity deal and why?
+What are any issues you foresee with giving board seats to advisors and investors?
+Do you like a SAFE (http://bit.ly/1kjVdko) or convertible note better? Why do you think the investment community still favors notes and priced rounds over SAFEs?
+Track: Protection
+Type: Watch
+Type: Challenge
+Using Google Patents and the University of Austin at Texas’s patent library look up any patents possibly related to what you’re doing. Are there any red flags?
+Is your technology patentable? Before you get a consultation, think, is your technology novel or repurposing existing technology? Create a one page outline of what your patent would look like; think of all the different “claims” you would make. Go to the USPTO and price the cost of your patent based on how many claims you would make et al, and realize these are just the fee costs. How much does your patent cost at minimum?
+Search for your startup/idea name on the USPTO trademark search. Does someone else own your name? Only if their trademark is in the same industry as yours and marked “live” does it conflict.
+Call patent lawyers until you find one who will give you a free consultation on whether your technology is possibly patentable.
+Find the technology assignment forms on Orrick corporation (http://bit.ly/16prciU) and have any cofounders or employees you might have sign them to protect your company’s IP. If you don’t have any yet, look them over so you can get an idea of what it will be like for your team once you find them!
+Type: Discussion
+If you do get a patent, how would you protect it? Patenting your technology would make all your designs publically available. How much would it cost for you to enforce it? Would you rather make your technology a trade secret?
+If you patented your idea would it be a design patent or utility patent? Which countries would you patent in and why?
+When would be the best time to patent your idea?
+What do you think of Larry Page, CEO of Google, giving away their patents to startups that are making $500,000-$5million in annual revenue? Why would they do that? How does this affect innovation and the economy?
+Do you think patents encourage or slow innovation? Give an example for each side of the argument.
