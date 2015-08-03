@@ -9,7 +9,7 @@ class LessonsController < ApplicationController
     redirect_to new_charge_path(lesson_id: @lesson.id) and return if !current_user.paid	
   	@track = @lesson.track
   	@topic = @track.topic
-  	@tracks = @topic.tracks.includes(:lessons)
+  	@tracks = @topic.tracks
     if @lesson.discussion
     	@comment = Comment.new lesson_id: @lesson.id
       @comments = @lesson.comments.includes(:user)

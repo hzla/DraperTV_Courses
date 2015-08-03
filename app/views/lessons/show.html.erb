@@ -61,7 +61,7 @@
     <% end %>
 
     <% if @lesson.discussion %>
-      <%= form_for @comment, remote: true, :class => "main-comment" do |f| %>
+      <%= form_for @comment, remote: true, html: {:class => "main-comment new_comment"} do |f| %>
         <%= f.text_area :body, :class => "comment-body", placeholder: "Post a response..." %>
         <%= f.hidden_field :ama_id, value: @lesson.id %>
         <div class="comment-form-bottom">

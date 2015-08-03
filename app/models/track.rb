@@ -54,7 +54,7 @@ class Track < ActiveRecord::Base
 
   def type_sorted_lessons
     sorted_lessons = {}
-    lessons.each do |lesson|
+    lessons.order(:id).each do |lesson|
       if sorted_lessons[lesson.lesson_type]
         sorted_lessons[lesson.lesson_type] << lesson
       else
