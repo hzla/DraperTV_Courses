@@ -1,78 +1,30 @@
-<div class="edit-form" style="width: 70%; margin-left:5%;">
-  <br>
-  <div class="network-section">
-    <div class="header">Edit Your Profile</div>
-  </div>
-<%= simple_form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class="edit-form">
+  <%= form_for(@user) do |f| %>
+   <div class="form-header">BASIC INFO</div>
+      <div class="form-row">
+        <div class="form-field">
+          <%= f.label :first_name, "FIRST NAME" %>
+          <%= f.text_field :first_name %>
+        </div> 
+        <div class="form-field">
+          <%= f.label :last_name, "LAST NAME" %>
+          <%= f.text_field :last_name %>
+        </div>        
+      </div>
+      <div class="form-row">
+          <div class="form-field">
+            <%= f.label :avatar, "AVATAR" %>
+            <%= f.file_field :avatar, label: "Avatar" %>
+          </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <%= f.label :email, "EMAIL ADDRESS" %>
+          <%= f.text_field :email %>
+        </div>
+      </div>
+    <div class="actions">
+      <%= f.submit "SAVE INFO" %>
     </div>
   <% end %>
- <div class="simple_form_section">Basic Info</div>
-  <table>
-    <tr>
-      <td><%= f.input :first_name, label: "First Name" %></td>
-      <td><%= f.input :last_name, label: "Last Name" %></td>
-    </tr>
-    <tr>
-      <td>
-        <div class="field">
-          <%= f.label :avatar %><br />
-          <%= f.file_field :avatar %>
-        </div>
-      </td>
-      <td><%= f.input :team, label: "Team", collection: ["Angels", "Magic", "Titans", "Phoenix", "Lightning", "Tornados", "Lanterns", "Wonders", "Blizzards"] %></td>
-    </tr>
-  </table>
-  <%= f.input :bio, label: "Short Bio", :input_html => { :rows => 5 } %>
-  <table>
-  </table>
-  <div class="simple_form_section">Contact Info</div>
-  <table>
-    <tr>
-      <td> <%= f.input :street_address, label: "Street Address" %></td>
-      <td> <%= f.input :city %></td>
-    </tr>
-    <tr>
-      <td><%= f.input :state %></td>
-      <td><%= f.input :country %></td>
-    </tr>
-  </table>
-  <div class="simple_form_section">Social Networks</div>
-  <table>
-    <tr>
-      <td><%= f.input :twitter, label: "Twitter (Handle only, no @)" %></td>
-      <td><%= f.input :facebook, label: "Facebook (URL)" %></td>
-    </tr>
-    <tr>
-      <td><%= f.input :linkedin, label: "LinkedIn (URL)" %></td>
-      <td><%= f.input :gmail, label: "Gmail (Name only)" %></td>
-    </tr>
-    <tr>
-      <td><%= f.input :skype, label: "Skype name" %></td>
-      <td><%= f.input :github, label: "Github Handle" %></td>
-    </tr>
-    <tr>
-      <td><%= f.input :instagram, label: "Instagram (Name only)" %></td>
-      <td><%= f.input :dribbble, label: "Dribbble Handle" %></td>
-    </tr>
-    <tr>
-      <td><%= f.check_box :eventReminder %></td>
-      <td><%= f.label :eventReminder, "Remind me for events"  %></td>
-
-    </tr>
-  </table>
-
-
-  <br />
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
 </div>

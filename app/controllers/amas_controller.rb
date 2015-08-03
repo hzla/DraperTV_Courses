@@ -1,6 +1,6 @@
 class AmasController < ApplicationController
   include ApplicationHelper
-  before_filter :authenticate_user!
+
 
   def index
     @upcoming_amas = Ama.upcoming
@@ -9,6 +9,8 @@ class AmasController < ApplicationController
   end
 
   def show
+    redirect_to "/users/sign_up" and return if !current_user
+    redirect_to new_charge_path and return if !current_user.paid 
     @ama = Ama.find params[:id]
     @comment = Comment.new
     @comments = @ama.regular_comments

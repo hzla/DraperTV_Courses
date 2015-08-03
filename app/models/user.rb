@@ -94,8 +94,6 @@ class User < ActiveRecord::Base
     end
   end
 
-
-
   def update_title_and_karma direction
 
     update_attribute 'karma', karma + direction

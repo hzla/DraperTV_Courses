@@ -67,5 +67,13 @@ class Lesson < ActiveRecord::Base
 		end
 		self
 	end
+
+	def self.assign_order
+		Track.all.each do |track|
+			track.ordered_lessons.each_with_index do |lesson, i|
+				lesson.update_attributes order: i
+			end
+		end
+	end
 end
 

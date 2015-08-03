@@ -6,12 +6,12 @@
           Module <%= i + 1 %> - <%= track.name %>
         <% end %>
       </div>
-      <% track.lessons.order(:order).each do |lesson| %>
+      <% track.ordered_lessons.each do |lesson| %>
         <div class="bar-item <%= 'current' if lesson == @lesson %>">
           <%= link_to lesson_path(lesson) do %>
             <%= image_tag lesson.icon(lesson == @lesson ? nil : "grey"), :class => "bar-icon" %>
             <p class="bar-text">
-              <%= lesson.lesson_type.capitalize %><% if lesson == @lesson %>&nbsp;- <%= lesson.description %><% end %>
+              <%= lesson.lesson_type.capitalize %><% if lesson == @lesson %>&nbsp;- <%= lesson.description[0..54] + (lesson.description.length > 55 ? "..." : "") %><% end %>
             </p>
             <%= image_tag lesson.status_icon(current_user), :class => "bar-circle" %>
           <% end %>
@@ -62,7 +62,7 @@
 
     <% if @lesson.discussion %>
       <%= form_for @comment, remote: true, :class => "main-comment" do |f| %>
-        <%= f.text_area :body, :class => "comment-body", placeholder: "Ask a question..." %>
+        <%= f.text_area :body, :class => "comment-body", placeholder: "Post a response..." %>
         <%= f.hidden_field :ama_id, value: @lesson.id %>
         <div class="comment-form-bottom">
           <div class="sort-bar">

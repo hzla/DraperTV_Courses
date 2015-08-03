@@ -61,7 +61,12 @@ class Track < ActiveRecord::Base
         sorted_lessons[lesson.lesson_type] = [lesson]
       end
     end
-    formatted_lessons = [[["watch", sorted_lessons["watch"]]],[["challenge", sorted_lessons["challenge"]], ["discussion", sorted_lessons["discussion"]]],[["reading", sorted_lessons["reading"]],["tools", sorted_lessons["tools"]]]]
+    formatted_lessons = [[["watch", sorted_lessons["watch"]]],[["reading", sorted_lessons["reading"]],["tools", sorted_lessons["tools"]]], [["challenge", sorted_lessons["challenge"]], ["discussion", sorted_lessons["discussion"]]]]
+  end
+
+
+  def ordered_lessons
+    type_sorted_lessons.flatten.reject! {|n| n.class != Lesson}
   end
 
 

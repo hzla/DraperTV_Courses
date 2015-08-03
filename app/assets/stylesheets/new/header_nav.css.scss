@@ -152,7 +152,13 @@
 	.dropdown-menu {
 		top: 15px;
 		left: initial;
-		right: 10px;
+		right: 0px;
+		li a {
+			color: #414141;
+		}
+		li a:hover {
+			background: none;
+		}
 	}
 }
 .nav {

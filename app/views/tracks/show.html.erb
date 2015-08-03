@@ -26,7 +26,7 @@
                 <% lesson_group[1].each do |lesson_item| %>
                   <%= link_to lesson_path(lesson_item), :class => "lesson-item" do %>
                     <p class="lesson-description">
-                      <%= lesson_item.description[0..80] + (lesson_item.description.length > 80 ? "..." : "") %>
+                      <%= lesson_item.description[0..54] + (lesson_item.description.length > 55 ? "..." : "") %>
                     </p>
                     <%= image_tag lesson_item.status_icon(current_user), :class => "lesson-status-icon" %>
                   <% end %>
