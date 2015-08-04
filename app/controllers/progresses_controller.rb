@@ -14,5 +14,4 @@ class ProgressesController < ApplicationController
     current_user.update_title_and_karma added_karma
     redirect_to lesson_path(lesson.next_lesson)
   end
-
 end

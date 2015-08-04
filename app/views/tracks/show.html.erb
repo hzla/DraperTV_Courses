@@ -2,10 +2,10 @@
   <div class="row">
     <div class="top-column-main">
       <%= link_to topic_path(@track.topic) do %>
-        <p class="header-back"><< TRACKS</p>
+        <p class="header-back"><< CHAPTERS</p>
       <% end %>
       <h1 class="no-letter-spacing"><%= @track.display_name %></h1>
-      <p class="header-info"><%= @lessons.count %> LESSONS</p>
+      <p class="header-info"><%= @lesson_count %> LESSONS</p>
     </div><!-- column main -->
   </div><!-- row -->
 </div>

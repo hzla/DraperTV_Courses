@@ -3,7 +3,7 @@
     <div class="bar-group">
       <div class="bar-header">
         <%= link_to track_path(track) do %>
-          Module <%= i + 1 %> - <%= track.name %>
+          CHAPTER <%= i + 1 %> - <%= track.name %>
         <% end %>
       </div>
       <% track.ordered_lessons.each do |lesson| %>
@@ -44,7 +44,7 @@
 <div class="column-main">
   <div class="lesson-container">
     <% if @lesson.video %>
-      <iframe src="https://player.vimeo.com/video/48181711" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+      <iframe src="https://player.vimeo.com/video/<%= @lesson.video_uid %>" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
 
       <p class="video-title">
         <%= @lesson.video_title %>

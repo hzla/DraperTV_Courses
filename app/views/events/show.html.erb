@@ -54,16 +54,6 @@
           <td><% if @event.description != nil %><%= @event.description.html_safe %><% end %></td>
         </tr>
       </table>
-
-      <div>
-        <div id="comments-bar">discussion</div>
-        <div id="comments_container">
-          <div id="<%= @event.id %>">
-            <%= render "user_comments/comments" %>
-          </div>
-        </div>
-        <%= render "user_comments/addcomment" %>
-      </div>
     </div>
   <% end %>
 </div><!-- column-main -->

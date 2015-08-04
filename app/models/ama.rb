@@ -2,11 +2,11 @@ class Ama < ActiveRecord::Base
 	has_many :comments
 
 	def self.upcoming
-		Ama.where('start_date < (?)', Time.now)
+		Ama.where('start_date > (?)', Time.now)
 	end
 
 	def self.past
-		Ama.where('start_date > (?)', Time.now)
+		Ama.where('start_date < (?)', Time.now)
 	end
 
 	def elapsed_time
@@ -22,9 +22,6 @@ class Ama < ActiveRecord::Base
 	    end
 	end
 
-	def image_url
-		"https://drapertv.s3.amazonaws.com/uploads/video/vthumbnail/141/Michelle.png"
-	end
 
   def formatted_start_date
   	pst_start_date = start_date - 7.hours

@@ -5,7 +5,7 @@
         <p class="header-back"><< TOPICS</p>
       <% end %>
       <h1><%= @topic.name.downcase.split(" ").map(&:capitalize).join(" ") %></h1>
-      <p class="header-info"><%= @tracks.count %> TRACKS</p>
+      <p class="header-info"><%= @tracks.count %> CHAPTERS</p>
     </div><!-- column main -->
   </div><!-- row -->
 </div>
@@ -23,7 +23,7 @@
           <div class="track-status">
             <% if info[:percentage] == 0 %>
               <div class="start-lesson-btn">
-                Start Track
+                Start Chapter
               </div>
             <% else %>
               <div class="track-percent-complete">
