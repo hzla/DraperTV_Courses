@@ -14,9 +14,6 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
-    @commentable = @event
-    @comments = @commentable.user_comments.order(:created_at)
-    @comment = UserComment.new
     sidebarindex
   end
 

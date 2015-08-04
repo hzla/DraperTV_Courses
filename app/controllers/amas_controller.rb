@@ -8,6 +8,12 @@ class AmasController < ApplicationController
     @page = "ama"
   end
 
+  def biweeklies
+    @upcoming_amas = Ama.upcoming
+    @past_amas = Ama.past
+    @page = "ama"
+  end
+
   def show
     redirect_to "/users/sign_up" and return if !current_user
     redirect_to new_charge_path and return if !current_user.paid 

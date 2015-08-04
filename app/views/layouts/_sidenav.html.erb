@@ -30,10 +30,10 @@
 				CALENDAR
 			<% end %>
 			<%= link_to amas_path, :class => "side-link #{ 'active' if @page == 'ama' }" do %>
-				MONTHLY AMA
+				MONTHLY: AMA
 			<% end %>
-			<%= link_to amas_path, :class => "side-link #{ 'active' if @page == 'amas' }" do %>
-				BIWEEKLY STREAM
+			<%= link_to biweeklies_path, :class => "side-link #{ 'active' if @page == 'amas' }" do %>
+				BIWEEKLY: DAY IN THE LIFE
 			<% end %>
 		</div>
 	<% end %>

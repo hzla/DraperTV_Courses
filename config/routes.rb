@@ -31,6 +31,7 @@ OnlineSchool::Application.routes.draw do
   get '/auth/facebook/callback', :to => 'auths#facebook_create'
 
   post '/codes/update', to: 'codes#update', as: "update_code"
+  get '/biweeklies', to: "amas#biweeklies", as: 'biweeklies'
 
   ##### OLD #####
 
