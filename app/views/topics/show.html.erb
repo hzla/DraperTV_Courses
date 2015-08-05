@@ -2,7 +2,7 @@
   <div class="row">
     <div class="top-column-main">
       <%= link_to topics_path do %>
-        <p class="header-back"><< TOPICS</p>
+        <p class="header-back"><< COURSES</p>
       <% end %>
       <h1><%= @topic.name.downcase.split(" ").map(&:capitalize).join(" ") %></h1>
       <p class="header-info"><%= @tracks.count %> CHAPTERS</p>
@@ -22,7 +22,7 @@
             <%= image_tag track.started_icon, :class => "track-icon" %>
             <div class="track-name">
               <span>
-                Chapter <%= counter %>:
+                CHAPTER <%= counter %>:
               </span>
               <%= track.name %>
             </div>

@@ -25,6 +25,14 @@
 		a:hover {
 			text-decoration: underline;
 		}
+		.tabbed {
+			display: inline-block;
+			margin-right: 10px;
+		}
+		.tabbed-section {
+			box-sizing: border-box;
+			padding-left: 40px;
+		}
 	}
 	form {
 		margin-bottom: 20px;

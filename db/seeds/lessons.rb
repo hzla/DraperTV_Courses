@@ -40,6 +40,10 @@ current_type = nil
 tab_counter = 0
 video_line_counter = 0
 
+
+Lesson.where('lesson_type != (?)', 'watch').destroy_all
+Progress.destroy_all
+
 contents.each do |line|
 	if line.include? "Track: "
 		currently_seeding_track = Track.find_by_name line.split("Track: ")[-1].upcase
@@ -66,7 +70,8 @@ contents.each do |line|
 				end
 				video_line_counter += 1
 			elsif line.include? "<tab>"
-				body_extension = line.gsub("<tab>", "<br><div class='tabbed'>#{tab_counter.to_roman}</div>")
+				body_extension = line.gsub("<tab>", "<br><div class='tabbed'>#{tab_counter.to_roman}.</div>")
+				body_extension = "<div class='tabbed-section'>" + body_extension + "</div>"
 				currently_seeding_lesson.update_attributes body: currently_seeding_lesson.body + body_extension
 				tab_counter += 1
 			else

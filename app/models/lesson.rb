@@ -51,7 +51,12 @@ class Lesson < ActiveRecord::Base
 		if next_lesson_id
 			Lesson.find next_lesson_id
 		else
-			self
+			next_track = track.topic.tracks.where(order: track.order + 1).first
+			if next_track
+				next_track.ordered_lessons.first
+			else
+				track.topic
+			end
 		end
 	end
 

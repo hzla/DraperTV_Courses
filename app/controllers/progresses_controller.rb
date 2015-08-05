@@ -12,6 +12,7 @@ class ProgressesController < ApplicationController
     	added_karma += 20
     end
     current_user.update_title_and_karma added_karma
-    redirect_to lesson_path(lesson.next_lesson)
+    next_resource = lesson.next_lesson
+    redirect_to (next_resource.class == Lesson ? lesson_path(next_resource) : topic_path(next_resource))
   end
 end
