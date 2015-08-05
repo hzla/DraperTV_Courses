@@ -6,6 +6,5 @@ class TracksController < ApplicationController
     @lesson_count = @lessons.flatten.reject! {|n| n.class != Lesson}.count
     #change into a hash instead of nested array
     @topic = @track.topic
-    sidebarindex
   end
 end

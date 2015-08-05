@@ -2,3 +2,6 @@ test payment
 load test
 ajax
 move assets to amazon
+friendly ids
+seo
+refactor progress methods into a module

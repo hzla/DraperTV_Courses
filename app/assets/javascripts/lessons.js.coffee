@@ -10,6 +10,10 @@ Lesson =
 		$('body').on 'ajax:success', '.comment-children .new_comment', @addChildComment
 		$('body').on 'ajax:success', '.upvote-link', @updateUpvotes
 		$('body').on 'click', '.reply-comment', @showCommentReplyForm
+		@scrollToLesson()
+
+	scrollToLesson: ->
+		$('#side-nav').scrollTo('.bar-item.current')
 
 	showCommentReplyForm: ->
 		$(@).parents('.comment').next().find('form').toggleClass('hidden')

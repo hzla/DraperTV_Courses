@@ -3,14 +3,14 @@ class AmasController < ApplicationController
 
 
   def index
-    @upcoming_amas = Ama.upcoming
-    @past_amas = Ama.past
+    @upcoming_amas = Ama.upcoming "monthly"
+    @past_amas = Ama.past "monthly"
     @page = "ama"
   end
 
   def biweeklies
-    @upcoming_amas = Ama.upcoming
-    @past_amas = Ama.past
+    @upcoming_amas = Ama.upcoming "biweekly"
+    @past_amas = Ama.past "biweekly"
     @page = "ama"
   end
 

@@ -1,7 +1,7 @@
 class Lesson < ActiveRecord::Base
 	belongs_to :track
 	has_many :comments
-	attr_accessible :order, :lesson_type, :track_id, :started, :finished, :video, :video_uid, :video_title, :video_author, :body, :description, :discussion
+	attr_accessible :video_length, :order, :lesson_type, :track_id, :started, :finished, :video, :video_uid, :video_title, :video_author, :body, :description, :discussion
 	after_update :update_topic_percentage
 
 	#put progress method into a progressable module

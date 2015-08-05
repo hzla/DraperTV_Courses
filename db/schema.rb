@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803215710) do
+ActiveRecord::Schema.define(version: 20150805222156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20150803215710) do
     t.string   "video_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ama_type",    default: "monthly"
   end
 
   create_table "assignments", force: true do |t|
@@ -282,6 +283,7 @@ ActiveRecord::Schema.define(version: 20150803215710) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "order"
+    t.string   "video_length"
   end
 
   add_index "lessons", ["track_id"], name: "index_lessons_on_track_id", using: :btree

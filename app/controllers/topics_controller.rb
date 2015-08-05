@@ -6,12 +6,10 @@ class TopicsController < ApplicationController
     @topics = Topic.all.order(:order)
     @user = current_user
     @page = "courses"
-    sidebarindex
   end
 
   def show
     @topic = Topic.find params[:id]
     @tracks = @topic.tracks
-    sidebarindex
   end
 end

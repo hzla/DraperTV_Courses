@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable, :timeout_in => 3.months
-
   has_attached_file :avatar,
     :styles => { :medium => "120x120#", :thumb => "40x40#", :large => "220x220#" },
     :default_url => '/assets/avatars/missing.png',
@@ -20,10 +19,6 @@ class User < ActiveRecord::Base
     :s3_credentials => "#{Rails.root}/config/s3.yml"
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png']
   validates_attachment_size :avatar, :less_than => 10.megabytes
-  has_one :bucketlist
-  has_many :bucketlist_items
-  has_many :user_assignments
-  has_many :badges
   has_many :events
   acts_as_taggable
   acts_as_voter
@@ -33,19 +28,11 @@ class User < ActiveRecord::Base
   validates :password, presence: {message: "you must fill out a password"}, on: :create
   validates :password, presence: true, on: :update, allow_blank: true
 
-  has_many :authorships
   has_many :authorizations
-  has_many :skills, through: :authorships
-  has_many :activity_feeds
-
-  has_many :activities
-  has_many :posts
   has_many :comments
   has_many :progresses
   attr_accessible :karma, :paid, :email, :password, :password_confirmation, :customer_id, :plan, :role, :color, :first_name, :last_name, :avatar
   after_create :assign_color
-
-  SORT_FIELDS = { "pcounter" => 'Highest Score', "pcounter desc" => 'Lowest Score', "first_name asc" => 'First Name', "last_name asc" => 'Last Name' }
 
 
   def self.create_with_facebook auth_hash
@@ -59,10 +46,6 @@ class User < ActiveRecord::Base
 
   def full_name
     [first_name, last_name].join(' ')
-  end
-
-  def twitter_link
-    ['http://www.twitter.com', twitter].join('/')
   end
 
   def self.cached_find(id)
@@ -95,7 +78,6 @@ class User < ActiveRecord::Base
   end
 
   def update_title_and_karma direction
-
     update_attribute 'karma', karma + direction
     update_attribute 'title', tier
   end

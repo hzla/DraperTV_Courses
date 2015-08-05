@@ -42,6 +42,7 @@ gem 'mandrill-api'
 gem "mailchimp-api", "~> 2.0.4"
 gem 'omniauth-facebook'
 gem 'ancestry'
+gem 'vimeo'
 
 # Gems used only for assets and not required
 # in production environments by default.

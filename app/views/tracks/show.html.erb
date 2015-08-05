@@ -17,7 +17,7 @@
         <div class="lesson-column">
           <% lesson_column.each do |lesson_group| %>
             <% if lesson_group[1] %>
-              <div class="lesson-group">
+              <div class="lesson-group <%= lesson_group[0] %>">
                 <div class="lesson-header">
                   <%= image_tag lesson_group[1][0].icon, :class => "lesson-icon" %>
                   <p class="<%= lesson_group[1][0].action_type %>"><%= lesson_group[0].upcase %></p>
@@ -28,7 +28,14 @@
                     <p class="lesson-description">
                       <%= lesson_item.description[0..54] + (lesson_item.description.length > 55 ? "..." : "") %>
                     </p>
-                    <%= image_tag lesson_item.status_icon(current_user), :class => "lesson-status-icon" %>
+                    <div class="lesson-status-container">
+                      <%= image_tag lesson_item.status_icon(current_user), :class => "lesson-status-icon" %>
+                      <% if lesson_item.video_length %>
+                        <div class="video-length">
+                          <%= lesson_item.video_length %>
+                        </div>
+                      <% end %>
+                    </div>
                   <% end %>
                 <% end %>
               </div>

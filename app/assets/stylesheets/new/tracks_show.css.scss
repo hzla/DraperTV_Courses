@@ -42,6 +42,24 @@
 	border: 1px solid #e9e9e9;
 }
 
+.lesson-group.watch {
+	.lesson-status-container {
+		height: 100%;
+		@include flexbox;
+		@include justify-content(space-between);
+		@include flex-direction(column);
+		@include align-items(center);
+
+	}
+	.lesson-status-icon {
+		margin-top: 5px;
+	}
+	.video-length {
+		color: #c0c0c0;
+		font-size: 10px;
+	}
+}
+
 .lesson-item {
 	@include flexbox;
 	@include justify-content(space-between);
