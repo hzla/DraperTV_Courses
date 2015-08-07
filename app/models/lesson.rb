@@ -38,7 +38,7 @@ class Lesson < ActiveRecord::Base
 
 	def status_icon user
 		return "untouched.svg" if !user
-		if progress user
+		if progress(user) && progress(user).percent_complete == 100
 			"done.svg"
 		else
 			"untouched.svg"
@@ -62,13 +62,15 @@ class Lesson < ActiveRecord::Base
 
 	def completed? user
 		return nil if !user
-		progress user
+		progress(user).percent_complete == 100
 	end
 
 	def complete user
 		return nil if !user
-		if !progress user
-			Progress.create(percent_complete: 100, user_id: user.id, model_type: "lesson", model_id: id).update_percentage_for_parent_progresses user
+		user_progress = progress(user)
+		if user_progress.percent_complete != 100
+			user_progress.update_attributes(percent_complete: 100)
+			user_progress.update_percentage_for_parent_progresses user
 		end
 		self
 	end
@@ -79,6 +81,10 @@ class Lesson < ActiveRecord::Base
 				lesson.update_attributes order: i
 			end
 		end
+	end
+
+	def participants
+		User.find Progress.where(model_id: id).pluck(:user_id)
 	end
 end
 

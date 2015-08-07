@@ -13,7 +13,9 @@ Lesson =
 		@scrollToLesson()
 
 	scrollToLesson: ->
-		$('#side-nav').scrollTo('.bar-item.current')
+		setTimeout ->
+			$('#side-nav').scrollTo('.bar-item.current')
+		, 30
 
 	showCommentReplyForm: ->
 		$(@).parents('.comment').next().find('form').toggleClass('hidden')

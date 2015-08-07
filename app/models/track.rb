@@ -69,6 +69,10 @@ class Track < ActiveRecord::Base
     type_sorted_lessons.flatten.reject! {|n| n.class != Lesson}
   end
 
+  def participants
+    User.find Progress.where(model_id: id).pluck(:user_id)
+  end
+
 
 
 end

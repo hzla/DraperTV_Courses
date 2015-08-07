@@ -6,5 +6,6 @@ class TracksController < ApplicationController
     @lesson_count = @lessons.flatten.reject! {|n| n.class != Lesson}.count
     #change into a hash instead of nested array
     @topic = @track.topic
+    @participants = @track.participants
   end
 end

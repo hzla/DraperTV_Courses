@@ -11,5 +11,6 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find params[:id]
     @tracks = @topic.tracks
+    @participants = @topic.participants
   end
 end

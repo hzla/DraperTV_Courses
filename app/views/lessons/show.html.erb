@@ -3,7 +3,7 @@
     <div class="bar-group">
       <div class="bar-header">
         <%= link_to track_path(track) do %>
-          CHAPTER <%= i + 1 %> - <%= track.name %>
+          CHAPTER <%= i + 1 %> - <%= track.name.downcase.split.map(&:capitalize)*' ' %>
         <% end %>
       </div>
       <% track.ordered_lessons.each do |lesson| %>
@@ -83,6 +83,22 @@
         <% end %>
       </div>
     <% end %>
+  </div>
+
+  <div class="participants">
+    <p class="participants-header">
+      STUDIED BY:
+    </p>
+    <div class="participants-list">
+      <% @participants[0..10].each do |user| %>
+        <%= image_tag user.avatar.url, :class => "participant" %>
+      <% end %>
+      <% if @participants.length > 11 %>
+        <div class="more-participants participant">
+         <%=  @participants.length - 11 %>+
+        </div>
+      <% end %>
+    </div>
   </div>
   
 

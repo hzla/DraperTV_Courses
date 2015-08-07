@@ -123,6 +123,8 @@ body {
         margin: 0;
         width: calc(100vw - 540px);
         padding: 0;
+        position: relative;
+        // min-height: calc(100vh - 110px);
       }
 	}
 }

@@ -51,4 +51,8 @@ class Topic < ActiveRecord::Base
     name.downcase.split(" ").map(&:capitalize).join(" ")
   end
 
+  def participants
+    User.find Progress.where(model_id: id).pluck(:user_id)
+  end
+
 end
