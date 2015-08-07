@@ -2,7 +2,7 @@
 	box-sizing: border-box;
 	padding: 20px;
 	@include flexbox;
-	margin-bottom: 90px;
+	min-height: calc(100% - 230px);
 }
 
 .lesson-column {
