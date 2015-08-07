@@ -64,7 +64,6 @@ Lesson =
 		$(@).parents('.comment').next().addClass('hidden')
 		$(@).addClass('hidden')
 
-
 	selectPlan: ->
 		$('.plan').removeClass('selected')
 		$(@).addClass('selected')

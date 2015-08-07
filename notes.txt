@@ -5,3 +5,4 @@ move assets to amazon
 friendly ids
 seo
 refactor progress methods into a module
+resize images to thumbnails

@@ -116,3 +116,19 @@
 .do {
 	color: #E2575B;
 }
+
+.tools {
+	.lesson-status-icon {
+		display: none;
+	}
+	.lesson-header {
+		border-bottom: 1px solid #e9e9e9;
+		p {
+			color: #919191;
+		}
+	}
+	.lesson-header, .lesson-item {
+		background: none;
+	}
+
+}

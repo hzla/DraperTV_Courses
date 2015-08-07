@@ -24,8 +24,10 @@ class Lesson < ActiveRecord::Base
 			"watch"
 		elsif lesson_type == "discussion" || lesson_type == "challenge"
 			"do"
-		else
+		elsif lesson_type == "reading"
 			"read"
+		else
+			"tools"
 		end
 	end
 
