@@ -1,7 +1,7 @@
 .lesson-container, #amas, .chat-messages {
 	box-sizing: border-box;
 	padding: 40px;
-	min-height: calc(100vh - 110px);
+	min-height: calc(100vh - 230px);
 	iframe {
 		width: calc(100vw - 620px);
 		height: calc((100vw - 620px) * 9 / 16);
