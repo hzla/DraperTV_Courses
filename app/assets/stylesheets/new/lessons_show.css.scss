@@ -224,6 +224,7 @@
 .bar-text {
 	width: calc(100% - 60px);
 	margin-bottom: 0px;
+	overflow: hidden;
 }
 
 .bar-circle {
@@ -261,6 +262,11 @@ body #main-body .top-column-main p.complete-btn.completed {
 	padding: 0px;
 	line-height: 40px;
 	text-align: right;
+}
+
+.linkify a {
+	color: $blue;
+	text-decoration: underline;
 }
 
 

@@ -12,7 +12,7 @@
     <div class="comment-header <%= 'admin-title' if child_comment.user.role == 'admin' %>">
       <span class="comment-user"> <%= child_comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= child_comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= child_comment.elapsed_time %></span> 
     </div>
-    <div class="comment-body">
+    <div class="comment-body linkify">
       <%= child_comment.body %>
     </div>
   </div>

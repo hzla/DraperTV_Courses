@@ -10,12 +10,29 @@ Lesson =
 		$('body').on 'ajax:success', '.comment-children .new_comment', @addChildComment
 		$('body').on 'ajax:success', '.upvote-link', @updateUpvotes
 		$('body').on 'click', '.reply-comment', @showCommentReplyForm
+		$('body').on 'ajax:success', '.new_comment', @linkifyLinks
+		@linkifyLinks()
 		@scrollToLesson()
+
+
+	linkifyLinks: ->
+		$('.linkify, .linkify p').each ->
+			linkifiedText = Lesson.linkify $(@).text()
+			$(@).html linkifiedText
+
+	linkify: (inputText) ->
+		replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim
+		replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>')
+		replacePattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim
+		replacedText = replacedText.replace(replacePattern2, '$1<a href="http://$2" target="_blank">$2</a>')
+		replacePattern3 = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim
+		replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$1">$1</a>')
+		replacedText;
 
 	scrollToLesson: ->
 		setTimeout ->
-			$('#side-nav').scrollTo('.bar-item.current', {duration: 300})
-		, 300
+			$('#side-nav').scrollTo('.bar-item.current', {duration: 100})
+		, 500
 
 	showCommentReplyForm: ->
 		$(@).parents('.comment').next().find('form').toggleClass('hidden')

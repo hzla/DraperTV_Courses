@@ -5,10 +5,11 @@ class LessonsController < ApplicationController
   
   def show
     @lesson = Lesson.find params[:id]
+    @track = @lesson.track
+    @topic = @track.topic
     redirect_to "/users/sign_up?lesson_id=#{@lesson.id}" and return if !current_user
-    redirect_to new_charge_path(lesson_id: @lesson.id) and return if !current_user.paid	
-  	@track = @lesson.track
-  	@topic = @track.topic
+    redirect_to new_charge_path(lesson_id: @lesson.id) and return if !current_user.paid	&& !@topic.free 
+
   	@tracks = @topic.tracks
     if @lesson.discussion
     	@comment = Comment.new lesson_id: @lesson.id

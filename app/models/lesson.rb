@@ -7,7 +7,7 @@ class Lesson < ActiveRecord::Base
 	#put progress method into a progressable module
 
 	def icon color=nil
-		image = action_type + ".svg"
+		image = lesson_type + ".svg"
 		if color == "grey"
 			image.gsub!(".", "grey.")
 		end
@@ -17,18 +17,6 @@ class Lesson < ActiveRecord::Base
 	def progress user
 		return nil if !user
 		Progress.where(model_type: "lesson", model_id: id, user_id: user.id).first
-	end
-
-	def action_type
-		if lesson_type == "watch"
-			"watch"
-		elsif lesson_type == "discussion" || lesson_type == "challenge"
-			"do"
-		elsif lesson_type == "reading"
-			"read"
-		else
-			"tools"
-		end
 	end
 
 	def update_topic_percentage

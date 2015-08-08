@@ -75,6 +75,7 @@
 	p {
 		margin: 0px;
 		width: calc(100% - 30px);
+		overflow: hidden;
 	}
 	img {
 		height: 10px;
@@ -109,11 +110,11 @@
 	color: #47B8DF;
 }
 
-.read {
+.reading {
 	color: #F1BD30;
 }
 
-.do {
+.challenge, .discussion {
 	color: #E2575B;
 }
 

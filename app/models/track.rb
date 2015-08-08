@@ -1,5 +1,5 @@
 class Track < ActiveRecord::Base
-  attr_accessible :name, :percent_complete, :icon, :topic_id, :order
+  attr_accessible :name, :percent_complete, :icon, :topic_id, :order, :watch_time
   belongs_to :topic
   has_many :lessons
 
@@ -71,6 +71,45 @@ class Track < ActiveRecord::Base
 
   def participants
     User.find Progress.where(model_id: id).pluck(:user_id)
+  end
+
+  def self.to_draper_tv_chapters
+    all.order(:id).map do |track|
+      lesson_info = track.ordered_lessons.map(&:description).join("<br>")
+      {track: track, topic_id: track.topic.id, topic_name: track.topic.name, lesson_info: lesson_info}
+    end
+  end
+
+  def self.get_watch_times
+    all.each do |track|
+      time = track.lessons.pluck(:video_length).map do |length|
+        if length 
+          length.split(":")[0].to_i * 60 + length.split(":")[-1].to_i
+        else
+          0
+        end
+      end.reduce(:+)
+      track.update_attributes watch_time: time
+    end
+  end
+
+  def formatted_watch_time
+    if watch_time != 0 && watch_time
+      if watch_time / 60 < 60
+        minutes = watch_time / 60
+        minutes = ((minutes / 15) + 1) * 15
+        "#{minutes} minutes"
+      else
+        hours = watch_time / 3600
+        if hours == 1
+          "#{hours} hour"
+        else
+          "#{hours} hours"
+        end
+      end 
+    else
+      "None"
+    end
   end
 
 

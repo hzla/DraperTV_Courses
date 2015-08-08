@@ -1,5 +1,5 @@
 class Topic < ActiveRecord::Base
-  attr_accessible :name, :percent_complete, :icon, :order, :percentage, :body
+  attr_accessible :name, :percent_complete, :icon, :order, :percentage, :body, :free
   has_many :tracks
 
   def status user

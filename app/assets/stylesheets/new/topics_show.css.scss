@@ -24,9 +24,9 @@
 }
 
 .track-name {
-	color: #a7a7a7;
-	text-align: center;
-	line-height: 40px;
+	color: #A7A7A7;
+	text-align: left;
+	margin-bottom: 5px;
 	letter-spacing: 1px;
 	font-weight: 700;
 	-webkit-transition-duration: 0.3s; /* Safari */
@@ -63,6 +63,14 @@
 
 .track-info {
 	@include flexbox;
+	@include align-items(center);
+}
+
+.track-info-content {
+	height: 40px;
+}
+.watch-time {
+	color: #A7A7A7;
 }
 
 .track-status {
@@ -179,9 +187,10 @@ $rgba-color-list: rgba(36,	109,	180, 0.2),rgba(53,	179,	222, 0.2),rgba(36,	180,	
 
 
 .participants {
-	margin-left: 20px;
-	margin-bottom: 40px;
+	left: 20px;
+	bottom: 40px;
 	width: 240px;
+	position: absolute;
 }
 
 .participants-header {

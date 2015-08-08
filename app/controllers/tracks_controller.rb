@@ -8,4 +8,8 @@ class TracksController < ApplicationController
     @topic = @track.topic
     @participants = @track.participants
   end
+
+  def index
+  	render json: {chapters: Track.to_draper_tv_chapters}
+  end
 end

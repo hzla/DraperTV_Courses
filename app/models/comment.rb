@@ -5,6 +5,7 @@ class Comment < ActiveRecord::Base
 	belongs_to :ama
 	acts_as_votable
 	after_create :self_upvote
+	after_create :sanitize_body
 	has_ancestry
 
 
@@ -44,5 +45,11 @@ class Comment < ActiveRecord::Base
 	      liked_by voting_user
 	      user.update_title_and_karma 1
 	    end
+	end
+
+	private
+
+	def sanitize_body
+		update_attributes body: Sanitize.fragment(body)		
 	end
 end

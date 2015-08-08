@@ -3,7 +3,7 @@
     <div class="bar-group">
       <div class="bar-header">
         <%= link_to track_path(track) do %>
-          CHAPTER <%= i + 1 %> - <%= track.name.downcase.split.map(&:capitalize)*' ' %>
+          Chapter <%= i + 1 %> - <%= track.name.downcase.split.map(&:capitalize)*' ' %>
         <% end %>
       </div>
       <% track.ordered_lessons.each do |lesson| %>
@@ -55,7 +55,7 @@
     <% end %>
 
     <% if @lesson.body %>
-      <div class="lesson-body">
+      <div class="lesson-body linkify">
         <%= @lesson.body.html_safe %>
       </div>
     <% end %>
@@ -63,7 +63,7 @@
     <% if @lesson.discussion %>
       <%= form_for @comment, remote: true, html: {:class => "main-comment new_comment"} do |f| %>
         <%= f.text_area :body, :class => "comment-body", placeholder: "Post a response..." %>
-        <%= f.hidden_field :ama_id, value: @lesson.id %>
+        <%= f.hidden_field :lesson_id, value: @lesson.id %>
         <div class="comment-form-bottom">
           <div class="sort-bar">
             <p>Sort by:</p>
@@ -79,33 +79,33 @@
       <% end %>
        <div class="comments">
         <% @comments.each do |comment| %>
-          <%= render partial: "comments/comment", locals: {comment: comment, commentable: @ama} %>
+          <%= render partial: "comments/comment", locals: {comment: comment, commentable: @lesson} %>
         <% end %>
       </div>
     <% end %>
   </div>
 
-  <div class="participants">
-    <p class="participants-header">
-      STUDIED BY:
-    </p>
-    <div class="participants-list">
-      <% @participants[0..10].each do |user| %>
-        <%= image_tag user.avatar.url, :class => "participant" %>
-      <% end %>
-      <% if @participants.length > 11 %>
-        <div class="more-participants participant">
-         <%=  @participants.length - 11 %>+
-        </div>
-      <% end %>
-    </div>
-  </div>
-  
+
 
 
 </div><!-- column-main -->
-<div class="column-right">
-</div>
+<%= content_for :column_right do %>
+    <div class="participants">
+      <p class="participants-header">
+        STUDIED BY:
+      </p>
+      <div class="participants-list">
+        <% @participants[0..10].each do |user| %>
+          <%= image_tag user.avatar.url, :class => "participant" %>
+        <% end %>
+        <% if @participants.length > 11 %>
+          <div class="more-participants participant">
+           <%=  @participants.length - 11 %>+
+          </div>
+        <% end %>
+      </div>
+    </div>
+<% end %>
 
 <script>
   $('#side-nav').addClass('scrollable')

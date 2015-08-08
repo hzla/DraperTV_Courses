@@ -12,6 +12,9 @@
       <% info = topic.progress_info(@user) %>
       <% completed = info[:status] == "completed" %>
       <div class='topic <%= topic.name.downcase.gsub(" ", "-").gsub("&-", "") + " " + info[:status] %>'>
+        <% if topic.free %>
+          <%= image_tag "freecourse.svg", :class => "free-icon" %>
+        <% end %>
         <%= link_to topic_path(topic), :class => info[:status] do %>
           <p class="topic-name"><%= topic.name %></p>
           <div class="topic-icon-container <%= 'complete' if completed %>">

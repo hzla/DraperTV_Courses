@@ -20,11 +20,16 @@
         <div class="track <%= track.status current_user %>">
           <div class="track-info">       
             <%= image_tag track.started_icon, :class => "track-icon" %>
-            <div class="track-name">
-              <span>
-                CHAPTER <%= counter %>:
-              </span>
-              <%= track.name %>
+            <div class="track-info-content">
+              <div class="track-name">
+                <span>
+                  CHAPTER <%= counter %>:
+                </span>
+                <%= track.name %>
+              </div>
+              <p class="watch-time">
+                Watch Time: <%= track.formatted_watch_time %>
+              </p>
             </div>
           </div>          
           <div class="track-status">
@@ -49,12 +54,27 @@
         </div>
       <% end %>
     <% end %>
-    <div class="track-body">
+    <div class="track-body linkify">
       <% if @topic.body %>
         <%= @topic.body.html_safe %>
       <% end %>
     </div>
   </div>
+</div><!-- column-main -->
+<%= content_for :column_right do %>
+  <div class="chat-header">
+    <p>INFORMATION</p>
+  </div>
+
+  <div class="column-body">
+
+    <%= image_tag @topic.done_icon, :class => "topic-info-icon" %>
+
+    <p class="topic-description linkify">
+      As an entrepreneur you gotta do stuff that people need you to do. And that takes Vision. Vision to see the stuff that you gotta do. So you can show people the stuff they gotta do. And that takes Vision.
+    </p>
+  </div>
+
   <div class="participants">
     <p class="participants-header">
       STUDIED BY:
@@ -69,20 +89,6 @@
         </div>
       <% end %>
     </div>
-  </div>
-</div><!-- column-main -->
-<%= content_for :column_right do %>
-  <div class="chat-header">
-    <p>INFORMATION</p>
-  </div>
-
-  <div class="column-body">
-
-    <%= image_tag @topic.done_icon, :class => "topic-info-icon" %>
-
-    <p class="topic-description">
-      As an entrepreneur you gotta do stuff that people need you to do. And that takes Vision. Vision to see the stuff that you gotta do. So you can show people the stuff they gotta do. And that takes Vision.
-    </p>
   </div>
 
 <% end %>
