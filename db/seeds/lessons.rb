@@ -91,10 +91,11 @@ video_line_counter = 0
 
 contents.each do |line|
 	if line.include? "Track: "
-		currently_seeding_track = Track.find_by_name line.split("Track: ")[-1].upcase
+		currently_seeding_track = Track.find_by_name line.split("Track: ")[-1].upcase.strip
 		p line
 	elsif line.include? "Type: "
 		current_type = line.split("Type: ")[-1].downcase.strip
+		p current_type
 	else
 		if currently_seeding_track
 			if line.include? "<tab>"

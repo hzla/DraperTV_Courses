@@ -21,7 +21,7 @@
   <% end %>
 <% end %>
 
-<div class="top-section">
+<div class="top-section <%= @lesson.lesson_type.downcase %>">
   <div class="row">
     <div class="top-column-main">
       <%= link_to track_path(@track) do %>
@@ -90,7 +90,7 @@
 
 </div><!-- column-main -->
 <%= content_for :column_right do %>
-    <div class="participants">
+    <div class="participants <%= @lesson.lesson_type.downcase %>">
       <p class="participants-header">
         STUDIED BY:
       </p>

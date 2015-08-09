@@ -29,10 +29,10 @@
 			<%= link_to events_path, :class => "side-link #{ 'active' if @page == 'calendar' }" do %>
 				CALENDAR
 			<% end %>
-			<%= link_to amas_path, :class => "side-link #{ 'active' if @page == 'ama' }" do %>
+			<%= link_to amas_path, :class => "side-link #{ 'active' if @page == 'monthly' }" do %>
 				MONTHLY: AMA
 			<% end %>
-			<%= link_to biweeklies_path, :class => "side-link #{ 'active' if @page == 'amas' }" do %>
+			<%= link_to biweeklies_path, :class => "side-link #{ 'active' if @page == 'biweekly' }" do %>
 				BIWEEKLY: HOW TO
 			<% end %>
 		</div>

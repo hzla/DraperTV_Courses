@@ -16,8 +16,8 @@ Lesson =
 
 
 	linkifyLinks: ->
-		$('.linkify, .linkify p').each ->
-			linkifiedText = Lesson.linkify $(@).text()
+		$('.linkify, .linkify p, .linkify div').each ->
+			linkifiedText = Lesson.linkify $(@).html()
 			$(@).html linkifiedText
 
 	linkify: (inputText) ->

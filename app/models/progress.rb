@@ -8,7 +8,7 @@ class Progress < ActiveRecord::Base
 		if model_type == "lesson"
 			Progress.where(model_type: "track", model_id: lesson.track.id, user_id: user.id).first_or_create.update_percentage_for_parent_progresses user
 		elsif model_type == "track"
-			lessons = track.lessons
+			lessons = track.lessons.where.not(lesson_type: "tools")
 			lesson_progresses = lessons.map {|l| l.progress(user) }.compact
 			update_attributes percent_complete: (lesson_progresses.count / lessons.count.to_f ) * 100
 			Progress.where(model_type: "topic", model_id: track.topic.id, user_id: user.id).first_or_create.update_percentage_for_parent_progresses user

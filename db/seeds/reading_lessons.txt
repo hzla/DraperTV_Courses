@@ -73,7 +73,7 @@ Codecademy https://www.codecademy.com/
 <tab>Learn the basics of HTML, CSS, Ruby, Python, Javascript , and more.
 Odin Project http://www.theodinproject.com/ 
 <tab>Open source object oriented language (ruby, rails) learning to build apps and web dev
-Track: Design 
+Track: Design
 Type: Reading
 Design Thinking with Tim Brown https://hbr.org/2008/06/design-thinking 
 Book: inGenius, Tina Seelig http://www.amazon.com/inGenius-Course-Creativity-Tina-Seelig/dp/0062020706 

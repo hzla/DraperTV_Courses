@@ -26,6 +26,9 @@
         <%= f.input :email, label: 'EMAIL:' %>
         <%= f.input :password, label: "PASSWORD:" %>
         <%= f.input :password_confirmation, label: "PASSWORD CONFIRMATION:" %>
+        <% if params["lesson_id"] %>
+          <input type="hidden" value="<%= params['lesson_id'] %>" name="lesson_id">
+        <% end %>
         <%= f.button :submit, "SIGN UP", :use_rails_ajax => false %>
       <% end %>
 

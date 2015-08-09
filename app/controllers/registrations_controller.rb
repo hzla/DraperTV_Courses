@@ -23,11 +23,12 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_up_path_for(resource)
-    new_charge_path
-  end
-
-  def after_inactive_sign_up_path_for(resource)
-    new_charge_path
+    if params["lesson_id"]
+      lesson = Lesson.find params["lesson_id"]
+      lesson_path(id: params["lesson_id"])
+    else
+      new_charge_path
+    end
   end
 
   private
