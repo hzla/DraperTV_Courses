@@ -15,7 +15,7 @@ Name: Becoming an Entrepreneur- Dan Price
 Name: None of this is Easy- Ron Johnson
 134883014
 
-Track: HUSTLE
+Track: RESOURCEFULNESS
 Name: AirBnB & Early Obstacles- Nate Blecharczyk
 134883166
 
@@ -138,7 +138,7 @@ Name: The Do Not’s of Silicon Valley- Hermione Way
 Name: Have a Beer with Reporters- Hermione Way
 134905821
 
-Track: BRANDING & STORYTELLING
+Track: BRANDING & STORY
 Name: Raising Funds as an Athlete- Harris Barton
 134905822
 
@@ -202,15 +202,15 @@ Name: Hustling and Mark Cuban- Aaron Levie
 Name: Investors Don’t Fund Dots- Jeff Seibert
 134980487
 
-Track: STARTUP
+Track: HIRING FOR A STARTUP
 
-Track: COMPANY
+Track: HIRING FOR A COMPANY
 Name: Make Yourself Irrelevant- Jeff Seibert
 134989334
 
 Track: BUSINESS PLAN
 
-Track: BIZ DEV
+Track: BUSINESS DEVELOPMENT
 
 Name: The Future of Enterprise- Aaron Levie
 134989340
@@ -222,7 +222,7 @@ Track: FINANCE
 
 Track: EXIT
 
-Track: SET UP
+Track: SETTING UP A COMPANY
 Name: How to Raise Money For Your Startup- Jared Brubaker
 134989342
 

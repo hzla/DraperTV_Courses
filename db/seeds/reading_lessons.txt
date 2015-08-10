@@ -143,13 +143,13 @@ The Future of Fundraising http://paulgraham.com/future.html
 Type: Tools
 Sidekick by Hubspot allows you to track and schedule your emails. http://www.getsidekick.com/ 
 Data by Salesforce helps you get access to the people you need to get to. http://www.data.com/connect/index.jsp 
-Track: Startup
+Track: Hiring for a startup
 Type: Reading 
 How to Hire for a Startup http://techcrunch.com/2015/07/22/hiring-culture-capacity-and-craftsmanship/#.tl1rqc:2nU6
 Gravity Payments raises their minimum salary to $70,000. Read how this culture change both lost and gained them employees and clients. http://www.nytimes.com/2015/08/02/business/a-company-copes-with-backlash-against-the-raise-that-roared.html?_r=0
 Type: Tools
 Hire better through corporate storytelling for startups with Job Portraits. http://jobportraits.com/ 
-Track: Company
+Track: hiring for a company
 Type: Reading 
 We Don’t Pay You to Work Here: How to align incentives for your employees. http://venturehacks.com/articles/ordinary-people
 What Does a COO Actually Do? https://medium.com/@sparkszilla/what-s-a-coo-do-bbeb0f8648ee 
@@ -163,7 +163,7 @@ How Do You Redefine Product-Market Fit? http://www.quora.com/How-do-you-define-P
 On Product-Market Fit for Startups with Marc Andreessen https://www.linkedin.com/pulse/marc-andreessen-product-market-fit-startups-marc-andreessen
 Revenge of the Fat Guy with Marc Andreessen http://www.bhorowitz.com/revenge_of_the_fat_guy
 Writing a Business Plan by Sequoia Capital http://www.sequoiacap.com/grove/posts/6bzx/writing-a-business-plan 
-Track: Biz Dev
+Track: Business Development
 Type: Reading 
 What is Strategy - Harvard Business Review https://hbr.org/1996/11/what-is-strategy 
 14 Ways to Get to $10 Million in Revenues Part 1 http://techcrunch.com/2010/10/10/teardown-13-ways-10-million-revenues/
@@ -184,7 +184,7 @@ Don’t Set Out to Get Acquired http://seanonstartups.co/2014/11/05/why-you-dont
 Selling Your Company http://seanonstartups.co/2015/08/05/selling-your-company/
 What is Your Startup Worth? http://www.entrepreneur.com/article/72384
 How to Prepare for an IPO http://www.inc.com/guides/preparing-for-initial-public-offering.html 
-Track: Set up
+Track: Setting up your company
 Type: Reading 
 Short explanation of various startup law terminology. http://startuplawyer.com/startup-issues/if-i-launched-a-startup
 Type: Tools

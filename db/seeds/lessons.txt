@@ -9,6 +9,41 @@ Naveen talks about how innovation is more important than invention: flawless exe
 SpaceX and Daring to Think Big
 Steve Jurvetson, Partner at Draper Fisher Jurvetson
 Steve talks about how SpaceX derives much of its success from being guided by an incredible vision. 
+Type: Challenge
+Make 5 predictions about how technology will fundamentally change how humanity lives.
+It’s easy to lose sight of what’s important in life in the minutia. Write a bucket list of 101 things you want to do before you die. Save your biggest task for last.
+Many entrepreneurs get rejected by more than 50 investors before one eventually says yes. They get rejected by potential hires, customers, and partners. Rejection is a part of startup life and every entrepreneur needs to know how to deal with it. Go ask people out and get rejected 5 times.
+Memorize the Draper University Oath and record yourself saying it. Repeat during times of stress to find inner peace.
+<br>I will promote freedom at all costs.
+<br>I will do everything in my power to drive, build and pursue progress and change.
+<br>My brand, my network, and my reputation are paramount.
+<br>I will set positive examples for others to emulate.
+<br>I will instill good habits in myself. I will take care of myself.
+<br>I will fail and fail again until I succeed.
+<br>I will explore the world with gusto and enthusiasm.
+<br>I will treat people well.
+<br>I will make short term sacrifices for long term success.
+<br>I will pursue fairness, openness, health and fun with all that I encounter. Mostly fun!
+<br>I will keep my word.
+<br>I will try my best to make reparations for my digressions.
+Type: Reading
+The Time You Have Now (in Jelly Beans) https://www.youtube.com/watch?v=BOksW_NabEk
+Book: Physics of the Future - Michio Kaku http://www.amazon.com/Physics-Future-Science-Shape-Destiny/dp/0307473333 
+No One’s Gonna Remember You https://medium.com/what-ive-learned/no-one-s-gonna-remember-you-62f49e21e54b
+Book: The Startup Game - William H. Draper http://www.amazon.com/The-Startup-Game-Partnership-Entrepreneurs/dp/0230339948 
+A Brief History of Airbnb http://techcrunch.com/gallery/a-brief-history-of-airbnb/slide/1/ 
+Taming the Mammoth http://waitbutwhy.com/2014/06/taming-mammoth-let-peoples-opinions-run-life.html
+Type: Tools
+http://startupquote.com/
+Type: Discussion
+Failure is only good if we learn from it. Think about two times you failed spectacularly: one time when something good came out of it and one time when it just sucked and you had to overcome it and move on. Can you discern a key difference in the two times? What did you do differently afterwards? 
+Sometimes we can even optimize failure. How can you “rig” your next spectacular failure to work out in the end? In other words, how can you engineer a silver lining for a risky moonshot idea?
+Apply one thing you learned from Joon Yun’s talk to imagine the future of your own industry. If you aim for 10X return, how will you go about bringing these changes? 
+Track: Persistence
+Type: Watch 
+AirBnB & Early Obstacles
+Nate Blecharczyk, Founder and CTO of Airbnb
+Nate talks about the early obstacles Airbnb faced and how they dealt with them.
 Becoming an Entrepreneur
 Dan Price, CEO of Gravity Payments
 Dan talks about his story and the hurdles he faced in the early days of his journey.
@@ -16,57 +51,74 @@ None of this is Easy
 Ron Johnson, former Senior Vice President of Retail Operations at Apple
 Ron talks about how difficult business is, and why being persistent and passionate is crucial to success.
 Type: Challenge 
-Make 5 predictions about how technology will fundamentally change how humanity lives.
-It’s easy to lose sight of what’s important in life in the minutia. Write a bucket list of 101 things you want to do before you die. Save your biggest task for last.
-Memorize the Draper University Oath and record yourself saying it. Repeat during times of stress to find inner peace.
-Many entrepreneurs get rejected by more than 50 investors before one eventually says yes. They get rejected by potential hires, customers, and partners. Rejection is a part of startup life and every entrepreneur needs to know how to deal with it. Go ask people out and get rejected 5 times.
+Running a company is a marathon, not a sprint. You can’t work on a startup if you don’t eat well, sleep well, and exercise to stay healthy. You don’t have to give up meat to be healthy, but making such a drastic change takes a lot of willpower and discipline: become a vegetarian for 2 weeks and . If you cheat, that’s on you; there are much harder things you’ll have to face on your way to becoming an entrepreneur.
+The hacking life style has been highly glamorized, but it’s actually a terrible idea to skip meals and go to bed at 5 AM every day. For 2 weeks, go to bed no later than 11 pm, wake up at 6 am, and get an hour of work done before 8 am. Again, cheat if you’d like, but remember that there are a lot of people out there who life like this already with no problems.
+Sometimes the only way to get to where you need to be is through sheer persistence. Many startup successes came to be because their founders would not take no for an answer. Getting yourself in front of a prominent figure when you don’t have much credit starting out can be difficult, but is absolutely necessary to grow and learn. Figure out a way to get in contact with a mentor in your industry. Keep messaging/calling different people or keep following up with the same people until you get a meeting or call with them.
+Type: Reading 
+Book: Humble Pie - Gordon Ramsay http://www.amazon.com/Humble-Pie-Gordon-Ramsay-ebook/dp/B003E74B24 
+Book: The Hard Thing About Hard Things - Ben Horowitz http://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205 
+AirBnB got rejected 7 times in 2008 https://medium.com/@bchesky/7-rejections-7d894cbaa084
+What Happens to a Start Up When a Cofounder Dies http://www.forbes.com/sites/ellenhuet/2015/06/25/what-happens-to-a-startup-when-a-cofounder-dies-kitchit/
+The Startup Hustle http://www.entrepreneur.com/article/230073 
 Type: Discussion
-Failure is only good if we learn from it. Think about two times you failed spectacularly- one time when something good came out of it and one time when it just sucked and you had to overcome it and move on. Can you discern a key difference in the two times? What did you do differently afterwards? 
-Sometimes we can even optimize failure. How can you “rig” your next spectacular failure to work out in the end? In other words, how can you engineer a silver lining for a risky moonshot idea?
-Apply one thing you learned from Joon Yun’s talk to imagine the future of your own industry. If you aim for 10X return, how will you go about making changes? 
-Track: Hustle
+Think back to a time when you gave up instead of pushing forward. Why did you stop? Was worth it? If you could go back to do it all over again, could you make it?
+Being a full time entrepreneur usually means giving up your social life, relationships, and family time for your work. You have to put everything you have into it because competition is fierce and everyone else is working just as hard if not not harder. How badly do you want to pursue your idea, and how much are you willing to sacrifice to reach your goals?
+Think of a time when you did manage to push through instead of giving up. What kept you going? Could you dedicate yourself to pursuing a goal for 5 years, or even 10? What keeps you going through tough times even now?
+Track: Resourcefulness
 Type: Watch
-AirBnB & Early Obstacles
-Nate Blecharczyk, Founder and CTO of Airbnb
-Nate talks about the early obstacles Airbnb faced and how they dealt with them.
 Be Scrappy, Be Loyal, and Ride the Wave of Success
 Nate Blecharczyk, Founder and CTO of Airbnb
 Nate talks about surviving through the 2008 US recession and how they hustled through it to success.
 Bootstrapping Enforces Creativity
 Gleb Budman, CEO of Backblaze
 Gleb talks about how bootstrapping forced his team to come up with a simple solution to a tech problem they were having.
-Bootstrapping Can Be Used to Your Advantage
-Gleb Budman, CEO of BackBlaze
-Gleb talks about how his team leveraged their bootstrapping position to get more favorable terms in a termsheet.
 How to Deal with Roadblocks
 Gleb Budman, CEO of BackBlaze
 Gleb talks about how they had to physically go to stores to buy hard drives during a supply drought, even getting friends and customers involved.
+Bootstrapping Can Be Used to Your Advantage
+Gleb Budman, CEO of BackBlaze
+Gleb talks about how his team leveraged their bootstrapping position to get more favorable terms in a termsheet.
 Type: Challenge
 During hard times you’ll have to make do without many things and even figure out how to survive without much money. Give yourself a budget of $5/day; live on it for 2 weeks.
 There are a lot of problems in our life that we don’t believe we can solve until we get desperate enough to make a concerted effort. What’s a problem in your life that you think you need money to solve? Brainstorm hard about 3 ways you can solve it with a small amount  or for free, then go implement 1 of those solutions.
-We definitely don’t know everything and advice from veterans is always needed. Getting yourself in front of a prominent figure when you don’t have much credit starting out can be difficult, but is absolutely necessary to grow and learn. Figure out a way to get in contact with a mentor in your industry, whether through a chain of people or an eye catching promotion.
 Many events on Eventbrite list a price but are actually a cinch to attend for free. Find an event near you and try to get in for free.
 Your skills stay with you even if you fail and start back at zero, what are you good at and would it be possible for you to survive if you were reduced down to nothing? Go to any food business and work out an exchange to get a meal without paying money.
+Type: Reading
+Book: Getting to Yes - Roger Fisher, William L. Ury, Bruce Patton http://www.amazon.com/Getting-Yes-Negotiating-Agreement-Without/dp/0143118757 
+Not Spending It (You only need to read the “Not Spending It” section) http://paulgraham.com/start.html
 Type: Discussion
 Knowing what is worth spending money on in your company can be a tough decision. How do you decide when to spend and when to save for your business? 
 Young startups often face a dilemma in app development since developers can be very expensive in the USA. The popular choices are:
-<tab>a) developing the app themselves
-<tab>b) outsourcing to India/China/Russia for low cost development but with possible quality and language roadblocks.
-<tab>c) outsource to an American company with rapid release times but at a high cost
+<br>a) developing the app themselves
+<br>b) outsourcing to India/China/Russia for low cost development but with possible quality and language roadblocks.
+<br>c) outsource to an American company with rapid release times but at a high cost 
+What was a situation where you had to figure out a solution with scarce resources and how did you do it? This could mean with money, skills, people, knowledge, or whatever that was available to you at the time.
 Track: Leadership
-Type: Watch
+Type: Watch 
 Negotiations
 Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
 Heidi talks about how negotiation is not about winning against someone else, but about coming to terms that benefit both parties.
-Type: Challenge
+Have Difficult Conversations
+<iframe src="https://player.vimeo.com/video/135826441" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+Josh Buckley, Founder and CEO of MinoMonsters
+Josh talks about the importance of clear and direct communication as well as having hard conversations up front.
+Type: Challenge 
 Good leaders need to be able to reduce complex and complicated ideas down to simple explanations that people can understand. Learn about a scientific theory and explain it to us like you would to a 5 year old.
 Many think leadership is about making decisions and convincing others to follow you. Practice “servant leadership” (http://bit.ly/1f9qDIM)  by serving others on your team or community- volunteer at an event, donate something useful to a homeless person besides money, get a stranger to tell you their life story, or ask the intern/secretary at your day job if you can help them out with some of their tasks. You’ll be surprised what you learn by leading from behind.
 Knowing yourself helps with determining your strengths, weaknesses, and compatibility with other people. Being a leader means improving your flaws and harnessing your abilities. Take this test: http://www.16personalities.com/ to figure out roughly what your mental tendencies are. Share your results below and tell us about how you will make changes to how you work with other people.
 Being a good leader means more than showing your followers where to go, but also helping those who may not have the ability to keep up. Do something a friend is afraid of, then help walk them through it together.
 Leaders need to be good at figuring out other people’s strengths and what benefit they can provide. Find 5 strangers and learn something from each of them that you can use to better yourself.
-Are you an aggressive negotiator or more of a mediator? Describe the pros and cons of your negotiation style.
+Type: Reading 
+8 Common Leadership Styles https://www.asaecenter.org/Resources/ANowDetail.cfm?ItemNumber=241962
+<tab>Study Q: Which leadership style are you most?
+Holacracy - The new iterative corporate structure that is revolutionizing leading companies such as Zappos and Medium. http://firstround.com/review/heres-why-you-should-care-about-holacracy/ 
+<tab>Study Q: Why do you think many of the Zappos employees (20%) quit Zappos after the CEO announced a shift to total Holacracy?
+What it’s like to work with Elon Musk http://www.quora.com/What-is-it-like-to-work-with-Elon-Musk/answer/Dolly-Singh-8 
+Mean People Don’t Succeed http://paulgraham.com/mean.html
+12 Traits of Startup Leaders http://www.inc.com/young-entrepreneur-council/12-traits-of-successful-start-up-leaders.html 
 Type: Discussion
 Knowing our own blind spots is important in more than just driving. After reading about the 8 common leadership styles you can probably find 1 near-perfect fit and a couple other styles you identify with...but what is your leadership “blindspot” and how can you compensate for it? 
+Are you an aggressive negotiator or more of a mediator? Describe the pros and cons of your negotiation style.
 Track: Idea
 Type: Watch 
 Origin of AirBnB
@@ -269,7 +321,7 @@ Type: Discussion
 A great sales strategy will end up with customers selling your product for you! Many companies do this with referral discounts, and rewards for spreading the work. What are ways you can “activate” your user base to evangelize your product? What are some channels you can use to give concrete rewards to users helping you market your product?
 Who is your target market, what do they care about? Are they moms? Fashionistas? Lovers of food? What press channels and creative social media venues (such as Vine, Periscope, Pinterest) can you leverage to reach them from a trusted source that won’t get lost in the noise?
 Pick two big PR disasters in the past, tell us how would you have dealt with them differently.
-Track: Branding & Storytelling
+Track: Branding & Story
 Type: Watch 
 Raising Funds as an Athlete
 Harris Barton, Fund Manager & Former American Football Offensive Lineman for the San Francisco 49ers
@@ -386,7 +438,7 @@ What’s one networking mistake you have made? How can you prevent doing it agai
 Are you a giver, matcher, or taker when it comes to doing favors for people? Why do you act this way?
 Who is someone you look up to as “that guy” or “that girl” who everyone likes and wants to be around in a professional setting? Why do you think they are so good at attracting people?
 How would you change your pitch if it was for a public competition versus a 1 on 1 investor meeting?
-Track: Startup
+Track: Hiring for a Startup
 Type: Watch 
 Type: Challenge 
 Create a job on UpWork.com. Get applicants and interview them.
@@ -401,7 +453,7 @@ When hiring for your startup do you think technical prowess is more important or
 How would you evaluate a prospective team member’s ability to work in a group of people or level of commitment?
 Would you prefer more of a flat transparent corporate culture or a typical top down approach where salaries etc are private? Does your position as the founder/CEO change your answer rather than if you were an employee?
 How would you create a company culture in a startup with many remote employees?
-Track: Company
+Track: Hiring for a company
 Type: Watch 
 Make Yourself Irrelevant
 Jeff Seibert, Founder of Crashlytics & Sr. Director of Product at Twitter
@@ -431,7 +483,7 @@ What is your incentive to partner with another company? Access to their user bas
 Do you think you should partner pre-launch in order to jumpstart sales or would you rather build your own brand first then partner?
 Why do you think you should project revenue now when so much is still left unknown?
 Which competitor of yours could become a partner if you approach them right? How?
-Track: Biz Dev
+Track: Business Development
 Type: Watch 
 The Future of Enterprise 
 <tab>Aaron Levie, CEO and Founder of Box
@@ -474,7 +526,7 @@ What sort of exit are you looking for? An IPO or acquisition?
 Under what terms would you accept an acquisition; considering monetary compensation, and HR/leadership, and how your customers  and employees would be treated?
 If you could acquire one startup right now, who would it be and why?
 You often see companies with high valuations bought much below that, but if their valuation is what they’re worth then why is that? What does this tell you about a valuation?
-Track: Set up
+Track: Setting up a company
 Type: Watch
 How to Raise Money For Your Startup
 Jared Brubaker, Founder of Brubaker Law & Angel Investor

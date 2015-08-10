@@ -8,7 +8,7 @@ order = 0
 
 contents.each do |line|
 	if line.include? "Track: "
-		currently_seeding_track = Track.find_by_name line.split("Track: ")[-1]
+		currently_seeding_track = Track.find_by_name line.split("Track: ")[-1].strip
 		p line if currently_seeding_track == nil
 	elsif line.include? "Name: "
 		if currently_seeding_track

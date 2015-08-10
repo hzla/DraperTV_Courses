@@ -33,7 +33,7 @@ class Integer
 end
 
 
-contents = File.read('db/seeds/lessons.txt').split("\n").compact
+contents = File.read('db/seeds/attitude.txt').split("\n").compact
 currently_seeding_track = nil
 currently_seeding_lesson = nil
 current_type = nil
@@ -41,7 +41,7 @@ tab_counter = 0
 video_line_counter = 0
 
 
-Lesson.where('lesson_type != (?)', 'watch').destroy_all
+Topic.where(name: "ATTITUDE").first.tracks.map(&:lessons).flatten.select { |l| l.lesson_type != "watch"}.each(&:destroy)
 Progress.destroy_all
 
 contents.each do |line|
@@ -84,51 +84,3 @@ end
 
 Lesson.where(lesson_type: "tools").update_all discussion: false
 Lesson.where(lesson_type: "reading").update_all discussion: false
-
-contents = File.read('db/seeds/reading_lessons.txt').split("\n").compact
-currently_seeding_track = nil
-currently_seeding_lesson = nil
-current_type = nil
-tab_counter = 0
-video_line_counter = 0
-
-contents.each do |line|
-	if line.include? "Track: "
-		currently_seeding_track = Track.find_by_name line.split("Track: ")[-1].upcase.strip
-	elsif line.include? "Type: "
-		current_type = line.split("Type: ")[-1].downcase.strip
-	else
-		if currently_seeding_track
-			if line.include? "<tab>"
-				body_extension = line.gsub("<tab>", "<br><div class='tabbed'>#{tab_counter.to_roman}.</div>")
-				body_extension = "<div class='tabbed-section'>" + body_extension + "</div>"
-				currently_seeding_lesson.update_attributes body: currently_seeding_lesson.body + body_extension
-				tab_counter += 1
-			else
-				currently_seeding_lesson = Lesson.create lesson_type: current_type, body: "#{line}", track_id: currently_seeding_track.id, description: line 
-				tab_counter = 1
-			end
-		end
-	end
-end
-
-contents = File.read('db/seeds/summaries.txt').split("\n").compact
-contents.delete ""
-currently_seeding = nil
-
-binding.pry
-contents.each do |line|
-	if line.include? "Topic: "
-		currently_seeding = Topic.find_by_name line.split("Topic: ")[-1].upcase.strip
-	elsif line.include? "Track: "
-		currently_seeding = Track.find_by_name line.split("Track: ")[-1].upcase.strip
-	else
-		if currently_seeding
-			currently_seeding.summary = line
-			currently_seeding.save!
-		end
-	end
-end
-
-
-
