@@ -1,8 +1,5 @@
 class Assignment < ActiveRecord::Base
 
-  extend FriendlyId
-  friendly_id :title, use: [:slugged, :finders]
-
   attr_accessible :description, :preview_url, :title, :vimeo_url, :order_id, :survey_id, :require_upload, :speaker_name, :category, :speaker_bio, :speaker_twitter, :speaker_linkedin, :speaker_angel, :course_id
   attr_accessible :speaker_pic, :user_assignment_id, :question_text, :question_duh_response, :complete, :rating,:req_online, :req_boarding, :question_response, :day
   #validates :question_response, length: { minimum: 300 }, allow_nil: true, allow_blank: true

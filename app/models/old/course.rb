@@ -1,7 +1,5 @@
 class Course < ActiveRecord::Base
 
-  extend FriendlyId
-  friendly_id :title, use: [:slugged, :finders]
   attr_accessible :description, :title, :start_date, :end_date, :intro_vimeo, :length, :badge_vimeo, :tile_image
   attr_accessible :course_icon, :intro_screenshot, :syllabus
   has_attached_file :course_icon,

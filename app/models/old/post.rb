@@ -1,7 +1,5 @@
 class Post < ActiveRecord::Base
 
-  extend FriendlyId
-  friendly_id :title, use: [:slugged, :finders]
 
   attr_accessible :content, :user_id, :title, :category
   attr_accessible :file

@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
   end
 
   def profile
-    @user = User.friendly.find(params[:id])
+    @user = User.find(params[:id])
     @courses = Course.includes(:assignments).all
     @assignments = Assignment.all
     #@assignment = Assignment.find(params[:id])
