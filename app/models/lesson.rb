@@ -54,12 +54,12 @@ class Lesson < ActiveRecord::Base
 		if lesson_type == "watch"
 			"These are videos clips taken from actual Draper Univerisity lectures. You can learn about entrepreneurship directly from founders, VCs, execs, lawyers, and more.
 			<br><br>We’ve cut them up into short, easy clips for you. If you’d like to access the full lectures you’ll need to upgrade to a Superhero Membership."
-		elsif lesson_type = "challenge"
+		elsif lesson_type == "challenge"
 			"Learn by doing”. These are a list of activities that we’ve come up with to help you practice your entrepreneurial skills. Many of these are again, actual activities that we have students do at Draper Univeristy, designed to push you outside of your comfort zone.
 			<br><br>Absolutely feel free to post your progress or results and share with students so we can give you feedback!"
-		elsif lesson_type = "reading"
+		elsif lesson_type == "reading"
 			"We’ve pulled together a collection of books and articles for you to supplement your learning. These are the same recommendations we give to students here at DU, we hope you find them just as helpful!"
-		elsif lesson_type = "discussion"
+		elsif lesson_type == "discussion"
 			"We’ve come up with some discussion questions and topics to help you start thinking in the right direction about startups.
 			<br><br>Share your ideas and thoughts with other students. Keep an eye out for Draper U Alumni, mentors, and staff! We’ll come on regularly to give feedback, and share our own insights."
 		else
