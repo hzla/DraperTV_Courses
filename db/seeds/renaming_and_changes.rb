@@ -11,8 +11,8 @@ Track.where(name: "RESOURCEFULNESS").destroy_all
 persistence = Track.find_or_create_by topic_id: topic.id, name: "PERSISTENCE", icon: "persistence.svg", summary: "“Building a company means having a focused vision, and working against all odds and obstacles to achieve it.”"
 resourcefulness = Track.find_or_create_by topic_id: topic.id, name: "RESOURCEFULNESS", icon: "resourcefulness.svg" , summary: "Starting a startup means figuring out creative ways to get things done no matter how difficult they may seem."
 
-# hustle = Track.where(name: "HUSTLE")
-# hustle.lessons.update_all(track_id: resourcefulness.id)
+hustle = Track.where(name: "HUSTLE")
+hustle.lessons.update_all(track_id: resourcefulness.id)
 
 Lesson.where(video_title: "Becoming an Entrepreneur").first.update_attributes track_id: persistence.id
 Lesson.where(video_title: "None of this is Easy").first.update_attributes track_id: persistence.id
