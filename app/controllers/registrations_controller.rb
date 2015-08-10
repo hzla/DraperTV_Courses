@@ -31,6 +31,11 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def sign_out
+    session[:user_id] = nil
+    super
+  end
+
   private
 
   # check if we need password to update user data
