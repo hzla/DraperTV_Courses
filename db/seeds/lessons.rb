@@ -92,10 +92,8 @@ video_line_counter = 0
 contents.each do |line|
 	if line.include? "Track: "
 		currently_seeding_track = Track.find_by_name line.split("Track: ")[-1].upcase.strip
-		p line
 	elsif line.include? "Type: "
 		current_type = line.split("Type: ")[-1].downcase.strip
-		p current_type
 	else
 		if currently_seeding_track
 			if line.include? "<tab>"
@@ -105,10 +103,26 @@ contents.each do |line|
 				tab_counter += 1
 			else
 				currently_seeding_lesson = Lesson.create lesson_type: current_type, body: "#{line}", track_id: currently_seeding_track.id, description: line 
-				p currently_seeding_lesson.lesson_type
-				p currently_seeding_lesson.id
 				tab_counter = 1
 			end
+		end
+	end
+end
+
+contents = File.read('db/seeds/summaries.txt').split("\n").compact
+contents.delete ""
+currently_seeding = nil
+
+binding.pry
+contents.each do |line|
+	if line.include? "Topic: "
+		currently_seeding = Topic.find_by_name line.split("Topic: ")[-1].upcase.strip
+	elsif line.include? "Track: "
+		currently_seeding = Track.find_by_name line.split("Track: ")[-1].upcase.strip
+	else
+		if currently_seeding
+			currently_seeding.summary = line
+			currently_seeding.save!
 		end
 	end
 end

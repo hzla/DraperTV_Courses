@@ -13,7 +13,6 @@
   <div class="section-content-list">
     <% @upcoming_amas.each do |ama| %>
       <div class="content ama">
-        <%= link_to ama_path(ama), :class => "content-link" do %>
           <div class="content-text ama-text">
             <div class="content-title">
               <h3><%= ama.title %></h3>
@@ -26,7 +25,6 @@
           <p class="ama-description">
             <%= ama.description[0..275] %><%= "..." if ama.description.length > 300 %>
           </p>
-        <% end %>
       </div>
     <% end %>
   </div>

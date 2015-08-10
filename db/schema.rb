@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150808052230) do
+ActiveRecord::Schema.define(version: 20150809235249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -442,6 +442,8 @@ ActiveRecord::Schema.define(version: 20150808052230) do
     t.integer "order"
     t.text    "body"
     t.boolean "free",             default: false
+    t.text    "summary"
+    t.string  "video_uid"
   end
 
   create_table "tracks", force: true do |t|
@@ -451,6 +453,8 @@ ActiveRecord::Schema.define(version: 20150808052230) do
     t.string  "percent_complete"
     t.integer "topic_id"
     t.integer "watch_time"
+    t.text    "summary"
+    t.string  "video_uid"
   end
 
   add_index "tracks", ["topic_id"], name: "index_tracks_on_topic_id", using: :btree

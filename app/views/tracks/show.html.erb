@@ -49,6 +49,17 @@
 
 
 <%= content_for :column_right do %>
+    <div class="chat-header">
+      <p>INFORMATION</p>
+    </div>
+     <div class="column-body">
+
+      <%= image_tag @topic.done_icon, :class => "topic-info-icon" %>
+
+      <p class="topic-description linkify">
+        <%= @track.summary %>
+      </p>
+    </div>
     <div class="participants">
       <p class="participants-header">
         STUDIED BY:

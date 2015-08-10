@@ -1,0 +1,5 @@
+Track.find_by_name("COMPANY").update_attributes(name: "HIRING FOR A COMPANY") if Track.find_by_name("COMPANY")
+Track.find_by_name("STARTUP").update_attributes(name: "HIRING FOR A STARTUP") if Track.find_by_name("STARTUP")
+Track.find_by_name("BIZ DEV").update_attributes(name: "BUSINESS DEVELOPMENT") if Track.find_by_name("BIZ DEV")
+Track.find_by_name("BRANDING & STORYTELLING").update_attributes(name: "BRANDING & STORY") if Track.find_by_name("BRANDING & STORYTELLING")
+Track.find_by_name("SET UP").update_attributes(name: "SETTING UP A COMPANY") if Track.find_by_name("SET UP")
