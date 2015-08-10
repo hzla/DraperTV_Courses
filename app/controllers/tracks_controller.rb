@@ -9,7 +9,8 @@ class TracksController < ApplicationController
     @participants = @track.participants
     @tutorial = params["tutorial"] == "true"
     if current_user && current_user.show_track_tutorial
-      current_user.update_attributes show_track_tutorial: false
+      current_user.show_track_tutorial = false
+      current_user.save false
       redirect_to track_path(id: @track.id, tutorial: true)
     end
   end
