@@ -8,8 +8,7 @@ class TopicsController < ApplicationController
     @page = "courses"
     @tutorial = params["tutorial"] == "true"
     if current_user && current_user.show_topic_tutorial
-      current_user.show_topic_tutorial = false
-      current_user.save false
+      current_user.update_attribute(:show_topic_tutorial, false)
       redirect_to topics_path(tutorial: true)
     end
   end
