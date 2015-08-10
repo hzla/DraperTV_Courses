@@ -133,3 +133,55 @@
 	}
 
 }
+
+////////
+
+
+
+.tut-top {
+	position: absolute;
+	box-sizing: border-box;
+	width: 300px;
+	padding: 20px;
+	right: 0;
+	top: 190px;
+	color: white;
+}
+
+.tut-bottom {
+	position: absolute;
+	box-sizing: border-box;
+	width: 240px;
+	padding: 20px;
+	right: 60px;
+	top: 290px;
+	color: white;
+}
+
+.tut-info-icon {
+	top: 330px;
+	right: 40px;
+	position: absolute;
+}
+
+.tut-arrow {
+	position: absolute;
+}
+
+.tut-arrow.top {
+	right: 200px;
+	top: 130px;
+}
+
+.tut-arrow.bottom {
+	right: 40px;
+	top: 390px;
+	-ms-transform: rotate(150deg); /* IE 9 */
+    -webkit-transform: rotate(150deg); /* Chrome, Safari, Opera */
+    transform: rotate(150deg);
+}
+
+.track-tut .next-tut-container {
+	right: 40px;
+	top: 480px;
+}

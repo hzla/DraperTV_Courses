@@ -191,4 +191,83 @@
 
 
 
+//////////////////
+
+
+.tutorial-overlay {
+	position: fixed;
+	height: calc(100vh - 50px);
+	top: 50px;
+	width: 100vw;
+	z-index: 10;
+	left: 0;
+	background: rgba(0,0,0,0.7);
+}
+
+.divider {
+	background: white;
+	height: calc(100vh - 120px);
+	position: absolute;
+	top: 40px;
+	width: 1px;
+}
+
+.divider-left {
+	left: 240px;
+}
+
+.divider-right {
+	right: 300px;
+}
+
+.left-tut {
+	width: 240px;
+	box-sizing: border-box;
+	padding: 20px;
+	left: 0px;
+	top: 220px;
+	color: white;
+	position: absolute;
+	line-height: 17px;
+}
+
+.mid-tut {
+	width: 180px;
+	position: absolute;
+	left: calc(420px + 240px + (50vw - 680px));
+	top: calc(360px + 110px );
+	line-height: 17px;
+	color: white;
+}
+
+.right-tut {
+	box-sizing: border-box;
+	width: 300px;
+	right: 0px;
+	color: white;
+	top: 287px;
+	padding: 20px;
+	position: absolute;
+}
+
+.next-tut-container {
+	background: $green;
+	text-align: center;
+	border-radius: 50px;
+	width: 90px;
+	height: 30px;
+	border: 2px solid #1E977C;
+	position: absolute;
+	bottom: 40px;
+	right: 320px;
+	line-height: 30px;
+	cursor: pointer;
+	img {
+		width: 20px;
+		height: auto;
+	}
+}
+
+
+
 

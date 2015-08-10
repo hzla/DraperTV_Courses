@@ -75,7 +75,7 @@ class Track < ActiveRecord::Base
 
   def self.to_draper_tv_chapters
     all.order(:id).map do |track|
-      lesson_info = track.ordered_lessons.map(&:description).join("<br>")
+      lesson_info = track.ordered_lessons.select { |n| n.lesson_type == "watch"}.map(&:description).join("<br>")
       {track: track, topic_id: track.topic.id, topic_name: track.topic.name, lesson_info: lesson_info}
     end
   end

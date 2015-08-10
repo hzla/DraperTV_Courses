@@ -1,50 +1,43 @@
 <header id="landing-header">
-  <div id="header-content">
-      <ul class="header-mid-right">
-        <li class="header-item <%= 'active' if request.original_url.include?("playlists") %>">
-          <%= link_to "http://drapertv.com/playlists" do %>
-            SERIES
-          <% end %>
-        </li>
-        <li class="header-item <%= 'active' if request.original_url.include?("livestreams") %>">
-          <%= link_to "http://drapertv.com/livestreams" do %>
-            LIVESTREAMS
-          <% end %>
-        </li>
-        <li class="header-item">
-          <%= link_to "http://www.draperuniversity.com", target: "_blank" do %>
-            DRAPER UNIVERSITY
-          <% end %>
-        </li>
-      </ul>
-
+  <div class="header-left">
     <div class="header-logo">
-      <%= link_to root_path do %>
+      <%= link_to "http://drapertv.com" do %>
         <%= image_tag 'drapertv-logo.png', :class => "header-item logo" %>
       <% end %>
     </div>
 
-      <div class="header-mid-left no-mobile">
-        <%= form_for "http://drapertv.com/searches" do |f| %>
-          <%= f.text_field :terms, :class => "search-input", placeholder: "Search" %>
-        <% end %>
-        
-        <% user = current_user %>
-        <% if user %>
-          <ul class="nav">
-            <li class="dropdown">
-              <div class="sb-toggle-right dropdown" data-toggle="dropdown" href="#">
-                <%= image_tag "settings.svg", :class => "settings-icon" %>
-              </div>
-              <ul class="dropdown-menu">
-                <li role="menu"><%= link_to 'Account Info',  edit_user_path(user) %></li>
-                <li role="menu"><%= link_to 'Change Password',  edit_user_registration_path %></li>
-                <li class="divider"></li>
-                <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
-              </ul>
-            </li><!-- dropdown -->
-          </ul>
-        <% end %>
-      </div>
+    <div class="header-search no-mobile">
+      <%= form_for "http://drapertv.com/searches" do |f| %>
+        <%= f.text_field :terms, :class => "search-input", placeholder: "Search" %>
+      <% end %>
+    </div>    
   </div>
+  
+  <ul class="header-right">
+    <li class="header-item">
+      <%= link_to "http://drapertv.com/playlists" do %>
+        SERIES
+      <% end %>
+    </li>
+    <li class="header-item">
+      <%= link_to "http://drapertv.com/livestreams" do %>
+        LIVESTREAMS
+      <% end %> 
+    </li>
+    <li class="header-item active">
+      <%= link_to root_path, target: "_blank" do %>
+        COURSES
+      <% end %>
+    </li>
+
+    <ul class="nav header-item">
+      <%= image_tag "settings.svg", :class => "settings-icon" %>
+        <ul class="dropdown-menu">
+          <li role="menu"><%= link_to 'Account Info',  edit_user_path(current_user) %></li>
+          <li role="menu"><%= link_to 'Change Password',  edit_user_registration_path %></li>
+          <li class="divider"></li>
+          <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
+        </ul>
+    </ul>
+  </ul>
 </header>

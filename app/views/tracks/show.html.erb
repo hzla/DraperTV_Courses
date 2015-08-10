@@ -10,6 +10,27 @@
   </div><!-- row -->
 </div>
 
+
+<% if @tutorial %>
+
+  <%= content_for :tutorial  do %>
+    <div class="tutorial-overlay track-tut">
+      <%= image_tag "line-arrow.svg", :class => "tut-arrow top" %>
+      <div class="tut-top">We’ve come up with different types lessons for you here. You’ll find videos, activities, discussion questions, suggested reading, and tools.</div>
+      <div class="tut-bottom">Look for and click these icons next to titles for a more detailed explanation of what they do.</div>
+      <%= image_tag "line-arrow.svg", :class => "tut-arrow bottom" %>
+      <%= image_tag "info-icon.svg", :class => "tut-info-icon" %>
+
+      <%= link_to track_path(@track) do %>
+        <div class="next-tut-container">
+          <%= image_tag "check.svg", :class => "tut-check" %>
+        </div>
+      <% end %>
+    </div>
+
+  <% end %>
+<% end %>
+
 <div class="column-main">
   <div class="lessons">
     <% @lessons.each do |lesson_column| %>
@@ -60,19 +81,21 @@
         <%= @track.summary %>
       </p>
     </div>
-    <div class="participants">
-      <p class="participants-header">
-        STUDIED BY:
-      </p>
-      <div class="participants-list">
-        <% @participants[0..10].each do |user| %>
-          <%= image_tag user.avatar.url, :class => "participant" %>
-        <% end %>
-        <% if @participants.length > 11 %>
-          <div class="more-participants participant">
-           <%=  @participants.length - 11 %>+
-          </div>
-        <% end %>
+    <% if @participants.length > 0 %> 
+      <div class="participants <%= @lesson.lesson_type.downcase %>">
+        <p class="participants-header">
+          STUDIED BY:
+        </p>
+        <div class="participants-list">
+          <% @participants[0..10].each do |user| %>
+            <%= image_tag user.avatar.url, :class => "participant" %>
+          <% end %>
+          <% if @participants.length > 11 %>
+            <div class="more-participants participant">
+             <%=  @participants.length - 11 %>+
+            </div>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
 <% end %>

@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   has_many :authorizations
   has_many :comments
   has_many :progresses
-  attr_accessible :karma, :paid, :email, :password, :password_confirmation, :customer_id, :plan, :role, :color, :first_name, :last_name, :avatar
+  attr_accessible :show_topic_tutorial, :show_track_tutorial, :karma, :paid, :email, :password, :password_confirmation, :customer_id, :plan, :role, :color, :first_name, :last_name, :avatar
   after_create :assign_color
 
 

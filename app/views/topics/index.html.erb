@@ -6,6 +6,55 @@
   </div><!-- row -->
 </div>
 
+<% if @tutorial %>
+  <%= content_for :tutorial do %>
+    <div class="tutorial-overlay">
+      <div class="tut-1">
+        <div class="divider-left divider"></div>
+        <div class="divider-right divider"></div>
+
+        <p class="left-tut">
+          These are the links to the different DTV Courses sections.
+          <br><br>
+          You can take courses on your own or participate in our monthly and biweekly streams.
+        </p>
+        <p class="mid-tut">
+          Navigate through courses and lessons in this middle column.
+        </p>
+        <p class="right-tut">
+          Look here to find out more info on courses and lessons.
+        </p>
+
+        <div class="next-tut-container">
+          <%= image_tag "check.svg", :class => "tut-check" %>
+        </div>
+      </div>
+      <div class="tut-2">
+        <div class="divider-left divider"></div>
+        <div class="divider-right divider"></div>
+
+        <p class="left-tut">
+          These are the links to the different DTV Courses sections.
+          <br><br>
+          You can take courses on your own or participate in our monthly and biweekly streams.
+        </p>
+        <p class="mid-tut">
+          Navigate through courses and lessons in this middle column.
+        </p>
+        <p class="right-tut">
+          Look here to find out more info on courses and lessons.
+        </p>
+        
+        <%= link_to root_path do %>
+        <div class="next-tut-container">
+          <%= image_tag "check.svg", :class => "tut-check" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
 <div class="column-main">
   <div class="topics">
     <% @topics.each do |topic| %>
@@ -55,25 +104,6 @@
         <% end %>
       <% end %>
     </div>
-
-    <% if current_user %>
-      <div class="hero-oath">
-        <p class="oath">
-          I will promote freedom at all costs.
-          <br>I will do everything in my power to drive, build and pursue progress and change.
-          <br>My brand, my network, and my reputation are paramount.
-          <br>I will set positive examples for others to emulate.
-          <br>I will instill good habits in myself. I will take care of myself.
-          <br>I will fail and fail again until I succeed.
-          <br>I will explore the world with gusto and enthusiasm.
-          <br>I will treat people well.
-          <br>I will make short term sacrifices for long term success.
-          <br>I will pursue fairness, openness, health and fun with all that I encounter. Mostly fun!
-          <br>I will keep my word.
-          <br>I will try my best to make reparations for my digressions.
-        </p>
-      </div>
-    <% end %>
   </div>
 <% end %>
 
