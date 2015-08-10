@@ -1,0 +1,39 @@
+.mobile-container {
+	height: 100vh;
+	width: 100vw;
+	background: white;
+	box-sizing: border-box;
+	padding: 60px 40px;
+	border-top: 40px solid $blue;
+}
+
+.no-mobile-pic {
+	width: 54px;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.no-mobile-text {
+	margin-bottom: 10px;
+}
+
+.no-mobile-text.bottom {
+	margin-bottom: 40px;
+}
+
+.no-mobile-btn {
+	height: 40px;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 40px;
+	font-weight: 700;
+	margin-bottom: 20px;
+	width: 100%;
+	background: $red;
+	color: white;
+}
+
+.no-mobile-btn.go-livestream {
+	background: $blue;
+}

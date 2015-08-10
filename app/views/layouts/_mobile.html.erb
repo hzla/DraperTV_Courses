@@ -1,0 +1,21 @@
+<div class="mobile-container">
+	<%= image_tag "nomobile.svg", :class => "no-mobile-pic" %>
+	<p class="no-mobile-text">
+		Sorry! You need to be on a laptop or desktop computer to access courses.
+	</p>
+	<p class="no-mobile-text bottom">
+		In the mean time, why not check out some of our videos?
+	</p>
+	
+	<%= link_to "http://www.drapertv.com/playlists" do %>
+		<div class="no-mobile-btn go-series">
+			GO TO SERIES
+		</div>
+	<% end %>
+
+	<%= link_to "http://www.drapertv.com/livestreams" do %>
+		<div class="no-mobile-btn go-livestream">
+			GO TO LIVESTREAMS
+		</div>
+	<% end %>
+</div>

@@ -166,17 +166,37 @@
 	color: $light-blue;
 }
 
+
+#side-nav {
+	overflow: visible;
+	z-index: 1;
+}
+
 #side-nav .main {
 	box-sizing: border-box;
 	padding: 20px;
 	margin-top: 0px;
 	position: relative;
 	min-height: 100vh;
-	.side-link {
+	overflow: visible;
+	.side-link-container {
+		@include flexbox;
+		@include justify-content(space-between);
+		@include align-items(center);
 		margin-bottom: 20px;
+		position: relative;
+		overflow: visible;
+	}
+	.side-info-icon {
+		height: 16px;
+		width: 16px;
+		cursor: pointer;
+	}
+	.side-link {
 		font-weight: 700;
 		display: block;
 		letter-spacing: 1px;
+		overflow: visible;
 	}
 	.side-link.active {
 		color: $blue;
@@ -187,6 +207,59 @@
 		left: 20px;
 	}
 }
+
+.tool-tip {
+	width: 320px;
+	border: 2px solid $blue;
+	box-sizing: border-box;
+	padding: 20px;
+	position: absolute;
+	right: -340px;
+	background: white;
+	top: -111px;
+	display: none;
+	.tool-tip-circle {
+		margin: auto 0;
+  		position: absolute;
+  		top: 0; left: -8px; bottom: 0; right: 0;
+  		height: 16px;
+  		width: 16px;
+  		border-radius: 50%;
+  		background: $blue;
+	}
+	.tool-tip-line {
+		height: 2px;
+		width: 20px;
+		position: absolute;
+		top: 0; left: -8px; bottom: 0; right: 0;
+		margin: auto 0;
+		left: -20px;
+		background: $blue;
+	}
+}
+
+.tool-tip-header {
+	letter-spacing: 1px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.tool-tip-body {
+	margin-bottom: 20px;
+}
+
+.tool-tip-okay {
+	height: 20px;
+	width: 60px;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 20px;
+	background: $green;
+	border: 2px solid #1E977C;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
 
 .header-right {
 	.dropdown-menu {

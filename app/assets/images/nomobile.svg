@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="54px" height="107px" viewBox="0 0 54 107" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Main-Attraction" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="21-MOBILE" sketch:type="MSArtboardGroup" transform="translate(-133.000000, -82.000000)">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(133.000000, 82.000000)">
+                <path d="M6.79659156,107 C3.05017768,107 0,104.356161 0,99.9410324 L0,6.97553444 C0,2.56158913 3.04917301,0 6.79659156,0 L47.2024038,0 C50.9498223,0 54,2.56040545 54,6.97553444 L54,99.9410324 C53.9989953,104.356161 50.9498223,107 47.2013991,107 L6.79659156,107 Z" id="Shape" stroke="#414141" sketch:type="MSShapeGroup"></path>
+                <circle id="Oval" fill="#414141" sketch:type="MSShapeGroup" cx="27" cy="5" r="1"></circle>
+                <path d="M4,13 L4,92 L50,92 L50,13 L4,13 L4,13 Z" id="Shape" stroke="#414141" sketch:type="MSShapeGroup"></path>
+                <path d="M18.0016906,43 C19.1051,43 20,43.8952604 20,45 C20,46.1059099 19.1051,47 18.0016906,47 C16.896027,47 16,46.1059099 16,45 C16,43.8940901 16.896027,43 18.0016906,43 L18.0016906,43 Z" id="Path" fill="#414141" sketch:type="MSShapeGroup"></path>
+                <path d="M36.0016906,43 C37.1051,43 38,43.8952604 38,45 C38,46.1059099 37.1051,47 36.0016906,47 C34.896027,47 34,46.1059099 34,45 C34,43.8940901 34.896027,43 36.0016906,43 L36.0016906,43 Z" id="Path-Copy-2" fill="#414141" sketch:type="MSShapeGroup"></path>
+                <rect id="Rectangle-676" fill="#414141" sketch:type="MSShapeGroup" x="22" y="8" width="10" height="1" rx="5"></rect>
+                <g id="Shape-+-Path-Copy" transform="translate(22.000000, 94.000000)" stroke="#414141" sketch:type="MSShapeGroup">
+                    <path d="M4.99948459,0 C2.24306772,0 0,2.24285105 0,5 C0,7.75501494 2.24306772,10 4.99948459,10 C7.75693228,10 10,7.75501494 10,5 C9.99896918,2.24285105 7.75590145,0 4.99948459,0 L4.99948459,0 Z" id="Shape"></path>
+                    <path d="M7,7 L3,7 L3,3 L7,3 L7,7 L7,7 Z" id="Path-Copy"></path>
+                </g>
+                <path d="M13.1177696,57.5 C13.1177696,57.5 18.5431522,52.0026069 27.0000003,52.0026069 C35.4568485,52.0026069 40.8822304,57.5 40.8822304,57.5" id="Path-2188" stroke="#414141" stroke-width="2" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

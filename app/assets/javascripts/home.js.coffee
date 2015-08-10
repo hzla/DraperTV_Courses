@@ -1,5 +1,13 @@
 Home =
 	init: ->
+		$('.side-info-icon, .lesson-info-icon').click @showToolTip
+		$('.tool-tip-okay').click @hideToolTip
+
+	showToolTip: ->
+		$(@).parent().find('.tool-tip').show()
+
+	hideToolTip: -> 
+		$(@).parents('.tool-tip').hide()
 
 
 

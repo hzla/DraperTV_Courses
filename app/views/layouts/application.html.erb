@@ -3,7 +3,8 @@
 
 <head>
   <title>Draper University Online School</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Learn how to build a startup with DraperTV Courses. We bring the magic of Silicon Valley and Draper University education online to accelerate your ideas, businesses, and products." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <!-- remove dotted lines in IE9 -->
   <meta http-equiv="X-UA-Compatible" content="IE=9" />
   <!-- install fonts -->
@@ -26,24 +27,25 @@
   <!-- ***************** -->
   <!-- **** Navbar ***** -->
   <!-- ***************** -->
-
-  <%= render partial: "layouts/header" %>
-  <!-- ***************** -->
-  <!-- ***** Body ****** -->
-  <!-- ***************** -->
-    <%= yield :tutorial %>
-    <div id="main-body">
-      <%= render 'layouts/sidenav' %>
-      <div class="column-mid">
-        <%= yield %>
-      </div>   
-      <div class="column-right">
-        <%= yield :column_right %>
-      </div>
-    </div>
-
-      
-  <%= render 'layouts/footer' %>
+  <% if !@mobile %>
+    <%= render partial: "layouts/header" %>
+      <!-- ***************** -->
+      <!-- ***** Body ****** -->
+      <!-- ***************** -->
+      <%= yield :tutorial %>
+      <div id="main-body">
+        <%= render 'layouts/sidenav' %>
+        <div class="column-mid">
+          <%= yield %>
+        </div>   
+        <div class="column-right">
+          <%= yield :column_right %>
+        </div>
+      </div>      
+    <%= render 'layouts/footer' %>
+  <% else %>
+    <%= render partial: "layouts/mobile" %>
+  <% end %>
 </body>
 
 </html>

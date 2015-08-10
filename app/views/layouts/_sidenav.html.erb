@@ -23,18 +23,54 @@
 
 		</div>
 		<div class="main">
-			<%= link_to topics_path, :class => "side-link #{ 'active' if @page == 'courses' }" do %>
-				COURSES
-			<% end %>
+			<div class="side-link-container">
+				<%= link_to topics_path, :class => "side-link #{ 'active' if @page == 'courses' }" do %>
+					COURSES
+				<% end %>
+			</div>
+			<div class="side-link-container">
 			<%= link_to events_path, :class => "side-link #{ 'active' if @page == 'calendar' }" do %>
 				CALENDAR
 			<% end %>
-			<%= link_to amas_path, :class => "side-link #{ 'active' if @page == 'monthly' }" do %>
-				MONTHLY: AMA
-			<% end %>
-			<%= link_to biweeklies_path, :class => "side-link #{ 'active' if @page == 'biweekly' }" do %>
-				BIWEEKLY: HOW TO
-			<% end %>
+			</div>
+			<div class="side-link-container">
+				<%= link_to amas_path, :class => "side-link #{ 'active' if @page == 'monthly' }" do %>
+					MONTHLY: AMA
+				<% end %>
+				<%= image_tag "info-icon.svg", :class => "side-info-icon" %>
+				<div class="tool-tip">
+					<div class="tool-tip-header">
+						MONTHLY AMA
+					</div>
+					<div class="tool-tip-body">
+						Every month we’ll bring in one of Silicon Valley’s best so you can ask them for advice, opinions, and insight. Submit your questions any time before the session begins or upvote other students’ suggestions. We’ll leave 20 minutes for a live Q&A so you can talk directly with the mentors we bring in.
+					</div>
+					<div class="tool-tip-okay">
+						<%= image_tag "check.svg", :class => "tool-tip-check" %>
+					</div>
+					<div class="tool-tip-circle"></div>
+					<div class="tool-tip-line"></div>
+				</div>
+			</div>
+			<div class="side-link-container">
+				<%= link_to biweeklies_path, :class => "side-link #{ 'active' if @page == 'biweekly' }" do %>
+					BIWEEKLY: HOW TO
+				<% end %>
+				<%= image_tag "info-icon.svg", :class => "side-info-icon" %>
+				<div class="tool-tip">
+					<div class="tool-tip-header">
+						BIWEEKLY STREAM
+					</div>
+					<div class="tool-tip-body">
+						Every two weeks we’ll stream an hour long episode of designers, coders, founders, and more, explaining or doing their craft. With our live chat you can ask them general questions or ask them to show you the little details you can’t learn anywhere else or just reading online.					
+					</div>
+					<div class="tool-tip-okay">
+						<%= image_tag "check.svg", :class => "tool-tip-check" %>
+					</div>
+					<div class="tool-tip-circle"></div>
+					<div class="tool-tip-line"></div>
+				</div>
+			</div>
 		</div>
 	<% end %>
 </div>

@@ -20,21 +20,73 @@
 
 .lesson-header {
 	@include flexbox;
+	@include justify-content(space-between);
 	align-items: center;
 	height: 70px;
 	background: #F0F0F0;
 	box-sizing: border-box;
 	padding: 20px;
+	position: relative;
 	.lesson-icon {
 		height: 30px;
 		width: 30px;
 		margin-right: 10px;
+	}
+	.lesson-info-icon {
+		height: 16px;
+		width: 16px;
+		cursor: pointer;
+	}
+	.tool-tip {
+		right: -340px;
+		top: 0px;
+		z-index: 10;
+		margin-bottom: 20px;
+		.tool-tip-circle {
+			top: 26px;
+			margin: 0;
+		}
+		.tool-tip-line {
+			top: 32px;
+			margin: 0;
+			width: 40px;
+			left: -41px;
+		}
+		.lesson-header-main {
+			@include justify-content(flex-start);
+			margin-bottom: 20px;
+		}
 	}
 	p {
 		margin: 0px;
 		font-weight: 700;
 		letter-spacing: 1px;
 	}
+}
+
+.reading .lesson-header, .tools .lesson-header {
+	.tool-tip {
+		right: initial;
+		left: -55px;
+	}
+	.tool-tip-line {
+		left: initial;
+		right: -24px;
+		width: 30px;
+	}
+	.tool-tip-circle {
+		right: -8px;
+		left: initial;
+	}
+}
+
+
+
+
+.lesson-header-main {
+	@include flexbox;
+	@include justify-content(space-between);
+	@include align-items(center);
 }
 
 .lesson-group {

@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   helper_method :mailitnow
   before_filter :cors_preflight_check
   after_filter :cors_set_access_control_headers
+  before_filter :set_device_type
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   #For all responses in this controller, return the CORS access control headers.
@@ -112,6 +113,11 @@ class ApplicationController < ActionController::Base
       format.html
     end
   end
+
+  def set_device_type #allows use of @browser.mobile? in views
+    @mobile = true if browser.mobile?
+  end
+
 
   def track_activity_feed(tobetrackable, action = params[:action])
     current_user.activity_feeds.create! action: action, tobetrackable: tobetrackable

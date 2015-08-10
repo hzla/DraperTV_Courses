@@ -40,8 +40,25 @@
             <% if lesson_group[1] %>
               <div class="lesson-group <%= lesson_group[0] %>">
                 <div class="lesson-header">
-                  <%= image_tag lesson_group[1][0].icon, :class => "lesson-icon" %>
-                  <p class="<%= lesson_group[1][0].lesson_type %>"><%= lesson_group[0].upcase %></p>
+                  <div class="lesson-header-main">
+                    <%= image_tag lesson_group[1][0].icon, :class => "lesson-icon" %>
+                    <p class="<%= lesson_group[1][0].lesson_type %>"><%= lesson_group[0].upcase %></p>
+                  </div>
+                  <%= image_tag "info-icon.svg", :class => "lesson-info-icon" %>
+                  <div class="tool-tip">
+                    <div class="lesson-header-main">
+                      <%= image_tag lesson_group[1][0].icon, :class => "lesson-icon" %>
+                      <p class="<%= lesson_group[1][0].lesson_type %>"><%= lesson_group[0].upcase %></p>
+                    </div>
+                    <div class="tool-tip-body">
+                      <%= Lesson.description_for(lesson_group[0]).html_safe  %>
+                    </div>
+                    <div class="tool-tip-okay">
+                      <%= image_tag "check.svg", :class => "tool-tip-check" %>
+                    </div>
+                    <div class="tool-tip-circle"></div>
+                    <div class="tool-tip-line"></div>
+                  </div>
                 </div>
                 
                 <% lesson_group[1].each do |lesson_item| %>
