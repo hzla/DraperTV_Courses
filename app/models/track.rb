@@ -28,6 +28,10 @@ class Track < ActiveRecord::Base
     end
   end
 
+  def camel_case_name
+    name.downcase.split(" ").map(&:capitalize).join(" ")
+  end
+
   def status user
     return "untouched" if !user
     percentage = progress_percentage(user)

@@ -27,3 +27,7 @@ contents.each do |line|
 		currently_seeding_lesson.update_attributes(attribute => value)
 	end
 end
+
+Lesson.where(lesson_type: "watch").update_all video: true
+Lesson.where(lesson_type: "discussion").update_all discussion: true
+Lesson.where(lesson_type: "challenge").update_all discussion: true

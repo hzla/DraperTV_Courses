@@ -32,14 +32,17 @@
 
     <ul class="nav header-item">
       <%= image_tag "settings.svg", :class => "settings-icon" %>
-        <% if current_user %>
+
         <ul class="dropdown-menu">
-          <li role="menu"><%= link_to 'Account Info',  edit_user_path(current_user) %></li>
-          <li role="menu"><%= link_to 'Change Password',  edit_user_registration_path %></li>
-          <li class="divider"></li>
-          <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
+          <% if current_user %>
+            <li role="menu"><%= link_to 'Account Info',  edit_user_path(current_user) %></li>
+            <li role="menu"><%= link_to 'Change Password',  edit_user_registration_path %></li>
+            <li class="divider"></li>
+            <li role="menu"><%= link_to 'Log Out', logout_path, :use_rails_ajax => false %></li>
+          <% else %>
+            <li role="menu"><%= link_to "Sign In", new_user_session_path  %></li>
+          <% end %>
         </ul>
-      <% end %>
     </ul>
   </ul>
 </header>

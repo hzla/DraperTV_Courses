@@ -34,53 +34,56 @@
 <div class="column-main">
   <div class="lessons">
     <% @lessons.each do |lesson_column| %>
-      <% if lesson_column[0][1] %>
-        <div class="lesson-column">
-          <% lesson_column.each do |lesson_group| %>
-            <% if lesson_group[1] %>
-              <div class="lesson-group <%= lesson_group[0] %>">
-                <div class="lesson-header">
-                  <div class="lesson-header-main">
-                    <%= image_tag lesson_group[1][0].icon, :class => "lesson-icon" %>
-                    <p class="<%= lesson_group[1][0].lesson_type %>"><%= lesson_group[0].upcase %></p>
-                  </div>
-                  <%= image_tag "info-icon.svg", :class => "lesson-info-icon tool-tip-icon" %>
-                  <div class="tool-tip">
-                    <div class="lesson-header-main">
-                      <%= image_tag lesson_group[1][0].icon, :class => "lesson-icon" %>
-                      <p class="<%= lesson_group[1][0].lesson_type %>"><%= lesson_group[0].upcase %></p>
-                    </div>
-                    <div class="tool-tip-body">
-                      <%= Lesson.description_for(lesson_group[0]).html_safe  %>
-                    </div>
-                    <div class="tool-tip-okay">
-                      <%= image_tag "check.svg", :class => "tool-tip-check" %>
-                    </div>
-                    <div class="tool-tip-circle"></div>
-                    <div class="tool-tip-line"></div>
-                  </div>
+      <div class="lesson-column">
+        <% lesson_column.each do |lesson_group| %>
+          <div class="lesson-group <%= lesson_group[0] %>">
+            <div class="lesson-header">
+              <div class="lesson-header-main">
+                <%= image_tag lesson_group[0] + ".svg", :class => "lesson-icon" %>
+                <p class="<%= lesson_group[0] %>"><%= lesson_group[0].upcase %></p>
+              </div>
+              <%= image_tag "info-icon.svg", :class => "lesson-info-icon tool-tip-icon" %>
+              <div class="tool-tip">
+                <div class="lesson-header-main">
+                  <%= image_tag lesson_group[0] + ".svg", :class => "lesson-icon" %>
+                  <p class="<%= lesson_group[0] %>"><%= lesson_group[0].upcase %></p>
                 </div>
-                
-                <% lesson_group[1].each do |lesson_item| %>
-                  <%= link_to lesson_path(lesson_item), :class => "lesson-item" do %>
-                    <p class="lesson-description">
-                      <%= lesson_item.description[0..54] + (lesson_item.description.length > 55 ? "..." : "") %>
-                    </p>
-                    <div class="lesson-status-container">
-                      <%= image_tag lesson_item.status_icon(current_user), :class => "lesson-status-icon" %>
-                      <% if lesson_item.video_length %>
-                        <div class="video-length">
-                          <%= lesson_item.video_length %>
-                        </div>
-                      <% end %>
-                    </div>
-                  <% end %>
+                <div class="tool-tip-body">
+                  <%= Lesson.description_for(lesson_group[0]).html_safe  %>
+                </div>
+                <div class="tool-tip-okay">
+                  <%= image_tag "check.svg", :class => "tool-tip-check" %>
+                </div>
+                <div class="tool-tip-circle"></div>
+                <div class="tool-tip-line"></div>
+              </div>
+            </div>
+            <% if lesson_group[1] %>
+              <% lesson_group[1].each do |lesson_item| %>
+                <%= link_to lesson_path(lesson_item), :class => "lesson-item" do %>
+                  <p class="lesson-description">
+                    <%= lesson_item.description[0..54] + (lesson_item.description.length > 55 ? "..." : "") %>
+                  </p>
+                  <div class="lesson-status-container">
+                    <%= image_tag lesson_item.status_icon(current_user), :class => "lesson-status-icon" %>
+                    <% if lesson_item.video_length %>
+                      <div class="video-length">
+                        <%= lesson_item.video_length %>
+                      </div>
+                    <% end %>
+                  </div>
                 <% end %>
+              <% end %>
+            <% else %>
+              <div class="lesson-item">
+                <p class="lesson-description">
+                    We're still coming up with content for this section. Keep checking back for updates!
+                </p>
               </div>
             <% end %>
-          <% end %>
-        </div>
-      <% end %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div><!-- column-main -->

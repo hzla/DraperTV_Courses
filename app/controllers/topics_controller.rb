@@ -17,5 +17,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find params[:id]
     @tracks = @topic.tracks
     @participants = @topic.participants
+    @meta_description = @topic.summary
+    @title = "#{@topic.camel_case_name} - Courses - DraperTV"
   end
 end

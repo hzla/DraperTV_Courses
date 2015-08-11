@@ -24,6 +24,10 @@ class Topic < ActiveRecord::Base
     done = icon.gsub(".svg", "badge.svg") 
   end
 
+  def camel_case_name
+    name.downcase.split(" ").map(&:capitalize).join(" ")
+  end
+
   def progress user
     return nil if !user
     Progress.where(model_id: id, model_type: "topic", user_id: user.id).first

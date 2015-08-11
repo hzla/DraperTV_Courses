@@ -2,7 +2,7 @@
 <html lang="en" style="overflow: visible;">
 
 <head>
-  <title>Draper University Online School</title>
+  <title><%= @title %></title>
   <meta name="description" content="Learn how to build a startup with DraperTV Courses. We bring the magic of Silicon Valley and Draper University education online to accelerate your ideas, businesses, and products." />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <%= favicon_link_tag 'favicon.png' %>
@@ -17,6 +17,8 @@
   <%= javascript_include_tag "http://faye-server-10.herokuapp.com/faye.js" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
+  <meta property="og:title" content="<%= @title %>" />
+  <meta property="og:description" content="<%= @meta_description %>" />
   <%= yield :head %>
   <style>
   	body { font-family: 'proxima_nova';}

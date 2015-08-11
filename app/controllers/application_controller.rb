@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
   after_filter :cors_set_access_control_headers
   before_filter :set_device_type
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :set_meta_tags
 
   #For all responses in this controller, return the CORS access control headers.
   if Rails.env.staging? || Rails.env.development?
@@ -116,6 +117,11 @@ class ApplicationController < ActionController::Base
 
   def set_device_type #allows use of @browser.mobile? in views
     @mobile = true if browser.mobile?
+  end
+
+  def set_meta_tags
+    @title = "Courses - DraperTV"
+    @meta_description = "Learn about startups, entrepreneurship, and business in Silicon Valley from DraperTV. Watch videos from top Draper University speakers such as Elon Musk, Tony Hsieh, Michelle Phan, and Nate Blecharczyk."
   end
 
 
