@@ -1,824 +1,33 @@
-Track: PITCHING
-Track Order: 0
-	Lesson Type:: watch
-	Body:: <p>Jeff talks about the variations in what investors look for in startups, and how you should manage their expectations.</p>
-	Description:: There Are Two Types of Investors- Jeff Selbert
-	Video Uid:: 134976915
-	Video Title:: There Are Two Types of Investors
-	Video Author:: Jeff Seibert, Founder of Crashlytics & Sr. Director of Product at Twitter.
-
-	Lesson Type:: watch
-	Body:: <p>Reena talks about the difficulties and obstacles to pitching.</p>
-	Description:: Business Pitching is Incredibly Difficult- Reena Jadhav
-	Video Uid:: 134977157
-	Video Title:: Business Pitching is Incredibly Difficult
-	Video Author:: Reena Jadhav, Serial Entrepreneur & Startup Advisor & Investor
-
-	Lesson Type:: watch
-	Body:: 
-	Description:: The Business Pitch Structure- Reena Jadhav
-	Video Uid:: 134977158
-	Video Title:: The Business Pitch Structure
-	Video Author:: Reena Jadhav
-
-	Lesson Type:: watch
-	Body:: 
-	Description:: The Content of the Business Pitch- Reena Jadha
-	Video Uid:: 134977159
-	Video Title:: The Content of the Business Pitch
-	Video Author:: Reena Jadha
-
-	Lesson Type:: watch
-	Body:: 
-	Description:: The Ten Rules of Business Pitching- Reena Jadhav
-	Video Uid:: 134977160
-	Video Title:: The Ten Rules of Business Pitching
-	Video Author:: Reena Jadhav
-
-	Lesson Type:: watch
-	Body:: 
-	Description:: The Five Minute Business Pitch- Reena Jadhav
-	Video Uid:: 134977163
-	Video Title:: The Five Minute Business Pitch
-	Video Author:: Reena Jadhav
-
-	Lesson Type:: watch
-	Body:: 
-	Description:: Lighting Round- Dave McClure
-	Video Uid:: 134977958
-	Video Title:: Lighting Round
-	Video Author:: Dave McClure
-
-	Lesson Type:: watch
-	Body:: <p>Dave talks about focusing on problems, not solutions.</p>
-	Description:: Elevator Pitch- Dave McClure
-	Video Uid:: 134977959
-	Video Title:: Elevator Pitch
-	Video Author:: Dave McClure,  Founder of 500 Startups & Investor
-
-	Lesson Type:: watch
-	Body:: <p>Dave talks about the fundamental forces that move people. “People do things to get laid, paid, and made”.  Roughly translated: Love/Attraction, Money/Wealth, and Fame/Reputation.</p>
-	Description:: Natural Selection- Dave McClure
-	Video Uid:: 134977963
-	Video Title:: Natural Selection
-	Video Author:: Dave McClure,  Founder of 500 Startups & Investor
-
-	Lesson Type:: watch
-	Body:: 
-	Description:: Getting Interrupted is Good- Dave McClure
-	Video Uid:: 134977964
-	Video Title:: Getting Interrupted is Good
-	Video Author:: Dave talks about how interruptions signal interest. The goal is to get a reaction; not a lukewarm response.
-
-	Lesson Type:: challenge
-	Body:: AngelList is like Facebook/Linkedin for startups. Create your AngelList profile and make sure you fill out every box. Check out this article on hacking AngelList for some tips. (http://bit.ly/1DPpBSU) 
-	Description:: AngelList is like Facebook/Linkedin for startups. Create your AngelList profile and make sure you fill out every box. Check out this article on hacking AngelList for some tips. (http://bit.ly/1DPpBSU) 
-
-	Lesson Type:: challenge
-	Body:: Film, upload, and share your 2 minute elevator pitch on your social media or here with us so you can get feedback. Reach out online to startup or Silicon Valley communities if your friends don’t know too much about startups.
-	Description:: Film, upload, and share your 2 minute elevator pitch on your social media or here with us so you can get feedback. Reach out online to startup or Silicon Valley communities if your friends don’t know too much about startups.
-
-	Lesson Type:: challenge
-	Body:: Go out and pitch 10 people your idea until you know your pitch by heart.
-	Description:: Go out and pitch 10 people your idea until you know your pitch by heart.
-
-	Lesson Type:: challenge
-	Body:: Take your favorite children’s story and distill it into a 2 minute pitch on how it has affected you so strongly and why you think other children should or shouldn’t read it.
-	Description:: Take your favorite children’s story and distill it into a 2 minute pitch on how it has affected you so strongly and why you think other children should or shouldn’t read it.
-
-	Lesson Type:: challenge
-	Body:: It can be easy to lose your nerve asking investors for such huge sums of money as an investment. Go out, pitch 5 strangers and ask for 5 dollars as fundraising for your idea.
-	Description:: It can be easy to lose your nerve asking investors for such huge sums of money as an investment. Go out, pitch 5 strangers and ask for 5 dollars as fundraising for your idea.
-
-	Lesson Type:: challenge
-	Body:: There are slightly different pitches that you give to different audiences to evoke certain reactions. Create 3 different pitches: one for an investor, one for a customer, and one for a cofounder. Go out and pitch the right people the right pitch. Then go out and pitch customers a cofounder pitch, investors a customer pitch, and cofounders and investor pitch. How did they react?
-	Description:: There are slightly different pitches that you give to different audiences to evoke certain reactions. Create 3 different pitches: one for an investor, one for a customer, and one for a cofounder. Go out and pitch the right people the right pitch. Then go out and pitch customers a cofounder pitch, investors a customer pitch, and cofounders and investor pitch. How did they react?
-
-	Lesson Type:: discussion
-	Body:: Why have you picked the problem you are working on specifically? What is your story behind this issue? How can you work this into your pitch?
-	Description:: Why have you picked the problem you are working on specifically? What is your story behind this issue? How can you work this into your pitch?
-
-	Lesson Type:: discussion
-	Body:: What’s your opinion on the X for Y format, which is advocated by Y Combinator, for pitching your business quickly? Why? An example of this format would be: Uber for babysitters.
-	Description:: What’s your opinion on the X for Y format, which is advocated by Y Combinator, for pitching your business quickly? Why? An example of this format would be: Uber for babysitters.
-
-	Lesson Type:: discussion
-	Body:: What are you most scared of about pitching? People who don’t have this problem, why aren’t you scared?
-	Description:: What are you most scared of about pitching? People who don’t have this problem, why aren’t you scared?
-
-	Lesson Type:: discussion
-	Body:: What is the “emotional hook” of your pitch? Why did you choose that?
-	Description:: What is the “emotional hook” of your pitch? Why did you choose that?
-
-	Lesson Type:: reading
-	Body:: Raising Money (You only need to read the “Raising Money” section) http://paulgraham.com/start.html
-	Description:: Raising Money (You only need to read the “Raising Money” section) http://paulgraham.com/start.html
-
-	Lesson Type:: reading
-	Body:: Invest BEFORE Product/Market Fit, Double-Down AFTER with Dave McClure http://500hats.typepad.com/500blogs/2010/07/moneyball-for-startups.html
-	Description:: Invest BEFORE Product/Market Fit, Double-Down AFTER with Dave McClure http://500hats.typepad.com/500blogs/2010/07/moneyball-for-startups.html
-
-	Lesson Type:: reading
-	Body:: VentureHacks - PitchHacks http://venturehacks.com/friends
-	Description:: VentureHacks - PitchHacks http://venturehacks.com/friends
-
-	Lesson Type:: tools
-	Body:: A collection of pitch decks from companies that have raised funding http://www.pitchenvy.com/
-	Description:: A collection of pitch decks from companies that have raised funding http://www.pitchenvy.com/
-
-Track: NETWORKING
-Track Order: 1
-	Lesson Type:: watch
-	Body:: <p>Heidi talks about why building a network is important.</p>
-	Description:: Why Your Network Matters- Heidi Roizen
-	Video Uid:: 134977965
-	Video Title:: Why Your Network Matters
-	Video Author:: Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
-
-	Lesson Type:: watch
-	Body:: 
-	Description:: Making a Connection- Heidi Roizen
-	Video Uid:: 134980480
-	Video Title:: Making a Connection
-	Video Author:: Heidi Roizen
-
-	Lesson Type:: watch
-	Body:: 
-	Description:: The Art of Giving- Heidi Roizen
-	Video Uid:: 134988233
-	Video Title:: The Art of Giving
-	Video Author:: Heidi Roizen
-
-	Lesson Type:: watch
-	Body:: <p>Heidi talks about how presenting a consistent image helps you build stronger relationships.</p>
-	Description:: Being Consistent and Personal Branding- Heidi Roizen
-	Video Uid:: 134980484
-	Video Title:: Being Consistent and Personal Branding
-	Video Author:: Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
-
-	Lesson Type:: watch
-	Body:: <p>Aaron Levie talks about how he and his team got in contact with Mark Cuban.</p>
-	Description:: Hustling and Mark Cuban- Aaron Levie
-	Video Uid:: 134980485
-	Video Title:: Hustling and Mark Cuban
-	Video Author:: Aaron Levie, CEO and Founder of Box
-
-	Lesson Type:: watch
-	Body:: 
-	Description:: Investors Don’t Fund Dots- Jeff Seibert
-	Video Uid:: 134980487
-	Video Title:: Investors Don’t Fund Dots
-	Video Author:: Jeff Seibert
-
-	Lesson Type:: challenge
-	Body:: Go to a meetup and get 10 business cards, then connect with them on Linkedin and set up 5 in-person meetings.
-	Description:: Go to a meetup and get 10 business cards, then connect with them on Linkedin and set up 5 in-person meetings.
-
-	Lesson Type:: challenge
-	Body:: Networking needs to be genuine and not just for the sake of networking. Make friends with someone new today who you intend to meet again. Tell us about them.
-	Description:: Networking needs to be genuine and not just for the sake of networking. Make friends with someone new today who you intend to meet again. Tell us about them.
-
-	Lesson Type:: challenge
-	Body:: Pick someone high profile that you admire and find a way to get in contact with them. Meet with them and learn about how they developed into the person that you look up to today.
-	Description:: Pick someone high profile that you admire and find a way to get in contact with them. Meet with them and learn about how they developed into the person that you look up to today.
-
-	Lesson Type:: challenge
-	Body:: Networking is not about you telling people your story, it’s about you listening to others. Learn the life stories of 10 strangers.
-	Description:: Networking is not about you telling people your story, it’s about you listening to others. Learn the life stories of 10 strangers.
-
-	Lesson Type:: challenge
-	Body:: Often the most genuine connections come from helping people out. Hang out at a coffee shop or startup hangout and offer your help to 4 people for free. How easy is it to ask for a favor after?
-	Description:: Often the most genuine connections come from helping people out. Hang out at a coffee shop or startup hangout and offer your help to 4 people for free. How easy is it to ask for a favor after?
-
-	Lesson Type:: challenge
-	Body:: Set up a skype call with one of the other online students; comment below!
-	Description:: Set up a skype call with one of the other online students; comment below!
-
-	Lesson Type:: challenge
-	Body:: You never know which connections will be the most fortuitous. Go to an event and purposefully network with someone who seems to be on the lowest rung on the ladder: the intern, waiter, etc. What comes out of the experience?
-	Description:: You never know which connections will be the most fortuitous. Go to an event and purposefully network with someone who seems to be on the lowest rung on the ladder: the intern, waiter, etc. What comes out of the experience?
-
-	Lesson Type:: discussion
-	Body:: When you ask someone for a favor, how do you feel afterwards? Do you tend to feel like you need to repay them? Happy they helped you out and wanting to pay it forward to another person? Or threatened that they might hold it against you later?
-	Description:: When you ask someone for a favor, how do you feel afterwards? Do you tend to feel like you need to repay them? Happy they helped you out and wanting to pay it forward to another person? Or threatened that they might hold it against you later?
-
-	Lesson Type:: discussion
-	Body:: What’s one networking mistake you have made? How can you prevent doing it again?
-	Description:: What’s one networking mistake you have made? How can you prevent doing it again?
-
-	Lesson Type:: discussion
-	Body:: Are you a giver, matcher, or taker when it comes to doing favors for people? Why do you act this way?
-	Description:: Are you a giver, matcher, or taker when it comes to doing favors for people? Why do you act this way?
-
-	Lesson Type:: discussion
-	Body:: Who is someone you look up to as “that guy” or “that girl” who everyone likes and wants to be around in a professional setting? Why do you think they are so good at attracting people?
-	Description:: Who is someone you look up to as “that guy” or “that girl” who everyone likes and wants to be around in a professional setting? Why do you think they are so good at attracting people?
-
-	Lesson Type:: discussion
-	Body:: How would you change your pitch if it was for a public competition versus a 1 on 1 investor meeting?
-	Description:: How would you change your pitch if it was for a public competition versus a 1 on 1 investor meeting?
-
-	Lesson Type:: reading
-	Body:: Book: How to Win Friends and Influence People - Dale Carnegie http://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034 
-	Description:: Book: How to Win Friends and Influence People - Dale Carnegie http://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034 
-
-	Lesson Type:: reading
-	Body:: How to Raise Money http://paulgraham.com/fr.html
-	Description:: How to Raise Money http://paulgraham.com/fr.html
-
-	Lesson Type:: reading
-	Body:: What is High Resolution Fundraising? http://paulgraham.com/hiresfund.html
-	Description:: What is High Resolution Fundraising? http://paulgraham.com/hiresfund.html
-
-	Lesson Type:: reading
-	Body:: The Future of Fundraising http://paulgraham.com/future.html
-	Description:: The Future of Fundraising http://paulgraham.com/future.html
-
-	Lesson Type:: tools
-	Body:: Sidekick by Hubspot allows you to track and schedule your emails. http://www.getsidekick.com/ 
-	Description:: Sidekick by Hubspot allows you to track and schedule your emails. http://www.getsidekick.com/ 
-
-	Lesson Type:: tools
-	Body:: Data by Salesforce helps you get access to the people you need to get to. http://www.data.com/connect/index.jsp 
-	Description:: Data by Salesforce helps you get access to the people you need to get to. http://www.data.com/connect/index.jsp 
-
-Track: HIRING FOR A STARTUP
-Track Order: 0
-	Lesson Type:: challenge
-	Body:: Create a job on UpWork.com. Get applicants and interview them.
-	Description:: Create a job on UpWork.com. Get applicants and interview them.
-
-	Lesson Type:: challenge
-	Body:: Go out and get a job (any job!) in just one day. Think through the tactics you used to secure that job in just one day, as well as what must have been going through the employer’s mind as they were evaluating you. What are the differences between what employers and employees look for and how can knowing this help improve the way you build a team?
-	Description:: Go out and get a job (any job!) in just one day. Think through the tactics you used to secure that job in just one day, as well as what must have been going through the employer’s mind as they were evaluating you. What are the differences between what employers and employees look for and how can knowing this help improve the way you build a team?
-
-	Lesson Type:: challenge
-	Body:: Convince someone to do your chores without pay and offer them something of value that isn’t money.
-	Description:: Convince someone to do your chores without pay and offer them something of value that isn’t money.
-
-	Lesson Type:: challenge
-	Body:: Come up with a good  interview exercise, not just a question, to determine how dedicated an employee might be.
-	Description:: Come up with a good  interview exercise, not just a question, to determine how dedicated an employee might be.
-
-	Lesson Type:: challenge
-	Body:: Convince someone to be your intern. How did you find them? What were their credentials?
-	Description:: Convince someone to be your intern. How did you find them? What were their credentials?
-
-	Lesson Type:: discussion
-	Body:: How would you determine how much equity your employees deserve?
-	Description:: How would you determine how much equity your employees deserve?
-
-	Lesson Type:: discussion
-	Body:: Other than money, what do you think people care about when looking for jobs at startups?
-	Description:: Other than money, what do you think people care about when looking for jobs at startups?
-
-	Lesson Type:: discussion
-	Body:: When hiring for your startup do you think technical prowess is more important or personality (persistence, grit, honesty etc)?
-	Description:: When hiring for your startup do you think technical prowess is more important or personality (persistence, grit, honesty etc)?
-
-	Lesson Type:: discussion
-	Body:: How would you evaluate a prospective team member’s ability to work in a group of people or level of commitment?
-	Description:: How would you evaluate a prospective team member’s ability to work in a group of people or level of commitment?
-
-	Lesson Type:: discussion
-	Body:: Would you prefer more of a flat transparent corporate culture or a typical top down approach where salaries etc are private? Does your position as the founder/CEO change your answer rather than if you were an employee?
-	Description:: Would you prefer more of a flat transparent corporate culture or a typical top down approach where salaries etc are private? Does your position as the founder/CEO change your answer rather than if you were an employee?
-
-	Lesson Type:: discussion
-	Body:: How would you create a company culture in a startup with many remote employees?
-	Description:: How would you create a company culture in a startup with many remote employees?
-
-	Lesson Type:: reading
-	Body:: How to Hire for a Startup http://techcrunch.com/2015/07/22/hiring-culture-capacity-and-craftsmanship/#.tl1rqc:2nU6
-	Description:: How to Hire for a Startup http://techcrunch.com/2015/07/22/hiring-culture-capacity-and-craftsmanship/#.tl1rqc:2nU6
-
-	Lesson Type:: reading
-	Body:: Gravity Payments raises their minimum salary to $70,000. Read how this culture change both lost and gained them employees and clients. http://www.nytimes.com/2015/08/02/business/a-company-copes-with-backlash-against-the-raise-that-roared.html?_r=0
-	Description:: Gravity Payments raises their minimum salary to $70,000. Read how this culture change both lost and gained them employees and clients. http://www.nytimes.com/2015/08/02/business/a-company-copes-with-backlash-against-the-raise-that-roared.html?_r=0
-
-	Lesson Type:: tools
-	Body:: Hire better through corporate storytelling for startups with Job Portraits. http://jobportraits.com/ 
-	Description:: Hire better through corporate storytelling for startups with Job Portraits. http://jobportraits.com/ 
-
-Track: HIRING FOR A COMPANY
-Track Order: 2
-	Lesson Type:: watch
-	Body:: <p>Jeff explains how the goal of a CEO should be to hire for whatever they are spending their time on.</p>
-	Description:: Make Yourself Irrelevant- Jeff Seibert
-	Video Uid:: 134989334
-	Video Title:: Make Yourself Irrelevant
-	Video Author:: Jeff Seibert, Founder of Crashlytics & Sr. Director of Product at Twitter
-
-	Lesson Type:: challenge
-	Body:: In a group/club/hobby you belong to, stop doing any work on a current project or activity and delegate all tasks to the right people. How is this different than doing the activity yourself? Does the activity get done more efficiently? Is it more or less enjoyable for you?
-	Description:: In a group/club/hobby you belong to, stop doing any work on a current project or activity and delegate all tasks to the right people. How is this different than doing the activity yourself? Does the activity get done more efficiently? Is it more or less enjoyable for you?
-
-	Lesson Type:: challenge
-	Body:: Create 3 different creative salary packages that you think are all equal in the end, such as one has more vacation but less pay or less benefits, and then propose these different packages to 6 people you would consider hiring. Which package gets accepted more often?
-	Description:: Create 3 different creative salary packages that you think are all equal in the end, such as one has more vacation but less pay or less benefits, and then propose these different packages to 6 people you would consider hiring. Which package gets accepted more often?
-
-	Lesson Type:: challenge
-	Body:: Talk to a friend as if you were going to hire them to work at your company, but ask them to negotiate their salary. How did the negotiation go? What was difficult about it in ways you didn’t expect?
-	Description:: Talk to a friend as if you were going to hire them to work at your company, but ask them to negotiate their salary. How did the negotiation go? What was difficult about it in ways you didn’t expect?
-
-	Lesson Type:: challenge
-	Body:: Many startups employ developers around the world due to budget or time constraints. Find and contact 5 developers in India and China and interview them. Try looking on Linkedin, Upwork, or AngelList. How would you integrate them into your business or team? 
-	Description:: Many startups employ developers around the world due to budget or time constraints. Find and contact 5 developers in India and China and interview them. Try looking on Linkedin, Upwork, or AngelList. How would you integrate them into your business or team? 
-
-	Lesson Type:: challenge
-	Body:: Running a good team is not just about knowing how to attract good people; you’ll need to know how to cut someone out if they aren’t performing well. Call a friend and talk to them as if you were firing them from your company.
-	Description:: Running a good team is not just about knowing how to attract good people; you’ll need to know how to cut someone out if they aren’t performing well. Call a friend and talk to them as if you were firing them from your company.
-
-	Lesson Type:: discussion
-	Body:: Think about the differences between what co-founders, advisors, employees, and executives look for, what can you offer to each of them if they join your company?
-	Description:: Think about the differences between what co-founders, advisors, employees, and executives look for, what can you offer to each of them if they join your company?
-
-	Lesson Type:: discussion
-	Body:: After what milestone would you create a dedicated HR department? Why?
-	Description:: After what milestone would you create a dedicated HR department? Why?
-
-	Lesson Type:: discussion
-	Body:: When you hire normal employees, do you plan to attract them with market value wages or more of a gritty startup atmosphere? Which do you think leads to better employee performance?
-	Description:: When you hire normal employees, do you plan to attract them with market value wages or more of a gritty startup atmosphere? Which do you think leads to better employee performance?
-
-	Lesson Type:: discussion
-	Body:: How do you feel about the new Silicon Valley championed “unlimited vacation days” or that most employees don’t really have to come to work as long as they make their deadlines? How does this affect culture? What type of talent does this attract?
-	Description:: How do you feel about the new Silicon Valley championed “unlimited vacation days” or that most employees don’t really have to come to work as long as they make their deadlines? How does this affect culture? What type of talent does this attract?
-
-	Lesson Type:: reading
-	Body:: We Don’t Pay You to Work Here: How to align incentives for your employees. http://venturehacks.com/articles/ordinary-people
-	Description:: We Don’t Pay You to Work Here: How to align incentives for your employees. http://venturehacks.com/articles/ordinary-people
-
-	Lesson Type:: reading
-	Body:: What Does a COO Actually Do? https://medium.com/@sparkszilla/what-s-a-coo-do-bbeb0f8648ee 
-	Description:: What Does a COO Actually Do? https://medium.com/@sparkszilla/what-s-a-coo-do-bbeb0f8648ee 
-
-	Lesson Type:: reading
-	Body:: Finding your “Lime Metric” http://techcrunch.com/2015/05/18/a-ceos-most-important-metric-should-be-a-secret/
-	Description:: Finding your “Lime Metric” http://techcrunch.com/2015/05/18/a-ceos-most-important-metric-should-be-a-secret/
-
-	Lesson Type:: tools
-	Body:: Linkedin Premium helps you hire more people and find more sales leads, get one month for free at Linkedin. https://www.linkedin.com/ 
-	Description:: Linkedin Premium helps you hire more people and find more sales leads, get one month for free at Linkedin. https://www.linkedin.com/ 
-
-	Lesson Type:: tools
-	Body:: Buffer explains how they structure their company salaries. https://open.bufferapp.com/introducing-open-salaries-at-buffer-including-our-transparent-formula-and-all-individual-salaries/ 
-	Description:: Buffer explains how they structure their company salaries. https://open.bufferapp.com/introducing-open-salaries-at-buffer-including-our-transparent-formula-and-all-individual-salaries/ 
-
-Track: BUSINESS PLAN
-Track Order: 0
-	Lesson Type:: challenge
-	Body:: Update your Business Model Canvas based on the feedback you’ve gotten so far, now show it to 5 startup founders or employees and ask them to tear it apart. Go back and fix it based on their feedback. (Check out the “Value Prop” track in “Product” if you haven’t created a BMC yet!)
-	Description:: Update your Business Model Canvas based on the feedback you’ve gotten so far, now show it to 5 startup founders or employees and ask them to tear it apart. Go back and fix it based on their feedback. (Check out the “Value Prop” track in “Product” if you haven’t created a BMC yet!)
-
-	Lesson Type:: challenge
-	Body:: An Executive Summary summarizes everything about your product and business plan in just one page and is given to investors as a first look at your business. It also helps give you a high level view of the vision for your company. Write an executive summary. You can use INC Magazine’s article as a rough guide (http://bit.ly/1gHd2gp). 
-	Description:: An Executive Summary summarizes everything about your product and business plan in just one page and is given to investors as a first look at your business. It also helps give you a high level view of the vision for your company. Write an executive summary. You can use INC Magazine’s article as a rough guide (http://bit.ly/1gHd2gp). 
-
-	Lesson Type:: challenge
-	Body:: Time for some straight learning. Learn how to calculate customer acquisition cost, or CAC (http://bit.ly/1ySvnBg), lifetime customer value, or LTV (http://bit.ly/1CLtFRc), and annualized run-rate, or ARR (http://bit.ly/1vQWfjK). You can learn about how to calculate them and what they mean for your business with the links provided.
-	Description:: Time for some straight learning. Learn how to calculate customer acquisition cost, or CAC (http://bit.ly/1ySvnBg), lifetime customer value, or LTV (http://bit.ly/1CLtFRc), and annualized run-rate, or ARR (http://bit.ly/1vQWfjK). You can learn about how to calculate them and what they mean for your business with the links provided.
-
-	Lesson Type:: challenge
-	Body:: Find all your competitors and place them on a 2x2 with your product placed in the top right quadrant. Learn how to create a 2x2 of the competitive landscape here: http://stanford.io/1JYJvYY. 
-	Description:: Find all your competitors and place them on a 2x2 with your product placed in the top right quadrant. Learn how to create a 2x2 of the competitive landscape here: http://stanford.io/1JYJvYY. 
-
-	Lesson Type:: discussion
-	Body:: How do you project your revenues? What factors do those projections rely on? What do the optimistic and conservative projections look like?
-	Description:: How do you project your revenues? What factors do those projections rely on? What do the optimistic and conservative projections look like?
-
-	Lesson Type:: discussion
-	Body:: When a new competitor pops up, what is your first reaction? What is your next move?
-	Description:: When a new competitor pops up, what is your first reaction? What is your next move?
-
-	Lesson Type:: discussion
-	Body:: What is your incentive to partner with another company? Access to their user base, legitimizing yourself, help with design, or something else?
-	Description:: What is your incentive to partner with another company? Access to their user base, legitimizing yourself, help with design, or something else?
-
-	Lesson Type:: discussion
-	Body:: Do you think you should partner pre-launch in order to jumpstart sales or would you rather build your own brand first then partner?
-	Description:: Do you think you should partner pre-launch in order to jumpstart sales or would you rather build your own brand first then partner?
-
-	Lesson Type:: discussion
-	Body:: Why do you think you should project revenue now when so much is still left unknown?
-	Description:: Why do you think you should project revenue now when so much is still left unknown?
-
-	Lesson Type:: discussion
-	Body:: Which competitor of yours could become a partner if you approach them right? How?
-	Description:: Which competitor of yours could become a partner if you approach them right? How?
-
-	Lesson Type:: reading
-	Body:: How Do You Redefine Product-Market Fit? http://www.quora.com/How-do-you-define-Product-Market-Fit/answer/Kali-Albright
-	Description:: How Do You Redefine Product-Market Fit? http://www.quora.com/How-do-you-define-Product-Market-Fit/answer/Kali-Albright
-
-	Lesson Type:: reading
-	Body:: On Product-Market Fit for Startups with Marc Andreessen https://www.linkedin.com/pulse/marc-andreessen-product-market-fit-startups-marc-andreessen
-	Description:: On Product-Market Fit for Startups with Marc Andreessen https://www.linkedin.com/pulse/marc-andreessen-product-market-fit-startups-marc-andreessen
-
-	Lesson Type:: reading
-	Body:: Revenge of the Fat Guy with Marc Andreessen http://www.bhorowitz.com/revenge_of_the_fat_guy
-	Description:: Revenge of the Fat Guy with Marc Andreessen http://www.bhorowitz.com/revenge_of_the_fat_guy
-
-	Lesson Type:: reading
-	Body:: Writing a Business Plan by Sequoia Capital http://www.sequoiacap.com/grove/posts/6bzx/writing-a-business-plan 
-	Description:: Writing a Business Plan by Sequoia Capital http://www.sequoiacap.com/grove/posts/6bzx/writing-a-business-plan 
-
-Track: BUSINESS DEVELOPMENT
-Track Order: 1
-	Lesson Type:: watch
-	Body:: 
-	Description:: The Future of Enterprise- Aaron Levie
-	Video Uid:: 134989340
-	Video Title:: The Future of Enterprise
-	Video Author:: Aaron Levie
-
-	Lesson Type:: watch
-	Body:: <p><tab>Dan talks about the business strategies and tactics he implemented while building up Gravity Payments.</p>
-	Description:: The Evolution of Gravity Payments- Dan Price
-	Video Uid:: 134989341
-	Video Title:: The Evolution of Gravity Payments
-	Video Author:: <tab>Dan Price, CEO of Gravity Payments
-
-	Lesson Type:: challenge
-	Body:: Your business will need to be agile and quick if you want to keep it alive, are you? Go ahead with a life pivot! Move to a new location! Dump your significant other! Quit smoking! Try soylent! Change your commute!
-	Description:: Your business will need to be agile and quick if you want to keep it alive, are you? Go ahead with a life pivot! Move to a new location! Dump your significant other! Quit smoking! Try soylent! Change your commute!
-
-	Lesson Type:: challenge
-	Body:: Get over a fear by implementing 3 different strategies over 3 weeks. Which worked best? How did you decide when to implement each strategy?
-	Description:: Get over a fear by implementing 3 different strategies over 3 weeks. Which worked best? How did you decide when to implement each strategy?
-
-	Lesson Type:: challenge
-	Body:: Cold email 20 potential brand partners asking about the process to partner with them and if they would be interested. Did any reply? What did you learn?
-	Description:: Cold email 20 potential brand partners asking about the process to partner with them and if they would be interested. Did any reply? What did you learn?
-
-	Lesson Type:: challenge
-	Body:: Create a strategy map for your company. Who will be your early adopters? How will you use them as a bridge to reach the customers you really need to become profitable? Which partners do you need to succeed? How will you get resources and fundraise along the way? 
-	Description:: Create a strategy map for your company. Who will be your early adopters? How will you use them as a bridge to reach the customers you really need to become profitable? Which partners do you need to succeed? How will you get resources and fundraise along the way? 
-
-	Lesson Type:: challenge
-	Body:: Make a list of things in the business that you can take from 0-1. How will you hire and develop programs to take these things from 1-100?
-	Description:: Make a list of things in the business that you can take from 0-1. How will you hire and develop programs to take these things from 1-100?
-
-	Lesson Type:: discussion
-	Body:: What’s the difference to you between business development and user acquisition? 
-	Description:: What’s the difference to you between business development and user acquisition? 
-
-	Lesson Type:: discussion
-	Body:: What v2.0 of your product or accessory product do you plan to release later on to grow your business?
-	Description:: What v2.0 of your product or accessory product do you plan to release later on to grow your business?
-
-	Lesson Type:: discussion
-	Body:: Can you think of a way to build subscription revenue into your business to stabilize your cash flow?
-	Description:: Can you think of a way to build subscription revenue into your business to stabilize your cash flow?
-
-	Lesson Type:: discussion
-	Body:: After you launch, what new channels and business verticals can you use to distribute your product?
-	Description:: After you launch, what new channels and business verticals can you use to distribute your product?
-
-	Lesson Type:: discussion
-	Body:: Do you think a product visionary should have a crystal clear, sharp vision of the future or more of a general, blurry one? Why?
-	Description:: Do you think a product visionary should have a crystal clear, sharp vision of the future or more of a general, blurry one? Why?
-
-	Lesson Type:: discussion
-	Body:: Do you think a startup should have a Chief of Operations? Why or why not?
-	Description:: Do you think a startup should have a Chief of Operations? Why or why not?
-
-	Lesson Type:: reading
-	Body:: What is Strategy - Harvard Business Review https://hbr.org/1996/11/what-is-strategy 
-	Description:: What is Strategy - Harvard Business Review https://hbr.org/1996/11/what-is-strategy 
-
-	Lesson Type:: reading
-	Body:: 14 Ways to Get to $10 Million in Revenues Part 1 http://techcrunch.com/2010/10/10/teardown-13-ways-10-million-revenues/
-	Description:: 14 Ways to Get to $10 Million in Revenues Part 1 http://techcrunch.com/2010/10/10/teardown-13-ways-10-million-revenues/
-
-	Lesson Type:: reading
-	Body:: 14 Ways to Get to $10 Million in Revenues Part 2 http://techcrunch.com/2010/10/12/tc-teardown-13-ways-10-million-part-ii/  
-	Description:: 14 Ways to Get to $10 Million in Revenues Part 2 http://techcrunch.com/2010/10/12/tc-teardown-13-ways-10-million-part-ii/  
-
-Track: VALUE PROP
-Track Order: 0
-Track: FINANCE
-Track Order: 2
-	Lesson Type:: challenge
-	Body:: Google some sample term sheets online, put together two of your own term sheets with terms you feel would be favorable to you if you were an investor and a founder. Don’t worry about getting the language right, the point of this is to understand what terms each party would be looking for.
-	Description:: Google some sample term sheets online, put together two of your own term sheets with terms you feel would be favorable to you if you were an investor and a founder. Don’t worry about getting the language right, the point of this is to understand what terms each party would be looking for.
-
-	Lesson Type:: challenge
-	Body:: Create your own cap table for your family members based on how much effort they’ve put into bringing the family together for events or meals. How much equity does each person deserve? Are you applying any cliffs or vesting schedules?
-	Description:: Create your own cap table for your family members based on how much effort they’ve put into bringing the family together for events or meals. How much equity does each person deserve? Are you applying any cliffs or vesting schedules?
-
-	Lesson Type:: challenge
-	Body:: Figure out what your personal burn rate (how much money you spend) will be for the next 3 months, then cut that amount by 30% however you can and figure out how you can spend it more productively. Then start doing it.
-	Description:: Figure out what your personal burn rate (how much money you spend) will be for the next 3 months, then cut that amount by 30% however you can and figure out how you can spend it more productively. Then start doing it.
-
-	Lesson Type:: challenge
-	Body:: Project your startup/idea’s 6 month burn rate to figure out how much revenue you’d make to become profitable. It’s easy to miss expenses you normally might not think of. Taxes, licenses, legal fees, food, rent, transportation, software, office supplies, etc.
-	Description:: Project your startup/idea’s 6 month burn rate to figure out how much revenue you’d make to become profitable. It’s easy to miss expenses you normally might not think of. Taxes, licenses, legal fees, food, rent, transportation, software, office supplies, etc.
-
-	Lesson Type:: challenge
-	Body:: Figure out how much money you need to launch and then how long it would take you to make the money back, as if you’re paying off a loan. This is called your payback period. How many units/subscriptions do you need to sell each month to keep from losing money?
-	Description:: Figure out how much money you need to launch and then how long it would take you to make the money back, as if you’re paying off a loan. This is called your payback period. How many units/subscriptions do you need to sell each month to keep from losing money?
-
-	Lesson Type:: discussion
-	Body:: What is your largest cost? If it’s living expenses, how can you bring them down?
-	Description:: What is your largest cost? If it’s living expenses, how can you bring them down?
-
-	Lesson Type:: discussion
-	Body:: What do you think is a VC’s attitude about paying for the founding team’s living expenses as part of the investment? How would you handle this in talking to them?
-	Description:: What do you think is a VC’s attitude about paying for the founding team’s living expenses as part of the investment? How would you handle this in talking to them?
-
-	Lesson Type:: discussion
-	Body:: What is the lifetime value of your customer? What is your cost to acquire them? Will your company ever be profitable with this ratio?
-	Description:: What is the lifetime value of your customer? What is your cost to acquire them? Will your company ever be profitable with this ratio?
-
-	Lesson Type:: reading
-	Body:: Wall Street MBA - Reuben Advani http://www.amazon.com/The-Wall-Street-Second-Edition/dp/007178831X
-	Description:: Wall Street MBA - Reuben Advani http://www.amazon.com/The-Wall-Street-Second-Edition/dp/007178831X
-
-	Lesson Type:: reading
-	Body:: How to Draft a Business Budget http://www.inc.com/encyclopedia/businessbudget.html
-	Description:: How to Draft a Business Budget http://www.inc.com/encyclopedia/businessbudget.html
-
-	Lesson Type:: reading
-	Body:: How to Make a Cap Table http://venturehacks.com/articles/cap-table
-	Description:: How to Make a Cap Table http://venturehacks.com/articles/cap-table
-
-	Lesson Type:: reading
-	Body:: How to Create the Right Kind of Option Pool http://venturehacks.com/articles/option-pool-shuffle
-	Description:: How to Create the Right Kind of Option Pool http://venturehacks.com/articles/option-pool-shuffle
-
-	Lesson Type:: reading
-	Body:: Indiegogo Hardware Field Guide: How to Budget for Your Campaign and Manufacturing https://learn.indiegogo.com/wp-content/uploads/2015/03/IGG_ER_HardwareHandbook_070814.pdf
-	Description:: Indiegogo Hardware Field Guide: How to Budget for Your Campaign and Manufacturing https://learn.indiegogo.com/wp-content/uploads/2015/03/IGG_ER_HardwareHandbook_070814.pdf
-
-	Lesson Type:: tools
-	Body:: Business Budget Calculator http://www.businessownersideacafe.com/financing/budget_calculator.html 
-	Description:: Business Budget Calculator http://www.businessownersideacafe.com/financing/budget_calculator.html 
-
-Track: EXIT
+Track: RESOURCEFULNESS
 Track Order: 3
-	Lesson Type:: challenge
-	Body:: Sell lemonade on a hot day. Set a finite amount of lemonade you will sell all day such as only 100 cups. Experiment by setting different prices and selling at different times in the day. What price left you with all lemonade sold the quickest and with a supply shortage so that some people were left out? How is this like an IPO? Feel free to do this with anything other than lemonade: you could sell online game items, artwork, cookies, hugs, etc.
-	Description:: Sell lemonade on a hot day. Set a finite amount of lemonade you will sell all day such as only 100 cups. Experiment by setting different prices and selling at different times in the day. What price left you with all lemonade sold the quickest and with a supply shortage so that some people were left out? How is this like an IPO? Feel free to do this with anything other than lemonade: you could sell online game items, artwork, cookies, hugs, etc.
-
-	Lesson Type:: challenge
-	Body:: Follow a rumor about a current impending acquisition, such as Facebook acquiring Meerkat, and pretend you are the larger company’s lawyers doing “due diligence”. What price would you recommend to buy this company at and why? What are the weak spots that you think your company can smooth over? Would you recommend buying it or not?
-	Description:: Follow a rumor about a current impending acquisition, such as Facebook acquiring Meerkat, and pretend you are the larger company’s lawyers doing “due diligence”. What price would you recommend to buy this company at and why? What are the weak spots that you think your company can smooth over? Would you recommend buying it or not?
-
-	Lesson Type:: discussion
-	Body:: What sort of exit are you looking for? An IPO or acquisition?
-	Description:: What sort of exit are you looking for? An IPO or acquisition?
-
-	Lesson Type:: discussion
-	Body:: Under what terms would you accept an acquisition; considering monetary compensation, and HR/leadership, and how your customers  and employees would be treated?
-	Description:: Under what terms would you accept an acquisition; considering monetary compensation, and HR/leadership, and how your customers  and employees would be treated?
-
-	Lesson Type:: discussion
-	Body:: If you could acquire one startup right now, who would it be and why?
-	Description:: If you could acquire one startup right now, who would it be and why?
-
-	Lesson Type:: discussion
-	Body:: You often see companies with high valuations bought much below that, but if their valuation is what they’re worth then why is that? What does this tell you about a valuation?
-	Description:: You often see companies with high valuations bought much below that, but if their valuation is what they’re worth then why is that? What does this tell you about a valuation?
-
-	Lesson Type:: reading
-	Body:: How Focused Should a Startup Be on Being Acquired http://www.quora.com/How-focused-should-a-startup-be-on-being-acquired/answer/Jeff-Clavier
-	Description:: How Focused Should a Startup Be on Being Acquired http://www.quora.com/How-focused-should-a-startup-be-on-being-acquired/answer/Jeff-Clavier
-
-	Lesson Type:: reading
-	Body:: Don’t Set Out to Get Acquired http://seanonstartups.co/2014/11/05/why-you-dont-want-to-be-acquired/
-	Description:: Don’t Set Out to Get Acquired http://seanonstartups.co/2014/11/05/why-you-dont-want-to-be-acquired/
-
-	Lesson Type:: reading
-	Body:: Selling Your Company http://seanonstartups.co/2015/08/05/selling-your-company/
-	Description:: Selling Your Company http://seanonstartups.co/2015/08/05/selling-your-company/
-
-	Lesson Type:: reading
-	Body:: What is Your Startup Worth? http://www.entrepreneur.com/article/72384
-	Description:: What is Your Startup Worth? http://www.entrepreneur.com/article/72384
-
-	Lesson Type:: reading
-	Body:: How to Prepare for an IPO http://www.inc.com/guides/preparing-for-initial-public-offering.html 
-	Description:: How to Prepare for an IPO http://www.inc.com/guides/preparing-for-initial-public-offering.html 
-
-Track: SETTING UP A COMPANY
-Track Order: 0
 	Lesson Type:: watch
-	Body:: <p>Jared talks about term sheets and convertible notes.</p>
-	Description:: How to Raise Money For Your Startup- Jared Brubaker
-	Video Uid:: 134989342
-	Video Title:: How to Raise Money For Your Startup
-	Video Author:: Jared Brubaker, Founder of Brubaker Law & Angel Investor
-
-	Lesson Type:: watch
-	Body:: <p>Tim talks specifics on term sheets and how they work.</p>
-	Description:: Term Sheets- Tim Draper
-	Video Uid:: 134989353
-	Video Title:: Term Sheets
-	Video Author:: Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
-
-	Lesson Type:: watch
-	Body:: <p>Tim talks about the types of stock companies can give out.</p>
-	Description:: Debt & Shares- Tim Draper
-	Video Uid:: 134990201
-	Video Title:: Debt & Shares
-	Video Author:: Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
-
-	Lesson Type:: watch
-	Body:: <p>Tim talks gives an example of how a vesting schedule works.</p>
-	Description:: Vesting & Splitting Shares at Investment- Tim Draper
-	Video Uid:: 134990203
-	Video Title:: Vesting & Splitting Shares at Investment
-	Video Author:: Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
-
-	Lesson Type:: watch
-	Body:: <p>Tim explains why you should never borrow money and the wonderful gift that is bankruptcy protection in the US.</p>
-	Description:: Do NOT Borrow Money- Tim Draper
-	Video Uid:: 134990204
-	Video Title:: Do NOT Borrow Money
-	Video Author:: Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
-
-	Lesson Type:: watch
-	Body:: <p>Tim talks about stock conversion and liquidation preference.</p>
-	Description:: Dividends & Conversion- Tim Draper
-	Video Uid:: 134990207
-	Video Title:: Dividends & Conversion
-	Video Author:: Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
-
-	Lesson Type:: watch
-	Body:: <p>Tim talks about anti-dilution and what happens when a company fails.</p>
-	Description:: Anti-Dilution and How to Deal with a Company Failure- Tim Draper
-	Video Uid:: 134990213
-	Video Title:: Anti-Dilution and How to Deal with a Company Failure
-	Video Author:: Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
-
-	Lesson Type:: challenge
-	Body:: There are many lawyers out there who do a portion of their work pro bono (for free), finding one who does so can be an inexpensive way to learn about how to talk with and build relationships with lawyers. Look up 10 lawyers in any field you’d like to know more about and ask them for a free consultation.
-	Description:: There are many lawyers out there who do a portion of their work pro bono (for free), finding one who does so can be an inexpensive way to learn about how to talk with and build relationships with lawyers. Look up 10 lawyers in any field you’d like to know more about and ask them for a free consultation.
-
-	Lesson Type:: challenge
-	Body:: Find a law you disagree with and improve it. Think through the practicalities of implementing it, who it will affect, and whether it will benefit society as a whole or just you.
-	Description:: Find a law you disagree with and improve it. Think through the practicalities of implementing it, who it will affect, and whether it will benefit society as a whole or just you.
-
-	Lesson Type:: challenge
-	Body:: Write up your own contract for a freelancer. Make sure it has all the valid parts of a contract and include an assignment of rights to their work over to your company.
-	Description:: Write up your own contract for a freelancer. Make sure it has all the valid parts of a contract and include an assignment of rights to their work over to your company.
-
-	Lesson Type:: challenge
-	Body:: Ask for money for your company from friends or family as an exercise, Explain to them the differences between a convertible note and giving them equity. Ask them what sort of equity they would want for their investment, then counter them with your terms. Where does the dissonance on what that money is worth come from? Why did they prefer equity or convertible note? 
-	Description:: Ask for money for your company from friends or family as an exercise, Explain to them the differences between a convertible note and giving them equity. Ask them what sort of equity they would want for their investment, then counter them with your terms. Where does the dissonance on what that money is worth come from? Why did they prefer equity or convertible note? 
-
-	Lesson Type:: challenge
-	Body:: Pay your friend for an odd job with a vesting schedule over 4 weeks with a 1 week cliff.  How did it go over? How was this payment schedule safer for you? 
-	Description:: Pay your friend for an odd job with a vesting schedule over 4 weeks with a 1 week cliff.  How did it go over? How was this payment schedule safer for you? 
-
-	Lesson Type:: discussion
-	Body:: Let’s say you’ve raised $100,000 for 3% equity or that same money as a convertible note with 20% discount rate and 5% yearly interest at a 5 million dollar cap. Which deal would you choose? Why? Would it be easier to raise money on the convertible note deal or the equity deal and why?
-	Description:: Let’s say you’ve raised $100,000 for 3% equity or that same money as a convertible note with 20% discount rate and 5% yearly interest at a 5 million dollar cap. Which deal would you choose? Why? Would it be easier to raise money on the convertible note deal or the equity deal and why?
-
-	Lesson Type:: discussion
-	Body:: What are any issues you foresee with giving board seats to advisors and investors?
-	Description:: What are any issues you foresee with giving board seats to advisors and investors?
-
-	Lesson Type:: discussion
-	Body:: Do you like a SAFE (http://bit.ly/1kjVdko) or convertible note better? Why do you think the investment community still favors notes and priced rounds over SAFEs?
-	Description:: Do you like a SAFE (http://bit.ly/1kjVdko) or convertible note better? Why do you think the investment community still favors notes and priced rounds over SAFEs?
-
-Track: PROTECTION
-Track Order: 1
-	Lesson Type:: challenge
-	Body:: Using Google Patents and the University of Austin at Texas’s patent library look up any patents possibly related to what you’re doing. Are there any red flags?
-	Description:: Using Google Patents and the University of Austin at Texas’s patent library look up any patents possibly related to what you’re doing. Are there any red flags?
-
-	Lesson Type:: challenge
-	Body:: Is your technology patentable? Before you get a consultation, think, is your technology novel or repurposing existing technology? Create a one page outline of what your patent would look like; think of all the different “claims” you would make. Go to the USPTO and price the cost of your patent based on how many claims you would make et al, and realize these are just the fee costs. How much does your patent cost at minimum?
-	Description:: Is your technology patentable? Before you get a consultation, think, is your technology novel or repurposing existing technology? Create a one page outline of what your patent would look like; think of all the different “claims” you would make. Go to the USPTO and price the cost of your patent based on how many claims you would make et al, and realize these are just the fee costs. How much does your patent cost at minimum?
-
-	Lesson Type:: challenge
-	Body:: Search for your startup/idea name on the USPTO trademark search. Does someone else own your name? Only if their trademark is in the same industry as yours and marked “live” does it conflict.
-	Description:: Search for your startup/idea name on the USPTO trademark search. Does someone else own your name? Only if their trademark is in the same industry as yours and marked “live” does it conflict.
-
-	Lesson Type:: challenge
-	Body:: Call patent lawyers until you find one who will give you a free consultation on whether your technology is possibly patentable.
-	Description:: Call patent lawyers until you find one who will give you a free consultation on whether your technology is possibly patentable.
-
-	Lesson Type:: challenge
-	Body:: Find the technology assignment forms on Orrick corporation (http://bit.ly/16prciU) and have any cofounders or employees you might have sign them to protect your company’s IP. If you don’t have any yet, look them over so you can get an idea of what it will be like for your team once you find them!
-	Description:: Find the technology assignment forms on Orrick corporation (http://bit.ly/16prciU) and have any cofounders or employees you might have sign them to protect your company’s IP. If you don’t have any yet, look them over so you can get an idea of what it will be like for your team once you find them!
-
-	Lesson Type:: discussion
-	Body:: If you do get a patent, how would you protect it? Patenting your technology would make all your designs publically available. How much would it cost for you to enforce it? Would you rather make your technology a trade secret?
-	Description:: If you do get a patent, how would you protect it? Patenting your technology would make all your designs publically available. How much would it cost for you to enforce it? Would you rather make your technology a trade secret?
-
-	Lesson Type:: discussion
-	Body:: If you patented your idea would it be a design patent or utility patent? Which countries would you patent in and why?
-	Description:: If you patented your idea would it be a design patent or utility patent? Which countries would you patent in and why?
-
-	Lesson Type:: discussion
-	Body:: When would be the best time to patent your idea?
-	Description:: When would be the best time to patent your idea?
-
-	Lesson Type:: discussion
-	Body:: What do you think of Larry Page, CEO of Google, giving away their patents to startups that are making $500,000-$5million in annual revenue? Why would they do that? How does this affect innovation and the economy?
-	Description:: What do you think of Larry Page, CEO of Google, giving away their patents to startups that are making $500,000-$5million in annual revenue? Why would they do that? How does this affect innovation and the economy?
-
-	Lesson Type:: discussion
-	Body:: Do you think patents encourage or slow innovation? Give an example for each side of the argument.
-	Description:: Do you think patents encourage or slow innovation? Give an example for each side of the argument.
-
-	Lesson Type:: reading
-	Body:: An Entrepreneur’s Guide to Patents: The Basics http://techcrunch.com/2012/11/10/an-entrepreneurs-guide-to-patents-the-basics/ 
-	Description:: An Entrepreneur’s Guide to Patents: The Basics http://techcrunch.com/2012/11/10/an-entrepreneurs-guide-to-patents-the-basics/ 
-
-	Lesson Type:: reading
-	Body:: Can You Patent Your Mobile App? https://www.legalzoom.com/articles/can-you-patent-your-mobile-app
-	Description:: Can You Patent Your Mobile App? https://www.legalzoom.com/articles/can-you-patent-your-mobile-app
-
-	Lesson Type:: reading
-	Body:: Should You Patent or Keep it a Trade Secret?<div class='tabbed-section'><br><div class='tabbed'>i.</div>https://hbr.org/2013/11/filing-for-a-patent-versus-keeping-your-invention-a-trade-secret/</div>
-	Description:: Should You Patent or Keep it a Trade Secret?
-
-	Lesson Type:: reading
-	Body:: Official US Patent Overview and Process<div class='tabbed-section'><br><div class='tabbed'>i.</div>http://www.uspto.gov/patents-getting-started/general-information-concerning-patents</div><div class='tabbed-section'><br><div class='tabbed'>ii.</div>http://www.uspto.gov/patents-getting-started/patent-process-overview#step1</div>
-	Description:: Official US Patent Overview and Process
-
-	Lesson Type:: reading
-	Body:: Official US Trademark Overview and Process<div class='tabbed-section'><br><div class='tabbed'>i.</div>http://www.uspto.gov/trademarks-getting-started/trademark-process</div><div class='tabbed-section'><br><div class='tabbed'>ii.</div>http://www.uspto.gov/trademarks-getting-started/trademark-basics</div>
-	Description:: Official US Trademark Overview and Process
-
-	Lesson Type:: tools
-	Body:: Search for a trademark to see if it’s available. http://tmsearch.uspto.gov/bin/gate.exe?f=tess&state=4803:q4ykgt.1.1
-	Description:: Search for a trademark to see if it’s available. http://tmsearch.uspto.gov/bin/gate.exe?f=tess&state=4803:q4ykgt.1.1
-
-Track: PERSISTENCE
-Track Order: 
-	Lesson Type:: watch
-	Body:: <p>Dan talks about his story and the hurdles he faced in the early days of his journey.</p>
-	Description:: Becoming an Entrepreneur- Dan Price
-	Video Uid:: 134882645
-	Video Title:: Becoming an Entrepreneur
-	Video Author:: Dan Price, CEO of Gravity Payments
-
-	Lesson Type:: watch
-	Body:: <p>Ron talks about how difficult business is, and why being persistent and passionate is crucial to success.</p>
-	Description:: None of this is Easy- Ron Johnson
-	Video Uid:: 134883014
-	Video Title:: None of this is Easy
-	Video Author:: Ron Johnson, former Senior Vice President of Retail Operations at Apple
-
-	Lesson Type:: watch
-	Body:: <p>Nate talks about the early obstacles Airbnb faced and how they dealt with them.</p>
-	Description:: AirBnB & Early Obstacles- Nate Blecharczyk
-	Video Uid:: 134883166
-	Video Title:: AirBnB & Early Obstacles
+	Body:: <p>Nate talks about surviving through the 2008 US recession and how they hustled through it to success.</p>
+	Description:: Be Scrappy, Be Loyal, and Ride the Wave of Success- Nate Blecharczyk
+	Video Uid:: 134883773
+	Video Title:: Be Scrappy, Be Loyal, and Ride the Wave of Success
 	Video Author:: Nate Blecharczyk, Founder and CTO of Airbnb
 
-	Lesson Type:: challenge
-	Body:: Running a company is a marathon, not a sprint. You can’t work on a startup if you don’t eat well, sleep well, and exercise to stay healthy. You don’t have to give up meat to be healthy, but making such a drastic change takes a lot of willpower and discipline: become a vegetarian for 2 weeks and . If you cheat, that’s on you; there are much harder things you’ll have to face on your way to becoming an entrepreneur.
-	Description:: Running a company is a marathon, not a sprint. You can’t work on a startup if you don’t eat well, sleep well, and exercise to stay healthy. You don’t have to give up meat to be healthy, but making such a drastic change takes a lot of willpower and discipline: become a vegetarian for 2 weeks and . If you cheat, that’s on you; there are much harder things you’ll have to face on your way to becoming an entrepreneur.
+	Lesson Type:: watch
+	Body:: <p>Gleb talks about how bootstrapping forced his team to come up with a simple solution to a tech problem they were having.</p>
+	Description:: Bootstrapping Enforces Creativity- Gleb Budman
+	Video Uid:: 134890287
+	Video Title:: Bootstrapping Enforces Creativity
+	Video Author:: Gleb Budman, CEO of Backblaze
 
-	Lesson Type:: challenge
-	Body:: The hacking life style has been highly glamorized, but it’s actually a terrible idea to skip meals and go to bed at 5 AM every day. For 2 weeks, go to bed no later than 11 pm, wake up at 6 am, and get an hour of work done before 8 am. Again, cheat if you’d like, but remember that there are a lot of people out there who life like this already with no problems.
-	Description:: The hacking life style has been highly glamorized, but it’s actually a terrible idea to skip meals and go to bed at 5 AM every day. For 2 weeks, go to bed no later than 11 pm, wake up at 6 am, and get an hour of work done before 8 am. Again, cheat if you’d like, but remember that there are a lot of people out there who life like this already with no problems.
+	Lesson Type:: watch
+	Body:: <p>Gleb talks about how they had to physically go to stores to buy hard drives during a supply drought, even getting friends and customers involved.</p>
+	Description:: How to Deal with Roadblocks- Gleb Budman
+	Video Uid:: 134890682
+	Video Title:: How to Deal with Roadblocks
+	Video Author:: Gleb Budman, CEO of BackBlaze
 
-	Lesson Type:: challenge
-	Body:: Sometimes the only way to get to where you need to be is through sheer persistence. Many startup successes came to be because their founders would not take no for an answer. Getting yourself in front of a prominent figure when you don’t have much credit starting out can be difficult, but is absolutely necessary to grow and learn. Figure out a way to get in contact with a mentor in your industry. Keep messaging/calling different people or keep following up with the same people until you get a meeting or call with them.
-	Description:: Sometimes the only way to get to where you need to be is through sheer persistence. Many startup successes came to be because their founders would not take no for an answer. Getting yourself in front of a prominent figure when you don’t have much credit starting out can be difficult, but is absolutely necessary to grow and learn. Figure out a way to get in contact with a mentor in your industry. Keep messaging/calling different people or keep following up with the same people until you get a meeting or call with them.
+	Lesson Type:: watch
+	Body:: <p>Gleb talks about how his team leveraged their bootstrapping position to get more favorable terms in a termsheet.</p>
+	Description:: Bootstrapping Can Be Used to Your Advantage- Gleb Budman
+	Video Uid:: 134890683
+	Video Title:: Bootstrapping Can Be Used to Your Advantage
+	Video Author:: Gleb Budman, CEO of BackBlaze
 
-	Lesson Type:: discussion
-	Body:: Think back to a time when you gave up instead of pushing forward. Why did you stop? Was worth it? If you could go back to do it all over again, could you make it?
-	Description:: Think back to a time when you gave up instead of pushing forward. Why did you stop? Was worth it? If you could go back to do it all over again, could you make it?
-
-	Lesson Type:: discussion
-	Body:: Being a full time entrepreneur usually means giving up your social life, relationships, and family time for your work. You have to put everything you have into it because competition is fierce and everyone else is working just as hard if not not harder. How badly do you want to pursue your idea, and how much are you willing to sacrifice to reach your goals?
-	Description:: Being a full time entrepreneur usually means giving up your social life, relationships, and family time for your work. You have to put everything you have into it because competition is fierce and everyone else is working just as hard if not not harder. How badly do you want to pursue your idea, and how much are you willing to sacrifice to reach your goals?
-
-	Lesson Type:: discussion
-	Body:: Think of a time when you did manage to push through instead of giving up. What kept you going? Could you dedicate yourself to pursuing a goal for 5 years, or even 10? What keeps you going through tough times even now?
-	Description:: Think of a time when you did manage to push through instead of giving up. What kept you going? Could you dedicate yourself to pursuing a goal for 5 years, or even 10? What keeps you going through tough times even now?
-
-	Lesson Type:: reading
-	Body:: Book: Humble Pie - Gordon Ramsay http://www.amazon.com/Humble-Pie-Gordon-Ramsay-ebook/dp/B003E74B24 
-	Description:: Book: Humble Pie - Gordon Ramsay http://www.amazon.com/Humble-Pie-Gordon-Ramsay-ebook/dp/B003E74B24 
-
-	Lesson Type:: reading
-	Body:: Book: The Hard Thing About Hard Things - Ben Horowitz http://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205 
-	Description:: Book: The Hard Thing About Hard Things - Ben Horowitz http://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205 
-
-	Lesson Type:: reading
-	Body:: AirBnB got rejected 7 times in 2008 https://medium.com/@bchesky/7-rejections-7d894cbaa084
-	Description:: AirBnB got rejected 7 times in 2008 https://medium.com/@bchesky/7-rejections-7d894cbaa084
-
-	Lesson Type:: reading
-	Body:: What Happens to a Start Up When a Cofounder Dies http://www.forbes.com/sites/ellenhuet/2015/06/25/what-happens-to-a-startup-when-a-cofounder-dies-kitchit/
-	Description:: What Happens to a Start Up When a Cofounder Dies http://www.forbes.com/sites/ellenhuet/2015/06/25/what-happens-to-a-startup-when-a-cofounder-dies-kitchit/
-
-	Lesson Type:: reading
-	Body:: The Startup Hustle http://www.entrepreneur.com/article/230073 
-	Description:: The Startup Hustle http://www.entrepreneur.com/article/230073 
-
-Track: RESOURCEFULNESS
-Track Order: 
 	Lesson Type:: challenge
 	Body:: During hard times you’ll have to make do without many things and even figure out how to survive without much money. Give yourself a budget of $5/day; live on it for 2 weeks.
 	Description:: During hard times you’ll have to make do without many things and even figure out how to survive without much money. Give yourself a budget of $5/day; live on it for 2 weeks.
@@ -856,7 +65,7 @@ Track Order:
 	Description:: Not Spending It (You only need to read the “Not Spending It” section) http://paulgraham.com/start.html
 
 Track: FAIL SPECTACULARLY
-Track Order: 0
+Track Order: 1
 	Lesson Type:: watch
 	Body:: <p>Joon talks about how aiming too low is detrimental to progress.</p>
 	Description:: Aim High- Joon Yun
@@ -934,85 +143,81 @@ Track Order: 0
 	Body:: http://startupquote.com/
 	Description:: http://startupquote.com/
 
-Track: LEADERSHIP
+Track: PERSISTENCE
 Track Order: 2
 	Lesson Type:: watch
-	Body:: <p>Heidi talks about how negotiation is not about winning against someone else, but about coming to terms that benefit both parties.</p>
-	Description:: Negotiations- Heidi Roizen
-	Video Uid:: 134891029
-	Video Title:: Negotiations
-	Video Author:: Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
+	Body:: <p>Dan talks about his story and the hurdles he faced in the early days of his journey.</p>
+	Description:: Becoming an Entrepreneur- Dan Price
+	Video Uid:: 134882645
+	Video Title:: Becoming an Entrepreneur
+	Video Author:: Dan Price, CEO of Gravity Payments
 
+	Lesson Type:: watch
+	Body:: <p>Ron talks about how difficult business is, and why being persistent and passionate is crucial to success.</p>
+	Description:: None of this is Easy- Ron Johnson
+	Video Uid:: 134883014
+	Video Title:: None of this is Easy
+	Video Author:: Ron Johnson, former Senior Vice President of Retail Operations at Apple
+
+	Lesson Type:: watch
+	Body:: <p>Nate talks about the early obstacles Airbnb faced and how they dealt with them.</p>
+	Description:: AirBnB & Early Obstacles- Nate Blecharczyk
+	Video Uid:: 134883166
+	Video Title:: AirBnB & Early Obstacles
+	Video Author:: Nate Blecharczyk, Founder and CTO of Airbnb
+
+	Lesson Type:: challenge
+	Body:: Running a company is a marathon, not a sprint. You can’t work on a startup if you don’t eat well, sleep well, and exercise to stay healthy. You don’t have to give up meat to be healthy, but making such a drastic change takes a lot of willpower and discipline: become a vegetarian for 2 weeks and . If you cheat, that’s on you; there are much harder things you’ll have to face on your way to becoming an entrepreneur.
+	Description:: Running a company is a marathon, not a sprint. You can’t work on a startup if you don’t eat well, sleep well, and exercise to stay healthy. You don’t have to give up meat to be healthy, but making such a drastic change takes a lot of willpower and discipline: become a vegetarian for 2 weeks and . If you cheat, that’s on you; there are much harder things you’ll have to face on your way to becoming an entrepreneur.
+
+	Lesson Type:: challenge
+	Body:: The hacking life style has been highly glamorized, but it’s actually a terrible idea to skip meals and go to bed at 5 AM every day. For 2 weeks, go to bed no later than 11 pm, wake up at 6 am, and get an hour of work done before 8 am. Again, cheat if you’d like, but remember that there are a lot of people out there who life like this already with no problems.
+	Description:: The hacking life style has been highly glamorized, but it’s actually a terrible idea to skip meals and go to bed at 5 AM every day. For 2 weeks, go to bed no later than 11 pm, wake up at 6 am, and get an hour of work done before 8 am. Again, cheat if you’d like, but remember that there are a lot of people out there who life like this already with no problems.
+
+	Lesson Type:: challenge
+	Body:: Sometimes the only way to get to where you need to be is through sheer persistence. Many startup successes came to be because their founders would not take no for an answer. Getting yourself in front of a prominent figure when you don’t have much credit starting out can be difficult, but is absolutely necessary to grow and learn. Figure out a way to get in contact with a mentor in your industry. Keep messaging/calling different people or keep following up with the same people until you get a meeting or call with them.
+	Description:: Sometimes the only way to get to where you need to be is through sheer persistence. Many startup successes came to be because their founders would not take no for an answer. Getting yourself in front of a prominent figure when you don’t have much credit starting out can be difficult, but is absolutely necessary to grow and learn. Figure out a way to get in contact with a mentor in your industry. Keep messaging/calling different people or keep following up with the same people until you get a meeting or call with them.
+
+	Lesson Type:: discussion
+	Body:: Think back to a time when you gave up instead of pushing forward. Why did you stop? Was worth it? If you could go back to do it all over again, could you make it?
+	Description:: Think back to a time when you gave up instead of pushing forward. Why did you stop? Was worth it? If you could go back to do it all over again, could you make it?
+
+	Lesson Type:: discussion
+	Body:: Being a full time entrepreneur usually means giving up your social life, relationships, and family time for your work. You have to put everything you have into it because competition is fierce and everyone else is working just as hard if not not harder. How badly do you want to pursue your idea, and how much are you willing to sacrifice to reach your goals?
+	Description:: Being a full time entrepreneur usually means giving up your social life, relationships, and family time for your work. You have to put everything you have into it because competition is fierce and everyone else is working just as hard if not not harder. How badly do you want to pursue your idea, and how much are you willing to sacrifice to reach your goals?
+
+	Lesson Type:: discussion
+	Body:: Think of a time when you did manage to push through instead of giving up. What kept you going? Could you dedicate yourself to pursuing a goal for 5 years, or even 10? What keeps you going through tough times even now?
+	Description:: Think of a time when you did manage to push through instead of giving up. What kept you going? Could you dedicate yourself to pursuing a goal for 5 years, or even 10? What keeps you going through tough times even now?
+
+	Lesson Type:: reading
+	Body:: Book: Humble Pie - Gordon Ramsay http://www.amazon.com/Humble-Pie-Gordon-Ramsay-ebook/dp/B003E74B24 
+	Description:: Book: Humble Pie - Gordon Ramsay http://www.amazon.com/Humble-Pie-Gordon-Ramsay-ebook/dp/B003E74B24 
+
+	Lesson Type:: reading
+	Body:: Book: The Hard Thing About Hard Things - Ben Horowitz http://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205 
+	Description:: Book: The Hard Thing About Hard Things - Ben Horowitz http://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205 
+
+	Lesson Type:: reading
+	Body:: AirBnB got rejected 7 times in 2008 https://medium.com/@bchesky/7-rejections-7d894cbaa084
+	Description:: AirBnB got rejected 7 times in 2008 https://medium.com/@bchesky/7-rejections-7d894cbaa084
+
+	Lesson Type:: reading
+	Body:: What Happens to a Start Up When a Cofounder Dies http://www.forbes.com/sites/ellenhuet/2015/06/25/what-happens-to-a-startup-when-a-cofounder-dies-kitchit/
+	Description:: What Happens to a Start Up When a Cofounder Dies http://www.forbes.com/sites/ellenhuet/2015/06/25/what-happens-to-a-startup-when-a-cofounder-dies-kitchit/
+
+	Lesson Type:: reading
+	Body:: The Startup Hustle http://www.entrepreneur.com/article/230073 
+	Description:: The Startup Hustle http://www.entrepreneur.com/article/230073 
+
+Track: IDEA
+Track Order: 0
 	Lesson Type:: watch
 	Body:: <p>Nate talks about how though Airbnb seems like an obvious success now, it was a culmination of years spent acquiring skills, perseverance, and hustle</p>
 	Description:: Origin of AirBnB- Nate Blecharczyk
 	Video Uid:: 134891028
 	Video Title:: Origin of AirBnB
 	Video Author:: Nate Blecharczyk, Founder and CTO of Airbnb
-
-	Lesson Type:: watch
-	Body:: <p>Josh talks about the importance of clear and direct communication as well as having hard conversations up front.</p>
-	Description:: Have Difficult Conversations- Josh Buckley
-	Video Uid:: 135826441
-	Video Title:: Have Difficult Conversations
-	Video Author:: Josh Buckley, Founder and CEO of MinoMonsters
-
-	Lesson Type:: challenge
-	Body:: Good leaders need to be able to reduce complex and complicated ideas down to simple explanations that people can understand. Learn about a scientific theory and explain it to us like you would to a 5 year old.
-	Description:: Good leaders need to be able to reduce complex and complicated ideas down to simple explanations that people can understand. Learn about a scientific theory and explain it to us like you would to a 5 year old.
-
-	Lesson Type:: challenge
-	Body:: Many think leadership is about making decisions and convincing others to follow you. Practice “servant leadership” (http://bit.ly/1f9qDIM)  by serving others on your team or community- volunteer at an event, donate something useful to a homeless person besides money, get a stranger to tell you their life story, or ask the intern/secretary at your day job if you can help them out with some of their tasks. You’ll be surprised what you learn by leading from behind.
-	Description:: Many think leadership is about making decisions and convincing others to follow you. Practice “servant leadership” (http://bit.ly/1f9qDIM)  by serving others on your team or community- volunteer at an event, donate something useful to a homeless person besides money, get a stranger to tell you their life story, or ask the intern/secretary at your day job if you can help them out with some of their tasks. You’ll be surprised what you learn by leading from behind.
-
-	Lesson Type:: challenge
-	Body:: Knowing yourself helps with determining your strengths, weaknesses, and compatibility with other people. Being a leader means improving your flaws and harnessing your abilities. Take this test: http://www.16personalities.com/ to figure out roughly what your mental tendencies are. Share your results below and tell us about how you will make changes to how you work with other people.
-	Description:: Knowing yourself helps with determining your strengths, weaknesses, and compatibility with other people. Being a leader means improving your flaws and harnessing your abilities. Take this test: http://www.16personalities.com/ to figure out roughly what your mental tendencies are. Share your results below and tell us about how you will make changes to how you work with other people.
-
-	Lesson Type:: challenge
-	Body:: Being a good leader means more than showing your followers where to go, but also helping those who may not have the ability to keep up. Do something a friend is afraid of, then help walk them through it together.
-	Description:: Being a good leader means more than showing your followers where to go, but also helping those who may not have the ability to keep up. Do something a friend is afraid of, then help walk them through it together.
-
-	Lesson Type:: challenge
-	Body:: Leaders need to be good at figuring out other people’s strengths and what benefit they can provide. Find 5 strangers and learn something from each of them that you can use to better yourself.
-	Description:: Leaders need to be good at figuring out other people’s strengths and what benefit they can provide. Find 5 strangers and learn something from each of them that you can use to better yourself.
-
-	Lesson Type:: discussion
-	Body:: Knowing our own blind spots is important in more than just driving. After reading about the 8 common leadership styles you can probably find 1 near-perfect fit and a couple other styles you identify with...but what is your leadership “blindspot” and how can you compensate for it? 
-	Description:: Knowing our own blind spots is important in more than just driving. After reading about the 8 common leadership styles you can probably find 1 near-perfect fit and a couple other styles you identify with...but what is your leadership “blindspot” and how can you compensate for it? 
-
-	Lesson Type:: discussion
-	Body:: Are you an aggressive negotiator or more of a mediator? Describe the pros and cons of your negotiation style.
-	Description:: Are you an aggressive negotiator or more of a mediator? Describe the pros and cons of your negotiation style.
-
-	Lesson Type:: reading
-	Body:: 8 Common Leadership Styles https://www.asaecenter.org/Resources/ANowDetail.cfm?ItemNumber=241962<div class='tabbed-section'><br><div class='tabbed'>i.</div>Study Q: Which leadership style are you most?</div>
-	Description:: 8 Common Leadership Styles https://www.asaecenter.org/Resources/ANowDetail.cfm?ItemNumber=241962
-
-	Lesson Type:: reading
-	Body:: Holacracy - The new iterative corporate structure that is revolutionizing leading companies such as Zappos and Medium. http://firstround.com/review/heres-why-you-should-care-about-holacracy/ <div class='tabbed-section'><br><div class='tabbed'>i.</div>Study Q: Why do you think many of the Zappos employees (20%) quit Zappos after the CEO announced a shift to total Holacracy?</div>
-	Description:: Holacracy - The new iterative corporate structure that is revolutionizing leading companies such as Zappos and Medium. http://firstround.com/review/heres-why-you-should-care-about-holacracy/ 
-
-	Lesson Type:: reading
-	Body:: What it’s like to work with Elon Musk http://www.quora.com/What-is-it-like-to-work-with-Elon-Musk/answer/Dolly-Singh-8 
-	Description:: What it’s like to work with Elon Musk http://www.quora.com/What-is-it-like-to-work-with-Elon-Musk/answer/Dolly-Singh-8 
-
-	Lesson Type:: reading
-	Body:: Mean People Don’t Succeed http://paulgraham.com/mean.html
-	Description:: Mean People Don’t Succeed http://paulgraham.com/mean.html
-
-	Lesson Type:: reading
-	Body:: 12 Traits of Startup Leaders http://www.inc.com/young-entrepreneur-council/12-traits-of-successful-start-up-leaders.html 
-	Description:: 12 Traits of Startup Leaders http://www.inc.com/young-entrepreneur-council/12-traits-of-successful-start-up-leaders.html 
-
-Track: IDEA
-Track Order: 0
-	Lesson Type:: watch
-	Body:: 
-	Description:: Origin of AirBnB- Nate Blecharczyk
-	Video Uid:: 134891028
-	Video Title:: Origin of AirBnB
-	Video Author:: Nate Blecharczyk
 
 	Lesson Type:: watch
 	Body:: <p>Chris talks about the early days of Shazam and how they came up with the idea and how it has evolved from the original concept.</p>
@@ -1036,7 +241,7 @@ Track Order: 0
 	Video Author:: Aaron Levie, CEO and Founder of Box
 
 	Lesson Type:: watch
-	Body:: 
+	Body:: 	Body
 	Description:: You’re Doing a Startup for the Wrong Reasons- Dave McClure
 	Video Uid:: 134894515
 	Video Title:: You’re Doing a Startup for the Wrong Reasons
@@ -1112,7 +317,7 @@ Track Order: 1
 	Video Author:: Ron Johnson, former Senior Vice President of Retail Operations at Apple
 
 	Lesson Type:: watch
-	Body:: 
+	Body:: 	Body
 	Description:: CoFounders and the Big Picture- Shawn Fanning
 	Video Uid:: 134904023
 	Video Title:: CoFounders and the Big Picture
@@ -1241,7 +446,7 @@ Track Order: 2
 Track: INCORPORATION
 Track Order: 3
 	Lesson Type:: watch
-	Body:: 
+	Body:: 	Body
 	Description:: Corporate Formation and Why- Jared Brubaker
 	Video Uid:: 134903216
 	Video Title:: Corporate Formation and Why
@@ -1255,14 +460,14 @@ Track Order: 3
 	Video Author:: Jared Brubaker, Founder of Brubaker Law & Angel Investor
 
 	Lesson Type:: watch
-	Body:: 
+	Body:: 	Body
 	Description:: Should you Incorporate Outside of the U.S.?- Jared Brubaker
 	Video Uid:: 134904025
 	Video Title:: Should you Incorporate Outside of the U.S.?
 	Video Author:: Jared Brubaker
 
 	Lesson Type:: watch
-	Body:: 
+	Body:: 	Body
 	Description:: Why should I Incorporate as a C-Corp?- Jared Brubaker
 	Video Uid:: 134904026
 	Video Title:: Why should I Incorporate as a C-Corp?
@@ -1276,7 +481,7 @@ Track Order: 3
 	Video Author:: Jared Brubaker, Founder of Brubaker Law & Angel Investor
 
 	Lesson Type:: watch
-	Body:: 
+	Body:: 	Body
 	Description:: Vesting- Jared Brubaker
 	Video Uid:: 134904513
 	Video Title:: Vesting
@@ -1285,7 +490,7 @@ Track Order: 3
 	Lesson Type:: watch
 	Body:: <p>Jared talks about the board of directors, management of the company, and intellectual property.</p>
 	Description:: Management of a Company- Jared Brubaker
-	Video Uid:: 134904516
+	Video Uid:: 134904032
 	Video Title:: Management of a Company
 	Video Author:: Jared Brubaker, Founder of Brubaker Law & Angel Investor
 
@@ -1320,6 +525,77 @@ Track Order: 3
 	Lesson Type:: reading
 	Body:: Incorporate Silicon Valley with the standard for $700 at www.clerky.com 
 	Description:: Incorporate Silicon Valley with the standard for $700 at www.clerky.com 
+
+Track: VALUE PROPOSITION
+Track Order: 0
+	Lesson Type:: watch
+	Body:: <p>Dan talks about how focusing on helping others instead of solely on profit  will naturally lead to receiving more support and eventual success.</p>
+	Description:: Find Someone Who Needs Help and the Funding Will Come- Dan Price
+	Video Uid:: 134904514
+	Video Title:: Find Someone Who Needs Help and the Funding Will Come
+	Video Author:: Dan Price, CEO of Gravity Payments
+
+	Lesson Type:: watch
+	Body:: 	Body
+	Description:: The Competition Was Built by People Who Were Too Qualified- Scott Cook
+	Video Uid:: 134904515
+	Video Title:: The Competition Was Built by People Who Were Too Qualified
+	Video Author:: Scott Cook
+
+	Lesson Type:: watch
+	Body:: <p>Ron talks about the importance of having a vision for your goals and why it helps you achieve better outcomes.</p>
+	Description:: Have a Vision- Ron Johnson
+	Video Uid:: 134904516
+	Video Title:: Have a Vision
+	Video Author:: Ron Johnson, former Senior Vice President of Retail Operations at Apple
+
+	Lesson Type:: challenge
+	Body:: Interviewing people without getting biased responses is hard, but you want to do it right or the data you collect is useless! Interview 20 people in your “target market” (the people who have your chosen problem and need your solution). Instead of asking them if they would use your product, ask them about the pains that they are trying to solve and how they have solved them before. Then ask them what they would use to solve these problems if they had a magic wand and could make anything appear. Bonus points if any of them come up with a solution close your product. If none did, think about augmenting your solution with some of their more popular ideas.
+	Description:: Interviewing people without getting biased responses is hard, but you want to do it right or the data you collect is useless! Interview 20 people in your “target market” (the people who have your chosen problem and need your solution). Instead of asking them if they would use your product, ask them about the pains that they are trying to solve and how they have solved them before. Then ask them what they would use to solve these problems if they had a magic wand and could make anything appear. Bonus points if any of them come up with a solution close your product. If none did, think about augmenting your solution with some of their more popular ideas.
+
+	Lesson Type:: challenge
+	Body:: Ask a friend about their opinion on your idea and keep asking “why?” until they reveal the deepest truth to their reasoning. Or until they burn out.
+	Description:: Ask a friend about their opinion on your idea and keep asking “why?” until they reveal the deepest truth to their reasoning. Or until they burn out.
+
+	Lesson Type:: challenge
+	Body:: Complete a business model canvas for your product. If you’re having trouble with this one then complete a business model canvas for a popular product you love first. (https://bitly.com/shorten/) 
+	Description:: Complete a business model canvas for your product. If you’re having trouble with this one then complete a business model canvas for a popular product you love first. (http://bit.ly/1vm96Wb) 
+
+	Lesson Type:: challenge
+	Body:: Prototyping<div class='tabbed-section'><br><div class='tabbed'>i.</div>Is your product a physical good? Make 3 “low fidelity” prototypes out of materials in your home. Show them to 10 people you think would need it and have them pick the best one. It’s better to iterate early before you’ve committed money and hours to a form factor.</div><div class='tabbed-section'><br><div class='tabbed'>ii.</div>Is your product a service? Invite 3 users for a “mock beta test”- Have them tell you what they want, then fulfill that service of your own accord without them knowing, and get their feedback on their experience. Ex. If you are a food delivery service, deliver the food yourself instead of putting in the work to hire a team of delivery people.</div>
+	Description:: Prototyping
+
+	Lesson Type:: challenge
+	Body:: It’s important to remember that there are a myriad of ways of doing something, and your product should support multiple types of usage. Think of your favorite hobby, then have a friend who isn't familiar with it do it in front of you and note how their experience differs from yours.
+	Description:: It’s important to remember that there are a myriad of ways of doing something, and your product should support multiple types of usage. Think of your favorite hobby, then have a friend who isn't familiar with it do it in front of you and note how their experience differs from yours.
+
+	Lesson Type:: discussion
+	Body:: What’s more difficult to you with interviewing customers: soliciting so many strangers in the first place, or talking to them about your product in an unbiased manner? Why?
+	Description:: What’s more difficult to you with interviewing customers: soliciting so many strangers in the first place, or talking to them about your product in an unbiased manner? Why?
+
+	Lesson Type:: discussion
+	Body:: Describe a time you decided to pivot instead of improve on your idea. What motivated you to go in a different direction? What was the hardest part about changing your business model?
+	Description:: Describe a time you decided to pivot instead of improve on your idea. What motivated you to go in a different direction? What was the hardest part about changing your business model?
+
+	Lesson Type:: discussion
+	Body:: Think about a product you REALLY love, why do you love it so much? Break down each of its features, what value does each feature provide? Is there a simpler or better way it could have to provide these same values?
+	Description:: Think about a product you REALLY love, why do you love it so much? Break down each of its features, what value does each feature provide? Is there a simpler or better way it could have to provide these same values?
+
+	Lesson Type:: discussion
+	Body:: What is your goal in helping users or customers? What do you want to help people with and why do you want to help them?
+	Description:: What is your goal in helping users or customers? What do you want to help people with and why do you want to help them?
+
+	Lesson Type:: reading
+	Body:: Do You Really Need to Pivot? http://techcrunch.com/2015/01/07/before-you-make-that-pivot/ 
+	Description:: Do You Really Need to Pivot? http://techcrunch.com/2015/01/07/before-you-make-that-pivot/ 
+
+	Lesson Type:: reading
+	Body:: How to Listen to Customers https://drive.google.com/file/d/0B0JTjFk5HGd2c0hnaUhJU3JWUW8/view 
+	Description:: How to Listen to Customers https://drive.google.com/file/d/0B0JTjFk5HGd2c0hnaUhJU3JWUW8/view 
+
+	Lesson Type:: reading
+	Body:: P&G: Innovate by Moving in with the Customer https://medium.com/@kavinstewart/why-procter-gamble-is-more-disruptive-than-you-613c3aba3811 
+	Description:: P&G: Innovate by Moving in with the Customer https://medium.com/@kavinstewart/why-procter-gamble-is-more-disruptive-than-you-613c3aba3811 
 
 Track: TECH STACK
 Track Order: 1
@@ -1526,10 +802,6 @@ Track Order: 3
 	Body:: We want to make sure we aren’t just getting users, but retaining them and keeping them active. What are some ways you can analyze your first batch of users and track their engagement? How would you respond to low engagement before they become inactive?
 	Description:: We want to make sure we aren’t just getting users, but retaining them and keeping them active. What are some ways you can analyze your first batch of users and track their engagement? How would you respond to low engagement before they become inactive?
 
-	Lesson Type:: discussion
-	Body:: Marketing
-	Description:: Marketing
-
 	Lesson Type:: reading
 	Body:: Instagram: A Pivotal Pivot http://techcrunch.com/2010/11/08/instagram-a-pivotal-pivot/
 	Description:: Instagram: A Pivotal Pivot http://techcrunch.com/2010/11/08/instagram-a-pivotal-pivot/
@@ -1569,7 +841,7 @@ Track Order: 3
 Track: OPENING & CLOSING
 Track Order: 0
 	Lesson Type:: watch
-	Body:: 
+	Body:: 	Body
 	Description::  Create Demand and Sell the Product Yourself- Scott Cook
 	Video Uid:: 134905823
 	Video Title::  Create Demand and Sell the Product Yourself
@@ -1671,21 +943,21 @@ Track Order: 0
 	Video Author:: Hermione Way, Reality TV Personality & Founder of Vibease
 
 	Lesson Type:: watch
-	Body:: 
+	Body:: 	Body
 	Description:: The Do’s of the Silicon Valley- Hermione Way
 	Video Uid:: 134905818
 	Video Title:: The Do’s of the Silicon Valley
 	Video Author:: Hermione Way
 
 	Lesson Type:: watch
-	Body:: 
+	Body:: 	Body
 	Description:: The Do Not’s of Silicon Valley- Hermione Way
 	Video Uid:: 134905820
 	Video Title:: The Do Not’s of Silicon Valley
 	Video Author:: Hermione Way
 
 	Lesson Type:: watch
-	Body:: 
+	Body:: 	Body
 	Description:: Have a Beer with Reporters- Hermione Way
 	Video Uid:: 134905821
 	Video Title:: Have a Beer with Reporters
@@ -1755,6 +1027,717 @@ Track Order: 0
 	Body:: Create various marketing materials and graphics with Canva. https://www.canva.com/
 	Description:: Create various marketing materials and graphics with Canva. https://www.canva.com/
 
+Track: PITCHING
+Track Order: 0
+	Lesson Type:: watch
+	Body:: <p>Jeff talks about the variations in what investors look for in startups, and how you should manage their expectations.</p>
+	Description:: There Are Two Types of Investors- Jeff Selbert
+	Video Uid:: 134976915
+	Video Title:: There Are Two Types of Investors
+	Video Author:: Jeff Seibert, Founder of Crashlytics & Sr. Director of Product at Twitter.
+
+	Lesson Type:: watch
+	Body:: <p>Reena talks about the difficulties and obstacles to pitching.</p>
+	Description:: Business Pitching is Incredibly Difficult- Reena Jadhav
+	Video Uid:: 134977157
+	Video Title:: Business Pitching is Incredibly Difficult
+	Video Author:: Reena Jadhav, Serial Entrepreneur & Startup Advisor & Investor
+
+	Lesson Type:: watch
+	Body:: 	Body
+	Description:: The Business Pitch Structure- Reena Jadhav
+	Video Uid:: 134977158
+	Video Title:: The Business Pitch Structure
+	Video Author:: Reena Jadhav
+
+	Lesson Type:: watch
+	Body:: 	Body
+	Description:: The Content of the Business Pitch- Reena Jadha
+	Video Uid:: 134977159
+	Video Title:: The Content of the Business Pitch
+	Video Author:: Reena Jadha
+
+	Lesson Type:: watch
+	Body:: 	Body
+	Description:: The Ten Rules of Business Pitching- Reena Jadhav
+	Video Uid:: 134977160
+	Video Title:: The Ten Rules of Business Pitching
+	Video Author:: Reena Jadhav
+
+	Lesson Type:: watch
+	Body:: 	Body
+	Description:: The Five Minute Business Pitch- Reena Jadhav
+	Video Uid:: 134977163
+	Video Title:: The Five Minute Business Pitch
+	Video Author:: Reena Jadhav
+
+	Lesson Type:: watch
+	Body:: 	Body
+	Description:: Lighting Round- Dave McClure
+	Video Uid:: 134977958
+	Video Title:: Lighting Round
+	Video Author:: Dave McClure
+
+	Lesson Type:: watch
+	Body:: <p>Dave talks about focusing on problems, not solutions.</p>
+	Description:: Elevator Pitch- Dave McClure
+	Video Uid:: 134977959
+	Video Title:: Elevator Pitch
+	Video Author:: Dave McClure,  Founder of 500 Startups & Investor
+
+	Lesson Type:: watch
+	Body:: <p>Dave talks about the fundamental forces that move people. “People do things to get laid, paid, and made”.  Roughly translated: Love/Attraction, Money/Wealth, and Fame/Reputation.</p>
+	Description:: Natural Selection- Dave McClure
+	Video Uid:: 134977963
+	Video Title:: Natural Selection
+	Video Author:: Dave McClure,  Founder of 500 Startups & Investor
+
+	Lesson Type:: watch
+	Body:: 	Body
+	Description:: Getting Interrupted is Good- Dave McClure
+	Video Uid:: 134977964
+	Video Title:: Getting Interrupted is Good
+	Video Author:: Dave talks about how interruptions signal interest. The goal is to get a reaction; not a lukewarm response.
+
+	Lesson Type:: challenge
+	Body:: AngelList is like Facebook/Linkedin for startups. Create your AngelList profile and make sure you fill out every box. Check out this article on hacking AngelList for some tips. (http://bit.ly/1DPpBSU) 
+	Description:: AngelList is like Facebook/Linkedin for startups. Create your AngelList profile and make sure you fill out every box. Check out this article on hacking AngelList for some tips. (http://bit.ly/1DPpBSU) 
+
+	Lesson Type:: challenge
+	Body:: Film, upload, and share your 2 minute elevator pitch on your social media or here with us so you can get feedback. Reach out online to startup or Silicon Valley communities if your friends don’t know too much about startups.
+	Description:: Film, upload, and share your 2 minute elevator pitch on your social media or here with us so you can get feedback. Reach out online to startup or Silicon Valley communities if your friends don’t know too much about startups.
+
+	Lesson Type:: challenge
+	Body:: Go out and pitch 10 people your idea until you know your pitch by heart.
+	Description:: Go out and pitch 10 people your idea until you know your pitch by heart.
+
+	Lesson Type:: challenge
+	Body:: Take your favorite children’s story and distill it into a 2 minute pitch on how it has affected you so strongly and why you think other children should or shouldn’t read it.
+	Description:: Take your favorite children’s story and distill it into a 2 minute pitch on how it has affected you so strongly and why you think other children should or shouldn’t read it.
+
+	Lesson Type:: challenge
+	Body:: It can be easy to lose your nerve asking investors for such huge sums of money as an investment. Go out, pitch 5 strangers and ask for 5 dollars as fundraising for your idea.
+	Description:: It can be easy to lose your nerve asking investors for such huge sums of money as an investment. Go out, pitch 5 strangers and ask for 5 dollars as fundraising for your idea.
+
+	Lesson Type:: challenge
+	Body:: There are slightly different pitches that you give to different audiences to evoke certain reactions. Create 3 different pitches: one for an investor, one for a customer, and one for a cofounder. Go out and pitch the right people the right pitch. Then go out and pitch customers a cofounder pitch, investors a customer pitch, and cofounders and investor pitch. How did they react?
+	Description:: There are slightly different pitches that you give to different audiences to evoke certain reactions. Create 3 different pitches: one for an investor, one for a customer, and one for a cofounder. Go out and pitch the right people the right pitch. Then go out and pitch customers a cofounder pitch, investors a customer pitch, and cofounders and investor pitch. How did they react?
+
+	Lesson Type:: discussion
+	Body:: Why have you picked the problem you are working on specifically? What is your story behind this issue? How can you work this into your pitch?
+	Description:: Why have you picked the problem you are working on specifically? What is your story behind this issue? How can you work this into your pitch?
+
+	Lesson Type:: discussion
+	Body:: What’s your opinion on the X for Y format, which is advocated by Y Combinator, for pitching your business quickly? Why? An example of this format would be: Uber for babysitters.
+	Description:: What’s your opinion on the X for Y format, which is advocated by Y Combinator, for pitching your business quickly? Why? An example of this format would be: Uber for babysitters.
+
+	Lesson Type:: discussion
+	Body:: What are you most scared of about pitching? People who don’t have this problem, why aren’t you scared?
+	Description:: What are you most scared of about pitching? People who don’t have this problem, why aren’t you scared?
+
+	Lesson Type:: discussion
+	Body:: What is the “emotional hook” of your pitch? Why did you choose that?
+	Description:: What is the “emotional hook” of your pitch? Why did you choose that?
+
+	Lesson Type:: reading
+	Body:: Raising Money (You only need to read the “Raising Money” section) http://paulgraham.com/start.html
+	Description:: Raising Money (You only need to read the “Raising Money” section) http://paulgraham.com/start.html
+
+	Lesson Type:: reading
+	Body:: Invest BEFORE Product/Market Fit, Double-Down AFTER with Dave McClure http://500hats.typepad.com/500blogs/2010/07/moneyball-for-startups.html
+	Description:: Invest BEFORE Product/Market Fit, Double-Down AFTER with Dave McClure http://500hats.typepad.com/500blogs/2010/07/moneyball-for-startups.html
+
+	Lesson Type:: reading
+	Body:: VentureHacks - PitchHacks http://venturehacks.com/friends
+	Description:: VentureHacks - PitchHacks http://venturehacks.com/friends
+
+	Lesson Type:: tools
+	Body:: A collection of pitch decks from companies that have raised funding http://www.pitchenvy.com/
+	Description:: A collection of pitch decks from companies that have raised funding http://www.pitchenvy.com/
+
+Track: NETWORKING
+Track Order: 1
+	Lesson Type:: watch
+	Body:: <p>Heidi talks about why building a network is important.</p>
+	Description:: Why Your Network Matters- Heidi Roizen
+	Video Uid:: 134977965
+	Video Title:: Why Your Network Matters
+	Video Author:: Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
+
+	Lesson Type:: watch
+	Body:: 	Body
+	Description:: Making a Connection- Heidi Roizen
+	Video Uid:: 134980480
+	Video Title:: Making a Connection
+	Video Author:: Heidi Roizen
+
+	Lesson Type:: watch
+	Body:: 	Body
+	Description:: The Art of Giving- Heidi Roizen
+	Video Uid:: 134988233
+	Video Title:: The Art of Giving
+	Video Author:: Heidi Roizen
+
+	Lesson Type:: watch
+	Body:: <p>Heidi talks about how presenting a consistent image helps you build stronger relationships.</p>
+	Description:: Being Consistent and Personal Branding- Heidi Roizen
+	Video Uid:: 134980484
+	Video Title:: Being Consistent and Personal Branding
+	Video Author:: Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
+
+	Lesson Type:: watch
+	Body:: <p>Aaron Levie talks about how he and his team got in contact with Mark Cuban.</p>
+	Description:: Hustling and Mark Cuban- Aaron Levie
+	Video Uid:: 134980485
+	Video Title:: Hustling and Mark Cuban
+	Video Author:: Aaron Levie, CEO and Founder of Box
+
+	Lesson Type:: watch
+	Body:: 	Body
+	Description:: Investors Don’t Fund Dots- Jeff Seibert
+	Video Uid:: 134980487
+	Video Title:: Investors Don’t Fund Dots
+	Video Author:: Jeff Seibert
+
+	Lesson Type:: challenge
+	Body:: Go to a meetup and get 10 business cards, then connect with them on Linkedin and set up 5 in-person meetings.
+	Description:: Go to a meetup and get 10 business cards, then connect with them on Linkedin and set up 5 in-person meetings.
+
+	Lesson Type:: challenge
+	Body:: Networking needs to be genuine and not just for the sake of networking. Make friends with someone new today who you intend to meet again. Tell us about them.
+	Description:: Networking needs to be genuine and not just for the sake of networking. Make friends with someone new today who you intend to meet again. Tell us about them.
+
+	Lesson Type:: challenge
+	Body:: Pick someone high profile that you admire and find a way to get in contact with them. Meet with them and learn about how they developed into the person that you look up to today.
+	Description:: Pick someone high profile that you admire and find a way to get in contact with them. Meet with them and learn about how they developed into the person that you look up to today.
+
+	Lesson Type:: challenge
+	Body:: Networking is not about you telling people your story, it’s about you listening to others. Learn the life stories of 10 strangers.
+	Description:: Networking is not about you telling people your story, it’s about you listening to others. Learn the life stories of 10 strangers.
+
+	Lesson Type:: challenge
+	Body:: Often the most genuine connections come from helping people out. Hang out at a coffee shop or startup hangout and offer your help to 4 people for free. How easy is it to ask for a favor after?
+	Description:: Often the most genuine connections come from helping people out. Hang out at a coffee shop or startup hangout and offer your help to 4 people for free. How easy is it to ask for a favor after?
+
+	Lesson Type:: challenge
+	Body:: Set up a skype call with one of the other online students; comment below!
+	Description:: Set up a skype call with one of the other online students; comment below!
+
+	Lesson Type:: challenge
+	Body:: You never know which connections will be the most fortuitous. Go to an event and purposefully network with someone who seems to be on the lowest rung on the ladder: the intern, waiter, etc. What comes out of the experience?
+	Description:: You never know which connections will be the most fortuitous. Go to an event and purposefully network with someone who seems to be on the lowest rung on the ladder: the intern, waiter, etc. What comes out of the experience?
+
+	Lesson Type:: discussion
+	Body:: When you ask someone for a favor, how do you feel afterwards? Do you tend to feel like you need to repay them? Happy they helped you out and wanting to pay it forward to another person? Or threatened that they might hold it against you later?
+	Description:: When you ask someone for a favor, how do you feel afterwards? Do you tend to feel like you need to repay them? Happy they helped you out and wanting to pay it forward to another person? Or threatened that they might hold it against you later?
+
+	Lesson Type:: discussion
+	Body:: What’s one networking mistake you have made? How can you prevent doing it again?
+	Description:: What’s one networking mistake you have made? How can you prevent doing it again?
+
+	Lesson Type:: discussion
+	Body:: Are you a giver, matcher, or taker when it comes to doing favors for people? Why do you act this way?
+	Description:: Are you a giver, matcher, or taker when it comes to doing favors for people? Why do you act this way?
+
+	Lesson Type:: discussion
+	Body:: Who is someone you look up to as “that guy” or “that girl” who everyone likes and wants to be around in a professional setting? Why do you think they are so good at attracting people?
+	Description:: Who is someone you look up to as “that guy” or “that girl” who everyone likes and wants to be around in a professional setting? Why do you think they are so good at attracting people?
+
+	Lesson Type:: discussion
+	Body:: How would you change your pitch if it was for a public competition versus a 1 on 1 investor meeting?
+	Description:: How would you change your pitch if it was for a public competition versus a 1 on 1 investor meeting?
+
+	Lesson Type:: reading
+	Body:: Book: How to Win Friends and Influence People - Dale Carnegie http://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034 
+	Description:: Book: How to Win Friends and Influence People - Dale Carnegie http://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034 
+
+	Lesson Type:: reading
+	Body:: How to Raise Money http://paulgraham.com/fr.html
+	Description:: How to Raise Money http://paulgraham.com/fr.html
+
+	Lesson Type:: reading
+	Body:: What is High Resolution Fundraising? http://paulgraham.com/hiresfund.html
+	Description:: What is High Resolution Fundraising? http://paulgraham.com/hiresfund.html
+
+	Lesson Type:: reading
+	Body:: The Future of Fundraising http://paulgraham.com/future.html
+	Description:: The Future of Fundraising http://paulgraham.com/future.html
+
+	Lesson Type:: tools
+	Body:: Sidekick by Hubspot allows you to track and schedule your emails. http://www.getsidekick.com/ 
+	Description:: Sidekick by Hubspot allows you to track and schedule your emails. http://www.getsidekick.com/ 
+
+	Lesson Type:: tools
+	Body:: Data by Salesforce helps you get access to the people you need to get to. http://www.data.com/connect/index.jsp 
+	Description:: Data by Salesforce helps you get access to the people you need to get to. http://www.data.com/connect/index.jsp 
+
+Track: BUSINESS PLAN
+Track Order: 0
+	Lesson Type:: challenge
+	Body:: Update your Business Model Canvas based on the feedback you’ve gotten so far, now show it to 5 startup founders or employees and ask them to tear it apart. Go back and fix it based on their feedback. (Check out the “Value Prop” track in “Product” if you haven’t created a BMC yet!)
+	Description:: Update your Business Model Canvas based on the feedback you’ve gotten so far, now show it to 5 startup founders or employees and ask them to tear it apart. Go back and fix it based on their feedback. (Check out the “Value Prop” track in “Product” if you haven’t created a BMC yet!)
+
+	Lesson Type:: challenge
+	Body:: An Executive Summary summarizes everything about your product and business plan in just one page and is given to investors as a first look at your business. It also helps give you a high level view of the vision for your company. Write an executive summary. You can use INC Magazine’s article as a rough guide (http://bit.ly/1gHd2gp). 
+	Description:: An Executive Summary summarizes everything about your product and business plan in just one page and is given to investors as a first look at your business. It also helps give you a high level view of the vision for your company. Write an executive summary. You can use INC Magazine’s article as a rough guide (http://bit.ly/1gHd2gp). 
+
+	Lesson Type:: challenge
+	Body:: Time for some straight learning. Learn how to calculate customer acquisition cost, or CAC (http://bit.ly/1ySvnBg), lifetime customer value, or LTV (http://bit.ly/1CLtFRc), and annualized run-rate, or ARR (http://bit.ly/1vQWfjK). You can learn about how to calculate them and what they mean for your business with the links provided.
+	Description:: Time for some straight learning. Learn how to calculate customer acquisition cost, or CAC (http://bit.ly/1ySvnBg), lifetime customer value, or LTV (http://bit.ly/1CLtFRc), and annualized run-rate, or ARR (http://bit.ly/1vQWfjK). You can learn about how to calculate them and what they mean for your business with the links provided.
+
+	Lesson Type:: challenge
+	Body:: Find all your competitors and place them on a 2x2 with your product placed in the top right quadrant. Learn how to create a 2x2 of the competitive landscape here: http://stanford.io/1JYJvYY. 
+	Description:: Find all your competitors and place them on a 2x2 with your product placed in the top right quadrant. Learn how to create a 2x2 of the competitive landscape here: http://stanford.io/1JYJvYY. 
+
+	Lesson Type:: discussion
+	Body:: How do you project your revenues? What factors do those projections rely on? What do the optimistic and conservative projections look like?
+	Description:: How do you project your revenues? What factors do those projections rely on? What do the optimistic and conservative projections look like?
+
+	Lesson Type:: discussion
+	Body:: When a new competitor pops up, what is your first reaction? What is your next move?
+	Description:: When a new competitor pops up, what is your first reaction? What is your next move?
+
+	Lesson Type:: discussion
+	Body:: What is your incentive to partner with another company? Access to their user base, legitimizing yourself, help with design, or something else?
+	Description:: What is your incentive to partner with another company? Access to their user base, legitimizing yourself, help with design, or something else?
+
+	Lesson Type:: discussion
+	Body:: Do you think you should partner pre-launch in order to jumpstart sales or would you rather build your own brand first then partner?
+	Description:: Do you think you should partner pre-launch in order to jumpstart sales or would you rather build your own brand first then partner?
+
+	Lesson Type:: discussion
+	Body:: Why do you think you should project revenue now when so much is still left unknown?
+	Description:: Why do you think you should project revenue now when so much is still left unknown?
+
+	Lesson Type:: discussion
+	Body:: Which competitor of yours could become a partner if you approach them right? How?
+	Description:: Which competitor of yours could become a partner if you approach them right? How?
+
+	Lesson Type:: reading
+	Body:: How Do You Redefine Product-Market Fit? http://www.quora.com/How-do-you-define-Product-Market-Fit/answer/Kali-Albright
+	Description:: How Do You Redefine Product-Market Fit? http://www.quora.com/How-do-you-define-Product-Market-Fit/answer/Kali-Albright
+
+	Lesson Type:: reading
+	Body:: On Product-Market Fit for Startups with Marc Andreessen https://www.linkedin.com/pulse/marc-andreessen-product-market-fit-startups-marc-andreessen
+	Description:: On Product-Market Fit for Startups with Marc Andreessen https://www.linkedin.com/pulse/marc-andreessen-product-market-fit-startups-marc-andreessen
+
+	Lesson Type:: reading
+	Body:: Revenge of the Fat Guy with Marc Andreessen http://www.bhorowitz.com/revenge_of_the_fat_guy
+	Description:: Revenge of the Fat Guy with Marc Andreessen http://www.bhorowitz.com/revenge_of_the_fat_guy
+
+	Lesson Type:: reading
+	Body:: Writing a Business Plan by Sequoia Capital http://www.sequoiacap.com/grove/posts/6bzx/writing-a-business-plan 
+	Description:: Writing a Business Plan by Sequoia Capital http://www.sequoiacap.com/grove/posts/6bzx/writing-a-business-plan 
+
+Track: FINANCE
+Track Order: 2
+	Lesson Type:: challenge
+	Body:: Google some sample term sheets online, put together two of your own term sheets with terms you feel would be favorable to you if you were an investor and a founder. Don’t worry about getting the language right, the point of this is to understand what terms each party would be looking for.
+	Description:: Google some sample term sheets online, put together two of your own term sheets with terms you feel would be favorable to you if you were an investor and a founder. Don’t worry about getting the language right, the point of this is to understand what terms each party would be looking for.
+
+	Lesson Type:: challenge
+	Body:: Create your own cap table for your family members based on how much effort they’ve put into bringing the family together for events or meals. How much equity does each person deserve? Are you applying any cliffs or vesting schedules?
+	Description:: Create your own cap table for your family members based on how much effort they’ve put into bringing the family together for events or meals. How much equity does each person deserve? Are you applying any cliffs or vesting schedules?
+
+	Lesson Type:: challenge
+	Body:: Figure out what your personal burn rate (how much money you spend) will be for the next 3 months, then cut that amount by 30% however you can and figure out how you can spend it more productively. Then start doing it.
+	Description:: Figure out what your personal burn rate (how much money you spend) will be for the next 3 months, then cut that amount by 30% however you can and figure out how you can spend it more productively. Then start doing it.
+
+	Lesson Type:: challenge
+	Body:: Project your startup/idea’s 6 month burn rate to figure out how much revenue you’d make to become profitable. It’s easy to miss expenses you normally might not think of. Taxes, licenses, legal fees, food, rent, transportation, software, office supplies, etc.
+	Description:: Project your startup/idea’s 6 month burn rate to figure out how much revenue you’d make to become profitable. It’s easy to miss expenses you normally might not think of. Taxes, licenses, legal fees, food, rent, transportation, software, office supplies, etc.
+
+	Lesson Type:: challenge
+	Body:: Figure out how much money you need to launch and then how long it would take you to make the money back, as if you’re paying off a loan. This is called your payback period. How many units/subscriptions do you need to sell each month to keep from losing money?
+	Description:: Figure out how much money you need to launch and then how long it would take you to make the money back, as if you’re paying off a loan. This is called your payback period. How many units/subscriptions do you need to sell each month to keep from losing money?
+
+	Lesson Type:: discussion
+	Body:: What is your largest cost? If it’s living expenses, how can you bring them down?
+	Description:: What is your largest cost? If it’s living expenses, how can you bring them down?
+
+	Lesson Type:: discussion
+	Body:: What do you think is a VC’s attitude about paying for the founding team’s living expenses as part of the investment? How would you handle this in talking to them?
+	Description:: What do you think is a VC’s attitude about paying for the founding team’s living expenses as part of the investment? How would you handle this in talking to them?
+
+	Lesson Type:: discussion
+	Body:: What is the lifetime value of your customer? What is your cost to acquire them? Will your company ever be profitable with this ratio?
+	Description:: What is the lifetime value of your customer? What is your cost to acquire them? Will your company ever be profitable with this ratio?
+
+	Lesson Type:: reading
+	Body:: Wall Street MBA - Reuben Advani http://www.amazon.com/The-Wall-Street-Second-Edition/dp/007178831X
+	Description:: Wall Street MBA - Reuben Advani http://www.amazon.com/The-Wall-Street-Second-Edition/dp/007178831X
+
+	Lesson Type:: reading
+	Body:: How to Draft a Business Budget http://www.inc.com/encyclopedia/businessbudget.html
+	Description:: How to Draft a Business Budget http://www.inc.com/encyclopedia/businessbudget.html
+
+	Lesson Type:: reading
+	Body:: How to Make a Cap Table http://venturehacks.com/articles/cap-table
+	Description:: How to Make a Cap Table http://venturehacks.com/articles/cap-table
+
+	Lesson Type:: reading
+	Body:: How to Create the Right Kind of Option Pool http://venturehacks.com/articles/option-pool-shuffle
+	Description:: How to Create the Right Kind of Option Pool http://venturehacks.com/articles/option-pool-shuffle
+
+	Lesson Type:: reading
+	Body:: Indiegogo Hardware Field Guide: How to Budget for Your Campaign and Manufacturing https://learn.indiegogo.com/wp-content/uploads/2015/03/IGG_ER_HardwareHandbook_070814.pdf
+	Description:: Indiegogo Hardware Field Guide: How to Budget for Your Campaign and Manufacturing https://learn.indiegogo.com/wp-content/uploads/2015/03/IGG_ER_HardwareHandbook_070814.pdf
+
+	Lesson Type:: tools
+	Body:: Business Budget Calculator http://www.businessownersideacafe.com/financing/budget_calculator.html 
+	Description:: Business Budget Calculator http://www.businessownersideacafe.com/financing/budget_calculator.html 
+
+Track: EXIT
+Track Order: 3
+	Lesson Type:: challenge
+	Body:: Sell lemonade on a hot day. Set a finite amount of lemonade you will sell all day such as only 100 cups. Experiment by setting different prices and selling at different times in the day. What price left you with all lemonade sold the quickest and with a supply shortage so that some people were left out? How is this like an IPO? Feel free to do this with anything other than lemonade: you could sell online game items, artwork, cookies, hugs, etc.
+	Description:: Sell lemonade on a hot day. Set a finite amount of lemonade you will sell all day such as only 100 cups. Experiment by setting different prices and selling at different times in the day. What price left you with all lemonade sold the quickest and with a supply shortage so that some people were left out? How is this like an IPO? Feel free to do this with anything other than lemonade: you could sell online game items, artwork, cookies, hugs, etc.
+
+	Lesson Type:: challenge
+	Body:: Follow a rumor about a current impending acquisition, such as Facebook acquiring Meerkat, and pretend you are the larger company’s lawyers doing “due diligence”. What price would you recommend to buy this company at and why? What are the weak spots that you think your company can smooth over? Would you recommend buying it or not?
+	Description:: Follow a rumor about a current impending acquisition, such as Facebook acquiring Meerkat, and pretend you are the larger company’s lawyers doing “due diligence”. What price would you recommend to buy this company at and why? What are the weak spots that you think your company can smooth over? Would you recommend buying it or not?
+
+	Lesson Type:: discussion
+	Body:: What sort of exit are you looking for? An IPO or acquisition?
+	Description:: What sort of exit are you looking for? An IPO or acquisition?
+
+	Lesson Type:: discussion
+	Body:: Under what terms would you accept an acquisition; considering monetary compensation, and HR/leadership, and how your customers  and employees would be treated?
+	Description:: Under what terms would you accept an acquisition; considering monetary compensation, and HR/leadership, and how your customers  and employees would be treated?
+
+	Lesson Type:: discussion
+	Body:: If you could acquire one startup right now, who would it be and why?
+	Description:: If you could acquire one startup right now, who would it be and why?
+
+	Lesson Type:: discussion
+	Body:: You often see companies with high valuations bought much below that, but if their valuation is what they’re worth then why is that? What does this tell you about a valuation?
+	Description:: You often see companies with high valuations bought much below that, but if their valuation is what they’re worth then why is that? What does this tell you about a valuation?
+
+	Lesson Type:: reading
+	Body:: How Focused Should a Startup Be on Being Acquired http://www.quora.com/How-focused-should-a-startup-be-on-being-acquired/answer/Jeff-Clavier
+	Description:: How Focused Should a Startup Be on Being Acquired http://www.quora.com/How-focused-should-a-startup-be-on-being-acquired/answer/Jeff-Clavier
+
+	Lesson Type:: reading
+	Body:: Don’t Set Out to Get Acquired http://seanonstartups.co/2014/11/05/why-you-dont-want-to-be-acquired/
+	Description:: Don’t Set Out to Get Acquired http://seanonstartups.co/2014/11/05/why-you-dont-want-to-be-acquired/
+
+	Lesson Type:: reading
+	Body:: Selling Your Company http://seanonstartups.co/2015/08/05/selling-your-company/
+	Description:: Selling Your Company http://seanonstartups.co/2015/08/05/selling-your-company/
+
+	Lesson Type:: reading
+	Body:: What is Your Startup Worth? http://www.entrepreneur.com/article/72384
+	Description:: What is Your Startup Worth? http://www.entrepreneur.com/article/72384
+
+	Lesson Type:: reading
+	Body:: How to Prepare for an IPO http://www.inc.com/guides/preparing-for-initial-public-offering.html 
+	Description:: How to Prepare for an IPO http://www.inc.com/guides/preparing-for-initial-public-offering.html 
+
+Track: PROTECTION
+Track Order: 1
+	Lesson Type:: challenge
+	Body:: Using Google Patents and the University of Austin at Texas’s patent library look up any patents possibly related to what you’re doing. Are there any red flags?
+	Description:: Using Google Patents and the University of Austin at Texas’s patent library look up any patents possibly related to what you’re doing. Are there any red flags?
+
+	Lesson Type:: challenge
+	Body:: Is your technology patentable? Before you get a consultation, think, is your technology novel or repurposing existing technology? Create a one page outline of what your patent would look like; think of all the different “claims” you would make. Go to the USPTO and price the cost of your patent based on how many claims you would make et al, and realize these are just the fee costs. How much does your patent cost at minimum?
+	Description:: Is your technology patentable? Before you get a consultation, think, is your technology novel or repurposing existing technology? Create a one page outline of what your patent would look like; think of all the different “claims” you would make. Go to the USPTO and price the cost of your patent based on how many claims you would make et al, and realize these are just the fee costs. How much does your patent cost at minimum?
+
+	Lesson Type:: challenge
+	Body:: Search for your startup/idea name on the USPTO trademark search. Does someone else own your name? Only if their trademark is in the same industry as yours and marked “live” does it conflict.
+	Description:: Search for your startup/idea name on the USPTO trademark search. Does someone else own your name? Only if their trademark is in the same industry as yours and marked “live” does it conflict.
+
+	Lesson Type:: challenge
+	Body:: Call patent lawyers until you find one who will give you a free consultation on whether your technology is possibly patentable.
+	Description:: Call patent lawyers until you find one who will give you a free consultation on whether your technology is possibly patentable.
+
+	Lesson Type:: challenge
+	Body:: Find the technology assignment forms on Orrick corporation (http://bit.ly/16prciU) and have any cofounders or employees you might have sign them to protect your company’s IP. If you don’t have any yet, look them over so you can get an idea of what it will be like for your team once you find them!
+	Description:: Find the technology assignment forms on Orrick corporation (http://bit.ly/16prciU) and have any cofounders or employees you might have sign them to protect your company’s IP. If you don’t have any yet, look them over so you can get an idea of what it will be like for your team once you find them!
+
+	Lesson Type:: discussion
+	Body:: If you do get a patent, how would you protect it? Patenting your technology would make all your designs publically available. How much would it cost for you to enforce it? Would you rather make your technology a trade secret?
+	Description:: If you do get a patent, how would you protect it? Patenting your technology would make all your designs publically available. How much would it cost for you to enforce it? Would you rather make your technology a trade secret?
+
+	Lesson Type:: discussion
+	Body:: If you patented your idea would it be a design patent or utility patent? Which countries would you patent in and why?
+	Description:: If you patented your idea would it be a design patent or utility patent? Which countries would you patent in and why?
+
+	Lesson Type:: discussion
+	Body:: When would be the best time to patent your idea?
+	Description:: When would be the best time to patent your idea?
+
+	Lesson Type:: discussion
+	Body:: What do you think of Larry Page, CEO of Google, giving away their patents to startups that are making $500,000-$5million in annual revenue? Why would they do that? How does this affect innovation and the economy?
+	Description:: What do you think of Larry Page, CEO of Google, giving away their patents to startups that are making $500,000-$5million in annual revenue? Why would they do that? How does this affect innovation and the economy?
+
+	Lesson Type:: discussion
+	Body:: Do you think patents encourage or slow innovation? Give an example for each side of the argument.
+	Description:: Do you think patents encourage or slow innovation? Give an example for each side of the argument.
+
+	Lesson Type:: reading
+	Body:: An Entrepreneur’s Guide to Patents: The Basics http://techcrunch.com/2012/11/10/an-entrepreneurs-guide-to-patents-the-basics/ 
+	Description:: An Entrepreneur’s Guide to Patents: The Basics http://techcrunch.com/2012/11/10/an-entrepreneurs-guide-to-patents-the-basics/ 
+
+	Lesson Type:: reading
+	Body:: Can You Patent Your Mobile App? https://www.legalzoom.com/articles/can-you-patent-your-mobile-app
+	Description:: Can You Patent Your Mobile App? https://www.legalzoom.com/articles/can-you-patent-your-mobile-app
+
+	Lesson Type:: reading
+	Body:: Should You Patent or Keep it a Trade Secret?<div class='tabbed-section'><br><div class='tabbed'>i.</div>https://hbr.org/2013/11/filing-for-a-patent-versus-keeping-your-invention-a-trade-secret/</div>
+	Description:: Should You Patent or Keep it a Trade Secret?
+
+	Lesson Type:: reading
+	Body:: Official US Patent Overview and Process<div class='tabbed-section'><br><div class='tabbed'>i.</div>http://www.uspto.gov/patents-getting-started/general-information-concerning-patents</div><div class='tabbed-section'><br><div class='tabbed'>ii.</div>http://www.uspto.gov/patents-getting-started/patent-process-overview#step1</div>
+	Description:: Official US Patent Overview and Process
+
+	Lesson Type:: reading
+	Body:: Official US Trademark Overview and Process<div class='tabbed-section'><br><div class='tabbed'>i.</div>http://www.uspto.gov/trademarks-getting-started/trademark-process</div><div class='tabbed-section'><br><div class='tabbed'>ii.</div>http://www.uspto.gov/trademarks-getting-started/trademark-basics</div>
+	Description:: Official US Trademark Overview and Process
+
+	Lesson Type:: tools
+	Body:: Search for a trademark to see if it’s available. http://tmsearch.uspto.gov/bin/gate.exe?f=tess&state=4803:q4ykgt.1.1
+	Description:: Search for a trademark to see if it’s available. http://tmsearch.uspto.gov/bin/gate.exe?f=tess&state=4803:q4ykgt.1.1
+
+Track: BUSINESS DEVELOPMENT
+Track Order: 1
+	Lesson Type:: watch
+	Body:: 	Body
+	Description:: The Future of Enterprise- Aaron Levie
+	Video Uid:: 134989340
+	Video Title:: The Future of Enterprise
+	Video Author:: Aaron Levie
+
+	Lesson Type:: watch
+	Body:: <p><tab>Dan talks about the business strategies and tactics he implemented while building up Gravity Payments.</p>
+	Description:: The Evolution of Gravity Payments- Dan Price
+	Video Uid:: 134989341
+	Video Title:: The Evolution of Gravity Payments
+	Video Author:: <tab>Dan Price, CEO of Gravity Payments
+
+	Lesson Type:: challenge
+	Body:: Your business will need to be agile and quick if you want to keep it alive, are you? Go ahead with a life pivot! Move to a new location! Dump your significant other! Quit smoking! Try soylent! Change your commute!
+	Description:: Your business will need to be agile and quick if you want to keep it alive, are you? Go ahead with a life pivot! Move to a new location! Dump your significant other! Quit smoking! Try soylent! Change your commute!
+
+	Lesson Type:: challenge
+	Body:: Get over a fear by implementing 3 different strategies over 3 weeks. Which worked best? How did you decide when to implement each strategy?
+	Description:: Get over a fear by implementing 3 different strategies over 3 weeks. Which worked best? How did you decide when to implement each strategy?
+
+	Lesson Type:: challenge
+	Body:: Cold email 20 potential brand partners asking about the process to partner with them and if they would be interested. Did any reply? What did you learn?
+	Description:: Cold email 20 potential brand partners asking about the process to partner with them and if they would be interested. Did any reply? What did you learn?
+
+	Lesson Type:: challenge
+	Body:: Create a strategy map for your company. Who will be your early adopters? How will you use them as a bridge to reach the customers you really need to become profitable? Which partners do you need to succeed? How will you get resources and fundraise along the way? 
+	Description:: Create a strategy map for your company. Who will be your early adopters? How will you use them as a bridge to reach the customers you really need to become profitable? Which partners do you need to succeed? How will you get resources and fundraise along the way? 
+
+	Lesson Type:: challenge
+	Body:: Make a list of things in the business that you can take from 0-1. How will you hire and develop programs to take these things from 1-100?
+	Description:: Make a list of things in the business that you can take from 0-1. How will you hire and develop programs to take these things from 1-100?
+
+	Lesson Type:: discussion
+	Body:: What’s the difference to you between business development and user acquisition? 
+	Description:: What’s the difference to you between business development and user acquisition? 
+
+	Lesson Type:: discussion
+	Body:: What v2.0 of your product or accessory product do you plan to release later on to grow your business?
+	Description:: What v2.0 of your product or accessory product do you plan to release later on to grow your business?
+
+	Lesson Type:: discussion
+	Body:: Can you think of a way to build subscription revenue into your business to stabilize your cash flow?
+	Description:: Can you think of a way to build subscription revenue into your business to stabilize your cash flow?
+
+	Lesson Type:: discussion
+	Body:: After you launch, what new channels and business verticals can you use to distribute your product?
+	Description:: After you launch, what new channels and business verticals can you use to distribute your product?
+
+	Lesson Type:: discussion
+	Body:: Do you think a product visionary should have a crystal clear, sharp vision of the future or more of a general, blurry one? Why?
+	Description:: Do you think a product visionary should have a crystal clear, sharp vision of the future or more of a general, blurry one? Why?
+
+	Lesson Type:: discussion
+	Body:: Do you think a startup should have a Chief of Operations? Why or why not?
+	Description:: Do you think a startup should have a Chief of Operations? Why or why not?
+
+	Lesson Type:: reading
+	Body:: What is Strategy - Harvard Business Review https://hbr.org/1996/11/what-is-strategy 
+	Description:: What is Strategy - Harvard Business Review https://hbr.org/1996/11/what-is-strategy 
+
+	Lesson Type:: reading
+	Body:: 14 Ways to Get to $10 Million in Revenues Part 1 http://techcrunch.com/2010/10/10/teardown-13-ways-10-million-revenues/
+	Description:: 14 Ways to Get to $10 Million in Revenues Part 1 http://techcrunch.com/2010/10/10/teardown-13-ways-10-million-revenues/
+
+	Lesson Type:: reading
+	Body:: 14 Ways to Get to $10 Million in Revenues Part 2 http://techcrunch.com/2010/10/12/tc-teardown-13-ways-10-million-part-ii/  
+	Description:: 14 Ways to Get to $10 Million in Revenues Part 2 http://techcrunch.com/2010/10/12/tc-teardown-13-ways-10-million-part-ii/  
+
+Track: SETTING UP A COMPANY
+Track Order: 0
+	Lesson Type:: watch
+	Body:: <p>Jared talks about term sheets and convertible notes.</p>
+	Description:: How to Raise Money For Your Startup- Jared Brubaker
+	Video Uid:: 134989342
+	Video Title:: How to Raise Money For Your Startup
+	Video Author:: Jared Brubaker, Founder of Brubaker Law & Angel Investor
+
+	Lesson Type:: watch
+	Body:: <p>Tim talks specifics on term sheets and how they work.</p>
+	Description:: Term Sheets- Tim Draper
+	Video Uid:: 134989353
+	Video Title:: Term Sheets
+	Video Author:: Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
+
+	Lesson Type:: watch
+	Body:: <p>Tim talks about the types of stock companies can give out.</p>
+	Description:: Debt & Shares- Tim Draper
+	Video Uid:: 134990201
+	Video Title:: Debt & Shares
+	Video Author:: Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
+
+	Lesson Type:: watch
+	Body:: <p>Tim talks gives an example of how a vesting schedule works.</p>
+	Description:: Vesting & Splitting Shares at Investment- Tim Draper
+	Video Uid:: 134990203
+	Video Title:: Vesting & Splitting Shares at Investment
+	Video Author:: Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
+
+	Lesson Type:: watch
+	Body:: <p>Tim explains why you should never borrow money and the wonderful gift that is bankruptcy protection in the US.</p>
+	Description:: Do NOT Borrow Money- Tim Draper
+	Video Uid:: 134990204
+	Video Title:: Do NOT Borrow Money
+	Video Author:: Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
+
+	Lesson Type:: watch
+	Body:: <p>Tim talks about stock conversion and liquidation preference.</p>
+	Description:: Dividends & Conversion- Tim Draper
+	Video Uid:: 134990207
+	Video Title:: Dividends & Conversion
+	Video Author:: Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
+
+	Lesson Type:: watch
+	Body:: <p>Tim talks about anti-dilution and what happens when a company fails.</p>
+	Description:: Anti-Dilution and How to Deal with a Company Failure- Tim Draper
+	Video Uid:: 134990213
+	Video Title:: Anti-Dilution and How to Deal with a Company Failure
+	Video Author:: Tim Draper, Founder of Draper Fisher Jurvetson & Founder of Draper University
+
+	Lesson Type:: challenge
+	Body:: There are many lawyers out there who do a portion of their work pro bono (for free), finding one who does so can be an inexpensive way to learn about how to talk with and build relationships with lawyers. Look up 10 lawyers in any field you’d like to know more about and ask them for a free consultation.
+	Description:: There are many lawyers out there who do a portion of their work pro bono (for free), finding one who does so can be an inexpensive way to learn about how to talk with and build relationships with lawyers. Look up 10 lawyers in any field you’d like to know more about and ask them for a free consultation.
+
+	Lesson Type:: challenge
+	Body:: Find a law you disagree with and improve it. Think through the practicalities of implementing it, who it will affect, and whether it will benefit society as a whole or just you.
+	Description:: Find a law you disagree with and improve it. Think through the practicalities of implementing it, who it will affect, and whether it will benefit society as a whole or just you.
+
+	Lesson Type:: challenge
+	Body:: Write up your own contract for a freelancer. Make sure it has all the valid parts of a contract and include an assignment of rights to their work over to your company.
+	Description:: Write up your own contract for a freelancer. Make sure it has all the valid parts of a contract and include an assignment of rights to their work over to your company.
+
+	Lesson Type:: challenge
+	Body:: Ask for money for your company from friends or family as an exercise, Explain to them the differences between a convertible note and giving them equity. Ask them what sort of equity they would want for their investment, then counter them with your terms. Where does the dissonance on what that money is worth come from? Why did they prefer equity or convertible note? 
+	Description:: Ask for money for your company from friends or family as an exercise, Explain to them the differences between a convertible note and giving them equity. Ask them what sort of equity they would want for their investment, then counter them with your terms. Where does the dissonance on what that money is worth come from? Why did they prefer equity or convertible note? 
+
+	Lesson Type:: challenge
+	Body:: Pay your friend for an odd job with a vesting schedule over 4 weeks with a 1 week cliff.  How did it go over? How was this payment schedule safer for you? 
+	Description:: Pay your friend for an odd job with a vesting schedule over 4 weeks with a 1 week cliff.  How did it go over? How was this payment schedule safer for you? 
+
+	Lesson Type:: discussion
+	Body:: Let’s say you’ve raised $100,000 for 3% equity or that same money as a convertible note with 20% discount rate and 5% yearly interest at a 5 million dollar cap. Which deal would you choose? Why? Would it be easier to raise money on the convertible note deal or the equity deal and why?
+	Description:: Let’s say you’ve raised $100,000 for 3% equity or that same money as a convertible note with 20% discount rate and 5% yearly interest at a 5 million dollar cap. Which deal would you choose? Why? Would it be easier to raise money on the convertible note deal or the equity deal and why?
+
+	Lesson Type:: discussion
+	Body:: What are any issues you foresee with giving board seats to advisors and investors?
+	Description:: What are any issues you foresee with giving board seats to advisors and investors?
+
+	Lesson Type:: discussion
+	Body:: Do you like a SAFE (http://bit.ly/1kjVdko) or convertible note better? Why do you think the investment community still favors notes and priced rounds over SAFEs?
+	Description:: Do you like a SAFE (http://bit.ly/1kjVdko) or convertible note better? Why do you think the investment community still favors notes and priced rounds over SAFEs?
+
+	Lesson Type:: reading
+	Body:: Short explanation of various startup law terminology. http://startuplawyer.com/startup-issues/if-i-launched-a-startup
+	Description:: Short explanation of various startup law terminology. http://startuplawyer.com/startup-issues/if-i-launched-a-startup
+
+	Lesson Type:: tools
+	Body:: A comprehensive overview of startup law related topics. http://www.startupcompanylawyer.com/ 
+	Description:: A comprehensive overview of startup law related topics. http://www.startupcompanylawyer.com/ 
+
+	Lesson Type:: tools
+	Body:: Legalzoom has a great collection of legal documents and templates. http://www.legalzoom.com/ 
+	Description:: Legalzoom has a great collection of legal documents and templates. http://www.legalzoom.com/ 
+
+	Lesson Type:: tools
+	Body:: Get all your legal documents Standard Silicon Valley style with Orrick Co. https://www.orrick.com/Practices/Emerging-Companies/Pages/Startup-Tool-Kit.aspx
+	Description:: Get all your legal documents Standard Silicon Valley style with Orrick Co. https://www.orrick.com/Practices/Emerging-Companies/Pages/Startup-Tool-Kit.aspx
+
+	Lesson Type:: tools
+	Body:: List of Startup Legal Resources http://readwrite.com/2010/01/26/legal-resources-for-startups
+	Description:: List of Startup Legal Resources http://readwrite.com/2010/01/26/legal-resources-for-startups
+
+Track: LEADERSHIP
+Track Order: 4
+	Lesson Type:: watch
+	Body:: <p>Heidi talks about how negotiation is not about winning against someone else, but about coming to terms that benefit both parties.</p>
+	Description:: Negotiations- Heidi Roizen
+	Video Uid:: 134891029
+	Video Title:: Negotiations
+	Video Author:: Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
+
+	Lesson Type:: watch
+	Body:: <p>Josh talks about the importance of clear and direct communication as well as having hard conversations up front.</p>
+	Description:: Have Difficult Conversations- Josh Buckley
+	Video Uid:: 135826441
+	Video Title:: Have Difficult Conversations
+	Video Author:: Josh Buckley, Founder and CEO of MinoMonsters
+
+	Lesson Type:: challenge
+	Body:: Good leaders need to be able to reduce complex and complicated ideas down to simple explanations that people can understand. Learn about a scientific theory and explain it to us like you would to a 5 year old.
+	Description:: Good leaders need to be able to reduce complex and complicated ideas down to simple explanations that people can understand. Learn about a scientific theory and explain it to us like you would to a 5 year old.
+
+	Lesson Type:: challenge
+	Body:: Many think leadership is about making decisions and convincing others to follow you. Practice “servant leadership” (http://bit.ly/1f9qDIM)  by serving others on your team or community- volunteer at an event, donate something useful to a homeless person besides money, get a stranger to tell you their life story, or ask the intern/secretary at your day job if you can help them out with some of their tasks. You’ll be surprised what you learn by leading from behind.
+	Description:: Many think leadership is about making decisions and convincing others to follow you. Practice “servant leadership” (http://bit.ly/1f9qDIM)  by serving others on your team or community- volunteer at an event, donate something useful to a homeless person besides money, get a stranger to tell you their life story, or ask the intern/secretary at your day job if you can help them out with some of their tasks. You’ll be surprised what you learn by leading from behind.
+
+	Lesson Type:: challenge
+	Body:: Knowing yourself helps with determining your strengths, weaknesses, and compatibility with other people. Being a leader means improving your flaws and harnessing your abilities. Take this test: http://www.16personalities.com/ to figure out roughly what your mental tendencies are. Share your results below and tell us about how you will make changes to how you work with other people.
+	Description:: Knowing yourself helps with determining your strengths, weaknesses, and compatibility with other people. Being a leader means improving your flaws and harnessing your abilities. Take this test: http://www.16personalities.com/ to figure out roughly what your mental tendencies are. Share your results below and tell us about how you will make changes to how you work with other people.
+
+	Lesson Type:: challenge
+	Body:: Being a good leader means more than showing your followers where to go, but also helping those who may not have the ability to keep up. Do something a friend is afraid of, then help walk them through it together.
+	Description:: Being a good leader means more than showing your followers where to go, but also helping those who may not have the ability to keep up. Do something a friend is afraid of, then help walk them through it together.
+
+	Lesson Type:: challenge
+	Body:: Leaders need to be good at figuring out other people’s strengths and what benefit they can provide. Find 5 strangers and learn something from each of them that you can use to better yourself.
+	Description:: Leaders need to be good at figuring out other people’s strengths and what benefit they can provide. Find 5 strangers and learn something from each of them that you can use to better yourself.
+
+	Lesson Type:: discussion
+	Body:: Knowing our own blind spots is important in more than just driving. After reading about the 8 common leadership styles you can probably find 1 near-perfect fit and a couple other styles you identify with...but what is your leadership “blindspot” and how can you compensate for it? 
+	Description:: Knowing our own blind spots is important in more than just driving. After reading about the 8 common leadership styles you can probably find 1 near-perfect fit and a couple other styles you identify with...but what is your leadership “blindspot” and how can you compensate for it? 
+
+	Lesson Type:: discussion
+	Body:: Are you an aggressive negotiator or more of a mediator? Describe the pros and cons of your negotiation style.
+	Description:: Are you an aggressive negotiator or more of a mediator? Describe the pros and cons of your negotiation style.
+
+	Lesson Type:: reading
+	Body:: 8 Common Leadership Styles https://www.asaecenter.org/Resources/ANowDetail.cfm?ItemNumber=241962<div class='tabbed-section'><br><div class='tabbed'>i.</div>Study Q: Which leadership style are you most?</div>
+	Description:: 8 Common Leadership Styles https://www.asaecenter.org/Resources/ANowDetail.cfm?ItemNumber=241962
+
+	Lesson Type:: reading
+	Body:: Holacracy - The new iterative corporate structure that is revolutionizing leading companies such as Zappos and Medium. http://firstround.com/review/heres-why-you-should-care-about-holacracy/ <div class='tabbed-section'><br><div class='tabbed'>i.</div>Study Q: Why do you think many of the Zappos employees (20%) quit Zappos after the CEO announced a shift to total Holacracy?</div>
+	Description:: Holacracy - The new iterative corporate structure that is revolutionizing leading companies such as Zappos and Medium. http://firstround.com/review/heres-why-you-should-care-about-holacracy/ 
+
+	Lesson Type:: reading
+	Body:: What it’s like to work with Elon Musk http://www.quora.com/What-is-it-like-to-work-with-Elon-Musk/answer/Dolly-Singh-8 
+	Description:: What it’s like to work with Elon Musk http://www.quora.com/What-is-it-like-to-work-with-Elon-Musk/answer/Dolly-Singh-8 
+
+	Lesson Type:: reading
+	Body:: Mean People Don’t Succeed http://paulgraham.com/mean.html
+	Description:: Mean People Don’t Succeed http://paulgraham.com/mean.html
+
+	Lesson Type:: reading
+	Body:: 12 Traits of Startup Leaders http://www.inc.com/young-entrepreneur-council/12-traits-of-successful-start-up-leaders.html 
+	Description:: 12 Traits of Startup Leaders http://www.inc.com/young-entrepreneur-council/12-traits-of-successful-start-up-leaders.html 
+
 Track: BRANDING & STORY
 Track Order: 1
 	Lesson Type:: watch
@@ -1795,4 +1778,127 @@ Track Order: 1
 	Lesson Type:: discussion
 	Body:: What is a story that moved you to take action recently, such as donating, buying, sharing on social media, or replying? What was so compelling about it?
 	Description:: What is a story that moved you to take action recently, such as donating, buying, sharing on social media, or replying? What was so compelling about it?
+
+Track: HIRING FOR A STARTUP
+Track Order: 0
+	Lesson Type:: challenge
+	Body:: Create a job on UpWork.com. Get applicants and interview them.
+	Description:: Create a job on UpWork.com. Get applicants and interview them.
+
+	Lesson Type:: challenge
+	Body:: Go out and get a job (any job!) in just one day. Think through the tactics you used to secure that job in just one day, as well as what must have been going through the employer’s mind as they were evaluating you. What are the differences between what employers and employees look for and how can knowing this help improve the way you build a team?
+	Description:: Go out and get a job (any job!) in just one day. Think through the tactics you used to secure that job in just one day, as well as what must have been going through the employer’s mind as they were evaluating you. What are the differences between what employers and employees look for and how can knowing this help improve the way you build a team?
+
+	Lesson Type:: challenge
+	Body:: Convince someone to do your chores without pay and offer them something of value that isn’t money.
+	Description:: Convince someone to do your chores without pay and offer them something of value that isn’t money.
+
+	Lesson Type:: challenge
+	Body:: Come up with a good  interview exercise, not just a question, to determine how dedicated an employee might be.
+	Description:: Come up with a good  interview exercise, not just a question, to determine how dedicated an employee might be.
+
+	Lesson Type:: challenge
+	Body:: Convince someone to be your intern. How did you find them? What were their credentials?
+	Description:: Convince someone to be your intern. How did you find them? What were their credentials?
+
+	Lesson Type:: discussion
+	Body:: How would you determine how much equity your employees deserve?
+	Description:: How would you determine how much equity your employees deserve?
+
+	Lesson Type:: discussion
+	Body:: Other than money, what do you think people care about when looking for jobs at startups?
+	Description:: Other than money, what do you think people care about when looking for jobs at startups?
+
+	Lesson Type:: discussion
+	Body:: When hiring for your startup do you think technical prowess is more important or personality (persistence, grit, honesty etc)?
+	Description:: When hiring for your startup do you think technical prowess is more important or personality (persistence, grit, honesty etc)?
+
+	Lesson Type:: discussion
+	Body:: How would you evaluate a prospective team member’s ability to work in a group of people or level of commitment?
+	Description:: How would you evaluate a prospective team member’s ability to work in a group of people or level of commitment?
+
+	Lesson Type:: discussion
+	Body:: Would you prefer more of a flat transparent corporate culture or a typical top down approach where salaries etc are private? Does your position as the founder/CEO change your answer rather than if you were an employee?
+	Description:: Would you prefer more of a flat transparent corporate culture or a typical top down approach where salaries etc are private? Does your position as the founder/CEO change your answer rather than if you were an employee?
+
+	Lesson Type:: discussion
+	Body:: How would you create a company culture in a startup with many remote employees?
+	Description:: How would you create a company culture in a startup with many remote employees?
+
+	Lesson Type:: reading
+	Body:: How to Hire for a Startup http://techcrunch.com/2015/07/22/hiring-culture-capacity-and-craftsmanship/#.tl1rqc:2nU6
+	Description:: How to Hire for a Startup http://techcrunch.com/2015/07/22/hiring-culture-capacity-and-craftsmanship/#.tl1rqc:2nU6
+
+	Lesson Type:: reading
+	Body:: Gravity Payments raises their minimum salary to $70,000. Read how this culture change both lost and gained them employees and clients. http://www.nytimes.com/2015/08/02/business/a-company-copes-with-backlash-against-the-raise-that-roared.html?_r=0
+	Description:: Gravity Payments raises their minimum salary to $70,000. Read how this culture change both lost and gained them employees and clients. http://www.nytimes.com/2015/08/02/business/a-company-copes-with-backlash-against-the-raise-that-roared.html?_r=0
+
+	Lesson Type:: tools
+	Body:: Hire better through corporate storytelling for startups with Job Portraits. http://jobportraits.com/ 
+	Description:: Hire better through corporate storytelling for startups with Job Portraits. http://jobportraits.com/ 
+
+Track: HIRING FOR A COMPANY
+Track Order: 2
+	Lesson Type:: watch
+	Body:: <p>Jeff explains how the goal of a CEO should be to hire for whatever they are spending their time on.</p>
+	Description:: Make Yourself Irrelevant- Jeff Seibert
+	Video Uid:: 134989334
+	Video Title:: Make Yourself Irrelevant
+	Video Author:: Jeff Seibert, Founder of Crashlytics & Sr. Director of Product at Twitter
+
+	Lesson Type:: challenge
+	Body:: In a group/club/hobby you belong to, stop doing any work on a current project or activity and delegate all tasks to the right people. How is this different than doing the activity yourself? Does the activity get done more efficiently? Is it more or less enjoyable for you?
+	Description:: In a group/club/hobby you belong to, stop doing any work on a current project or activity and delegate all tasks to the right people. How is this different than doing the activity yourself? Does the activity get done more efficiently? Is it more or less enjoyable for you?
+
+	Lesson Type:: challenge
+	Body:: Create 3 different creative salary packages that you think are all equal in the end, such as one has more vacation but less pay or less benefits, and then propose these different packages to 6 people you would consider hiring. Which package gets accepted more often?
+	Description:: Create 3 different creative salary packages that you think are all equal in the end, such as one has more vacation but less pay or less benefits, and then propose these different packages to 6 people you would consider hiring. Which package gets accepted more often?
+
+	Lesson Type:: challenge
+	Body:: Talk to a friend as if you were going to hire them to work at your company, but ask them to negotiate their salary. How did the negotiation go? What was difficult about it in ways you didn’t expect?
+	Description:: Talk to a friend as if you were going to hire them to work at your company, but ask them to negotiate their salary. How did the negotiation go? What was difficult about it in ways you didn’t expect?
+
+	Lesson Type:: challenge
+	Body:: Many startups employ developers around the world due to budget or time constraints. Find and contact 5 developers in India and China and interview them. Try looking on Linkedin, Upwork, or AngelList. How would you integrate them into your business or team? 
+	Description:: Many startups employ developers around the world due to budget or time constraints. Find and contact 5 developers in India and China and interview them. Try looking on Linkedin, Upwork, or AngelList. How would you integrate them into your business or team? 
+
+	Lesson Type:: challenge
+	Body:: Running a good team is not just about knowing how to attract good people; you’ll need to know how to cut someone out if they aren’t performing well. Call a friend and talk to them as if you were firing them from your company.
+	Description:: Running a good team is not just about knowing how to attract good people; you’ll need to know how to cut someone out if they aren’t performing well. Call a friend and talk to them as if you were firing them from your company.
+
+	Lesson Type:: discussion
+	Body:: Think about the differences between what co-founders, advisors, employees, and executives look for, what can you offer to each of them if they join your company?
+	Description:: Think about the differences between what co-founders, advisors, employees, and executives look for, what can you offer to each of them if they join your company?
+
+	Lesson Type:: discussion
+	Body:: After what milestone would you create a dedicated HR department? Why?
+	Description:: After what milestone would you create a dedicated HR department? Why?
+
+	Lesson Type:: discussion
+	Body:: When you hire normal employees, do you plan to attract them with market value wages or more of a gritty startup atmosphere? Which do you think leads to better employee performance?
+	Description:: When you hire normal employees, do you plan to attract them with market value wages or more of a gritty startup atmosphere? Which do you think leads to better employee performance?
+
+	Lesson Type:: discussion
+	Body:: How do you feel about the new Silicon Valley championed “unlimited vacation days” or that most employees don’t really have to come to work as long as they make their deadlines? How does this affect culture? What type of talent does this attract?
+	Description:: How do you feel about the new Silicon Valley championed “unlimited vacation days” or that most employees don’t really have to come to work as long as they make their deadlines? How does this affect culture? What type of talent does this attract?
+
+	Lesson Type:: reading
+	Body:: We Don’t Pay You to Work Here: How to align incentives for your employees. http://venturehacks.com/articles/ordinary-people
+	Description:: We Don’t Pay You to Work Here: How to align incentives for your employees. http://venturehacks.com/articles/ordinary-people
+
+	Lesson Type:: reading
+	Body:: What Does a COO Actually Do? https://medium.com/@sparkszilla/what-s-a-coo-do-bbeb0f8648ee 
+	Description:: What Does a COO Actually Do? https://medium.com/@sparkszilla/what-s-a-coo-do-bbeb0f8648ee 
+
+	Lesson Type:: reading
+	Body:: Finding your “Lime Metric” http://techcrunch.com/2015/05/18/a-ceos-most-important-metric-should-be-a-secret/
+	Description:: Finding your “Lime Metric” http://techcrunch.com/2015/05/18/a-ceos-most-important-metric-should-be-a-secret/
+
+	Lesson Type:: tools
+	Body:: Linkedin Premium helps you hire more people and find more sales leads, get one month for free at Linkedin. https://www.linkedin.com/ 
+	Description:: Linkedin Premium helps you hire more people and find more sales leads, get one month for free at Linkedin. https://www.linkedin.com/ 
+
+	Lesson Type:: tools
+	Body:: Buffer explains how they structure their company salaries. https://open.bufferapp.com/introducing-open-salaries-at-buffer-including-our-transparent-formula-and-all-individual-salaries/ 
+	Description:: Buffer explains how they structure their company salaries. https://open.bufferapp.com/introducing-open-salaries-at-buffer-including-our-transparent-formula-and-all-individual-salaries/ 
 
