@@ -208,6 +208,7 @@
 	box-sizing: border-box;
 	width: 240px;
 	padding: 20px;
+	padding-bottom: 0px;
 	right: 60px;
 	top: 290px;
 	color: white;
@@ -229,14 +230,11 @@
 }
 
 .tut-arrow.bottom {
-	right: 40px;
-	top: 390px;
-	-ms-transform: rotate(150deg); /* IE 9 */
-    -webkit-transform: rotate(150deg); /* Chrome, Safari, Opera */
-    transform: rotate(150deg);
+	right: 55px;
+	top: 370px;
 }
 
 .track-tut .next-tut-container {
 	right: 40px;
-	top: 480px;
+	top: 460px;
 }
