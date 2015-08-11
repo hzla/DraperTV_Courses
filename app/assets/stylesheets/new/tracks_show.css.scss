@@ -3,6 +3,8 @@
 	padding: 20px;
 	@include flexbox;
 	min-height: calc(100% - 230px);
+	height: calc(100vh - 110px);
+	overflow-y: scroll;
 }
 
 .lesson-column {
@@ -38,10 +40,12 @@
 		cursor: pointer;
 	}
 	.tool-tip {
-		right: -340px;
+		right: calc(((-100vw + 540px) / 3) + (40px / 3) - 7px);
 		top: 0px;
 		z-index: 10;
 		margin-bottom: 20px;
+		box-sizing: border-box;
+		width: calc(((100vw - 540px) / 3) - (40px / 3) - 14px);
 		.tool-tip-circle {
 			top: 26px;
 			margin: 0;
@@ -50,7 +54,7 @@
 			top: 32px;
 			margin: 0;
 			width: 40px;
-			left: -41px;
+			left: -42px;
 		}
 		.lesson-header-main {
 			@include justify-content(flex-start);
@@ -66,8 +70,7 @@
 
 .reading .lesson-header, .tools .lesson-header {
 	.tool-tip {
-		right: initial;
-		left: -55px;
+		right: 58px;
 	}
 	.tool-tip-line {
 		left: initial;

@@ -117,14 +117,14 @@ body {
   		.column-mid {
   			width: calc(100vw - 540px);
         margin-left: 240px;
-        overflow-y: scroll;
+        overflow: visible;
   		}
       .column-main {
         margin: 0;
         width: calc(100vw - 540px);
         padding: 0;
-        position: relative;
-        // min-height: calc(100vh - 110px);
+        position: relative; 
+        overflow: scroll;
       }
 	}
 }

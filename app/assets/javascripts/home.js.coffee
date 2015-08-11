@@ -1,13 +1,19 @@
 Home =
 	init: ->
-		$('.side-info-icon, .lesson-info-icon').click @showToolTip
+		$('.tool-tip-icon').click @showToolTip
 		$('.tool-tip-okay').click @hideToolTip
+		$('body').click @hideAll
 
-	showToolTip: ->
-		$(@).parent().find('.tool-tip').show()
+	showToolTip: (e) ->
+		$(@).parent().find('.tool-tip').toggle()
 
 	hideToolTip: -> 
 		$(@).parents('.tool-tip').hide()
+
+	hideAll: (e) ->
+		if $(e.target).parents('.tool-tip').length < 1 && !$(e.target).hasClass("tool-tip-icon") && !$(e.target).hasClass('tool-tip')
+			$('.tool-tip').hide()
+
 
 
 
