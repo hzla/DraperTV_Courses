@@ -1,6 +1,6 @@
 .topics {
 	@include flexbox;
-	flex-wrap: wrap;
+	@include flex-wrap(wrap);
 	box-sizing: border-box;
 	padding: 20px;
 }
