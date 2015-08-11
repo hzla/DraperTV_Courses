@@ -10,11 +10,14 @@
 </div>
 
 
-<div class="column-main" style="margin-top: 20px;">
-  <div class="event-calendar">
-    <%= calendar @events, :start_day => :sunday do |event| %>
-      <%= link_to event.name, event %>
-    <% end %>
+<div class="column-main">
+  <div class="events-container">
+    <div class="event-calendar">
+      <%= calendar @events, :start_day => :sunday do |event| %>
+        <%= link_to event.name, event %>
+      <% end %>
+    </div>
+
   </div>
 </div>
 
