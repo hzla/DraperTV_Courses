@@ -13,7 +13,10 @@
               <%= link_to lesson_path(lesson) do %>
                 <%= image_tag lesson.icon(lesson == @lesson ? nil : "grey"), :class => "bar-icon" %>
                 <p class="bar-text">
-                  <%= lesson.lesson_type.capitalize %><% if lesson == @lesson %>&nbsp;- <%= lesson.description[0..54] + (lesson.description.length > 55 ? "..." : "") %><% end %>
+                  <%= lesson.lesson_type.capitalize %>
+                  <% if lesson == @lesson %>
+                    &nbsp;- <%= lesson.description[0..54] + (lesson.description.length > 55 ? "..." : "") %>
+                  <% end %>
                 </p>
                 <%= image_tag lesson.status_icon(current_user), :class => "bar-circle" %>
               <% end %>
@@ -49,16 +52,9 @@
   <div class="lesson-container">
     <% if @lesson.video %>
       <iframe src="https://player.vimeo.com/video/<%= @lesson.video_uid %>" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
-
-      <p class="video-title">
-        <%= @lesson.video_title %>
-      </p>
-      <p class="video-author">
-        <%= @lesson.video_author %>
-      </p>
     <% end %>
 
-    <% if @lesson.body %>
+    <% if @lesson.body && !@lesson.video %>
       <div class="lesson-body linkify">
         <%= @lesson.body.html_safe %>
       </div>
@@ -94,6 +90,26 @@
 
 </div><!-- column-main -->
 <%= content_for :column_right do %>
+  <div class="chat-header">
+    <p>INFORMATION</p>
+  </div>
+  <div class="video-side-info">
+    <% if @lesson.video %>
+        <p class="video-title">
+          <%= @lesson.video_title.upcase %>
+        </p>
+        <p class="video-author">
+          <%= @lesson.video_author %>
+        </p>
+    <% end %>
+
+    <% if @lesson.video && @lesson.body %>
+      <p class="video-body">
+        <%= @lesson.body.html_safe %>
+      </p>
+    <% end %>
+  </div>
+
     <% if @participants.length > 0 %> 
       <div class="participants <%= @lesson.lesson_type.downcase %>">
         <p class="participants-header">

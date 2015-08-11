@@ -20,6 +20,10 @@
 	background: #f0f0f0;
 }
 
+.missing {
+	color: #c0c0c0;
+}
+
 .lesson-header {
 	@include flexbox;
 	@include justify-content(space-between);

@@ -33,7 +33,7 @@
 	cursor: pointer;
 	font-size: 14px;
 	display: inline;
-	margin: 0 10px;
+	margin: 0 15px 0px 0px;
 	font-weight: 600;
 }
 
@@ -56,6 +56,8 @@
 
 .nav.header-item {
 	opacity: 1;
+	line-height: initial;
+	height: 16px;
 }
 
 .dropdown {
@@ -131,6 +133,10 @@
 	 	@include flexbox;
 	 	@include justify-content(space-between);
 	 	padding: 0px 20px;
+	 	.search-input, form {
+	 		margin: 0;
+	 		line-height: 30px;
+	 	}
 	 }
 	 .header-logo {
 	 	position: static;
@@ -138,9 +144,15 @@
 	 }
 	 .header-left, .header-right {
 	 	@include flexbox;
+	 	@include align-items(center);
+	 	margin: 0;
 	 }
 	 .nav.header-item {
 	 	margin-left: 20px;
+	 	margin-right: 0px;
+	 	img {
+	 		vertical-align: initial;
+	 	}
 	 }
 
 .profile-info {

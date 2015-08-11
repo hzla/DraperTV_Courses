@@ -558,7 +558,7 @@ Track Order: 0
 	Description:: Ask a friend about their opinion on your idea and keep asking “why?” until they reveal the deepest truth to their reasoning. Or until they burn out.
 
 	Lesson Type:: challenge
-	Body:: Complete a business model canvas for your product. If you’re having trouble with this one then complete a business model canvas for a popular product you love first. (https://bitly.com/shorten/) 
+	Body:: Complete a business model canvas for your product. If you’re having trouble with this one then complete a business model canvas for a popular product you love first. (http://bit.ly/1vm96Wb) 
 	Description:: Complete a business model canvas for your product. If you’re having trouble with this one then complete a business model canvas for a popular product you love first. (http://bit.ly/1vm96Wb) 
 
 	Lesson Type:: challenge

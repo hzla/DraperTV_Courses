@@ -18,14 +18,6 @@
 		height: calc((100vw - 620px) * 9 / 16);
 		margin-bottom: 20px;
 	}
-	.video-title {
-		font-size: 20px;
-		font-weight: 700;
-	}
-	.video-author {
-		font-weight: 500;
-		margin-bottom: 20px;
-	}
 	.lesson-body {
 		font-size: 20px;
 		margin-bottom: 40px;
@@ -197,7 +189,26 @@
 	}
 }
 
+.video-side-info {
+	padding: 40px 20px;
+	box-sizing: border-box;
+	.video-title {
+		font-weight: 700;
+		letter-spacing: 1px;
+		margin-bottom: 10px;
+	}
+	.video-author {
+		color: #c0c0c0;
+		margin-bottom: 20px;
+	}
+	.video-body {
+
+	}
+}
+
 // SideBar
+
+
 
 .bar-header {
 	box-sizing: border-box;
@@ -205,6 +216,11 @@
 	font-weight: 700;
 	background: #e7e7e7;
 	cursor: pointer;
+}
+
+.bar-group {
+	border-right: 1px solid #e7e7e7;
+	box-sizing: border-box;
 }
 .bar-item a {
 	@include flexbox;

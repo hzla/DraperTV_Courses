@@ -5,6 +5,7 @@ Home =
 		$('body').click @hideAll
 
 	showToolTip: (e) ->
+		$('.tool-tip').hide()
 		$(@).parent().find('.tool-tip').toggle()
 
 	hideToolTip: -> 

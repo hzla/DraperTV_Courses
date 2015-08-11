@@ -107,11 +107,12 @@
 	background: #24B494;
 	cursor: pointer;
 	border-radius: 5px;
-	opacity: 0.5;
+	-webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
 }
 
-.start-lesson-btn:hover {
-	opacity: 1;
+.track:hover .start-lesson-btn {
+	background: #1fa184;
 }
 
 .track-percent-complete-bar {

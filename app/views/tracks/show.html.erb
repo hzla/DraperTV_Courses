@@ -76,7 +76,7 @@
               <% end %>
             <% else %>
               <div class="lesson-item">
-                <p class="lesson-description">
+                <p class="lesson-description missing">
                     We're still coming up with content for this section. Keep checking back for updates!
                 </p>
               </div>
@@ -94,9 +94,6 @@
       <p>INFORMATION</p>
     </div>
      <div class="column-body">
-
-      <%= image_tag @topic.done_icon, :class => "topic-info-icon" %>
-
       <p class="topic-description linkify">
         <%= @track.summary %>
       </p>
