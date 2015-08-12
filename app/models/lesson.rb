@@ -30,7 +30,7 @@ class Lesson < ActiveRecord::Base
 
 
 	def full_info
-		full_text = "#{lesson_type.capitalize} #{description.split("<br>")[0]}"
+		full_text = "#{lesson_type.capitalize} - #{description.split("<br>")[0]}"
 	end
 
 	def progress user
