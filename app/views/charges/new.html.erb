@@ -13,7 +13,7 @@
     <p class="plans-text">
       You’ll need to purchase membership to view our online courses, select one of the memberships below and check out to start your entrepreneurial learning!
     </p>
-    <div class="plan selected" data-plan="Hero">
+    <div class="plan selected hero" data-plan="Hero">
       <div class="plan-select">
         <%= image_tag "untouched.svg", :class => "plan-icon hidden unselected" %>
         <%= image_tag "done.svg", :class => "plan-icon selected" %>
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <div class="plan" data-plan="SuperHero">
+    <div class="plan superhero" data-plan="SuperHero">
       <div class="plan-select">
         <%= image_tag "untouched.svg", :class => "plan-icon unselected" %>
         <%= image_tag "done.svg", :class => "plan-icon hidden selected" %>
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div class="plan" data-plan="SuperHeroYearly">
+    <div class="plan superhero-yearly" data-plan="SuperHeroYearly">
       <div class="plan-select">
         <%= image_tag "untouched.svg", :class => "plan-icon unselected" %>
         <%= image_tag "done.svg", :class => "plan-icon hidden selected" %>
@@ -83,6 +83,7 @@
       <p class="column-header">ALUMNI ACCESS</p>
       <%= form_tag update_code_path, :class => "code-form" do %>
         <%= text_field_tag :code, nil, :class => "payment-input #{'error' if @bad_code}", placeholder: "Code" %>
+        <input type="hidden" name="lesson_id" value="<%= params[:lesson_id] %>">
         <button type="submit" class="checkout code">SUBMIT</button>
       <% end %>
     </div>
@@ -94,7 +95,7 @@
 
 <script type="text/javascript">
   // This identifies your website in the createToken call below
-  Stripe.setPublishableKey('<%= ENV['PUBLISHABLE_KEY'] %>');
+  Stripe.setPublishableKey('<%= ENV['TEST_PUBLISHABLE_KEY'] %>');
   // ...
 
   $(function($) {

@@ -57,7 +57,9 @@
 .nav.header-item {
 	opacity: 1;
 	line-height: initial;
-	height: 16px;
+	height: 50px;
+	width: 50px;
+	margin-left: 3px;
 }
 
 .dropdown {
@@ -101,9 +103,7 @@
 .nav.header-item:hover {
 	.dropdown-menu {
 		display: block;
-		right: 0px;
 		left: initial;
-
 	}
 }
 
@@ -133,6 +133,7 @@
 	 	@include flexbox;
 	 	@include justify-content(space-between);
 	 	padding: 0px 20px;
+	 	padding-right: 3px;
 	 	.search-input, form {
 	 		margin: 0;
 	 		line-height: 30px;
@@ -148,7 +149,7 @@
 	 	margin: 0;
 	 }
 	 .nav.header-item {
-	 	margin-left: 20px;
+	 	margin-left: 3px;
 	 	margin-right: 0px;
 	 	img {
 	 		vertical-align: initial;
@@ -284,9 +285,9 @@
 
 .header-right {
 	.dropdown-menu {
-		top: 10px;
+		top: 20px;
 		left: initial;
-		right: 0px;
+		right: 20px;
 		li a {
 			color: #414141;
 		}
@@ -301,6 +302,7 @@
 cursor: pointer;
 height: 16px;
 width: 16px;
+margin: 17px;
 }
 
 

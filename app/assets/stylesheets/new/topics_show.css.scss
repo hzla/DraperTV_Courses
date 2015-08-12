@@ -11,7 +11,7 @@
 	height: 80px;
 	align-items: center;
 	@include flexbox;
-	justify-content: space-between;
+	@include justify-content(space-between);
 	padding: 20px;
 	box-sizing: border-box;
 	-webkit-transition-duration: 0.3s; /* Safari */

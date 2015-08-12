@@ -3,10 +3,27 @@ Home =
 		$('.tool-tip-icon').click @showToolTip
 		$('.tool-tip-okay').click @hideToolTip
 		$('body').click @hideAll
+		$('.cancel-sub-link').on 'ajax:success', @informUser
+		$('.cancel-sub').click @showCancelOverlay
+		$(".cancel-overlay").click @closeOverlay
+
+	closeOverlay: (e) ->
+		$('.cancel-overlay').hide() if $(e.target).hasClass('cancel-overlay')
+
+	showCancelOverlay: ->
+		$(".cancel-overlay").show()
+
+	informUser: (event, data) ->
+		$('.cancel-message, .cancel-text').text("")
+		$('.cancel-text').text data.message
 
 	showToolTip: (e) ->
-		$('.tool-tip').hide()
+		$('.current').removeClass('current')
+		$(@).parent().find('.tool-tip').addClass('current')
+		$('.tool-tip:not(.current)').hide()
 		$(@).parent().find('.tool-tip').toggle()
+		
+		
 
 	hideToolTip: -> 
 		$(@).parents('.tool-tip').hide()

@@ -25,6 +25,14 @@
 	border: 1px solid $green;
 }
 
+.plan.superhero.selected {
+	border: 1px solid $blue;
+}
+
+.plan.superhero-yearly.selected {
+	border: 1px solid $red;
+}
+
 .plan-info {
 	width: calc(100% - 40px);
 	height: 100%;
@@ -51,13 +59,17 @@
 .payment-input {
 	height: 40px;
 	width: 100%;
-	border: 1px solid $blue;
+	border: 1px solid $green;
 	border-radius: 5px;
 	margin-bottom: 10px;
 	box-sizing: border-box;
 	padding: 0px 10px;
 	text-align: center;
 	font-weight: 500;
+}
+
+.payment-input[type="text"]:focus {
+	border: 1px solid $green;
 }
 
 .payment-input.error {
@@ -80,6 +92,10 @@
 	letter-spacing: 1px;
 	font-size: 14px;
 	font-weight: 600;
+}
+
+#code {
+	border: 1px solid $blue;
 }
 
 .checkout.code {

@@ -14,7 +14,7 @@ class ChargesController < ApplicationController
         :description => current_user.full_name,
         :source => params["stripeToken"]
       )
-      current_user.update_attributes customer_id: @customer.id
+      current_user.update_attribute :customer_id, @customer.id
     else
       @customer = Stripe::Customer.retrieve(current_user.customer_id)
     end
@@ -32,5 +32,15 @@ class ChargesController < ApplicationController
     else
       redirect_to root_path 
     end
+  end
+
+  def destroy
+    if current_user.customer_id
+      @customer = Stripe::Customer.retrieve(current_user.customer_id)
+      subscription = @customer.subscriptions.each(&:delete)
+      current_user.update_attribute :paid, false
+      current_user.update_attribute :customer_id, nil
+    end
+    render json: {message:  "Your subscription has been cancelled."}
   end
 end

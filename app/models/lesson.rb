@@ -14,6 +14,25 @@ class Lesson < ActiveRecord::Base
 		image
 	end
 
+	def short_info number
+		short_text = nil
+		if lesson_type == "watch"
+			short_text = "#{lesson_type.capitalize} - #{video_title}"
+		elsif lesson_type == "reading"
+			short_text = "#{lesson_type.capitalize} - #{body.split("http")[0]}"
+		else
+			short_text = "#{lesson_type.capitalize} #{number}"
+		end
+		short_text = short_text[0..59]
+		short_text = short_text + "..." if short_text.length == 60
+		short_text
+	end
+
+
+	def full_info
+		full_text = "#{lesson_type.capitalize} #{description}"
+	end
+
 	def progress user
 		return nil if !user
 		Progress.where(model_type: "lesson", model_id: id, user_id: user.id).first

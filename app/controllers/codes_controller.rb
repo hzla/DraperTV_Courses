@@ -6,10 +6,12 @@ class CodesController < ApplicationController
   	if code
   		code.update_attributes used: true
   		current_user.update_attribute(:paid, true)
+      if params[:lesson_id]
+        redirect_to lesson_path(id: params[:lesson_id]) and return
+      end
   		redirect_to root_path and return
   	else
   		redirect_to new_charge_path(bad_code: true)
   	end
-
   end
 end

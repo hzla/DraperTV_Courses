@@ -24,6 +24,7 @@ OnlineSchool::Application.routes.draw do
   
   resources :amas
   resources :charges
+  get '/cancel_subscription', to: 'charges#destroy', as: "destroy_charge"
 
   get '/auth/facebook/callback', :to => 'auths#facebook_create'
   post '/codes/update', to: 'codes#update', as: "update_code"

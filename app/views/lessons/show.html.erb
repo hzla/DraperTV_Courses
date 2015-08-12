@@ -7,16 +7,18 @@
             Chapter <%= i + 1 %> - <%= track.name.downcase.split.map(&:capitalize)*' ' %>
           <% end %>
         </div>
+        <% lesson_count = 0 %>
+        <% skip = false %>
         <% track.ordered_lessons.each do |lesson| %>
+          <% lesson_count = 0 if lesson.lesson_type == "discussion" && !skip %>
+          <% skip = true if lesson.lesson_type == "discussion" %>
+          <% lesson_count += 1 if lesson.lesson_type != "watch" && lesson.lesson_type != "reading" %>
           <% if lesson.lesson_type != "tools" %>
             <div class="bar-item <%= 'current' if lesson == @lesson %>">
               <%= link_to lesson_path(lesson) do %>
                 <%= image_tag lesson.icon(lesson == @lesson ? nil : "grey"), :class => "bar-icon" %>
                 <p class="bar-text">
-                  <%= lesson.lesson_type.capitalize %>
-                  <% if lesson == @lesson %>
-                    &nbsp;- <%= lesson.description[0..54] + (lesson.description.length > 55 ? "..." : "") %>
-                  <% end %>
+                  <%= lesson == @lesson ? lesson.full_info : lesson.short_info(lesson_count) %>
                 </p>
                 <%= image_tag lesson.status_icon(current_user), :class => "bar-circle" %>
               <% end %>

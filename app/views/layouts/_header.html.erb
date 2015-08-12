@@ -7,8 +7,8 @@
     </div>
 
     <div class="header-search no-mobile">
-      <%= form_for "http://www.drapertv.com/searches" do |f| %>
-        <%= f.text_field :terms, :class => "search-input", placeholder: "Search" %>
+      <%= form_tag "http://www.drapertv.com/searches" do %>
+        <%= text_field_tag :terms, nil, :class => "search-input", placeholder: "Search" %>
       <% end %>
     </div>    
   </div>

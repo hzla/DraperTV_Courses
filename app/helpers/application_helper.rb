@@ -6,11 +6,11 @@ module ApplicationHelper
 	    presenter
 	end
 
-	  def sortable(column, title = nil)
-	    title ||= column.titleize
-	    direction = (column == params[:sort] && params[:direction] == "asc") ? "desc" : "asc"
-	    link_to title, :sort => column, :direction => direction
-	  end
+  def sortable(column, title = nil)
+    title ||= column.titleize
+    direction = (column == params[:sort] && params[:direction] == "asc") ? "desc" : "asc"
+    link_to title, :sort => column, :direction => direction
+  end
 
 	def flash_class(type)
 		case type
@@ -36,4 +36,15 @@ module ApplicationHelper
 	  uri = URI.parse("http://faye-server-10.herokuapp.com/faye")
 	  Net::HTTP.post_form(uri, :message => message.to_json)
 	end
+
+	def bar_text_for lesson, number
+		if lesson.lesson_type = "watch"
+			short_text = "#{lesson.lesson_type.capitalize} - #{lesson.video_title}"
+			full_text = "#{lesson.lesson_type.capitalize} #{lesson.description}"
+		else
+			short_text = "#{lesson.lesson_type.capitalize}"
+			hidden_text = lesson.description
+		end
+	end
+
 end

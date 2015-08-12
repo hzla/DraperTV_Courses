@@ -58,7 +58,7 @@
 			top: 32px;
 			margin: 0;
 			width: 40px;
-			left: -42px;
+			left: -43px;
 		}
 		.lesson-header-main {
 			@include justify-content(flex-start);
@@ -135,6 +135,9 @@
 		margin: 0px;
 		width: calc(100% - 30px);
 		overflow: hidden;
+	}
+	p.missing {
+		width: 100%;
 	}
 	img {
 		height: 10px;

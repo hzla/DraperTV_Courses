@@ -27,4 +27,31 @@
       <%= f.submit "SAVE INFO" %>
     </div>
   <% end %>
+  
+  <% if current_user.customer_id %>
+  <div class="cancel-sub">
+    Cancel Subscription
+  </div>
+  <% end %>
+</div>
+
+<div class="cancel-overlay">
+  <div class="cancel-container">
+    <p class="cancel-message">We're sorry to see you go!</p>
+    <p class="cancel-text">
+      If you change your mind we’ll still be here! Drop by again for access to new and updated AMA’s, How To’s, videos, and lessons.
+    </p>
+    <p class="cancel-message">Are you sure you want to leave us?</p>
+    <%= link_to root_path do %>
+      <div class="modal-btn red">
+        TAKE ME HOME
+      </div>
+    <% end %>
+    <%= link_to destroy_charge_path, :class => "cancel-sub-link", remote: true do %>
+      <div class="modal-btn blue">
+        END SUBSCRIPTION
+      </div>
+    <% end %>
+  </div>
+
 </div>
