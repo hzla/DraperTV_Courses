@@ -11,9 +11,24 @@ Lesson =
 		$('body').on 'ajax:success', '.upvote-link', @updateUpvotes
 		$('body').on 'click', '.reply-comment', @showCommentReplyForm
 		$('body').on 'ajax:success', '.new_comment', @linkifyLinks
+		$('body').on 'submit', '.edit_lesson', @getFields
+		$('body').on 'click', '.form-switch', @toggleFormSwitch
 		@linkifyLinks()
 		@scrollToLesson()
 
+	getFields: ->
+		if $('.discussion').hasClass('on')
+			$('#lesson_discussion').val(true)
+		else
+			$('#lesson_discussion').val(false)
+		if $('.video').hasClass('on')
+			$('#lesson_video').val(true)
+		else
+			$('#lesson_video').val(false)
+
+
+	toggleFormSwitch: ->
+		$(@).toggleClass('on')
 
 	linkifyLinks: ->
 		$('.linkify, .linkify p, .linkify div').each ->

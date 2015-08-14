@@ -1,0 +1,94 @@
+.pages-text {
+	box-sizing: border-box;
+	padding: 40px;
+	height: calc(100vh - 110px);
+	overflow-y: scroll;
+	h3 {
+		margin-bottom: 13px;
+		font-weight: 700;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+	p {
+		margin-bottom: 40px;
+		line-height: 17px;
+	}
+}
+
+//////
+
+.admin-edit {
+	box-sizing: border-box;
+	padding: 40px;
+	height: calc(100vh - 110px);
+	overflow-y: scroll;
+}
+.form-section {
+	margin-bottom: 20px;
+}
+
+.form-row {
+	@include flexbox;
+}
+
+.row-left, .row-right {
+	width: calc(100% - 10px);
+}
+
+.row-left {
+	margin-right: 20px;
+}
+.form-title, .field-label {
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.form-title {
+	color: $blue;
+	margin-bottom: 20px;
+}
+
+.field-label {
+	margin-bottom: 10px;
+}
+
+.form-field {
+	width: 100%;
+	height: 40px;
+	border-radius: 5px;
+	padding: 0px 10px;
+	box-sizing: border-box;
+	border: 1px solid #c0c0c0;
+	margin-bottom: 20px;
+}
+
+.form-field.form-switch, .new-lesson-btn {
+	line-height: 40px;
+	color: white;
+	background: #c0c0c0;
+	cursor: pointer;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	border: none;
+}
+
+.new-lesson-btn {
+	border-radius: 5px;
+	background: $blue;
+	margin-bottom: 20px;
+}
+
+.form-field.form-switch.on {
+	background: $blue;
+}
+
+.form-field.submit-lesson {
+	width: 180;
+}
+
+.form-field.lesson-body {
+	height: 120px;
+	padding: 10px;
+}

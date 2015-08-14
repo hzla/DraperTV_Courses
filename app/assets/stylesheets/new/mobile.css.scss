@@ -8,7 +8,7 @@
 }
 
 .no-mobile-pic {
-	width: 110px;
+	width: 60px;
 	margin: 0 auto;
 	display: block;
 	margin-bottom: 20px;
@@ -34,6 +34,14 @@
 	color: white;
 }
 
+.mobile-btn-container {
+	position: absolute; 
+	bottom: 80px;
+	left: 40px;
+	width: calc(100% - 80px);
+}
+
 .no-mobile-btn.go-livestream {
 	background: $blue;
+	margin-bottom: 0px;
 }

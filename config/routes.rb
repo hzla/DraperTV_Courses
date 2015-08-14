@@ -30,6 +30,9 @@ OnlineSchool::Application.routes.draw do
   post '/codes/update', to: 'codes#update', as: "update_code"
   get '/biweeklies', to: "amas#biweeklies", as: 'biweeklies'
 
+  get '/privacy', to: 'home#privacy_policy', as: 'privacy'
+  get '/terms', to: 'home#terms', as: 'terms'
+
   ##### OLD #####
   resources :events
   resources :users

@@ -6,4 +6,11 @@ class HomeController < ApplicationController
       redirect_to login_path, :use_rails_ajax => false
     end
   end
+
+  def terms
+
+  end
+
+  def privacy_policy
+  end
 end

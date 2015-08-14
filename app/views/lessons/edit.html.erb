@@ -1,0 +1,90 @@
+<div class="top-section">
+  <div class="row">
+    <div class="top-column-main">
+      <h1 class="no-letter-spacing">ADMIN SHIT</h1>
+    </div><!-- column main -->
+  </div><!-- row -->
+</div>
+
+<div class="column-main">
+  <div class="admin-edit">
+	<%= form_for @lesson do |f| %>
+		<div class="form-section">
+			<p class="form-title">
+				TOP LEVEL ID SHIT
+			</p>
+			<div class="form-row">
+				<div class="row-left">
+					<div class="field-label">
+						Lesson type
+					</div>
+					<%= f.text_field :lesson_type, :class => "form-field", placeholder: "Lesson Type" %>	
+				</div>
+				<div class="row-right">
+				</div>
+			</div>
+		</div>
+
+		<div class="form-section">
+			<p class="form-title">
+				LESSON SHIT	
+			</p>
+			<div class="form-row">
+				<div class="row-left">
+					<div class="field-label">
+						BODY TEXT
+					</div>
+					<%= f.text_area :body, :class => "form-field lesson-body", placeholder: "Body (accepts html)" %>
+					<div class="field-label">
+						LESSON SECTION ORDER
+					</div>
+					<%= f.text_field :order, :class => "form-field", placeholder: "Order" %>
+
+					<div class="form-field form-switch <%= 'on' if @lesson.discussion %> discussion">
+						Discussion
+					</div>
+
+					<div class="form-field form-switch <%= 'on' if @lesson.video %> video">
+						Video
+					</div>
+
+					<%= f.hidden_field :discussion, value: @lesson.discussion %>
+					<%= f.hidden_field :video, value: @lesson.video %>
+
+					<%= f.submit "Submit Shit", :class => "submit-lesson form-field" %>
+				</div>
+				<div class="row-right">
+					<div class="field-label">
+						VIMEO ID
+					</div>
+					<%= f.text_field :video_uid, :class => "form-field", placeholder: "Vimeo ID" %>
+					<div class="field-label">
+						VIDEO TITLE
+					</div>
+					<%= f.text_field :video_title, :class => "form-field", placeholder: "Video Title" %>
+					<div class="field-label">
+						VIDEO SPEAKER
+					</div>
+					<%= f.text_field :video_author, :class => "form-field", placeholder: "Order" %>	
+					<div class="field-label">
+						DESCRIPTION
+					</div>
+					<%= f.text_field :description, :class => "form-field", placeholder: "Description" %>	
+				</div>
+			</div>
+		</div>
+	<% end %>
+  </div>
+</div>
+
+<%= content_for :column_right do %>
+  <div class="padding"></div>  
+  <div class="welcome-container">
+  	<%= link_to new_lesson_path do %>
+	    <div class="new-lesson-btn">
+	    	New Lesson
+	    </div>
+	<% end %>
+	</div>
+  </div>
+<% end %>
