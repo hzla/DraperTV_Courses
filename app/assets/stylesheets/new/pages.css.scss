@@ -17,7 +17,9 @@
 
 //////
 
-.admin-edit {
+
+.admin {
+	.admin-edit {
 	box-sizing: border-box;
 	padding: 40px;
 	height: calc(100vh - 110px);
@@ -80,6 +82,7 @@
 	margin-bottom: 20px;
 }
 
+
 .form-field.form-switch.on {
 	background: $blue;
 }
@@ -92,3 +95,25 @@
 	height: 120px;
 	padding: 10px;
 }
+
+
+}
+
+
+.form-field.form-switch, .new-lesson-btn {
+	line-height: 40px;
+	color: white;
+	background: #c0c0c0;
+	cursor: pointer;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	border: none;
+}
+
+.new-lesson-btn {
+	border-radius: 5px;
+	background: $blue;
+	margin-bottom: 20px;
+}
+
