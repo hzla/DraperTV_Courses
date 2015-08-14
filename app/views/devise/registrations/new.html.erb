@@ -31,7 +31,10 @@
         <% end %>
         <%= f.button :submit, "SIGN UP", :use_rails_ajax => false %>
       <% end %>
-
+      
+      <div class="terms-text">
+        By signing up, you agree to our <%= link_to "terms and conditions", terms_path, :class => "terms-link" %> and <%= link_to "privacy policy", privacy_path, :class => "terms-link" %>
+      </div>
       <div class="separator"></div>
       <div class="links">
           <span class="already-account">Already have an account?</span>
