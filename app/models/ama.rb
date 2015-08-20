@@ -35,9 +35,9 @@ class Ama < ActiveRecord::Base
   	elsif start_date - Time.now < 48.hours && pst_start_date.day == pst_current_time.day + 1
   		pst_start_date.strftime("Tomorrow at %l:%M %P PST")
   	elsif start_date - Time.now < 48.hours && start_date > Time.now
-      (start_date - 7.hours).strftime("%B %-d, at %l:%M%P PST")
+      (start_date - 7.hours).strftime("%l:%M%P PST - %B %-d, %Y")
     elsif start_date - Time.now > 48.hours && start_date > Time.now
-      (start_date - 7.hours).strftime("%B %-d, at %l:%M%P PST")
+      (start_date - 7.hours).strftime("%l:%M%P PST - %B %-d, %Y")
     else
   		days_ago = (Time.now - pst_start_date) / 86400
       if days_ago.floor > 1
