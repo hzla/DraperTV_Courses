@@ -1,4 +1,6 @@
 body {
+  min-width: 1280px;
+  overflow-x: scroll;
   a, p, h1, h2, h3, h4, h5, h6, div {
     color: #414141;
     -webkit-font-smoothing: antialiased;
@@ -27,8 +29,9 @@ body {
     display: none !important;
   }
 
-  .column-right {
+  #main-body .column-right {
     box-sizing: border-box;
+    height: calc(100vh - 50px);
     .column-body {
       box-sizing: border-box;
       padding: 20px;
@@ -70,12 +73,18 @@ body {
 	}
 	#main-body .column-right {
 		width: 300px;
+    position: relative;
+    margin-top: -50px;
 	}
 	#main-body {
-    position: fixed;
+    width: 100vw;
+    min-width: 1280px;
+    overflow-x: scroll;
+    position: relative;
+    height: calc(100vh - 50px);
+    z-index: 1;
 		@include flexbox;
-    top: 50px;
-    position: fixed;
+    padding-top: 50px;
     max-height: calc(100vh - 50px);
     margin: 0;
       #side-nav {
@@ -121,15 +130,19 @@ body {
   		}
   		.column-mid {
   			width: calc(100vw - 540px);
+        min-width: 740px;
         margin-left: 240px;
         overflow: visible;
+        height: calc(100vh - 50px);
   		}
       .column-main {
         margin: 0;
         width: calc(100vw - 540px);
+        min-width: 740px;
         padding: 0;
         position: relative; 
         overflow: scroll;
+        height: calc(100vh - 110px);
       }
 	}
 }

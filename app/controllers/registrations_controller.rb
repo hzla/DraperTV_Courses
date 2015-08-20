@@ -22,6 +22,12 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def create
+    params[:user][:last_name] = params[:user][:first_name].split(" ")[-1]
+    params[:user][:first_name] = params[:user][:first_name].split(" ")[0]
+    super
+  end
+
   def after_sign_up_path_for(resource)
     if params["lesson_id"]
       lesson = Lesson.find params["lesson_id"]

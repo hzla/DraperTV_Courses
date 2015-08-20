@@ -95,24 +95,21 @@
 	}
 }
 
-@media (max-width: 1160px) {
+@media (max-width: 1280px) {
 	body {
 		.topic {
-			min-width: 130px;
-			min-height: 130px;
+			min-width: 160px;
+			min-height: 160px;
 		}
 		.topic-icon-container {
-			height: 58px;
-			width: 58px;
+			height: 70px;
+			width: 70px;
 			.topic-icon {
-				height: 25px;
-				width: 25px;
-				top: 16px;
-				left: 16px;
+				height: 30px;
+				width: 30px;
+				top: 20px;
+				left: 20px;
 			}
-		}
-		.topic:nth-child(4n) {
-			margin-right: 20px;
 		}
 	}
 }

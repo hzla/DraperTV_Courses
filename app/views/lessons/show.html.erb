@@ -1,6 +1,6 @@
 <% if @lesson.lesson_type != "tools" %>
   <%= content_for :side_nav do %>
-    <% @tracks.each_with_index do |track, i| %>
+    <% @tracks.order(:order).each_with_index do |track, i| %>
       <div class="bar-group">
         <div class="bar-header">
           <%= link_to track_path(track) do %>
@@ -56,7 +56,7 @@
       <iframe src="https://player.vimeo.com/video/<%= @lesson.video_uid %>" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
     <% end %>
 
-    <% if @lesson.body && !@lesson.video %>
+    <% if @lesson.body %>
       <div class="lesson-body linkify">
         <%= @lesson.body.html_safe %>
       </div>
@@ -113,9 +113,9 @@
         </p>
     <% end %>
 
-    <% if @lesson.video && @lesson.body %>
+    <% if @lesson.video && @lesson.description %>
       <p class="video-body">
-        <%= @lesson.body.html_safe %>
+        <%= @lesson.description %>
       </p>
     <% end %>
   </div>
