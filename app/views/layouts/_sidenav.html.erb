@@ -6,7 +6,7 @@
 		<div class="profile-info">
 			<% user = current_user %>
 			<% if user %>
-				<%= image_tag user.avatar.url, :class => "profile-pic" %>
+				<%= image_tag user.avatar_pic, :class => "profile-pic" %>
 				<div class="profile-text">
 					<div class="profile-name">
 						<%= user.full_name %>

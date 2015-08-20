@@ -127,7 +127,7 @@
         </p>
         <div class="participants-list">
           <% @participants[0..10].each do |user| %>
-            <%= image_tag user.avatar.url, :class => "participant" %>
+            <%= image_tag user.avatar_pic, :class => "participant" %>
           <% end %>
           <% if @participants.length > 11 %>
             <div class="more-participants participant">
