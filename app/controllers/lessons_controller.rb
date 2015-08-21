@@ -6,7 +6,7 @@ class LessonsController < ApplicationController
   before_filter :only_admins_allowed, except: "show"
   
   def show
-    @lesson = Lesson.find params[:id]
+    @lesson = Lesson.friendly.find params[:id]
     @track = @lesson.track
     @topic = @track.topic
     redirect_to "/users/sign_up?lesson_id=#{@lesson.id}" and return if !current_user

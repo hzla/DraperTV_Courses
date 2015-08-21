@@ -3,6 +3,9 @@ class Track < ActiveRecord::Base
   belongs_to :topic
   has_many :lessons
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   def started? user
     return nil if !user
     progress_percentage(user) > 0

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820192059) do
+ActiveRecord::Schema.define(version: 20150821015059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -284,6 +284,7 @@ ActiveRecord::Schema.define(version: 20150820192059) do
     t.datetime "updated_at"
     t.integer  "order"
     t.string   "video_length"
+    t.string   "slug"
   end
 
   add_index "lessons", ["track_id"], name: "index_lessons_on_track_id", using: :btree
@@ -444,6 +445,7 @@ ActiveRecord::Schema.define(version: 20150820192059) do
     t.boolean "free",             default: false
     t.text    "summary"
     t.string  "video_uid"
+    t.string  "slug"
   end
 
   create_table "tracks", force: true do |t|
@@ -455,6 +457,7 @@ ActiveRecord::Schema.define(version: 20150820192059) do
     t.integer "watch_time"
     t.text    "summary"
     t.string  "video_uid"
+    t.string  "slug"
   end
 
   add_index "tracks", ["topic_id"], name: "index_tracks_on_topic_id", using: :btree

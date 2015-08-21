@@ -4,6 +4,9 @@ class Lesson < ActiveRecord::Base
 	attr_accessible :video_length, :order, :lesson_type, :track_id, :started, :finished, :video, :video_uid, :video_title, :video_author, :body, :description, :discussion
 	after_update :update_topic_percentage
 
+	extend FriendlyId
+  	friendly_id :slug_name, use: :slugged
+
 	#put progress method into a progressable module
 
 	def icon color=nil
@@ -12,6 +15,10 @@ class Lesson < ActiveRecord::Base
 			image.gsub!(".", "grey.")
 		end
 		image
+	end
+
+	def slug_name
+		description[0..30]
 	end
 
 	def short_info number

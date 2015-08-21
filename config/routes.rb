@@ -6,6 +6,7 @@ OnlineSchool::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions"}
   devise_scope :user do
     get 'login', to: 'devise/sessions#new', as: :login
@@ -35,7 +36,8 @@ OnlineSchool::Application.routes.draw do
 
   ##### OLD #####
   resources :events
-  resources :users
+  resources :users, only: ["update"]
+  get '/users/settings/edit', to: "users#edit", as: "edit_user"
 end
 
 

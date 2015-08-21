@@ -4,8 +4,7 @@ class UsersController < ApplicationController
   load_and_authorize_resource
 
   def edit
-    @user = User.where(id: params[:id]).first
-    unauthorized! if cannot? :update, @user
+    @user = current_user
   end
 
   def update
