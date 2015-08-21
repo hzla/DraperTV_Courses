@@ -35,7 +35,13 @@ class Lesson < ActiveRecord::Base
 
 
 	def full_info number 
-		full_text = "#{lesson_type.capitalize} #{number} - #{description.split("<br>")[0]}"
+		short_text = description.split("<br>")[0][0..59]
+		short_text = short_text + "..." if short_text.length == 60
+		if lesson_type != "watch" && lesson_type != "reading"
+			full_text = "#{lesson_type.capitalize} #{number} - #{short_text}"
+		else
+			full_text = "#{lesson_type.capitalize} - #{short_text}"
+		end
 	end
 
 	def progress user
