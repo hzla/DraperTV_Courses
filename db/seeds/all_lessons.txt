@@ -43,6 +43,9 @@ Track Order: 3
 	Lesson Type:: challenge
 	Body:: Your skills stay with you even if you fail and start back at zero, what are you good at and would it be possible for you to survive if you were reduced down to nothing? Go to any food business and work out an exchange to get a meal without paying money.
 	Description:: Your skills stay with you even if you fail and start back at zero, what are you good at and would it be possible for you to survive if you were reduced down to nothing? Go to any food business and work out an exchange to get a meal without paying money.
+	Video Uid:: 136639013
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: discussion
 	Body:: Knowing what is worth spending money on in your company can be a tough decision. How do you decide when to spend and when to save for your business? 
@@ -78,7 +81,7 @@ Track Order: 1
 	Description:: Changing the World Through Innovation- Naveen Jain
 	Video Uid:: 134878099
 	Video Title:: Changing the World Through Innovation
-	Video Author:: Naveen Jain, Board member of Singularity University
+	Video Author:: Naveen Jain, Board Member of Singularity University
 
 	Lesson Type:: watch
 	Body:: <p>Steve talks about how SpaceX derives much of its success from being guided by an incredible vision. </p>
@@ -88,32 +91,50 @@ Track Order: 1
 	Video Author:: Steve Jurvetson, Partner at Draper Fisher Jurvetson
 
 	Lesson Type:: challenge
-	Body:: Make 5 predictions about how technology will fundamentally change how humanity lives.
+	Body:: Make 5 predictions about how technology will fundamentally change how humans live and progress.
 	Description:: Make 5 predictions about how technology will fundamentally change how humanity lives.
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: challenge
-	Body:: It’s easy to lose sight of what’s important in life in the minutia. Write a bucket list of 101 things you want to do before you die. Save your biggest task for last.
+	Body:: It’s easy to lose sight of what’s important in life in the minutia. Write a bucket list of 101 things you want to do before you die. Save your greatest task for last.
 	Description:: It’s easy to lose sight of what’s important in life in the minutia. Write a bucket list of 101 things you want to do before you die. Save your biggest task for last.
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: challenge
 	Body:: Many entrepreneurs get rejected by more than 50 investors before one eventually says yes. They get rejected by potential hires, customers, and partners. Rejection is a part of startup life and every entrepreneur needs to know how to deal with it. Go ask people out and get rejected 5 times.
 	Description:: Many entrepreneurs get rejected by more than 50 investors before one eventually says yes. They get rejected by potential hires, customers, and partners. Rejection is a part of startup life and every entrepreneur needs to know how to deal with it. Go ask people out and get rejected 5 times.
 
 	Lesson Type:: challenge
-	Body:: Memorize the Draper University Oath and record yourself saying it. Repeat during times of stress to find inner peace.<br>I will promote freedom at all costs.<br>I will do everything in my power to drive, build and pursue progress and change.<br>My brand, my network, and my reputation are paramount.<br>I will set positive examples for others to emulate.<br>I will instill good habits in myself. I will take care of myself.<br>I will fail and fail again until I succeed.<br>I will explore the world with gusto and enthusiasm.<br>I will treat people well.<br>I will make short term sacrifices for long term success.<br>I will pursue fairness, openness, health and fun with all that I encounter. Mostly fun!<br>I will keep my word.<br>I will try my best to make reparations for my digressions.
-	Description:: Memorize the Draper University Oath and record yourself saying it. Repeat during times of stress to find inner peace.<br>I will promote freedom at all costs.<br>I will do everything in my power to drive, build and pursue progress and change.<br>My brand, my network, and my reputation are paramount.<br>I will set positive examples for others to emulate.<br>I will instill good habits in myself. I will take care of myself.<br>I will fail and fail again until I succeed.<br>I will explore the world with gusto and enthusiasm.<br>I will treat people well.<br>I will make short term sacrifices for long term success.<br>I will pursue fairness, openness, health and fun with all that I encounter. Mostly fun!<br>I will keep my word.<br>I will try my best to make reparations for my digressions.
+	Body:: Memorize the Draper University Oath and record yourself saying it. Repeat it during times of stress to find inner peace.<br><br>I will promote freedom at all costs.<br>I will do everything in my power to drive, build and pursue progress and change.<br>My brand, my network, and my reputation are paramount.<br>I will set positive examples for others to emulate.<br>I will instill good habits in myself. I will take care of myself.<br>I will fail and fail again until I succeed.<br>I will explore the world with gusto and enthusiasm.<br>I will treat people well.<br>I will make short term sacrifices for long term success.<br>I will pursue fairness, openness, health and fun with all that I encounter. Mostly fun!<br>I will keep my word.<br>I will try my best to make reparations for my digressions.
+	Description:: Memorize the Draper University Oath and record yourself saying it. Repeat during times of stress to find inner peace.
+	Video Uid:: 136639010
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: discussion
-	Body:: Failure is only good if we learn from it. Think about two times you failed spectacularly: one time when something good came out of it and one time when it just sucked and you had to overcome it and move on. Can you discern a key difference in the two times? What did you do differently afterwards? 
+	Body:: Failure is only good if we learn from it. Think about two times you failed spectacularly: one time when something good came out of it, and one time when it just sucked and you had to overcome it and move on. Can you discern a key difference in the two times? What did you do differently afterwards? 
 	Description:: Failure is only good if we learn from it. Think about two times you failed spectacularly: one time when something good came out of it and one time when it just sucked and you had to overcome it and move on. Can you discern a key difference in the two times? What did you do differently afterwards? 
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: discussion
-	Body:: Sometimes we can even optimize failure. How can you “rig” your next spectacular failure to work out in the end? In other words, how can you engineer a silver lining for a risky moonshot idea?
+	Body:: Sometimes we are able to optimize failure. How can you “rig” your next spectacular failure to work out in the end? In other words, how can you engineer a silver lining for a risky moonshot idea?
 	Description:: Sometimes we can even optimize failure. How can you “rig” your next spectacular failure to work out in the end? In other words, how can you engineer a silver lining for a risky moonshot idea?
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: discussion
-	Body:: Apply one thing you learned from Joon Yun’s talk to imagine the future of your own industry. If you aim for 10X return, how will you go about bringing these changes? 
+	Body:: Apply one thing you learned from Joon Yun’s talk to the future of your own industry. If you aim for 10X return, how will you go about bringing these changes? 
 	Description:: Apply one thing you learned from Joon Yun’s talk to imagine the future of your own industry. If you aim for 10X return, how will you go about bringing these changes? 
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: reading
 	Body:: The Time You Have Now (in Jelly Beans) https://www.youtube.com/watch?v=BOksW_NabEk
@@ -143,84 +164,17 @@ Track Order: 1
 	Body:: http://startupquote.com/
 	Description:: http://startupquote.com/
 
-Track: PERSISTENCE
-Track Order: 2
-	Lesson Type:: watch
-	Body:: <p>Dan talks about his story and the hurdles he faced in the early days of his journey.</p>
-	Description:: Becoming an Entrepreneur- Dan Price
-	Video Uid:: 134882645
-	Video Title:: Becoming an Entrepreneur
-	Video Author:: Dan Price, CEO of Gravity Payments
-
-	Lesson Type:: watch
-	Body:: <p>Ron talks about how difficult business is, and why being persistent and passionate is crucial to success.</p>
-	Description:: None of this is Easy- Ron Johnson
-	Video Uid:: 134883014
-	Video Title:: None of this is Easy
-	Video Author:: Ron Johnson, former Senior Vice President of Retail Operations at Apple
-
-	Lesson Type:: watch
-	Body:: <p>Nate talks about the early obstacles Airbnb faced and how they dealt with them.</p>
-	Description:: AirBnB & Early Obstacles- Nate Blecharczyk
-	Video Uid:: 134883166
-	Video Title:: AirBnB & Early Obstacles
-	Video Author:: Nate Blecharczyk, Founder and CTO of Airbnb
-
-	Lesson Type:: challenge
-	Body:: Running a company is a marathon, not a sprint. You can’t work on a startup if you don’t eat well, sleep well, and exercise to stay healthy. You don’t have to give up meat to be healthy, but making such a drastic change takes a lot of willpower and discipline: become a vegetarian for 2 weeks and . If you cheat, that’s on you; there are much harder things you’ll have to face on your way to becoming an entrepreneur.
-	Description:: Running a company is a marathon, not a sprint. You can’t work on a startup if you don’t eat well, sleep well, and exercise to stay healthy. You don’t have to give up meat to be healthy, but making such a drastic change takes a lot of willpower and discipline: become a vegetarian for 2 weeks and . If you cheat, that’s on you; there are much harder things you’ll have to face on your way to becoming an entrepreneur.
-
-	Lesson Type:: challenge
-	Body:: The hacking life style has been highly glamorized, but it’s actually a terrible idea to skip meals and go to bed at 5 AM every day. For 2 weeks, go to bed no later than 11 pm, wake up at 6 am, and get an hour of work done before 8 am. Again, cheat if you’d like, but remember that there are a lot of people out there who life like this already with no problems.
-	Description:: The hacking life style has been highly glamorized, but it’s actually a terrible idea to skip meals and go to bed at 5 AM every day. For 2 weeks, go to bed no later than 11 pm, wake up at 6 am, and get an hour of work done before 8 am. Again, cheat if you’d like, but remember that there are a lot of people out there who life like this already with no problems.
-
-	Lesson Type:: challenge
-	Body:: Sometimes the only way to get to where you need to be is through sheer persistence. Many startup successes came to be because their founders would not take no for an answer. Getting yourself in front of a prominent figure when you don’t have much credit starting out can be difficult, but is absolutely necessary to grow and learn. Figure out a way to get in contact with a mentor in your industry. Keep messaging/calling different people or keep following up with the same people until you get a meeting or call with them.
-	Description:: Sometimes the only way to get to where you need to be is through sheer persistence. Many startup successes came to be because their founders would not take no for an answer. Getting yourself in front of a prominent figure when you don’t have much credit starting out can be difficult, but is absolutely necessary to grow and learn. Figure out a way to get in contact with a mentor in your industry. Keep messaging/calling different people or keep following up with the same people until you get a meeting or call with them.
-
-	Lesson Type:: discussion
-	Body:: Think back to a time when you gave up instead of pushing forward. Why did you stop? Was worth it? If you could go back to do it all over again, could you make it?
-	Description:: Think back to a time when you gave up instead of pushing forward. Why did you stop? Was worth it? If you could go back to do it all over again, could you make it?
-
-	Lesson Type:: discussion
-	Body:: Being a full time entrepreneur usually means giving up your social life, relationships, and family time for your work. You have to put everything you have into it because competition is fierce and everyone else is working just as hard if not not harder. How badly do you want to pursue your idea, and how much are you willing to sacrifice to reach your goals?
-	Description:: Being a full time entrepreneur usually means giving up your social life, relationships, and family time for your work. You have to put everything you have into it because competition is fierce and everyone else is working just as hard if not not harder. How badly do you want to pursue your idea, and how much are you willing to sacrifice to reach your goals?
-
-	Lesson Type:: discussion
-	Body:: Think of a time when you did manage to push through instead of giving up. What kept you going? Could you dedicate yourself to pursuing a goal for 5 years, or even 10? What keeps you going through tough times even now?
-	Description:: Think of a time when you did manage to push through instead of giving up. What kept you going? Could you dedicate yourself to pursuing a goal for 5 years, or even 10? What keeps you going through tough times even now?
-
-	Lesson Type:: reading
-	Body:: Book: Humble Pie - Gordon Ramsay http://www.amazon.com/Humble-Pie-Gordon-Ramsay-ebook/dp/B003E74B24 
-	Description:: Book: Humble Pie - Gordon Ramsay http://www.amazon.com/Humble-Pie-Gordon-Ramsay-ebook/dp/B003E74B24 
-
-	Lesson Type:: reading
-	Body:: Book: The Hard Thing About Hard Things - Ben Horowitz http://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205 
-	Description:: Book: The Hard Thing About Hard Things - Ben Horowitz http://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205 
-
-	Lesson Type:: reading
-	Body:: AirBnB got rejected 7 times in 2008 https://medium.com/@bchesky/7-rejections-7d894cbaa084
-	Description:: AirBnB got rejected 7 times in 2008 https://medium.com/@bchesky/7-rejections-7d894cbaa084
-
-	Lesson Type:: reading
-	Body:: What Happens to a Start Up When a Cofounder Dies http://www.forbes.com/sites/ellenhuet/2015/06/25/what-happens-to-a-startup-when-a-cofounder-dies-kitchit/
-	Description:: What Happens to a Start Up When a Cofounder Dies http://www.forbes.com/sites/ellenhuet/2015/06/25/what-happens-to-a-startup-when-a-cofounder-dies-kitchit/
-
-	Lesson Type:: reading
-	Body:: The Startup Hustle http://www.entrepreneur.com/article/230073 
-	Description:: The Startup Hustle http://www.entrepreneur.com/article/230073 
-
 Track: IDEA
 Track Order: 0
 	Lesson Type:: watch
-	Body:: <p>Nate talks about how though Airbnb seems like an obvious success now, it was a culmination of years spent acquiring skills, perseverance, and hustle</p>
+	Body:: <p>Nate talks about how though Airbnb seems like an obvious success now, it was a culmination of years spent acquiring skills, perseverance, and hustle.</p>
 	Description:: Origin of AirBnB- Nate Blecharczyk
 	Video Uid:: 134891028
 	Video Title:: Origin of AirBnB
 	Video Author:: Nate Blecharczyk, Founder and CTO of Airbnb
 
 	Lesson Type:: watch
-	Body:: <p>Chris talks about the early days of Shazam and how they came up with the idea and how it has evolved from the original concept.</p>
+	Body:: <p>Chris talks about the early days of Shazam, how they came up with the idea, and how it has evolved from the original concept.</p>
 	Description:: Shazam and its Origin- Chris Barton
 	Video Uid:: 134894512
 	Video Title:: Shazam and its Origin
@@ -241,15 +195,18 @@ Track Order: 0
 	Video Author:: Aaron Levie, CEO and Founder of Box
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Dave talks about why it’s important to be passionate about the problem you are trying to solve.
 	Description:: You’re Doing a Startup for the Wrong Reasons- Dave McClure
 	Video Uid:: 134894515
 	Video Title:: You’re Doing a Startup for the Wrong Reasons
-	Video Author:: Dave McClure
+	Video Author:: Dave McClure,  Founder of 500 Startups & Investor
 
 	Lesson Type:: challenge
 	Body:: The act of starting a business itself breeds great ideas. Start up a business you are unfamiliar with for just a week - such as a lemonade stand, reselling old items on ebay for a profit, or anything else. Did you turn a profit? Why or why not? What did you learn?
 	Description:: The act of starting a business itself breeds great ideas. Start up a business you are unfamiliar with for just a week - such as a lemonade stand, reselling old items on ebay for a profit, or anything else. Did you turn a profit? Why or why not? What did you learn?
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: challenge
 	Body:: Ideas actually start with problem seeking. List 5 interesting markets and document their problems and potential solutions.
@@ -260,28 +217,43 @@ Track Order: 0
 	Description:: Think about 3 of the most annoying problems in your life and come up with easy solutions that most people will be able to replicate.
 
 	Lesson Type:: challenge
-	Body:: Good ideas come from finding solutions to real problems, rather than creating a product and finding a market for it. Go out and ask 5 strangers what their biggest problems are, come up with solutions for them on the spot and note their reactions.
+	Body:: Good ideas come from finding solutions to real problems, rather than creating a product and finding a market for it. Go out and ask 5 strangers what their biggest problems are. Come up with solutions for them on the spot and note their reactions.
 	Description:: Good ideas come from finding solutions to real problems, rather than creating a product and finding a market for it. Go out and ask 5 strangers what their biggest problems are, come up with solutions for them on the spot and note their reactions.
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: challenge
-	Body:: Stressing out on what to name your company? Take the 3-Column Chain Reaction approach. Get together your friends or cofounders  and have each person make 3 columns their own piece of paper. Also have 3 large columns drawn on a whiteboard or large piece of paper next to your group.<div class='tabbed-section'><br><div class='tabbed'>i.</div>Give everyone 45 seconds to write down any crazy names they have in the first column on their paper. Don’t edit for good names, go for quantity.</div><div class='tabbed-section'><br><div class='tabbed'>ii.</div>Have everyone pick the top 3 names from their 1st column and put them in the first column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>iii.</div>Give everyone 45 seconds to write down names in the 2nd column on their paper that they thought of by seeing the top picks of everyone from the 1st column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>iv.</div>Have everyone pick top 3 names from their 2nd column and put them in the 2nd column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>v.</div>Give everyone 45 seconds to write down names in the 3rd column on their paper that they thought of by seeing the top picks of everyone from the 2nd column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>vi.</div>Have everyone pick the top 3 names from their 3rd column and put them in the 3rd column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>vii.</div>Pick your name from this 3rd column on the whiteboard. Now that you’ve been inspired by everyone’s best contributions and filtered them 3 times, these will be your best ideas!</div>
-	Description:: Stressing out on what to name your company? Take the 3-Column Chain Reaction approach. Get together your friends or cofounders  and have each person make 3 columns their own piece of paper. Also have 3 large columns drawn on a whiteboard or large piece of paper next to your group.
+	Body:: Stressing out on what to name your company? Take the 3-Column Chain Reaction approach. Get together with your friends or cofounders  and have each person make 3 columns their own piece of paper. Also have 3 large columns drawn on a whiteboard or large piece of paper next to your group.<div class='tabbed-section'><br><div class='tabbed'>i.</div>Give everyone 45 seconds to write down any crazy names they have in the first column on their paper. Don’t edit for good names, go for quantity.</div><div class='tabbed-section'><br><div class='tabbed'>ii.</div>Have everyone pick the top 3 names from their 1st column and put them in the first column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>iii.</div>Give everyone 45 seconds to write down names in the 2nd column on their paper that they thought of by seeing the top picks of everyone from the 1st column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>iv.</div>Have everyone pick top 3 names from their 2nd column and put them in the 2nd column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>v.</div>Give everyone 45 seconds to write down names in the 3rd column on their paper that they thought of by seeing the top picks of everyone from the 2nd column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>vi.</div>Have everyone pick the top 3 names from their 3rd column and put them in the 3rd column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>vii.</div>Pick your name from this 3rd column on the whiteboard. Now that you’ve been inspired by everyone’s best contributions and filtered them 3 times, these will be your best ideas!</div>
+	Description:: Stressing out on what to name your company? Take the 3-Column Chain Reaction approach. Get together with your friends or cofounders  and have each person make 3 columns their own piece of paper. Also have 3 large columns drawn on a whiteboard or large piece of paper next to your group.
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: challenge
-	Body:: Stressed that you haven’t come up with a good idea to work on yet? You can also use the 3 Column Chain Reaction approach for startup ideas too. Get together your friends or cofounders and identify 3 industries you would all be happy starting a company in, such as transportation, currency, education, etc. Make 3 sets of 3 large columns on a whiteboard, and have each person make 3 columns on their own piece of paper for each industry. For each industry:<div class='tabbed-section'><br><div class='tabbed'>i.</div>Give everyone 45 seconds to write down any industry associations, products, or services they think of in the first column on their paper. If they already have idea tell them to write that on the side and save it for later. Don’t edit for quality, go for quantity here. An example could be the words bus, taxi, google maps, pedestrian, or traffic for transportation.</div><div class='tabbed-section'><br><div class='tabbed'>ii.</div>Have everyone pick top 3 entries from their 1st column and put them in the first column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>iii.</div>Give everyone 45 seconds to write down user experiences or feelings in the 2nd column on their paper that they thought of by seeing the top picks of everyone from the 1st column on the whiteboard. An example would be “inefficient” for bus, or “walk through unsafe neighborhoods” for google maps and pedestrian.</div><div class='tabbed-section'><br><div class='tabbed'>iv.</div>Have everyone pick top 3 entries from their 2nd column and put them in the 2nd column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>v.</div>Give everyone 45 seconds to write down actual ideas or problems to solve in the 3rd column on their paper that they thought of by seeing the top picks of everyone from the 2nd column on the whiteboard. An example could be “crowdsource reporting of dangerous metropolitan areas and build alternate routes around flagged areas” for the walk through unsafe areas experience. Or “make a better bus scheduling/mapping app” for the inefficient bus problem.</div><div class='tabbed-section'><br><div class='tabbed'>vi.</div>Have everyone pick the top 3 ideas or problems to solve from their 3rd column and put them in the 3rd column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>vii.</div>Pick your favorite idea to work on in this industry from this 3rd column on the whiteboard. Now that you’ve been inspired by everyone’s best contributions and filtered them 3 times these will be your best ideas! Repeat for the other two industries you would like to work in. Then do some more market research on each of the top one or two ideas from each industry to decide which one to pursue!</div>
-	Description:: Stressed that you haven’t come up with a good idea to work on yet? You can also use the 3 Column Chain Reaction approach for startup ideas too. Get together your friends or cofounders and identify 3 industries you would all be happy starting a company in, such as transportation, currency, education, etc. Make 3 sets of 3 large columns on a whiteboard, and have each person make 3 columns on their own piece of paper for each industry. For each industry:
+	Body:: Stressed that you haven’t come up with a good idea to work on yet? You can use the 3 Column Chain Reaction approach for startup ideas too. Get together with your friends or cofounders and identify 3 industries you would all be happy starting a company in, such as transportation, currency, education, etc. Make 3 sets of 3 large columns on a whiteboard, and have each person make 3 columns on their own piece of paper for each industry. For each industry:<div class='tabbed-section'><br><div class='tabbed'>i.</div>Give everyone 45 seconds to write down any industry associations, products, or services they think of in the first column on their paper. If they already have idea tell them to write that on the side and save it for later. Don’t edit for quality, go for quantity here. An example could be the words bus, taxi, google maps, pedestrian, or traffic for transportation.</div><div class='tabbed-section'><br><div class='tabbed'>ii.</div>Have everyone pick top 3 entries from their 1st column and put them in the first column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>iii.</div>Give everyone 45 seconds to write down user experiences or feelings in the 2nd column on their paper that they thought of by seeing the top picks of everyone from the 1st column on the whiteboard. An example would be “inefficient” for bus, or “walk through unsafe neighborhoods” for google maps and pedestrian.</div><div class='tabbed-section'><br><div class='tabbed'>iv.</div>Have everyone pick top 3 entries from their 2nd column and put them in the 2nd column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>v.</div>Give everyone 45 seconds to write down actual ideas or problems to solve in the 3rd column on their paper that they thought of by seeing the top picks of everyone from the 2nd column on the whiteboard. An example could be “crowdsource reporting of dangerous metropolitan areas and build alternate routes around flagged areas” for the walk through unsafe areas experience. Or “make a better bus scheduling/mapping app” for the inefficient bus problem.</div><div class='tabbed-section'><br><div class='tabbed'>vi.</div>Have everyone pick the top 3 ideas or problems to solve from their 3rd column and put them in the 3rd column on the whiteboard.</div><div class='tabbed-section'><br><div class='tabbed'>vii.</div>Pick your favorite idea to work on in this industry from this 3rd column on the whiteboard. Now that you’ve been inspired by everyone’s best contributions and filtered them 3 times these will be your best ideas! Repeat for the other two industries you would like to work in. Then do some more market research on each of the top one or two ideas from each industry to decide which one to pursue!</div>
+	Description:: Stressed that you haven’t come up with a good idea to work on yet? You can also use the 3 Column Chain Reaction approach for startup ideas too. Get together with your friends or cofounders and identify 3 industries you would all be happy starting a company in, such as transportation, currency, education, etc. Make 3 sets of 3 large columns on a whiteboard, and have each person make 3 columns on their own piece of paper for each industry. For each industry:
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: discussion
 	Body:: The beginning can often be the most difficult part of starting up: you may have no capital, partners, product, or way to easily describe your idea. What is the hardest part of starting up from ground zero? 
 	Description:: The beginning can often be the most difficult part of starting up: you may have no capital, partners, product, or way to easily describe your idea. What is the hardest part of starting up from ground zero? 
 
 	Lesson Type:: discussion
-	Body:: How can you be sure this idea is “The One”? Think of something you passionately started before but then quit. Write down 3 reasons you started it and 3 reasons you quit. Think of your startup idea now and write 3 reasons you are starting it. Are there any similarities? What can you do to ensure you don’t quit this time? 
+	Body:: How can you be sure this idea is “The One”? Think of something you passionately started before, but then quit. Write down 3 reasons you started it and 3 reasons you quit. Think of your startup idea now and write 3 reasons you are starting it. Are there any similarities? What can you do to ensure you don’t quit this time? 
 	Description:: How can you be sure this idea is “The One”? Think of something you passionately started before but then quit. Write down 3 reasons you started it and 3 reasons you quit. Think of your startup idea now and write 3 reasons you are starting it. Are there any similarities? What can you do to ensure you don’t quit this time? 
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: discussion
 	Body:: Explaining your startup with a comparison to other startups is a good way to avoid duplicating someone else’s idea and to quickly convey what you do. Come up with 5 ideas that solve 5 different problems and describe your idea as X for Y in relation to other startups. For instance: Uber for Dogs, or Youtube for Cats.
 	Description:: Explaining your startup with a comparison to other startups is a good way to avoid duplicating someone else’s idea and to quickly convey what you do. Come up with 5 ideas that solve 5 different problems and describe your idea as X for Y in relation to other startups. For instance: Uber for Dogs, or Youtube for Cats.
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: reading
 	Body:: The Top Idea in Your Mind http://www.paulgraham.com/top.html
@@ -317,11 +289,11 @@ Track Order: 1
 	Video Author:: Ron Johnson, former Senior Vice President of Retail Operations at Apple
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Shawn talks about the importance of picking the right people to work with. He explains how Sean Parker’s high level thinking complemented Shawn’s technical focus.
 	Description:: CoFounders and the Big Picture- Shawn Fanning
 	Video Uid:: 134904023
 	Video Title:: CoFounders and the Big Picture
-	Video Author:: Shawn Fanning
+	Video Author:: Shawn Fanning, Founder of Napster
 
 	Lesson Type:: watch
 	Body:: <p>Shawn talks about the importance of having the difficult conversations up front: about equity, exit, and vision.</p>
@@ -335,16 +307,22 @@ Track Order: 1
 	Description:: If you can convince someone to work on a bad idea, then you can definitely convince them of a good one! Think of an incredibly bad startup idea, then go to a networking event or coffee shop and try to convince people to cofound it with you. What are their reactions? For those you convinced, how did you do it? 
 
 	Lesson Type:: challenge
-	Body:: Find someone who has the tools to build or sell what you need and start bro-mancing them using the reading’s techniques. It’s ok if you’re not sure if they’re the right fit - this is how you find out! (http://entm.ag/1T1B2L8)
+	Body:: Find someone who has the tools to build or sell what you need and start romancing them using the reading’s techniques. It’s ok if you’re not sure if they’re the right fit - this is how you find out! (http://entm.ag/1T1B2L8)
 	Description:: Find someone who has the tools to build or sell what you need and start bro-mancing them using the reading’s techniques. It’s ok if you’re not sure if they’re the right fit - this is how you find out! (http://entm.ag/1T1B2L8)
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: challenge
 	Body:: You’re going to work and live around your founder almost 24 hours a day, 7 days a week, so it’s incredibly important to not only work well with them but be okay with living with them. Grab a friend to work on a personal project and live with them for 4 days. You must be together at all times: eat meals together, sleep in the same room, work in the same room or same desk, and do the same activities when you’re on break.
 	Description:: You’re going to work and live around your founder almost 24 hours a day, 7 days a week, so it’s incredibly important to not only work well with them but be okay with living with them. Grab a friend to work on a personal project and live with them for 4 days. You must be together at all times: eat meals together, sleep in the same room, work in the same room or same desk, and do the same activities when you’re on break.
 
 	Lesson Type:: challenge
-	Body:: Sometimes you can get the best leads online. Post to craigslist, angellist, or a silicon valley facebook group looking for a cofounder. Explain your idea and let people know what skills you need as a start.
+	Body:: Sometimes you can get the best leads online. Post to craigslist, AngelList, or a Silicon Calley facebook group looking for a cofounder. Explain your idea and let people know what skills you need as a start.
 	Description:: Sometimes you can get the best leads online. Post to craigslist, angellist, or a silicon valley facebook group looking for a cofounder. Explain your idea and let people know what skills you need as a start.
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: discussion
 	Body:: Think of a great team you’ve worked with in the past. What were your favorite qualities in each person? How did you fit into the team and what was your role?
@@ -382,13 +360,12 @@ Track Order: 1
 	Body:: Picking a Cofounder http://venturehacks.com/articles/pick-cofounder
 	Description:: Picking a Cofounder http://venturehacks.com/articles/pick-cofounder
 
-	Lesson Type:: reading
-	Body:: Tools
-	Description:: Tools
-
-	Lesson Type:: reading
+	Lesson Type:: tools
 	Body:: Startup Equity Calculator http://foundrs.com/ 
 	Description:: Startup Equity Calculator http://foundrs.com/ 
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 Track: ENVIRONMENT
 Track Order: 2
@@ -408,12 +385,18 @@ Track Order: 2
 	Description:: Investors in different regions look for different flavors of pitches. What 60 second pitch for your product would you give an investor in California? Would you change it for an investor in New York? How about your pitch for a Chinese investor? Or one from Saudi Arabia?
 
 	Lesson Type:: challenge
-	Body:: Your solution to a problem doesn’t just need to be effective, it needs to also be culturally accepted. Xiaomi owes its success to this strength! Spend a week in another city or country and figure out what you’d have to change about your product (or even yourself!)for your business idea to succeed there.
+	Body:: Your solution to a problem doesn’t just need to be effective, it needs to also be culturally accepted. Xiaomi owes its success to this strength! Spend a week in another city or country and figure out what you’d have to change about your product (or even yourself!) for your business idea to succeed there.
 	Description:: Your solution to a problem doesn’t just need to be effective, it needs to also be culturally accepted. Xiaomi owes its success to this strength! Spend a week in another city or country and figure out what you’d have to change about your product (or even yourself!)for your business idea to succeed there.
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: challenge
-	Body:: People often fly from around the world for large Hackathons which can make them a great way to meet culturally diverse people. Use eventbrite or meetup to find a startup meetup or hackathon around you, and get 4 people’s life stories on how they arrived at this point.
+	Body:: People often fly from around the world for large Hackathons which can make them a great way to meet culturally diverse people. Use eventbrite or meetup to find a startup meetup or hackathon around you, and get 4 people’s life stories on how they arrived at this point. (http://www.meetup.com/, https://www.eventbrite.com/)
 	Description:: People often fly from around the world for large Hackathons which can make them a great way to meet culturally diverse people. Use eventbrite or meetup to find a startup meetup or hackathon around you, and get 4 people’s life stories on how they arrived at this point.
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: discussion
 	Body:: Many have said that it’s very hard to raise money or flourish as a young company outside of Silicon Valley due to the network effect of tech talent and risk tolerant investors. To you, is it worth the high cost of living (4x USA national average)? Would you rather live in your hometown, or move to Silicon Valley when raising money? Why or why not?
@@ -446,11 +429,11 @@ Track Order: 2
 Track: INCORPORATION
 Track Order: 3
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Jared explains why incorporating a company is important.
 	Description:: Corporate Formation and Why- Jared Brubaker
 	Video Uid:: 134903216
 	Video Title:: Corporate Formation and Why
-	Video Author:: Jared Brubaker
+	Video Author:: Jared Brubaker, Founder of Brubaker Law & Angel Investor
 
 	Lesson Type:: watch
 	Body:: <p>Jared talks about the importance of using Silicon Valley standard documentation.</p>
@@ -460,18 +443,18 @@ Track Order: 3
 	Video Author:: Jared Brubaker, Founder of Brubaker Law & Angel Investor
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Jared talks about pros and cons of incorporation inside & outside the US.
 	Description:: Should you Incorporate Outside of the U.S.?- Jared Brubaker
 	Video Uid:: 134904025
 	Video Title:: Should you Incorporate Outside of the U.S.?
-	Video Author:: Jared Brubaker
+	Video Author:: Jared Brubaker, Founder of Brubaker Law & Angel Investor
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Jared lists the different types of corporations and why the standard procedure is for startups to incorporate as C corps in Delaware.
 	Description:: Why should I Incorporate as a C-Corp?- Jared Brubaker
 	Video Uid:: 134904026
 	Video Title:: Why should I Incorporate as a C-Corp?
-	Video Author:: Jared Brubaker
+	Video Author:: Jared Brubaker, Founder of Brubaker Law & Angel Investor
 
 	Lesson Type:: watch
 	Body:: <p>Jared talks about splitting equity, issuing shares, vesting, and 83(b)elections.</p>
@@ -481,11 +464,11 @@ Track Order: 3
 	Video Author:: Jared Brubaker, Founder of Brubaker Law & Angel Investor
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Jared explains Vesting and 83(b)elections in more detail. (We’ve put this here because it’s INCREDIBLY important. If you ever wonder if your team should vest their shares, the answer is ALWAYS yes. If you ever wonder if you should pay painstaking attention to your 83(b)election, the answer is ALWAYS yes.)
 	Description:: Vesting- Jared Brubaker
 	Video Uid:: 134904513
 	Video Title:: Vesting
-	Video Author:: Jared Brubaker
+	Video Author:: Jared Brubaker, Founder of Brubaker Law & Angel Investor
 
 	Lesson Type:: watch
 	Body:: <p>Jared talks about the board of directors, management of the company, and intellectual property.</p>
@@ -495,8 +478,11 @@ Track Order: 3
 	Video Author:: Jared Brubaker, Founder of Brubaker Law & Angel Investor
 
 	Lesson Type:: challenge
-	Body:: Starting incorporation itself is intimidating. Start a basic incorporation package on Clerky and check your business name with the State department of Delaware - but don’t buy it just yet. How long did it take you to fill out? How difficult was it?
+	Body:: Starting incorporation itself is intimidating. Start a basic incorporation package on Clerky and check your business name with the State Department of Delaware - but don’t buy it just yet. How long did it take you to fill out? How difficult was it? (https://www.clerky.com/)
 	Description:: Starting incorporation itself is intimidating. Start a basic incorporation package on Clerky and check your business name with the State department of Delaware - but don’t buy it just yet. How long did it take you to fill out? How difficult was it?
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: challenge
 	Body:: Find a low-cost but well rated business lawyer who can incorporate your business, by either searching online, asking in a startup forum such as Quora, or by visiting your local small business help center. Get an estimate from the law firm of how much it will be and compare that with Clerky.
@@ -518,13 +504,12 @@ Track Order: 3
 	Body:: Why Does Everyone Incorporate in Delaware https://www.legalzoom.com/articles/incorporating-in-delaware-advantages-and-disadvantages 
 	Description:: Why Does Everyone Incorporate in Delaware https://www.legalzoom.com/articles/incorporating-in-delaware-advantages-and-disadvantages 
 
-	Lesson Type:: reading
-	Body:: Tools
-	Description:: Tools
-
-	Lesson Type:: reading
+	Lesson Type:: tools
 	Body:: Incorporate Silicon Valley with the standard for $700 at www.clerky.com 
 	Description:: Incorporate Silicon Valley with the standard for $700 at www.clerky.com 
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 Track: VALUE PROPOSITION
 Track Order: 0
@@ -536,11 +521,11 @@ Track Order: 0
 	Video Author:: Dan Price, CEO of Gravity Payments
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Scott and Tom talk about how they built a superior product by learning what customers wanted and needed. They also talk about figuring out who they are building for, understanding the real problem and how to tailor a good solution.
 	Description:: The Competition Was Built by People Who Were Too Qualified- Scott Cook
 	Video Uid:: 134904515
 	Video Title:: The Competition Was Built by People Who Were Too Qualified
-	Video Author:: Scott Cook
+	Video Author:: Scott Cook & Tom Proulx, Founders of Intuit
 
 	Lesson Type:: watch
 	Body:: <p>Ron talks about the importance of having a vision for your goals and why it helps you achieve better outcomes.</p>
@@ -560,6 +545,9 @@ Track Order: 0
 	Lesson Type:: challenge
 	Body:: Complete a business model canvas for your product. If you’re having trouble with this one then complete a business model canvas for a popular product you love first. (http://bit.ly/1vm96Wb) 
 	Description:: Complete a business model canvas for your product. If you’re having trouble with this one then complete a business model canvas for a popular product you love first. (http://bit.ly/1vm96Wb) 
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
 
 	Lesson Type:: challenge
 	Body:: Prototyping<div class='tabbed-section'><br><div class='tabbed'>i.</div>Is your product a physical good? Make 3 “low fidelity” prototypes out of materials in your home. Show them to 10 people you think would need it and have them pick the best one. It’s better to iterate early before you’ve committed money and hours to a form factor.</div><div class='tabbed-section'><br><div class='tabbed'>ii.</div>Is your product a service? Invite 3 users for a “mock beta test”- Have them tell you what they want, then fulfill that service of your own accord without them knowing, and get their feedback on their experience. Ex. If you are a food delivery service, deliver the food yourself instead of putting in the work to hire a team of delivery people.</div>
@@ -841,7 +829,7 @@ Track Order: 3
 Track: OPENING & CLOSING
 Track Order: 0
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Scott and Tom talk about how big banks fail to sell Intuit’s software well, so they take matters into their own hands.
 	Description::  Create Demand and Sell the Product Yourself- Scott Cook
 	Video Uid:: 134905823
 	Video Title::  Create Demand and Sell the Product Yourself
@@ -943,25 +931,25 @@ Track Order: 0
 	Video Author:: Hermione Way, Reality TV Personality & Founder of Vibease
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Hermione talks about being unique with investors, having thick skin, and what you should do in Silicon Valley.
 	Description:: The Do’s of the Silicon Valley- Hermione Way
 	Video Uid:: 134905818
 	Video Title:: The Do’s of the Silicon Valley
-	Video Author:: Hermione Way
+	Video Author:: Hermione Way, Reality TV Personality & Founder of Vibease
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Hermione way talks about understanding how press people work, story timing, and what not to do in Silicon Valley.
 	Description:: The Do Not’s of Silicon Valley- Hermione Way
 	Video Uid:: 134905820
 	Video Title:: The Do Not’s of Silicon Valley
-	Video Author:: Hermione Way
+	Video Author:: Hermione Way, Reality TV Personality & Founder of Vibease
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Hermione talks about building relationships with press and the benefit of offering exclusives.
 	Description:: Have a Beer with Reporters- Hermione Way
 	Video Uid:: 134905821
 	Video Title:: Have a Beer with Reporters
-	Video Author:: Hermione Way
+	Video Author:: Hermione Way, Reality TV Personality & Founder of Vibease
 
 	Lesson Type:: challenge
 	Body:: Tell 100 people about your idea. That’s right, 100 people. You’ll have to personally pitch, validate, and sell your idea to thousands if not tens of thousands of people, all without losing passion or energy. This small exercise will get you used to telling your startup's story.
@@ -1034,7 +1022,7 @@ Track Order: 0
 	Description:: There Are Two Types of Investors- Jeff Selbert
 	Video Uid:: 134976915
 	Video Title:: There Are Two Types of Investors
-	Video Author:: Jeff Seibert, Founder of Crashlytics & Sr. Director of Product at Twitter.
+	Video Author:: Jeff Seibert, Founder of Crashlytics & Sr. Director of Product at Twitter
 
 	Lesson Type:: watch
 	Body:: <p>Reena talks about the difficulties and obstacles to pitching.</p>
@@ -1044,46 +1032,46 @@ Track Order: 0
 	Video Author:: Reena Jadhav, Serial Entrepreneur & Startup Advisor & Investor
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Reena talks about the general sections of a business pitch.
 	Description:: The Business Pitch Structure- Reena Jadhav
 	Video Uid:: 134977158
 	Video Title:: The Business Pitch Structure
-	Video Author:: Reena Jadhav
+	Video Author:: Reena Jadhav, Serial Entrepreneur & Startup Advisor & Investor
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Reena talks about the details and content of the pitch.
 	Description:: The Content of the Business Pitch- Reena Jadha
 	Video Uid:: 134977159
 	Video Title:: The Content of the Business Pitch
-	Video Author:: Reena Jadha
+	Video Author:: Reena Jadha, Serial Entrepreneur & Startup Advisor & Investor
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Reena talks about strategies with specific elements in the pitch.
 	Description:: The Ten Rules of Business Pitching- Reena Jadhav
 	Video Uid:: 134977160
 	Video Title:: The Ten Rules of Business Pitching
-	Video Author:: Reena Jadhav
+	Video Author:: Reena Jadhav, Serial Entrepreneur & Startup Advisor & Investor
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Reena talks about the elements of a winning pitch.
 	Description:: The Five Minute Business Pitch- Reena Jadhav
 	Video Uid:: 134977163
 	Video Title:: The Five Minute Business Pitch
-	Video Author:: Reena Jadhav
+	Video Author:: Reena Jadhav, Serial Entrepreneur & Startup Advisor & Investor
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Dave tears down various students’ pitches, and stresses the importance of being focused and concise.
 	Description:: Lighting Round- Dave McClure
 	Video Uid:: 134977958
 	Video Title:: Lighting Round
-	Video Author:: Dave McClure
+	Video Author:: Dave McClure, Founder of 500 Startups & Investor
 
 	Lesson Type:: watch
 	Body:: <p>Dave talks about focusing on problems, not solutions.</p>
 	Description:: Elevator Pitch- Dave McClure
 	Video Uid:: 134977959
 	Video Title:: Elevator Pitch
-	Video Author:: Dave McClure,  Founder of 500 Startups & Investor
+	Video Author:: Dave McClure, Founder of 500 Startups & Investor
 
 	Lesson Type:: watch
 	Body:: <p>Dave talks about the fundamental forces that move people. “People do things to get laid, paid, and made”.  Roughly translated: Love/Attraction, Money/Wealth, and Fame/Reputation.</p>
@@ -1093,7 +1081,7 @@ Track Order: 0
 	Video Author:: Dave McClure,  Founder of 500 Startups & Investor
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Dave talks about how interruptions signal interest. The goal is to get a reaction; not a lukewarm response.
 	Description:: Getting Interrupted is Good- Dave McClure
 	Video Uid:: 134977964
 	Video Title:: Getting Interrupted is Good
@@ -1165,18 +1153,18 @@ Track Order: 1
 	Video Author:: Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Heidi talks about how to make yourself more available and approachable.
 	Description:: Making a Connection- Heidi Roizen
 	Video Uid:: 134980480
 	Video Title:: Making a Connection
-	Video Author:: Heidi Roizen
+	Video Author:: Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Heidi talks about how genuinely helping others will demonstrate your value to people around you.
 	Description:: The Art of Giving- Heidi Roizen
 	Video Uid:: 134988233
 	Video Title:: The Art of Giving
-	Video Author:: Heidi Roizen
+	Video Author:: Heidi Roizen, Venture Partner at Draper Fisher Jurvetson
 
 	Lesson Type:: watch
 	Body:: <p>Heidi talks about how presenting a consistent image helps you build stronger relationships.</p>
@@ -1193,7 +1181,7 @@ Track Order: 1
 	Video Author:: Aaron Levie, CEO and Founder of Box
 
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Jeff talks about how it’s important to constantly have meetings with investors while you are fundraising. Following up keeps investors updated on your progress and builds your image in their eyes. Instead of being seen as just a “dot” with a single meeting, multiple meetings contribute into building you up into a “curve”. He also remarks that it is often more important to have a relationship with a venture partner rather than the firm itself.
 	Description:: Investors Don’t Fund Dots- Jeff Seibert
 	Video Uid:: 134980487
 	Video Title:: Investors Don’t Fund Dots
@@ -1502,7 +1490,7 @@ Track Order: 1
 Track: BUSINESS DEVELOPMENT
 Track Order: 1
 	Lesson Type:: watch
-	Body:: 	Body
+	Body:: Aaron talks about how box developed towards the future they saw for enterprise software.
 	Description:: The Future of Enterprise- Aaron Levie
 	Video Uid:: 134989340
 	Video Title:: The Future of Enterprise
@@ -1513,7 +1501,7 @@ Track Order: 1
 	Description:: The Evolution of Gravity Payments- Dan Price
 	Video Uid:: 134989341
 	Video Title:: The Evolution of Gravity Payments
-	Video Author:: <tab>Dan Price, CEO of Gravity Payments
+	Video Author:: Dan Price, CEO of Gravity Payments
 
 	Lesson Type:: challenge
 	Body:: Your business will need to be agile and quick if you want to keep it alive, are you? Go ahead with a life pivot! Move to a new location! Dump your significant other! Quit smoking! Try soylent! Change your commute!
@@ -1737,6 +1725,94 @@ Track Order: 4
 	Lesson Type:: reading
 	Body:: 12 Traits of Startup Leaders http://www.inc.com/young-entrepreneur-council/12-traits-of-successful-start-up-leaders.html 
 	Description:: 12 Traits of Startup Leaders http://www.inc.com/young-entrepreneur-council/12-traits-of-successful-start-up-leaders.html 
+
+Track: PERSISTENCE
+Track Order: 2
+	Lesson Type:: watch
+	Body:: <p>Dan talks about his story and the hurdles he faced in the early days of his journey.</p>
+	Description:: Becoming an Entrepreneur- Dan Price
+	Video Uid:: 134882645
+	Video Title:: Becoming an Entrepreneur
+	Video Author:: Dan Price, CEO of Gravity Payments
+
+	Lesson Type:: watch
+	Body:: <p>Ron talks about how difficult business is, and why being persistent and passionate is crucial to success.</p>
+	Description:: None of this is Easy- Ron Johnson
+	Video Uid:: 134883014
+	Video Title:: None of this is Easy
+	Video Author:: Ron Johnson, former Senior Vice President of Retail Operations at Apple
+
+	Lesson Type:: watch
+	Body:: <p>Nate talks about the early obstacles Airbnb faced and how they dealt with them.</p>
+	Description:: AirBnB & Early Obstacles- Nate Blecharczyk
+	Video Uid:: 134883166
+	Video Title:: AirBnB & Early Obstacles
+	Video Author:: Nate Blecharczyk, Founder and CTO of Airbnb
+
+	Lesson Type:: challenge
+	Body:: Running a company is a marathon, not a sprint. You can’t work on a startup if you don’t eat well, sleep well, and exercise to stay healthy. You don’t have to give up meat to be healthy, but making such a drastic change takes a lot of willpower and discipline: become a vegetarian for 2 weeks and tell us about your new diet. Getting past this challenge without cheating will improve your self discipline for facing bigger obstacles on your way to becoming an entrepreneur.
+	Description:: Running a company is a marathon, not a sprint. You can’t work on a startup if you don’t eat well, sleep well, and exercise to stay healthy. You don’t have to give up meat to be healthy, but making such a drastic change takes a lot of willpower and discipline: become a vegetarian for 2 weeks and . If you cheat, that’s on you; there are much harder things you’ll have to face on your way to becoming an entrepreneur.
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
+
+	Lesson Type:: challenge
+	Body:: The hacking life style has been highly glamorized, but it’s actually a terrible idea to skip meals and go to bed at 5 AM every day. For 2 weeks, go to bed no later than 11 pm, wake up at 6 am, and get an hour of work done before 8 am. Again, try to get past this challenge without cheating, there are a lot of people who live like this without any problems!
+	Description:: The hacking life style has been highly glamorized, but it’s actually a terrible idea to skip meals and go to bed at 5 AM every day. For 2 weeks, go to bed no later than 11 pm, wake up at 6 am, and get an hour of work done before 8 am. Again, cheat if you’d like, but remember that there are a lot of people out there who life like this already with no problems.
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
+
+	Lesson Type:: challenge
+	Body:: Sometimes the only way to get to where you need to be is through sheer persistence. Many successful startups came to be because their founders refused to take no for an answer. Getting yourself in front of a prominent figure when you don’t have much credit starting out can be difficult, but is absolutely necessary to grow and learn. Figure out a way to get in contact with a mentor in your industry. Keep messaging and calling different people and keep following up with them until you get a meeting or call with them.
+	Description:: Sometimes the only way to get to where you need to be is through sheer persistence. Many startup successes came to be because their founders would not take no for an answer. Getting yourself in front of a prominent figure when you don’t have much credit starting out can be difficult, but is absolutely necessary to grow and learn. Figure out a way to get in contact with a mentor in your industry. Keep messaging/calling different people or keep following up with the same people until you get a meeting or call with them.
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
+
+	Lesson Type:: discussion
+	Body:: Think back to a time when you gave up instead of pushing forward. Why did you stop? Was worth it? If you could go back to do it all over again, what would you do differently and why?
+	Description:: Think back to a time when you gave up instead of pushing forward. Why did you stop? Was worth it? If you could go back to do it all over again, could you make it?
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
+
+	Lesson Type:: discussion
+	Body:: Being a full time entrepreneur usually means giving up your social life, relationships, and family time for your work. You have to put everything you have into your startup because competition is fierce and everyone else is working just as hard, if not harder. How badly do you want to pursue your idea, and how much are you willing to sacrifice to reach your goals?
+	Description:: Being a full time entrepreneur usually means giving up your social life, relationships, and family time for your work. You have to put everything you have into it because competition is fierce and everyone else is working just as hard if not not harder. How badly do you want to pursue your idea, and how much are you willing to sacrifice to reach your goals?
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
+
+	Lesson Type:: discussion
+	Body:: Think of a time when you managed to push through instead of giving up. What kept you going? Could you dedicate yourself to pursuing a goal for 5 years, or even 10? What keeps you going through tough times now?
+	Description:: Think of a time when you did manage to push through instead of giving up. What kept you going? Could you dedicate yourself to pursuing a goal for 5 years, or even 10? What keeps you going through tough times even now?
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
+
+	Lesson Type:: reading
+	Body:: Book: Humble Pie - Gordon Ramsay http://www.amazon.com/Humble-Pie-Gordon-Ramsay-ebook/dp/B003E74B24 
+	Description:: Book: Humble Pie - Gordon Ramsay http://www.amazon.com/Humble-Pie-Gordon-Ramsay-ebook/dp/B003E74B24 
+
+	Lesson Type:: reading
+	Body:: Book: The Hard Thing About Hard Things - Ben Horowitz http://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205 
+	Description:: Book: The Hard Thing About Hard Things - Ben Horowitz http://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205 
+
+	Lesson Type:: reading
+	Body:: AirBnB got rejected 7 times in 2008 https://medium.com/@bchesky/7-rejections-7d894cbaa084
+	Description:: AirBnB got rejected 7 times in 2008 https://medium.com/@bchesky/7-rejections-7d894cbaa084
+
+	Lesson Type:: reading
+	Body:: What Happens to a Startup When a Cofounder Dies http://www.forbes.com/sites/ellenhuet/2015/06/25/what-happens-to-a-startup-when-a-cofounder-dies-kitchit/
+	Description:: What Happens to a Start Up When a Cofounder Dies http://www.forbes.com/sites/ellenhuet/2015/06/25/what-happens-to-a-startup-when-a-cofounder-dies-kitchit/
+	Video Uid:: 
+	Video Title:: 
+	Video Author:: 
+
+	Lesson Type:: reading
+	Body:: The Startup Hustle http://www.entrepreneur.com/article/230073 
+	Description:: The Startup Hustle http://www.entrepreneur.com/article/230073 
 
 Track: BRANDING & STORY
 Track Order: 1

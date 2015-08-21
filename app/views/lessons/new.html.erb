@@ -36,7 +36,7 @@
 			<div class="form-row">
 				<div class="row-left">
 					<div class="field-label">
-						BODY TEXT
+						MAIN TEXT (will be side text for videos)
 					</div>
 					<%= f.text_area :body, :class => "form-field lesson-body", placeholder: "Body (accepts html)" %>
 					<div class="field-label">
@@ -71,7 +71,7 @@
 					</div>
 					<%= f.text_field :video_author, :class => "form-field", placeholder: "Order" %>	
 					<div class="field-label">
-						DESCRIPTION (MANDATORY)
+						SIDE TEXT (MANDATORY)
 					</div>
 					<%= f.text_field :description, :class => "form-field", placeholder: "Description" %>	
 				</div>

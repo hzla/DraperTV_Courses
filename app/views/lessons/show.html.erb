@@ -18,7 +18,7 @@
               <%= link_to lesson_path(lesson) do %>
                 <%= image_tag lesson.icon(lesson == @lesson ? nil : "grey"), :class => "bar-icon" %>
                 <p class="bar-text">
-                  <%= lesson == @lesson ? lesson.full_info : lesson.short_info(lesson_count) %>
+                  <%= lesson == @lesson ? lesson.full_info(lesson_count) : lesson.short_info(lesson_count) %>
                 </p>
                 <%= image_tag lesson.status_icon(current_user), :class => "bar-circle" %>
               <% end %>
@@ -56,7 +56,7 @@
       <iframe src="https://player.vimeo.com/video/<%= @lesson.video_uid %>" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
     <% end %>
 
-    <% if @lesson.body %>
+    <% if @lesson.body && @lesson.lesson_type != "watch" %>
       <div class="lesson-body linkify">
         <%= @lesson.body.html_safe %>
       </div>
@@ -113,9 +113,9 @@
         </p>
     <% end %>
 
-    <% if @lesson.video && @lesson.description %>
+    <% if @lesson.lesson_type == "watch" && @lesson.body %>
       <p class="video-body">
-        <%= @lesson.description %>
+        <%= @lesson.body.html_safe %>
       </p>
     <% end %>
   </div>

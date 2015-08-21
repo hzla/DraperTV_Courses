@@ -25,6 +25,13 @@ GIT
       sass-rails
 
 GIT
+  remote: git://github.com/mkdynamic/omniauth-facebook.git
+  revision: f20e906b52b0a8849569f1391f01771fb628f6d7
+  specs:
+    omniauth-facebook (2.1.0)
+      omniauth-oauth2 (~> 1.2)
+
+GIT
   remote: git://github.com/runtimerevolution/survey.git
   revision: 662adff821d0fdac8320fdff184860985514ce7b
   specs:
@@ -291,11 +298,15 @@ GEM
     jquery-ui-rails (4.2.0)
       railties (>= 3.2.16)
     json (1.8.1)
-    jwt (1.5.0)
+    jwt (1.5.1)
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.9.2)
+    koala (2.0.0)
+      addressable
+      faraday
+      multi_json
     launchy (2.4.2)
       addressable (~> 2.3)
     link_thumbnailer (1.1.2)
@@ -345,9 +356,7 @@ GEM
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
-    omniauth-facebook (2.0.1)
-      omniauth-oauth2 (~> 1.2)
-    omniauth-oauth2 (1.3.0)
+    omniauth-oauth2 (1.3.1)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
@@ -592,6 +601,7 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   kgio
+  koala
   launchy
   link_thumbnailer
   mailchimp-api (~> 2.0.4)
@@ -601,7 +611,7 @@ DEPENDENCIES
   newrelic_rpm
   nokogiri (~> 1.6.6)
   nprogress-rails
-  omniauth-facebook
+  omniauth-facebook!
   paperclip (~> 3.0)
   pg (~> 0.18.1)
   pg_search

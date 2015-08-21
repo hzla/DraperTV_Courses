@@ -29,8 +29,8 @@ class Lesson < ActiveRecord::Base
 	end
 
 
-	def full_info
-		full_text = "#{lesson_type.capitalize} - #{description.split("<br>")[0]}"
+	def full_info number 
+		full_text = "#{lesson_type.capitalize} #{number} - #{description.split("<br>")[0]}"
 	end
 
 	def progress user

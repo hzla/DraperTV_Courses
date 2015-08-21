@@ -39,11 +39,12 @@ gem 'customerio', :git => 'https://github.com/customerio/customerio-ruby'
 gem 'mandrill-api'
 #gem 'mandrill-rails'
 gem "mailchimp-api", "~> 2.0.4"
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', github: "mkdynamic/omniauth-facebook"
 gem 'ancestry'
 gem 'vimeo'
 gem 'sanitize'
 gem 'browser'
+gem 'koala'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,3 +1,28 @@
+<header class="no-desk">
+  <%= image_tag "nav-icon.png", :class => "menu header-item" %>
+  <%= link_to root_path do %>
+    <%= image_tag "drapertv-logo.png", :class => "logo header-item" %>
+  <% end %>
+  <%= form_tag "http://www.drapertv.com/searches" do %>
+    <%= text_field_tag :terms, nil, :class => "search-box header-item hide-section", placeholder: "Search" %>
+  <% end %>
+  <%= image_tag "search-icon.png", :class => "search header-item" %>
+</header>
+<div class="menu-menu hide-section">
+  <%= link_to root_path do %>
+    <h3 class="menu-item">Home</h3>
+  <% end %>
+  <%= link_to "http://www.drapertv.com/series" do %>
+    <h3 class="menu-item">Series</h3>
+  <% end %>
+  <%= link_to "http://www.drapertv.com/livestreams" do %>
+    <h3 class="menu-item">Livestreams</h3>
+  <% end %>
+  <%= link_to "https://draperuniversity.com" do %>
+    <h3 class="menu-item">Draper University</h3>
+  <% end %>
+</div>
+
 <div class="mobile-container">
 	<%= image_tag "nomobile.svg", :class => "no-mobile-pic" %>
 	<p class="no-mobile-text">

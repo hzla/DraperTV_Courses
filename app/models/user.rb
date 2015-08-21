@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
     timezone = auth_hash.extra.raw_info.timezone
     profile = auth_hash['info']
     fb_token = auth_hash.credentials.token
-    user = User.new first_name: profile["name"].split(" ")[0], last_name: profile["name"].split(" ")[-1], timezone: timezone, password: rand(1213920) + 1000000, profile_pic_url: profile["image"]
+    user = User.new email: profile["email"], first_name: profile["name"].split(" ")[0], last_name: profile["name"].split(" ")[-1], timezone: timezone, password: rand(1213920) + 1000000, profile_pic_url: profile["image"]
     user.authorizations.build :uid => auth_hash["uid"]
     user if user.save(validate: false)
   end
