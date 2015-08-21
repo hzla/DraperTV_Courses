@@ -35,7 +35,7 @@
 
         <ul class="dropdown-menu">
           <% if current_user %>
-            <li role="menu"><%= link_to 'Account Info',  edit_user_path(current_user) %></li>
+            <li role="menu"><%= link_to 'Account Info',  edit_user_path %></li>
             <li role="menu"><%= link_to 'Change Password',  edit_user_registration_path %></li>
             <li role="menu"><%= link_to 'Terms and Conditions',  terms_path %></li>
             <li role="menu"><%= link_to 'Privacy Policy',  privacy_path %></li>
