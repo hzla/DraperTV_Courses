@@ -62,10 +62,10 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    if !params[:lesson_id]
+    if !params[:resource_id]
       root_path
     else
-      lesson_path(params[:lesson_id])
+      "/#{params[:resource_type].pluralize}/#{params[:resource_id]}"
     end
   end
 

@@ -22,6 +22,19 @@
 			width: 200px;
 			border: none;
 		}
+		.upgrade-sub {
+			margin: 0;
+			width: 240px;
+			height: 40px;
+			text-align: center;
+			color: white;
+			font-weight: 700;
+			box-sizing: border-box;
+			background: $blue;
+			line-height: 40px;
+			letter-spacing: 1px;
+			border-radius: 5px;
+		}
 		.form-row {
 			margin-bottom: 40px;
 		}
@@ -84,12 +97,29 @@
 	}
 }
 
-.form-row {
+.form-row, .actions {
 	@include flexbox;
+}
+
+.actions {
+	@include justify-content(space-between);
 }
 
 .form-field {
 	width: calc(50% - 10px);
+}
+
+.form-field.membership {
+	width: 240px;
+	.current-membership {
+		border: 1px solid #c0c0c0;
+		border-radius: 5px;
+		line-height: 40px;
+		height: 40px;
+		text-align: center;
+		color: $green;
+		font-weight: 700;
+	}
 }
 
 .form-field:first-child {

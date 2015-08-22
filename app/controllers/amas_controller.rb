@@ -3,21 +3,18 @@ class AmasController < ApplicationController
 
 
   def index
-    @upcoming_amas = Ama.upcoming "monthly"
-    @past_amas = Ama.past "monthly"
+    @upcoming_amas = Ama.upcoming 
+    @past_amas = Ama.past
     @page = "monthly"
   end
 
-  def biweeklies
-    @upcoming_amas = Ama.upcoming "biweekly"
-    @past_amas = Ama.past "biweekly"
-    @page = "biweekly"
-  end
 
   def show
-    redirect_to "/users/sign_up" and return if !current_user
-    redirect_to new_charge_path and return if !current_user.paid 
+    redirect_to "/users/sign_up?resource_type=ama&resource_id=#{params[:id]}" and return if !current_user
     @ama = Ama.find params[:id]
+    if !@ama.is_upcoming?
+      redirect_to new_charge_path and return if !current_user.paid 
+    end
     @comment = Comment.new
     @comments = @ama.regular_comments
     @chat_comments = @ama.chat_comments

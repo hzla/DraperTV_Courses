@@ -1,0 +1,71 @@
+<div class="top-section">
+  <div class="row">
+    <div class="top-column-main">
+      <h1>Enroll Now</h1>
+    </div><!-- column main -->
+  </div><!-- row -->
+</div>
+
+
+<div class="column-main">
+  <div id="plans">
+
+    <p class="plans-text">
+      You’ll need to purchase membership to view our online courses, select one of the memberships below and check out to start your entrepreneurial learning!
+    </p>
+    <div class="plan selected hero" data-plan="Hero">
+      <div class="plan-select">
+        <%= image_tag "untouched.svg", :class => "plan-icon hidden unselected" %>
+        <%= image_tag "done.svg", :class => "plan-icon selected" %>
+      </div>
+      <div class="plan-info">
+        <p class="plan-title green-text">Hero Membership - $10/month</p>
+        <p class="plan-description">Get access to courses, weekly hangouts, and monthly live interviews with Silicon Valley’s best.</p>    
+      </div>
+    </div>
+
+    <div class="plan superhero" data-plan="SuperHero">
+      <div class="plan-select">
+        <%= image_tag "untouched.svg", :class => "plan-icon unselected" %>
+        <%= image_tag "checkblue.svg", :class => "plan-icon hidden selected" %>
+      </div>
+      <div class="plan-info">
+        <p class="plan-title blue-text">Superhero Membership - $15/month</p>
+        <p class="plan-description">Same as the Hero Package, but you get access to the entire library of past Draper lectures, interviews, and fireside chats. </p>    
+      </div>
+    </div>
+
+    <div class="plan superhero-yearly" data-plan="SuperHeroYearly">
+      <div class="plan-select">
+        <%= image_tag "untouched.svg", :class => "plan-icon unselected" %>
+        <%= image_tag "checkred.svg", :class => "plan-icon hidden selected" %>
+      </div>
+      <div class="plan-info">
+        <p class="plan-title red-text">Superhero Yearly Membership - $90/year</p>
+        <p class="plan-description">Get everything in the Superhero, but we’ll give you 6 months free!</p>    
+      </div>
+    </div>
+
+  </div>
+</div><!-- column-main -->
+
+<%= content_for :column_right do %>
+  <div class="chat-header">
+    <p>INFORMATION</p>
+  </div>
+  <div class="column-body payment">
+    <%= form_tag update_charge_path, id: "payment-form" do %>
+      <input type="hidden" name="plan" value="Hero" id="plan-input">
+      <input type="hidden" name="lesson_id" value="<%= params[:lesson_id] %>">
+      <button type="submit" class="checkout">UPDATE SUBSCRIPTION</button>
+      <p>We’ll charge you for the highest membership you have upgraded to in the current month.
+        <br><br>
+        If you downgrade or cancel your subscription you will get to keep the access you have already paid for until the end of the final billing cycle.
+      </p>
+    <% end %> 
+  </div>
+
+<% end %>
+
+
+

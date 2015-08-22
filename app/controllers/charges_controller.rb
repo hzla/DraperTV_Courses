@@ -27,11 +27,26 @@ class ChargesController < ApplicationController
     else
       @subscription = @customer.subscriptions.create plan: @plan
     end
-    if params[:lesson_id]
+    if params[:lesson_id] !=  ""
       redirect_to lesson_path(params[:lesson_id]) and return
     else
       redirect_to root_path 
     end
+  end
+
+  def edit
+    
+  end
+
+  def update
+    @customer = Stripe::Customer.retrieve(current_user.customer_id)
+    binding.pry
+    @plan = params["plan"] || "Hero"
+    @subscription = @customer.subscriptions.first
+    @subscription.plan = @plan
+    @subscription.save
+    current_user.update_attributes plan: @plan, paid: true
+    redirect_to edit_user_path
   end
 
   def destroy

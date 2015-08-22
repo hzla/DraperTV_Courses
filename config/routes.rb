@@ -24,7 +24,9 @@ OnlineSchool::Application.routes.draw do
   get '/comments/:id/upvote', to: "comments#upvote", as: "comment_upvote"
   
   resources :amas
-  resources :charges
+  resources :charges, only: ["create", "new"]
+  get '/edit_subscription', to: "charges#edit", as: "edit_charge"
+  post '/update_subscription', to: "charges#update", as: "update_charge"
   get '/cancel_subscription', to: 'charges#destroy', as: "destroy_charge"
 
   get '/auth/facebook/callback', :to => 'auths#facebook_create'

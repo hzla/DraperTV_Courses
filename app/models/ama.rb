@@ -1,12 +1,16 @@
 class Ama < ActiveRecord::Base
 	has_many :comments
 
-	def self.upcoming ama_type
-		amas = Ama.where('start_date > (?)', Time.now).where(ama_type: ama_type)
+	def self.upcoming 
+		amas = Ama.where('start_date > (?)', Time.now)
 	end
 
-	def self.past ama_type
-		amas = Ama.where('start_date < (?)', Time.now).where(ama_type: ama_type)
+  def is_upcoming?
+    start_date > Time.now 
+  end
+
+	def self.past
+		amas = Ama.where('start_date < (?)', Time.now)
 	end
 
 	def elapsed_time

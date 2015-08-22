@@ -56,6 +56,13 @@
 	@include justify-content(space-between);
 }
 
+#payment-form {
+	p {
+		margin-top: 20px;
+		color: #c0c0c0;
+	}
+}
+
 .payment-input {
 	height: 40px;
 	width: 100%;

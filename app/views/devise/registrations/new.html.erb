@@ -27,8 +27,9 @@
         <%= f.input :email, label: 'EMAIL:' %>
         <%= f.input :password, label: "PASSWORD:" %>
         <%= f.input :password_confirmation, label: "PASSWORD CONFIRMATION:" %>
-        <% if params["lesson_id"] %>
-          <input type="hidden" value="<%= params['lesson_id'] %>" name="lesson_id">
+        <% if params["resource_id"] %>
+          <input type="hidden" value="<%= params['resource_id'] %>" name="resource_id">
+          <input type="hidden" value="<%= params['resource_type'] %>" name="resource_type">
         <% end %>
         <%= f.button :submit, "SIGN UP", :use_rails_ajax => false %>
       <% end %>
@@ -39,7 +40,7 @@
       <div class="separator"></div>
       <div class="links">
           <span class="already-account">Already have an account?</span>
-          <%= link_to "SIGN IN", new_session_path(resource_name, lesson_id: params[:lesson_id]), :class => "devise-link login-link" %>
+          <%= link_to "SIGN IN", new_session_path(resource_name, resource_id: params[:resource_id], resource_type: params[:resource_type]), :class => "devise-link login-link" %>
       </div>
     </div>
   </div>

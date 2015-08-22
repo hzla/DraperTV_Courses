@@ -22,16 +22,30 @@
           <%= f.label :email, "EMAIL ADDRESS" %>
           <%= f.text_field :email %>
         </div>
+        <% if current_user.customer_id %>
+          <div class="form-field membership">
+            <%= f.label :email, "CURRENT MEMEBERSHIP" %>
+            <div class="current-membership"><%= @plans[current_user.plan] %></div>
+          </div>
+        <% end %>
       </div>
     <div class="actions">
       <%= f.submit "SAVE INFO" %>
+      <% if current_user.customer_id %>
+        <%= link_to edit_charge_path do %>
+          <div class="upgrade-sub">
+            UPGRADE SUBSCRIPTION
+          </div>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
   
+
   <% if current_user.customer_id %>
-  <div class="cancel-sub">
-    Cancel Subscription
-  </div>
+    <div class="cancel-sub">
+      Cancel Subscription
+    </div>
   <% end %>
 </div>
 

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
+    @plans = {"Hero" => "HERO ($10/M)", "SuperHero" => "SUPER HERO ($15/M)", "SuperHeroYearly" => "SUPER HERO YEARLY ($90/M)" }
   end
 
   def update

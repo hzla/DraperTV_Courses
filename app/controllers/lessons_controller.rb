@@ -9,7 +9,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find params[:id]
     @track = @lesson.track
     @topic = @track.topic
-    redirect_to "/users/sign_up?lesson_id=#{@lesson.id}" and return if !current_user
+    redirect_to "/users/sign_up?resource_id=#{@lesson.id}&resource_type=lesson" and return if !current_user
     redirect_to new_charge_path(lesson_id: @lesson.id) and return if !current_user.paid	&& !@topic.free 
 
   	@tracks = @topic.tracks

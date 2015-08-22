@@ -87,21 +87,35 @@
 
 
 <%= content_for :column_right do %>
-  <div class="padding"></div>  
+  <div class="chat-header">
+    <p>INFORMATION</p>
+  </div>
+  
   <div class="welcome-container">
     <div class="welcome-messages">
       <iframe src="https://player.vimeo.com/video/135921663" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       <% if !current_user %>
-        <p class="welcome-message">Welcome to DraperTV Courses!</p>
-        <p class="welcome-message">Feel free to stop by and look around, but to take the courses or participate in Monthly & Biweekly streams, you’ll need to sign up and purchase a membership.</p>
+        <p class="welcome-message title">Welcome to DraperTV Courses!</p>
+        <p class="welcome-message">We’ve given you the Attitude course for <span class="red-text">free</span>. You can also watch and participate in the Live Learning lessons we host every two weeks.</p>
+        <p class="welcome-message">To check out the other courses or watch archived Live Learning lessons, you’ll need to sign up and purchase a membership.</p>
         <%= link_to new_user_registration_path do %>
           <div class="get-started">
             GET STARTED
           </div>
         <% end %>
+      <% else %>
+        <p>Learn how to build a startup with DraperTV Courses. We bring the magic of Silicon Valley and Draper University education online to accelerate your ideas, businesses, and products.</p>
       <% end %>
     </div>
   </div>
+
+  <% if current_user && !current_user.paid %>
+    <%= link_to new_charge_path do %>
+      <div class="purchase-membership btn-ui">
+        PURCHASE MEMBERSHIP
+      </div>
+    <% end %>
+  <% end %>
 <% end %>
 
 

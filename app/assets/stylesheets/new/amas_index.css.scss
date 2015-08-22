@@ -3,6 +3,16 @@
 	box-sizing: border-box;
 }
 
+.section-title {
+	@include flexbox;
+	@include justify-content(space-between);
+	p {
+		margin: 20px 0px;
+		line-height: 27px;
+		font-weight: 700;
+	}
+}
+
 .section-title h1 {
 	color: $blue;
 	font-size: 20px;

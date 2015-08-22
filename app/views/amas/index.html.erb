@@ -30,6 +30,7 @@
   </div>
   <div class="section-title archive">
     <h1>ARCHIVE</h1>
+    <p class="green-text">You'll need to purchase a membership to view these!</p>
   </div>
   <div class="section-content-list">
     <% @past_amas.each do |ama| %>
@@ -53,6 +54,12 @@
   </div>
 </div>
 
-<div class="column-right">
-
-</div>
+<%= content_for :column_right do %>
+  <% if current_user && !current_user.paid %>
+    <%= link_to new_charge_path do %>
+      <div class="purchase-membership btn-ui">
+        PURCHASE MEMBERSHIP
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
