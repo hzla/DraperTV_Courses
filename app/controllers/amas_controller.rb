@@ -26,4 +26,5 @@ class AmasController < ApplicationController
     @user = current_user
     @user.randomize_color
   end
+
 end

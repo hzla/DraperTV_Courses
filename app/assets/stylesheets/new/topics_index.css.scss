@@ -152,7 +152,8 @@
 	@include flexbox;
 	@include flex-direction(column);
 	@include justify-content(space-between);
-	min-height: calc(100% - 110px);
+	height: 300px;
+
 }
 
 .welcome-message.title {
@@ -164,6 +165,8 @@
 	color: $blue;
 	margin-bottom: 20px;
 }
+
+
 
 .get-started {
 	background: $green;

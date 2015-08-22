@@ -22,6 +22,10 @@ OnlineSchool::Application.routes.draw do
 
   resources :comments
   get '/comments/:id/upvote', to: "comments#upvote", as: "comment_upvote"
+
+  get '/announcements/hide', to: 'announcements#hide', as: "hide_announcements"
+  resources :announcements
+
   
   resources :amas
   resources :charges, only: ["create", "new"]

@@ -32,6 +32,7 @@ body {
   #main-body .column-right {
     box-sizing: border-box;
     height: calc(100vh - 50px);
+    top: 0px;
     .column-body {
       box-sizing: border-box;
       padding: 20px;
@@ -74,7 +75,6 @@ body {
 	#main-body .column-right {
 		width: 300px;
     position: relative;
-    margin-top: -50px;
 	}
 	#main-body {
     width: 100vw;
@@ -84,7 +84,6 @@ body {
     height: calc(100vh - 50px);
     z-index: 1;
 		@include flexbox;
-    padding-top: 50px;
     max-height: calc(100vh - 50px);
     margin: 0;
       #side-nav {
@@ -145,6 +144,13 @@ body {
         height: calc(100vh - 110px);
       }
 	}
+}
+
+@media (min-width: 1280px) {
+  body #main-body .column-right {
+    position: fixed;
+    top: 50px;
+  }
 }
 
 .green-text {

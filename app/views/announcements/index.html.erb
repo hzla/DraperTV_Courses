@@ -1,0 +1,28 @@
+<div class="top-section">
+  <div class="row">
+    <div class="top-column-main">
+      <h1 class="no-letter-spacing">Announcements</h1>
+    </div><!-- column main -->
+  </div><!-- row -->
+</div>
+
+
+<div class="column-main">
+	<div class="announcements-container">
+		<% @announcements.each do |date, group| %>
+		  <div class="announcement-group">
+		  	<div class="announcement-date-header">
+		  		<%= date %>
+		  	</div>
+		  	<% group.each do |an| %>
+			  	<div class="announcement">
+				    <div class="bullet"></div>
+				    <div class="announcement-body">
+				      <%= an.body %>
+				    </div>
+			    </div>
+			 <% end %>
+		  </div>
+		<% end %>	
+	</div>
+</div>

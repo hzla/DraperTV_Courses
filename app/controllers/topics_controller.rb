@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
     @topics = Topic.all.order(:order)
     @user = current_user
     @page = "courses"
+    @announcements = Announcement.today
     @tutorial = params["tutorial"] == "true"
     if current_user && current_user.show_topic_tutorial
       current_user.update_attribute(:show_topic_tutorial, false)
