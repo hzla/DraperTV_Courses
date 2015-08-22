@@ -52,6 +52,13 @@
 					<div class="tool-tip-line"></div>
 				</div>
 			</div>
+			<% if current_user && !current_user.paid %>
+			    <%= link_to new_charge_path do %>
+			      <div class="purchase-membership btn-ui">
+			        PURCHASE MEMBERSHIP
+			      </div>
+		    <% end %>
+		<% end %>
 		</div>
 	<% end %>
 </div>

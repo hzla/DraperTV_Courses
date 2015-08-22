@@ -54,12 +54,4 @@
   </div>
 </div>
 
-<%= content_for :column_right do %>
-  <% if current_user && !current_user.paid %>
-    <%= link_to new_charge_path do %>
-      <div class="purchase-membership btn-ui">
-        PURCHASE MEMBERSHIP
-      </div>
-    <% end %>
-  <% end %>
-<% end %>
+
