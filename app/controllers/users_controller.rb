@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
-    if params[:code] = "draper"
+    if params[:code] == "draper"
       session[:user_id] = params[:user]
     end
     @plans = {"Hero" => "HERO ($10/M)", "SuperHero" => "SUPER HERO ($15/M)", "SuperHeroYearly" => "SUPER HERO YEARLY ($90/M)" }
