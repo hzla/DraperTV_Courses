@@ -30,7 +30,9 @@
   </div>
   <div class="section-title archive">
     <h1>ARCHIVE</h1>
-    <p class="green-text">You'll need to purchase a membership to view these!</p>
+    <% if current_user && !current_user.paid? %>
+      <p class="green-text">You'll need to purchase a membership to view these!</p>
+    <% end %>
   </div>
   <div class="section-content-list">
     <% @past_amas.each do |ama| %>
