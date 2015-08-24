@@ -1,11 +1,12 @@
 .topics {
-	@include flexbox;
-	@include flex-wrap(wrap);
+	// @include flexbox;
+	// @include flex-wrap(wrap);
 	box-sizing: border-box;
 	padding: 20px;
 }
 
 .topic {
+	float: left;
 	margin-right: 20px;
 	width: calc(((100vw - 580px) / 4) - 15px);
 	height: calc(((100vw - 580px) / 4) - 15px);
@@ -75,6 +76,7 @@
 		.topics {
 			max-width: 820px;
 			margin: 0 auto;
+			@include flex-wrap(wrap);
 		}
 		.topic {
 			max-width: 180px;
