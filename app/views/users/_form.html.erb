@@ -20,7 +20,7 @@
       <div class="form-row">
         <div class="form-field">
           <%= f.label :email, "EMAIL ADDRESS" %>
-          <%= f.text_field :email %>
+          <%= f.text_field :email, required: true %>
         </div>
         <% if current_user.customer_id %>
           <div class="form-field membership">

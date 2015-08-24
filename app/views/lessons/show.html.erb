@@ -57,7 +57,7 @@
     <% end %>
 
     <% if @lesson.body && @lesson.lesson_type != "watch" %>
-      <div class="lesson-body linkify">
+      <div class="lesson-body linkify <%= @lesson.lesson_type.downcase %>-body">
         <%= @lesson.body.html_safe %>
       </div>
     <% end %>
