@@ -2,7 +2,6 @@
 	display: none;
 }
 
-
 .events-container {
 	overflow-y: scroll;
   	height: calc(100vh - 110px);
@@ -219,13 +218,16 @@
 	font-weight: 700;
 	background: #e7e7e7;
 	cursor: pointer;
+	border-top: 1px solid #414141;
+	border-bottom: 1px solid #414141;
+	background: white;
 }
 
 .bar-group {
 	border-right: 1px solid #e7e7e7;
 	box-sizing: border-box;
 }
-.bar-item a {
+.bar-item a, .bar-item.type-header {
 	@include flexbox;
 	justify-content: space-between;
 	box-sizing: border-box;
@@ -240,7 +242,7 @@
 
 .bar-item.current a{
 	align-items: initial;
-	background: rgba(36,109,180,0.2);
+	background: #e7e7e7;
 	.bar-lesson-desc {
 		display: block;
 	}
@@ -255,6 +257,11 @@
 	width: calc(100% - 60px);
 	margin-bottom: 0px;
 	overflow: hidden;
+}
+
+.type-header {
+	font-weight: 700;
+	letter-spacing: 1px;
 }
 
 .bar-circle {

@@ -175,6 +175,8 @@
 }
 
 .profile-karma {
+	// @include flexbox;
+	// @include justify-content(space-between);
 	color: $light-blue;
 }
 
@@ -220,6 +222,34 @@
 	}
 }
 
+.profile-info {
+	@include align-items(center);
+	.side-info-icon {
+		height: 16px;
+		width: 16px;
+		cursor: pointer;
+	}
+	.profile-karma {
+		@include flexbox;
+		@include justify-content(space-between);
+	}
+	.profile-text {
+		width: calc(100% - 66px);
+	}
+	.tool-tip {
+		right: -330px;
+		top: 2px;
+		.tool-tip-circle {
+			top: 18px;
+			margin: 0;
+		}
+		.tool-tip-line {
+			margin: 0;
+			top: 25px;
+		}
+	}
+}
+
 .tool-tip {
 	width: 320px;
 	border: 2px solid $blue;
@@ -258,6 +288,7 @@
 
 .tool-tip-body {
 	margin-bottom: 20px;
+	font-weight: 500;
 }
 
 .tool-tip-okay {
@@ -279,6 +310,18 @@
 	background: #1e977c;
 	-webkit-transition-duration: 0.3s; /* Safari */
     transition-duration: 0.3s;
+}
+
+.rank-info {
+	width: 140px;
+	margin-top: 10px;
+	.rank {
+		.rank-title, .rank-points {
+			color: $blue;
+		}
+		@include flexbox;
+		@include justify-content(space-between);
+	}
 }
 
 

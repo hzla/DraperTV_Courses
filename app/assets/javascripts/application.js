@@ -27,25 +27,10 @@
 // = require private_pub
 // = require vendor/slidebars.min
 // = require vendor/emoticon
-// = require user_assignments
 // = require best_in_place
 // = require best_in_place.purr
 // = require jquery.turbolinks
 
-
-NProgress.configure
-  showSpinner: false
-  ease: 'ease'
-  speed: 500
-
-
-function contains(arr, value) {
-    var i = arr.length;
-    while (i--) {
-        if (arr[i] === value) return true;
-    }
-    return false;
-}
 
 
 

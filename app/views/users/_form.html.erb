@@ -14,7 +14,12 @@
       <div class="form-row">
           <div class="form-field">
             <%= f.label :avatar, "AVATAR" %>
-            <%= f.file_field :avatar, label: "Avatar" %>
+            <div class="upload-container">
+              <%= f.file_field :avatar, label: "Avatar" %>
+              <div class="upload-btn">Upload</div>
+              <div class="upload-preview">No file chosen</div>
+            </div>
+            
           </div>
       </div>
       <div class="form-row">
@@ -69,3 +74,10 @@
   </div>
 
 </div>
+
+<script>
+    
+  $("#user_avatar").change(function(){
+      console.log(this)  
+  });
+</script>

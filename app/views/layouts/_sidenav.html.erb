@@ -1,6 +1,37 @@
 <div id="side-nav">
-
 	<% if content_for?(:side_nav) %>
+		<div class="profile-info">
+			<% user = current_user %>
+			<% if user %>
+				<%= image_tag user.avatar_pic, :class => "profile-pic" %>
+				<div class="profile-text">
+					<div class="profile-name">
+						<%= user.full_name %>
+					</div>
+					<div class="profile-karma">
+						<%= user.karma || 0 %> - <%= user.title %>
+						<%= image_tag "info-icon.svg", :class => "side-info-icon tool-tip-icon" %>
+						<div class="tool-tip">
+							<div class="tool-tip-header">
+								LIVE LEARNING
+							</div>
+							<div class="tool-tip-body">
+								Every month we’ll bring in one of Silicon Valley’s best so you can ask them for advice, opinions, and insight. Submit your questions any time before the session begins or upvote other students’ suggestions. We’ll leave 20 minutes for a live Q&A so you can talk directly with the mentors we bring in.
+							</div>
+							<div class="tool-tip-okay">
+								<%= image_tag "check.svg", :class => "tool-tip-check" %>
+							</div>
+							<div class="tool-tip-circle"></div>
+							<div class="tool-tip-line"></div>
+						</div>
+					</div>
+				</div>
+			<% else %>
+				<%= link_to '/users/sign_in' do %>
+					<p class="green sign-in">SIGN IN</p>
+				<% end %>
+			<% end %>
+		</div>
 		<%= yield :side_nav %>
 	<% else %>
 		<div class="profile-info">
@@ -12,15 +43,74 @@
 						<%= user.full_name %>
 					</div>
 					<div class="profile-karma">
-						<%= user.karma || 0 %> - <%= user.title %>
+						<p><%= user.karma || 0 %> - <%= user.title %></p>
 					</div>
+				</div>
+				<%= image_tag "info-icon.svg", :class => "side-info-icon tool-tip-icon" %>
+				<div class="tool-tip">
+					<div class="tool-tip-header">
+						KARMA
+					</div>
+					<div class="tool-tip-body">
+						You gain karma when you complete lessons and when people upvote your responses, questions, or comments.
+					</div>
+					<div class="tool-tip-header">
+						RANK
+					</div>
+					<div class="tool-tip-body">
+						Ask you gain karma you’ll rise in rank, check below to see your progress!
+						<div class="rank-info">
+							<div class="rank">
+								<div class="rank-title">Recruit</div>
+								<div class="rank-points">0</div>
+							</div>
+							<div class="rank">
+								<div class="rank-title">Trainee</div>
+								<div class="rank-points">300</div>
+							</div>
+							<div class="rank">
+								<div class="rank-title">Rookie</div>
+								<div class="rank-points">700</div>
+							</div>
+							<div class="rank">
+								<div class="rank-title">Challenger</div>
+								<div class="rank-points">1200</div>
+							</div>
+							<div class="rank">
+								<div class="rank-title">Hero</div>
+								<div class="rank-points">1700</div>
+							</div>
+							<div class="rank">
+								<div class="rank-title">Champion</div>
+								<div class="rank-points">2300</div>
+							</div>
+							<div class="rank">
+								<div class="rank-title">Legend</div>
+								<div class="rank-points">3000</div>
+							</div>
+							<div class="rank">
+								<div class="rank-title">Guru</div>
+								<div class="rank-points">4000</div>
+							</div>
+						</div>
+					</div>
+					<div class="tool-tip-header">
+						REWARDS
+					</div>
+					<div class="tool-tip-body">
+						We’ll be adding in Draper Coin which you can trade in for DU merch, software deals, and other startup related perks. You’ll be able to earn them by collecting that sweet, sweet karma and advancing in rank.
+					</div>
+					<div class="tool-tip-okay">
+						<%= image_tag "check.svg", :class => "tool-tip-check" %>
+					</div>
+					<div class="tool-tip-circle"></div>
+					<div class="tool-tip-line"></div>
 				</div>
 			<% else %>
 				<%= link_to '/users/sign_in' do %>
 					<p class="green sign-in">SIGN IN</p>
 				<% end %>
 			<% end %>
-
 		</div>
 		<div class="main">
 			<div class="side-link-container">

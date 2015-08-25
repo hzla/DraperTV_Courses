@@ -9,20 +9,29 @@
         </div>
         <% lesson_count = 0 %>
         <% skip = false %>
-        <% track.ordered_lessons.each do |lesson| %>
-          <% lesson_count = 0 if lesson.lesson_type == "discussion" && !skip %>
-          <% skip = true if lesson.lesson_type == "discussion" %>
-          <% lesson_count += 1 if lesson.lesson_type != "watch" && lesson.lesson_type != "reading" %>
-          <% if lesson.lesson_type != "tools" %>
-            <div class="bar-item <%= 'current' if lesson == @lesson %>">
-              <%= link_to lesson_path(lesson) do %>
-                <%= image_tag lesson.icon(lesson == @lesson ? nil : "grey"), :class => "bar-icon" %>
-                <p class="bar-text">
-                  <%= lesson == @lesson ? lesson.full_info(lesson_count) : lesson.short_info(lesson_count) %>
-                </p>
-                <%= image_tag lesson.status_icon(current_user), :class => "bar-circle" %>
-              <% end %>
+        <% track.type_sorted_lessons.flatten.each do |lesson| %>
+          <% next if !lesson || lesson == "tools" %>
+          <% if lesson.class == String %>
+            <div class="bar-item type-header">
+              <%= image_tag "#{lesson}.svg", :class => "bar-icon" %>
+              <p class="bar-text <%= lesson %>"><%= lesson.upcase %></p>
+              <div></div>
             </div>
+          <% else %>
+            <% lesson_count = 0 if lesson.lesson_type == "discussion" && !skip %>
+            <% skip = true if lesson.lesson_type == "discussion" %>
+            <% lesson_count += 1 if lesson.lesson_type != "watch" && lesson.lesson_type != "reading" %>
+            <% if lesson.lesson_type != "tools" %>
+              <div class="bar-item <%= 'current' if lesson == @lesson %>">
+                <%= link_to lesson_path(lesson) do %>
+                  <%= image_tag lesson.status_icon(current_user), :class => "bar-circle" %>
+                  <p class="bar-text">
+                    <%= lesson == @lesson ? lesson.full_info(lesson_count) : lesson.short_info(lesson_count) %>
+                  </p>
+                  <div></div>  
+                <% end %>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
       </div>
@@ -86,9 +95,6 @@
       </div>
     <% end %>
   </div>
-
-
-
 
 </div><!-- column-main -->
 <%= content_for :column_right do %>

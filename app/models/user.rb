@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
     :bucket => 'duhonline',
     :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/s3.yml"
-  validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png']
+  validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png', 'image/svg+xml']
   validates_attachment_size :avatar, :less_than => 10.megabytes
   has_many :events
   acts_as_taggable
