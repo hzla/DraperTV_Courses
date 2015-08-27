@@ -40,7 +40,6 @@ class ChargesController < ApplicationController
 
   def update
     @customer = Stripe::Customer.retrieve(current_user.customer_id)
-    binding.pry
     @plan = params["plan"] || "Hero"
     @subscription = @customer.subscriptions.first
     @subscription.plan = @plan

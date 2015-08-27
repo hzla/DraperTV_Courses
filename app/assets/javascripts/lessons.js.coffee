@@ -7,6 +7,7 @@ Lesson =
 		$("body").on 'keypress', '.comment-children, .comment-body, .chat-comment-body', @submitFormOnEnter
 		$('body').on 'ajax:success', '.chat-box-container .new_comment', @addComment
 		$('body').on 'ajax:success', '.main-comment', @addMainComment
+		$('body').on 'keydown', '.main-comment #comment_body', @preventSubmit
 		$('body').on 'ajax:success', '.comment-children .new_comment', @addChildComment
 		$('body').on 'ajax:success', '.upvote-link', @updateUpvotes
 		$('body').on 'click', '.reply-comment', @showCommentReplyForm
@@ -15,6 +16,12 @@ Lesson =
 		$('body').on 'click', '.form-switch', @toggleFormSwitch
 		@linkifyLinks()
 		@scrollToLesson()
+
+	preventSubmit: (e) ->
+		code = e.keyCode || e.which
+		if code == 13 
+			e.preventDefault()
+			return false
 
 	getFields: ->
 		if $('.discussion').hasClass('on')

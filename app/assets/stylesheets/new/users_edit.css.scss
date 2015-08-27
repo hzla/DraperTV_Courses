@@ -50,11 +50,12 @@
 			@include flexbox;
 		}
 		#user_avatar {
-			width: 80px;
+			width: 0px;
 			position: absolute;
 			left: 0;
 			top: 0;
 			opacity: 0;
+			padding: 20px 40px;
 			cursor: pointer;
 		}
 		.upload-btn {
@@ -155,6 +156,7 @@
 		text-align: center;
 		color: $green;
 		font-weight: 700;
+		letter-spacing: 1px;
 	}
 }
 

@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby '2.0.0'
 
 gem 'rails', '4.0.4'
-gem 'nokogiri', "~> 1.6.6"
+gem 'nokogiri', :git => 'https://github.com/sparklemotion/nokogiri'
 gem 'pg', '~> 0.18.1'
 gem 'jquery-turbolinks'
 gem 'nprogress-rails'
@@ -45,6 +45,7 @@ gem 'vimeo'
 gem 'sanitize'
 gem 'browser'
 gem 'koala'
+gem 'recurly', '~> 2.4.5'
 
 # Gems used only for assets and not required
 # in production environments by default.

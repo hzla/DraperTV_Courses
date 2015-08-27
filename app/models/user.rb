@@ -87,6 +87,11 @@ class User < ActiveRecord::Base
     update_attribute 'title', tier
   end
 
+  def plan_color
+    colors = {"Hero" => "green", "SuperHero" => "blue", "SuperHeroYearly" => "red"}
+    colors[plan]
+  end
+
   def randomize_color
     update_attributes color: "#" + ('%06x' % (rand * 0xffffff))
   end

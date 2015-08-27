@@ -30,7 +30,7 @@
         <% if current_user.customer_id %>
           <div class="form-field membership">
             <%= f.label :email, "CURRENT MEMEBERSHIP" %>
-            <div class="current-membership"><%= @plans[current_user.plan] %></div>
+            <div class="current-membership <%= current_user.plan_color %>-text"><%= @plans[current_user.plan] %></div>
           </div>
         <% end %>
       </div>
