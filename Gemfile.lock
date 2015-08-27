@@ -64,11 +64,6 @@ GIT
     customerio (0.5.1)
       httparty (>= 0.5, < 1.0)
 
-GIT
-  remote: https://github.com/sparklemotion/nokogiri
-  revision: f9f40794acd8e142429326eed945cd9b731d058d
-  specs:
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -618,7 +613,7 @@ DEPENDENCIES
   memcachier
   meta_request
   newrelic_rpm
-  nokogiri!
+  nokogiri
   nprogress-rails
   omniauth-facebook!
   paperclip (~> 3.0)

@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby '2.0.0'
 
 gem 'rails', '4.0.4'
-gem 'nokogiri', :git => 'https://github.com/sparklemotion/nokogiri'
+gem 'nokogiri'
 gem 'pg', '~> 0.18.1'
 gem 'jquery-turbolinks'
 gem 'nprogress-rails'
