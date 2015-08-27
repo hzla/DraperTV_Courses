@@ -54,6 +54,8 @@ class ChargesController < ApplicationController
       subscription = @customer.subscriptions.each(&:delete)
       current_user.update_attribute :paid, false
       current_user.update_attribute :customer_id, nil
+    else
+      current_user.update_attributes paid: false
     end
     render json: {message:  "Your subscription has been cancelled."}
   end
