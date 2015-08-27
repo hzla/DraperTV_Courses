@@ -6,6 +6,7 @@ class CodesController < ApplicationController
   	if code
   		code.update_attributes used: true
   		current_user.update_attribute(:paid, true)
+      current_user.update_attribute(:plan, "Unlimited")
       if params[:lesson_id] != ""
         redirect_to lesson_path(id: params[:lesson_id]) and return
       end
