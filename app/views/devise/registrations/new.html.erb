@@ -12,7 +12,7 @@
     
     <%= link_to '/auth/facebook' do %>
       <div class="fb-connect-btn">
-        <%= image_tag "fb.svg", :class => "fb-icon" %>
+        <%= image_tag "fb.png", :class => "fb-icon" %>
         <p class="fb-btn-text">
           CONNECT WITH FACEBOOK
         </p>
@@ -23,7 +23,7 @@
     </p>
     <div class="sign-in sign-up">
       <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-        <%= f.input :first_name, required: true, label: 'FULL NAME:'%>
+        <%= f.input :username, required: true, label: 'USERNAME:'%>
         <%= f.input :email, label: 'EMAIL:' %>
         <%= f.input :password, label: "PASSWORD:" %>
         <%= f.input :password_confirmation, label: "PASSWORD CONFIRMATION:" %>

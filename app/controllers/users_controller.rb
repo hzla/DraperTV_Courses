@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       if @user.update_attributes(user_params)
         format.html { redirect_to edit_user_path, notice: 'User was successfully updated.' }
       else
-        format.html { render action: "edit" }
+        format.html {redirect_to edit_user_path}
       end
     end
   end
@@ -28,6 +28,6 @@ class UsersController < ApplicationController
       :bio, :city, :country, :facebook, :first_name, :last_name, :linkedin, :program, :state, :street_address, :twitter, :zip, :online, :employment,
       :latitude, :longitude, :eventReminder,
       :avatar, :tag_list, :ncounter, :pcounter,
-      :name, :skill_ids,:current_password)
+      :name, :skill_ids,:current_password, :username, :full_name)
   end
 end

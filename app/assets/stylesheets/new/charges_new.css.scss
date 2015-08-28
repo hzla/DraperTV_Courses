@@ -3,6 +3,12 @@
 	box-sizing: border-box;
 	font-size: 20px;
 	font-weight: 500;
+
+}
+
+.plans-container {
+	@include flexbox;
+	@include justify-content(space-between);
 }
 
 .plans-text {
@@ -10,26 +16,28 @@
 }
 
 .plan {
-	background: #F7F7F7;
+	width: calc(33.3% - (40px / 3));
 	box-sizing: border-box;
-	padding: 20px;
+	padding: 40px 20px;
 	@include flexbox;
 	@include justify-content(space-between);
 	@include align-items(center);
+	@include flex-direction(column);
 	cursor: pointer;
-	margin-bottom: 20px;
-	border: 1px solid #f7f7f7;
+	border: 1px solid #c0c0c0;
+	position: relative;
+	text-align: center;
 }
 
-.plan.selected {
+.plan.selected, .plan:hover {
 	border: 1px solid $green;
 }
 
-.plan.superhero.selected {
+.plan.superhero.selected , .plan.superhero:hover{
 	border: 1px solid $blue;
 }
 
-.plan.superhero-yearly.selected {
+.plan.superhero-yearly.selected, .plan.superhero-yearly:hover {
 	border: 1px solid $red;
 }
 
@@ -43,11 +51,35 @@
 	width: 20px;
 }
 
+.plan-select {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	height: 20px;
+	width: 20px;
+}
+
 .plan-title {
-	margin-bottom: 10px;
+	margin-bottom: 40px;
+	font-weight: 700;
+	font-size: 20px;
+}
+
+.plan-divider {
+	width: 40px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	height: 1px;
+	background: #c0c0c0;
+}
+
+.plan-price {
+	line-height: 1.2;
+	font-size: 20px;
 }
 
 .plan-description {
+	font-size: 14px;
 	margin-bottom: 0px;
 }
 

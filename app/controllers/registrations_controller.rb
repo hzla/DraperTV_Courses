@@ -21,12 +21,6 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def create
-    params[:user][:last_name] = params[:user][:first_name].split(" ")[-1]
-    params[:user][:first_name] = params[:user][:first_name].split(" ")[0]
-    super
-  end
-
   def new
     session[:resource_id] = params[:resource_id]
     session[:resource_type] = params[:resource_type]
@@ -39,6 +33,11 @@ class RegistrationsController < Devise::RegistrationsController
     else
       new_charge_path
     end
+  end
+
+  def create
+    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:username, :email, :password, :password_confirmation)}
+    super
   end
 
   def sign_out

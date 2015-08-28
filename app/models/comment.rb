@@ -47,9 +47,13 @@ class Comment < ActiveRecord::Base
 	    end
 	end
 
+	def body
+		super.gsub("\n", "<br>")
+	end
+
 	private
 
 	def sanitize_body
-		update_attributes body: Sanitize.fragment(body)		
+		update_attributes body: Sanitize.fragment(body, elements: ["br"])		
 	end
 end

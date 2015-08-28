@@ -6,7 +6,7 @@
 				<%= image_tag user.avatar_pic, :class => "profile-pic" %>
 				<div class="profile-text">
 					<div class="profile-name">
-						<%= user.full_name %>
+						<%= user.username || user.full_name %>
 					</div>
 					<div class="profile-karma">
 						<%= user.karma || 0 %> - <%= user.title %>
@@ -40,7 +40,7 @@
 				<%= image_tag user.avatar_pic, :class => "profile-pic" %>
 				<div class="profile-text">
 					<div class="profile-name">
-						<%= user.full_name %>
+						<%= user.username || user.full_name %>
 					</div>
 					<div class="profile-karma">
 						<p><%= user.karma || 0 %> - <%= user.title %></p>

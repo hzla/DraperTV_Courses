@@ -92,7 +92,7 @@
 		box-sizing: border-box;
 		width: calc(100% - 80px);
 	}
-	.comment:not(.child) .comment-header {
+	.comment .comment-header {
 		justify-content: space-between;
 	}
 	.comment-header {
@@ -113,12 +113,15 @@
 			box-sizing: border-box;
 			@include flexbox;
 		}
-		.reply-comment {
+		.reply-comment, .delete-comment {
 			color: #c0c0c0;
 			font-weight: 700;
 			text-decoration: underline;
 			cursor: pointer;
 			margin-right: 20px;
+		}
+		.delete-comment {
+			color: $red;
 		}
 	}
 	.comment-body {
@@ -315,7 +318,7 @@ body #main-body .top-column-main p.complete-btn.completed {
 	text-align: right;
 }
 
-.linkify a {
+.linkified a {
 	color: $blue;
 	text-decoration: underline;
 }

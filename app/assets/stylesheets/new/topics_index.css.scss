@@ -295,5 +295,43 @@
 }
 
 
+.page-overlay {
+	width: 100vw;
+	height: calc(100vh - 50px);
+	background: rgba(0,0,0,0.7);
+	position: fixed;
+	top: 50px;
+	left: 0px;
+	z-index: 10;
+}
+
+.user-info-modal.edit-form {
+	width: 320px;
+	border-radius: 5px;
+	background: white;
+	margin: 0px auto;
+	box-sizing: border-box;
+	margin-top: 100px;
+	padding: 20px; 
+	height: auto;
+	form {
+		margin-bottom: 0px;
+	}
+	.form-field {
+		width: 100%;
+	}
+	.form-row {
+		margin-bottom: 20px;
+	}
+	label {
+		color: #414141;
+	}
+	input[type="submit"] {
+		background: $blue;
+		width: 120px;
+	}
+
+}
+
 
 

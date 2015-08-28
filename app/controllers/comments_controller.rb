@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-  before_filter :authenticate_user!
-  include ApplicationHelper
   
   def create
     comment = Comment.new params[:comment]
@@ -32,5 +30,11 @@ class CommentsController < ApplicationController
   	comment = Comment.find params[:id]
     comment.toggle_upvote_from current_user
     render json: {value: comment.get_upvotes.size}
+  end
+
+  def destroy
+    comment = Comment.find params[:id]
+    comment.destroy
+    render nothing: true
   end
 end

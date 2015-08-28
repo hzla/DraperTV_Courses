@@ -26,21 +26,18 @@ class User < ActiveRecord::Base
   has_many :authorizations
   has_many :comments
   has_many :progresses
-  attr_accessible :show_topic_tutorial, :show_track_tutorial, :karma, :paid, :email, :password, :password_confirmation, :customer_id, :plan, :role, :color, :first_name, :last_name, :avatar, :profile_pic_url
+  attr_accessible :full_name, :username, :show_topic_tutorial, :show_track_tutorial, :karma, :paid, :email, :password, :password_confirmation, :customer_id, :plan, :role, :color, :first_name, :last_name, :avatar, :profile_pic_url
   after_create :assign_color
+  validates_uniqueness_of :username
 
 
   def self.create_with_facebook auth_hash
     timezone = auth_hash.extra.raw_info.timezone
     profile = auth_hash['info']
     fb_token = auth_hash.credentials.token
-    user = User.new email: profile["email"], first_name: profile["name"].split(" ")[0], last_name: profile["name"].split(" ")[-1], timezone: timezone, password: rand(1213920) + 1000000, profile_pic_url: profile["image"]
+    user = User.new email: profile["email"], full_name: profile["name"], timezone: timezone, password: rand(1213920) + 1000000, profile_pic_url: profile["image"]
     user.authorizations.build :uid => auth_hash["uid"]
     user if user.save(validate: false)
-  end
-
-  def full_name
-    [first_name, last_name].join(' ')
   end
 
   def avatar_pic

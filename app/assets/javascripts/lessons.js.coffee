@@ -14,13 +14,23 @@ Lesson =
 		$('body').on 'ajax:success', '.new_comment', @linkifyLinks
 		$('body').on 'submit', '.edit_lesson', @getFields
 		$('body').on 'click', '.form-switch', @toggleFormSwitch
+		$('body').on 'ajax:success', '.delete-comment-link', @deleteComment
+		$('body').on 'ajax:success', '.delete-child-comment-link', @deleteChildComment
 		@linkifyLinks()
 		@iframifyLinks()
 		@scrollToLesson()
 
+	deleteComment: ->
+		$(@).parents('.comment').remove()
+
+	deleteChildComment: ->
+		$(@).parents('.comment.child').remove()
+
+
 	preventSubmit: (e) ->
 		code = e.keyCode || e.which
-		if code == 13 
+		if code == 13
+			$(@).val $(@).val() + "\n"
 			e.preventDefault()
 			return false
 
@@ -42,6 +52,7 @@ Lesson =
 		$('.linkify, .linkify p, .linkify div').each ->
 			linkifiedText = Lesson.linkify $(@).html()
 			$(@).html linkifiedText
+		$('.linkify').removeClass('linkify').addClass('linkified')
 
 	linkify: (inputText) ->
 		replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim

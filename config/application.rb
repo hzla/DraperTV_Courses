@@ -69,6 +69,16 @@ module OnlineSchool
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = false
 
+    config.action_mailer.smtp_settings = {
+        address: "smtp.mandrillapp.com",
+        port: 587,
+        domain: "http://www.drapertv.com",
+        authentication: "plain",
+        enable_starttls_auto: true,
+        user_name: ENV["EMAIL_USERNAME"],
+        password: ENV["EMAIL_PASSWORD"]
+      }
+
     # Enable the asset pipeline
     #config.assets.enabled = true
 

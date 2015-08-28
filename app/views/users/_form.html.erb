@@ -3,13 +3,13 @@
    <div class="form-header">BASIC INFO</div>
       <div class="form-row">
         <div class="form-field">
-          <%= f.label :first_name, "FIRST NAME" %>
-          <%= f.text_field :first_name, required: true %>
+          <%= f.label :full_name, "FULL NAME" %>
+          <%= f.text_field :full_name, required: true %>
         </div> 
         <div class="form-field">
-          <%= f.label :last_name, "LAST NAME" %>
-          <%= f.text_field :last_name, required: true %>
-        </div>        
+            <%= f.label :username, "USERNAME" %>
+            <%= f.text_field :username, required: true %>
+        </div>       
       </div>
       <div class="form-row">
           <div class="form-field">
@@ -18,8 +18,7 @@
               <%= f.file_field :avatar, label: "Avatar" %>
               <div class="upload-btn">Upload</div>
               <div class="upload-preview">No file chosen (limit 10mb)</div>
-            </div>
-            
+            </div>    
           </div>
       </div>
       <div class="form-row">

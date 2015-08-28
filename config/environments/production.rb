@@ -88,13 +88,13 @@ OnlineSchool::Application.configure do
   #       :enable_starttls_auto => true
   #     }
   config.action_mailer.smtp_settings = {
-    :address   => "smtp.mandrillapp.com",
-    :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
-    :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name => "kelsey@draperuniversity.com",
-    :password  => "MANDRILL_PASSWORD", # SMTP password is any valid API key
-    :authentication => 'login', # Mandrill supports 'plain' or 'login'
-    :domain => 'draperuniversity.com', # your domain to identify your server when connecting
+    address: "smtp.mandrillapp.com",
+    port: 587,
+    domain: "http://www.drapertv.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["EMAIL_USERNAME"],
+    password: ENV["EMAIL_PASSWORD"]
   }
 
   # Log the query plan for queries taking more than this (works

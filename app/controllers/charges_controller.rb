@@ -20,6 +20,7 @@ class ChargesController < ApplicationController
     end
     @plan = params["plan"] || "Hero" 
     current_user.update_attributes email: params["email"], plan: @plan, paid: true
+    UserMailer.payment_confirmation(current_user).deliver
     if @customer.subscriptions.count > 0
       @subscription = @customer.subscriptions.first
       @subscription.plan = @plan

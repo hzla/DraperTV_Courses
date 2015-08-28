@@ -121,7 +121,8 @@ class ApplicationController < ActionController::Base
 
   def set_meta_tags
     @title = "Courses - DraperTV"
-    @meta_description = "Learn about startups, entrepreneurship, and business in Silicon Valley from DraperTV. Watch videos from top Draper University speakers such as Elon Musk, Tony Hsieh, Michelle Phan, and Nate Blecharczyk."
+    @meta_description = "Learn how to build a startup with DraperTV Courses. We bring the magic of Silicon Valley and Draper University education online to accelerate your ideas, businesses, and products."
+    # @meta_image = 
   end
 
 

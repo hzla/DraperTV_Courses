@@ -10,7 +10,16 @@
   <%= image_tag child_comment.user.avatar_pic, :class => "comment-pic" %>
   <div class="comment-main">
     <div class="comment-header <%= 'admin-title' if child_comment.user.role == 'admin' %>">
-      <span class="comment-user"> <%= child_comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= child_comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= child_comment.elapsed_time %></span> 
+      <div class="comment-header-left">
+        <span class="comment-user"> <%= child_comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= child_comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= child_comment.elapsed_time %></span>  
+      </div>
+      <div class="comment-header-right">
+        <% if child_comment.user == current_user || current_user.role == "admin" %>
+          <%= link_to comment_path(child_comment), :class => "delete-child-comment-link", method: :delete, data: {confirm: "Are you sure you want to delete this comment?"}, remote: true  do %>
+            <span class="delete-comment red-text">DELETE</span>
+          <% end %>
+        <% end %>
+      </div>
     </div>
     <div class="comment-body linkify">
       <%= child_comment.body %>
