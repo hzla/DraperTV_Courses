@@ -126,7 +126,7 @@
 	}
 	.admin-title.comment-header {		
 		.comment-user, .user-title {
-			color: $blue;
+			color: $red;
 		}
 	}
 	.collapsed .admin-title.comment-header {
@@ -145,7 +145,7 @@
 	}
 	.comment-children form .comment-body {
 		height: 40px;
-		width: calc(100% - 90px);
+		width: calc(100% - 160px);
 	}
 
 	.comment-children .new_comment {
@@ -185,9 +185,19 @@
 	.comment-form-bottom {
 		@include flexbox;
 		@include justify-content(space-between);
-		.submit-comment {
-			height: 40px;
-		}
+	}
+	.submit-comment {
+		height: 40px;
+		letter-spacing: 0px;
+		width: 80px;
+		text-align: center;
+		text-transform: initial;
+		padding: 0px;
+		line-height: 40px;
+	}
+	.comment-children .submit-comment {
+		margin-right: 20px;
+		margin-left: 10px;
 	}
 }
 
@@ -210,7 +220,10 @@
 
 // SideBar
 
-
+.lessons-nav {
+	height: calc(100% - 60px);
+	overflow-y: scroll;
+}
 
 .bar-header {
 	box-sizing: border-box;
@@ -231,7 +244,7 @@
 	@include flexbox;
 	justify-content: space-between;
 	box-sizing: border-box;
-	padding: 10px 20px 10px 10px;
+	padding: 10px 20px 10px 20px;
 	align-items: center;;
 	border-bottom: 1px solid #E7E7E7;
 }
@@ -269,6 +282,7 @@
 	width: 10px;
 	background: #e7e7e7;
 	border-radius: 50%;
+	margin: 0px 5px;
 }
 
 .new_progress {

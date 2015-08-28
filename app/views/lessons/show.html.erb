@@ -1,41 +1,41 @@
 <% if @lesson.lesson_type != "tools" %>
   <%= content_for :side_nav do %>
-    <% @tracks.order(:order).each_with_index do |track, i| %>
-      <div class="bar-group">
-        <div class="bar-header">
-          <%= link_to track_path(track) do %>
-            Chapter <%= i + 1 %> - <%= track.name.downcase.split.map(&:capitalize)*' ' %>
-          <% end %>
-        </div>
-        <% lesson_count = 0 %>
-        <% skip = false %>
-        <% track.type_sorted_lessons.flatten.each do |lesson| %>
-          <% next if !lesson || lesson == "tools" %>
-          <% if lesson.class == String %>
-            <div class="bar-item type-header">
-              <%= image_tag "#{lesson}.svg", :class => "bar-icon" %>
-              <p class="bar-text <%= lesson %>"><%= lesson.upcase %></p>
-              <div></div>
-            </div>
-          <% else %>
-            <% lesson_count = 0 if lesson.lesson_type == "discussion" && !skip %>
-            <% skip = true if lesson.lesson_type == "discussion" %>
-            <% lesson_count += 1 if lesson.lesson_type != "watch" && lesson.lesson_type != "reading" %>
-            <% if lesson.lesson_type != "tools" %>
-              <div class="bar-item <%= 'current' if lesson == @lesson %>">
-                <%= link_to lesson_path(lesson) do %>
-                  <%= image_tag lesson.status_icon(current_user), :class => "bar-circle" %>
-                  <p class="bar-text">
-                    <%= lesson == @lesson ? lesson.full_info(lesson_count) : lesson.short_info(lesson_count) %>
-                  </p>
-                  <div></div>  
-                <% end %>
+    <div class="lessons-nav">
+      <% @tracks.order(:order).each_with_index do |track, i| %>
+        <div class="bar-group">
+          <div class="bar-header">
+            <%= link_to track_path(track) do %>
+              Chapter <%= i + 1 %> - <%= track.name.downcase.split.map(&:capitalize)*' ' %>
+            <% end %>
+          </div>
+          <% counter = 0 %>
+          <% track.type_sorted_lessons.flatten.each_with_index do |lesson, i| %>
+            <% next if !lesson || lesson == "tools" %>
+            <% if lesson.class == String %>
+              <div class="bar-item type-header">
+                <%= image_tag "#{lesson}.svg", :class => "bar-icon" %>
+                <p class="bar-text <%= lesson %>"><%= lesson.upcase %></p>
+                <div></div>
+                <% counter = 0 %>
               </div>
+            <% else %>
+              <% counter += 1 %>
+              <% if lesson.lesson_type != "tools" %>
+                <div class="bar-item <%= 'current' if lesson == @lesson %>">
+                  <%= link_to lesson_path(lesson) do %>
+                    <%= image_tag lesson.status_icon(current_user), :class => "bar-circle" %>
+                    <p class="bar-text">
+                      <%= lesson.full_info counter %>
+                    </p>
+                    <div></div>  
+                  <% end %>
+                </div>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 <% end %>
 
@@ -95,7 +95,6 @@
       </div>
     <% end %>
   </div>
-
 </div><!-- column-main -->
 <%= content_for :column_right do %>
   <div class="chat-header">

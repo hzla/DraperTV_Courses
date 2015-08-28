@@ -171,3 +171,11 @@
 	border-bottom: 1px solid #c0c0c0;
 	margin-bottom: 40px;
 }
+
+.tutorial-overlay.uploading-progress {
+	font-size: 60px;
+	line-height: calc(100vh - 50px);
+	text-align: center;
+	color: white;
+	display: none;
+}

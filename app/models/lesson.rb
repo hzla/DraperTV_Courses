@@ -20,17 +20,7 @@ class Lesson < ActiveRecord::Base
 	end
 
 	def short_info number
-		short_text = nil
-		if lesson_type == "watch"
-			short_text = "#{video_title}"
-		elsif lesson_type == "reading"
-			short_text = "#{body.split("http")[0]}"
-		else
-			short_text = "#{lesson_type.capitalize} #{number}"
-		end
-		short_text = short_text[0..59]
-		short_text = short_text + "..." if short_text.length == 60
-		short_text
+		full_info number
 	end
 
 
@@ -38,9 +28,9 @@ class Lesson < ActiveRecord::Base
 		short_text = description.split("<br>")[0][0..59]
 		short_text = short_text + "..." if short_text.length == 60
 		if lesson_type != "watch" && lesson_type != "reading"
-			full_text = "#{lesson_type.capitalize} #{number} - #{short_text}"
+			full_text = "#{number}. #{short_text}"
 		else
-			full_text = "#{short_text}"
+			full_text = "#{number}. #{short_text}"
 		end
 	end
 

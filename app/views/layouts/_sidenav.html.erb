@@ -119,11 +119,6 @@
 				<% end %>
 			</div>
 			<div class="side-link-container">
-			<%= link_to events_path, :class => "side-link #{ 'active' if @page == 'calendar' }" do %>
-				CALENDAR
-			<% end %>
-			</div>
-			<div class="side-link-container">
 				<%= link_to amas_path, :class => "side-link #{ 'active' if @page == 'monthly' }" do %>
 					LIVE LEARNING
 				<% end %>
@@ -141,6 +136,11 @@
 					<div class="tool-tip-circle"></div>
 					<div class="tool-tip-line"></div>
 				</div>
+			</div>
+			<div class="side-link-container">
+			<%= link_to events_path, :class => "side-link #{ 'active' if @page == 'calendar' }" do %>
+				CALENDAR
+			<% end %>
 			</div>
 			<% if current_user && !current_user.paid %>
 			    <%= link_to new_charge_path do %>

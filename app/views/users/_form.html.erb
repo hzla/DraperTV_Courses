@@ -17,7 +17,7 @@
             <div class="upload-container">
               <%= f.file_field :avatar, label: "Avatar" %>
               <div class="upload-btn">Upload</div>
-              <div class="upload-preview">No file chosen</div>
+              <div class="upload-preview">No file chosen (limit 10mb)</div>
             </div>
             
           </div>
@@ -27,7 +27,7 @@
           <%= f.label :email, "EMAIL ADDRESS" %>
           <%= f.text_field :email, required: true %>
         </div>
-        <% if current_user.customer_id %>
+        <% if current_user.paid %>
           <div class="form-field membership">
             <%= f.label :email, "CURRENT MEMEBERSHIP" %>
             <div class="current-membership <%= current_user.plan_color %>-text"><%= @plans[current_user.plan] %></div>

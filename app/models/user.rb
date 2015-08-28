@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   validates_attachment_size :avatar, :less_than => 10.megabytes
   has_many :events
   acts_as_taggable
-  acts_as_voter
+  # acts_as_voter
   has_surveys
   validates :email, presence: true, uniqueness: {message: "email has already been taken"}
 
@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
   end
 
   def tier
-    return "Riskmaster" if role == "admin"
+    return "Admin" if role == "admin"
     if karma >= 4000
       "Guru" 
     elsif karma >= 3000

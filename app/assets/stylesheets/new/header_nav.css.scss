@@ -329,7 +329,8 @@
 	.dropdown-menu {
 		top: 20px;
 		left: initial;
-		right: 20px;
+		right: 25px;
+		position: fixed;
 		li a {
 			color: #414141;
 		}

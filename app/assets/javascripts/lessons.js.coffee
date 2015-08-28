@@ -7,7 +7,7 @@ Lesson =
 		$("body").on 'keypress', '.comment-children, .comment-body, .chat-comment-body', @submitFormOnEnter
 		$('body').on 'ajax:success', '.chat-box-container .new_comment', @addComment
 		$('body').on 'ajax:success', '.main-comment', @addMainComment
-		$('body').on 'keydown', '.main-comment #comment_body', @preventSubmit
+		$('body').on 'keydown', '#comment_body', @preventSubmit
 		$('body').on 'ajax:success', '.comment-children .new_comment', @addChildComment
 		$('body').on 'ajax:success', '.upvote-link', @updateUpvotes
 		$('body').on 'click', '.reply-comment', @showCommentReplyForm
@@ -15,6 +15,7 @@ Lesson =
 		$('body').on 'submit', '.edit_lesson', @getFields
 		$('body').on 'click', '.form-switch', @toggleFormSwitch
 		@linkifyLinks()
+		@iframifyLinks()
 		@scrollToLesson()
 
 	preventSubmit: (e) ->
@@ -51,9 +52,21 @@ Lesson =
 		replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$1">$1</a>')
 		replacedText;
 
+	iframifyLinks: ->
+		$('.iframify, .iframify p, .iframify div').each ->
+			iframifiedText = Lesson.iframify $(@).html()
+			$(@).html iframifiedText
+
+	iframify: (inputText) ->
+		replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim
+		replacedText = inputText.replace(replacePattern1, '<iframe src="$1">$1</ifram>')
+		replacePattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim
+		replacedText = replacedText.replace(replacePattern2, '$1<iframe src="http://$2">$2</iframe>')
+		replacedText;
+
 	scrollToLesson: ->
 		setTimeout ->
-			$('#side-nav').scrollTo('.bar-item.current', {duration: 100})
+			$('.lessons-nav').scrollTo('.bar-item.current', {duration: 100})
 		, 500
 
 	showCommentReplyForm: ->
