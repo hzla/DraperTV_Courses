@@ -11,7 +11,7 @@
   <div class="comment-main">
     <div class="comment-header <%= 'admin-title' if child_comment.user.role == 'admin' %>">
       <div class="comment-header-left">
-        <span class="comment-user"> <%= child_comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= child_comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= child_comment.elapsed_time %></span>  
+        <span class="comment-user"> <%= child_comment.user.username %> -&nbsp;</span><span class="user-title"><%= child_comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= child_comment.elapsed_time %></span>  
       </div>
       <div class="comment-header-right">
         <% if child_comment.user == current_user || current_user.role == "admin" %>

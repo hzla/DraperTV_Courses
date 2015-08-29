@@ -13,7 +13,7 @@
   <div class="comment-main">
     <div class="comment-header <%= 'admin-title' if comment.user.role == 'admin' %>">
       <div class="comment-header-left">
-        <span class="comment-user"> <%= comment.user.full_name %> -&nbsp;</span><span class="user-title"><%= comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= comment.elapsed_time %></span> 
+        <span class="comment-user"> <%= comment.user.username %> -&nbsp;</span><span class="user-title"><%= comment.user.title %></span>&nbsp;&nbsp;&nbsp; <span class="comment-date"><%= comment.elapsed_time %></span> 
       </div>
       <div class="comment-header-right">
         <% if comment.user == current_user || current_user.role == "admin" %>
