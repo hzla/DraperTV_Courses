@@ -6,6 +6,13 @@ Home =
 		$('.cancel-sub-link').on 'ajax:success', @informUser
 		$('.cancel-sub').click @showCancelOverlay
 		$(".cancel-overlay").click @closeOverlay
+		$(".header-search form").submit @searchDraperTV
+
+	searchDraperTV: (e) ->
+		e.preventDefault()
+		terms = $(@).find('.search-input').val()
+		location.href = "http://www.drapertv.com/searches?terms=#{terms}"
+
 
 	closeOverlay: (e) ->
 		$('.cancel-overlay').hide() if $(e.target).hasClass('cancel-overlay')
