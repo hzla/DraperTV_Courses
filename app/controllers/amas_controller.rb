@@ -20,7 +20,8 @@ class AmasController < ApplicationController
     @comments = @ama.regular_comments
     @chat_comments = @ama.chat_comments
     
-    @sort = "date"
+
+    @sort = "date" #add cached upvotes migration to make faster
     if params["sort"] == "top"      
       @comments = @comments.sort_by {|c| c.get_upvotes.size}.reverse
       @sort = "top"

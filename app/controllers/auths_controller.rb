@@ -4,7 +4,7 @@ class AuthsController < ApplicationController
   def facebook_create
     auth_hash = request.env['omniauth.auth']
     auth = Authorization.find_by_uid auth_hash['uid']
-    if auth
+    if auth #user exists
       session[:user_id] = auth.user.id
 
       #grab users email/profile pic from fb if they don't have them
