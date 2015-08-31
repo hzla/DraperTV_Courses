@@ -1,11 +1,11 @@
 class CommentsController < ApplicationController
+  before_filter :get_comment
   
   def create
     comment = Comment.new params[:comment]
     comment.user_id = current_user.id
     lesson = comment.lesson
     @user = current_user
-
 
     if comment.save!
       if comment.comment_type == "chat"
@@ -21,20 +21,23 @@ class CommentsController < ApplicationController
   end
 
   def show
-    comment = Comment.find params[:id]
     @user = current_user
-    render partial: 'chat_comment', locals: {comment: comment} and return
+    render partial: 'chat_comment', locals: {comment: @comment} and return
   end
 
   def upvote
-  	comment = Comment.find params[:id]
-    comment.toggle_upvote_from current_user
-    render json: {value: comment.get_upvotes.size}
+    @comment.toggle_upvote_from current_user
+    render json: {value: @comment.get_upvotes.size}
   end
 
   def destroy
-    comment = Comment.find params[:id]
-    comment.destroy
+    @comment.destroy
     render nothing: true
+  end
+
+  private
+
+  def get_comment
+    @comment = Comment.find params[:id]
   end
 end

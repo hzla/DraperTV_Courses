@@ -12,14 +12,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    respond_to do |format|
-      if @user.update_attributes(user_params)
-        format.html { redirect_to edit_user_path, notice: 'User was successfully updated.' }
-      else
-        format.html {redirect_to edit_user_path}
-      end
-    end
+    current_user.update_attributes(user_params)
+    redirect_to edit_user_path
   end
 
 

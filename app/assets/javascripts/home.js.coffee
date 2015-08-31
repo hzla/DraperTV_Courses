@@ -30,17 +30,12 @@ Home =
 		$('.tool-tip:not(.current)').hide()
 		$(@).parent().find('.tool-tip').toggle()
 		
-		
-
 	hideToolTip: -> 
 		$(@).parents('.tool-tip').hide()
 
 	hideAll: (e) ->
 		if $(e.target).parents('.tool-tip').length < 1 && !$(e.target).hasClass("tool-tip-icon") && !$(e.target).hasClass('tool-tip')
 			$('.tool-tip').hide()
-
-
-
 
 ready = ->
 	Home.init()

@@ -5,6 +5,10 @@ class Ama < ActiveRecord::Base
 		amas = Ama.where('start_date > (?)', Time.now)
 	end
 
+  def is_past?
+    start_date < Time.now
+  end
+
   def is_upcoming?
     start_date > Time.now 
   end

@@ -8,13 +8,13 @@
 }
 .lesson-container, #amas, .chat-messages {
 	box-sizing: border-box;
-	padding: 40px;
+	padding: 40px 80px;
 	min-height: calc(100vh - 230px);
 	overflow-y: scroll;
   	height: calc(100vh - 110px);
 	iframe {
-		width: calc(100vw - 620px);
-		height: calc((100vw - 620px) * 9 / 16);
+		width: calc(100vw - 700px);
+		height: calc((100vw - 700px) * 9 / 16);
 		margin-bottom: 20px;
 	}
 	.lesson-body {

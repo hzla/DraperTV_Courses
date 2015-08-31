@@ -1,26 +1,4 @@
 class RegistrationsController < Devise::RegistrationsController
-  def update
-    @user = User.find(current_user.id)
-    successfully_updated = if needs_password?(@user, params)
-      @user.update_with_password(devise_parameter_sanitizer.sanitize(:account_update))
-    else
-      # remove the virtual current_password attribute
-      # update_without_password doesn't know how to ignore it
-      params[:user].delete(:current_password)
-      @user.update_without_password(devise_parameter_sanitizer.sanitize(:account_update))
-    end
-
-    if successfully_updated
-      set_flash_message :notice, :updated
-      # Sign in the user bypassing validation in case his password changed
-      sign_in @user, :bypass => true
-      #redirect_to after_update_path_for(@user)
-      redirect_to student_profile_path(@user)
-    else
-      render "edit"
-    end
-  end
-
   def new
     session[:resource_id] = params[:resource_id]
     session[:resource_type] = params[:resource_type]
@@ -44,16 +22,4 @@ class RegistrationsController < Devise::RegistrationsController
     session[:user_id] = nil
     super
   end
-
-  private
-
-  # check if we need password to update user data
-  # ie if password or email was changed
-  # extend this as needed
-  def needs_password?(user, params)
-    user.email != params[:user][:email] ||
-      params[:user][:password].present?
-  end
-
-
 end

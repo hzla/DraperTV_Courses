@@ -1,14 +1,12 @@
 class LessonsController < ApplicationController
-  # before_filter :authenticate_user!
-  # load_and_authorize_resource
   include ApplicationHelper
-
   before_filter :only_admins_allowed, except: "show"
   
   def show
     @lesson = Lesson.find params[:id]
     @track = @lesson.track
     @topic = @track.topic
+
     redirect_to "/users/sign_up?resource_id=#{@lesson.id}&resource_type=lesson" and return if !current_user
     redirect_to new_charge_path(lesson_id: @lesson.id) and return if !current_user.paid	&& !@topic.free 
 
@@ -22,6 +20,7 @@ class LessonsController < ApplicationController
         @sort = "top"
       end
     end
+    
     @user = current_user
     @participants = @lesson.participants
     Progress.where(user_id: @user.id, model_type: "lesson", model_id: @lesson.id, percent_complete: 0).first_or_create
@@ -57,6 +56,5 @@ class LessonsController < ApplicationController
       redirect_to root_path and return
     end
   end
-
 
 end

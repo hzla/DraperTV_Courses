@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
   end
-
   helper_method :track_activity_feed
   helper_method :mailitnow
   before_filter :cors_preflight_check
@@ -124,7 +123,6 @@ class ApplicationController < ActionController::Base
     @meta_description = "Learn how to build a startup with DraperTV Courses. We bring the magic of Silicon Valley and Draper University education online to accelerate your ideas, businesses, and products."
     # @meta_image = 
   end
-
 
   def track_activity_feed(tobetrackable, action = params[:action])
     current_user.activity_feeds.create! action: action, tobetrackable: tobetrackable
