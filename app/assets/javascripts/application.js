@@ -12,24 +12,11 @@
 //
 
 // = require jquery
-// = require jquery-ui
-// = require nprogress-turbolinks
 // = require jquery.turbolinks
 // = require ckeditor/override
 // = require ckeditor/init
-// = require jquery_ujs
-// = require jquery.infinitescroll
-// = require analytics
-// = require vendor/jquery.autosize
-// = require vendor/chosen
 // = require home
 // = require_tree .
-// = require private_pub
-// = require vendor/slidebars.min
-// = require vendor/emoticon
-// = require best_in_place
-// = require best_in_place.purr
-// = require jquery.turbolinks
 
 
 

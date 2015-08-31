@@ -27,24 +27,15 @@ h3 {
 	padding-top: 20px;
 }
 
-.button {
-	@include button-green;
-}
-
-input[type="submit"] {
-		@include button-green;
-		@include rounded-corners;
-	}
-
-	input[type="text"] {
-		border-radius: 3px;
+input[type="text"] {
+	border-radius: 3px;
+	box-shadow: none;
+	&:focus {
+		outline: 0;
 		box-shadow: none;
-		&:focus {
-			outline: 0;
-			box-shadow: none;
-			border-color: $blue-0;
-		}
+		border-color: $blue-0;
 	}
+}
 
 /*********************/
 /****** ERRORS *******/
@@ -89,17 +80,7 @@ input[type="submit"] {
   float: left;
   margin-left:0px;
 }
-// I added a class here
-.navbar-avatar, #navbar-avatar {
-	width: 30px;
-	height:30px;
-	overflow: hidden;
-	//border: 1px solid $gray-lt;
-	display: block;
-	float: left;
-	margin-top: 6px;
-	@include navbar-radius;
-}
+
 .navbar .nav > li >a {
 	font-size: 14px;
 }
@@ -111,17 +92,6 @@ input[type="submit"] {
 			border-top: 4px solid $gray-lt;
 			&:hover { border-top: 4px solid $gray-lt; }
 			&:active { border-top: 4px solid $gray-lt; }
-		}
-
-		.dropdown-menu {
-			border: 1px solid $gray-x-lt;
-			padding: 0;
-			@include rounded-corners;
-
-			ul li {
-				a {}
-				&:hover { background: $gray-lt; }
-			}
 		}
 
 		&:hover {
@@ -450,37 +420,6 @@ input[type="submit"] {
 	float: right;
 	width: 15%;
 	margin-right: 5%;
-
-	.green {
-		display: block;
-		float: right;
-		margin-left: 40px;
-		text-transform: uppercase;
-		margin-top: 40px;
-		@include button-green;
-		font-size: 12px;
-		font-weight: 700;
-	}
-	.yellow {
-		display: block;
-		float: right;
-		margin-left: 40px;
-		text-transform: uppercase;
-		margin-top: 40px;
-		@include button-yellow;
-		font-size: 12px;
-		font-weight: 700;
-	}
-	.blue {
-		display: block;
-		float: right;
-		margin-left: 40px;
-		text-transform: uppercase;
-		margin-top: 40px;
-		@include button-blue;
-		font-size: 12px;
-		font-weight: 700;
-	}
 }
 
 .progress {
@@ -796,37 +735,6 @@ input[type="submit"] {
 	}
 }
 
-.download-button-blue {
-	display: block;
-	float: left;
-	text-transform: uppercase;
-	margin-top: 0px;
-	@include button-blue;
-	font-size: 12px;
-	font-weight: 700;
-
-	&:hover {
-		color: white;
-		background: $blue-hover;
-	}
-}
-
-.link-button-yellow {
-	display: block;
-	float: left;
-	text-transform: uppercase;
-	margin-top: 0px;
-	margin-bottom: 5px;
-	@include button-yellow;
-	font-size: 12px;
-	font-weight: 700;
-
-	&:hover {
-		color: white;
-		background: $yellow-hover;
-	}
-}
-
 /*********************/
 /**** VIDEO MODAL ****/
 /*********************/
@@ -932,12 +840,6 @@ input[type="submit"] {
 			}
 			.options { margin-top: 5px; }
 		}
-	}
-	input[type="submit"] {
-		@include button-green;
-		@include rounded-corners;
-		margin-top: 20px;
-		margin-left: 20px;
 	}
 }
 
@@ -1080,13 +982,6 @@ input[type="submit"] {
 		  	outline: 0;
 		  }
 		}
-
-		input[type="submit"] {
-			width: auto;
-			@include button-green;
-			@include rounded-corners;
-		}
-
 		table {
 			width:100%;
 		}
@@ -1113,20 +1008,6 @@ select:focus {
 	margin-top: 30px;
 	padding-bottom: 5px;
 	border-bottom: 1px solid #DDD;
-}
-.cancel_account {
-	input[type="submit"] {
-		width: auto;
-		@include button-red;
-		@include rounded-corners;
-	}
-}
-.cancel_changes {
-	input[type="submit"] {
-		width: auto;
-		@include button-red;
-		@include rounded-corners;
-	}
 }
 .content .title input { width: 80%; }
 

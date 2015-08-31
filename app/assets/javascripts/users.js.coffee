@@ -17,10 +17,6 @@ Lesson =
   			$('.uploading-progress').text $('.uploading-progress').text() + "."
   		, 500
 
-                
-
-                
-
 ready = ->
   Lesson.init()
 $(document).ready ready

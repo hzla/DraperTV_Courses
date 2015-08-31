@@ -13,7 +13,6 @@ Home =
 		terms = $(@).find('.search-input').val()
 		location.href = "http://www.drapertv.com/searches?terms=#{terms}"
 
-
 	closeOverlay: (e) ->
 		$('.cancel-overlay').hide() if $(e.target).hasClass('cancel-overlay')
 

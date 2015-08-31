@@ -742,7 +742,6 @@ object, embed {
 
 
 .circle-button {
-  @include round-button;
   p {
     padding: 5px;
     font-size: 22px;
@@ -844,98 +843,7 @@ object, embed {
 
   }
 }
-.course-show-right {
-  display: block;
-  width: 50%;
-  position: absolute;
-  top: 20px;
-  right: 0;
-  padding-bottom: 100px;
-}
 
-//**********************//
-//****** Dropdown ******//
-//**********************//
 
-.navbar .pull-right > li > .dropdown-menu, .navbar .nav > li > .dropdown-menu.pull-right {
-  right: 20px;
-}
 
-.navbar-inner .container .dropdown-menu > li > a {
-  font-size: 14px;
-  font-weight: 500;
-}
-.dropdown-menu .divider { margin: 0; }
-
-.navbar .nav > li { margin-left: 6px; }
-
-//**********************//
-//**** Media Queries ***//
-//**********************//
-
-@media all and (min-width: 1001px) {
-  .course-show-left {
-
-  }
-  .top-column-main { width: calc(74% - 40px); }
-  .column-main {  width: calc(74% - 20px); }
-  .column-right { display: block; }
-}
-@media all and (max-width: 1000px) and (min-width: 700px) {
-  .column-main { width: 100%; }
-  .top-column-main { width: calc(100% - 40px); }
-  .column-right { display: none; }
-  .course-show-left {
-    width: 100%;
-    #intro-video {
-      display: none;
-    }
-    .information {
-      display: none;
-    }
-  }
-  .course-show-right {
-    width: 100%;
-    margin-top: 60px;
-  }
-  .column-main { }
-  .right-score { left: 185px;}
-}
-@media all and (max-width: 699px) {
-  .column-main { width: 100%; }
-  .top-column-main { width: calc(100% - 40px); }
-  .column-right { display: none; }
-  .course-show-left {
-    width: 100%;
-    min-height: 40px;
-    #intro-video {
-      display: none;
-    }
-    .information {
-      display: none;
-    }
-  }
-  .course-show-right {
-    width: 100%;
-    margin-top: 60px;
-    .video-information {
-      width: calc(95% - 60px);
-    }
-    .complete {
-      width: 45px;
-      height: 45px;
-      background-size: contain;
-    }
-    .right-score { left: 185px;}
-    .pic {
-      width: 45px;
-      height: 45px;
-      img {
-        width: 45px;
-        height: 45px;
-      }
-    }
-    .icon { display: none; }
-  }
-}
 
