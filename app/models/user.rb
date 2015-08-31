@@ -93,6 +93,10 @@ class User < ActiveRecord::Base
     update_attributes color: "#" + ('%06x' % (rand * 0xffffff))
   end
 
+  def should_ask_for_info
+    created_at < "2015-08-30 00:00:00"
+  end
+
   private
 
   def assign_color

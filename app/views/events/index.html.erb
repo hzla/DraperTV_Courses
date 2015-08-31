@@ -3,7 +3,6 @@
     <div class="top-column-main">
       <div style="width: 100%; position: relative; display; block;">
         <h1>Calendar</h1>
-        <!-- ***** CREATE POST BUTTON ***** -->
       </div>
     </div><!-- column main -->
   </div><!-- row -->
@@ -14,17 +13,32 @@
   <div class="events-container">
     <div class="event-calendar">
       <%= calendar @events, :start_day => :sunday do |event| %>
-        <%= link_to event.name, event %>
+        <% if event.url %>
+          <%= link_to event.name, event.url , :class => "#{event.color}-text event-item" %>
+        <% else %>
+          <p class="<%= event.color %>-text event-item"><%= event.name %></p>
+        <% end %>
       <% end %>
     </div>
 
   </div>
 </div>
 
-
-<!-- ******  EVENT MODAL ******* -->
-<div id="newEventModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <%= render 'new' %>
-</div>
+<%= content_for :column_right do %>
+    <div class="chat-header">
+      <p>INFORMATION</p>
+    </div>
+     <div class="column-body">
+      <p class="events-info">
+        Check here for interesting events related to the Draper Ecosystem, DTV, or other interesting 3rd party events.
+      </p>
+      <div class="event-colors">
+        <p>COLOR CODE:</p>
+        <p class="red-text">DraperTV Events</p>
+        <p class="blue-text">Draper Ecosystem</p>
+        <p>3rd Party Events</p>
+      </div>
+    </div>
+<% end %>
 
 

@@ -10,6 +10,8 @@ ActiveAdmin.register Event do
    f.inputs "Topic Details" do
      f.inputs :name
      f.inputs :start_time
+     f.inputs :color
+     f.inputs :url
     end
   f.actions
  end
