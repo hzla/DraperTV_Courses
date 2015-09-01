@@ -1,7 +1,0 @@
-$('#utah').append('<%= j render(@activity_feeds) %>');
-<% if (@activity_feeds.current_page < @activity_feeds.num_pages) %>
-        $('.pagination').replaceWith('<%= j paginate(@activity_feeds) %>');
-<% else %>
-        $('.pagination').remove();
-<% end %>
-<% sleep 1 %>

@@ -62,14 +62,8 @@ olark.identify('3351-667-10-7719');/*]]>*/</script><noscript><a href="https://ww
 </head>
 <body>
 
-  <!-- ***************** -->
-  <!-- **** Navbar ***** -->
-  <!-- ***************** -->
   <% if !@mobile %>
     <%= render partial: "layouts/header" %>
-      <!-- ***************** -->
-      <!-- ***** Body ****** -->
-      <!-- ***************** -->
       <%= yield :tutorial %>
       <div id="main-body">
         <%= render 'layouts/sidenav' %>
@@ -80,7 +74,6 @@ olark.identify('3351-667-10-7719');/*]]>*/</script><noscript><a href="https://ww
           <%= yield :column_right %>
         </div>
       </div>      
-    <%= render 'layouts/footer' %>
   <% else %>
     <%= render partial: "layouts/mobile" %>
   <% end %>

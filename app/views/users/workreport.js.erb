@@ -1,7 +1,0 @@
-$('#student').append('<%= j render(@studentreports) %>');
-<% if (@studentreports.current_page < @studentreports.num_pages) %>
-        $('.pagination').replaceWith('<%= j paginate(@studentreports) %>');
-<% else %>
-        $('.pagination').remove();
-<% end %>
-<% sleep 1 %>

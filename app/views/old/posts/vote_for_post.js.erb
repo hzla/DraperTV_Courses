@@ -1,9 +1,0 @@
-	<% if current_user.voted_for?(@post) %>
-	$("#vote-button-<%= @post.id %>").empty();
-	$("#vote-button-<%= @post.id %>").append('<div id="unvote-button-<%= @post.id %>" class="unvote-button"><a rel="nofollow" href="/posts/unvote_for_post?post_id=<%= @post.id %>" data-remote="true" data-method="post"><i class="fa fa-chevron-up"></i></a></div>')
-	<% else %>
-	$("#unvote-button-<%= @post.id %>").empty();
-	$("#unvote-button-<%= @post.id %>").append('<div id="vote-button-<%= @post.id %>" class="vote-button"><a rel="nofollow" href="/posts/vote_for_post?post_id=<%= @post.id %>" data-remote="true" data-method="post"><i class="fa fa-chevron-up"></i></a></div>')
-	<% end %>
-$("#votes-<%= @post.id %>").empty();
-$("#votes-<%= @post.id %>").append("<%= @post.votes_for %>");

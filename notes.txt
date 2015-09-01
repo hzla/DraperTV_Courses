@@ -5,6 +5,7 @@ refactor progress methods into a module
 resize images to thumbnails
 
 make all elements border-box
+extract comment css out of lesson
 
 
 

@@ -1,7 +1,0 @@
-$('#users').append('<%= j render(@users) %>');
-<% if (@users.current_page < @users.num_pages) %>
-        $('.pagination').replaceWith('<%= j paginate(@users) %>');
-<% else %>
-        $('.pagination').remove();
-<% end %>
-<% sleep 1 %>
