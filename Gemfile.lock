@@ -378,8 +378,6 @@ GEM
     populator (1.0.0)
     private_pub (1.0.3)
       faye
-    protected_attributes (1.0.7)
-      activemodel (>= 4.0.1, < 5.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -621,7 +619,6 @@ DEPENDENCIES
   pg_search
   populator
   private_pub
-  protected_attributes
   pry
   quiet_assets
   rack-cache

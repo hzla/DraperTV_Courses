@@ -1,5 +1,4 @@
 class Progress < ActiveRecord::Base
-	attr_accessible :user_id, :model_id, :model_type, :percent_complete
 	belongs_to :user
 
 	#use ancestry for faster access to children progresses

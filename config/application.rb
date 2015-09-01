@@ -8,7 +8,8 @@ Bundler.require(:default, Rails.env)
 CONFIG = YAML.load(File.read(File.expand_path('../s3.yml', __FILE__)))
 CONFIG.merge! CONFIG.fetch(Rails.env, {})
 CONFIG.symbolize_keys!
-
+require 'dotenv'
+Dotenv.load
 
 
 module OnlineSchool

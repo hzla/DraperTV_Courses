@@ -1,6 +1,5 @@
 class Announcement < ActiveRecord::Base
-  attr_accessible :body, :archived, :created_at
-
+  
   def self.today
   	where("created_at > (?)", Time.now - 24.hours).where(archived: nil).select {|n| n.created_at.day == (Time.now + 7.hours).day}
   end

@@ -1,13 +1,13 @@
 class Comment < ActiveRecord::Base
-	attr_accessible :user_id, :lesson_id, :body, :ama_id, :parent, :parent_id, :comment_type
 	belongs_to :user
 	belongs_to :lesson
 	belongs_to :ama
 	acts_as_votable
+	
 	after_create :self_upvote
 	after_create :sanitize_body
+	
 	has_ancestry
-
 
 	def self_upvote
 		if comment_type != "chat"

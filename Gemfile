@@ -103,7 +103,6 @@ gem "formtastic"
 # gem 'rails4_upgrade', github: 'alindeman/rails4_upgrade'
 
 #rails Legacy Gems
-gem 'protected_attributes'
 gem 'rails-observers'
 gem 'actionpack-page_caching'
 gem 'actionpack-action_caching'

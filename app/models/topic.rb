@@ -1,5 +1,4 @@
 class Topic < ActiveRecord::Base
-  attr_accessible :name, :percent_complete, :icon, :order, :percentage, :body, :free, :summary, :video_uid
   has_many :tracks
 
   extend FriendlyId

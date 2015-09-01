@@ -5,10 +5,11 @@ if Rails.env.production?
 	}
 
 	Stripe.api_key = ENV['STRIPE_API_KEY']
+	p "in stripe production mode"
 else
 	Rails.configuration.stripe = {
 	  :publishable_key => ENV['TEST_PUBLISHABLE_KEY']
 	}
 	Stripe.api_key = ENV['TEST_STRIPE_API_KEY']
-	p "in test mode"
+	p "in stripe test mode"
 end

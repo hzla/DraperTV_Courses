@@ -1,5 +1,4 @@
 class Track < ActiveRecord::Base
-  attr_accessible :name, :percent_complete, :icon, :topic_id, :order, :watch_time, :summary, :video_uid
   belongs_to :topic
   has_many :lessons
 
