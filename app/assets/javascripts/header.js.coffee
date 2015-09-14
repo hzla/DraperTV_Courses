@@ -17,4 +17,4 @@ Header =
 ready = ->
 	Header.init()
 $(document).ready ready
-$(document).on 'page:load', ready
+# $(document).on 'page:load', ready

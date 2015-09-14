@@ -40,6 +40,20 @@ class User < ActiveRecord::Base
     end
   end
 
+  def complete lesson
+    finished_lessons = ((finished_lesson_ids || []) << lesson.id).uniq.sort
+    update_attributes(finished_lesson_ids: finished_lessons)
+    track = lesson.track
+    added_karma = 5
+    if track.completed? self
+      added_karma += 10
+    end
+    if track.topic.completed? self
+      added_karma += 20
+    end
+    update_title_and_karma added_karma
+  end
+
   def tier
     return "Admin" if role == "admin"
     if karma >= 4000

@@ -51,5 +51,9 @@ class Lesson < ActiveRecord::Base
 			<br><br>We’ve tried to mostly find free to use tools, but some software may require a purchase. "
 		end
 	end
+
+	def completed? user
+		user.finished_lesson_ids.bsearch {|lesson_id| id - lesson_id }
+	end
 end
 

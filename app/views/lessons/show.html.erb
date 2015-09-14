@@ -23,7 +23,7 @@
               <% if lesson.lesson_type != "tools" %>
                 <div class="bar-item <%= 'current' if lesson == @lesson %>">
                   <%= link_to lesson_path(lesson) do %>
-                    <%= image_tag lesson.status_icon(current_user), :class => "bar-circle" %>
+                    <%= image_tag lesson.status_icon(@user), :class => "bar-circle" %>
                     <p class="bar-text">
                       <%= lesson.full_info counter %>
                     </p>
@@ -47,7 +47,7 @@
       <% end %>
       <h1 class="no-letter-spacing"><%= @lesson.lesson_type.capitalize.downcase.split(" ").map(&:capitalize).join(" ")  %></h1>
 
-      <% if @lesson.completed?(current_user) %>
+      <% if @lesson.completed?(@user) %>
         <p class="header-info complete-btn completed">COMPLETED</p>
       <% else %>
         <%= form_for Progress.new do |f| %>
@@ -101,7 +101,7 @@
     <p>INFORMATION</p>
   </div>
   <div class="video-side-info">
-    <% if current_user.role == "admin" %>
+    <% if @user.role == "admin" %>
       <%= link_to edit_lesson_path(@lesson) do %>
         <div class="new-lesson-btn">
           Edit Lesson

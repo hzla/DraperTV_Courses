@@ -47,7 +47,7 @@
   <div class="welcome-container">
     <div class="welcome-messages">
       <iframe src="https://player.vimeo.com/video/135921663" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      <% if !current_user %>
+      <% if !@user %>
         <p class="welcome-message title">Welcome to DraperTV Courses!</p>
         <p class="welcome-message">We’ve given you the Attitude course for <span class="red-text">free</span>. You can also watch and participate in the Live Learning lessons we host every two weeks.</p>
         <p class="welcome-message">To check out the other courses or watch archived Live Learning lessons, you’ll need to sign up and purchase a membership.</p>
@@ -61,9 +61,9 @@
       <% end %>
     </div>
   </div> 
-  <%= render partial: "announcements/side_interface" if current_user %>
+  <%= render partial: "announcements/side_interface" if @user %>
 <% end %>
 
-<% if current_user && (!current_user.username || !current_user.full_name) && current_user.should_ask_for_info %>
+<% if @user && (!@user.username || !@user.full_name) && @user.should_ask_for_info %>
   <%= render partial: "users/modal_form" %>
 <% end %>

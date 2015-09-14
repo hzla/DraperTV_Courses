@@ -22,3 +22,11 @@ namespace :db do
     end
   end
 end
+
+namespace :db do
+  task :get_finished_lesson_ids => :environment do
+    User.all.each do |user|
+      user.update_attributes finished_lesson_ids: user.progresses.where(model_type: "lesson").pluck(:model_id).uniq.sort
+    end
+  end
+end

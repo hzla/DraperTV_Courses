@@ -6,13 +6,12 @@
       <% end %>
       <h1 class="no-letter-spacing"><%= @track.display_name %></h1>
       <p class="header-info"><%= @lesson_count %> LESSONS</p>
-    </div><!-- column main -->
-  </div><!-- row -->
+    </div>
+  </div>
 </div>
 
 
 <% if @tutorial %>
-
   <%= content_for :tutorial  do %>
     <div class="tutorial-overlay track-tut">
       <%= image_tag "line-arrow.svg", :class => "tut-arrow top" %>
@@ -27,7 +26,6 @@
         </div>
       <% end %>
     </div>
-
   <% end %>
 <% end %>
 
@@ -65,7 +63,7 @@
                     <%= lesson_item.description[0..54] + (lesson_item.description.length > 55 ? "..." : "") %>
                   </p>
                   <div class="lesson-status-container">
-                    <%= image_tag lesson_item.status_icon(current_user), :class => "lesson-status-icon" %>
+                    <%= image_tag lesson_item.status_icon(@user), :class => "lesson-status-icon" %>
                     <% if lesson_item.video_length %>
                       <div class="video-length">
                         <%= lesson_item.video_length %>

@@ -51,8 +51,12 @@ module Extensions
 		end
 
 		def progress_info user
-		    {status: status(user), percentage: progress_percentage(user)}
-		end
+			status = "untouched"
+		    percentage = progress_percentage(user)
+		    status =  "completed" if percentage == 100
+		    status =  "started" if percentage > 0
+		    {status: status, percentage: percentage}
+		end	
 
 		def status_icon user
 			completed?(user) ? "done.svg" : "untouched.svg"

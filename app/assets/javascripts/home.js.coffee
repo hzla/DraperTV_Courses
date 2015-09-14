@@ -1,7 +1,7 @@
 Home =
 	init: ->
-		$('.tool-tip-icon').click @showToolTip
-		$('.tool-tip-okay').click @hideToolTip
+		$('body').on 'click', '.tool-tip-icon', @showToolTip
+		$('body').on 'click', '.tool-tip-okay', @hideToolTip
 		$('body').click @hideAll
 		$('.cancel-sub-link').on 'ajax:success', @informUser
 		$('.cancel-sub').click @showCancelOverlay
@@ -27,7 +27,11 @@ Home =
 		$('.current').removeClass('current')
 		$(@).parent().find('.tool-tip').addClass('current')
 		$('.tool-tip:not(.current)').hide()
-		$(@).parent().find('.tool-tip').toggle()
+
+		if $('.tool-tip.current:visible').length > 0
+			$('.tool-tip.current:visible').hide()
+		else
+			$(@).parent().find('.tool-tip').show()
 		
 	hideToolTip: -> 
 		$(@).parents('.tool-tip').hide()
@@ -39,5 +43,5 @@ Home =
 ready = ->
 	Home.init()
 $(document).ready ready
-$(document).on 'page:load', ready
+# $(document).on 'page:load', ready
 

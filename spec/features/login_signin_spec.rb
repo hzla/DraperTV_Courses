@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Login/Sign in", js: true do 
+feature "Login/Sign in" do 
 
 	before :each do 
 		create :user

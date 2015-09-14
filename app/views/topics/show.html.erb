@@ -15,9 +15,9 @@
     <% counter = 0 %>
     <% @tracks.order(:order).each do |track| %>
       <% counter += 1 %>
-      <% info = track.progress_info(current_user) %>
+      <% info = track.progress_info(@user) %>
       <%= link_to track_path(track) do %>
-        <div class="track <%= track.status current_user %>">
+        <div class="track <%= info[:status] %>">
           <div class="track-info">       
             <%= image_tag track.icon, :class => "track-icon" %>
             <div class="track-info-content">
@@ -42,7 +42,7 @@
                 <% if info[:status] == "completed" %>
                   Complete!
                 <% else %>
-                  <%= track.progress_percentage current_user %>%
+                  <%= info[:percentage] %>%
                 <% end %>
               </div>
               <div class="track-percent-complete-bar">
@@ -92,7 +92,6 @@
         </div>
       </div>
     <% end %>
-
 <% end %>
 
 

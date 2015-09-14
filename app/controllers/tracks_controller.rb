@@ -6,10 +6,11 @@ class TracksController < ApplicationController
     @lesson_count = @lessons.flatten.reject! {|n| n.class != Lesson}.count
     @topic = @track.topic
     @participants = @track.participants
+    @user = current_user
     @tutorial = params["tutorial"] == "true"
     
-    if current_user && current_user.show_track_tutorial
-      current_user.update_attribute(:show_track_tutorial, false)
+    if @user && @user.show_track_tutorial
+      @user.update_attribute(:show_track_tutorial, false)
       redirect_to track_path(id: @track.id, tutorial: true)
     end
     

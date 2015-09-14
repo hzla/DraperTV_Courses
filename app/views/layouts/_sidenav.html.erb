@@ -1,7 +1,7 @@
+<% user = current_user %>
 <div id="side-nav">
 	<% if content_for?(:side_nav) %>
 		<div class="profile-info">
-			<% user = current_user %>
 			<% if user %>
 				<%= image_tag user.avatar_pic, :class => "profile-pic" %>
 				<div class="profile-text">
@@ -35,7 +35,6 @@
 		<%= yield :side_nav %>
 	<% else %>
 		<div class="profile-info">
-			<% user = current_user %>
 			<% if user %>
 				<%= image_tag user.avatar_pic, :class => "profile-pic" %>
 				<div class="profile-text">
@@ -142,7 +141,7 @@
 				CALENDAR
 			<% end %>
 			</div>
-			<% if current_user && !current_user.paid %>
+			<% if user && !user.paid %>
 			    <%= link_to new_charge_path do %>
 			      <div class="purchase-membership button green">
 			        GET MEMBERSHIP
