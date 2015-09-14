@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="143px" height="71px" viewBox="0 0 143 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>Line + Line + Line Copy 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Main-Attraction" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="25B-TUTORIAL-LESSONS" sketch:type="MSArtboardGroup" transform="translate(-939.000000, -156.000000)" stroke-linecap="round" stroke="#F2F2F2" stroke-width="3">
+            <g id="Line-+-Line-+-Line-Copy-3" sketch:type="MSLayerGroup" transform="translate(1018.000000, 191.500000) scale(-1, 1) rotate(-180.000000) translate(-1018.000000, -191.500000) translate(940.000000, 130.000000)">
+                <path d="M11.1046754,60.2691752 C11.1046754,60.2691752 46.6337334,19.9194546 95.5308242,33.8754508 C144.427915,47.8314469 149.075432,91.6488057 149.075432,91.6488057" id="Line" sketch:type="MSShapeGroup" transform="translate(80.090054, 61.294720) scale(-1, -1) rotate(-30.000000) translate(-80.090054, -61.294720) "></path>
+                <g id="Line-+-Line-Copy-2" transform="translate(15.000000, 78.000000) rotate(-6.000000) translate(-15.000000, -78.000000) translate(2.000000, 64.000000)" sketch:type="MSShapeGroup">
+                    <path d="M8.35892298,27.9576637 L0.641077019,1.04233626" id="Line"></path>
+                    <path d="M25.2446759,14.2449984 L0.7553241,0.67032906" id="Line-Copy-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

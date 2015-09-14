@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="165px" height="50px" viewBox="0 0 165 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Line Copy 10 + Line Copy 9 + Path 2300</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Main-Attraction" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="25B-TUTORIAL-LESSONS" sketch:type="MSArtboardGroup" transform="translate(-1027.000000, -504.000000)" stroke-linecap="round" stroke="#F2F2F2" stroke-width="3">
+            <g id="Line-Copy-10-+-Line-Copy-9-+-Path-2300" sketch:type="MSLayerGroup" transform="translate(1028.000000, 505.000000)">
+                <g id="Line-Copy-10-+-Line-Copy-9" transform="translate(153.500000, 17.500000) scale(-1, 1) rotate(15.000000) translate(-153.500000, -17.500000) translate(140.000000, 4.000000)" sketch:type="MSShapeGroup">
+                    <path d="M11.3320421,26.5775189 L0.843057451,0.61637093" id="Line-Copy-10"></path>
+                    <path d="M26.422191,11.2200699 L0.648055103,0.279598255" id="Line-Copy-9"></path>
+                </g>
+                <path d="M0.533202209,10.0852833 C0.533202209,10.0852833 18.5625143,47.1609495 80.3215094,47.1609495 C142.080504,47.1609495 160.109811,5.74684119 160.109811,5.74684119" id="Path-2300" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
