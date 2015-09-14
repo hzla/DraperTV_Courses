@@ -1,0 +1,158 @@
+.lesson-container, #amas, .chat-messages {
+	textarea.comment-body {
+		width: 100%;
+		height: 50px;
+		font-size: 14px;
+		padding: 10px 15px;
+		box-sizing: border-box;
+		border-radius: 5px;
+		border: 1px solid #c0c0c0;
+		margin-bottom: 10px;
+	}
+	.comment {
+		@include flexbox;
+		@include align-items(top);
+		margin-bottom: 20px;
+		position: relative;
+	}
+	.comment.collapsed {
+		@include justify-content(space-between);
+	}
+	.comment-vote-container {
+		width: 20px;
+		@include flexbox;
+		@include flex-direction(column);
+		@include align-items(center);
+		margin-right: 10px;
+	}
+	.upvote-arrow {
+		margin-bottom: 5px;
+		height: 12px;
+	}
+	.vote-count {
+		color: #939393;
+		font-weight: 500;
+		width: 20px;
+		text-align: center;
+	}
+	.upvoted .vote-count {
+		color: $green;
+	}
+	.comment-pic {
+		width: 40px;
+		height: 40px;
+		border-radius: 5px;
+		margin-right: 10px;
+	}
+	.comment-main {
+		box-sizing: border-box;
+		width: calc(100% - 80px);
+	}
+	.comment .comment-header {
+		@include justify-content(space-between);
+	}
+	.comment-header {
+		margin-bottom: 10px;
+		font-weight: 700;
+		@include flexbox;
+		.user-title {
+			color: #414141;
+		}
+		.comment-date {
+			color: #939393;
+			font-weight: 500;
+		}
+		.comment-header-left {
+			@include flexbox;
+		}
+		.comment-header-right {
+			box-sizing: border-box;
+			@include flexbox;
+		}
+		.reply-comment, .delete-comment {
+			color: #c0c0c0;
+			font-weight: 700;
+			text-decoration: underline;
+			cursor: pointer;
+			margin-right: 20px;
+		}
+		.delete-comment {
+			color: $red;
+		}
+	}
+	.comment-body {
+		width: calc(100% - 40px);
+	}
+	.admin-title.comment-header {		
+		.comment-user, .user-title {
+			color: $red;
+		}
+	}
+	.collapsed .admin-title.comment-header {
+		.comment-user, .user-title {
+			color: #c0c0c0;
+		}
+	}
+	.comment-action {
+		height: 20px;
+		width: 20px;
+		cursor: pointer;
+	}
+	.comment-children {
+		box-sizing: border-box;
+		padding-left: 50px;
+	}
+	.comment-children form .comment-body {
+		height: 40px;
+		width: calc(100% - 160px);
+	}
+
+	.comment-children .new_comment {
+		@include flexbox;
+		box-sizing: border-box;
+		padding-left: 30px;
+		margin-bottom: 0px;
+	}
+	.comment.collapsed {
+		height: 20px;
+		span {
+			color: #C0C0C0;
+		}
+	}
+	.comment-text-vote {
+		margin-right: 20px;
+	}
+	.sort-bar {
+		@include flexbox;
+		margin-bottom: 20px;
+		p {
+			margin-right: 20px;
+			color: #c0c0c0;
+			font-weight: 500;
+		}
+		p.active {
+			font-weight: 700;
+			color: #414141;
+		}
+		.sort-item {
+			cursor: pointer;
+		}
+		.sort-item:hover {
+			color: #414141;
+		}
+	}
+	.comment-form-bottom {
+		@include flexbox;
+		@include justify-content(space-between);
+	}
+	.submit-comment {
+		letter-spacing: 0px;
+		width: 80px;
+		text-transform: initial;
+		padding: 0px;
+	}
+	.comment-children .submit-comment {
+		margin-right: 20px;
+		margin-left: 10px;
+	}
+}

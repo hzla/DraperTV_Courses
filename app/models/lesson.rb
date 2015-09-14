@@ -1,59 +1,24 @@
 class Lesson < ActiveRecord::Base
 	belongs_to :track
 	has_many :comments
-	after_update :update_topic_percentage
-
-
-	#put progress method into a progressable module
+	include Extensions::Progressable
 
 	def icon color=nil
-		image = lesson_type + ".svg"
-		if color == "grey"
-			image.gsub!(".", "grey.")
-		end
-		image
+		"icons/#{lesson_type}#{color}.svg"
 	end
 
 	def slug_name
 		description[0..30]
 	end
 
-	def short_info number
-		full_info number
-	end
-
-
+	# number should be obtained from order attribute
 	def full_info number 
 		short_text = description.split("<br>")[0][0..59]
 		short_text = short_text + "..." if short_text.length == 60
-		if lesson_type != "watch" && lesson_type != "reading"
-			full_text = "#{number}. #{short_text}"
-		else
-			full_text = "#{number}. #{short_text}"
-		end
+		"#{number}. #{short_text}"
 	end
 
-	def progress user
-		return nil if !user
-		Progress.where(model_type: "lesson", model_id: id, user_id: user.id).first
-	end
-
-	def update_topic_percentage
-		if finished_changed?
-			topic = track.topic
-			topic.update_attributes percent_complete: topic.percentage_complete 
-		end
-	end
-
-	def status_icon user
-		return "untouched.svg" if !user
-		if progress(user) && progress(user).percent_complete == 100
-			"done.svg"
-		else
-			"untouched.svg"
-		end
-	end
-
+	# use linked list structure, store next lesson_id on each lesson
 	def next_lesson
 		lesson_ids = track.ordered_lessons.map(&:id)
 		next_lesson_id = lesson_ids[lesson_ids.index(id) + 1]
@@ -85,34 +50,6 @@ class Lesson < ActiveRecord::Base
 			"Starting a company is hard enough on your own, everyone needs a little help. These are tools and servies already built by other entrepreneurs we think would help you get closer to your goals.
 			<br><br>We’ve tried to mostly find free to use tools, but some software may require a purchase. "
 		end
-
-	end
-
-	def completed? user
-		return nil if !user
-		progress(user).percent_complete == 100
-	end
-
-	def complete user
-		return nil if !user
-		user_progress = progress(user)
-		if user_progress.percent_complete != 100
-			user_progress.update_attributes(percent_complete: 100)
-			user_progress.update_percentage_for_parent_progresses user
-		end
-		self
-	end
-
-	def self.assign_order
-		Track.all.each do |track|
-			track.ordered_lessons.each_with_index do |lesson, i|
-				lesson.update_attributes order: i
-			end
-		end
-	end
-
-	def participants
-		User.find Progress.where(model_id: id).pluck(:user_id)
 	end
 end
 

@@ -1,75 +1,12 @@
 /***********************************
- **** Declare Color Variables ******
+ **** Import Variables        ******
 ************************************/
-$blue-0: #2774bf;
-$blue: #246db4;
-$blue-2: #236e99;
-$blue-3: #2266a9;
-$blue-4: #1B5791;
-$blue-hover: #2266a9;
-$blue-soft: #246db4;
-
-$light-blue-0: #36bae7;
-$light-blue: #35b3de;
-$light-blue-2: #31a9d2;
-$light-blue-3: #2fa2c9;
-
-$teal-0: #26c3a0;
-$teal: #24b494;
-$teal-2: #21a789;
-$teal-3: #1f997e;
-
-$yellow-0: #fcc11e;
-$yellow: #f2b81d;
-$yellow-2: #e4ad1b;
-$yellow-3: #dca71b;
-$yellow-hover: #dca71b;
-
-$orange-0: #ff9735;
-$orange: #f38f31;
-$orange-2: #e5872e;
-$orange-3: #dca71b;
-$orange-hover: #dca71b;
-
-$green-0: #9bcc5c;
-$green: #88b250;
-$green-2: #759945;
-$green-3: #618039;
-$green-hover: #618039;
-
-$red-0: #ef4c51;
-$red: #e1474c;
-$red-2: #d14145;
-$red-3: #c03b3e;
-$red-hover: #c03b3e;
-
-$gray-x-x-lt: #f4f4f4;
-$gray-x-lt: #EEE;
-$gray-lt: #C0C0C0;
-$gray: #919191;
-$gray-med: #666;
-$gray-dark: #343434;
-
-$gray-blue-x-lt: #AEBBCC;
-$gray-blue-lt: #CDD1D6;
-$gray-blue-dark: #313E4F;
-$gray-blue-x-dark: #28323F;
-$gray-blue: #586576;
-
-$dark-blue: #2E3847;
-
-$bright-teal: #39BABF;
-$bright-purple: #AC65A6;
-$bright-blue: #009FF1;
-
-$green: #24B494;
-$blue: #246DB4;
-$red: #E2575B;
+@import 'variables';
 
 /**************************
- **** Declare Mixins ******
+ **** Import Mixins ******
 ***************************/
-@import 'mixins/flexbox';
+@import 'mixins/*';
 
 /***********************************
  ******* Import Stylesheets ********
@@ -78,107 +15,10 @@ $red: #E2575B;
 @import 'screen';
 @import 'layout';
 @import 'slidebars.min.css';
-
-
-@import 'new/override';
-@import 'new/topics_index';
-@import 'new/topics_show';
-@import 'new/tracks_show';
-@import 'new/lessons_show';
-@import 'new/sessions_new';
-@import 'new/charges_new';
-@import 'new/header_nav';
-@import 'new/amas_index';
-@import 'new/amas_show';
-@import 'new/users_edit';
-@import 'new/mobile';
-@import 'new/pages';
-@import 'new/announcements';
-@import 'new/events_index';
-
+@import "main/*"; 
 
 /***********************************
- ****** Install Proxima Nova *******
+ ****** Import Fonts         *******
 ************************************/
 
-
-@font-face {
-    font-family: 'proxima_nova';
-    src: url('proxima/proximanova-extrabld-webfont.eot');
-    src: url('proxima/proximanova-extrabld-webfont.eot?#iefix') format('embedded-opentype'),
-         url('proxima/proximanova-extrabld-webfont.woff') format('woff'),
-         url('proxima/proximanova-extrabld-webfont.ttf') format('truetype'),
-         url('proxima/proximanova-extrabld-webfont.svg#proxima_novaextrabold') format('svg');
-    font-weight: 900;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'proxima_nova';
-    src: url('proxima/proximanova-light-webfont.eot');
-    src: url('proxima/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('proxima/proximanova-light-webfont.woff') format('woff'),
-         url('proxima/proximanova-light-webfont.ttf') format('truetype'),
-         url('proxima/proximanova-light-webfont.svg#proxima_novalight') format('svg');
-    font-weight: 300;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'proxima_nova';
-    src: url('proxima/proximanova-regular-webfont.eot');
-    src: url('proxima/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('proxima/proximanova-regular-webfont.woff') format('woff'),
-         url('proxima/proximanova-regular-webfont.ttf') format('truetype'),
-         url('proxima/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'proxima_nova';
-    src: url('proxima/proximanova-semibold-webfont.eot');
-    src: url('proxima/proximanova-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('proxima/proximanova-semibold-webfont.woff') format('woff'),
-         url('proxima/proximanova-semibold-webfont.ttf') format('truetype'),
-         url('proxima/proximanova-semibold-webfont.svg#proxima_novasemibold') format('svg');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'proxima_nova';
-    src: font-url('proxima/proximanova-bold-webfont.eot');
-    src: font-url('proxima/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('proxima/proximanova-bold-webfont.woff') format('woff'),
-         font-url('proxima/proximanova-bold-webfont.ttf') format('truetype'),
-         font-url('proxima/proximanova-bold-webfont.svg#proxima_novasemibold') format('svg');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'proxima_novalight_italic';
-    src: url('proxima/proximanova-lightit-webfont.eot');
-    src: url('proxima/proximanova-lightit-webfont.eot?#iefix') format('embedded-opentype'),
-         url('proxima/proximanova-lightit-webfont.woff') format('woff'),
-         url('proxima/proximanova-lightit-webfont.ttf') format('truetype'),
-         url('proxima/proximanova-lightit-webfont.svg#proxima_novalight_italic') format('svg');
-    font-weight: 500;
-    font-style: italic;
-
-}
-
-@font-face {
-    font-family: 'proxima_nova';
-    src: url('proxima/proximanova-regularit-webfont.eot');
-    src: url('proxima/proximanova-regularit-webfont.eot?#iefix') format('embedded-opentype'),
-         url('proxima/proximanova-regularit-webfont.woff') format('woff'),
-         url('proxima/proximanova-regularit-webfont.ttf') format('truetype'),
-         url('proxima/proximanova-regularit-webfont.svg#proxima_novaregular_italic') format('svg');
-    font-weight: 500;
-    font-style: italic;
-}
+@import 'fonts'

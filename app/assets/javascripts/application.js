@@ -11,12 +11,12 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 
-// = require jquery
-// = require jquery.turbolinks
-// = require ckeditor/override
-// = require ckeditor/init
-// = require home
-// = require_tree .
+//= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
+//= require turbolinks
+//= require home
+//= require_tree .
 
 
 

@@ -20,7 +20,7 @@ class LessonsController < ApplicationController
         @sort = "top"
       end
     end
-    
+  
     @user = current_user
     @participants = @lesson.participants
     Progress.where(user_id: @user.id, model_type: "lesson", model_id: @lesson.id, percent_complete: 0).first_or_create

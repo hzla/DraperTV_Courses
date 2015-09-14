@@ -28,7 +28,7 @@
 				</div>
 			<% else %>
 				<%= link_to '/users/sign_in' do %>
-					<p class="green sign-in">SIGN IN</p>
+					<p class="green-text sign-in">SIGN IN</p>
 				<% end %>
 			<% end %>
 		</div>
@@ -108,7 +108,7 @@
 				</div>
 			<% else %>
 				<%= link_to '/users/sign_in' do %>
-					<p class="green sign-in">SIGN IN</p>
+					<p class="green-text sign-in">SIGN IN</p>
 				<% end %>
 			<% end %>
 		</div>
@@ -144,7 +144,7 @@
 			</div>
 			<% if current_user && !current_user.paid %>
 			    <%= link_to new_charge_path do %>
-			      <div class="purchase-membership btn-ui">
+			      <div class="purchase-membership button green">
 			        GET MEMBERSHIP
 			      </div>
 		    <% end %>

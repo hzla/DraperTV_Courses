@@ -11,7 +11,7 @@ class AmasController < ApplicationController
     @user = current_user
     redirect_to "/users/sign_up?resource_type=ama&resource_id=#{params[:id]}" and return if !@user
     @ama = Ama.find params[:id]
-    
+
     if !@ama.is_upcoming? #past amas must be paid for
       redirect_to new_charge_path(resource_type: "ama", resource_id: params[:id]) and return if !@user.paid 
     end
@@ -20,7 +20,6 @@ class AmasController < ApplicationController
     @comments = @ama.regular_comments
     @chat_comments = @ama.chat_comments
     
-
     @sort = "date" #add cached upvotes migration to make faster
     if params["sort"] == "top"      
       @comments = @comments.sort_by {|c| c.get_upvotes.size}.reverse

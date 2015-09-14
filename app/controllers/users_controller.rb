@@ -16,7 +16,6 @@ class UsersController < ApplicationController
     redirect_to edit_user_path
   end
 
-
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :remember_me, :first_name, :last_name,:current_password, :username, :full_name)
   end

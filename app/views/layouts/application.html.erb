@@ -58,6 +58,13 @@ var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
 b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
 loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
 olark.identify('3351-667-10-7719');/*]]>*/</script><noscript><a href="https://www.olark.com/site/3351-667-10-7719/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+   <script>
+    if (navigator.userAgent.indexOf('Mac OS X') != -1) {
+      $("html").addClass("mac");
+    } else {
+      $("body").addClass("pc");
+    }
+  </script>
 </head>
 <body>
 
@@ -77,5 +84,4 @@ olark.identify('3351-667-10-7719');/*]]>*/</script><noscript><a href="https://ww
     <%= render partial: "layouts/mobile" %>
   <% end %>
 </body>
-
 </html>

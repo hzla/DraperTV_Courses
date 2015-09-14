@@ -31,7 +31,7 @@
           <input type="hidden" value="<%= params['resource_id'] %>" name="resource_id">
           <input type="hidden" value="<%= params['resource_type'] %>" name="resource_type">
         <% end %>
-        <%= f.button :submit, "SIGN UP", :use_rails_ajax => false %>
+        <%= f.button :submit, "SIGN UP", :use_rails_ajax => false, :class => "button green" %>
       <% end %>
       
       <div class="terms-text">

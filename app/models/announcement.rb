@@ -1,7 +1,7 @@
 class Announcement < ActiveRecord::Base
   
   def self.today
-  	where("created_at > (?)", Time.now - 24.hours).where(archived: nil).select {|n| n.created_at.day == (Time.now + 7.hours).day}
+  	where("created_at > (?)", Time.now - 24.hours).where(archived: nil).select {|n| (n.created_at + 7.hours).to_date === (Time.now.utc + 7.hours).to_date}
   end
 
   def self.date_today

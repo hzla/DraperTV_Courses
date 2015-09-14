@@ -17,6 +17,7 @@ module OnlineSchool
     config.middleware.use Rack::Deflater
     #Mounting a rack App! which is the email tracker library, it's counted as a rackapp
     require Rails.root.join('lib', 'email_tracker', 'rack')
+    config.autoload_paths += %W(#{config.root}/lib/extensions)
     config.middleware.use EmailTracker::Rack
 
 
@@ -68,7 +69,6 @@ module OnlineSchool
     # This will create an empty whitelist of attributes available for mass-assignment for all models
     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
     # parameters by using an attr_accessible or attr_protected declaration.
-    config.active_record.whitelist_attributes = false
 
     config.action_mailer.smtp_settings = {
         address: "smtp.mandrillapp.com",

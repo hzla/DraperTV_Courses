@@ -1,4 +1,4 @@
-<div class="top-section <%= @topic.name.downcase.gsub(" ", "-").gsub("&-", "") %>">
+<div class="top-section <%= @topic.html_class_name %>">
   <div class="row">
     <div class="top-column-main">
       <%= link_to topic_path(@track.topic) do %>
@@ -39,13 +39,13 @@
           <div class="lesson-group <%= lesson_group[0] %>">
             <div class="lesson-header">
               <div class="lesson-header-main">
-                <%= image_tag lesson_group[0] + ".svg", :class => "lesson-icon" %>
+                <%= image_tag "lesson_type_icons/" + lesson_group[0] + ".svg", :class => "lesson-icon" %>
                 <p class="<%= lesson_group[0] %>"><%= lesson_group[0].upcase %></p>
               </div>
               <%= image_tag "info-icon.svg", :class => "lesson-info-icon tool-tip-icon" %>
               <div class="tool-tip">
                 <div class="lesson-header-main">
-                  <%= image_tag lesson_group[0] + ".svg", :class => "lesson-icon" %>
+                  <%= image_tag "lesson_type_icons/" + lesson_group[0] + ".svg", :class => "lesson-icon" %>
                   <p class="<%= lesson_group[0] %>"><%= lesson_group[0].upcase %></p>
                 </div>
                 <div class="tool-tip-body">

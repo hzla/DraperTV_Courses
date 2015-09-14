@@ -1,0 +1,26 @@
+<div class="page-overlay">
+  <div class="user-info-modal edit-form">
+    <%= form_for(@user) do |f| %>
+        <p>We’re switching to displaying usernames instead of your real names, so pick a new one!</p>
+
+        <% if !current_user.full_name%>
+          <p>Please also enter your full names so that Support can better assist you with any issues.</p>
+          <div class="form-row">
+            <div class="form-field">
+              <%= f.label :full_name, "FULL NAME"%>
+              <%= f.text_field :full_name, required: true, placeholder: "Enter name..." %>
+            </div>
+          </div>
+        <% end %>
+        <div class="form-row">
+            <div class="form-field">
+              <%= f.label :username, "USERNAME" %>
+              <%= f.text_field :username, required: true, placeholder: "Enter name..." %>
+          </div>
+        </div>
+      <div class="actions">
+        <%= f.submit "SUBMIT" %>
+      </div>
+    <% end %>
+  </div>
+</div>

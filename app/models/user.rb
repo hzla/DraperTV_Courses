@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  after_commit :flush_cache
-  after_touch :flush_cache
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable, :timeout_in => 3.months
 
@@ -40,14 +38,6 @@ class User < ActiveRecord::Base
     else
       avatar.url
     end
-  end
-
-  def self.cached_find(id)
-    Rails.cache.fetch([name, id]) { find(id) }
-  end
-
-  def flush_cache
-    Rails.cache.delete([self.class.name, id])
   end
 
   def tier

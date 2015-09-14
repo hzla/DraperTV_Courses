@@ -1,12 +1,10 @@
+REFACTORING AND OPTIMIZATION TODOS
+
 ajax
-move assets to amazon
-seo
-refactor progress methods into a module
-resize images to thumbnails
 
-make all elements border-box
-extract comment css out of lesson
+DRY up css
+center topic icons
 
-
-
-FIX BUTTONS
+cache comment upvotes
+cache lesson progresses on users
+add ancestry to progresses

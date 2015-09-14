@@ -1,20 +1,22 @@
 class CommentsController < ApplicationController
-  before_filter :get_comment
+  before_filter :get_comment, except: "create"
   
   def create
-    comment = Comment.new params[:comment]
+    comment = Comment.new comment_params
     comment.user_id = current_user.id
     lesson = comment.lesson
     @user = current_user
-
+    
     if comment.save!
       if comment.comment_type == "chat"
         broadcast ama_path(comment.ama)+ "/chat", comment.to_json
         render nothing: true and return
       elsif comment.parent_id
+        comment.self_upvote
         render partial: 'child_comment', locals: {child_comment: comment} and return
       else
         commentable = comment.ama_id ? comment.ama : lesson
+        comment.self_upvote
         render partial: 'comment', locals: {comment: comment, commentable: commentable}
       end
    	end
@@ -39,5 +41,9 @@ class CommentsController < ApplicationController
 
   def get_comment
     @comment = Comment.find params[:id]
+  end
+
+  def comment_params
+    params.require(:comment).permit :body, :user_id, :lesson_id, :ama_id, :ancestry, :parent_id, :comment_type
   end
 end

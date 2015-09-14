@@ -11,51 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150831054324) do
+ActiveRecord::Schema.define(version: 20150901212842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "active_admin_comments", force: true do |t|
-    t.string   "resource_id",   null: false
-    t.string   "resource_type", null: false
-    t.integer  "author_id"
-    t.string   "author_type"
+  create_table "admin_notes", force: :cascade do |t|
+    t.string   "resource_id",     null: false
+    t.string   "resource_type",   null: false
+    t.integer  "admin_user_id"
+    t.string   "admin_user_type"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "namespace"
   end
 
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+  add_index "admin_notes", ["admin_user_type", "admin_user_id"], name: "index_admin_notes_on_admin_user_type_and_admin_user_id", using: :btree
+  add_index "admin_notes", ["resource_type", "resource_id"], name: "index_admin_notes_on_resource_type_and_resource_id", using: :btree
 
-  create_table "activities", force: true do |t|
-    t.integer  "user_id"
-    t.string   "action"
-    t.integer  "trackable_id"
-    t.string   "trackable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "activities", ["trackable_id"], name: "index_activities_on_trackable_id", using: :btree
-  add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
-
-  create_table "activity_feeds", force: true do |t|
-    t.integer  "user_id"
-    t.string   "action"
-    t.integer  "tobetrackable_id"
-    t.string   "tobetrackable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "activity_feeds", ["tobetrackable_id"], name: "index_activity_feeds_on_tobetrackable_id", using: :btree
-  add_index "activity_feeds", ["user_id"], name: "index_activity_feeds_on_user_id", using: :btree
-
-  create_table "admin_users", force: true do |t|
+  create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -73,7 +47,7 @@ ActiveRecord::Schema.define(version: 20150831054324) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "amas", force: true do |t|
+  create_table "amas", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "start_date"
@@ -84,120 +58,31 @@ ActiveRecord::Schema.define(version: 20150831054324) do
     t.string   "ama_type",    default: "monthly"
   end
 
-  create_table "announcements", force: true do |t|
+  create_table "announcements", force: :cascade do |t|
     t.text     "body"
     t.boolean  "archived"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "assignments", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "vimeo_url"
-    t.string   "preview_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "course_id"
-    t.integer  "order_id",                 default: 0
-    t.integer  "survey_id"
-    t.boolean  "require_upload",           default: false
-    t.string   "speaker_name"
-    t.text     "speaker_bio"
-    t.string   "speaker_linkedin"
-    t.string   "speaker_twitter"
-    t.string   "speaker_angel"
-    t.string   "category"
-    t.string   "speaker_pic_file_name"
-    t.string   "speaker_pic_content_type"
-    t.integer  "speaker_pic_file_size"
-    t.datetime "speaker_pic_updated_at"
-    t.string   "slug"
-    t.integer  "points"
-    t.integer  "user_assignment_id"
-    t.text     "question_text"
-    t.text     "question_duh_response"
-    t.boolean  "active"
-    t.boolean  "business"
-    t.string   "req_online"
-    t.string   "req_boarding"
-    t.string   "day"
-  end
-
-  add_index "assignments", ["slug"], name: "index_assignments_on_slug", using: :btree
-
-  create_table "attachments", force: true do |t|
+  create_table "attachments", force: :cascade do |t|
     t.string   "url"
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "authorizations", force: true do |t|
+  create_table "authorizations", force: :cascade do |t|
     t.string  "uid"
     t.integer "user_id"
   end
 
-  create_table "authorships", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "skill_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "authorships", ["skill_id"], name: "index_authorships_on_skill_id", using: :btree
-  add_index "authorships", ["user_id"], name: "index_authorships_on_user_id", using: :btree
-
-  create_table "badges", force: true do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.integer  "course_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "icon_file_name"
-    t.string   "icon_content_type"
-    t.integer  "icon_file_size"
-    t.datetime "icon_updated_at"
-  end
-
-  create_table "bucketlist_items", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-    t.integer  "bucketlist_id"
-    t.string   "title"
-    t.text     "body"
-    t.boolean  "complete"
-  end
-
-  create_table "bucketlists", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  create_table "ckeditor_assets", force: true do |t|
-    t.string   "data_file_name",               null: false
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.integer  "assetable_id"
-    t.string   "assetable_type",    limit: 30
-    t.string   "type",              limit: 30
-    t.integer  "width"
-    t.integer  "height"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
-  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
-
-  create_table "codes", force: true do |t|
+  create_table "codes", force: :cascade do |t|
     t.string  "body"
     t.boolean "used", default: false
   end
 
-  create_table "comments", force: true do |t|
+  create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "lesson_id"
     t.text     "body"
@@ -213,34 +98,7 @@ ActiveRecord::Schema.define(version: 20150831054324) do
   add_index "comments", ["lesson_id"], name: "index_comments_on_lesson_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
-  create_table "courses", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "course_icon_file_name"
-    t.string   "course_icon_content_type"
-    t.integer  "course_icon_file_size"
-    t.datetime "course_icon_updated_at"
-    t.string   "intro_screenshot_file_name"
-    t.string   "intro_screenshot_content_type"
-    t.integer  "intro_screenshot_file_size"
-    t.datetime "intro_screenshot_updated_at"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.integer  "length"
-    t.string   "intro_vimeo"
-    t.string   "badge_vimeo"
-    t.string   "tile_image_file_name"
-    t.string   "tile_image_content_type"
-    t.integer  "tile_image_file_size"
-    t.datetime "tile_image_updated_at"
-    t.string   "slug"
-  end
-
-  add_index "courses", ["slug"], name: "index_courses_on_slug", unique: true, using: :btree
-
-  create_table "delayed_jobs", force: true do |t|
+  create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
     t.text     "handler",                null: false
@@ -256,7 +114,7 @@ ActiveRecord::Schema.define(version: 20150831054324) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
-  create_table "events", force: true do |t|
+  create_table "events", force: :cascade do |t|
     t.string   "name"
     t.datetime "start_time"
     t.datetime "created_at"
@@ -270,14 +128,7 @@ ActiveRecord::Schema.define(version: 20150831054324) do
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
-  create_table "feedbacks", force: true do |t|
-    t.string   "type"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "lessons", force: true do |t|
+  create_table "lessons", force: :cascade do |t|
     t.string   "lesson_type"
     t.boolean  "video"
     t.boolean  "started",      default: false
@@ -298,45 +149,7 @@ ActiveRecord::Schema.define(version: 20150831054324) do
 
   add_index "lessons", ["track_id"], name: "index_lessons_on_track_id", using: :btree
 
-  create_table "milestones", force: true do |t|
-    t.text     "vision"
-    t.text     "creativity"
-    t.text     "speedstrength"
-    t.text     "evangelism"
-    t.text     "power"
-    t.text     "survival"
-    t.text     "brilliance"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "mods", force: true do |t|
-    t.string   "name"
-    t.string   "order"
-    t.integer  "track_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "posts", force: true do |t|
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "file_file_name"
-    t.string   "file_content_type"
-    t.integer  "file_file_size"
-    t.datetime "file_updated_at"
-    t.integer  "user_id"
-    t.string   "category"
-    t.string   "privacy"
-    t.string   "title"
-    t.string   "slug"
-    t.integer  "vote",              default: 0
-  end
-
-  add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
-
-  create_table "progresses", force: true do |t|
+  create_table "progresses", force: :cascade do |t|
     t.integer  "model_id"
     t.string   "model_type"
     t.integer  "percent_complete"
@@ -348,86 +161,13 @@ ActiveRecord::Schema.define(version: 20150831054324) do
   add_index "progresses", ["model_id"], name: "index_progresses_on_model_id", using: :btree
   add_index "progresses", ["user_id"], name: "index_progresses_on_user_id", using: :btree
 
-  create_table "resources", force: true do |t|
-    t.string   "title"
-    t.string   "url"
-    t.text     "description"
-    t.string   "category"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
-  create_table "sent_email_opens", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "ip_address"
-    t.string   "opened"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sent_emails", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.date     "sent"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "skills", force: true do |t|
+  create_table "skills", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "survey_answers", force: true do |t|
-    t.integer  "attempt_id"
-    t.integer  "question_id"
-    t.integer  "option_id"
-    t.boolean  "correct"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "survey_attempts", force: true do |t|
-    t.integer "participant_id"
-    t.string  "participant_type"
-    t.integer "survey_id"
-    t.boolean "winner"
-    t.integer "score"
-  end
-
-  create_table "survey_options", force: true do |t|
-    t.integer  "question_id"
-    t.integer  "weight",      default: 0
-    t.string   "text"
-    t.boolean  "correct"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "survey_questions", force: true do |t|
-    t.integer  "survey_id"
-    t.string   "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "survey_surveys", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "attempts_number", default: 0
-    t.boolean  "finished",        default: false
-    t.boolean  "active",          default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "taggings", force: true do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
     t.string   "taggable_type"
@@ -439,13 +179,13 @@ ActiveRecord::Schema.define(version: 20150831054324) do
 
   add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
 
-  create_table "tags", force: true do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "name"
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
-  create_table "topics", force: true do |t|
+  create_table "topics", force: :cascade do |t|
     t.string  "icon"
     t.string  "name"
     t.integer "percent_complete"
@@ -457,7 +197,7 @@ ActiveRecord::Schema.define(version: 20150831054324) do
     t.string  "slug"
   end
 
-  create_table "tracks", force: true do |t|
+  create_table "tracks", force: :cascade do |t|
     t.integer "order"
     t.string  "name"
     t.string  "icon"
@@ -471,26 +211,7 @@ ActiveRecord::Schema.define(version: 20150831054324) do
 
   add_index "tracks", ["topic_id"], name: "index_tracks_on_topic_id", using: :btree
 
-  create_table "user_assignments", force: true do |t|
-    t.text     "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "upload_file_name"
-    t.string   "upload_content_type"
-    t.integer  "upload_file_size"
-    t.datetime "upload_updated_at"
-    t.integer  "user_id"
-    t.integer  "assignment_id"
-    t.string   "link"
-    t.integer  "point_value"
-    t.integer  "bonus_points_given"
-    t.integer  "rating"
-    t.text     "question_response"
-    t.boolean  "editcheck"
-    t.boolean  "complete",            default: false
-  end
-
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.text     "bio"
@@ -556,32 +277,7 @@ ActiveRecord::Schema.define(version: 20150831054324) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["slug"], name: "index_users_on_slug", using: :btree
 
-  create_table "videos", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "vimeo_url"
-    t.string   "preview_url"
-    t.integer  "order_id"
-    t.string   "speaker_name"
-    t.text     "speaker_bio"
-    t.string   "speaker_linkedin"
-    t.string   "speaker_twitter"
-    t.string   "speaker_angel"
-    t.string   "category"
-    t.string   "slug"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "speaker_pic_file_name"
-    t.string   "speaker_pic_content_type"
-    t.integer  "speaker_pic_file_size"
-    t.datetime "speaker_pic_updated_at"
-    t.string   "video_pic_file_name"
-    t.string   "video_pic_content_type"
-    t.integer  "video_pic_file_size"
-    t.datetime "video_pic_updated_at"
-  end
-
-  create_table "votes", force: true do |t|
+  create_table "votes", force: :cascade do |t|
     t.integer  "votable_id"
     t.string   "votable_type"
     t.integer  "voter_id"

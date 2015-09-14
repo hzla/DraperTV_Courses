@@ -1,0 +1,42 @@
+<%= content_for :tutorial do %>
+  <div class="tutorial-overlay">
+    <div class="tut-1">
+      <div class="divider-left divider"></div>
+      <div class="divider-right divider"></div>
+      <p class="left-tut">
+        These are the links to the different DTV Courses sections.
+        <br><br>
+        You can take courses on your own or participate in our monthly and biweekly streams.
+      </p>
+      <p class="mid-tut">
+        Navigate through courses and lessons in this middle column.
+      </p>
+      <p class="right-tut">
+        Look here to find out more info on courses and lessons.
+      </p>
+      <div class="next-tut-container">
+        <%= image_tag "check.svg", :class => "tut-check" %>
+      </div>
+    </div>
+    <div class="tut-2">
+      <div class="divider-left divider"></div>
+      <div class="divider-right divider"></div>
+      <p class="left-tut">
+        These are the links to the different DTV Courses sections.
+        <br><br>
+        You can take courses on your own or participate in our monthly and biweekly streams.
+      </p>
+      <p class="mid-tut">
+        Navigate through courses and lessons in this middle column.
+      </p>
+      <p class="right-tut">
+        Look here to find out more info on courses and lessons.
+      </p>     
+      <%= link_to root_path do %>
+      <div class="next-tut-container">
+        <%= image_tag "check.svg", :class => "tut-check" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

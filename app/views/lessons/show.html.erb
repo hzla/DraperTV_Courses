@@ -13,7 +13,7 @@
             <% next if !lesson || lesson == "tools" %>
             <% if lesson.class == String %>
               <div class="bar-item type-header">
-                <%= image_tag "#{lesson}.svg", :class => "bar-icon" %>
+                <%= image_tag "lesson_type_icons/#{lesson}.svg", :class => "bar-icon" %>
                 <p class="bar-text <%= lesson %>"><%= lesson.upcase %></p>
                 <div></div>
                 <% counter = 0 %>
@@ -85,7 +85,7 @@
               <p class="<%= 'active' if @sort == "top" %> sort-item">Top</p>
             <% end %>
           </div>
-          <%= f.submit "Submit", :class => "submit-comment" %>
+          <%= f.submit "Submit", :class => "submit-comment button green" %>
         </div>  
       <% end %>
        <div class="comments">

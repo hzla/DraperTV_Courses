@@ -24,7 +24,6 @@ class ChargesController < ApplicationController
     else
       @subscription = @customer.subscriptions.create plan: @plan
     end
-    
     current_user.update_attributes email: params["email"], plan: @plan, paid: true
     UserMailer.payment_confirmation(current_user).deliver
     
@@ -32,6 +31,7 @@ class ChargesController < ApplicationController
       redirect_to lesson_path(params[:lesson_id]) and return
     else
       redirect_to root_path 
+      
     end
   end
 

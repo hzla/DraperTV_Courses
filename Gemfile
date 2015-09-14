@@ -2,50 +2,33 @@
 source "https://rubygems.org"
 ruby '2.0.0'
 
-gem 'rails', '4.0.4'
+gem 'rails', '4.2.4'
 gem 'nokogiri'
 gem 'pg', '~> 0.18.1'
-gem 'jquery-turbolinks'
-gem 'nprogress-rails'
 gem 'rails_12factor', group: :production
 gem 'delayed_job_active_record'
-
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'cancan'
 gem 'acts_as_votable', '~> 0.10.0'
-
 gem 'simple_form'
-gem 'country_select'
 gem "paperclip", "~> 3.0"
 gem 'curb'
-gem 'survey', :git => 'git://github.com/runtimerevolution/survey.git'
-gem 'css3-progress-bar-rails'
 gem 'thin'
-gem 'chosen-rails'
-gem 'rinku'
 gem 'turbolinks'
-gem 'thumbs_up'
+gem 'jquery-turbolinks'
 gem 'ckeditor'
-gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'link_thumbnailer'
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+
 # analytics & email
-gem 'instagram'
-gem 'twitter'
-gem 'analytics-ruby', '<1.0'
 gem 'newrelic_rpm'
-gem 'customerio', :git => 'https://github.com/customerio/customerio-ruby'
-gem 'mandrill-api'
-#gem 'mandrill-rails'
-gem "mailchimp-api", "~> 2.0.4"
 gem 'omniauth-facebook', github: "mkdynamic/omniauth-facebook"
 gem 'ancestry'
 gem 'vimeo'
 gem 'sanitize'
 gem 'browser'
-gem 'koala'
-gem 'recurly', '~> 2.4.5'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -64,6 +47,7 @@ gem 'jquery-ui-rails'
 gem 'aws-sdk', '~> 1.5.7'
 gem 'foreman'
 gem 'right_aws'
+
 gem 'pry'
 gem 'dotenv-rails'
 
@@ -91,16 +75,11 @@ gem "kaminari"
 gem 'populator'
 gem 'faker'
 gem 'acts-as-taggable-on'
-
 gem 'stripe'
-
 gem 'private_pub'
 gem 'httparty'
-
 gem 'jbuilder', '~> 1.2'
 gem "formtastic"
-
-# gem 'rails4_upgrade', github: 'alindeman/rails4_upgrade'
 
 #rails Legacy Gems
 gem 'rails-observers'
@@ -117,39 +96,17 @@ gem 'dalli'
 gem 'rack-cache'
 gem 'kgio'
 
-
-gem 'fb_graph2'
 gem 'friendly_id', '~> 5.1.0'
-
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
   gem "database_cleaner", '1.0.0.RC1'
+  gem 'selenium-webdriver'
+  gem 'factory_girl'
+  gem 'mocha'
+  gem 'shoulda-matchers'
 end
-
-gem 'upmin-admin'
-
 gem 'httparty'
 
 
-# gem "nifty-generators", :group => :development
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
-
-# Don't know what this does
-# gem "mocha", :group => :test

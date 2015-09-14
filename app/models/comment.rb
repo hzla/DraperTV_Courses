@@ -2,9 +2,9 @@ class Comment < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :lesson
 	belongs_to :ama
+	# make polymorphic?
 	acts_as_votable
 	
-	after_create :self_upvote
 	after_create :sanitize_body
 	
 	has_ancestry
@@ -47,8 +47,9 @@ class Comment < ActiveRecord::Base
 	    end
 	end
 
-	def body
-		super.gsub("\n", "<br>")
+	def formatted_body
+		return nil if body.nil?
+		body.gsub("\n", "<br>")
 	end
 
 	private
