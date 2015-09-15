@@ -174,7 +174,6 @@ GEM
     crass (1.0.2)
     curb (0.8.8)
     daemons (1.2.3)
-    dalli (2.7.4)
     database_cleaner (1.0.0.RC1)
     debug_inspector (0.0.2)
     delayed_job (4.0.6)
@@ -288,7 +287,6 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kgio (2.9.3)
     launchy (2.4.3)
       addressable (~> 2.3)
     link_thumbnailer (3.0.3)
@@ -303,7 +301,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    memcachier (0.0.2)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     meta_request (0.3.4)
@@ -371,8 +368,6 @@ GEM
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
-    rack-cache (1.2)
-      rack (>= 0.4)
     rack-contrib (1.4.0)
       git-version-bump (~> 0.15)
       rack (~> 1.4)
@@ -583,7 +578,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   compass-rails
   curb
-  dalli
   database_cleaner (= 1.0.0.RC1)
   delayed_job_active_record
   delayed_job_web!
@@ -603,10 +597,8 @@ DEPENDENCIES
   jquery-turbolinks
   jquery-ui-rails
   kaminari
-  kgio
   launchy
   link_thumbnailer
-  memcachier
   meta_request
   mocha
   newrelic_rpm
@@ -619,7 +611,6 @@ DEPENDENCIES
   private_pub
   pry
   quiet_assets
-  rack-cache
   railroady
   rails (= 4.2.4)
   rails-observers

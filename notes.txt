@@ -6,5 +6,4 @@ DRY up css
 center topic icons
 
 cache comment upvotes
-cache lesson progresses on users
 add ancestry to progresses

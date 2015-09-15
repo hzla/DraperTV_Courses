@@ -1,4 +1,4 @@
-<% user = current_user %>
+<% user = @user || current_user %>
 <div id="side-nav">
 	<% if content_for?(:side_nav) %>
 		<div class="profile-info">

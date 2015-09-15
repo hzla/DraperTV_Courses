@@ -9,8 +9,9 @@
 
 <div class="column-main">
   <div class="topics">
-    <% @topics.each do |topic| %>
-      <% info = topic.progress_info(@user) %>
+    <% @topics.each do |topic_info| %>
+      <% topic = topic_info[0] %>
+      <% info = topic_info[1] %>
       <% completed = info[:status] == "completed" %>
       <div class='topic <%= topic.html_class_name %> <%= info[:status] %>'>
         <%= image_tag "freecourse.svg", :class => "free-icon" if topic.free %>

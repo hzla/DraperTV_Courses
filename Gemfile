@@ -91,10 +91,10 @@ gem 'exception_notification'
 gem "delayed_job_web", github: "toolmantim/delayed_job_web", branch: "fix-rails-sessions"
 
 #Cache Gems
-gem 'memcachier'
-gem 'dalli'
-gem 'rack-cache'
-gem 'kgio'
+# gem 'memcachier'
+# gem 'dalli'
+# gem 'rack-cache'
+# gem 'kgio'
 
 gem 'friendly_id', '~> 5.1.0'
 group :development, :test do

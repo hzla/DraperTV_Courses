@@ -4,18 +4,17 @@
       <%= link_to topics_path do %>
         <p class="header-back"><< COURSES</p>
       <% end %>
-      <h1><%= @topic.name.downcase.split(" ").map(&:capitalize).join(" ") %></h1>
+      <h1><%= @topic.display_name %></h1>
       <p class="header-info"><%= @tracks.count %> CHAPTERS</p>
-    </div><!-- column main -->
-  </div><!-- row -->
+    </div>
+  </div>
 </div>
 
 <div class="column-main <%= @topic.html_class_name %>">
   <div class="tracks">
-    <% counter = 0 %>
-    <% @tracks.order(:order).each do |track| %>
-      <% counter += 1 %>
-      <% info = track.progress_info(@user) %>
+    <% @tracks.each_with_index do |track_info, i| %>
+      <% track = track_info[0] %>
+      <% info = track_info[1] %>
       <%= link_to track_path(track) do %>
         <div class="track <%= info[:status] %>">
           <div class="track-info">       
@@ -23,7 +22,7 @@
             <div class="track-info-content">
               <div class="track-name">
                 <span>
-                  CHAPTER <%= counter %>:
+                  CHAPTER <%= i + 1 %>:
                 </span>
                 <%= track.name %>
               </div>
