@@ -16,10 +16,10 @@ OnlineSchool::Application.configure do
   #                          :socket_timeout => 1.5,
   #                          :socket_failure_delay => 0.2,
   #                          :value_max_bytes => 5242880)
-  config.action_dispatch.rack_cache = {
-    :metastore    => client,
-    :entitystore  => client
-  }
+  # config.action_dispatch.rack_cache = {
+  #   :metastore    => client,
+  #   :entitystore  => client
+  # }
   config.static_cache_control = "public, max-age=2592000"
 
   config.action_controller.perform_caching = true
