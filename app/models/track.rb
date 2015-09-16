@@ -38,6 +38,9 @@ class Track < ActiveRecord::Base
   end
 
   def self.progress_infos user, models=Topic.all
+    if !user
+        return models.order(:order).map {|t| [t, {status: "untouched"}]}
+    end
     model_ids = models.map(&:id).sort
     class_name = models.first.class.to_s.downcase
     progresses = Progress.where("model_id in (?)", model_ids).where(model_type: class_name, user_id: user.id).order(:model_id)
