@@ -33,7 +33,7 @@ class LessonsController < ApplicationController
   def update
     @lesson = Lesson.find params[:id]
     params[:lesson][:lesson_type] = params[:lesson][:lesson_type].downcase.strip
-    @lesson.update_attributes params[:lesson]
+    @lesson.update_attributes lesson_params
     redirect_to lesson_path(@lesson)
   end
 
@@ -55,6 +55,10 @@ class LessonsController < ApplicationController
     if current_user.role != "admin"
       redirect_to root_path and return
     end
+  end
+
+  def lesson_params
+    params.require(:lesson).permit(:lesson_type, :video, :started, :finished, :video_uid, :video_title, :video_author, :body, :discussion, :description, :track_id, :order, :video_length, :slug)
   end
 
 end

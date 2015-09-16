@@ -4,7 +4,7 @@ FactoryGirl.define do
     description Faker::Lorem.paragraph
     start_date Time.now + 1.day
     video_url "video_url"
-    image_url "image_url"
+    image_url "icons/attitude.svg"
   end
 
   factory :past_ama, :class => "Ama" do 
@@ -12,7 +12,7 @@ FactoryGirl.define do
     description Faker::Lorem.paragraph
     start_date Time.now - 1.day
     video_url "video_url"
-    image_url "image_url"
+    image_url "icons/attitude.svg"
   end
 
   factory :announcement do
@@ -46,7 +46,7 @@ FactoryGirl.define do
 
   factory :track do
     name "Name"
-    icon "icon.svg"
+    icon "attitude.svg"
     percent_complete "0"
     topic
     summary Faker::Lorem.paragraph
@@ -55,13 +55,14 @@ FactoryGirl.define do
   end
 
   factory :topic do 
-    icon "icon.svg"
+    icon "attitude.svg"
     name "Name"
     percent_complete 0
     body Faker::Lorem.paragraph
     summary Faker::Lorem.paragraph
     video_uid "123456"
     slug "topic-name"
+    free true
   end
 
   factory :progress do 

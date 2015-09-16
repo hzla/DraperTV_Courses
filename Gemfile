@@ -12,7 +12,7 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'cancan'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'simple_form'
-gem "paperclip", "~> 3.0"
+gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'curb'
 gem "passenger"
 gem 'turbolinks'

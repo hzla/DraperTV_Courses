@@ -40,6 +40,6 @@
     <%= image_tag @user.avatar_pic, :class => "comment-pic" %>
     <%= f.text_area :body, :class => "comment-body", placeholder: "Reply..." %>
     <%= f.hidden_field :parent_id, value: comment.id %>
-    <%= f.submit "Submit", :class => "submit-comment" %>
+    <%= f.submit "Submit", :class => "submit-comment button green" %>
   <% end %>
 </div>
