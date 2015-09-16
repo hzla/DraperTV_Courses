@@ -53,6 +53,7 @@ class Lesson < ActiveRecord::Base
 	end
 
 	def completed? user
+		return false if !user
 		user.finished_lesson_ids.bsearch {|lesson_id| id - lesson_id }
 	end
 end

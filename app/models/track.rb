@@ -39,7 +39,7 @@ class Track < ActiveRecord::Base
 
   def self.progress_infos user, models=Topic.all
     if !user
-        return models.order(:order).map {|t| [t, {status: "untouched"}]}
+        return models.order(:order).map {|t| [t, {status: "untouched", percentage: 0}]}
     end
     model_ids = models.map(&:id).sort
     class_name = models.first.class.to_s.downcase
