@@ -14,7 +14,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'simple_form'
 gem "paperclip", "~> 3.0"
 gem 'curb'
-gem 'thin'
+gem "passenger"
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'ckeditor'
