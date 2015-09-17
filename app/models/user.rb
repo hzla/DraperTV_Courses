@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: {message: "email has already been taken"}
   validates :password, presence: {message: "you must fill out a password"}, on: :create
   validates :password, presence: true, on: :update, allow_blank: true
-  validates_uniqueness_of :username
+  validates_uniqueness_of :username, :allow_nil => true
 
   after_create :assign_color
   
