@@ -1,8 +1,7 @@
 ActiveAdmin.register User do
   index do
     column :id
-    column :first_name
-    column :last_name
+    column :full_name
     column :role
     column :team
     column :last_sign_in_at
