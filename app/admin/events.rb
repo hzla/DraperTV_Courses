@@ -3,7 +3,7 @@ ActiveAdmin.register Event do
     column :id
     column :name
     column :start_time
-    default_actions
+    actions
   end
 
   form do |f|

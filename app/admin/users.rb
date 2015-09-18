@@ -7,7 +7,7 @@ ActiveAdmin.register User do
     column :team
     column :last_sign_in_at
     column :email
-    default_actions
+    actions
   end
 
   form do |f|

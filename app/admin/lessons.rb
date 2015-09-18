@@ -7,7 +7,7 @@ ActiveAdmin.register Lesson do
     column :body
     column :icon
     column :description
-    default_actions
+    actions
   end
 
   form :html => { :enctype => "multipart/form-data" } do |f|

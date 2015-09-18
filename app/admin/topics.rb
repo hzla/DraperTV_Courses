@@ -4,7 +4,7 @@ ActiveAdmin.register Topic do
     column :name
     column :icon
     column :percent_complete
-    default_actions
+    actions
   end
 
   form :html => { :enctype => "multipart/form-data" } do |f|

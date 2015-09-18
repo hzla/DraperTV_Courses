@@ -4,7 +4,7 @@ ActiveAdmin.register Track do
     column :name
     column :icon
     column :order
-    default_actions
+    actions
   end
 
   form :html => { :enctype => "multipart/form-data" } do |f|
