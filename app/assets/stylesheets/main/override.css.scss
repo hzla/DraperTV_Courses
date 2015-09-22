@@ -70,7 +70,7 @@ body {
 
   #main-body .column-right {
     box-sizing: border-box;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 110px);
     top: 0px;
     .column-body {
       box-sizing: border-box;
@@ -106,7 +106,7 @@ body {
   }
 	#side-nav {
     background: #f7f7f7;
-    height: calc(100% - 50px);
+    height: calc(100% - 110px);
 		.top-bar {
 			height: 60px;
 		}
@@ -120,14 +120,14 @@ body {
     min-width: 1280px;
     overflow-x: scroll;
     position: relative;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 110px);
     z-index: 1;
 		@include flexbox;
-    max-height: calc(100vh - 50px);
+    max-height: calc(100vh - 110px);
     margin: 0;
       #side-nav {
         position: fixed;
-        top: 50px;
+        top: 110px;
       }
   		.top-section {
   			width: 100%;
@@ -171,7 +171,7 @@ body {
         min-width: 740px;
         margin-left: 240px;
         overflow: visible;
-        height: calc(100vh - 50px);
+        height: calc(100vh - 110px);
   		}
       .column-main {
         margin: 0;
@@ -180,7 +180,7 @@ body {
         padding: 0;
         position: relative; 
         overflow: scroll;
-        height: calc(100vh - 110px);
+        height: calc(100vh - 170px);
       }
 	}
 }
@@ -188,7 +188,7 @@ body {
 @media (min-width: 1280px) {
   body #main-body .column-right {
     position: fixed;
-    top: 50px;
+    top: 110px;
   }
 }
 

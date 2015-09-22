@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "all pages", js: true do 
+feature "all pages" do 
 
 	before :each do 
 		@user = create :user

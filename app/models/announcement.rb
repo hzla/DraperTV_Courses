@@ -8,7 +8,7 @@ class Announcement < ActiveRecord::Base
   	(Time.now.utc - 7.hours).strftime("%B %-d, %Y")
   end
 
-  def self.formatted_archived
+  def self.archived_grouped_and_ordered_by_date
   	Announcement.order('created_at desc').where(archived: true).group_by(&:date)
   end
 

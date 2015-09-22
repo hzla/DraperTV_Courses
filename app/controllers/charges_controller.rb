@@ -22,16 +22,20 @@ class ChargesController < ApplicationController
       @subscription.plan = @plan
       @subscription.save
     else
-      @subscription = @customer.subscriptions.create plan: @plan
+      begin
+        @subscription = @customer.subscriptions.create plan: @plan
+      rescue Stripe::InvalidRequestError
+        current_user.update_attribute :customer_id, nil
+        redirect_to new_charge_path(message: "Invalid Payment Info") and return
+      end
     end
     current_user.update_attributes email: params["email"], plan: @plan, paid: true
-    UserMailer.payment_confirmation(current_user).deliver
+    UserMailer.payment_confirmation(current_user).deliver if current_user.paid
     
     if params[:lesson_id] !=  ""
       redirect_to lesson_path(params[:lesson_id]) and return
     else
       redirect_to root_path 
-      
     end
   end
 

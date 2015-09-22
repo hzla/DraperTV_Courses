@@ -4,7 +4,7 @@ class CodesController < ApplicationController
   	body = params[:code]
   	code = Code.find_by_body_and_used(body, false)
 
-  	if code
+  	if code #mark code as used and give user unlimited membership
   		code.update_attributes used: true
   		current_user.update_attribute(:paid, true)
       current_user.update_attribute(:plan, "Unlimited")

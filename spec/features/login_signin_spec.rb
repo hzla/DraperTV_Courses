@@ -21,6 +21,6 @@ feature "Login/Sign in" do
 	    fill_in 'user_password_confirmation', :with => 'password'
 	    fill_in 'user_username', :with => 'myname'
 	    click_button "SIGN UP"
-	    expect(page).to have_selector('#plans', visible: true) 
+	    expect(page).to have_selector('#plans', visible: true)
 	end
 end

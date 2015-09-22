@@ -3,7 +3,7 @@ class AnnouncementsController < ApplicationController
   include ApplicationHelper
   
   def index
-  	@announcements = Announcement.formatted_archived
+  	@announcements = Announcement.archived_grouped_and_ordered_by_date
   end
 
   def destroy

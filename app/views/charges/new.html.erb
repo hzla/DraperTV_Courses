@@ -67,21 +67,21 @@
       <span class="payment-errors"></span>
 
       <div class="form-row">
-        <input type="text" name="full_name" class="payment-input" placeholder="Full Name"/>
+        <input type="text" name="full-name" class="payment-input" placeholder="Full Name" required="true"/>
       </div>
 
       <div class="form-row">
-        <input type="text" name="email" class="payment-input" placeholder="Email"/>
+        <input type="text" name="email" class="payment-input" placeholder="Email" required="true"/>
       </div>
 
       <div class="form-row">
-        <input type="text" data-stripe="number" class="payment-input" placeholder="Card Number"/>
+        <input type="text" name="card-number" data-stripe="number" class="payment-input" placeholder="Card Number" required="true"/>
       </div>
 
       <div class="form-row">
-        <input type="text" data-stripe="exp-month" class="payment-input mini" placeholder="MM"/>
-        <input type="text" data-stripe="exp-year" class="payment-input mini" placeholder="YY"/>
-        <input type="text" data-stripe="cvc" class="payment-input mini" placeholder="CVC"/>
+        <input type="text" name="exp-month" data-stripe="exp-month" class="payment-input mini" placeholder="MM" required="true"/>
+        <input type="text" name="exp-year" data-stripe="exp-year" class="payment-input mini" placeholder="YY" required="true"/>
+        <input type="text" name="cvc" data-stripe="cvc" class="payment-input mini" placeholder="CVC" required="true"/>
       </div>
 
       <input type="hidden" name="plan" value="Hero" id="plan-input">
@@ -89,6 +89,8 @@
 
 
       <button type="submit" class="checkout">CHECKOUT</button>
+
+      <p class="red-text"><%= params[:message] %></p>
     <% end %> 
 
     <div class="column-bottom">
@@ -107,7 +109,7 @@
 
 <script type="text/javascript">
   // This identifies your website in the createToken call below
-  Stripe.setPublishableKey('<%= ENV['PUBLISHABLE_KEY'] %>');
+  Stripe.setPublishableKey('<%= Rails.configuration.stripe[:publishable_key] %>');
   // ...
 
   $(function($) {

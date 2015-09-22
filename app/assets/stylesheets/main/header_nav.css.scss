@@ -1,13 +1,26 @@
+#global-header {
+	height: 60px;
+	background: image-url('globalbackground.png');
+	@include flexbox;
+	@include align-items(center);
+	padding: 0px 20px;
+	@include justify-content(space-between);
+	.header-item a {
+		font-weight: 400;
+		margin-right: 0px;
+		margin-left: 40px;
+
+	}
+}
+
+
 #landing-header {
-	top: 0;
-	left: 0;
 	height: 50px;
 	width: 100%;
 	background: $blue;
 	text-align: center;
 	z-index: 6;
 	border-bottom: 1px solid #287ac9;
-	display: none;
 	box-sizing: border-box;
 	* {
 		box-sizing: border-box;
@@ -191,7 +204,7 @@
 	padding: 20px;
 	margin-top: 0px;
 	position: relative;
-	min-height: calc(100vh - 110px);
+	min-height: calc(100vh - 170px);
 	overflow: visible;
 	.side-link-container {
 		@include flexbox;
@@ -329,7 +342,7 @@
 
 .header-right {
 	.dropdown-menu {
-		top: 20px;
+		top: 80px;
 		left: initial;
 		right: 25px;
 		position: fixed;

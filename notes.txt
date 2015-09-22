@@ -6,4 +6,11 @@ DRY up css
 center topic icons
 
 cache comment upvotes
-add ancestry to progresses
+
+
+
+TESTING TODOS
+
+payment
+user settings
+announcements
