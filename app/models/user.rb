@@ -85,6 +85,10 @@ class User < ActiveRecord::Base
     colors[plan]
   end
 
+  def plan
+    super.nil? ? "Trial" : super
+  end
+
   def randomize_color
     update_attributes color: "#" + ('%06x' % (rand * 0xffffff))
   end

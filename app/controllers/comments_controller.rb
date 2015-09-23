@@ -1,11 +1,12 @@
 class CommentsController < ApplicationController
   before_filter :get_comment, except: "create"
+  include ApplicationHelper
   
   def create
     comment = Comment.new comment_params
-    comment.user_id = current_user.id
     lesson = comment.lesson
     @user = current_user
+    comment.user_id = @user.id
     
     if comment.save!
       if comment.comment_type == "chat"

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if params[:code] == "draper"
       session[:user_id] = params[:user]
     end
-    @plans = {"Hero" => "HERO ($10/M)", "SuperHero" => "SUPER HERO ($15/M)", "SuperHeroYearly" => "SUPER HERO YEARLY ($90/M)", "Unlimited" => "UNLIMITED" }
+    @plans = {"Hero" => "HERO ($10/M)", "SuperHero" => "SUPER HERO ($15/M)", "SuperHeroYearly" => "SUPER HERO YEARLY ($90/M)", "Unlimited" => "UNLIMITED", "Trial" => "Trial" }
   end
 
   def update

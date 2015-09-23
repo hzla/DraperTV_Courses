@@ -85,8 +85,12 @@
               <p class="<%= 'active' if @sort == "top" %> sort-item">Top</p>
             <% end %>
           </div>
-          <%= f.submit "Submit", :class => "submit-comment button green" %>
-        </div>  
+          <div class="submit-container">
+            <%= f.submit "Submit", :class => "submit-comment button green" %>
+            <p class="submit-status green-text">SUBMITTING...</p> 
+          </div>
+          
+        </div> 
       <% end %>
        <div class="comments">
         <% @comments.each do |comment| %>

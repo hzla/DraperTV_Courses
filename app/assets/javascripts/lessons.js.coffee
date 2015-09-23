@@ -7,6 +7,7 @@ Lesson =
 		$("body").on 'keypress', '.comment-children, .comment-body, .chat-comment-body', @submitFormOnEnter
 		$('body').on 'ajax:success', '.chat-box-container .new_comment', @addComment
 		$('body').on 'ajax:success', '.main-comment', @addMainComment
+		$('body').on 'submit', '.main-comment', @showSubmitStatus
 		$('body').on 'keydown', '#comment_body', @preventSubmit
 		$('body').on 'ajax:success', '.comment-children .new_comment', @addChildComment
 		$('body').on 'ajax:success', '.upvote-link', @updateUpvotes
@@ -22,6 +23,9 @@ Lesson =
 
 	deleteComment: ->
 		$(@).parents('.comment').remove()
+
+	showSubmitStatus: ->
+		$('.submit-status').show()
 
 	deleteChildComment: ->
 		$(@).parents('.comment.child').remove()
@@ -103,6 +107,7 @@ Lesson =
 
 	addMainComment: (event, data) ->
 		$(@)[0].reset()
+		$('.submit-status').hide()
 		$('.comments').prepend data
 
 	addChildComment: (event, data) ->
