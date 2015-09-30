@@ -7,6 +7,12 @@ Home =
 		$('.cancel-sub').click @showCancelOverlay
 		$(".cancel-overlay").click @closeOverlay
 		$(".header-search form").submit @searchDraperTV
+		$(document).scroll @adjustRightColumn
+
+	adjustRightColumn: ->
+		offset = 110 - $('body').scrollTop()
+		$('.column-right').css('top', "#{offset}px")
+		$('.column-right').css('height', "calc(100vh - #{offset}px)")
 
 	searchDraperTV: (e) ->
 		e.preventDefault()

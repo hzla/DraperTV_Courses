@@ -5,6 +5,7 @@
 	@include align-items(center);
 	padding: 0px 20px;
 	@include justify-content(space-between);
+	background-size: cover;
 	.header-item a {
 		font-weight: 600;
 		margin-right: 0px;
@@ -30,9 +31,19 @@
 	z-index: 6;
 	border-bottom: 1px solid #287ac9;
 	box-sizing: border-box;
+	position: relative;
 	* {
 		box-sizing: border-box;
 	}
+}
+
+.shield {
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	top: 10px;
+	left: calc(50vw - 15px);
+	opacity: 0;
 }
 
 #header-content {
@@ -72,6 +83,7 @@
 .header-item a {
 	color: rgba(255,255,255,0.5);
 	margin: 0 auto;
+	letter-spacing: 1px;
 }
 
 .nav.header-item {
