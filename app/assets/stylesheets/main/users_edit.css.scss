@@ -45,6 +45,13 @@
 			color: #c0c0c0;
 			cursor: pointer;
 		}
+		.cancel-account {
+			position: absolute;
+	    bottom: 20px;
+	    right: 40px;
+	    color: #c0c0c0;
+	    cursor: pointer;
+		}
 		.upload-container {
 			position: relative;
 			@include flexbox;

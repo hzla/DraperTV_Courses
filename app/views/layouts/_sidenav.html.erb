@@ -118,25 +118,6 @@
 				<% end %>
 			</div>
 			<div class="side-link-container">
-				<%= link_to amas_path, :class => "side-link #{ 'active' if @page == 'monthly' }" do %>
-					LIVE LEARNING
-				<% end %>
-				<%= image_tag "info-icon.svg", :class => "side-info-icon tool-tip-icon" %>
-				<div class="tool-tip">
-					<div class="tool-tip-header">
-						LIVE LEARNING
-					</div>
-					<div class="tool-tip-body">
-						Every month we’ll bring in one of Silicon Valley’s best so you can ask them for advice, opinions, and insight. Submit your questions any time before the session begins or upvote other students’ suggestions. We’ll leave 20 minutes for a live Q&A so you can talk directly with the mentors we bring in.
-					</div>
-					<div class="tool-tip-okay">
-						<%= image_tag "check.svg", :class => "tool-tip-check" %>
-					</div>
-					<div class="tool-tip-circle"></div>
-					<div class="tool-tip-line"></div>
-				</div>
-			</div>
-			<div class="side-link-container">
 			<%= link_to events_path, :class => "side-link #{ 'active' if @page == 'calendar' }" do %>
 				CALENDAR
 			<% end %>

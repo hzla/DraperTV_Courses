@@ -42,7 +42,7 @@ OnlineSchool::Application.routes.draw do
 
   ##### OLD #####
   resources :events
-  resources :users, only: ["update"]
+  resources :users, only: ["update", "destroy"]
   get '/users/settings/edit', to: "users#edit", as: "edit_user"
 end
 

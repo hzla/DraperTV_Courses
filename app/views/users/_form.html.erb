@@ -51,6 +51,12 @@
       Cancel Subscription
     </div>
   <% end %>
+
+  <%= link_to user_path(current_user), method: "delete" do %>
+    <div class="cancel-account">
+      Delete Account
+    </div>
+  <% end %>
 </div>
 
 <div class="cancel-overlay">
