@@ -1,4 +1,5 @@
 class SessionsController < Devise::SessionsController
+  include ApplicationHelper
 
   def destroy
     session[:user_id] = nil

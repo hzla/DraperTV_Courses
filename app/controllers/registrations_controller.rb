@@ -1,4 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
+  include ApplicationHelper
+
+  
   def new
     session[:resource_id] = params[:resource_id]
     session[:resource_type] = params[:resource_type]
