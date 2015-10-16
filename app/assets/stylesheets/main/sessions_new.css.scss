@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 }
 
-.sign-in .simple_form {
+.sign-in .simple_form, .new-password {
 	margin-bottom: 0px;
 	padding-left: 0px;
 	label {
@@ -28,6 +28,9 @@
 		border: none;
 		margin-bottom: 20px;
 		width: 120px;
+	}
+	input[type="submit"].new-password-btn {
+		width: auto;
 	}
 }
 
