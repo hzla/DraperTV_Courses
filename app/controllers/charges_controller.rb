@@ -29,7 +29,7 @@ class ChargesController < ApplicationController
         redirect_to new_charge_path(message: "Invalid Payment Info") and return
       end
     end
-    current_user.update_attributes :email, params[:email]
+    current_user.update_attribute :email, params[:email]
     current_user.update_attribute :plan, @plan
     current_user.update_attribute :paid, true
     UserMailer.payment_confirmation(current_user).deliver if current_user.paid
