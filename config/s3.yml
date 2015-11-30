@@ -1,15 +1,20 @@
 development:
   host: "localhost:3000"
-  access_key_id: 'AKIAJL3D4TQE6JZ6ULBQ'
-  secret_access_key: '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'
+  bucket: "drapertv-courses"
+  access_key_id: 'AKIAIFAE3ZD3ELLSPKPQ'
+  secret_access_key: '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'
 test:
-  access_key_id: 'AKIAJL3D4TQE6JZ6ULBQ'
-  secret_access_key: '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'
+  access_key_id: 'AKIAIFAE3ZD3ELLSPKPQ'
+  bucket: "drapertv-courses"
+  secret_access_key: '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'
 
 production:
-  access_key_id: 'AKIAJL3D4TQE6JZ6ULBQ'
-  secret_access_key: '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'
+  access_key_id: 'AKIAIFAE3ZD3ELLSPKPQ'
+  bucket: "drapertv-courses"
+  secret_access_key: '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'
 
 staging:
-  access_key_id: 'AKIAJL3D4TQE6JZ6ULBQ'
-  secret_access_key: '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'
+  access_key_id: 'AKIAIFAE3ZD3ELLSPKPQ'
+  bucket: "drapertv-courses"
+  secret_access_key: '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'
+

@@ -362,10 +362,10 @@
 
 .header-right {
 	.dropdown-menu {
-		top: 80px;
+		top: 20px;
 		left: initial;
 		right: 25px;
-		position: fixed;
+		position: absolute;
 		li a {
 			color: #414141;
 		}
